@@ -1,0 +1,8 @@
+.myZeile:nth-of-type(odd) {
+  background-color:#EEEEEE;
+}
+
+.myZeile:nth-of-type(even) {
+  background-color:#FFFFFF;
+}
+
