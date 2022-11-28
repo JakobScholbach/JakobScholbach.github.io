@@ -19,27 +19,31 @@
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-<div class="topnav">
-<a href="https://www.unipd.it/"><img src="Logo-UniPD-800.png"></a>
-<!--<img src="index-Dateien/fb10-term.png" align="right">-->
-<a href="https://www.math.unipd.it/"><img src="Logo-DM.png" align="right"></a>
-		</div>
 		
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
-  <button class="tablinks" onclick="openCity(event, 'Research')">Research</button>
+ <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
+	<button class="tablinks" onclick="openCity(event, 'Research')">Research</button>
   <button class="tablinks" onclick="openCity(event, 'Teaching')">Teaching</button>
   <button class="tablinks" onclick="openCity(event, 'Organization')">Organization</button>
 </div>
 
 <div id="Home" class="tabcontent">
 <h2>Jakob Scholbach</h2>
+<img id="myImg" src="Jakob.jpg" alt="Jakob Scholbach" style="width:100%;max-width:300px">
 <br>Professore Asscociato
 <br>email: <a id="eMailLink" href="mailto:jakob.scholbach@unipd.it">jakob.scholbach@unipd.it</a>
 <br>Phone: (+39) 048271419
 <br>Mail: <a href="https://www.math.unipd.it/">Dipartimento di Matematica, Università degli Studi di Padova</a>
 <br>Via Trieste 63, 35121 Padova
 <br>Room 515
+
+	<div class="topnav">
+<a href="https://www.unipd.it/"><img src="Logo-UniPD-800.png"></a>
+<!--<img src="index-Dateien/fb10-term.png" align="right">-->
+<a href="https://www.math.unipd.it/"><img src="Logo-DM.png" align="right"></a>
+		</div>
+
 		</div>
 		
 <div id="Research" class="tabcontent">
@@ -198,6 +202,9 @@ li:nth-of-type(even) {
 <br>
 
 <script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+	
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
