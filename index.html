@@ -24,20 +24,30 @@
 <!--<img src="index-Dateien/fb10-term.png" align="right">-->
 <a href="https://www.math.unipd.it/"><img src="Logo-DM.png" align="right"></a>
 
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
+  <button class="tablinks" onclick="openCity(event, 'Research')">Research</button>
+  <button class="tablinks" onclick="openCity(event, 'Teaching')">Teaching</button>
+  <button class="tablinks" onclick="openCity(event, 'Organization')">Organization</button>
+</div>
 
-
+<div id="Home" class="tabcontent">
 <h1>Jakob Scholbach</h1>
-
-<!--<div onmousemove='adjust("jakob.scholbach")'>-->
+<br>Professore Asscociato
+<br>
+<br><!--<div onmousemove='adjust("jakob.scholbach")'>-->
 <a id="eMailLink" href="mailto:jakob.scholbach@unipd.it">jakob.scholbach@unipd.it</a>
 <!--<small>Please move your mouse over the link and the adress will be
 displayed properly. If Javascript is not activated in your browser,
 please delete the underscores manually.</small> </div>-->
 <br>
-
+<br>Phone: (+39) 048271419
+<br>Mail: <a href="https://www.math.unipd.it/">Dipartimento di Matematica, Università degli Studi di Padova</a>
+<br>Via Trieste 63, 35121 Padova
+<br>Room 515
 <!--<a href="https://www.math.unipd.it/">Dipartimento di Matematica Tullio Levi-Civita</a>
 <br>
-
+</div>
 <a href="https://www.unipd.it/">Università degli Studi di Padova</a>
 <br>
 
@@ -51,7 +61,8 @@ Via Trieste, 63
 Italy
 -->
 <!--Tel.: +49 (251) 83-33735-->
-  
+ 
+<div id="Research">
 <h2>Research</h2>
 
 I am interested in motives, the Langlands program, special L-values, abstract homotopy theory, and Arakelov theory. The following papers are also available via the 
@@ -85,12 +96,68 @@ I am interested in motives, the Langlands program, special L-values, abstract ho
 <li>2. <a href="http://www.freidok.uni-freiburg.de/volltexte/7166/">Special L-values of motives</a>, PhD Thesis, Advisor: <a href="http://home.mathematik.uni-freiburg.de/arithmetische-geometrie/huber.html">Annette Huber</a>, Universität Freiburg</li>
 <li>1. <a href="preprints/mot_h.dvi">Geometric motives and the h-topology</a>, <a href="reprints/Geometric%20motives%20and%20the%20h-topology.pdf">Mathematische Zeitschrift (2012)</a>, <font class="content-to-hide">Vol. 272, pp. 956–986, </font><a href="preprints/corrigendum.pdf">Corrigendum</a></li>  
 </ul>
+	</div>
 
+<div id="Teaching">
 <h2>Teaching</h2>
 
 <p>Office hours: <!--Dienstags 14:30 bis 15:30, Zimmer 417.--> anytime via zoom, please email me</p>
+<ul>
+	<li><a href="categories.pdf">Category theory</a> (WS 2021/22)</li>
+	<li><a href="division.pdf">Komplexe Zahlen, Quaternionen und andere Zahlenbereiche</a> (Algebra für Lehramtsstudierende, WS 2020/21)</li>
+	<li><a href="atla.pdf">Algebraische Topologie für Lehramtsstudierende</a> (SS 2020)</li>
+	<li><a href="finrep.pdf">Darstellungstheorie endlicher Gruppen</a> (WS 2018/19)</li>
+	<li><a href="riemann.pdf">Riemannsche Flächen</a> (WS 2017/18)</li>
+</ul>
+	</div>
+	
+	<div id="Organization">
 
+<h2>Organization</h2>
+
+<ul>
+  <li><a href="https://www.uni-muenster.de/MathematicsMuenster/events/2021/mrt-2021.shtml">Representation theory's hidden motives (September 2021)</a> 
+  </li>
+</ul>
+	</div>
+
+	
 <style>
+	 /* Style the tab , https://www.w3schools.com/howto/howto_js_tabs.asp */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: 	#b5111b;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: 	#b5111b;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+} 
 
 @media (max-width: 767px) {                  
    .content-to-hide {
@@ -137,39 +204,28 @@ li:nth-of-type(even) {
 
 </style>
 
-<ul>
-	<li><a href="categories.pdf">Category theory</a> (WS 2021/22)</li>
-	<li><a href="division.pdf">Komplexe Zahlen, Quaternionen und andere Zahlenbereiche</a> (Algebra für Lehramtsstudierende, WS 2020/21)</li>
-	<li><a href="atla.pdf">Algebraische Topologie für Lehramtsstudierende</a> (SS 2020)</li>
-	<li><a href="finrep.pdf">Darstellungstheorie endlicher Gruppen</a> (WS 2018/19)</li>
-	<li><a href="riemann.pdf">Riemannsche Flächen</a> (WS 2017/18)</li>
-</ul>
-
-<h2>Organization</h2>
-
-<ul>
-  <li><a href="https://www.uni-muenster.de/MathematicsMuenster/events/2021/mrt-2021.shtml">Representation theory's hidden motives (September 2021)</a> 
-  </li>
-</ul>
-
+	
 </div>
         <div class="col-md-2"></div>
 </div>
 <hr>
 <br>
 
-
-<!--
-
-<h2>Hinweise zur Vorlesung "Lineare Algebra 1 (Prof. Deninger)"</h2>
-
-Alle Informationen und Materialien zur Vorlesung gibt es im Learnweb <a href="https://sso.uni-muenster.de/LearnWeb/learnweb2/course/view.php?id=22387">hier</a>. Der Einschreibeschl&uuml;ssel lautet "LA1".<br>
-
-
-<h2>Hinweise zur Seminar "Klassenk&ouml;rpertheorie (WS 16/17, Prof. Deninger)"</h2>
-
-<a href=seminar.pdf>Seminarank&uuml;ndigung und -programm</a>
--->
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 
 
 </body></html>
