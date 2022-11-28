@@ -19,11 +19,12 @@
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-
+<div class="topnav">
 <a href="https://www.unipd.it/"><img src="Logo-UniPD-800.png"></a>
 <!--<img src="index-Dateien/fb10-term.png" align="right">-->
 <a href="https://www.math.unipd.it/"><img src="Logo-DM.png" align="right"></a>
-
+		</div>
+		
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
   <button class="tablinks" onclick="openCity(event, 'Research')">Research</button>
@@ -102,6 +103,12 @@ I am interested in motives, the Langlands program, special L-values, abstract ho
 
 	
 <style>
+@media screen and (max-width: 600px) {
+  .topnav a {
+    display: none;
+  }
+}
+
 	 /* Style the tab , https://www.w3schools.com/howto/howto_js_tabs.asp */
 .tab {
   overflow: hidden;
