@@ -1,0 +1,10 @@
+.md-content .arithmatex + .env-number.equation-number {
+  text-align: right;
+  margin-top: -2.5rem;
+  margin-bottom: 1.2rem;
+  pointer-events: none;
+}
+
+.md-content .env-number.equation-number strong {
+  font-weight: 500;
+}

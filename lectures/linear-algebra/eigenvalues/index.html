@@ -1,0 +1,1715 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wiki generated from LaTeX lecture notes">
+      
+      
+      
+      
+        <link rel="prev" href="../determinants/">
+      
+      
+        <link rel="next" href="../euclid/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Eigenvalues and Eigenvectors - Linear Algebra Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eigenvalues-and-eigenvectors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Algebra Wiki" class="md-header__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Eigenvalues and Eigenvectors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Algebra Wiki" class="md-nav__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-characteristic-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The characteristic polynomial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenspaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagonalizing-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagonalizing matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercises
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Solutions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-complex-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complex numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-systems-of-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systems of linear equations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-vector-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-eigenvalues-and-eigenvectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenvalues and eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-characteristic-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The characteristic polynomial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenspaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagonalizing-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagonalizing matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercises
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="sect-eigenvalues"></a></p>
+<h1 id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Permanent link">&para;</a></h1>
+<p>Eigenvalues and eigenvectors are an extremely useful concept of linear algebra. Coupled with certain numerical considerations, which are (only slightly!) beyond the scope of this course, eigenvalues have been used, for example, in the early PageRank algorithm employed by Google.</p>
+<p>The overall idea of eigenvalues and eigenvectors is this: square matrices of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{ccc} a_{11} &amp; {} &amp; 0 \\ {} &amp; \ddots &amp; {} \\ 0 &amp; {} &amp; a_{nn} \end{array} \right )
+\]</div>
+</div>
+<p>(i.e., the only non-zero entries are on the main diagonal; such matrices are called <em>diagonal matrices</em>) are particularly simple to comprehend and to use in computations. For example, products of the can be computed easily:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc} a_{11} &amp; {} &amp; 0 \\ {} &amp; \ddots &amp; {} \\ 0 &amp; {} &amp; a_{nn} \end{array} \right ) \left ( \begin{array}{ccc} b_{11} &amp; {} &amp; 0 \\ {} &amp; \ddots &amp; {} \\ 0 &amp; {} &amp; b_{nn} \end{array} \right )
+= \left ( \begin{array}{ccc} a_{11} b_{11} &amp; {} &amp; 0 \\ {} &amp; \ddots &amp; {} \\ 0 &amp; {} &amp; a_{nn} b_{nn} \end{array} \right ),
+\]</div>
+</div>
+<p>i.e., the (diagonal) entries can just be multiplied one by one, something that clearly goes wrong for products of general matrices. Eigenvalues and eigenvectors can, in certain cases, be used to reduce computations for general matrices to those for diagonal matrices.</p>
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
+<div class="definition">
+<p class="env-number"><strong>Definition 6.1</strong></p>
+<p><span id="def-eigenthings" label="def:eigenthings"></span> Let <span class="arithmatex">\(A\)</span> be a <em>square</em> matrix. A real number <span class="arithmatex">\(\lambda\)</span> is called an <em>eigenvalue</em> of <span class="arithmatex">\(A\)</span> if there exists a <em>nonzero</em> vector <span class="arithmatex">\(v \in {\bf R}^n\)</span> that satisfies the equation</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+Av = \lambda v.
+\]</div>
+</div>
+<p>Such a vector <span class="arithmatex">\(v\)</span> is called an <em>eigenvector</em> for the eigenvalue <span class="arithmatex">\(\lambda\)</span>. In other words, multiplying the matrix <span class="arithmatex">\(A\)</span> by the vector <span class="arithmatex">\(v\)</span> results in a scaled version of <span class="arithmatex">\(v\)</span>, where the scaling factor is the eigenvalue <span class="arithmatex">\(\lambda\)</span>.</p>
+<p>Likewise, for a linear map <span class="arithmatex">\(f : V \to V\)</span>, <span class="arithmatex">\(\lambda\)</span> is an eigenvalue if there is <span class="arithmatex">\(v \in V, v \ne 0\)</span> such that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+f(v) = \lambda v.
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(6.2)</strong></p>
+<p><span id="eqn-eigenvalue-eq" label="eqn--eigenvalue eq"></span></p>
+</div>
+<p>We consider some of the linear maps <span class="arithmatex">\(f : {\bf R}^2 \to {\bf R}^2\)</span> of §<a href="../maps/#sect-2-x-2-matrices" data-reference-type="ref" data-reference="sect--2 x 2 matrices">Subsection 4.2.1</a>.</p>
+<div class="example">
+<p class="env-number"><strong>Example 6.3</strong></p>
+<p><span id="ex-eigenvalues-example-001" label="ex:eigenvalues-example-001"></span> If <span class="arithmatex">\(f\)</span> is the reflection along, say, the <span class="arithmatex">\(x\)</span>-axis, i.e., <span class="arithmatex">\(f(x, y) = (x, -y)\)</span>, then reads</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(x, -y) = (\lambda x, \lambda y),
+\]</div>
+</div>
+<p>i.e., <span class="arithmatex">\(x = \lambda x\)</span> and <span class="arithmatex">\(-y = \lambda y\)</span>. The first equation holds if <span class="arithmatex">\(x = 0\)</span> and <span class="arithmatex">\(\lambda\)</span> arbitrary or if <span class="arithmatex">\(\lambda = 1\)</span> and <span class="arithmatex">\(x\)</span> arbitrary. Similarly, the second forces <span class="arithmatex">\(y = 0\)</span> or <span class="arithmatex">\(\lambda = -1\)</span>. Since, by definition, we have <span class="arithmatex">\((x, y) \ne (0, 0)\)</span>, we cannot have both <span class="arithmatex">\(x = 0\)</span> and <span class="arithmatex">\(y = 0\)</span>. If <span class="arithmatex">\(x \ne 0\)</span>, then <span class="arithmatex">\(\lambda = 1\)</span>, which forces <span class="arithmatex">\(y = 0\)</span>. If <span class="arithmatex">\(x = 0\)</span>, then <span class="arithmatex">\(y \ne 0\)</span> and therefore <span class="arithmatex">\(\lambda = -1\)</span>. Thus, there are two eigenvalues and eigenvectors are as follows:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\lambda = 1\)</span>, with eigenvectors <span class="arithmatex">\((x, 0)\)</span> for arbitrary <span class="arithmatex">\(x \in {\bf R}\)</span>,</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\lambda = -1\)</span>, with eigenvectors <span class="arithmatex">\((0, y)\)</span> for arbitrary <span class="arithmatex">\(y \in {\bf R}\)</span>.</p>
+</li>
+</ul>
+</div>
+<p>Before going on, we make the following observation, for any <span class="arithmatex">\(n \times n\)</span>-matrix <span class="arithmatex">\(A\)</span>. The equation</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A v = \lambda v
+\]</div>
+</div>
+<p>can be rewritten as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+0 = Av-\lambda v = Av - (\lambda {\mathrm {id}}) v = (A - \lambda {\mathrm {id}}) v.
+\]</div>
+</div>
+<p>Here we have used standard properties of matrix multiplication (<a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.59</a>). We seek a <em>non-zero</em> vector <span class="arithmatex">\(v\)</span> satisfying this condition. Such a vector exists if and only if <span class="arithmatex">\(A - \lambda {\mathrm {id}}\)</span> is <em>not</em> invertible.</p>
+<div class="example">
+<p class="env-number"><strong>Example 6.4</strong></p>
+<p><span id="ex-eigenvalues-example-002" label="ex:eigenvalues-example-002"></span> We consider the shearing matrix <span class="arithmatex">\(A = \left ( \begin{array}{cc} 1 &amp; r \\ 0 &amp; 1 \end{array} \right )\)</span>, where we assume <span class="arithmatex">\(r \ne 0\)</span> (otherwise <span class="arithmatex">\(A = {\mathrm {id}}\)</span>). We check the invertibility of the matrix:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A - \lambda {\mathrm {id}} = \left ( \begin{array}{cc} 1-\lambda &amp; r \\ 0 &amp; 1-\lambda \end{array} \right ).
+\]</div>
+</div>
+<p>It suffices to compute the determinant (<a href="../determinants/#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det \left ( \begin{array}{cc} 1-\lambda &amp; r \\ 0 &amp; 1-\lambda \end{array} \right ) = (1-\lambda)^2 - r \cdot 0 = (\lambda - 1)^2.
+\]</div>
+</div>
+<p>This is zero precisely if <span class="arithmatex">\(\lambda = 1\)</span>, i.e., <span class="arithmatex">\(\lambda = 1\)</span> is the only eigenvalue of <span class="arithmatex">\(A\)</span>. Eigenvectors for this eigenvalue are those vectors such that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(A - 1 \dot {\mathrm {id}}) \left ( \begin{array}{c} x \\ y \end{array} \right ) = 0,
+\]</div>
+</div>
+<p>i.e., <span class="arithmatex">\(\left ( \begin{array}{c} ry \\ 0 \end{array} \right ) = \left ( \begin{array}{cc} 0 &amp; r \\ 0 &amp; 0 \end{array} \right ) \left ( \begin{array}{c} x \\ y \end{array} \right ) = 0\)</span>. Since we have assumed <span class="arithmatex">\(r \ne 0\)</span>, this implies <span class="arithmatex">\(y = 0\)</span>, and <span class="arithmatex">\(x\)</span> is arbitrary. Thus, the eigenvectors for <span class="arithmatex">\(\lambda = 1\)</span> are of the form <span class="arithmatex">\(\left ( \begin{array}{c} x \\ 0 \end{array} \right )\)</span> for <span class="arithmatex">\(x \in {\bf R}\)</span>.</p>
+</div>
+<h2 id="the-characteristic-polynomial">The characteristic polynomial<a class="headerlink" href="#the-characteristic-polynomial" title="Permanent link">&para;</a></h2>
+<div class="definitionlemma">
+<p class="env-number"><strong>Definition and Lemma 6.5</strong> (Related exercises: <a href="#ex-eigenvalues-exercise-001">Exercise 6.1</a>, <a href="#ex-eigenvalues-exercise-002">Exercise 6.3</a>, <a href="#ex-eigenvalues-exercise-003">Exercise 6.4</a>, <a href="#ex-eigenvalues-exercise-004">Exercise 6.6</a>, <a href="#exercise-eigenvalues-2x2">Exercise 6.2</a>)</p>
+<p><span id="dlm-eigenvalues-definitionlemma-001" label="dlm:eigenvalues-definitionlemma-001"></span> For <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span>, the function</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\chi(t) = \det (A - t \cdot {\mathrm {id}}_n)
+\]</div>
+</div>
+<p>is a polynomial of degree <span class="arithmatex">\(n\)</span>. It is called the <em>characteristic polynomial</em> of the matrix <span class="arithmatex">\(A\)</span>. A real number <span class="arithmatex">\(\lambda\)</span> is an eigenvalue of <span class="arithmatex">\(A\)</span> if and only if</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\chi(\lambda) = 0.
+\]</div>
+</div>
+</div>
+<p>For example, for <span class="arithmatex">\(A = \left ( \begin{array}{cc} 1 &amp; r \\ 0 &amp; 1 \end{array} \right )\)</span>, <span class="arithmatex">\(\chi(t) = (t-1)^2\)</span>.</p>
+<div class="example">
+<p class="env-number"><strong>Example 6.6</strong></p>
+<p><span id="ex-concrete-2-x-2-eigenvalues" label="ex:concrete-2-x-2-eigenvalues"></span> We compute the eigenvalues of <span class="arithmatex">\(A = \begin{pmatrix} 2 &amp; -1 \\ 4 &amp; -3 \end{pmatrix}\)</span> using the characteristic polynomial:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\chi_A(t) = \det \left ( \begin{array}{cc} 2-t &amp; -1 \\ 4 &amp; -3-t \end{array} \right ) = (2-t)(-3-t)+4=t^2+t-2.
+\]</div>
+</div>
+<p>The equation <span class="arithmatex">\(\chi_A(t) = 0\)</span> solves as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+t_{1/2} = -\frac 12 \pm \sqrt{2 + \frac 14} = -\frac 12 \pm \frac 32,
+\]</div>
+</div>
+<p>i.e., the eigenvalues are <span class="arithmatex">\(t_1 = -2\)</span>, <span class="arithmatex">\(t_2 = 1\)</span>.</p>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 6.7</strong></p>
+<p><span id="ex-eigenvalues-example-004" label="ex:eigenvalues-example-004"></span> We consider the rotation matrix <span class="arithmatex">\(A = \left ( \begin{array}{cc} \cos r &amp; -\sin r \\ \sin r &amp; \cos r \end{array} \right )\)</span>. We have:</p>
+<ul>
+<li>
+<p>if <span class="arithmatex">\(r = \dots, -4\pi, -2\pi, 0, 2\pi, \dots\)</span> (i.e., a rotation by a multiple of 360<span class="arithmatex">\(^\circ\)</span>, i.e., no rotation at all), then <span class="arithmatex">\(A = {\mathrm {id}}_2\)</span>, and the only eigenvalue is <span class="arithmatex">\(\lambda = 1\)</span>, and any vector <span class="arithmatex">\((x,y) \in {\bf R}^2\)</span> is an eigenvector.</p>
+</li>
+<li>
+<p>if <span class="arithmatex">\(r = \dots, -3\pi, -\pi, \pi, 3\pi, \dots\)</span> (i.e., a rotation by 180<span class="arithmatex">\(^\circ\)</span> (plus an irrelevant multiple of 360<span class="arithmatex">\(^\circ\)</span>)), the only eigenvalue is <span class="arithmatex">\(\lambda = -1\)</span>, and again any vector in <span class="arithmatex">\({\bf R}^2\)</span> is an eigenvector,</p>
+</li>
+<li>
+<p>in all other cases, i.e., if the rotation is not by <span class="arithmatex">\(0^\circ\)</span> or by <span class="arithmatex">\(180^\circ\)</span>, there are <em>no</em> eigenvalues (and therefore no eigenvectors).</p>
+</li>
+</ul>
+<p>These statements are clear geometrically: for a rotation other than the special cases, for any vector <span class="arithmatex">\(v \in {\bf R}^2\)</span> we have that the rotated vector <span class="arithmatex">\(Av\)</span> lies on a different line, so that it cannot be an eigenvector. To confirm this algebraically, we compute its characteristic polynomial:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\chi(t) &amp;= \det (A - t {\mathrm {id}}) \\
+&amp; = \det \left ( \begin{array}{cc} \cos r - t &amp; -\sin r \\ \sin r &amp; \cos r - t \end{array} \right ) \\
+&amp; = (\cos r-t)^2 + (\sin r)^2 \\
+&amp; = (\cos r)^2 -2t \cos r + t^2 + (\sin r)^2 \\
+&amp; = 1 + t^2 - 2t \cos r.
+\end{align*}
+\]</div>
+</div>
+<p>We solve this for <span class="arithmatex">\(t\)</span> using the usual formula:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+t = 2 \cos r \pm \sqrt{- 1 + (\cos r)^2}.
+\]</div>
+</div>
+<p>We have <span class="arithmatex">\(0 \le \cos r \le 1\)</span>, and <span class="arithmatex">\(\cos r = 1\)</span> if and only if <span class="arithmatex">\(r\)</span> is a multiple of <span class="arithmatex">\(\pi\)</span> (cf. §<a href="../appendix/#sect-trigonometric-functions" data-reference-type="ref" data-reference="sect--trigonometric functions">Chapter B</a>). Thus the term inside the square root is zero in this case, in all other cases it is strictly negative, so that the equation <span class="arithmatex">\(\chi(t) = 0\)</span> has <em>no</em> solution.</p>
+</div>
+<p>The non-existence of eigenvalues can be salvaged by working with complex numbers, instead of real numbers.</p>
+<div class="theorem">
+<p class="env-number"><strong>Theorem 6.8</strong> (Related exercises: <a href="#ex-eigenvalues-exercise-006">Exercise 6.9</a>)</p>
+<p>(<em>Fundamental theorem of algebra</em>, cf. also §<a href="../c/#sect-the-fundamental-theorem-of-algebra" data-reference-type="ref" data-reference="sect--the_fundamental_theorem_of_algebra">Section 1.2</a> for further discussion) <span id="thm-eigenvalues-theorem-001" label="thm:eigenvalues-theorem-001"></span> For every non-constant polynomial</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+p(t) = a_n x^n + \dots + a_0,
+\]</div>
+</div>
+<p>where the coefficients <span class="arithmatex">\(a_0, \dots, a_n\)</span> are complex numbers (for example, they can be real numbers), there exists a <em>complex</em> number <span class="arithmatex">\(z \in {{\bf C}}\)</span> such that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+p(z) = 0.
+\]</div>
+</div>
+</div>
+<p>This theorem is famous for the number of entirely different proofs. A completely elementary proof fitting on about two pages is given in .</p>
+<div class="example">
+<p class="env-number"><strong>Example 6.9</strong></p>
+<p><span id="ex-eigenvalues-example-005" label="ex:eigenvalues-example-005"></span> Consider the rotation matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{cc} 0 &amp; -1 \\ 1 &amp; 0 \end{array} \right )
+\]</div>
+</div>
+<p>describing a (counter-clockwise) rotation by <span class="arithmatex">\(90^\circ\)</span>. Its characteristic polynomial</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\chi_A(t) = 1 + t^2
+\]</div>
+</div>
+<p>does not have a real zero, i.e., for all real numbers <span class="arithmatex">\(r\)</span>, <span class="arithmatex">\(\chi_A(r) \ne 0\)</span>. However, the complex number <span class="arithmatex">\(i\)</span>, the <em>imaginary unit</em>, which satisfies <span class="arithmatex">\(i^2 = -1\)</span> is a <em>complex</em> zero. In addition, <span class="arithmatex">\(-i\)</span>, which also satisfies <span class="arithmatex">\((-i)^2 = -1\)</span> is another complex zero.</p>
+</div>
+<p>It is therefore helpful to consider the concepts of linear algebra not only for real matrices, but for complex matrices. All of the concepts and theorems that we have encountered in this course continue to hold for complex matrices, complex vector spaces etc.</p>
+<div class="corollary">
+<p class="env-number"><strong>Corollary 6.10</strong></p>
+<p><span id="cor-cx-matrix-eigenvalues" label="cor:cx-matrix-eigenvalues"></span> Any complex square matrix <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span> has at least one (complex) eigenvalue. In particular, any real square matrix has at least one complex eigenvalue (but it may not have a real eigenvalue).</p>
+</div>
+<h2 id="eigenspaces">Eigenspaces<a class="headerlink" href="#eigenspaces" title="Permanent link">&para;</a></h2>
+<p>In the above examples, the set of all eigenvectors for a given eigenvalue has a particularly nice shape. This is a general phenomenon:</p>
+<div class="definitionlemma">
+<p class="env-number"><strong>Definition and Lemma 6.11</strong></p>
+<p><span id="dlm-eigenspace" label="dlm:eigenspace"></span> Let <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span> be a square matrix and <span class="arithmatex">\(\lambda \in {\bf R}\)</span> a fixed real number. The set</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_\lambda := \{ v \in {\bf R}^n \ | \ A v = \lambda v \}
+\]</div>
+</div>
+<p>is a subspace of <span class="arithmatex">\({\bf R}^n\)</span>. It is called the <em>eigenspace</em> of <span class="arithmatex">\(A\)</span> with respect to <span class="arithmatex">\(\lambda\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> The equation <span class="arithmatex">\(Av = \lambda v\)</span> is equivalent to <span class="arithmatex">\((A - \lambda {\mathrm {id}})v = 0\)</span>, i.e., we have <span class="arithmatex">\(E_\lambda = \ker (A - \lambda {\mathrm {id}})\)</span>. This is a subspace of <span class="arithmatex">\({\bf R}^n\)</span> by <a href="../maps/#prop-ker-im-subspace" data-reference-type="ref+Label" data-reference="prop:ker-im-subspace">Proposition 4.23</a>. ◻</p>
+</div>
+<div class="remark">
+<p class="env-number"><strong>Remark 6.12</strong></p>
+<p><span id="rem-eigenvalues-remark-001" label="rem:eigenvalues-remark-001"></span> If <span class="arithmatex">\(\lambda\)</span> above is <em>not</em> an eigenvalue, then <span class="arithmatex">\(E_\lambda = \{ 0 \}\)</span>, i.e., the zero vector is the only one satisfying <span class="arithmatex">\(Av = \lambda v\)</span>.</p>
+<p>If <span class="arithmatex">\(\lambda\)</span> is an eigenvalue, then <span class="arithmatex">\(E_\lambda\)</span> consists of all the eigenvectors for the eigenvalue <span class="arithmatex">\(\lambda\)</span>, together with the zero vector (which by definition is not an eigenvector).</p>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 6.13</strong></p>
+<p><span id="ex-diagonalizable-2-x-2" label="ex:diagonalizable-2-x-2"></span> We compute the eigenspaces of the matrix <span class="arithmatex">\(A = \left ( \begin{array}{cc} 0 &amp; -1 \\ -2 &amp; 0 \end{array} \right )\)</span>. Its characteristic polynomial is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\chi_A(t)=\det \left ( \begin{array}{cc} -\lambda &amp; -1 \\ -2 &amp; -\lambda \end{array} \right ) = \lambda^2 - 2.
+\]</div>
+</div>
+<p>Its zeros, i.e., the eigenvalues of <span class="arithmatex">\(A\)</span> are <span class="arithmatex">\(\lambda_{1/2} = \pm \sqrt 2\)</span>. The eigenspace for <span class="arithmatex">\(\sqrt 2\)</span> is the solution space of the homogeneous system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\underbrace{\left ( \begin{array}{cc} -\sqrt 2 &amp; -1 \\ -2 &amp; -\sqrt 2 \end{array} \right )}_{= A - \sqrt 2 \cdot {\mathrm {id}} =: B} \left ( \begin{array}{c} x \\ y \end{array} \right ) = 0.
+\]</div>
+</div>
+<p>We solve this by reducing the matrix <span class="arithmatex">\(B\)</span> to row-echelon form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cc} -\sqrt 2 &amp; -1 \\ -2 &amp; -\sqrt 2 \end{array} \right ) \leadsto \left ( \begin{array}{cc} 1 &amp; \frac 1{\sqrt 2} \\ -2 &amp; -\sqrt 2 \end{array} \right ) 
+\leadsto \left ( \begin{array}{cc} 1 &amp; \frac {\sqrt 2}2 \\ 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>Thus, <span class="arithmatex">\(y\)</span> is a free variable and <span class="arithmatex">\(x = - \frac{\sqrt 2}2 y\)</span>. Thus <span class="arithmatex">\(E_{\sqrt 2}\)</span> has dimension 1, a basis vector is <span class="arithmatex">\((-\frac{\sqrt 2}2, 1)\)</span>. Similarly, one computes the eigenspace for <span class="arithmatex">\(\lambda = -\sqrt 2\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+B = A + \sqrt 2 \cdot {\mathrm {id}} = \left ( \begin{array}{cc} \sqrt 2 &amp; -1 \\ -2 &amp; \sqrt 2 \end{array} \right ) \leadsto 
+\left ( \begin{array}{cc} 1 &amp; -\frac{1}{\sqrt 2} \\ -2 &amp; \sqrt 2 \end{array} \right ) \leadsto
+\left ( \begin{array}{cc} 1 &amp; -\frac{\sqrt 2}{2} \\ 0 &amp; 0 \end{array} \right ),
+\]</div>
+</div>
+<p>so the eigenspace <span class="arithmatex">\(E_{-\sqrt 2}\)</span> is again one-dimensional, and a basis vector is <span class="arithmatex">\((\frac{\sqrt 2}2, 1)\)</span>. Here is a plot showing the two eigenspaces: the map <span class="arithmatex">\(v \mapsto Av\)</span> will stretch the vectors in <span class="arithmatex">\(E_{\sqrt 2}\)</span> by a factor of <span class="arithmatex">\(\sqrt 2\)</span>, while those on the eigenspace <span class="arithmatex">\(E_{-\sqrt 2}\)</span> will be flipped and stretched by a factor of <span class="arithmatex">\(\sqrt 2\)</span>:</p>
+<div class="center">
+<p><img alt="image" src="../figures/png/eigenvalues/eigenvalues-fig-01.png" /></p>
+</div>
+</div>
+<h2 id="diagonalizing-matrices">Diagonalizing matrices<a class="headerlink" href="#diagonalizing-matrices" title="Permanent link">&para;</a></h2>
+<p>As was mentioned above, diagonal matrices are particularly easy to compute with. This raises the question if (and how) it is possible to “bring” a given matrix <span class="arithmatex">\(A\)</span> into such an easy form.</p>
+<div class="definition">
+<p class="env-number"><strong>Definition 6.14</strong></p>
+<p><span id="def-diagonalizable" label="def:diagonalizable"></span> A square matrix <span class="arithmatex">\(A\)</span> is called <em>diagonalizable</em> if there is an invertible matrix <span class="arithmatex">\(P \in {\mathrm {Mat}}_{n \times n}\)</span> such that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+PAP^{-1} = D,
+\]</div>
+</div>
+<p>where <span class="arithmatex">\(D=\left ( \begin{array}{ccc} d_{11} &amp; {} &amp; 0 \\ {} &amp; \ddots &amp; {} \\ 0 &amp; {} &amp; d_{nn} \end{array} \right )\)</span> is a diagonal matrix.</p>
+</div>
+<p>An example showing the relevance of this notion is this: in the context of differential equations, one needs to compute the <em>exponential</em> of a square matrix <span class="arithmatex">\(A\)</span>, which is defined as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\exp A = 1 + A + \frac {A^2} 2 + \frac {A^3} 6 + \frac{A^4} {24} + \dots.
+\]</div>
+</div>
+<p>Here <span class="arithmatex">\(A^3 = A \cdot A \cdot A\)</span> etc. Instead of computing all these powers of <span class="arithmatex">\(A\)</span> one after another, one can use the above definition: if <span class="arithmatex">\(A\)</span> is diagonalizable, i.e., <span class="arithmatex">\(PAP^{-1} = D\)</span>, then <span class="arithmatex">\(A = (P^{-1}P)A(P^{-1}P) = P^{-1}(PAP^{-1})P = P^{-1}DP\)</span>. Then,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A^2 = P^{-1}DP \cdot P^{-1}D P = P^{-1}D^2 P, A^3 = P^{-1}D^3 P
+\]</div>
+</div>
+<p>etc. Computing the powers of <span class="arithmatex">\(D\)</span>, as opposed to those of <span class="arithmatex">\(A\)</span> is easy: one just needs to raise the diagonal entries to the corresponding power.</p>
+<div class="method">
+<p class="env-number"><strong>Method 6.15</strong> (Related exercises: <a href="#ex-5-10">Exercise 6.16</a>, <a href="#ex-5-2">Exercise 6.7</a>, <a href="#ex-eigenvalues-exercise-001">Exercise 6.1</a>, <a href="#ex-eigenvalues-exercise-002">Exercise 6.3</a>, <a href="#ex-eigenvalues-exercise-003">Exercise 6.4</a>, <a href="#ex-eigenvalues-exercise-004">Exercise 6.6</a>, <a href="#ex-eigenvalues-exercise-005">Exercise 6.8</a>)</p>
+<p><span id="met-diagonalizability" label="met:diagonalizability"></span> In order to diagonalize a square matrix <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span>, i.e., to determine whether <span class="arithmatex">\(P\)</span> above exists, and to compute <span class="arithmatex">\(D\)</span>, one proceeds as follows:</p>
+<ul>
+<li>
+<p>Compute the eigenvalues of <span class="arithmatex">\(A\)</span>, for example by finding the zeros of the characteristic polynomial. Denote them by <span class="arithmatex">\(\lambda_1, \dots, \lambda_k\)</span>. Denote the eigenspaces by <span class="arithmatex">\(E_{\lambda_k}\)</span>.</p>
+</li>
+<li>
+<p>The matrix <span class="arithmatex">\(A\)</span> is diagonalizable precisely if</p>
+</li>
+</ul>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \sum_{i=1}^k \dim E_{\lambda_i} = n,
+\]</div>
+</div>
+<p>i.e., if the dimensions of the eigenspaces sum up to the size of the matrix <span class="arithmatex">\(A\)</span>.</p>
+<ul>
+<li>In this event, one may choose <span class="arithmatex">\(P\)</span> to be the <span class="arithmatex">\(n \times n\)</span>-matrix whose columns are the basis vectors of all the eigenspaces (for the various eigenvalues <span class="arithmatex">\(\lambda_1, \dots, \lambda_k\)</span>). The matrix <span class="arithmatex">\(D\)</span> is the diagonal matrix whose diagonal entries are</li>
+</ul>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \underbrace{\lambda_1, \dots, \lambda_1}_{\dim E_1 \text{ times }}, \dots, \underbrace{\lambda_k, \dots, \lambda_k}_{\dim E_k \text{ times }}.
+\]</div>
+</div>
+</div>
+<p>One can show that above, one always has <span class="arithmatex">\(k \le n\)</span>. One does this by proving that the sum of the subspaces <span class="arithmatex">\(E_{\lambda_1}, \dots, E_{\lambda_k}\)</span> is a <em>direct sum</em>, so that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+n = \dim {\bf R}^n \ge &amp; \dim (E_{\lambda_1} + \dots + E_{\lambda_k}) \\
+&amp; = \dim (E_{\lambda_1} \oplus \dots \oplus E_{\lambda_k}) \\
+&amp; = \dim (E_{\lambda_1}) + \dots + \dim (E_{\lambda_k}) \\
+&amp; \ge \underbrace{1 + \dots + 1}_{k \text{ summands}} \\
+&amp; = k.
+\end{align*}
+\]</div>
+</div>
+<p>This implies the following:</p>
+<div class="corollary">
+<p class="env-number"><strong>Corollary 6.16</strong> (Related exercises: <a href="#ex-eigenvalues-exercise-002">Exercise 6.3</a>, <a href="#ex-eigenvalues-exercise-004">Exercise 6.6</a>)</p>
+<p><span id="cor-diag-max" label="cor:diag-max"></span> If an <span class="arithmatex">\(n \times n\)</span>-matrix has <span class="arithmatex">\(n\)</span> distinct eigenvalues, then it is diagonalizable.</p>
+</div>
+<div class="definition">
+<p class="env-number"><strong>Definition 6.17</strong> (Related exercises: <a href="#ex-eigenvalues-exercise-002">Exercise 6.3</a>)</p>
+<p><span id="def-eigenbasis" label="def:eigenbasis"></span> Let <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span> be given. A basis <span class="arithmatex">\(v_1, \dots, v_n\)</span> of <span class="arithmatex">\({\bf R}^n\)</span> is called an <em>eigenbasis</em> for <span class="arithmatex">\(A\)</span> if each <span class="arithmatex">\(v_i\)</span> is an eigenvector (for a certain eigenvalue) of <span class="arithmatex">\(A\)</span>.</p>
+</div>
+<div class="lemma">
+<p class="env-number"><strong>Lemma 6.18</strong> (Related exercises: <a href="#ex-eigenvalues-exercise-001">Exercise 6.1</a>)</p>
+<p><span id="lem-eigenvalues-lemma-001" label="lem:eigenvalues-lemma-001"></span> For <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span> the following two statements are equivalent:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(A\)</span> is diagonalizable.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(A\)</span> admits an eigenbasis, i.e., there is an eigenbasis (of <span class="arithmatex">\({\bf R}^n\)</span>) for <span class="arithmatex">\(A\)</span>.</p>
+</li>
+</ol>
+</div>
+<p>One proves this by observing that if <span class="arithmatex">\(PAP^{-1}\)</span> is a diagonal matrix, then <span class="arithmatex">\(P\)</span> is a base-change matrix between the standard basis and an eigenbasis.</p>
+<div class="example">
+<p class="env-number"><strong>Example 6.19</strong></p>
+<p><span id="ex-eigenvalues-example-007" label="ex:eigenvalues-example-007"></span> The matrix <span class="arithmatex">\(A = \left ( \begin{array}{cc} 0 &amp; -1 \\ -2 &amp; 0 \end{array} \right )\)</span> in <a href="#ex-diagonalizable-2-x-2" data-reference-type="ref+Label" data-reference="ex:diagonalizable-2-x-2">Example 6.13</a> has two distinct eigenvalues, and is therefore diagonalizable (<a href="#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a>). An eigenbasis for <span class="arithmatex">\(A\)</span> is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+v_1 = (\sqrt 2, 1), v_2 = (-\sqrt 2, 1).
+\]</div>
+</div>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 6.20</strong></p>
+<p><span id="ex-eigenvalues-example-008" label="ex:eigenvalues-example-008"></span> We consider the <em>shearing matrix</em></p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+<p>Its characteristic polynomial is <span class="arithmatex">\(\chi_A(t) = (1-t)^2\)</span>, whose only zero is <span class="arithmatex">\(t = 1\)</span>. Thus, <span class="arithmatex">\(A\)</span> has this eigenvalue only: <span class="arithmatex">\(\lambda = 1\)</span>. We compute the eigenspace: consider the matrix <span class="arithmatex">\(B := A - \lambda {\mathrm {id}} = \left ( \begin{array}{cc} 0 &amp; 1 \\ 0 &amp; 0 \end{array} \right )\)</span>. Writing, as usual, <span class="arithmatex">\(v = \left ( \begin{array}{c} x \\ y \end{array} \right ) \in {\bf R}^2\)</span>, the space of solutions of the homogeneous system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+B v = \left ( \begin{array}{c} y \\ 0 \end{array} \right ) = 0
+\]</div>
+</div>
+<p>is our eigenspace, namely</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_1 = \{v \in {\bf R}^2 \ | B v = 0 \} = \{ (x, 0) \ | \ x \in {\bf R} \}.
+\]</div>
+</div>
+<p>This space is 1-dimensional, and has a basis consisting of the (single) vector <span class="arithmatex">\((1,0)\)</span>. Thus, <span class="arithmatex">\(A\)</span> is <em>not</em> diagonalizable.</p>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 6.21</strong></p>
+<p><span id="ex-rotation-matrix-eigenvalues" label="ex:rotation-matrix-eigenvalues"></span> We continue the discussion of the rotation matrix <span class="arithmatex">\(A = \left ( \begin{array}{cc} 0 &amp; -1 \\ 1 &amp; 0 \end{array} \right )\)</span>. Its (complex) eigenvalues are <span class="arithmatex">\(\lambda_1 = i\)</span>, <span class="arithmatex">\(\lambda_2 = -i\)</span>. According to <a href="#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a>, <span class="arithmatex">\(A\)</span> is diagonalizable. We compute the eigenspaces, where we regard <span class="arithmatex">\(A\)</span> as a complex matrix:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_i = \{ v \in {{\bf C}}^2 \ | \ (A - i \cdot {\mathrm {id}}) v = 0 \}.
+\]</div>
+</div>
+<p>If <span class="arithmatex">\(v = \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right )\)</span>, then</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(A - i \cdot {\mathrm {id}}) v = \left ( \begin{array}{cc} -i &amp; -1 \\ 1 &amp; -i \end{array} \right ) \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right ) = \left ( \begin{array}{c} -iz_1-z_2 \\ z_1-iz_2 \end{array} \right ) \stackrel ! = \left ( \begin{array}{c} 0 \\ 0 \end{array} \right ).
+\]</div>
+</div>
+<p>This means <span class="arithmatex">\(z_1 = i z_2\)</span> from the second equation; the first is then also satisfied since <span class="arithmatex">\(-iz_1 - z_2 = -i(iz_2) - z_2=z_2-z_2 = 0\)</span>. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_i = \{ (iz, z) \ | \ z \in {{\bf C}} \},
+\]</div>
+</div>
+<p>i.e., as a complex vector space, <span class="arithmatex">\(E_i\)</span> is 1-dimensional and a basis of it is the vector <span class="arithmatex">\((i,1)\)</span>.</p>
+<p>Similarly,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_{-i} = \{ v\in {{\bf C}}^2 \ | \ (A + i \cdot {\mathrm {id}})v = 0\}.
+\]</div>
+</div>
+<p>Computing this leads to the linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(A + i \cdot {\mathrm {id}}) v = \left ( \begin{array}{cc} +i &amp; -1 \\ 1 &amp; +i \end{array} \right ) \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right ) = \left ( \begin{array}{c} iz_1-z_2 \\ z_1+iz_2 \end{array} \right ) \stackrel ! = \left ( \begin{array}{c} 0 \\ 0 \end{array} \right ).
+\]</div>
+</div>
+<p>This gives <span class="arithmatex">\(z_1 = -iz_2\)</span>, so that <span class="arithmatex">\(E_{-i} = \{(-iz, z) \ | \ z \in {{\bf C}}\}\)</span>, and a basis of it is the (single) vector <span class="arithmatex">\((-i, 1)\)</span>. Thus, the matrix <span class="arithmatex">\(P\)</span> above is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+P = \left ( \begin{array}{cc} i &amp; -i \\ 1 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 6.22</strong></p>
+<p><span id="ex-eigenvalues-example-010" label="ex:eigenvalues-example-010"></span> For <span class="arithmatex">\(A = \left ( \begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 0 \end{array} \right )\)</span>, <span class="arithmatex">\(\lambda = 0\)</span> is an eigenvalue (and <span class="arithmatex">\(\left ( \begin{array}{c} 0 \\ 1 \end{array} \right )\)</span> an 0-eigenvector) and <span class="arithmatex">\(\lambda = 1\)</span> is another eigenvalue (and <span class="arithmatex">\(\left ( \begin{array}{c} 1 \\ 0 \end{array} \right )\)</span> an 1-eigenvector).</p>
+</div>
+<div class="definition">
+<p class="env-number"><strong>Definition 6.23</strong></p>
+<p><span id="def-similar" label="def:similar"></span> We say that two square matrices <span class="arithmatex">\(A, B \in {\mathrm {Mat}}_{n \times n}\)</span> are <em>similar</em> if there is an invertible matrix <span class="arithmatex">\(P\)</span> such that <span class="arithmatex">\(PAP^{-1} = B\)</span>.</p>
+</div>
+<p>The question whether a given matrix <span class="arithmatex">\(A\)</span> is diagonalizable is a special case of the following more general question: given two square matrices <span class="arithmatex">\(A, B\)</span>, are they similar in the sense of the above definition?</p>
+<div class="proposition">
+<p class="env-number"><strong>Proposition 6.24</strong> (Related exercises: <a href="#ex-5-4-4">Exercise 6.12</a>, <a href="#ex-eigenvalues-exercise-005">Exercise 6.8</a>)</p>
+<p><span id="prop-similarity-necessary-conditions" label="prop:similarity-necessary-conditions"></span> If <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are similar, then the following holds:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\det A = \det B\)</span>,</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\mathrm{tr} A = \mathrm{tr} B\)</span> (the traces, see <a href="../maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>),</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\chi_A(t) = \chi_B(t)\)</span>,</p>
+</li>
+<li>
+<p><span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> have the same eigenvalues. The eigenspaces are related like so: if <span class="arithmatex">\(B=PAP^{-1}\)</span>, then</p>
+</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    E_\lambda(B)=P(E_\lambda(A))\quad\text{for every }\lambda.
+\]</div>
+</div>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="arithmatex">\(B=PAP^{-1}\)</span> with <span class="arithmatex">\(P\)</span> invertible. For the determinant, using multiplicativity of the determinant (<a href="../determinants/#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det B=\det(PAP^{-1})=\det P\,\det A\,\det(P^{-1})=\det A.
+\]</div>
+</div>
+<p>For the trace, we use the statement proved in <a href="../maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a> (marked * below):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\mathrm{tr}(B)=\mathrm{tr}(P(AP^{-1})) \stackrel *=\mathrm{tr}((AP^{-1})P)=\mathrm{tr}(A).
+\]</div>
+</div>
+<p>For the characteristic polynomial the argument is similar as for the determinant:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\chi_B(t)
+&amp;=\det(B-t\,\mathrm{id})
+=\det(PAP^{-1}-t\,\mathrm{id}) \\
+&amp;=\det\bigl(P(A-t\,\mathrm{id})P^{-1}\bigr)
+=\det P\,\det(A-t\,\mathrm{id})\,\det(P^{-1}) \\
+&amp;=\det(A-t\,\mathrm{id})
+=\chi_A(t).
+\end{align*}
+\]</div>
+</div>
+<p>Hence <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> have the same characteristic polynomial, and therefore the same eigenvalues.</p>
+<p>Finally, let <span class="arithmatex">\(\lambda\in{\bf R}\)</span>. If <span class="arithmatex">\(v\in E_\lambda(A)\)</span>, then <span class="arithmatex">\(Av=\lambda v\)</span>, so</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+B(Pv)=PAP^{-1}(Pv)=PAv=\lambda Pv,
+\]</div>
+</div>
+<p>hence <span class="arithmatex">\(Pv\in E_\lambda(B)\)</span>. Thus <span class="arithmatex">\(P(E_\lambda(A))\subseteq E_\lambda(B)\)</span>. Conversely, if <span class="arithmatex">\(w\in E_\lambda(B)\)</span>, then <span class="arithmatex">\(Bw=\lambda w\)</span>, and multiplying by <span class="arithmatex">\(P^{-1}\)</span> gives</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A(P^{-1}w)=\lambda (P^{-1}w),
+\]</div>
+</div>
+<p>so <span class="arithmatex">\(P^{-1}w\in E_\lambda(A)\)</span>, i.e. <span class="arithmatex">\(w\in P(E_\lambda(A))\)</span>. Therefore <span class="arithmatex">\(E_\lambda(B)=P(E_\lambda(A))\)</span>. ◻</p>
+</div>
+<div class="remark">
+<p>Conversely, it is not true that if the above conditions hold, then <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are similar: The matrices</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A=
+\begin{pmatrix}
+0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;1&amp;0\\
+0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0
+\end{pmatrix},
+\qquad
+B=
+\begin{pmatrix}
+0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1\\
+0&amp;0&amp;0&amp;0
+\end{pmatrix}
+\]</div>
+</div>
+<p>both have 0 as their only eigenvalue. The eigenspaces <span class="arithmatex">\(E_0(A)\)</span> and <span class="arithmatex">\(E_0(B)\)</span> are both 2-dimensional, but <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are not similar, as one can see by observing that <span class="arithmatex">\(A^2 \ne 0\)</span> while <span class="arithmatex">\(B^2 = 0\)</span>. And if <span class="arithmatex">\(B = PAP^{-1}\)</span>, then <span class="arithmatex">\(B^2 = PAP^{-1}PAP^{-1} = PA^2P^{-1}\)</span> and likewise <span class="arithmatex">\(B^3 = PA^3P^{-1}\)</span>, giving a contradiction. A sufficient condition for similarity can be expressed in terms of the so-called <em>Jordan normal form</em>, which we will not discuss in this course.</p>
+</div>
+<h2 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h2>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.1</strong></p>
+<p><span id="ex-eigenvalues-exercise-001" label="ex:eigenvalues-exercise-001"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-001" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-001">Solution C.6.1</a>.) Is the following matrix diagonalizable?</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{ccc} 2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 2 \end{array} \right ).
+\]</div>
+</div>
+<p>Hint: you will find that the eigenvalues of <span class="arithmatex">\(A\)</span> are among the numbers <span class="arithmatex">\(0, 1, 2, 3\)</span>. You will be able to choose basis vectors of the eigenspaces all of whose coordinates are <span class="arithmatex">\(-1, 0, 1\)</span>.</p>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.2</strong></p>
+<p><span id="exercise-eigenvalues-2x2" label="exercise.eigenvalues.2x2"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-exercise-eigenvalues-2x2" data-reference-type="ref+Label" data-reference="sol--exercise.eigenvalues.2x2">Solution C.6.2</a>.) Let <span class="arithmatex">\(A = \left ( \begin{array}{cc} a &amp; b \\ c &amp; d \end{array} \right )\)</span>. Show that:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\chi_A(t) = t^2 - {{\mathrm {tr}}} (A) t + \det A = t^2 - (a+d) t + (ad-bc)\)</span>. Here <span class="arithmatex">\({{\mathrm {tr}}} (A)\)</span> is the <em>trace</em> of <span class="arithmatex">\(A\)</span>, cf. <a href="../maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>.</p>
+</li>
+<li>
+<p>The eigenvalues of <span class="arithmatex">\(A\)</span> are</p>
+</li>
+</ul>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \lambda_{1/2} = \frac{a+d}2 \pm \sqrt{\frac{(a-b)^2}4+4bc}.
+\]</div>
+</div>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.3</strong></p>
+<p><span id="ex-eigenvalues-exercise-002" label="ex:eigenvalues-exercise-002"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-002" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-002">Solution C.6.3</a>.) For each of the following matrices, compute <span class="arithmatex">\(\chi_A(t)\)</span>, the eigenvalues of <span class="arithmatex">\(A\)</span>, the eigenspaces for these eigenvalues. Also decide whether <span class="arithmatex">\(A\)</span> is diagonalizable and compute an eigenbasis if one exists.</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(A = \left ( \begin{array}{cc} 3 &amp; 5 \\ 1 &amp; -1 \end{array} \right )\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(A = \left ( \begin{array}{ccc} 0 &amp; 1 &amp; 0 \\ 3 &amp; 0 &amp; 1 \\ 2 &amp; 0 &amp; 0 \end{array} \right )\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(A = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; \frac 32 \\ 0 &amp; 0 &amp; 1 \end{array} \right )\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(A = \left ( \begin{array}{ccc} 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \end{array} \right )\)</span></p>
+</li>
+</ol>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.4</strong></p>
+<p><span id="ex-eigenvalues-exercise-003" label="ex:eigenvalues-exercise-003"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-003" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-003">Solution C.6.4</a>.) Consider the matrix <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 2 \\ 1 &amp; 0 &amp; 1 \end{array} \right )\)</span>. Compute its characteristic polynomial, its eigenvalues and its eigenspaces. Is <span class="arithmatex">\(A\)</span> diagonalizable? If so, find a basis of <span class="arithmatex">\({\bf R}^3\)</span> such that the associated matrix is a diagonal matrix, as in <a href="#def-diagonalizable" data-reference-type="ref+Label" data-reference="def:diagonalizable">Definition 6.14</a>.</p>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.5</strong></p>
+<p><span id="ex-5-1" label="ex 5.1"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-1" data-reference-type="ref+Label" data-reference="sol--ex 5.1">Solution C.6.5</a>.) Let</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+f: {\bf R}^3 \to {\bf R}^3
+\]</div>
+</div>
+<p>be the linear map such that <span class="arithmatex">\(f(1,0,1)=(2,0,2)\)</span>, <span class="arithmatex">\(\ker f = L((1,1,1))\)</span> and <span class="arithmatex">\(f(2,0,-3)=(-2,0,3)\)</span>. Compute the matrix of <span class="arithmatex">\(f\)</span> with respect to the standard basis.</p>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.6</strong></p>
+<p><span id="ex-eigenvalues-exercise-004" label="ex:eigenvalues-exercise-004"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-004" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-004">Solution C.6.6</a>.) For which <span class="arithmatex">\(a \in {\bf R}\)</span> is the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A_a = \left ( \begin{array}{ccc} a &amp; 0 &amp; 0 \\ a-2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 \end{array} \right )
+\]</div>
+</div>
+<p>diagonalizable?</p>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.7</strong></p>
+<p><span id="ex-5-2" label="ex 5.2"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-2" data-reference-type="ref+Label" data-reference="sol--ex 5.2">Solution C.6.7</a>.) For a parameter <span class="arithmatex">\(a \in {\bf R}\)</span>, let</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A_a = \left ( \begin{array}{ccc} 4 &amp; 0 &amp; 4 \\ a &amp; 2 &amp; a \\ -2 &amp; 0 &amp; -2 \end{array} \right ).
+\]</div>
+</div>
+<ol>
+<li>
+<p>Compute the characteristic polynomial and the eigenvalues of <span class="arithmatex">\(A_a\)</span>, for all <span class="arithmatex">\(a \in {\bf R}\)</span>.</p>
+</li>
+<li>
+<p>Compute the values of <span class="arithmatex">\(a\)</span> for which <span class="arithmatex">\(A_a\)</span> is diagonalizable. For these <span class="arithmatex">\(a\)</span>, find an invertible matrix <span class="arithmatex">\(P\)</span> such that <span class="arithmatex">\(P^{-1} A_a P\)</span> is a diagonal matrix.</p>
+</li>
+</ol>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.8</strong></p>
+<p><span id="ex-eigenvalues-exercise-005" label="ex:eigenvalues-exercise-005"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-005" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-005">Solution C.6.8</a>.) Consider the matrices</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; 0 \\ 1 &amp; -1 &amp; 1 \end{array} \right ) \ \text{ and } \ B = \left ( \begin{array}{ccc} 2 &amp; 1 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<ol>
+<li>
+<p>Compute the eigenvalues and eigenvectors of <span class="arithmatex">\(A\)</span> and show <span class="arithmatex">\(A\)</span> is diagonalizable.</p>
+</li>
+<li>
+<p>Show that the characteristic polynomials of <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are the same. Compute the eigenvalues and eigenspaces of <span class="arithmatex">\(B\)</span>. Explain why <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> do <em>not</em> represent the same linear map with respect to different bases!</p>
+</li>
+</ol>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.9</strong></p>
+<p><span id="ex-eigenvalues-exercise-006" label="ex:eigenvalues-exercise-006"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-006" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-006">Solution C.6.9</a>.) For a parameter <span class="arithmatex">\(t \in {\bf R}\)</span>, consider the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A_t = \left ( \begin{array}{ccc} -1 &amp; 2 &amp; t \\ 2 &amp; 0 &amp; -2 \\ t &amp; -2 &amp; -1 \end{array} \right ).
+\]</div>
+</div>
+<ol>
+<li>
+<p>For which values of <span class="arithmatex">\(t\)</span> does <span class="arithmatex">\(A_t\)</span> have 0 as an eigenvalue?</p>
+</li>
+<li>
+<p>Compute the eigenvalues and eigenspaces of <span class="arithmatex">\(A_t\)</span> for those values of <span class="arithmatex">\(t\)</span> obtained in the previous part.</p>
+</li>
+</ol>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.10</strong></p>
+<p><span id="ex-eigenvalues-exercise-007" label="ex:eigenvalues-exercise-007"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-007" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-007">Solution C.6.10</a>.) Consider the space <span class="arithmatex">\({\mathrm {Mat}}_{2 \times 2}\)</span> of <span class="arithmatex">\(2 \times 2\)</span>-vector spaces. Consider <span class="arithmatex">\(A = \left ( \begin{array}{cc} -4 &amp; 8 \\ 1 &amp; -2 \end{array} \right )\)</span> and the map</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+F: {\mathrm {Mat}}_{2 \times 2} \to {\mathrm {Mat}}_{2 \times 2}, X \mapsto AX.
+\]</div>
+</div>
+<ol>
+<li>
+<p>Is <span class="arithmatex">\(F\)</span> a linear map? Justify your answer.</p>
+</li>
+<li>
+<p>Compute the <span class="arithmatex">\(4 \times 4\)</span>-matrix of <span class="arithmatex">\(F\)</span> with respect to the standard basis of <span class="arithmatex">\({\mathrm {Mat}}_{2 \times 2}\)</span>, i.e., the matrices</p>
+</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    E_{11} = \left ( \begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 0 \end{array} \right ), E_{12} = \left ( \begin{array}{cc} 0 &amp; 1 \\ 0 &amp; 0 \end{array} \right ), E_{21} = \left ( \begin{array}{cc} 0 &amp; 0 \\ 1 &amp; 0 \end{array} \right ), E_{22} = \left ( \begin{array}{cc} 0 &amp; 0 \\ 0 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+<ol>
+<li>
+<p>Compute a basis of <span class="arithmatex">\(\ker F\)</span> and <span class="arithmatex">\({\operatorname{im}\ } F\)</span>.</p>
+</li>
+<li>
+<p>Compute the eigenvalues and eigenspaces of <span class="arithmatex">\(F\)</span>.</p>
+</li>
+</ol>
+<div class="remark">
+<p class="env-number"><strong>Remark 6.26</strong></p>
+<p><span id="rem-eigenvalues-remark-002" label="rem:eigenvalues-remark-002"></span> The linearity of <span class="arithmatex">\(F\)</span> is a consequence of <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.59</a>. It is also very similar to <a href="../maps/#prop-matrix-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-linear-map">Proposition 4.19</a>.</p>
+</div>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.11</strong></p>
+<p><span id="ex-5-4-3" label="ex 5.4.3"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-4-3" data-reference-type="ref+Label" data-reference="sol--ex 5.4.3">Solution C.6.11</a>.) Consider the two matrices</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 2 \\ 0 &amp; 3 &amp; 0 \\ 0 &amp; 0 &amp; 3 \end{array} \right ) \text{ and } B = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 3 &amp; 2 \\ 0 &amp; 0 &amp; 3 \end{array} \right ).
+\]</div>
+</div>
+<p>Do they represent the same linear map <span class="arithmatex">\(f : {\bf R}^3 \to {\bf R}^3\)</span> (with respect to different bases)?</p>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.12</strong></p>
+<p><span id="ex-5-4-4" label="ex 5.4.4"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-4-4" data-reference-type="ref+Label" data-reference="sol--ex 5.4.4">Solution C.6.12</a>.) Let <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; 1 \\ 0 &amp; 0 &amp; 2 \end{array} \right )\)</span>. Determine the eigenvalues of <span class="arithmatex">\(A\)</span> and the corresponding eigenspaces. Is <span class="arithmatex">\(A\)</span> diagonalizable? Is <span class="arithmatex">\(A^2\)</span> <em>similar</em> to <span class="arithmatex">\(A\)</span>? I.e., does <span class="arithmatex">\(A^2\)</span> represent the same linear map <span class="arithmatex">\({\bf R}^3 \to {\bf R}^3\)</span> as <span class="arithmatex">\(A\)</span>?</p>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.13</strong></p>
+<p><span id="ex-5-5" label="ex 5.5"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-5" data-reference-type="ref+Label" data-reference="sol--ex 5.5">Solution C.6.13</a>.) Consider the vectors <span class="arithmatex">\(v_1 = (1,0,1)\)</span>, <span class="arithmatex">\(v_2 = (1,1,1)\)</span> and <span class="arithmatex">\(v_3=(1,1,2)\)</span>.</p>
+<ol>
+<li>
+<p>Explain why there is a unique linear map <span class="arithmatex">\(f : {\bf R}^3 \to {\bf R}^3\)</span> such that <span class="arithmatex">\(f(v_1)=(0,0,0)\)</span>, <span class="arithmatex">\(f(v_2)=(1,0,3)\)</span> and <span class="arithmatex">\(v_3\)</span> is an eigenvector of eigenvalue 4.</p>
+</li>
+<li>
+<p>Compute the matrix <span class="arithmatex">\(A\)</span> of <span class="arithmatex">\(f\)</span> with respect to the basis <span class="arithmatex">\(v_1, v_2, v_3\)</span> (both on the domain and on the codomain).</p>
+</li>
+<li>
+<p>Compute the matrix <span class="arithmatex">\(B\)</span> of <span class="arithmatex">\(f\)</span> with respect to the standard basis (both for the domain and the codomain).</p>
+</li>
+<li>
+<p>For <span class="arithmatex">\(t \in {\bf R}\)</span>, consider the vector <span class="arithmatex">\(v_t = (2,t,5)\)</span>. For which values of <span class="arithmatex">\(t\)</span> is <span class="arithmatex">\(v_t \in {\operatorname{im}\ } f\)</span>?</p>
+</li>
+</ol>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.14</strong></p>
+<p><span id="ex-5-7" label="ex 5.7"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-7" data-reference-type="ref+Label" data-reference="sol--ex 5.7">Solution C.6.14</a>.) Consider the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \begin{pmatrix}
+0 &amp; 2 &amp; t \\
+-3 &amp; -5 &amp; 6 \\
+-2 &amp; -2 &amp; 5
+\end{pmatrix}
+\]</div>
+</div>
+<ol>
+<li>
+<p>Determine the value of <span class="arithmatex">\(t\)</span> for which <span class="arithmatex">\(A\)</span> is <em>not</em> invertible.</p>
+</li>
+<li>
+<p>We now put <span class="arithmatex">\(t = 2\)</span> for the remainder of this exercise. Determine the value of <span class="arithmatex">\(a\)</span> for which the vector <span class="arithmatex">\(v = (2,0,a)\)</span> is an eigenvector of <span class="arithmatex">\(A\)</span>. What is the corresponding eigenvalue?</p>
+</li>
+<li>
+<p>Determine all the eigenvalues of <span class="arithmatex">\(A\)</span> and decide whether <span class="arithmatex">\(A\)</span> is diagonalizable.</p>
+</li>
+<li>
+<p>Decide whether <span class="arithmatex">\(A\)</span> is similar to the matrix <span class="arithmatex">\(A^2\)</span> (justify your response).</p>
+</li>
+</ol>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.15</strong></p>
+<p><span id="ex-5-9" label="ex 5.9"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-9" data-reference-type="ref+Label" data-reference="sol--ex 5.9">Solution C.6.15</a>.) Consider the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \begin{pmatrix}
+2 &amp; 0 &amp; -1 \\
+1 &amp; 1 &amp; 2 \\
+-1 &amp; 1 &amp; t
+\end{pmatrix}
+\]</div>
+</div>
+<ol>
+<li>
+<p>Compute the value of <span class="arithmatex">\(t\)</span> for which the kernel of <span class="arithmatex">\(A\)</span> is different from <span class="arithmatex">\(\{0\}\)</span>.</p>
+</li>
+<li>
+<p>For the remainder of the exercise we put <span class="arithmatex">\(t\)</span> to be equal to the value computed in part (a). Compute the characteristic polynomial and the eigenvalues of <span class="arithmatex">\(A\)</span>.</p>
+</li>
+<li>
+<p>Find an invertible matrix <span class="arithmatex">\(P\)</span> such that <span class="arithmatex">\(P^{-1}AP\)</span> is a diagonal matrix.</p>
+</li>
+<li>
+<p>Explain why any <span class="arithmatex">\(3 \times 3\)</span>-matrix <span class="arithmatex">\(B\)</span> such that <span class="arithmatex">\(\chi_A(t) = \chi_B(t)\)</span> is diagonalizable.</p>
+</li>
+</ol>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 6.16</strong></p>
+<p><span id="ex-5-10" label="ex 5.10"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-10" data-reference-type="ref+Label" data-reference="sol--ex 5.10">Solution C.6.16</a>.) Consider the matrix <span class="arithmatex">\(A = \begin{pmatrix}
+1 &amp; 0 &amp; t \\
+1 &amp; 2 &amp; 1 \\
+2 &amp; 0 &amp; -1
+\end{pmatrix}\)</span></p>
+<ol>
+<li>
+<p>For what value of <span class="arithmatex">\(t \in {\bf R}\)</span> is the matrix <span class="arithmatex">\(A\)</span> <em>non-</em>invertible?</p>
+</li>
+<li>
+<p>For each <span class="arithmatex">\(t \in {\bf R}\)</span>, determine the eigenvalues of <span class="arithmatex">\(A\)</span>. Specify for which values <span class="arithmatex">\(t \in {\bf R}\)</span> all the eigenvalues of <span class="arithmatex">\(A\)</span> are real numbers.</p>
+</li>
+<li>
+<p>Determine for which <span class="arithmatex">\(t \in {\bf R}\)</span> there are eigenvalues with multiplicity <span class="arithmatex">\(&gt; 1\)</span>.</p>
+</li>
+<li>
+<p>For the value of <span class="arithmatex">\(t\)</span> found in the first part of the exercise: compute a basis of all eigenspaces and decide whether <span class="arithmatex">\(A\)</span> is diagonalizable.</p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
