@@ -1,0 +1,74 @@
+[
+  {
+    "label": "eqn--sol.blah",
+    "anchor": "eqn-sol-blah",
+    "number": "C.1",
+    "destination": "equation.C.1",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "rem:solutions-remark-001",
+    "anchor": "rem-solutions-remark-001",
+    "number": "C.2",
+    "destination": "Bem.C.2",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "sol--ueb:exotic-scalar-multiplication",
+    "anchor": "sol-ueb-exotic-scalar-multiplication",
+    "number": "C.3.1",
+    "destination": "solution.C.3.1",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 2.1",
+    "anchor": "sol-ex-2-1",
+    "number": "C.3.2",
+    "destination": "solution.C.3.2",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 2.2",
+    "anchor": "sol-ex-2-2",
+    "number": "C.3.3",
+    "destination": "solution.C.3.3",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 2.3",
+    "anchor": "sol-ex-2-3",
+    "number": "C.3.4",
+    "destination": "solution.C.3.4",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 2.4",
+    "anchor": "sol-ex-2-4",
+    "number": "C.3.5",
+    "destination": "solution.C.3.5",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 2.5",
+    "anchor": "sol-ex-2-5",
+    "number": "C.3.6",
+    "destination": "solution.C.3.6",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 2.6",
+    "anchor": "sol-ex-2-6",
+    "number": "C.3.7",
+    "destination": "solution.C.3.7",
+    "type_code": "solution",
+    "type_name": "Solution"
+  }
+]

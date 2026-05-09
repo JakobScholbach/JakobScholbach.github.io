@@ -1,0 +1,1533 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wiki generated from LaTeX lecture notes">
+      
+      
+      
+      
+        <link rel="prev" href="../maps/">
+      
+      
+        <link rel="next" href="../eigenvalues/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Determinants - Linear Algebra Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#determinants" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Algebra Wiki" class="md-header__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Determinants
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Algebra Wiki" class="md-nav__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#determinants-of-2-times-2-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Determinants of \(2 \times 2\)-matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#determinants-of-larger-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Determinants of larger matrices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Determinants of larger matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Small matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#invertibility-and-determinants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invertibility and determinants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-properties-of-determinants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Further properties of determinants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercises
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Solutions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-complex-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complex numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-systems-of-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systems of linear equations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-vector-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-eigenvalues-and-eigenvectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenvalues and eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#determinants-of-2-times-2-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Determinants of \(2 \times 2\)-matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#determinants-of-larger-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Determinants of larger matrices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Determinants of larger matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Small matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#invertibility-and-determinants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invertibility and determinants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-properties-of-determinants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Further properties of determinants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercises
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="sect-determinants"></a></p>
+<h1 id="determinants">Determinants<a class="headerlink" href="#determinants" title="Permanent link">&para;</a></h1>
+<p>The determinant of a square matrix <span class="arithmatex">\(A\)</span> is a number that encodes important information about <span class="arithmatex">\(A\)</span>. For example, <span class="arithmatex">\(A\)</span> is invertible (<a href="../maps/#def-invertible-matrix" data-reference-type="ref+Label" data-reference="def:invertible-matrix">Definition 4.63</a>) if and only if the determinant of <span class="arithmatex">\(A\)</span> is nonzero (<a href="#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>).</p>
+<h2 id="determinants-of-2-times-2-matrices">Determinants of <span class="arithmatex">\(2 \times 2\)</span>-matrices<a class="headerlink" href="#determinants-of-2-times-2-matrices" title="Permanent link">&para;</a></h2>
+<p>We begin with the definition of determinants of <span class="arithmatex">\(2 \times 2\)</span>-matrices.</p>
+<div class="definition">
+<p class="env-number"><strong>Definition 5.1</strong> (Related exercises: <a href="#ex-determinants-exercise-003">Exercise 5.3</a>)</p>
+<p><span id="def-det-2-x-2" label="def:det-2-x-2"></span> Let</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A  = \left ( \begin{array}{cc} a &amp; b \\ c &amp; d \end{array} \right )
+\]</div>
+</div>
+<p>be a <span class="arithmatex">\(2 \times 2\)</span>-matrix. The <em>determinant</em> of <span class="arithmatex">\(A\)</span> is defined as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A := ad - bc.
+\]</div>
+</div>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 5.2</strong></p>
+<p><span id="ex-determinants-example-001" label="ex:determinants-example-001"></span></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\det \left ( \begin{array}{cc} 4 &amp; 7 \\ 2 &amp; -1 \end{array} \right ) = 4 \cdot (-1) - 7 \cdot 2 = -18\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\det \left ( \begin{array}{cc} 1 &amp; r \\ 0 &amp; 1 \end{array} \right ) = 1 \cdot 1 - r \cdot 0 = 1\)</span>. In particular, <span class="arithmatex">\(\det {\mathrm {id}}_2 = 1\)</span>.</p>
+</li>
+<li>
+<p>Consider a matrix <span class="arithmatex">\(A = \left ( \begin{array}{cc} a &amp; b \\ ra &amp; rb \end{array} \right )\)</span> whose second column is a multiple of the first (so that the columns are linearly dependent). Then</p>
+</li>
+</ul>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \det \left ( \begin{array}{cc} a &amp; b \\ ra &amp; rb \end{array} \right ) = a rb - bra = 0.
+\]</div>
+</div>
+<p>According to <a href="../maps/#cor-rows-columns-independent" data-reference-type="ref+Label" data-reference="cor:rows-columns-independent">Corollary 4.93</a>, <span class="arithmatex">\(A\)</span> is <em>not</em> invertible. This is an example of the fact alluded to above (cf. <a href="#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>).</p>
+</div>
+<p>Determinants carry the following geometric meaning. Recall that the <em>absolute value</em> of a real number <span class="arithmatex">\(r\)</span> is defined as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+|r| := \left \{ \begin{array}{ll} r &amp; r \ge 0 \\ -r &amp; r &lt; 0. \end{array} \right .
+\]</div>
+</div>
+<p>For example, <span class="arithmatex">\(|4| = 4\)</span> and <span class="arithmatex">\(|-5| = 5\)</span>.</p>
+<div class="lemma">
+<p class="env-number"><strong>Lemma 5.3</strong></p>
+<p><span id="lem-abs-val-det" label="lem:abs-val-det"></span> Let</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = (v \ v') = \left ( \begin{array}{cc} x &amp; x' \\ y &amp; y' \end{array} \right )
+\]</div>
+</div>
+<p>be a <span class="arithmatex">\(2 \times 2\)</span>-matrix, where <span class="arithmatex">\(v\)</span> and <span class="arithmatex">\(v' \in {\bf R}^2\)</span> are the two columns of <span class="arithmatex">\(A\)</span>. Then</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+| \det (A) | = \text{area}(v_1, v_2),
+\]</div>
+</div>
+<p>where the right hand side denotes the area of the parallelogram spanned by the two vectors <span class="arithmatex">\(v_1, v_2\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> We illustrate this geometrically in the case where all entries of <span class="arithmatex">\(A\)</span> are positive and the vectors <span class="arithmatex">\(v\)</span> and <span class="arithmatex">\(v'\)</span> lie as depicted, i.e., the angle from <span class="arithmatex">\(v\)</span> to <span class="arithmatex">\(v'\)</span> goes, informally speaking, counterclockwise. The area of the black rectangle is <span class="arithmatex">\((x+x')(y+y')\)</span>. The area of the two triangles whose long side is <span class="arithmatex">\(v\)</span> (resp. parallel to it), is <span class="arithmatex">\(\frac{xy}2\)</span>, so the area of these two triangles together is <span class="arithmatex">\(xy\)</span>. Likewise the total area of the triangles (parallel to) <span class="arithmatex">\(v'\)</span> is <span class="arithmatex">\(x'y'\)</span>. Finally, the area of the rectangle at the bottom right, resp. top left corner of the large rectangle is <span class="arithmatex">\(x'y\)</span>. Therefore, the area of the parallelogram is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+(x+x')(y+y') - xy - x'y' - 2x'y &amp; = xy+x'y+xy'+x'y'-xy-x'y'-2x'y \\ &amp; = xy' - x'y \\ &amp;= \det A.
+\end{align*}
+\]</div>
+</div>
+<div class="center">
+<p><img alt="image" src="../figures/png/determinants/determinants-fig-01.png" /></p>
+</div>
+<p>◻</p>
+</div>
+<p><a href="#lem-abs-val-det" data-reference-type="ref+Label" data-reference="lem:abs-val-det">Lemma 5.3</a> does not give any information about the sign of the determinant. Regarding that, we observe the following:</p>
+<div class="lemma">
+<p class="env-number"><strong>Lemma 5.4</strong></p>
+<p><span id="lem-swap-2-x-2" label="lem:swap-2-x-2"></span> Let <span class="arithmatex">\(A = \left ( \begin{array}{cc} x_1 &amp; x_2 \\ y_1 &amp; y_2 \end{array} \right )\)</span> and let</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+A' &amp; := \left ( \begin{array}{cc} x_2 &amp; x_1 \\ y_2 &amp; y_1 \end{array} \right )\\
+A'' &amp;:= \left ( \begin{array}{cc} y_1 &amp; y_2 \\ x_1 &amp; x_2 \end{array} \right )
+\end{align*}
+\]</div>
+</div>
+<p>be the matrices obtained from <span class="arithmatex">\(A\)</span> by swapping the two columns, resp. the two rows. Then</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A'' = \det A' = - \det A.
+\]</div>
+</div>
+<p>In other words, swapping two rows or two columns will change the sign of the determinant.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> This is directly clear from the definition. For example,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A' = x_2 y_1 - y_2 x_1 = -(x_1 y_2 - x_2 y_1) = - \det A.
+\]</div>
+</div>
+<p>◻</p>
+</div>
+<p>Thus, the determinant (as opposed to only its absolute value) records the area of the parallelogram spanned by the vectors and also the orientation.</p>
+<h2 id="determinants-of-larger-matrices">Determinants of larger matrices<a class="headerlink" href="#determinants-of-larger-matrices" title="Permanent link">&para;</a></h2>
+<p>There are various (equivalent) approaches to defining determinants of larger matrices. The following one is satisfactory from both a conceptual and a practical standpoint.</p>
+<div class="theorem">
+<p class="env-number"><strong>Theorem 5.5</strong> (Related exercises: <a href="#ex-determinants-exercise-002">Exercise 5.2</a>, <a href="#ex-determinants-exercise-004">Exercise 5.4</a>)</p>
+<p><span id="thm-det-universal-property" label="thm:det-universal-property"></span> There is a <em>unique</em> function, called the <em>determinant</em>,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det : {\mathrm {Mat}}_{n \times n} \to {\bf R}
+\]</div>
+</div>
+<p>with the following properties (throughout <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n})\)</span>:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\det ({\mathrm {id}}_n) = 1\)</span>,</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(A'\)</span> results from <span class="arithmatex">\(A\)</span> by interchanging two rows, then</p>
+</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    \det(A') = -\det(A).
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(5.6)</strong></p>
+<p><span id="eqn-det-alternating" label="eqn--det alternating"></span></p>
+<ol>
+<li>Let us write a matrix as <span class="arithmatex">\(\left ( \begin{array}{c} v_1 \\ \vdots \\ v_n \end{array} \right )\)</span>, i.e., <span class="arithmatex">\(v_i \in {\bf R}^n\)</span> is the <span class="arithmatex">\(i\)</span>-th row of the matrix. Then for any <span class="arithmatex">\(w \in {\bf R}^n\)</span> and any <span class="arithmatex">\(r \in {\bf R}\)</span>:</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    \det (\left ( \begin{array}{c} v_1 \\ \vdots \\ r v_i + w \\ \vdots \\ v_n \end{array} \right )) = 
+        r \det (\left ( \begin{array}{c} v_1 \\ \vdots \\ v_i \\ \vdots \\ v_n \end{array} \right )) + 
+        \det (\left ( \begin{array}{c} v_1 \\ \vdots \\ w \\ \vdots \\ v_n \end{array} \right )).
+\]</div>
+</div>
+</div>
+<div class="remark">
+<p class="env-number"><strong>Remark 5.7</strong> (Related exercises: <a href="#ex-4-2">Exercise 5.6</a>)</p>
+<p><span id="rem-determinants-remark-001" label="rem:determinants-remark-001"></span> The above operations are somewhat like elementary operations (<a href="../systems/#def-elementary-row-operations" data-reference-type="ref+Label" data-reference="def:elementary-row-operations">Definition 2.28</a>): if we take <span class="arithmatex">\(w = 0\)</span> above, then the formula says that multiplying any one row by <span class="arithmatex">\(r\)</span> (which may be zero, unlike in <a href="../systems/#def-elementary-row-operations" data-reference-type="ref+Label" data-reference="def:elementary-row-operations">Definition 2.28</a>), then the determinant also gets multiplied by <span class="arithmatex">\(r\)</span>. In particular, if <span class="arithmatex">\(A\)</span> has a zero row, then</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A = 0.
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(5.8)</strong></p>
+<p><span id="eqn-det-zero-row" label="eqn--det zero row"></span></p>
+</div>
+<div class="remark">
+<p class="env-number"><strong>Remark 5.9</strong> (Related exercises: <a href="#ex-4-2">Exercise 5.6</a>)</p>
+<p><span id="rem-det-zero-equal-rows" label="rem:det-zero-equal-rows"></span> We also have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A = 0
+\]</div>
+</div>
+<p>whenever two rows of <span class="arithmatex">\(A\)</span> are equal: indeed, the matrix <span class="arithmatex">\(A'\)</span> obtained by interchanging these rows is equal to <span class="arithmatex">\(A\)</span>, i.e., <span class="arithmatex">\(A' = A\)</span>, so that <span class="arithmatex">\(\det A = \det A'\)</span>. However, according to , we also have <span class="arithmatex">\(\det A' = - \det A\)</span>. Taking this together, we have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A = - \det A
+\]</div>
+</div>
+<p>and this is only possible if <span class="arithmatex">\(\det A = 0\)</span>.</p>
+</div>
+<div class="remark">
+<p class="env-number"><strong>Remark 5.10</strong></p>
+<p><span id="rem-determinants-remark-003" label="rem:determinants-remark-003"></span> The preceding remark also implies that for <span class="arithmatex">\(i \ne j\)</span> and <span class="arithmatex">\(r \in {\bf R}\)</span></p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\det \left ( \begin{array}{c} v_1 \\ \vdots \\ v_i + r v_j \\ \vdots \\ v_n \end{array} \right ) &amp; =  
+\det \left ( \begin{array}{c} v_1 \\ \vdots \\ v_i \\ \vdots \\ v_n \end{array} \right ) +
+r \det \left ( \begin{array}{c} v_1 \\ \vdots \\ v_j \\ \vdots \\ v_n \end{array} \right ) &amp; \text{where $v_j$ is in the $i$-th row!} \\
+&amp; = \det \left ( \begin{array}{c} v_1 \\ \vdots \\ v_i \\ \vdots \\ v_n \end{array} \right ) + r \left ( \begin{array}{c} \vdots \\ v_j \\ \vdots \\ v_j \\ \vdots \end{array} \right ) \\
+&amp; =  \det \left ( \begin{array}{c} v_1 \\ \vdots \\ v_i \\ \vdots \\ v_n \end{array} \right ) &amp; \text{by the above remark.}
+\end{align*}
+\]</div>
+</div>
+<p>In other words, adding an arbitrary multiple of some row to another row does not affect the determinant.</p>
+</div>
+<p>In order to get a feeling for this theorem, let us apply it to a concrete matrix, say</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{ccc} -2 &amp; 1 &amp; 8 \\ 1 &amp; 3 &amp; 5 \\ 0 &amp; 2 &amp; 4 \end{array} \right ).
+\]</div>
+</div>
+<p>Taking the theorem for granted, we will compute <span class="arithmatex">\(\det A\)</span> by stepwise applying the above rules and keeping track of how the determinant changes.</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\underbrace{\left ( \begin{array}{ccc} -2 &amp; 1 &amp; 8 \\ 1 &amp; 3 &amp; 5 \\ 0 &amp; 2 &amp; 4 \end{array} \right )}_{=A}
+\leadsto &amp; \underbrace{\left ( \begin{array}{ccc} 0 &amp; 7 &amp; 18 \\ 1 &amp; 3 &amp; 5 \\ 0 &amp; 2 &amp; 4 \end{array} \right )}_{=A_1} 
+\leadsto \underbrace{\left ( \begin{array}{ccc} 0 &amp; 1 &amp; 6 \\ 1 &amp; 3 &amp; 5 \\ 0 &amp; 2 &amp; 4 \end{array} \right )}_{=A_2}
+\leadsto \underbrace{\left ( \begin{array}{ccc} 0 &amp; 1 &amp; 6 \\ 1 &amp; 3 &amp; 5 \\ 0 &amp; 0 &amp; -8 \end{array} \right )}_{=A_3} \\
+\leadsto &amp; \underbrace{\left ( \begin{array}{ccc} 0 &amp; 1 &amp; 6 \\ 1 &amp; 3 &amp; 5 \\ 0 &amp; 0 &amp; 1 \end{array} \right )}_{=A_4}
+\leadsto \underbrace{\left ( \begin{array}{ccc} 0 &amp; 1 &amp; 6 \\ 1 &amp; 3 &amp; 5 \\ 0 &amp; 0 &amp; 1 \end{array} \right )}_{=A_5}
+\leadsto \underbrace{\left ( \begin{array}{ccc} 0 &amp; 1 &amp; 0 \\ 1 &amp; 3 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array} \right )}_{=A_6} \\
+\leadsto &amp; \underbrace{\left ( \begin{array}{ccc} 0 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array} \right )}_{=A_7} 
+\leadsto \underbrace{\left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array} \right )}_{=A_8 = {\mathrm {id}}_3}
+\end{align*}
+\]</div>
+</div>
+<p>From <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(A_1\)</span> to <span class="arithmatex">\(A_2\)</span> to <span class="arithmatex">\(A_3\)</span>, we have added appropriate multiples of some row to another one, so that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A = \det A_1 = \det A_2 = \det A_3.
+\]</div>
+</div>
+<p>We obtain <span class="arithmatex">\(A_4\)</span> from <span class="arithmatex">\(A_3\)</span> by multiplying the last row with <span class="arithmatex">\(- \frac 18\)</span>, so that <span class="arithmatex">\(\det A_4 = -\frac 18 \det A_3\)</span>. From <span class="arithmatex">\(A_4\)</span> to <span class="arithmatex">\(A_5\)</span> to <span class="arithmatex">\(A_6\)</span> to <span class="arithmatex">\(A_7\)</span>, we again added appropriate multiples to some other rows, so that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A_4 = \det A_5 = \det A_6 = \det A_7.
+\]</div>
+</div>
+<p>Finally, <span class="arithmatex">\(A_8\)</span> is obtained from <span class="arithmatex">\(A_7\)</span> by swapping the first two rows, so that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+1 = \det A_8 = - \det A_7.
+\]</div>
+</div>
+<p>Taking this all together we see that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A = \det A_3 = -8 \det A_4 = - 8 \det A_7 = + 8 \det A_8 = 8.
+\]</div>
+</div>
+<p>This shows that the above abstract description of the determinant can be used to compute determinants in practice.</p>
+<div class="proof">
+<p><em>Proof.</em> (of <a href="#thm-det-universal-property" data-reference-type="ref+Label" data-reference="thm:det-universal-property">Theorem 5.5</a>) We only sketch the proof idea: one basically proceeds, for a general square matrix, similarly to the computation above: one uses Gaussian elimination, i.e., elementary row operations to bring a given square matrix <span class="arithmatex">\(A\)</span> into reduced row-echelon form, say <span class="arithmatex">\(A \leadsto A'\)</span>. The properties in <a href="#thm-det-universal-property" data-reference-type="ref+Label" data-reference="thm:det-universal-property">Theorem 5.5</a> then imply how to compute <span class="arithmatex">\(\det A\)</span> in terms of <span class="arithmatex">\(\det A'\)</span>. If the resulting matrix <span class="arithmatex">\(A'\)</span> has a zero row, then <span class="arithmatex">\(\det A' = 0\)</span>. If it has no zero row, then <span class="arithmatex">\(A' = {\mathrm {id}}\)</span>, and <span class="arithmatex">\(\det A' = 1\)</span>. ◻</p>
+</div>
+<p><a id="sect-small-matrices"></a></p>
+<h3 id="small-matrices">Small matrices<a class="headerlink" href="#small-matrices" title="Permanent link">&para;</a></h3>
+<p>For practical purposes, it is useful to have an explicit formula at hand for small matrices:</p>
+<p>For a <span class="arithmatex">\(1 \times 1\)</span>-matrix <span class="arithmatex">\(A\)</span>, i.e., <span class="arithmatex">\(A = (a)\)</span>, we have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A = a.
+\]</div>
+</div>
+<p>The determinant of <span class="arithmatex">\(2 \times 2\)</span>-matrices defined in <a href="#def-det-2-x-2" data-reference-type="ref+Label" data-reference="def:det-2-x-2">Definition 5.1</a> satisfies the properties listed in <a href="#thm-det-universal-property" data-reference-type="ref+Label" data-reference="thm:det-universal-property">Theorem 5.5</a>.</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\det {\mathrm {id}}_2 = \det \left ( \begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array} \right ) = 1 \cdot 1 - 0 \cdot 0 = 1\)</span>.</p>
+</li>
+<li>
+<p>Swapping two rows yields a sign change in the determinant (<a href="#lem-swap-2-x-2" data-reference-type="ref+Label" data-reference="lem:swap-2-x-2">Lemma 5.4</a>).</p>
+</li>
+<li></li>
+</ul>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \begin{align*}
+  \det \left ( \begin{array}{cc} a &amp; b \\ c + r e &amp; d + rf \end{array} \right ) &amp; = a(d+rf) - b(c+re) \\ &amp; = ad-bc + r(af-be) \\ &amp; = \det \left ( \begin{array}{cc} a &amp; b \\ c &amp; d \end{array} \right ) + r \det \left ( \begin{array}{cc} a &amp; b \\ e &amp; f \end{array} \right ).
+  \end{align*}
+\]</div>
+</div>
+<p>Thus, the definition of <span class="arithmatex">\(\det\)</span> for general matrices agrees with the one in <a href="#def-det-2-x-2" data-reference-type="ref+Label" data-reference="def:det-2-x-2">Definition 5.1</a>.</p>
+<div class="lemma">
+<p class="env-number"><strong>Lemma 5.11</strong> (Related exercises: <a href="../eigenvalues/#ex-5-7">Exercise 6.14</a>, <a href="../eigenvalues/#ex-5-9">Exercise 6.15</a>, <a href="#ex-determinants-exercise-001">Exercise 5.1</a>, <a href="#ex-determinants-exercise-004">Exercise 5.4</a>, <a href="#ex-determinants-exercise-005">Exercise 5.7</a>)</p>
+<p><span id="lem-sarrus-rule" label="lem:Sarrus-rule"></span> For a <span class="arithmatex">\(3 \times 3\)</span>-matrix one can show that the determinant is given by the so-called <em>Sarrus’ rule</em>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det \left ( \begin{array}{ccc} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{array} \right ) = aei + bfg + cdh - ceg - bdi - afh.
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(5.12)</strong></p>
+<p><span id="eqn-sarrus" label="eqn--Sarrus"></span></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> One can prove by direct computation, that the function defined in satisfies the conditions in <a href="#thm-det-universal-property" data-reference-type="ref+Label" data-reference="thm:det-universal-property">Theorem 5.5</a>. ◻</p>
+</div>
+<p>A way to remember this formula is to write</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccccc} a &amp; b &amp; c &amp; a &amp; b \\ d &amp; e &amp; f &amp; d &amp; e \\ g &amp; h &amp; i &amp; g &amp; h \end{array} \right )
+\]</div>
+</div>
+<p>and take products of entries along the top-left-to-bottom-right diagonals with a positive sign, and the top-right-to-bottom-left diagonals with a negative sign:</p>
+<div class="center">
+<p><img alt="image" src="../figures/png/determinants/determinants-fig-02.png" /></p>
+</div>
+<div class="warning">
+<p>Sarrus’ rule does not apply to larger matrices. Instead, for matrices of size <span class="arithmatex">\(4 \times 4\)</span>, one can prove that <span class="arithmatex">\(\det A\)</span> is the sum of 24 expressions, each of which is a product of 4 entries of <span class="arithmatex">\(A\)</span>. See <a href="#ex-determinants-exercise-004" data-reference-type="ref+Label" data-reference="ex:determinants-exercise-004">Exercise 5.4</a> for a fully worked computation of a determinant of a <span class="arithmatex">\(4 \times 4\)</span>-matrix using different methods.</p>
+</div>
+<h2 id="invertibility-and-determinants">Invertibility and determinants<a class="headerlink" href="#invertibility-and-determinants" title="Permanent link">&para;</a></h2>
+<p>We can use the properties of the determinant in <a href="#thm-det-universal-property" data-reference-type="ref+Label" data-reference="thm:det-universal-property">Theorem 5.5</a> (and its proof) to obtain a useful criterion to decide when a matrix is invertible. Determinants can also be used to compute the inverse of an invertible matrix, however this is only of theoretical significance due to the complexity of the ensuing (iterative) algorithm.</p>
+<div class="definition">
+<p class="env-number"><strong>Definition 5.14</strong> (Related exercises: <a href="#ex-determinants-exercise-001">Exercise 5.1</a>)</p>
+<p><span id="def-cofactors" label="def:cofactors"></span> Let <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span>. For <span class="arithmatex">\(1 \le i, j \le n\)</span>, denote by <span class="arithmatex">\(A_{ij}\)</span> that is obtained from <span class="arithmatex">\(A\)</span> by deleting the <span class="arithmatex">\(i\)</span>-th row and the <span class="arithmatex">\(j\)</span>-th column. The number</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+c_{ij} := (-1)^{i+j} \det A_{ij}
+\]</div>
+</div>
+<p>is called the <span class="arithmatex">\((i,j)\)</span>-<em>cofactor</em> of <span class="arithmatex">\(A\)</span>.</p>
+<p>The <em>adjugate</em> of <span class="arithmatex">\(A\)</span> is the <span class="arithmatex">\(n \times n\)</span>-matrix defined as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\mathrm{adj}(A) = (c_{ij}(A))^T = (c_{ji}(A)).
+\]</div>
+</div>
+</div>
+<div class="theorem">
+<p class="env-number"><strong>Theorem 5.15</strong> (Related exercises: <a href="#ex-4-2">Exercise 5.6</a>, <a href="../eigenvalues/#ex-5-7">Exercise 6.14</a>, <a href="#ex-determinants-exercise-001">Exercise 5.1</a>, <a href="#ex-determinants-exercise-003">Exercise 5.3</a>, <a href="#ex-determinants-exercise-006">Exercise 5.8</a>)</p>
+<p><span id="thm-det-zero-niff-invertible" label="thm:det-zero-niff-invertible"></span> An <span class="arithmatex">\(n \times n\)</span>-matrix <span class="arithmatex">\(A\)</span> is invertible if and only if</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A \ne 0.
+\]</div>
+</div>
+<p>If this is the case, then the inverse can be computed using the so-called <em>adjugate formula</em>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A^{-1} = \frac 1 {\det A} \mathrm{adj}(A).
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(5.16)</strong></p>
+<p><span id="eqn-eqn-adjugate-formula" label="eqn--eqn:adjugate-formula"></span></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> We revisit the proof of <a href="#thm-det-universal-property" data-reference-type="ref+Label" data-reference="thm:det-universal-property">Theorem 5.5</a>: say <span class="arithmatex">\(A \leadsto A'\)</span>, a reduced row echelon matrix, by means of elementary operations (Gaussian elimination). In this process, one does not multiply any row by zero, so that <span class="arithmatex">\(\det A = 0\)</span> if and only if <span class="arithmatex">\(\det A' = 0\)</span>. We also know that <span class="arithmatex">\(A' = UA\)</span>, where <span class="arithmatex">\(U\)</span> is an invertible matrix (namely, a product of elementary matrices). Moreover, <span class="arithmatex">\(A'\)</span> is invertible if and only if <span class="arithmatex">\(A\)</span> is invertible (since <span class="arithmatex">\(U\)</span> is invertible). We therefore have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A \text{ is invertible} \Leftrightarrow A' \text{ is invertible} \stackrel ? \Leftrightarrow \det A' \ne 0 \Leftrightarrow \det A \ne 0
+\]</div>
+</div>
+<p>and it remains to show the middle equivalence.</p>
+<p>The matrix <span class="arithmatex">\(A'\)</span> is in reduced row echelon form. Thus, either <span class="arithmatex">\(A' = {\mathrm {id}}\)</span> or <span class="arithmatex">\(A'\)</span> contains a zero row. In the first event, <span class="arithmatex">\(A'\)</span> is invertible, and <span class="arithmatex">\(\det A' = 1 \ne 0\)</span>. In the second event, <span class="arithmatex">\(A'\)</span> is not invertible (by <a href="../maps/#cor-rows-columns-independent" data-reference-type="ref+Label" data-reference="cor:rows-columns-independent">Corollary 4.93</a>) and <span class="arithmatex">\(\det A' = 0\)</span> as was noted around .</p>
+<p>We skip the proof of the adjugate formula, cf. . ◻</p>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 5.17</strong> (Related exercises: <a href="#ex-determinants-exercise-006">Exercise 5.8</a>)</p>
+<p><span id="ex-determinants-example-002" label="ex:determinants-example-002"></span> For a <span class="arithmatex">\(2 \times 2\)</span>-matrix <span class="arithmatex">\(A = \left ( \begin{array}{cc} a &amp; b \\ c &amp; d \end{array} \right )\)</span>, the adjugate matrix is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cc} d &amp; -b \\ -c &amp; a \end{array} \right ).
+\]</div>
+</div>
+<p>Therefore, the inverse can be computed as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A^{-1} = \frac 1 {ad-bc} \left ( \begin{array}{cc} d &amp; -b \\ -c &amp; a \end{array} \right ).
+\]</div>
+</div>
+</div>
+<h2 id="further-properties-of-determinants">Further properties of determinants<a class="headerlink" href="#further-properties-of-determinants" title="Permanent link">&para;</a></h2>
+<div class="proposition">
+<p class="env-number"><strong>Proposition 5.18</strong> (Related exercises: <a href="../eigenvalues/#ex-5-4-3">Exercise 6.11</a>, <a href="#ex-determinants-exercise-002">Exercise 5.2</a>)</p>
+<p>(<em>Product formula</em>) <span id="prop-product-formula" label="prop:product-formula"></span> For two <span class="arithmatex">\(n \times n\)</span>-matrices <span class="arithmatex">\(A, B\)</span>, we have the following formula:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det (AB) = \det A \cdot \det B.
+\]</div>
+</div>
+<p>I.e., the determinant of a product (of square matrices of the same size) is the product of the two individual determinants.</p>
+</div>
+<p>In particular, this shows</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det (AB) = \det (BA),
+\]</div>
+</div>
+<p>even though <span class="arithmatex">\(AB \ne BA\)</span>!</p>
+<div class="proof">
+<p><em>Proof.</em> We don’t include a full proof, but only observe that one checks this by direct computation when <span class="arithmatex">\(A\)</span> is an elementary matrix. This implies the formula if <span class="arithmatex">\(A\)</span> is invertible, since then <span class="arithmatex">\(A\)</span> is a product of elementary matrices. If <span class="arithmatex">\(A\)</span> is not invertible, then one shows that <span class="arithmatex">\(AB\)</span> is also not invertible (for any <span class="arithmatex">\(B\)</span>), and therefore both <span class="arithmatex">\(\det A = 0\)</span> and <span class="arithmatex">\(\det (AB) = 0\)</span>, so the formula holds in this case too. See, e.g., for a proof. ◻</p>
+</div>
+<div class="remark">
+<p class="env-number"><strong>Remark 5.19</strong></p>
+<p><span id="rem-determinants-remark-004" label="rem:determinants-remark-004"></span> The determinant is therefore multiplicative, but it is <em>not</em> additive: one has</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det (A + B) \ne \det A + \det B,
+\]</div>
+</div>
+<p>e.g.</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det \left ( \begin{array}{cc} 2 &amp; 0 \\ 0 &amp; 2 \end{array} \right ) = 4 \ne 1 + 1 = \det \left ( \begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array} \right ) + \det \left ( \begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+</div>
+<div class="proposition">
+<p class="env-number"><strong>Proposition 5.20</strong> (Related exercises: <a href="#ex-4-1">Exercise 5.5</a>, <a href="#ex-determinants-exercise-005">Exercise 5.7</a>)</p>
+<p><span id="prop-det-triangular-matrix" label="prop:det-triangular-matrix"></span> Let <span class="arithmatex">\(A\)</span> be an <em>upper triangular matrix</em> or a <em>lower triangular matrix</em>, i.e., of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{cccc} a_{11} &amp; * &amp; \dots &amp; * \\ 0 &amp; \ddots &amp; \ddots &amp; \vdots \\ \vdots &amp; \ddots &amp; \ddots &amp; * \\ 0 &amp; \dots &amp; 0 &amp; a_{nn} \end{array} \right ),
+\]</div>
+</div>
+<p>resp.</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{cccc} a_{11} &amp; 0 &amp; \dots &amp; 0 \\ * &amp; \ddots &amp; \ddots &amp; \vdots \\ \vdots &amp; \ddots &amp; \ddots &amp; \vdots \\ * &amp; \dots &amp; * &amp; a_{nn} \end{array} \right ).
+\]</div>
+</div>
+<p>Here * stands for an arbitrary entry. Then</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A = a_{11} \cdot \dots \cdot a_{nn}.
+\]</div>
+</div>
+</div>
+<div class="proof">
+<p><em>Proof.</em> If one of the entries on the main diagonal, i.e., <span class="arithmatex">\(a_{11}, \dots, a_{nn}\)</span> is zero, then the columns of <span class="arithmatex">\(A\)</span> are linearly dependent, so that <span class="arithmatex">\(A\)</span> is not invertible and <span class="arithmatex">\(\det A = 0\)</span>. If instead all <span class="arithmatex">\(a_{ii} \ne 0\)</span>, we can divide the <span class="arithmatex">\(i\)</span>-th row by <span class="arithmatex">\(a_{ii}\)</span>, and assume the entries on the main diagonal are all 1. Then, adding appropriate multiples of the rows to the rows above (resp. below in the case of a lower triangular matrix), which does not affect the determinant, gives <span class="arithmatex">\(A \leadsto {\mathrm {id}}\)</span>, so that <span class="arithmatex">\(\det A = 1\)</span>, so the claim holds in this case. ◻</p>
+</div>
+<div class="proposition">
+<p class="env-number"><strong>Proposition 5.21</strong></p>
+<p><span id="prop-determinants-proposition-003" label="prop:determinants-proposition-003"></span> For <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span>, we have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A = \det (A^T),
+\]</div>
+</div>
+<p>i.e., the determinant does not change when passing from <span class="arithmatex">\(A\)</span> to its transpose (<a href="../maps/#def-transpose" data-reference-type="ref+Label" data-reference="def:transpose">Definition 4.88</a>).</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> For small matrices (of size at most <span class="arithmatex">\(3 \times 3\)</span>), this can be proved directly from the formulae in §<a href="#sect-small-matrices" data-reference-type="ref" data-reference="sect--small matrices">1.2.1</a>.</p>
+<p>In general, one may argue like this: if <span class="arithmatex">\(A\)</span> is not invertible, then <span class="arithmatex">\(A^T\)</span> is not invertible either (by <a href="../maps/#lem-properties-transposition" data-reference-type="ref+Label" data-reference="lem:properties-transposition">Lemma 4.90</a>). In this case, both sides of the equation are zero. If <span class="arithmatex">\(A\)</span> is invertible, it is a product of elementary matrices: <span class="arithmatex">\(A = U_1 \dots U_n\)</span>. We then have <span class="arithmatex">\(A^T = U_n^T \dots U_1^T\)</span>. By the product formula (<a href="#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>), we may therefore assume <span class="arithmatex">\(A\)</span> is an elementary matrix. In this case, one checks the claim by inspection:</p>
+<ul>
+<li>
+<p>for <span class="arithmatex">\(A = \left ( \begin{array}{ccccccc} 1 &amp; &amp; &amp; &amp; &amp; &amp; \\ &amp; \ddots &amp; &amp; &amp; &amp; &amp; \\ &amp; &amp; 0 &amp; &amp; 1 &amp; &amp; \\ &amp; &amp; &amp; \ddots &amp; &amp; &amp; \\ &amp; &amp; 1 &amp; &amp; 0 &amp; &amp; \\ &amp; &amp; &amp; &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; &amp; &amp; &amp; 1 \end{array} \right )\)</span>, we have <span class="arithmatex">\(A^T = A\)</span>, so the claim clearly holds.</p>
+</li>
+<li>
+<p>Likewise, for <span class="arithmatex">\(A = \left ( \begin{array}{ccccccc} 1 &amp; &amp; &amp; &amp; &amp; &amp; \\ &amp; \ddots &amp; &amp; &amp; &amp; &amp; \\ &amp; &amp; 1 &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; r &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; 1 &amp; &amp; \\ &amp; &amp; &amp; &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; &amp; &amp; &amp; 1 \end{array} \right )\)</span>, we have <span class="arithmatex">\(A = A^T\)</span>, so again the claim holds obviously.</p>
+</li>
+<li>
+<p>The matrix <span class="arithmatex">\({\left ( \begin{array}{ccccccc} 1 &amp; &amp; &amp; &amp; &amp; &amp; \\ &amp; \ddots &amp; &amp; &amp; &amp; &amp; \\ &amp; &amp; 1 &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; \ddots &amp; &amp; &amp; \\ &amp; &amp; r &amp; &amp; 1 &amp; &amp; \\ &amp; &amp; &amp; &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; &amp; &amp; &amp; 1 \end{array} \right )}\)</span> is a lower triangular matrix, and its transpose an upper triangular matrix. Both have determinant 1 according to <a href="#prop-det-triangular-matrix" data-reference-type="ref+Label" data-reference="prop:det-triangular-matrix">Proposition 5.20</a>.</p>
+</li>
+</ul>
+<p>◻</p>
+</div>
+<div class="remark">
+<p class="env-number"><strong>Remark 5.22</strong></p>
+<p><span id="rem-determinants-remark-005" label="rem:determinants-remark-005"></span> We introduced the determinant using <em>row</em> operations. The preceding result implies that one can replace the word “row” in all of the above by the word “column”. Applying that, say, to <a href="#rem-det-zero-equal-rows" data-reference-type="ref+Label" data-reference="rem:det-zero-equal-rows">Remark 5.9</a> we obtain that <span class="arithmatex">\(\det A = 0\)</span> if <span class="arithmatex">\(A\)</span> has two identical columns.</p>
+</div>
+<div class="proposition">
+<p class="env-number"><strong>Proposition 5.23</strong> (Related exercises: <a href="../eigenvalues/#ex-5-10">Exercise 6.16</a>, <a href="../eigenvalues/#ex-5-2">Exercise 6.7</a>, <a href="#ex-determinants-exercise-004">Exercise 5.4</a>, <a href="../eigenvalues/#ex-eigenvalues-exercise-001">Exercise 6.1</a>, <a href="../eigenvalues/#ex-eigenvalues-exercise-006">Exercise 6.9</a>)</p>
+<p><span id="prop-cofactor-expansion" label="prop:cofactor-expansion"></span> Let <span class="arithmatex">\(A  = (a_{ij}) \in {\mathrm {Mat}}_{n \times n}\)</span>. Then, for any <span class="arithmatex">\(i\)</span>, one can compute the determinant using “<em>cofactor expansion</em>” along the <span class="arithmatex">\(i\)</span>-th row. That is, the following identity holds, where <span class="arithmatex">\(c_{ij}\)</span> are the cofactors of <span class="arithmatex">\(A\)</span> (<a href="#def-cofactors" data-reference-type="ref+Label" data-reference="def:cofactors">Definition 5.14</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A = a_{i1} c_{i1} + \dots + a_{in} c_{in}.
+\]</div>
+</div>
+<p>Similarly, one can compute it using cofactor expansion along the <span class="arithmatex">\(j\)</span>-th column, for any <span class="arithmatex">\(j\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det A = a_{1j} c_{1j} + \dots + a_{nj} c_{nj}.
+\]</div>
+</div>
+</div>
+<p>For a proof of this, see, e.g. .</p>
+<div class="example">
+<p class="env-number"><strong>Example 5.24</strong></p>
+<p><span id="ex-determinants-example-003" label="ex:determinants-example-003"></span> For example, we expand the determinant along the second row:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\det \left ( \begin{array}{ccc} 2 &amp; 3 &amp; 7 \\ -4 &amp; 0 &amp; 6 \\ 1 &amp; 5 &amp; 0 \end{array} \right ) &amp; = a_{21} c_{21} + a_{22} c_{22} + a_{23} c_{23} \\
+&amp; = (-4) (-1)^{1+2} \det \left ( \begin{array}{cc} 3 &amp; 7 \\ 5 &amp; 0 \end{array} \right ) + 0 (-1)^{2+2} \det \left ( \begin{array}{cc} 2 &amp; 7 \\ 1 &amp; 0 \end{array} \right ) \\
+&amp; + 6 (-1)^{2+3} \det \left ( \begin{array}{cc} 2 &amp; 3 \\ 1 &amp; 5 \end{array} \right ) \\
+&amp; = 4 \cdot (-35) + 0 - 6 \cdot 7 \\
+&amp; = -182.
+\end{align*}
+\]</div>
+</div>
+<p>The choice of the second row (as opposed to the others) is arbitrary, and the result is the same if we choose another row. However, the presence of the <span class="arithmatex">\(a_{22} = 0\)</span> simplifies the computation.</p>
+</div>
+<h2 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h2>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 5.1</strong></p>
+<p><span id="ex-determinants-exercise-001" label="ex:determinants-exercise-001"></span> (See <a href="../solutions-determinants/#sol-ex-determinants-exercise-001" data-reference-type="ref+Label" data-reference="sol--ex:determinants-exercise-001">Solution C.5.1</a>.) For which values of <span class="arithmatex">\(a, b \in {\bf R}\)</span> is the following matrix invertible? In this event, what is its inverse?</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{ccc} a &amp; b &amp; 3 \\ 2 &amp; 1 &amp; -1 \\ 1 &amp; -1 &amp; 4 \end{array} \right ).
+\]</div>
+</div>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 5.2</strong></p>
+<p><span id="ex-determinants-exercise-002" label="ex:determinants-exercise-002"></span> (See <a href="../solutions-determinants/#sol-ex-determinants-exercise-002" data-reference-type="ref+Label" data-reference="sol--ex:determinants-exercise-002">Solution C.5.2</a>.) Let <span class="arithmatex">\(A\)</span> be a square matrix such that <span class="arithmatex">\(A^2 = {\mathrm {id}}\)</span> (the identity matrix). Prove that <span class="arithmatex">\(\det(A) = \pm 1\)</span>.</p>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 5.3</strong></p>
+<p><span id="ex-determinants-exercise-003" label="ex:determinants-exercise-003"></span> (See <a href="../solutions-determinants/#sol-ex-determinants-exercise-003" data-reference-type="ref+Label" data-reference="sol--ex:determinants-exercise-003">Solution C.5.3</a>.) Compute the determinant of a <em>rotation matrix</em> (cf. <a href="../maps/#ex-rotation-matrix-general" data-reference-type="ref+Label" data-reference="ex:rotation-matrix-general">Example 4.18</a>),</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{cc} \cos r &amp; -\sin r \\ \sin r &amp; \cos r \end{array} \right ).
+\]</div>
+</div>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 5.4</strong></p>
+<p><span id="ex-determinants-exercise-004" label="ex:determinants-exercise-004"></span> (See <a href="../solutions-determinants/#sol-ex-determinants-exercise-004" data-reference-type="ref+Label" data-reference="sol--ex:determinants-exercise-004">Solution C.5.4</a>.) Compute the determinant of</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc} 2 &amp; 0 &amp; 1 &amp; 4 \\ -1 &amp; 3 &amp; 0 &amp; 2 \\ 1 &amp; 0 &amp; 2 &amp; -3 \\ 0 &amp; -2 &amp; 5 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 5.5</strong></p>
+<p><span id="ex-4-1" label="ex 4.1"></span> (See <a href="../solutions-determinants/#sol-ex-4-1" data-reference-type="ref+Label" data-reference="sol--ex 4.1">Solution C.5.5</a>.) Compute the determinant of <span class="arithmatex">\(\left ( \begin{array}{ccc} 3 &amp; 0 &amp; 0 \\ 1 &amp; 4 &amp; 0 \\ 2 &amp; -3 &amp; 5 \end{array} \right )\)</span> in three ways:</p>
+<ul>
+<li>
+<p>by using <a href="#thm-det-universal-property" data-reference-type="ref+Label" data-reference="thm:det-universal-property">Theorem 5.5</a>,</p>
+</li>
+<li>
+<p>by using Sarrus’s rule, ,</p>
+</li>
+<li>
+<p>by using <a href="#prop-det-triangular-matrix" data-reference-type="ref+Label" data-reference="prop:det-triangular-matrix">Proposition 5.20</a>.</p>
+</li>
+</ul>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 5.6</strong></p>
+<p><span id="ex-4-2" label="ex 4.2"></span> (See <a href="../solutions-determinants/#sol-ex-4-2" data-reference-type="ref+Label" data-reference="sol--ex 4.2">Solution C.5.6</a>.) Compute the determinants of the following matrices. You should be able to do this very quickly:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc} 1 &amp; 5 &amp; 8 \\ 40 &amp; -9 &amp; 1 \\ 0 &amp; 0 &amp; 0 \end{array} \right ) \ \text{and } \ \left ( \begin{array}{ccc} 1 &amp; 5 &amp; 8 \\ 40 &amp; -9 &amp; 1 \\ 1 &amp; 5 &amp; 8 \end{array} \right ).
+\]</div>
+</div>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 5.7</strong></p>
+<p><span id="ex-determinants-exercise-005" label="ex:determinants-exercise-005"></span> (See <a href="../solutions-determinants/#sol-ex-determinants-exercise-005" data-reference-type="ref+Label" data-reference="sol--ex:determinants-exercise-005">Solution C.5.7</a>.) Compute the determinants of</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc} 3 &amp; 26 &amp; -9 &amp; 3 \\ 0 &amp; 3 &amp; 1 &amp; 28 \\ 0 &amp; 0 &amp; 2 &amp; 71 \\ 0 &amp; 0 &amp; 0 &amp; 3 \end{array} \right ) \ \text{and } \left ( \begin{array}{ccc} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{array} \right ).
+\]</div>
+</div>
+</div>
+<div class="exercise">
+<p class="env-number"><strong>Exercise 5.8</strong></p>
+<p><span id="ex-determinants-exercise-006" label="ex:determinants-exercise-006"></span> (See <a href="../solutions-determinants/#sol-ex-determinants-exercise-006" data-reference-type="ref+Label" data-reference="sol--ex:determinants-exercise-006">Solution C.5.8</a>.) Compute the inverses of</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cc} 10 &amp; 9 \\ 11 &amp; 10 \end{array} \right ) \ \text{and } \ \left ( \begin{array}{ccc} 5 &amp; 2 &amp; -1 \\ 0 &amp; 0 &amp; 1 \\ 6 &amp; 2 &amp; 3 \end{array} \right ).
+\]</div>
+</div>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

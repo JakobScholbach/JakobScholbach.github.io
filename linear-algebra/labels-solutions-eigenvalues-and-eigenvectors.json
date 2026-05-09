@@ -1,0 +1,130 @@
+[
+  {
+    "label": "sol--ex:eigenvalues-exercise-001",
+    "anchor": "sol-ex-eigenvalues-exercise-001",
+    "number": "C.6.1",
+    "destination": "solution.C.6.1",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:eigenvalues-exercise-007",
+    "anchor": "sol-ex-eigenvalues-exercise-007",
+    "number": "C.6.10",
+    "destination": "solution.C.6.10",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 5.4.3",
+    "anchor": "sol-ex-5-4-3",
+    "number": "C.6.11",
+    "destination": "solution.C.6.11",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 5.4.4",
+    "anchor": "sol-ex-5-4-4",
+    "number": "C.6.12",
+    "destination": "solution.C.6.12",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 5.5",
+    "anchor": "sol-ex-5-5",
+    "number": "C.6.13",
+    "destination": "solution.C.6.13",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 5.7",
+    "anchor": "sol-ex-5-7",
+    "number": "C.6.14",
+    "destination": "solution.C.6.14",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 5.9",
+    "anchor": "sol-ex-5-9",
+    "number": "C.6.15",
+    "destination": "solution.C.6.15",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 5.10",
+    "anchor": "sol-ex-5-10",
+    "number": "C.6.16",
+    "destination": "solution.C.6.16",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--exercise.eigenvalues.2x2",
+    "anchor": "sol-exercise-eigenvalues-2x2",
+    "number": "C.6.2",
+    "destination": "solution.C.6.2",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:eigenvalues-exercise-002",
+    "anchor": "sol-ex-eigenvalues-exercise-002",
+    "number": "C.6.3",
+    "destination": "solution.C.6.3",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:eigenvalues-exercise-003",
+    "anchor": "sol-ex-eigenvalues-exercise-003",
+    "number": "C.6.4",
+    "destination": "solution.C.6.4",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 5.1",
+    "anchor": "sol-ex-5-1",
+    "number": "C.6.5",
+    "destination": "solution.C.6.5",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:eigenvalues-exercise-004",
+    "anchor": "sol-ex-eigenvalues-exercise-004",
+    "number": "C.6.6",
+    "destination": "solution.C.6.6",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 5.2",
+    "anchor": "sol-ex-5-2",
+    "number": "C.6.7",
+    "destination": "solution.C.6.7",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:eigenvalues-exercise-005",
+    "anchor": "sol-ex-eigenvalues-exercise-005",
+    "number": "C.6.8",
+    "destination": "solution.C.6.8",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:eigenvalues-exercise-006",
+    "anchor": "sol-ex-eigenvalues-exercise-006",
+    "number": "C.6.9",
+    "destination": "solution.C.6.9",
+    "type_code": "solution",
+    "type_name": "Solution"
+  }
+]

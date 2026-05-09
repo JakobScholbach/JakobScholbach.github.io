@@ -1,0 +1,266 @@
+[
+  {
+    "label": "sect--determinants",
+    "anchor": "sect-determinants",
+    "number": "5",
+    "destination": "chapter.5",
+    "type_code": "chapter",
+    "type_name": "Chapter"
+  },
+  {
+    "label": "def:det-2-x-2",
+    "anchor": "def-det-2-x-2",
+    "number": "5.1",
+    "destination": "Defi.5.1",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "rem:determinants-remark-003",
+    "anchor": "rem-determinants-remark-003",
+    "number": "5.10",
+    "destination": "Bem.5.10",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "lem:Sarrus-rule",
+    "anchor": "lem-sarrus-rule",
+    "number": "5.11",
+    "destination": "lemma.5.11",
+    "type_code": "lemma",
+    "type_name": "Lemma"
+  },
+  {
+    "label": "eqn--Sarrus",
+    "anchor": "eqn-sarrus",
+    "number": "5.12",
+    "destination": "equation.5.12",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "def:cofactors",
+    "anchor": "def-cofactors",
+    "number": "5.14",
+    "destination": "Defi.5.14",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "thm:det-zero-niff-invertible",
+    "anchor": "thm-det-zero-niff-invertible",
+    "number": "5.15",
+    "destination": "Theo.5.15",
+    "type_code": "Theo",
+    "type_name": "Theorem"
+  },
+  {
+    "label": "eqn--eqn:adjugate-formula",
+    "anchor": "eqn-eqn-adjugate-formula",
+    "number": "5.16",
+    "destination": "equation.5.16",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "ex:determinants-example-002",
+    "anchor": "ex-determinants-example-002",
+    "number": "5.17",
+    "destination": "Bsp.5.17",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "prop:product-formula",
+    "anchor": "prop-product-formula",
+    "number": "5.18",
+    "destination": "mySatz.5.18",
+    "type_code": "mySatz",
+    "type_name": "Proposition"
+  },
+  {
+    "label": "rem:determinants-remark-004",
+    "anchor": "rem-determinants-remark-004",
+    "number": "5.19",
+    "destination": "Bem.5.19",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "ex:determinants-example-001",
+    "anchor": "ex-determinants-example-001",
+    "number": "5.2",
+    "destination": "Bsp.5.2",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "sect--small matrices",
+    "anchor": "sect-small-matrices",
+    "number": "5.2.1",
+    "destination": "subsection.5.2.1",
+    "type_code": "subsection",
+    "type_name": "Subsection"
+  },
+  {
+    "label": "prop:det-triangular-matrix",
+    "anchor": "prop-det-triangular-matrix",
+    "number": "5.20",
+    "destination": "mySatz.5.20",
+    "type_code": "mySatz",
+    "type_name": "Proposition"
+  },
+  {
+    "label": "prop:determinants-proposition-003",
+    "anchor": "prop-determinants-proposition-003",
+    "number": "5.21",
+    "destination": "mySatz.5.21",
+    "type_code": "mySatz",
+    "type_name": "Proposition"
+  },
+  {
+    "label": "rem:determinants-remark-005",
+    "anchor": "rem-determinants-remark-005",
+    "number": "5.22",
+    "destination": "Bem.5.22",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "prop:cofactor-expansion",
+    "anchor": "prop-cofactor-expansion",
+    "number": "5.23",
+    "destination": "mySatz.5.23",
+    "type_code": "mySatz",
+    "type_name": "Proposition"
+  },
+  {
+    "label": "ex:determinants-example-003",
+    "anchor": "ex-determinants-example-003",
+    "number": "5.24",
+    "destination": "Bsp.5.24",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "lem:abs-val-det",
+    "anchor": "lem-abs-val-det",
+    "number": "5.3",
+    "destination": "lemma.5.3",
+    "type_code": "lemma",
+    "type_name": "Lemma"
+  },
+  {
+    "label": "lem:swap-2-x-2",
+    "anchor": "lem-swap-2-x-2",
+    "number": "5.4",
+    "destination": "lemma.5.4",
+    "type_code": "lemma",
+    "type_name": "Lemma"
+  },
+  {
+    "label": "thm:det-universal-property",
+    "anchor": "thm-det-universal-property",
+    "number": "5.5",
+    "destination": "Theo.5.5",
+    "type_code": "Theo",
+    "type_name": "Theorem"
+  },
+  {
+    "label": "eqn--det alternating",
+    "anchor": "eqn-det-alternating",
+    "number": "5.6",
+    "destination": "equation.5.6",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "rem:determinants-remark-001",
+    "anchor": "rem-determinants-remark-001",
+    "number": "5.7",
+    "destination": "Bem.5.7",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "eqn--det zero row",
+    "anchor": "eqn-det-zero-row",
+    "number": "5.8",
+    "destination": "equation.5.8",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "rem:det-zero-equal-rows",
+    "anchor": "rem-det-zero-equal-rows",
+    "number": "5.9",
+    "destination": "Bem.5.9",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "ex:determinants-exercise-001",
+    "anchor": "ex-determinants-exercise-001",
+    "number": "5.{1}",
+    "destination": "Ueba.5.1",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:determinants-exercise-002",
+    "anchor": "ex-determinants-exercise-002",
+    "number": "5.{2}",
+    "destination": "Ueba.5.2",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:determinants-exercise-003",
+    "anchor": "ex-determinants-exercise-003",
+    "number": "5.{3}",
+    "destination": "Ueba.5.3",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:determinants-exercise-004",
+    "anchor": "ex-determinants-exercise-004",
+    "number": "5.{4}",
+    "destination": "Ueba.5.4",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 4.1",
+    "anchor": "ex-4-1",
+    "number": "5.{5}",
+    "destination": "Ueba.5.5",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 4.2",
+    "anchor": "ex-4-2",
+    "number": "5.{6}",
+    "destination": "Ueba.5.6",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:determinants-exercise-005",
+    "anchor": "ex-determinants-exercise-005",
+    "number": "5.{7}",
+    "destination": "Ueba.5.7",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:determinants-exercise-006",
+    "anchor": "ex-determinants-exercise-006",
+    "number": "5.{8}",
+    "destination": "Ueba.5.8",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  }
+]

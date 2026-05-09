@@ -1,0 +1,338 @@
+[
+  {
+    "label": "sect--eigenvalues",
+    "anchor": "sect-eigenvalues",
+    "number": "6",
+    "destination": "chapter.6",
+    "type_code": "chapter",
+    "type_name": "Chapter"
+  },
+  {
+    "label": "def:eigenthings",
+    "anchor": "def-eigenthings",
+    "number": "6.1",
+    "destination": "Defi.6.1",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "cor:cx-matrix-eigenvalues",
+    "anchor": "cor-cx-matrix-eigenvalues",
+    "number": "6.10",
+    "destination": "Coro.6.10",
+    "type_code": "Coro",
+    "type_name": "Corollary"
+  },
+  {
+    "label": "dlm:eigenspace",
+    "anchor": "dlm-eigenspace",
+    "number": "6.11",
+    "destination": "DefiLemm.6.11",
+    "type_code": "DefiLemm",
+    "type_name": "Definition and Lemma"
+  },
+  {
+    "label": "rem:eigenvalues-remark-001",
+    "anchor": "rem-eigenvalues-remark-001",
+    "number": "6.12",
+    "destination": "Bem.6.12",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "ex:diagonalizable-2-x-2",
+    "anchor": "ex-diagonalizable-2-x-2",
+    "number": "6.13",
+    "destination": "Bsp.6.13",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "def:diagonalizable",
+    "anchor": "def-diagonalizable",
+    "number": "6.14",
+    "destination": "Defi.6.14",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "met:diagonalizability",
+    "anchor": "met-diagonalizability",
+    "number": "6.15",
+    "destination": "Meth.6.15",
+    "type_code": "Meth",
+    "type_name": "Method"
+  },
+  {
+    "label": "cor:diag-max",
+    "anchor": "cor-diag-max",
+    "number": "6.16",
+    "destination": "Coro.6.16",
+    "type_code": "Coro",
+    "type_name": "Corollary"
+  },
+  {
+    "label": "def:eigenbasis",
+    "anchor": "def-eigenbasis",
+    "number": "6.17",
+    "destination": "Defi.6.17",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "lem:eigenvalues-lemma-001",
+    "anchor": "lem-eigenvalues-lemma-001",
+    "number": "6.18",
+    "destination": "lemma.6.18",
+    "type_code": "lemma",
+    "type_name": "Lemma"
+  },
+  {
+    "label": "ex:eigenvalues-example-007",
+    "anchor": "ex-eigenvalues-example-007",
+    "number": "6.19",
+    "destination": "Bsp.6.19",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "eqn--eigenvalue eq",
+    "anchor": "eqn-eigenvalue-eq",
+    "number": "6.2",
+    "destination": "equation.6.2",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "ex:eigenvalues-example-008",
+    "anchor": "ex-eigenvalues-example-008",
+    "number": "6.20",
+    "destination": "Bsp.6.20",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "ex:rotation-matrix-eigenvalues",
+    "anchor": "ex-rotation-matrix-eigenvalues",
+    "number": "6.21",
+    "destination": "Bsp.6.21",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "ex:eigenvalues-example-010",
+    "anchor": "ex-eigenvalues-example-010",
+    "number": "6.22",
+    "destination": "Bsp.6.22",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "def:similar",
+    "anchor": "def-similar",
+    "number": "6.23",
+    "destination": "Defi.6.23",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "prop:similarity-necessary-conditions",
+    "anchor": "prop-similarity-necessary-conditions",
+    "number": "6.24",
+    "destination": "mySatz.6.24",
+    "type_code": "mySatz",
+    "type_name": "Proposition"
+  },
+  {
+    "label": "rem:eigenvalues-remark-002",
+    "anchor": "rem-eigenvalues-remark-002",
+    "number": "6.26",
+    "destination": "Bem.6.26",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "ex:eigenvalues-example-001",
+    "anchor": "ex-eigenvalues-example-001",
+    "number": "6.3",
+    "destination": "Bsp.6.3",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "ex:eigenvalues-example-002",
+    "anchor": "ex-eigenvalues-example-002",
+    "number": "6.4",
+    "destination": "Bsp.6.4",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "dlm:eigenvalues-definitionlemma-001",
+    "anchor": "dlm-eigenvalues-definitionlemma-001",
+    "number": "6.5",
+    "destination": "DefiLemm.6.5",
+    "type_code": "DefiLemm",
+    "type_name": "Definition and Lemma"
+  },
+  {
+    "label": "ex:concrete-2-x-2-eigenvalues",
+    "anchor": "ex-concrete-2-x-2-eigenvalues",
+    "number": "6.6",
+    "destination": "Bsp.6.6",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "ex:eigenvalues-example-004",
+    "anchor": "ex-eigenvalues-example-004",
+    "number": "6.7",
+    "destination": "Bsp.6.7",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "thm:eigenvalues-theorem-001",
+    "anchor": "thm-eigenvalues-theorem-001",
+    "number": "6.8",
+    "destination": "Theo.6.8",
+    "type_code": "Theo",
+    "type_name": "Theorem"
+  },
+  {
+    "label": "ex:eigenvalues-example-005",
+    "anchor": "ex-eigenvalues-example-005",
+    "number": "6.9",
+    "destination": "Bsp.6.9",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "ex:eigenvalues-exercise-007",
+    "anchor": "ex-eigenvalues-exercise-007",
+    "number": "6.{10}",
+    "destination": "Ueba.6.10",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 5.4.3",
+    "anchor": "ex-5-4-3",
+    "number": "6.{11}",
+    "destination": "Ueba.6.11",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 5.4.4",
+    "anchor": "ex-5-4-4",
+    "number": "6.{12}",
+    "destination": "Ueba.6.12",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 5.5",
+    "anchor": "ex-5-5",
+    "number": "6.{13}",
+    "destination": "Ueba.6.13",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 5.7",
+    "anchor": "ex-5-7",
+    "number": "6.{14}",
+    "destination": "Ueba.6.14",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 5.9",
+    "anchor": "ex-5-9",
+    "number": "6.{15}",
+    "destination": "Ueba.6.15",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 5.10",
+    "anchor": "ex-5-10",
+    "number": "6.{16}",
+    "destination": "Ueba.6.16",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:eigenvalues-exercise-001",
+    "anchor": "ex-eigenvalues-exercise-001",
+    "number": "6.{1}",
+    "destination": "Ueba.6.1",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "exercise.eigenvalues.2x2",
+    "anchor": "exercise-eigenvalues-2x2",
+    "number": "6.{2}",
+    "destination": "Ueba.6.2",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:eigenvalues-exercise-002",
+    "anchor": "ex-eigenvalues-exercise-002",
+    "number": "6.{3}",
+    "destination": "Ueba.6.3",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:eigenvalues-exercise-003",
+    "anchor": "ex-eigenvalues-exercise-003",
+    "number": "6.{4}",
+    "destination": "Ueba.6.4",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 5.1",
+    "anchor": "ex-5-1",
+    "number": "6.{5}",
+    "destination": "Ueba.6.5",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:eigenvalues-exercise-004",
+    "anchor": "ex-eigenvalues-exercise-004",
+    "number": "6.{6}",
+    "destination": "Ueba.6.6",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 5.2",
+    "anchor": "ex-5-2",
+    "number": "6.{7}",
+    "destination": "Ueba.6.7",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:eigenvalues-exercise-005",
+    "anchor": "ex-eigenvalues-exercise-005",
+    "number": "6.{8}",
+    "destination": "Ueba.6.8",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:eigenvalues-exercise-006",
+    "anchor": "ex-eigenvalues-exercise-006",
+    "number": "6.{9}",
+    "destination": "Ueba.6.9",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  }
+]

@@ -1,0 +1,226 @@
+[
+  {
+    "label": "L1 ex blah",
+    "anchor": "l1-ex-blah",
+    "number": "C.4",
+    "destination": "equation.C.4",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "sol--ex:euclid-polynomials-gs",
+    "anchor": "sol-ex-euclid-polynomials-gs",
+    "number": "C.7.1",
+    "destination": "solution.C.7.1",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.9",
+    "anchor": "sol-ex-6-9",
+    "number": "C.7.10",
+    "destination": "solution.C.7.10",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.10",
+    "anchor": "sol-ex-6-10",
+    "number": "C.7.11",
+    "destination": "solution.C.7.11",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.11",
+    "anchor": "sol-ex-6-11",
+    "number": "C.7.12",
+    "destination": "solution.C.7.12",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.12",
+    "anchor": "sol-ex-6-12",
+    "number": "C.7.13",
+    "destination": "solution.C.7.13",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:euclid-lines-plane",
+    "anchor": "sol-ex-euclid-lines-plane",
+    "number": "C.7.14",
+    "destination": "solution.C.7.14",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:euclid-poly-operator",
+    "anchor": "sol-ex-euclid-poly-operator",
+    "number": "C.7.15",
+    "destination": "solution.C.7.15",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:euclid-u-r4-orth",
+    "anchor": "sol-ex-euclid-u-r4-orth",
+    "number": "C.7.16",
+    "destination": "solution.C.7.16",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.13",
+    "anchor": "sol-ex-6-13",
+    "number": "C.7.17",
+    "destination": "solution.C.7.17",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.14",
+    "anchor": "sol-ex-6-14",
+    "number": "C.7.18",
+    "destination": "solution.C.7.18",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.15",
+    "anchor": "sol-ex-6-15",
+    "number": "C.7.19",
+    "destination": "solution.C.7.19",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:euclid-r4-projection",
+    "anchor": "sol-ex-euclid-r4-projection",
+    "number": "C.7.2",
+    "destination": "solution.C.7.2",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.16",
+    "anchor": "sol-ex-6-16",
+    "number": "C.7.20",
+    "destination": "solution.C.7.20",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.17",
+    "anchor": "sol-ex-6-17",
+    "number": "C.7.21",
+    "destination": "solution.C.7.21",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.18",
+    "anchor": "sol-ex-6-18",
+    "number": "C.7.22",
+    "destination": "solution.C.7.22",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.19",
+    "anchor": "sol-ex-6-19",
+    "number": "C.7.23",
+    "destination": "solution.C.7.23",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.20",
+    "anchor": "sol-ex-6-20",
+    "number": "C.7.24",
+    "destination": "solution.C.7.24",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.21",
+    "anchor": "sol-ex-6-21",
+    "number": "C.7.25",
+    "destination": "solution.C.7.25",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.22",
+    "anchor": "sol-ex-6-22",
+    "number": "C.7.26",
+    "destination": "solution.C.7.26",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.23",
+    "anchor": "sol-ex-6-23",
+    "number": "C.7.27",
+    "destination": "solution.C.7.27",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.1",
+    "anchor": "sol-ex-6-1",
+    "number": "C.7.3",
+    "destination": "solution.C.7.3",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.2",
+    "anchor": "sol-ex-6-2",
+    "number": "C.7.4",
+    "destination": "solution.C.7.4",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.3",
+    "anchor": "sol-ex-6-3",
+    "number": "C.7.5",
+    "destination": "solution.C.7.5",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.4",
+    "anchor": "sol-ex-6-4",
+    "number": "C.7.6",
+    "destination": "solution.C.7.6",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.6",
+    "anchor": "sol-ex-6-6",
+    "number": "C.7.7",
+    "destination": "solution.C.7.7",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.7",
+    "anchor": "sol-ex-6-7",
+    "number": "C.7.8",
+    "destination": "solution.C.7.8",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 6.8",
+    "anchor": "sol-ex-6-8",
+    "number": "C.7.9",
+    "destination": "solution.C.7.9",
+    "type_code": "solution",
+    "type_name": "Solution"
+  }
+]

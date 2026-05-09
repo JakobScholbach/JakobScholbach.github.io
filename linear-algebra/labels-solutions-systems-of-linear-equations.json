@@ -1,0 +1,66 @@
+[
+  {
+    "label": "sol--ueb:equation-no-solutions",
+    "anchor": "sol-ueb-equation-no-solutions",
+    "number": "C.2.1",
+    "destination": "solution.C.2.1",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ueb:systems-1-a",
+    "anchor": "sol-ueb-systems-1-a",
+    "number": "C.2.2",
+    "destination": "solution.C.2.2",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ueb:systems-1-b",
+    "anchor": "sol-ueb-systems-1-b",
+    "number": "C.2.3",
+    "destination": "solution.C.2.3",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ueb:systems-1-c",
+    "anchor": "sol-ueb-systems-1-c",
+    "number": "C.2.4",
+    "destination": "solution.C.2.4",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ueb:systems-1-d",
+    "anchor": "sol-ueb-systems-1-d",
+    "number": "C.2.5",
+    "destination": "solution.C.2.5",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ueb:systems-1-e",
+    "anchor": "sol-ueb-systems-1-e",
+    "number": "C.2.6",
+    "destination": "solution.C.2.6",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ueb:systems-1-f",
+    "anchor": "sol-ueb-systems-1-f",
+    "number": "C.2.7",
+    "destination": "solution.C.2.7",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-008",
+    "anchor": "sol-ex-maps-exercise-008",
+    "number": "C.2.8",
+    "destination": "solution.C.2.8",
+    "type_code": "solution",
+    "type_name": "Solution"
+  }
+]

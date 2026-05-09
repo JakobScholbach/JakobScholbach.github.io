@@ -1,0 +1,354 @@
+[
+  {
+    "label": "rem:solutions-remark-002",
+    "anchor": "rem-solutions-remark-002",
+    "number": "C.3",
+    "destination": "Bem.C.3",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "sol--al",
+    "anchor": "sol-al",
+    "number": "C.4.1",
+    "destination": "solution.C.4.1",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.2",
+    "anchor": "sol-ex-3-2",
+    "number": "C.4.10",
+    "destination": "solution.C.4.10",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.3",
+    "anchor": "sol-ex-3-3",
+    "number": "C.4.11",
+    "destination": "solution.C.4.11",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-011",
+    "anchor": "sol-ex-maps-exercise-011",
+    "number": "C.4.12",
+    "destination": "solution.C.4.12",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-012",
+    "anchor": "sol-ex-maps-exercise-012",
+    "number": "C.4.13",
+    "destination": "solution.C.4.13",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.4",
+    "anchor": "sol-ex-3-4",
+    "number": "C.4.14",
+    "destination": "solution.C.4.14",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-013",
+    "anchor": "sol-ex-maps-exercise-013",
+    "number": "C.4.15",
+    "destination": "solution.C.4.15",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.5",
+    "anchor": "sol-ex-3-5",
+    "number": "C.4.16",
+    "destination": "solution.C.4.16",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.6",
+    "anchor": "sol-ex-3-6",
+    "number": "C.4.17",
+    "destination": "solution.C.4.17",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.7",
+    "anchor": "sol-ex-3-7",
+    "number": "C.4.18",
+    "destination": "solution.C.4.18",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-014",
+    "anchor": "sol-ex-maps-exercise-014",
+    "number": "C.4.19",
+    "destination": "solution.C.4.19",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-002",
+    "anchor": "sol-ex-maps-exercise-002",
+    "number": "C.4.2",
+    "destination": "solution.C.4.2",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-example-031",
+    "anchor": "sol-ex-maps-example-031",
+    "number": "C.4.20",
+    "destination": "solution.C.4.20",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--matrices.commute",
+    "anchor": "sol-matrices-commute",
+    "number": "C.4.21",
+    "destination": "solution.C.4.21",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-015",
+    "anchor": "sol-ex-maps-exercise-015",
+    "number": "C.4.22",
+    "destination": "solution.C.4.22",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-016",
+    "anchor": "sol-ex-maps-exercise-016",
+    "number": "C.4.23",
+    "destination": "solution.C.4.23",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-017",
+    "anchor": "sol-ex-maps-exercise-017",
+    "number": "C.4.24",
+    "destination": "solution.C.4.24",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--trace",
+    "anchor": "sol-trace",
+    "number": "C.4.25",
+    "destination": "solution.C.4.25",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-018",
+    "anchor": "sol-ex-maps-exercise-018",
+    "number": "C.4.26",
+    "destination": "solution.C.4.26",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-019",
+    "anchor": "sol-ex-maps-exercise-019",
+    "number": "C.4.27",
+    "destination": "solution.C.4.27",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.8",
+    "anchor": "sol-ex-3-8",
+    "number": "C.4.28",
+    "destination": "solution.C.4.28",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.9",
+    "anchor": "sol-ex-3-9",
+    "number": "C.4.29",
+    "destination": "solution.C.4.29",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-003",
+    "anchor": "sol-ex-maps-exercise-003",
+    "number": "C.4.3",
+    "destination": "solution.C.4.3",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.10",
+    "anchor": "sol-ex-3-10",
+    "number": "C.4.30",
+    "destination": "solution.C.4.30",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.11",
+    "anchor": "sol-ex-3-11",
+    "number": "C.4.31",
+    "destination": "solution.C.4.31",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.12",
+    "anchor": "sol-ex-3-12",
+    "number": "C.4.32",
+    "destination": "solution.C.4.32",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.13",
+    "anchor": "sol-ex-3-13",
+    "number": "C.4.33",
+    "destination": "solution.C.4.33",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.14",
+    "anchor": "sol-ex-3-14",
+    "number": "C.4.34",
+    "destination": "solution.C.4.34",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.15",
+    "anchor": "sol-ex-3-15",
+    "number": "C.4.35",
+    "destination": "solution.C.4.35",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.16",
+    "anchor": "sol-ex-3-16",
+    "number": "C.4.36",
+    "destination": "solution.C.4.36",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.17",
+    "anchor": "sol-ex-3-17",
+    "number": "C.4.37",
+    "destination": "solution.C.4.37",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.18",
+    "anchor": "sol-ex-3-18",
+    "number": "C.4.38",
+    "destination": "solution.C.4.38",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.19",
+    "anchor": "sol-ex-3-19",
+    "number": "C.4.39",
+    "destination": "solution.C.4.39",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-004",
+    "anchor": "sol-ex-maps-exercise-004",
+    "number": "C.4.4",
+    "destination": "solution.C.4.4",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.20",
+    "anchor": "sol-ex-3-20",
+    "number": "C.4.40",
+    "destination": "solution.C.4.40",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 2.7",
+    "anchor": "sol-ex-2-7",
+    "number": "C.4.41",
+    "destination": "solution.C.4.41",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--partial 2026 1",
+    "anchor": "sol-partial-2026-1",
+    "number": "C.4.42",
+    "destination": "solution.C.4.42",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--partial 2026 2",
+    "anchor": "sol-partial-2026-2",
+    "number": "C.4.43",
+    "destination": "solution.C.4.43",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-005",
+    "anchor": "sol-ex-maps-exercise-005",
+    "number": "C.4.5",
+    "destination": "solution.C.4.5",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-006",
+    "anchor": "sol-ex-maps-exercise-006",
+    "number": "C.4.6",
+    "destination": "solution.C.4.6",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-007",
+    "anchor": "sol-ex-maps-exercise-007",
+    "number": "C.4.7",
+    "destination": "solution.C.4.7",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex:maps-exercise-010",
+    "anchor": "sol-ex-maps-exercise-010",
+    "number": "C.4.8",
+    "destination": "solution.C.4.8",
+    "type_code": "solution",
+    "type_name": "Solution"
+  },
+  {
+    "label": "sol--ex 3.1",
+    "anchor": "sol-ex-3-1",
+    "number": "C.4.9",
+    "destination": "solution.C.4.9",
+    "type_code": "solution",
+    "type_name": "Solution"
+  }
+]

@@ -1,0 +1,354 @@
+[
+  {
+    "label": "sect--systems",
+    "anchor": "sect-systems",
+    "number": "2",
+    "destination": "chapter.2",
+    "type_code": "chapter",
+    "type_name": "Chapter"
+  },
+  {
+    "label": "def:systems-definition-001",
+    "anchor": "def-systems-definition-001",
+    "number": "2.1",
+    "destination": "Defi.2.1",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "ex:system-2-no",
+    "anchor": "ex-system-2-no",
+    "number": "2.10",
+    "destination": "Bsp.2.10",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "ex:system-2-infinite",
+    "anchor": "ex-system-2-infinite",
+    "number": "2.11",
+    "destination": "Bsp.2.11",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "sum:intersection-lines",
+    "anchor": "sum-intersection-lines",
+    "number": "2.12",
+    "destination": "Summ.2.12",
+    "type_code": "Summ",
+    "type_name": "Summary"
+  },
+  {
+    "label": "def:homogeneous-linear-system",
+    "anchor": "def-homogeneous-linear-system",
+    "number": "2.13",
+    "destination": "Defi.2.13",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "rem:trivial-solution",
+    "anchor": "rem-trivial-solution",
+    "number": "2.14",
+    "destination": "Bem.2.14",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "def:systems-definition-004",
+    "anchor": "def-systems-definition-004",
+    "number": "2.15",
+    "destination": "Defi.2.15",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "ex:systems-example-005",
+    "anchor": "ex-systems-example-005",
+    "number": "2.16",
+    "destination": "Bsp.2.16",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "def:elementary-operations-system",
+    "anchor": "def-elementary-operations-system",
+    "number": "2.17",
+    "destination": "Defi.2.17",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "thm:elementary-equivalent",
+    "anchor": "thm-elementary-equivalent",
+    "number": "2.18",
+    "destination": "Theo.2.18",
+    "type_code": "Theo",
+    "type_name": "Theorem"
+  },
+  {
+    "label": "ex:example-elementary-operations",
+    "anchor": "ex-example-elementary-operations",
+    "number": "2.19",
+    "destination": "Bsp.2.19",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "ex:systems-example-001",
+    "anchor": "ex-systems-example-001",
+    "number": "2.2",
+    "destination": "Bsp.2.2",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "def:systems-definition-006",
+    "anchor": "def-systems-definition-006",
+    "number": "2.20",
+    "destination": "Defi.2.20",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "ex:systems-example-007",
+    "anchor": "ex-systems-example-007",
+    "number": "2.21",
+    "destination": "Bsp.2.21",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "not:matrix-notation",
+    "anchor": "not-matrix-notation",
+    "number": "2.22",
+    "destination": "Nota.2.22",
+    "type_code": "Nota",
+    "type_name": "Notation"
+  },
+  {
+    "label": "def:matrix-to-system",
+    "anchor": "def-matrix-to-system",
+    "number": "2.23",
+    "destination": "Defi.2.23",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "eqn--linear.system.large",
+    "anchor": "eqn-linear-system-large",
+    "number": "2.24",
+    "destination": "equation.2.24",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "eqn--matrix.large",
+    "anchor": "eqn-matrix-large",
+    "number": "2.25",
+    "destination": "equation.2.25",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "ex:systems-example-008",
+    "anchor": "ex-systems-example-008",
+    "number": "2.26",
+    "destination": "Bsp.2.26",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "def:row-echelon-form",
+    "anchor": "def-row-echelon-form",
+    "number": "2.27",
+    "destination": "Defi.2.27",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "def:elementary-row-operations",
+    "anchor": "def-elementary-row-operations",
+    "number": "2.28",
+    "destination": "Defi.2.28",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "met:gaussian-algorithm",
+    "anchor": "met-gaussian-algorithm",
+    "number": "2.29",
+    "destination": "Meth.2.29",
+    "type_code": "Meth",
+    "type_name": "Method"
+  },
+  {
+    "label": "eqn--4x2y=3",
+    "anchor": "eqn-4x2y-3",
+    "number": "2.3",
+    "destination": "equation.2.3",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "ex:43-matrix",
+    "anchor": "ex-43-matrix",
+    "number": "2.30",
+    "destination": "Bsp.2.30",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "met:gaussian-elimination-solve",
+    "anchor": "met-gaussian-elimination-solve",
+    "number": "2.31",
+    "destination": "Meth.2.31",
+    "type_code": "Meth",
+    "type_name": "Method"
+  },
+  {
+    "label": "ex:systems-example-010",
+    "anchor": "ex-systems-example-010",
+    "number": "2.32",
+    "destination": "Bsp.2.32",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "eqn--4x2y=3.sol",
+    "anchor": "eqn-4x2y-3-sol",
+    "number": "2.4",
+    "destination": "equation.2.4",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "rem:field",
+    "anchor": "rem-field",
+    "number": "2.5",
+    "destination": "Bem.2.5",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "rem:systems-remark-002",
+    "anchor": "rem-systems-remark-002",
+    "number": "2.6",
+    "destination": "Bem.2.6",
+    "type_code": "Bem",
+    "type_name": "Remark"
+  },
+  {
+    "label": "def:systems-definition-002",
+    "anchor": "def-systems-definition-002",
+    "number": "2.7",
+    "destination": "Defi.2.7",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "ex:system-2-unique",
+    "anchor": "ex-system-2-unique",
+    "number": "2.8",
+    "destination": "Bsp.2.8",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "system.2.unique.eqn",
+    "anchor": "system-2-unique-eqn",
+    "number": "2.9",
+    "destination": "equation.2.9",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "ueb:systems-1-a",
+    "anchor": "ueb-systems-1-a",
+    "number": "2.{10}",
+    "destination": "Ueba.2.10",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ueb:systems-1-b",
+    "anchor": "ueb-systems-1-b",
+    "number": "2.{12}",
+    "destination": "Ueba.2.12",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ueb:systems-1-c",
+    "anchor": "ueb-systems-1-c",
+    "number": "2.{14}",
+    "destination": "Ueba.2.14",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ueb:systems-1-d",
+    "anchor": "ueb-systems-1-d",
+    "number": "2.{17}",
+    "destination": "Ueba.2.17",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ueb:systems-1-e",
+    "anchor": "ueb-systems-1-e",
+    "number": "2.{19}",
+    "destination": "Ueba.2.19",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ueb:systems-1-f",
+    "anchor": "ueb-systems-1-f",
+    "number": "2.{20}",
+    "destination": "Ueba.2.20",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:maps-exercise-008",
+    "anchor": "ex-maps-exercise-008",
+    "number": "2.{25}",
+    "destination": "Ueba.2.25",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ueb:equation-no-solutions",
+    "anchor": "ueb-equation-no-solutions",
+    "number": "2.{6}",
+    "destination": "Ueba.2.6",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "item--change",
+    "anchor": "item-change",
+    "number": "{{(1)}}",
+    "destination": "Item.3",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--multiply",
+    "anchor": "item-multiply",
+    "number": "{{(2)}}",
+    "destination": "Item.4",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--add",
+    "anchor": "item-add",
+    "number": "{{(3)}}",
+    "destination": "Item.5",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  }
+]

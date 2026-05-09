@@ -1,0 +1,117 @@
+[
+  {
+    "source_label": "def:elementary-row-operations",
+    "references": [
+      {
+        "ref": "ex:maps-exercise-004",
+        "resolved": true,
+        "url": "../maps/#ex-maps-exercise-004"
+      },
+      {
+        "ref": "ex:maps-exercise-007",
+        "resolved": true,
+        "url": "../maps/#ex-maps-exercise-007"
+      },
+      {
+        "ref": "ex:maps-exercise-008",
+        "resolved": true,
+        "url": "#ex-maps-exercise-008"
+      },
+      {
+        "ref": "partial 2026 2",
+        "resolved": true,
+        "url": "../maps/#partial-2026-2"
+      }
+    ]
+  },
+  {
+    "source_label": "def:matrix-to-system",
+    "references": [
+      {
+        "ref": "partial 2026 1",
+        "resolved": true,
+        "url": "../maps/#partial-2026-1"
+      }
+    ]
+  },
+  {
+    "source_label": "met:gaussian-algorithm",
+    "references": [
+      {
+        "ref": "ex:maps-exercise-004",
+        "resolved": true,
+        "url": "../maps/#ex-maps-exercise-004"
+      },
+      {
+        "ref": "partial 2026 2",
+        "resolved": true,
+        "url": "../maps/#partial-2026-2"
+      },
+      {
+        "ref": "ueb:systems-1-b",
+        "resolved": true,
+        "url": "#ueb-systems-1-b"
+      }
+    ]
+  },
+  {
+    "source_label": "met:gaussian-elimination-solve",
+    "references": [
+      {
+        "ref": "ex 3.2",
+        "resolved": true,
+        "url": "../maps/#ex-3-2"
+      },
+      {
+        "ref": "ex 3.6",
+        "resolved": true,
+        "url": "../maps/#ex-3-6"
+      },
+      {
+        "ref": "ex 6.2",
+        "resolved": true,
+        "url": "../euclid/#ex-6-2"
+      },
+      {
+        "ref": "ex 6.22",
+        "resolved": true,
+        "url": "../euclid/#ex-6-22"
+      },
+      {
+        "ref": "ex:maps-exercise-003",
+        "resolved": true,
+        "url": "../maps/#ex-maps-exercise-003"
+      },
+      {
+        "ref": "ex:maps-exercise-004",
+        "resolved": true,
+        "url": "../maps/#ex-maps-exercise-004"
+      },
+      {
+        "ref": "ex:maps-exercise-008",
+        "resolved": true,
+        "url": "#ex-maps-exercise-008"
+      },
+      {
+        "ref": "ex:maps-exercise-010",
+        "resolved": true,
+        "url": "../maps/#ex-maps-exercise-010"
+      },
+      {
+        "ref": "partial 2026 1",
+        "resolved": true,
+        "url": "../maps/#partial-2026-1"
+      },
+      {
+        "ref": "partial 2026 2",
+        "resolved": true,
+        "url": "../maps/#partial-2026-2"
+      },
+      {
+        "ref": "ueb:systems-1-b",
+        "resolved": true,
+        "url": "#ueb-systems-1-b"
+      }
+    ]
+  }
+]

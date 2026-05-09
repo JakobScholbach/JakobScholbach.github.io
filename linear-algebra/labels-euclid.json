@@ -1,0 +1,930 @@
+[
+  {
+    "label": "sect--euclidean",
+    "anchor": "sect-euclidean",
+    "number": "7",
+    "destination": "chapter.7",
+    "type_code": "chapter",
+    "type_name": "Chapter"
+  },
+  {
+    "label": "def:euclid-definition-001",
+    "anchor": "def-euclid-definition-001",
+    "number": "7.1",
+    "destination": "Defi.7.1",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "ex:euclid-example-003",
+    "anchor": "ex-euclid-example-003",
+    "number": "7.10",
+    "destination": "Bsp.7.10",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "def:euclid-definition-004",
+    "anchor": "def-euclid-definition-004",
+    "number": "7.11",
+    "destination": "Defi.7.11",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "prop:euclid-proposition-001",
+    "anchor": "prop-euclid-proposition-001",
+    "number": "7.12",
+    "destination": "mySatz.7.12",
+    "type_code": "mySatz",
+    "type_name": "Proposition"
+  },
+  {
+    "label": "ex:euclid-example-004",
+    "anchor": "ex-euclid-example-004",
+    "number": "7.13",
+    "destination": "Bsp.7.13",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "ex:euclid-example-005",
+    "anchor": "ex-euclid-example-005",
+    "number": "7.14",
+    "destination": "Bsp.7.14",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "def:euclid-definition-005",
+    "anchor": "def-euclid-definition-005",
+    "number": "7.15",
+    "destination": "Defi.7.15",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "ex:examples-scalar-product",
+    "anchor": "ex-examples-scalar-product",
+    "number": "7.16",
+    "destination": "Bsp.7.16",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "prop:properties-nm",
+    "anchor": "prop-properties-nm",
+    "number": "7.17",
+    "destination": "mySatz.7.17",
+    "type_code": "mySatz",
+    "type_name": "Proposition"
+  },
+  {
+    "label": "lem:rep-orthogonal",
+    "anchor": "lem-rep-orthogonal",
+    "number": "7.18",
+    "destination": "lemma.7.18",
+    "type_code": "lemma",
+    "type_name": "Lemma"
+  },
+  {
+    "label": "eqn--tilde v",
+    "anchor": "eqn-tilde-v",
+    "number": "7.19",
+    "destination": "equation.7.19",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "ex:euclid-example-001",
+    "anchor": "ex-euclid-example-001",
+    "number": "7.2",
+    "destination": "Bsp.7.2",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "dlm:orthogonal-complement",
+    "anchor": "dlm-orthogonal-complement",
+    "number": "7.20",
+    "destination": "DefiLemm.7.20",
+    "type_code": "DefiLemm",
+    "type_name": "Definition and Lemma"
+  },
+  {
+    "label": "eqn--W cap W bot",
+    "anchor": "eqn-w-cap-w-bot",
+    "number": "7.21",
+    "destination": "equation.7.21",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "ex:orthogonal-complement",
+    "anchor": "ex-orthogonal-complement",
+    "number": "7.22",
+    "destination": "Bsp.7.22",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "def:euclid-definition-006",
+    "anchor": "def-euclid-definition-006",
+    "number": "7.23",
+    "destination": "Defi.7.23",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "thm:orthogonal-projection",
+    "anchor": "thm-orthogonal-projection",
+    "number": "7.24",
+    "destination": "Theo.7.24",
+    "type_code": "Theo",
+    "type_name": "Theorem"
+  },
+  {
+    "label": "eqn--orth proj",
+    "anchor": "eqn-orth-proj",
+    "number": "7.25",
+    "destination": "equation.7.25",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "eq:orthogonal-projection-formula",
+    "anchor": "eq-orthogonal-projection-formula",
+    "number": "7.26",
+    "destination": "equation.7.26",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "ex:euclid-example-008",
+    "anchor": "ex-euclid-example-008",
+    "number": "7.27",
+    "destination": "Bsp.7.27",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "cor:euclid-corollary-001",
+    "anchor": "cor-euclid-corollary-001",
+    "number": "7.28",
+    "destination": "Coro.7.28",
+    "type_code": "Coro",
+    "type_name": "Corollary"
+  },
+  {
+    "label": "eqn--rep.orth.basis",
+    "anchor": "eqn-rep-orth-basis",
+    "number": "7.29",
+    "destination": "equation.7.29",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "eqn--standard s p positive",
+    "anchor": "eqn-standard-s-p-positive",
+    "number": "7.3",
+    "destination": "equation.7.3",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "sect--Euclidean spaces",
+    "anchor": "sect-euclidean-spaces",
+    "number": "7.3",
+    "destination": "section.7.3",
+    "type_code": "section",
+    "type_name": "Section"
+  },
+  {
+    "label": "ex:euclid-example-009",
+    "anchor": "ex-euclid-example-009",
+    "number": "7.30",
+    "destination": "Bsp.7.30",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "cor:dim-u-bot",
+    "anchor": "cor-dim-u-bot",
+    "number": "7.31",
+    "destination": "Coro.7.31",
+    "type_code": "Coro",
+    "type_name": "Corollary"
+  },
+  {
+    "label": "prop:gram-schmidt-orthogonalization",
+    "anchor": "prop-gram-schmidt-orthogonalization",
+    "number": "7.32",
+    "destination": "mySatz.7.32",
+    "type_code": "mySatz",
+    "type_name": "Proposition"
+  },
+  {
+    "label": "ex:euclid-example-010",
+    "anchor": "ex-euclid-example-010",
+    "number": "7.33",
+    "destination": "Bsp.7.33",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "cor:two-projections",
+    "anchor": "cor-two-projections",
+    "number": "7.34",
+    "destination": "Coro.7.34",
+    "type_code": "Coro",
+    "type_name": "Corollary"
+  },
+  {
+    "label": "eqn--v.blah",
+    "anchor": "eqn-v-blah",
+    "number": "7.35",
+    "destination": "equation.7.35",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "def:euclid-definition-007",
+    "anchor": "def-euclid-definition-007",
+    "number": "7.36",
+    "destination": "Defi.7.36",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "lem:euclid-lemma-004",
+    "anchor": "lem-euclid-lemma-004",
+    "number": "7.37",
+    "destination": "lemma.7.37",
+    "type_code": "lemma",
+    "type_name": "Lemma"
+  },
+  {
+    "label": "thm:symmetric-orthogonally-diagonalizable",
+    "anchor": "thm-symmetric-orthogonally-diagonalizable",
+    "number": "7.38",
+    "destination": "Theo.7.38",
+    "type_code": "Theo",
+    "type_name": "Theorem"
+  },
+  {
+    "label": "ex:euclid-example-011",
+    "anchor": "ex-euclid-example-011",
+    "number": "7.39",
+    "destination": "Bsp.7.39",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "lem:euclid-lemma-001",
+    "anchor": "lem-euclid-lemma-001",
+    "number": "7.4",
+    "destination": "lemma.7.4",
+    "type_code": "lemma",
+    "type_name": "Lemma"
+  },
+  {
+    "label": "def:euclid-definition-008",
+    "anchor": "def-euclid-definition-008",
+    "number": "7.40",
+    "destination": "Defi.7.40",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "lem:base-affine-subspace",
+    "anchor": "lem-base-affine-subspace",
+    "number": "7.41",
+    "destination": "lemma.7.41",
+    "type_code": "lemma",
+    "type_name": "Lemma"
+  },
+  {
+    "label": "def:parallel-skew",
+    "anchor": "def-parallel-skew",
+    "number": "7.42",
+    "destination": "Defi.7.42",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "ex:euclid-example-012",
+    "anchor": "ex-euclid-example-012",
+    "number": "7.43",
+    "destination": "Bsp.7.43",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "def:euclid-definition-010",
+    "anchor": "def-euclid-definition-010",
+    "number": "7.44",
+    "destination": "Defi.7.44",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "prop:min-affine-subspace",
+    "anchor": "prop-min-affine-subspace",
+    "number": "7.45",
+    "destination": "mySatz.7.45",
+    "type_code": "mySatz",
+    "type_name": "Proposition"
+  },
+  {
+    "label": "def:euclid-definition-011",
+    "anchor": "def-euclid-definition-011",
+    "number": "7.46",
+    "destination": "Defi.7.46",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "prop:distance-hyperplane",
+    "anchor": "prop-distance-hyperplane",
+    "number": "7.47",
+    "destination": "mySatz.7.47",
+    "type_code": "mySatz",
+    "type_name": "Proposition"
+  },
+  {
+    "label": "prop:hesse",
+    "anchor": "prop-hesse",
+    "number": "7.48",
+    "destination": "mySatz.7.48",
+    "type_code": "mySatz",
+    "type_name": "Proposition"
+  },
+  {
+    "label": "ex:euclid-example-013",
+    "anchor": "ex-euclid-example-013",
+    "number": "7.49",
+    "destination": "Bsp.7.49",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "lem:scalar-product-properties",
+    "anchor": "lem-scalar-product-properties",
+    "number": "7.5",
+    "destination": "lemma.7.5",
+    "type_code": "lemma",
+    "type_name": "Lemma"
+  },
+  {
+    "label": "def:direction-vector",
+    "anchor": "def-direction-vector",
+    "number": "7.50",
+    "destination": "Defi.7.50",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "def:parametric-equation-line",
+    "anchor": "def-parametric-equation-line",
+    "number": "7.50",
+    "destination": "Defi.7.50",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "line parametric equation",
+    "anchor": "line-parametric-equation",
+    "number": "7.51",
+    "destination": "equation.7.51",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "eqn.blah",
+    "anchor": "eqn-blah",
+    "number": "7.52",
+    "destination": "equation.7.52",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "def:cartesian-equation-line",
+    "anchor": "def-cartesian-equation-line",
+    "number": "7.53",
+    "destination": "Defi.7.53",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "cartesian equation line",
+    "anchor": "cartesian-equation-line",
+    "number": "7.54",
+    "destination": "equation.7.54",
+    "type_code": "equation",
+    "type_name": "Equation"
+  },
+  {
+    "label": "ex:euclid-example-014",
+    "anchor": "ex-euclid-example-014",
+    "number": "7.55",
+    "destination": "Bsp.7.55",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "ex:vector-to-cartesian",
+    "anchor": "ex-vector-to-cartesian",
+    "number": "7.56",
+    "destination": "Bsp.7.56",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "ex:euclid-example-016",
+    "anchor": "ex-euclid-example-016",
+    "number": "7.57",
+    "destination": "Bsp.7.57",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "ex:euclid-example-017",
+    "anchor": "ex-euclid-example-017",
+    "number": "7.58",
+    "destination": "Bsp.7.58",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "thm:distance-affine-subspaces",
+    "anchor": "thm-distance-affine-subspaces",
+    "number": "7.59",
+    "destination": "Theo.7.59",
+    "type_code": "Theo",
+    "type_name": "Theorem"
+  },
+  {
+    "label": "def:euclid-definition-002",
+    "anchor": "def-euclid-definition-002",
+    "number": "7.6",
+    "destination": "Defi.7.6",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "ex:euclid-example-018",
+    "anchor": "ex-euclid-example-018",
+    "number": "7.60",
+    "destination": "Bsp.7.60",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "tas:compute-orthonormal-basis",
+    "anchor": "tas-compute-orthonormal-basis",
+    "number": "7.61",
+    "destination": "Task.7.61",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:compute-orthogonal-projection",
+    "anchor": "tas-compute-orthogonal-projection",
+    "number": "7.62",
+    "destination": "Task.7.62",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:compute-orthogonal-complement",
+    "anchor": "tas-compute-orthogonal-complement",
+    "number": "7.63",
+    "destination": "Task.7.63",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:line-cartesian-to-parametric",
+    "anchor": "tas-line-cartesian-to-parametric",
+    "number": "7.64",
+    "destination": "Task.7.64",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:line-parametric-to-cartesian",
+    "anchor": "tas-line-parametric-to-cartesian",
+    "number": "7.65",
+    "destination": "Task.7.65",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:plane-through-three-points",
+    "anchor": "tas-plane-through-three-points",
+    "number": "7.66",
+    "destination": "Task.7.66",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:plane-through-line-and-point",
+    "anchor": "tas-plane-through-line-and-point",
+    "number": "7.67",
+    "destination": "Task.7.67",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:line-in-plane-orthogonal-to-line",
+    "anchor": "tas-line-in-plane-orthogonal-to-line",
+    "number": "7.68",
+    "destination": "Task.7.68",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:plane-vector-to-cartesian",
+    "anchor": "tas-plane-vector-to-cartesian",
+    "number": "7.69",
+    "destination": "Task.7.69",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "dlm:euclid-definitionlemma-001",
+    "anchor": "dlm-euclid-definitionlemma-001",
+    "number": "7.7",
+    "destination": "DefiLemm.7.7",
+    "type_code": "DefiLemm",
+    "type_name": "Definition and Lemma"
+  },
+  {
+    "label": "tas:check-lines-parallel",
+    "anchor": "tas-check-lines-parallel",
+    "number": "7.70",
+    "destination": "Task.7.70",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:check-lines-skew",
+    "anchor": "tas-check-lines-skew",
+    "number": "7.71",
+    "destination": "Task.7.71",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:check-line-parallel-plane",
+    "anchor": "tas-check-line-parallel-plane",
+    "number": "7.72",
+    "destination": "Task.7.72",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:check-line-orthogonal-plane",
+    "anchor": "tas-check-line-orthogonal-plane",
+    "number": "7.73",
+    "destination": "Task.7.73",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "tas:compute-distance-affine-subspaces",
+    "anchor": "tas-compute-distance-affine-subspaces",
+    "number": "7.74",
+    "destination": "Task.7.74",
+    "type_code": "Task",
+    "type_name": "Task"
+  },
+  {
+    "label": "ex:minkowski",
+    "anchor": "ex-minkowski",
+    "number": "7.8",
+    "destination": "Bsp.7.8",
+    "type_code": "Bsp",
+    "type_name": "Example"
+  },
+  {
+    "label": "def:euclid-definition-003",
+    "anchor": "def-euclid-definition-003",
+    "number": "7.9",
+    "destination": "Defi.7.9",
+    "type_code": "Defi",
+    "type_name": "Definition"
+  },
+  {
+    "label": "ex 6.9",
+    "anchor": "ex-6-9",
+    "number": "7.{10}",
+    "destination": "Ueba.7.10",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.10",
+    "anchor": "ex-6-10",
+    "number": "7.{11}",
+    "destination": "Ueba.7.11",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "eigenvectors.orthogonal",
+    "anchor": "eigenvectors-orthogonal",
+    "number": "7.{12}",
+    "destination": "Ueba.7.12",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.11",
+    "anchor": "ex-6-11",
+    "number": "7.{12}",
+    "destination": "Ueba.7.12",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.12",
+    "anchor": "ex-6-12",
+    "number": "7.{13}",
+    "destination": "Ueba.7.13",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:euclid-lines-plane",
+    "anchor": "ex-euclid-lines-plane",
+    "number": "7.{14}",
+    "destination": "Ueba.7.14",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:euclid-poly-operator",
+    "anchor": "ex-euclid-poly-operator",
+    "number": "7.{15}",
+    "destination": "Ueba.7.15",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:euclid-u-r4-orth",
+    "anchor": "ex-euclid-u-r4-orth",
+    "number": "7.{16}",
+    "destination": "Ueba.7.16",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.13",
+    "anchor": "ex-6-13",
+    "number": "7.{17}",
+    "destination": "Ueba.7.17",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.14",
+    "anchor": "ex-6-14",
+    "number": "7.{18}",
+    "destination": "Ueba.7.18",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.15",
+    "anchor": "ex-6-15",
+    "number": "7.{19}",
+    "destination": "Ueba.7.19",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:euclid-polynomials-gs",
+    "anchor": "ex-euclid-polynomials-gs",
+    "number": "7.{1}",
+    "destination": "Ueba.7.1",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.16",
+    "anchor": "ex-6-16",
+    "number": "7.{20}",
+    "destination": "Ueba.7.20",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.17",
+    "anchor": "ex-6-17",
+    "number": "7.{21}",
+    "destination": "Ueba.7.21",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.18",
+    "anchor": "ex-6-18",
+    "number": "7.{22}",
+    "destination": "Ueba.7.22",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.19",
+    "anchor": "ex-6-19",
+    "number": "7.{23}",
+    "destination": "Ueba.7.23",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.20",
+    "anchor": "ex-6-20",
+    "number": "7.{24}",
+    "destination": "Ueba.7.24",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.21",
+    "anchor": "ex-6-21",
+    "number": "7.{25}",
+    "destination": "Ueba.7.25",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.22",
+    "anchor": "ex-6-22",
+    "number": "7.{26}",
+    "destination": "Ueba.7.26",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.23",
+    "anchor": "ex-6-23",
+    "number": "7.{27}",
+    "destination": "Ueba.7.27",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.1",
+    "anchor": "ex-6-1",
+    "number": "7.{2}",
+    "destination": "Ueba.7.2",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex:euclid-r4-projection",
+    "anchor": "ex-euclid-r4-projection",
+    "number": "7.{3}",
+    "destination": "Ueba.7.3",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.2",
+    "anchor": "ex-6-2",
+    "number": "7.{4}",
+    "destination": "Ueba.7.4",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.3",
+    "anchor": "ex-6-3",
+    "number": "7.{5}",
+    "destination": "Ueba.7.5",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.4",
+    "anchor": "ex-6-4",
+    "number": "7.{6}",
+    "destination": "Ueba.7.6",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.6",
+    "anchor": "ex-6-6",
+    "number": "7.{7}",
+    "destination": "Ueba.7.7",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.7",
+    "anchor": "ex-6-7",
+    "number": "7.{8}",
+    "destination": "Ueba.7.8",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "ex 6.8",
+    "anchor": "ex-6-8",
+    "number": "7.{9}",
+    "destination": "Ueba.7.9",
+    "type_code": "Ueba",
+    "type_name": "Exercise"
+  },
+  {
+    "label": "item--A.symmetric",
+    "anchor": "item-a-symmetric",
+    "number": "{{(1)}}",
+    "destination": "Item.240",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--min.e",
+    "anchor": "item-min-e",
+    "number": "{{(1)}}",
+    "destination": "Item.248",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--p.U.id",
+    "anchor": "item-p-u-id",
+    "number": "{{(1)}}",
+    "destination": "Item.235",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--A.orthdia",
+    "anchor": "item-a-orthdia",
+    "number": "{{(2)}}",
+    "destination": "Item.241",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--min.b",
+    "anchor": "item-min-b",
+    "number": "{{(2)}}",
+    "destination": "Item.249",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--non-deg",
+    "anchor": "item-non-deg",
+    "number": "{{(2)}}",
+    "destination": "Item.233",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--p.U.bot",
+    "anchor": "item-p-u-bot",
+    "number": "{{(2)}}",
+    "destination": "Item.236",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--ex 6.14 c",
+    "anchor": "item-ex-6-14-c",
+    "number": "{{(3)}}",
+    "destination": "Item.278",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--functions",
+    "anchor": "item-functions",
+    "number": "{{(3)}}",
+    "destination": "Item.230",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--min.a",
+    "anchor": "item-min-a",
+    "number": "{{(3)}}",
+    "destination": "Item.250",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  },
+  {
+    "label": "item--min.c",
+    "anchor": "item-min-c",
+    "number": "{{(4)}}",
+    "destination": "Item.251",
+    "type_code": "enumi",
+    "type_name": "enumi"
+  }
+]
