@@ -1,0 +1,50 @@
+[
+  {
+    "stem": "c",
+    "title": "The Complex Numbers"
+  },
+  {
+    "stem": "systems-linear-equations",
+    "title": "Systems: Linear Equations"
+  },
+  {
+    "stem": "systems-linear-systems",
+    "title": "Systems: Linear Systems"
+  },
+  {
+    "stem": "systems-elementary-operations",
+    "title": "Systems: Elementary Operations"
+  },
+  {
+    "stem": "systems-matrices",
+    "title": "Systems: Matrices"
+  },
+  {
+    "stem": "systems-gaussian-elimination",
+    "title": "Systems: Gaussian Elimination"
+  },
+  {
+    "stem": "spaces",
+    "title": "Vector Spaces"
+  },
+  {
+    "stem": "maps",
+    "title": "Linear Maps"
+  },
+  {
+    "stem": "determinants",
+    "title": "Determinants"
+  },
+  {
+    "stem": "eigenvalues",
+    "title": "Eigenvalues and Eigenvectors"
+  },
+  {
+    "stem": "euclid",
+    "title": "Euclidean Spaces"
+  },
+  {
+    "stem": "appendix",
+    "title": "Appendix"
+  }
+]

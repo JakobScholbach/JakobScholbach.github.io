@@ -553,6 +553,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#solutions-to-the-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solutions to the exercises
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -969,6 +980,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#solutions-to-the-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solutions to the exercises
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -986,8 +1008,6 @@
 
 
 
-<p><a id="sect-euclidean"></a>
-<a id="sect-euclidean-spaces"></a></p>
 <h1 id="euclidean-spaces">Euclidean spaces<a class="headerlink" href="#euclidean-spaces" title="Permanent link">&para;</a></h1>
 <p>The definition of a (real) vector space encodes the existence (and good properties) of the addition of vectors and the scalar multiplication of vectors. The vector space <span class="arithmatex">\({\bf R}^n\)</span> has, however, another important piece of structure, namely the distance between two points, and the property of vectors being orthogonal to each other.</p>
 <h2 id="the-scalar-product-on-bf-rn">The scalar product on <span class="arithmatex">\({\bf R}^n\)</span><a class="headerlink" href="#the-scalar-product-on-bf-rn" title="Permanent link">&para;</a></h2>
@@ -1071,7 +1091,7 @@
 </div>
 <p>Here we regard <span class="arithmatex">\(v\)</span> and <span class="arithmatex">\(w\)</span> as column vectors, i.e., as <span class="arithmatex">\(n \times 1\)</span>-matrices. Therefore, for <span class="arithmatex">\(v = \left ( \begin{array}{c} v_1 \\ \vdots \\ v_n \end{array} \right )\)</span>, <span class="arithmatex">\(v^T = \left ( \begin{array}{ccc} v_1 &amp; \dots &amp; v_n \end{array} \right )\)</span> is a row vector (with <span class="arithmatex">\(n\)</span> entries). Therefore <span class="arithmatex">\(v^T A\)</span> is an <span class="arithmatex">\(1 \times n\)</span>-matrix, so that <span class="arithmatex">\(v^T A w\)</span> is an <span class="arithmatex">\(1 \times 1\)</span>-matrix, i.e., just a real number. We call this number the <em>scalar product</em> of <span class="arithmatex">\(v\)</span> and <span class="arithmatex">\(w\)</span> with respect to the given matrix <span class="arithmatex">\(A\)</span>.</p>
 <div class="lemma">
-<p class="env-number"><strong>Lemma 7.5</strong> (Related exercises: <a href="#ex-euclid-polynomials-gs">Exercise 7.1</a>)</p>
+<p class="env-number"><strong>Lemma 7.5</strong></p>
 <p><span id="lem-scalar-product-properties" label="lem:scalar-product-properties"></span> The scalar product has the following fundamental properties:</p>
 <ul>
 <li>If we fix <span class="arithmatex">\(w \in {\bf R}^n\)</span>, then the maps</li>
@@ -1298,7 +1318,7 @@ d(v,w) := |\hspace{-0.5mm}| {v-w} |\hspace{-0.5mm}|.
 </div>
 </div>
 <div class="example">
-<p class="env-number"><strong>Example 7.16</strong> (Related exercises: <a href="#ex-euclid-poly-operator">Exercise 7.15</a>, <a href="#ex-euclid-polynomials-gs">Exercise 7.1</a>)</p>
+<p class="env-number"><strong>Example 7.16</strong></p>
 <p><span id="ex-examples-scalar-product" label="ex:examples-scalar-product"></span></p>
 <ol>
 <li>
@@ -1367,15 +1387,14 @@ v = \tilde v +   {\left \langle v, e \right \rangle} \cdot e
 <p><span id="eqn-tilde-v" label="eqn--tilde v"></span> expressing <span class="arithmatex">\(v\)</span> as a sum of a scalar multiple of <span class="arithmatex">\(e\)</span> and a vector that is orthogonal to <span class="arithmatex">\(e\)</span>.</p>
 </div>
 <div class="proof">
-<p><em>Proof.</em> The orthogonality of <span class="arithmatex">\(\tilde v\)</span> and <span class="arithmatex">\({\left \langle v, e \right \rangle} \cdot e\)</span> is a computation using the bilinearity of <span class="arithmatex">\({\left \langle -, - \right \rangle}\)</span>:</p>
+<p><em>Proof.</em> The orthogonality of <span class="arithmatex">\(\tilde v\)</span> and <span class="arithmatex">\(e\)</span> is a computation using the bilinearity of <span class="arithmatex">\({\left \langle -, - \right \rangle}\)</span>:</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
-{\left \langle \tilde v, {\left \langle v, e \right \rangle} \cdot e \right \rangle} &amp;= 
-{\left \langle v - {\left \langle v, e \right \rangle} \cdot e, {\left \langle v, e \right \rangle} \cdot e \right \rangle} \\
-&amp; = {\left \langle v, e \right \rangle} ({\left \langle v - {\left \langle v, e \right \rangle} \cdot e, e \right \rangle}) \\
-&amp; = {\left \langle v, e \right \rangle} ({\left \langle v, e \right \rangle} - {\left \langle {\left \langle v, e \right \rangle} \cdot e, e \right \rangle}) \\
-&amp; = {\left \langle v, e \right \rangle} ({\left \langle v, e \right \rangle} - {\left \langle v, e \right \rangle} \underbrace{{\left \langle e, e \right \rangle}}_{=1}) \\
+{\left \langle \tilde v, e \right \rangle} &amp;= 
+{\left \langle v - {\left \langle v, e \right \rangle} \cdot e, e \right \rangle} \\
+&amp; = {\left \langle v, e \right \rangle} - {\left \langle {\left \langle v, e \right \rangle} \cdot e, e \right \rangle} \\
+&amp; = {\left \langle v, e \right \rangle} - {\left \langle v, e \right \rangle} \underbrace{{\left \langle e, e \right \rangle}}_{=1} \\
 &amp; = 0.
 \end{align*}
 \]</div>
@@ -1384,7 +1403,7 @@ v = \tilde v +   {\left \langle v, e \right \rangle} \cdot e
 </div>
 <p>We now extend the observation of <a href="#lem-rep-orthogonal" data-reference-type="ref+Label" data-reference="lem:rep-orthogonal">Lemma 7.18</a> to more than a single vector. To do so, we introduce some terminology.</p>
 <div class="definitionlemma">
-<p class="env-number"><strong>Definition and Lemma 7.20</strong> (Related exercises: <a href="#ex-6-9">Exercise 7.10</a>, <a href="#ex-euclid-r4-projection">Exercise 7.3</a>)</p>
+<p class="env-number"><strong>Definition and Lemma 7.20</strong></p>
 <p><span id="dlm-orthogonal-complement" label="dlm:orthogonal-complement"></span> The <em>orthogonal complement</em> of a subset <span class="arithmatex">\(M \subset V\)</span> is defined as</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
@@ -1444,7 +1463,7 @@ W^\bot = L(\left ( \begin{array}{c} 4 \\ -4 \\ 1 \end{array} \right )).
 </div>
 <p>For example, the standard basis in <span class="arithmatex">\({\bf R}^n\)</span> is an orthonormal basis (with respect to the standard scalar product).</p>
 <div class="theorem">
-<p class="env-number"><strong>Theorem 7.24</strong> (Related exercises: <a href="#ex-6-1">Exercise 7.2</a>, <a href="#ex-6-13">Exercise 7.17</a>, <a href="#ex-6-6">Exercise 7.7</a>, <a href="#ex-euclid-r4-projection">Exercise 7.3</a>, <a href="#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
+<p class="env-number"><strong>Theorem 7.24</strong></p>
 <p><span id="thm-orthogonal-projection" label="thm:orthogonal-projection"></span> Let <span class="arithmatex">\(u_1, \dots, u_n\)</span> be an orthonormal system (in an Euclidean space). Let <span class="arithmatex">\(U = L(u_1, \dots, u_n) \subset V\)</span> be the subspace spanned by these vectors. Then there is a unique linear map, called the <em>orthogonal projection</em></p>
 <div class="arithmatex">
 <div class="arithmatex">\[
@@ -1547,7 +1566,7 @@ v = v_1 e_1 + \dots + v_n e_n.
 </div>
 <p>Using these results, one can quickly prove:</p>
 <div class="corollary">
-<p class="env-number"><strong>Corollary 7.31</strong> (Related exercises: <a href="#ex-6-1">Exercise 7.2</a>, <a href="#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
+<p class="env-number"><strong>Corollary 7.31</strong></p>
 <p><span id="cor-dim-u-bot" label="cor:dim-u-bot"></span> If <span class="arithmatex">\(U \subset V\)</span> is a subspace of a finite-dimensional Euclidean space then</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
@@ -1667,7 +1686,7 @@ AA^T = {\mathrm {id}}.
 <p>The vector <span class="arithmatex">\(A^T A e_j\)</span> is the <span class="arithmatex">\(j\)</span>-th column of <span class="arithmatex">\(A^T A\)</span>, and the number <span class="arithmatex">\(e_i^T A^T A e_j\)</span> is the <span class="arithmatex">\(i\)</span>-th entry of that vector. Thus, saying that the above expression equals 1 for <span class="arithmatex">\(i=j\)</span> and 0 otherwise is equivalent to requiring <span class="arithmatex">\(A^T A = {\mathrm {id}}\)</span>. ◻</p>
 </div>
 <div class="theorem">
-<p class="env-number"><strong>Theorem 7.38</strong> (Related exercises: <a href="#ex-6-10">Exercise 7.11</a>)</p>
+<p class="env-number"><strong>Theorem 7.38</strong></p>
 <p><span id="thm-symmetric-orthogonally-diagonalizable" label="thm:symmetric-orthogonally-diagonalizable"></span> The following conditions are equivalent for an <span class="arithmatex">\(n \times n\)</span>-matrix <span class="arithmatex">\(A\)</span>:</p>
 <ol>
 <li>
@@ -1775,7 +1794,7 @@ W' = -v' + v' + W' = - v' + X = \underbrace{-v' + v}_{\in W} + W = W.
 </div>
 <p>We can therefore define the dimension of an affine subspace as <span class="arithmatex">\(\dim X = \dim W\)</span>, if <span class="arithmatex">\(X = v + W\)</span> as above.</p>
 <div class="definition">
-<p class="env-number"><strong>Definition 7.42</strong> (Related exercises: <a href="#ex-6-12">Exercise 7.13</a>, <a href="#ex-6-7">Exercise 7.8</a>, <a href="#ex-euclid-lines-plane">Exercise 7.14</a>)</p>
+<p class="env-number"><strong>Definition 7.42</strong></p>
 <p><span id="def-parallel-skew" label="def:parallel-skew"></span> Let <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(X'\)</span> be two affine subspaces. Let <span class="arithmatex">\(W, W' \subset {\bf R}^n\)</span> be the associated sub-vector spaces, as per <a href="#lem-base-affine-subspace" data-reference-type="ref+Label" data-reference="lem:base-affine-subspace">Lemma 7.41</a>.</p>
 <ul>
 <li>
@@ -1819,7 +1838,7 @@ d(x, x') \le d(x_1, x'_1)
 <p>for any two points <span class="arithmatex">\(x_1 \in X, x'_1 \in X'\)</span>. In this event, we also write <span class="arithmatex">\(d(X, X') := d(x, x')\)</span> for that minimal distance.</p>
 </div>
 <div class="proposition">
-<p class="env-number"><strong>Proposition 7.45</strong> (Related exercises: <a href="#ex-6-6">Exercise 7.7</a>, <a href="#ex-6-8">Exercise 7.9</a>)</p>
+<p class="env-number"><strong>Proposition 7.45</strong></p>
 <p><span id="prop-min-affine-subspace" label="prop:min-affine-subspace"></span> Let <span class="arithmatex">\(X = v_0 + W\)</span> be an affine subspace of a Euclidean space <span class="arithmatex">\(V\)</span>. There is a unique vector <span class="arithmatex">\(v \in V\)</span> characterized by the following equivalent properties:</p>
 <ol>
 <li>
@@ -1887,7 +1906,7 @@ H = v_0 + W
 </div>
 <p>For example, a line is a hyperplane in <span class="arithmatex">\({\bf R}^2\)</span>, and a plane is a hyperplane in <span class="arithmatex">\({\bf R}^3\)</span>.</p>
 <div class="proposition">
-<p class="env-number"><strong>Proposition 7.47</strong> (Related exercises: <a href="#ex-6-9">Exercise 7.10</a>)</p>
+<p class="env-number"><strong>Proposition 7.47</strong></p>
 <p><span id="prop-distance-hyperplane" label="prop:distance-hyperplane"></span> Let <span class="arithmatex">\(a = \left ( \begin{array}{c} a_1 \\ \vdots \\ a_n \end{array} \right ) \in {\bf R}^n\)</span> be a <em>non-zero</em> (column) vector, and let <span class="arithmatex">\(b \in {\bf R}\)</span>. Then the subset</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
@@ -1931,7 +1950,7 @@ d(0, H) = |\hspace{-0.5mm}| {\lambda a} |\hspace{-0.5mm}| = \frac {|b|} {|\hspac
 </div>
 <p>for fixed <span class="arithmatex">\(a \ne 0\)</span> and <span class="arithmatex">\(b \in {\bf R}\)</span> determines a hyperplane. Here is a converse to this statement.</p>
 <div class="proposition">
-<p class="env-number"><strong>Proposition 7.48</strong> (Related exercises: <a href="#ex-euclid-lines-plane">Exercise 7.14</a>)</p>
+<p class="env-number"><strong>Proposition 7.48</strong></p>
 <p><span id="prop-hesse" label="prop:hesse"></span> (<em>Hesse normal form</em> of a hyperplane) Let <span class="arithmatex">\(H = v_0 + W \subset {\bf R}^n\)</span> be a hyperplane, and let <span class="arithmatex">\(d = d(0, H)\)</span> be its distance to the origin. Then there is a unique vector <span class="arithmatex">\(a \in {\bf R}^n\)</span> such that</p>
 <ol>
 <li>
@@ -2188,7 +2207,7 @@ w' = \left ( \begin{array}{c} 1 \\ 1 \\ 0 \end{array} \right ) \bot \left ( \beg
 </div>
 <h2 id="distance-between-two-affine-subspaces">Distance between two affine subspaces<a class="headerlink" href="#distance-between-two-affine-subspaces" title="Permanent link">&para;</a></h2>
 <div class="theorem">
-<p class="env-number"><strong>Theorem 7.59</strong> (Related exercises: <a href="#ex-6-19">Exercise 7.23</a>)</p>
+<p class="env-number"><strong>Theorem 7.59</strong></p>
 <p><span id="thm-distance-affine-subspaces" label="thm:distance-affine-subspaces"></span> Let <span class="arithmatex">\(X = v+ W\)</span>, <span class="arithmatex">\(X' = v' + W'\)</span> be two affine subspaces. Let us write <span class="arithmatex">\(d := v-v'\)</span> and <span class="arithmatex">\(Z := W + W'\)</span> (<a href="../spaces/#def-sum-of-vector-spaces" data-reference-type="ref+Label" data-reference="def:sum-of-vector-spaces">Definition 3.34</a>). Let</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
@@ -2284,12 +2303,12 @@ x-x' &amp; &amp; = (5+a,-1+a-2b,3-2a-4b)
 </div>
 <h2 id="summary-of-some-computational-methods">Summary of some computational methods<a class="headerlink" href="#summary-of-some-computational-methods" title="Permanent link">&para;</a></h2>
 <div class="task">
-<p class="env-number"><strong>Task 7.61</strong> (Related exercises: <a href="#ex-6-13">Exercise 7.17</a>, <a href="#ex-6-20">Exercise 7.24</a>, <a href="#ex-6-22">Exercise 7.26</a>, <a href="#ex-euclid-polynomials-gs">Exercise 7.1</a>, <a href="#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
+<p class="env-number"><strong>Task 7.61</strong></p>
 <p><span id="tas-compute-orthonormal-basis" label="tas:compute-orthonormal-basis"></span> Compute an orthonormal basis of a subspace <span class="arithmatex">\(U \subset {\bf R}^n\)</span>.</p>
 <p><em>Method:</em> First compute any (not necessarily orthonormal) basis of <span class="arithmatex">\(U\)</span>. Then orthonormalize that basis using the Gram–Schmidt algorithm (<a href="#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>).</p>
 </div>
 <div class="task">
-<p class="env-number"><strong>Task 7.62</strong> (Related exercises: <a href="#ex-6-1">Exercise 7.2</a>, <a href="#ex-6-13">Exercise 7.17</a>, <a href="#ex-6-2">Exercise 7.4</a>, <a href="#ex-6-6">Exercise 7.7</a>, <a href="#ex-euclid-r4-projection">Exercise 7.3</a>, <a href="#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
+<p class="env-number"><strong>Task 7.62</strong></p>
 <p><span id="tas-compute-orthogonal-projection" label="tas:compute-orthogonal-projection"></span> Given <span class="arithmatex">\(x \in {\bf R}^n\)</span> and a subspace <span class="arithmatex">\(U \subset {\bf R}^n\)</span>, compute the orthogonal projection <span class="arithmatex">\(p_U(x)\)</span>.</p>
 <p><em>Method:</em> Compute an orthonormal basis <span class="arithmatex">\(u_1, \dots, u_k\)</span> of <span class="arithmatex">\(U\)</span> (cf. <a href="#tas-compute-orthonormal-basis" data-reference-type="ref+Label" data-reference="tas:compute-orthonormal-basis">Task 7.61</a>), then use</p>
 <div class="arithmatex">
@@ -2300,7 +2319,7 @@ p_U(x) = \sum_{i=1}^k {\left \langle x, u_i \right \rangle} u_i.
 <p>One may also compute <span class="arithmatex">\(U^\bot\)</span> (cf. <a href="#tas-compute-orthogonal-complement" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-complement">Task 7.63</a>), then compute <span class="arithmatex">\(p_{U^\bot}(x)\)</span>, and finally <span class="arithmatex">\(p_U(x) = x-p_{U^\bot}(x)\)</span>. This may be easier in practice, especially if <span class="arithmatex">\(\dim U &gt; \dim U^\bot\)</span>.</p>
 </div>
 <div class="task">
-<p class="env-number"><strong>Task 7.63</strong> (Related exercises: <a href="#ex-6-1">Exercise 7.2</a>, <a href="#ex-6-13">Exercise 7.17</a>, <a href="#ex-6-2">Exercise 7.4</a>, <a href="#ex-6-20">Exercise 7.24</a>, <a href="#ex-6-22">Exercise 7.26</a>, <a href="#ex-6-3">Exercise 7.5</a>, <a href="#ex-euclid-r4-projection">Exercise 7.3</a>, <a href="#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
+<p class="env-number"><strong>Task 7.63</strong></p>
 <p><span id="tas-compute-orthogonal-complement" label="tas:compute-orthogonal-complement"></span> Compute the orthogonal complement <span class="arithmatex">\(U^\bot\)</span> of a given a subspace <span class="arithmatex">\(U \subset {\bf R}^n\)</span>.</p>
 <p><em>Method:</em> Compute a basis <span class="arithmatex">\(u_1, \dots, u_k\)</span> of <span class="arithmatex">\(U\)</span>. Then solve the homogeneous system</p>
 <div class="arithmatex">
@@ -2318,7 +2337,7 @@ p_U(x) = \sum_{i=1}^k {\left \langle x, u_i \right \rangle} u_i.
 </div>
 <p>The next two tasks are related to the different representations of lines.</p>
 <div class="task">
-<p class="env-number"><strong>Task 7.64</strong> (Related exercises: <a href="#ex-euclid-lines-plane">Exercise 7.14</a>)</p>
+<p class="env-number"><strong>Task 7.64</strong></p>
 <p><span id="tas-line-cartesian-to-parametric" label="tas:line-cartesian-to-parametric"></span> Convert a line <span class="arithmatex">\(L\)</span> from cartesian equations (as in <a href="#def-cartesian-equation-line" data-reference-type="ref+Label" data-reference="def:cartesian-equation-line">Definition 7.53</a>) to a vector/parametric equation (as in <a href="#def-parametric-equation-line" data-reference-type="ref+Label" data-reference="def:parametric-equation-line">Definition 7.50</a>).</p>
 <p><em>Method:</em> Pick two distinct points <span class="arithmatex">\(p, q\)</span> satisfying the cartesian equations. Then write</p>
 <div class="arithmatex">
@@ -2334,7 +2353,7 @@ L = p + L(p-q).
 <p><em>Method:</em> Express one coordinate in terms of the free parameter and substitute into the other coordinate equations.</p>
 </div>
 <div class="task">
-<p class="env-number"><strong>Task 7.66</strong> (Related exercises: <a href="#ex-6-15">Exercise 7.19</a>, <a href="#ex-6-23">Exercise 7.27</a>)</p>
+<p class="env-number"><strong>Task 7.66</strong></p>
 <p><span id="tas-plane-through-three-points" label="tas:plane-through-three-points"></span> Compute a cartesian equation for the plane <span class="arithmatex">\(P\)</span> containing three non-collinear points <span class="arithmatex">\(p, q, r \in {\bf R}^3\)</span>.</p>
 <p><em>Method:</em> First write</p>
 <div class="arithmatex">
@@ -2345,12 +2364,12 @@ P = p + L(q-p, r-p).
 <p>Then compute a normal vector to <span class="arithmatex">\(L(q-p, r-p)\)</span> and write the corresponding cartesian equation. As in <a href="#tas-line-cartesian-to-parametric" data-reference-type="ref+Label" data-reference="tas:line-cartesian-to-parametric">Task 7.64</a>, different choices of <span class="arithmatex">\(p, q, r\)</span> may give different intermediate vectors, but they span the same underlying subspace.</p>
 </div>
 <div class="task">
-<p class="env-number"><strong>Task 7.67</strong> (Related exercises: <a href="#ex-6-21">Exercise 7.25</a>, <a href="#ex-euclid-lines-plane">Exercise 7.14</a>)</p>
+<p class="env-number"><strong>Task 7.67</strong></p>
 <p><span id="tas-plane-through-line-and-point" label="tas:plane-through-line-and-point"></span> Given a line <span class="arithmatex">\(L\)</span> and a point <span class="arithmatex">\(r \notin L\)</span>, find the plane <span class="arithmatex">\(P\)</span> containing <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(r\)</span>.</p>
 <p><em>Method:</em> Choose two distinct points <span class="arithmatex">\(p, q \in L\)</span>, then apply <a href="#tas-plane-through-three-points" data-reference-type="ref+Label" data-reference="tas:plane-through-three-points">Task 7.66</a> to the three points <span class="arithmatex">\(p, q, r\)</span>.</p>
 </div>
 <div class="task">
-<p class="env-number"><strong>Task 7.68</strong> (Related exercises: <a href="#ex-6-18">Exercise 7.22</a>, <a href="#ex-6-21">Exercise 7.25</a>, <a href="#ex-6-23">Exercise 7.27</a>)</p>
+<p class="env-number"><strong>Task 7.68</strong></p>
 <p><span id="tas-line-in-plane-orthogonal-to-line" label="tas:line-in-plane-orthogonal-to-line"></span> Given a plane <span class="arithmatex">\(P = \{x \mid {\left \langle x, a \right \rangle} = d \}\)</span>, a line <span class="arithmatex">\(L = v + L(w) \subset P\)</span>, and a point <span class="arithmatex">\(p \in P\)</span>, find the line <span class="arithmatex">\(M \subset P\)</span> through <span class="arithmatex">\(p\)</span> orthogonal to <span class="arithmatex">\(L\)</span>.</p>
 <p><em>Method:</em> Write <span class="arithmatex">\(M = p + L(w')\)</span>. Determine <span class="arithmatex">\(w'\)</span> by imposing <span class="arithmatex">\(w' \bot a\)</span> and <span class="arithmatex">\(w' \bot w\)</span>, i.e., compute</p>
 <div class="arithmatex">
@@ -2361,7 +2380,7 @@ w' \in (L(a,w))^\bot
 <p>as in <a href="#tas-compute-orthogonal-complement" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-complement">Task 7.63</a>.</p>
 </div>
 <div class="task">
-<p class="env-number"><strong>Task 7.69</strong> (Related exercises: <a href="#ex-6-15">Exercise 7.19</a>, <a href="#ex-euclid-lines-plane">Exercise 7.14</a>)</p>
+<p class="env-number"><strong>Task 7.69</strong></p>
 <p><span id="tas-plane-vector-to-cartesian" label="tas:plane-vector-to-cartesian"></span> Given a plane in vector form <span class="arithmatex">\(P = v + L(w_1, w_2)\)</span>, compute a cartesian equation</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
@@ -2377,17 +2396,17 @@ d={\left \langle a, v \right \rangle}.
 <p>Note: a presentation of <span class="arithmatex">\(P\)</span> as above is not unique, but another presentation as <span class="arithmatex">\(P = \{x \in {\bf R}^3 | {\left \langle x, a' \right \rangle} = d'\}\)</span> will be such that <span class="arithmatex">\(a = \lambda a'\)</span> for some <span class="arithmatex">\(\lambda \in {\bf R}, \lambda \ne 0\)</span>, and <span class="arithmatex">\(d = \lambda d'\)</span>.</p>
 </div>
 <div class="task">
-<p class="env-number"><strong>Task 7.70</strong> (Related exercises: <a href="#ex-6-21">Exercise 7.25</a>, <a href="#ex-6-7">Exercise 7.8</a>)</p>
+<p class="env-number"><strong>Task 7.70</strong></p>
 <p><span id="tas-check-lines-parallel" label="tas:check-lines-parallel"></span> Decide whether two lines are parallel.</p>
 <p><em>Method:</em> If the lines are in parametric form (<span class="arithmatex">\(L = v+L(w)\)</span> and <span class="arithmatex">\(L' = v'+L(w')\)</span>), check whether <span class="arithmatex">\(w\)</span> and <span class="arithmatex">\(w'\)</span> are linearly dependent. If the lines are given in cartesian form, first convert them via <a href="#tas-line-cartesian-to-parametric" data-reference-type="ref+Label" data-reference="tas:line-cartesian-to-parametric">Task 7.64</a>.</p>
 </div>
 <div class="task">
-<p class="env-number"><strong>Task 7.71</strong> (Related exercises: <a href="#ex-6-14">Exercise 7.18</a>, <a href="#ex-6-16">Exercise 7.20</a>, <a href="#ex-6-19">Exercise 7.23</a>, <a href="#ex-6-8">Exercise 7.9</a>)</p>
+<p class="env-number"><strong>Task 7.71</strong></p>
 <p><span id="tas-check-lines-skew" label="tas:check-lines-skew"></span> Decide whether two lines <span class="arithmatex">\(L = v+L(w)\)</span> and <span class="arithmatex">\(L' = v'+L(w')\)</span> are skew.</p>
 <p><em>Method:</em> Verify both conditions: (a) <span class="arithmatex">\(w\)</span> and <span class="arithmatex">\(w'\)</span> are linearly independent, and (b) <span class="arithmatex">\(L \cap L' = \emptyset\)</span>. For condition (b), it is often convenient to use cartesian equations first (cf. <a href="#tas-line-parametric-to-cartesian" data-reference-type="ref+Label" data-reference="tas:line-parametric-to-cartesian">Task 7.65</a>).</p>
 </div>
 <div class="task">
-<p class="env-number"><strong>Task 7.72</strong> (Related exercises: <a href="#ex-6-12">Exercise 7.13</a>, <a href="#ex-6-14">Exercise 7.18</a>, <a href="#ex-6-19">Exercise 7.23</a>, <a href="#ex-6-23">Exercise 7.27</a>, <a href="#ex-6-9">Exercise 7.10</a>)</p>
+<p class="env-number"><strong>Task 7.72</strong></p>
 <p><span id="tas-check-line-parallel-plane" label="tas:check-line-parallel-plane"></span> Decide whether a line <span class="arithmatex">\(L = v+L(w)\)</span> is parallel to a plane <span class="arithmatex">\(P\)</span>.</p>
 <p><em>Method:</em> If <span class="arithmatex">\(P = v' + L(w'_1,w'_2)\)</span>, check whether <span class="arithmatex">\(w\)</span> is a linear combination of <span class="arithmatex">\(w'_1,w'_2\)</span> (equivalently, <span class="arithmatex">\(W \subset W'\)</span>). If <span class="arithmatex">\(P = \{x \mid {\left \langle x, a \right \rangle}=d\}\)</span>, check whether <span class="arithmatex">\({\left \langle w,a \right \rangle}=0\)</span>.</p>
 </div>
@@ -2397,7 +2416,7 @@ d={\left \langle a, v \right \rangle}.
 <p><em>Method:</em> If <span class="arithmatex">\(P = \{x \mid {\left \langle x, a \right \rangle}=d\}\)</span>, check whether <span class="arithmatex">\(w\)</span> and <span class="arithmatex">\(a\)</span> are linearly dependent. If <span class="arithmatex">\(P = v'+L(w'_1,w'_2)\)</span>, check whether <span class="arithmatex">\({\left \langle w,w'_1 \right \rangle}=0\)</span> and <span class="arithmatex">\({\left \langle w,w'_2 \right \rangle}=0\)</span>.</p>
 </div>
 <div class="task">
-<p class="env-number"><strong>Task 7.74</strong> (Related exercises: <a href="#ex-6-12">Exercise 7.13</a>, <a href="#ex-6-19">Exercise 7.23</a>, <a href="#ex-6-8">Exercise 7.9</a>)</p>
+<p class="env-number"><strong>Task 7.74</strong></p>
 <p><span id="tas-compute-distance-affine-subspaces" label="tas:compute-distance-affine-subspaces"></span> Compute the distance of two affine subspaces <span class="arithmatex">\(X = v + W\)</span> and <span class="arithmatex">\(X' = v' + W'\)</span> (including the point case <span class="arithmatex">\(W=\{0\}\)</span>).</p>
 <p><em>Method:</em> Use one of the following equivalent approaches:</p>
 <ul>
@@ -2412,7 +2431,7 @@ d={\left \langle a, v \right \rangle}.
 <h2 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h2>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.1</strong></p>
-<p><span id="ex-euclid-polynomials-gs" label="ex:euclid-polynomials-gs"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-euclid-polynomials-gs" data-reference-type="ref+Label" data-reference="sol--ex:euclid-polynomials-gs">Solution C.7.1</a>.) Let <span class="arithmatex">\(V = P_{\le 2} = \{ at^2 + bt+c \ | \ a,b,c \in {\bf R} \}\)</span> be the vector space of (real) polynomials of degree <span class="arithmatex">\(\le 2\)</span>. We consider the scalar product in <a href="#ex-examples-scalar-product" data-reference-type="ref+Label" data-reference="ex:examples-scalar-product">Example 7.16</a><a href="#item-functions" data-reference-type="ref" data-reference="item--functions">3.</a>, i.e.,</p>
+<p><span id="ex-euclid-polynomials-gs" label="ex:euclid-polynomials-gs"></span> (See <a href="#sol-ex-euclid-polynomials-gs" data-reference-type="ref+Label" data-reference="sol--ex:euclid-polynomials-gs">Solution 7.9.1</a>.) Let <span class="arithmatex">\(V = P_{\le 2} = \{ at^2 + bt+c \ | \ a,b,c \in {\bf R} \}\)</span> be the vector space of (real) polynomials of degree <span class="arithmatex">\(\le 2\)</span>. We consider the scalar product in <a href="#ex-examples-scalar-product" data-reference-type="ref+Label" data-reference="ex:examples-scalar-product">Example 7.16</a><a href="#item-functions" data-reference-type="ref" data-reference="item--functions">3.</a>, i.e.,</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 {\left \langle p, q \right \rangle} = \int_{-1}^1 p(x)q(x) dx.
@@ -2429,7 +2448,7 @@ d={\left \langle a, v \right \rangle}.
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.2</strong></p>
-<p><span id="ex-6-1" label="ex 6.1"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-1" data-reference-type="ref+Label" data-reference="sol--ex 6.1">Solution C.7.3</a>.) Consider the subspace <span class="arithmatex">\(U \subset {\bf R}^3\)</span> given by the solutions of the homogeneous linear system</p>
+<p><span id="ex-euclid-6-1" label="ex:euclid-6-1"></span> (See <a href="#sol-ex-euclid-6-1" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-1">Solution 7.9.3</a>.) Consider the subspace <span class="arithmatex">\(U \subset {\bf R}^3\)</span> given by the solutions of the homogeneous linear system</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 x-y+3z=0.
@@ -2449,7 +2468,7 @@ x-y+3z=0.
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.3</strong></p>
-<p><span id="ex-euclid-r4-projection" label="ex:euclid-r4-projection"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-euclid-r4-projection" data-reference-type="ref+Label" data-reference="sol--ex:euclid-r4-projection">Solution C.7.2</a>.) Consider the subspace <span class="arithmatex">\(W \subset {\bf R}^4\)</span> given by the equations</p>
+<p><span id="ex-euclid-r4-projection" label="ex:euclid-r4-projection"></span> (See <a href="#sol-ex-euclid-r4-projection" data-reference-type="ref+Label" data-reference="sol--ex:euclid-r4-projection">Solution 7.9.2</a>.) Consider the subspace <span class="arithmatex">\(W \subset {\bf R}^4\)</span> given by the equations</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
@@ -2470,7 +2489,7 @@ y+z-t &amp; = 0\\
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.4</strong></p>
-<p><span id="ex-6-2" label="ex 6.2"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-2" data-reference-type="ref+Label" data-reference="sol--ex 6.2">Solution C.7.4</a>.) Consider the subspace <span class="arithmatex">\(U \subset {\bf R}^3\)</span> given by the equations</p>
+<p><span id="ex-euclid-6-2" label="ex:euclid-6-2"></span> (See <a href="#sol-ex-euclid-6-2" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-2">Solution 7.9.4</a>.) Consider the subspace <span class="arithmatex">\(U \subset {\bf R}^3\)</span> given by the equations</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
@@ -2491,11 +2510,11 @@ x+y+z &amp; = 0\\
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.5</strong></p>
-<p><span id="ex-6-3" label="ex 6.3"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-3" data-reference-type="ref+Label" data-reference="sol--ex 6.3">Solution C.7.5</a>.) Compute the orthogonal complement of <span class="arithmatex">\(T = L((1,0,-3))\)</span>.</p>
+<p><span id="ex-euclid-6-3" label="ex:euclid-6-3"></span> (See <a href="#sol-ex-euclid-6-3" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-3">Solution 7.9.5</a>.) Compute the orthogonal complement of <span class="arithmatex">\(T = L((1,0,-3))\)</span>.</p>
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.6</strong></p>
-<p><span id="ex-6-4" label="ex 6.4"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-4" data-reference-type="ref+Label" data-reference="sol--ex 6.4">Solution C.7.6</a>.) Is there a subspace <span class="arithmatex">\(U \subset {\bf R}^3\)</span> such that</p>
+<p><span id="ex-euclid-6-4" label="ex:euclid-6-4"></span> (See <a href="#sol-ex-euclid-6-4" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-4">Solution 7.9.6</a>.) Is there a subspace <span class="arithmatex">\(U \subset {\bf R}^3\)</span> such that</p>
 <ol>
 <li>
 <p>the orthogonal projection of <span class="arithmatex">\(t=(1,1,0)\)</span> onto <span class="arithmatex">\(U\)</span> is given by <span class="arithmatex">\((1,5,6)\)</span>?</p>
@@ -2507,15 +2526,15 @@ x+y+z &amp; = 0\\
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.7</strong></p>
-<p><span id="ex-6-6" label="ex 6.6"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-6" data-reference-type="ref+Label" data-reference="sol--ex 6.6">Solution C.7.7</a>.) Let <span class="arithmatex">\(L = \left ( \begin{array}{c} 1 \\ 3 \\ 5 \end{array} \right ) + L (\left ( \begin{array}{c} 1 \\ 1 \\ 4 \end{array} \right ))\)</span>. Compute the closest point of <span class="arithmatex">\(L\)</span> to the origin, and its distance to the origin.</p>
+<p><span id="ex-euclid-6-6" label="ex:euclid-6-6"></span> (See <a href="#sol-ex-euclid-6-6" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-6">Solution 7.9.7</a>.) Let <span class="arithmatex">\(L = \left ( \begin{array}{c} 1 \\ 3 \\ 5 \end{array} \right ) + L (\left ( \begin{array}{c} 1 \\ 1 \\ 4 \end{array} \right ))\)</span>. Compute the closest point of <span class="arithmatex">\(L\)</span> to the origin, and its distance to the origin.</p>
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.8</strong></p>
-<p><span id="ex-6-7" label="ex 6.7"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-7" data-reference-type="ref+Label" data-reference="sol--ex 6.7">Solution C.7.8</a>.) Consider the two lines <span class="arithmatex">\(L: x=1+t,y=t,z=2+t, t \in {\bf R}\)</span> and <span class="arithmatex">\(L':x-3=y-1=z-3\)</span>. Are they parallel? Compute the distance between <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(L'\)</span>.</p>
+<p><span id="ex-euclid-6-7" label="ex:euclid-6-7"></span> (See <a href="#sol-ex-euclid-6-7" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-7">Solution 7.9.8</a>.) Consider the two lines <span class="arithmatex">\(L: x=1+t,y=t,z=2+t, t \in {\bf R}\)</span> and <span class="arithmatex">\(L':x-3=y-1=z-3\)</span>. Are they parallel? Compute the distance between <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(L'\)</span>.</p>
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.9</strong></p>
-<p><span id="ex-6-8" label="ex 6.8"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-8" data-reference-type="ref+Label" data-reference="sol--ex 6.8">Solution C.7.9</a>.) Are the lines</p>
+<p><span id="ex-euclid-6-8" label="ex:euclid-6-8"></span> (See <a href="#sol-ex-euclid-6-8" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-8">Solution 7.9.9</a>.) Are the lines</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 L: x = y-1=-z  \text{ and } L' :x-2=-y=\frac z2
@@ -2525,7 +2544,7 @@ L: x = y-1=-z  \text{ and } L' :x-2=-y=\frac z2
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.10</strong></p>
-<p><span id="ex-6-9" label="ex 6.9"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-9" data-reference-type="ref+Label" data-reference="sol--ex 6.9">Solution C.7.10</a>.) Let <span class="arithmatex">\(P\)</span> be the plane given by the equation</p>
+<p><span id="ex-euclid-6-9" label="ex:euclid-6-9"></span> (See <a href="#sol-ex-euclid-6-9" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-9">Solution 7.9.10</a>.) Let <span class="arithmatex">\(P\)</span> be the plane given by the equation</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 4x+5y+10z-20 = 0.
@@ -2549,7 +2568,7 @@ L: x = y-1=-z  \text{ and } L' :x-2=-y=\frac z2
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.11</strong></p>
-<p><span id="ex-6-10" label="ex 6.10"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-10" data-reference-type="ref+Label" data-reference="sol--ex 6.10">Solution C.7.11</a>.) Which of the following matrices is orthogonally diagonalizable? If so, find a orthonormal eigenbasis of <span class="arithmatex">\({\bf R}^2\)</span>.</p>
+<p><span id="ex-euclid-6-10" label="ex:euclid-6-10"></span> (See <a href="#sol-ex-euclid-6-10" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-10">Solution 7.9.11</a>.) Which of the following matrices is orthogonally diagonalizable? If so, find a orthonormal eigenbasis of <span class="arithmatex">\({\bf R}^2\)</span>.</p>
 <ol>
 <li>
 <p><span class="arithmatex">\(A = \left ( \begin{array}{cc} 1 &amp; 2 \\ 2 &amp; 1 \end{array} \right )\)</span></p>
@@ -2564,11 +2583,11 @@ L: x = y-1=-z  \text{ and } L' :x-2=-y=\frac z2
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.12</strong></p>
-<p><span id="ex-6-11" label="ex 6.11"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-11" data-reference-type="ref+Label" data-reference="sol--ex 6.11">Solution C.7.12</a>.) <span id="eigenvectors-orthogonal" label="eigenvectors.orthogonal"></span> Let <span class="arithmatex">\(A\)</span> be a symmetric matrix and <span class="arithmatex">\(\lambda \ne \mu\)</span> two <em>distinct</em> eigenvalues of <span class="arithmatex">\(A\)</span>, with eigenvectors <span class="arithmatex">\(v\)</span> and <span class="arithmatex">\(w\)</span>, respectively. Then <span class="arithmatex">\(v \bot w\)</span>, i.e., eigenvectors of <em>distinct</em> eigenvalues are orthogonal.</p>
+<p><span id="ex-euclid-6-11" label="ex:euclid-6-11"></span> (See <a href="#sol-ex-euclid-6-11" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-11">Solution 7.9.12</a>.) <span id="eigenvectors-orthogonal" label="eigenvectors.orthogonal"></span> Let <span class="arithmatex">\(A\)</span> be a symmetric matrix and <span class="arithmatex">\(\lambda \ne \mu\)</span> two <em>distinct</em> eigenvalues of <span class="arithmatex">\(A\)</span>, with eigenvectors <span class="arithmatex">\(v\)</span> and <span class="arithmatex">\(w\)</span>, respectively. Then <span class="arithmatex">\(v \bot w\)</span>, i.e., eigenvectors of <em>distinct</em> eigenvalues are orthogonal.</p>
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.13</strong></p>
-<p><span id="ex-6-12" label="ex 6.12"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-12" data-reference-type="ref+Label" data-reference="sol--ex 6.12">Solution C.7.13</a>.) Let <span class="arithmatex">\(P \subset {\bf R}^4\)</span> by the hyperplane given by</p>
+<p><span id="ex-euclid-6-12" label="ex:euclid-6-12"></span> (See <a href="#sol-ex-euclid-6-12" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-12">Solution 7.9.13</a>.) Let <span class="arithmatex">\(P \subset {\bf R}^4\)</span> by the hyperplane given by</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 2 x_1 + x_3 - x_4 = 4,
@@ -2591,7 +2610,7 @@ L_t = (1,0,0,-2t) + L(t, 1, 0, -1).
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.14</strong></p>
-<p><span id="ex-euclid-lines-plane" label="ex:euclid-lines-plane"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-euclid-lines-plane" data-reference-type="ref+Label" data-reference="sol--ex:euclid-lines-plane">Solution C.7.14</a>.) Let <span class="arithmatex">\(L \subset {\bf R}^3\)</span> be the line defined be the system</p>
+<p><span id="ex-euclid-lines-plane" label="ex:euclid-lines-plane"></span> (See <a href="#sol-ex-euclid-lines-plane" data-reference-type="ref+Label" data-reference="sol--ex:euclid-lines-plane">Solution 7.9.14</a>.) Let <span class="arithmatex">\(L \subset {\bf R}^3\)</span> be the line defined be the system</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
@@ -2618,7 +2637,7 @@ y+z &amp; = -2.
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.15</strong></p>
-<p><span id="ex-euclid-poly-operator" label="ex:euclid-poly-operator"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-euclid-poly-operator" data-reference-type="ref+Label" data-reference="sol--ex:euclid-poly-operator">Solution C.7.15</a>.) Let <span class="arithmatex">\(V = P_{\le 2}\)</span> be the vector space of polynomials of degree <span class="arithmatex">\(\le 2\)</span>. We write elements of <span class="arithmatex">\(V\)</span> as <span class="arithmatex">\(p(t)=a+bt+ct^2\)</span>, where <span class="arithmatex">\(a,b,c\in{\bf R}\)</span>. Define</p>
+<p><span id="ex-euclid-poly-operator" label="ex:euclid-poly-operator"></span> (See <a href="#sol-ex-euclid-poly-operator" data-reference-type="ref+Label" data-reference="sol--ex:euclid-poly-operator">Solution 7.9.15</a>.) Let <span class="arithmatex">\(V = P_{\le 2}\)</span> be the vector space of polynomials of degree <span class="arithmatex">\(\le 2\)</span>. We write elements of <span class="arithmatex">\(V\)</span> as <span class="arithmatex">\(p(t)=a+bt+ct^2\)</span>, where <span class="arithmatex">\(a,b,c\in{\bf R}\)</span>. Define</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 {\left \langle p, q \right \rangle} := \int_{-1}^1 p(t) q(t) dt.
@@ -2647,7 +2666,7 @@ y+z &amp; = -2.
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.16</strong></p>
-<p><span id="ex-euclid-u-r4-orth" label="ex:euclid-u-r4-orth"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-euclid-u-r4-orth" data-reference-type="ref+Label" data-reference="sol--ex:euclid-u-r4-orth">Solution C.7.16</a>.) Consider the subspace <span class="arithmatex">\(U \subset{\bf R}^4\)</span> given by the solutions of the equation</p>
+<p><span id="ex-euclid-u-r4-orth" label="ex:euclid-u-r4-orth"></span> (See <a href="#sol-ex-euclid-u-r4-orth" data-reference-type="ref+Label" data-reference="sol--ex:euclid-u-r4-orth">Solution 7.9.16</a>.) Consider the subspace <span class="arithmatex">\(U \subset{\bf R}^4\)</span> given by the solutions of the equation</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 x_1-x_2+x_3+2x_4 = 0.
@@ -2671,7 +2690,7 @@ x_1-x_2+x_3+2x_4 = 0.
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.17</strong></p>
-<p><span id="ex-6-13" label="ex 6.13"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-13" data-reference-type="ref+Label" data-reference="sol--ex 6.13">Solution C.7.17</a>.) In the Euclidean space <span class="arithmatex">\({\bf R}^4\)</span>, endowed with the standard scalar product, let <span class="arithmatex">\(U\)</span> be the subspace spanned by the vectors <span class="arithmatex">\(u_1 = (1,2,0,-1)\)</span>, <span class="arithmatex">\(u_2 = (0,-4,3,4)\)</span>.</p>
+<p><span id="ex-euclid-6-13" label="ex:euclid-6-13"></span> (See <a href="#sol-ex-euclid-6-13" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-13">Solution 7.9.17</a>.) In the Euclidean space <span class="arithmatex">\({\bf R}^4\)</span>, endowed with the standard scalar product, let <span class="arithmatex">\(U\)</span> be the subspace spanned by the vectors <span class="arithmatex">\(u_1 = (1,2,0,-1)\)</span>, <span class="arithmatex">\(u_2 = (0,-4,3,4)\)</span>.</p>
 <ol>
 <li>
 <p>Compute an orthogonal basis of <span class="arithmatex">\(U\)</span>.</p>
@@ -2689,7 +2708,7 @@ x_1-x_2+x_3+2x_4 = 0.
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.18</strong></p>
-<p><span id="ex-6-14" label="ex 6.14"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-14" data-reference-type="ref+Label" data-reference="sol--ex 6.14">Solution C.7.18</a>.) Consider the following two lines in <span class="arithmatex">\({\bf R}^3\)</span>, where <span class="arithmatex">\(x, y, z\)</span> are the coordinates:</p>
+<p><span id="ex-euclid-6-14" label="ex:euclid-6-14"></span> (See <a href="#sol-ex-euclid-6-14" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-14">Solution 7.9.18</a>.) Consider the following two lines in <span class="arithmatex">\({\bf R}^3\)</span>, where <span class="arithmatex">\(x, y, z\)</span> are the coordinates:</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 L: \left\{\begin{aligned}
@@ -2719,7 +2738,7 @@ M: \left\{\begin{aligned}
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.19</strong></p>
-<p><span id="ex-6-15" label="ex 6.15"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-15" data-reference-type="ref+Label" data-reference="sol--ex 6.15">Solution C.7.19</a>.) Consider the points <span class="arithmatex">\(p = (3,1,0)\)</span>, <span class="arithmatex">\(q = (0,1,3)\)</span> and <span class="arithmatex">\(r = (-3,0,-3) \in {\bf R}^3\)</span>. Let <span class="arithmatex">\(L\)</span> be the line passing through <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span>.</p>
+<p><span id="ex-euclid-6-15" label="ex:euclid-6-15"></span> (See <a href="#sol-ex-euclid-6-15" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-15">Solution 7.9.19</a>.) Consider the points <span class="arithmatex">\(p = (3,1,0)\)</span>, <span class="arithmatex">\(q = (0,1,3)\)</span> and <span class="arithmatex">\(r = (-3,0,-3) \in {\bf R}^3\)</span>. Let <span class="arithmatex">\(L\)</span> be the line passing through <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span>.</p>
 <ol>
 <li>
 <p>Determine the parametric equation of <span class="arithmatex">\(L\)</span>, i.e., express <span class="arithmatex">\(L\)</span> in the form <span class="arithmatex">\(L = v + W\)</span>, for an appropriate vector <span class="arithmatex">\(v \in {\bf R}^3\)</span> and a subspace <span class="arithmatex">\(W \subset {\bf R}^3\)</span>.</p>
@@ -2731,19 +2750,19 @@ M: \left\{\begin{aligned}
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.20</strong></p>
-<p><span id="ex-6-16" label="ex 6.16"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-16" data-reference-type="ref+Label" data-reference="sol--ex 6.16">Solution C.7.20</a>.) Consider the line <span class="arithmatex">\(L = (3,1,0) + L(1,0,-1)\)</span>. Is there a plane containing <span class="arithmatex">\(L\)</span> and the line <span class="arithmatex">\(M\)</span> given by the systen <span class="arithmatex">\(x + z = 2\)</span>, <span class="arithmatex">\(x - 2 y = 2\)</span> (with <span class="arithmatex">\(x, y, z\)</span> being the coordinates of <span class="arithmatex">\({\bf R}^3\)</span>)?</p>
+<p><span id="ex-euclid-6-16" label="ex:euclid-6-16"></span> (See <a href="#sol-ex-euclid-6-16" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-16">Solution 7.9.20</a>.) Consider the line <span class="arithmatex">\(L = (3,1,0) + L(1,0,-1)\)</span>. Is there a plane containing <span class="arithmatex">\(L\)</span> and the line <span class="arithmatex">\(M\)</span> given by the systen <span class="arithmatex">\(x + z = 2\)</span>, <span class="arithmatex">\(x - 2 y = 2\)</span> (with <span class="arithmatex">\(x, y, z\)</span> being the coordinates of <span class="arithmatex">\({\bf R}^3\)</span>)?</p>
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.21</strong></p>
-<p><span id="ex-6-17" label="ex 6.17"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-17" data-reference-type="ref+Label" data-reference="sol--ex 6.17">Solution C.7.21</a>.) Consider the line <span class="arithmatex">\(L = (3,1,0) + L(1,0,-1)\)</span>. Let <span class="arithmatex">\(p = (-1,-1,-1)\)</span>. Describe all the points <span class="arithmatex">\(q \in {\bf R}^3\)</span> such that the line <span class="arithmatex">\(M\)</span> passing through <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> intersects <span class="arithmatex">\(L\)</span> orthogonally (i.e., intersects it, and does so orthogonally).</p>
+<p><span id="ex-euclid-6-17" label="ex:euclid-6-17"></span> (See <a href="#sol-ex-euclid-6-17" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-17">Solution 7.9.21</a>.) Consider the line <span class="arithmatex">\(L = (3,1,0) + L(1,0,-1)\)</span>. Let <span class="arithmatex">\(p = (-1,-1,-1)\)</span>. Describe all the points <span class="arithmatex">\(q \in {\bf R}^3\)</span> such that the line <span class="arithmatex">\(M\)</span> passing through <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> intersects <span class="arithmatex">\(L\)</span> orthogonally (i.e., intersects it, and does so orthogonally).</p>
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.22</strong></p>
-<p><span id="ex-6-18" label="ex 6.18"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-18" data-reference-type="ref+Label" data-reference="sol--ex 6.18">Solution C.7.22</a>.) Consider the plane <span class="arithmatex">\(P = \{x \in {\bf R}^3, 3x - 4y+z = 2\}\)</span> and the point <span class="arithmatex">\(p = (0,1,6) \in P\)</span>, as well as the line <span class="arithmatex">\(L = (0,0,2) + L(1, 1, 1) \subset P\)</span>, compute the line <span class="arithmatex">\(M \subset P\)</span> that is orthogonal to <span class="arithmatex">\(L\)</span> and contains the point <span class="arithmatex">\(p\)</span>.</p>
+<p><span id="ex-euclid-6-18" label="ex:euclid-6-18"></span> (See <a href="#sol-ex-euclid-6-18" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-18">Solution 7.9.22</a>.) Consider the plane <span class="arithmatex">\(P = \{x \in {\bf R}^3, 3x - 4y+z = 2\}\)</span> and the point <span class="arithmatex">\(p = (0,1,6) \in P\)</span>, as well as the line <span class="arithmatex">\(L = (0,0,2) + L(1, 1, 1) \subset P\)</span>, compute the line <span class="arithmatex">\(M \subset P\)</span> that is orthogonal to <span class="arithmatex">\(L\)</span> and contains the point <span class="arithmatex">\(p\)</span>.</p>
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.23</strong></p>
-<p><span id="ex-6-19" label="ex 6.19"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-19" data-reference-type="ref+Label" data-reference="sol--ex 6.19">Solution C.7.23</a>.) Consider the lines (in <span class="arithmatex">\({\bf R}^3\)</span>)</p>
+<p><span id="ex-euclid-6-19" label="ex:euclid-6-19"></span> (See <a href="#sol-ex-euclid-6-19" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-19">Solution 7.9.23</a>.) Consider the lines (in <span class="arithmatex">\({\bf R}^3\)</span>)</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
@@ -2783,7 +2802,7 @@ L_2 : \ &amp; x=t \\ &amp; y = 2 \\ &amp; z = 4-t, t \in {\bf R}.
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.24</strong></p>
-<p><span id="ex-6-20" label="ex 6.20"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-20" data-reference-type="ref+Label" data-reference="sol--ex 6.20">Solution C.7.24</a>.) We endow <span class="arithmatex">\({\bf R}^4\)</span> with its usual scalar product. We consider the subspace <span class="arithmatex">\(U \subset {\bf R}^4\)</span> defined by the equations</p>
+<p><span id="ex-euclid-6-20" label="ex:euclid-6-20"></span> (See <a href="#sol-ex-euclid-6-20" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-20">Solution 7.9.24</a>.) We endow <span class="arithmatex">\({\bf R}^4\)</span> with its usual scalar product. We consider the subspace <span class="arithmatex">\(U \subset {\bf R}^4\)</span> defined by the equations</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \left\{\begin{aligned}
@@ -2809,7 +2828,7 @@ L_2 : \ &amp; x=t \\ &amp; y = 2 \\ &amp; z = 4-t, t \in {\bf R}.
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.25</strong></p>
-<p><span id="ex-6-21" label="ex 6.21"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-21" data-reference-type="ref+Label" data-reference="sol--ex 6.21">Solution C.7.25</a>.) Consider the lines (contained in <span class="arithmatex">\({\bf R}^3\)</span>)</p>
+<p><span id="ex-euclid-6-21" label="ex:euclid-6-21"></span> (See <a href="#sol-ex-euclid-6-21" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-21">Solution 7.9.25</a>.) Consider the lines (contained in <span class="arithmatex">\({\bf R}^3\)</span>)</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 L: \left\{\begin{aligned}
@@ -2839,7 +2858,7 @@ M: \left\{\begin{aligned}
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.26</strong></p>
-<p><span id="ex-6-22" label="ex 6.22"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-22" data-reference-type="ref+Label" data-reference="sol--ex 6.22">Solution C.7.26</a>.) Let <span class="arithmatex">\(U \subset {\bf R}^4\)</span> be the subspace defined by the equations</p>
+<p><span id="ex-euclid-6-22" label="ex:euclid-6-22"></span> (See <a href="#sol-ex-euclid-6-22" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-22">Solution 7.9.26</a>.) Let <span class="arithmatex">\(U \subset {\bf R}^4\)</span> be the subspace defined by the equations</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 U: \left\{\begin{aligned}
@@ -2866,7 +2885,7 @@ U: \left\{\begin{aligned}
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 7.27</strong></p>
-<p><span id="ex-6-23" label="ex 6.23"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-6-23" data-reference-type="ref+Label" data-reference="sol--ex 6.23">Solution C.7.27</a>.) We consider the following points (in <span class="arithmatex">\({\bf R}^3\)</span>) <span class="arithmatex">\(A = (6,-1,-4)\)</span>, <span class="arithmatex">\(B = (1,1,-1)\)</span> and the plane <span class="arithmatex">\(X: 2x - y - 2z = 3\)</span>.</p>
+<p><span id="ex-euclid-6-23" label="ex:euclid-6-23"></span> (See <a href="#sol-ex-euclid-6-23" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-23">Solution 7.9.27</a>.) We consider the following points (in <span class="arithmatex">\({\bf R}^3\)</span>) <span class="arithmatex">\(A = (6,-1,-4)\)</span>, <span class="arithmatex">\(B = (1,1,-1)\)</span> and the plane <span class="arithmatex">\(X: 2x - y - 2z = 3\)</span>.</p>
 <ol>
 <li>
 <p>Verify that <span class="arithmatex">\(B \in X\)</span>. Let <span class="arithmatex">\(C\)</span> be the orthogonal projection of <span class="arithmatex">\(A\)</span> onto the plane <span class="arithmatex">\(X\)</span>. Compute <span class="arithmatex">\(C\)</span>.</p>
@@ -2884,6 +2903,1145 @@ U: \left\{\begin{aligned}
     \end{aligned}\right.\)</span> is parallel to the plane <span class="arithmatex">\(X\)</span>.</p>
 </li>
 </ol>
+</div>
+<h2 id="solutions-to-the-exercises">Solutions to the exercises<a class="headerlink" href="#solutions-to-the-exercises" title="Permanent link">&para;</a></h2>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.1</strong></p>
+<p><span id="sol-ex-euclid-polynomials-gs" label="sol--ex:euclid-polynomials-gs"></span> (See <a href="#ex-euclid-polynomials-gs" data-reference-type="ref+Label" data-reference="ex:euclid-polynomials-gs">Exercise 7.1</a>.) This solution illustrates <a href="#tas-compute-orthonormal-basis" data-reference-type="ref+Label" data-reference="tas:compute-orthonormal-basis">Task 7.61</a>.</p>
+<p>We consider <span class="arithmatex">\(V=P_{\le 2}\)</span> with the scalar product</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle p,q \right \rangle}=\int_{-1}^1 p(t)q(t)\,dt
+\]</div>
+</div>
+<p>as in <a href="#ex-examples-scalar-product" data-reference-type="ref+Label" data-reference="ex:examples-scalar-product">Example 7.16</a><a href="#item-functions" data-reference-type="ref" data-reference="item--functions">3.</a>. For <span class="arithmatex">\(e_1=1\)</span>, <span class="arithmatex">\(e_2=t\)</span>, <span class="arithmatex">\(e_3=t^2\)</span>, we compute the scalar products, i.e., the numbers <span class="arithmatex">\({\left \langle e_i,e_j \right \rangle}\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+{\left \langle e_1,e_1 \right \rangle} &amp;= \int_{-1}^1 1\,dt = \left[ t \right]_{-1}^1 = 2, \\
+{\left \langle e_1,e_2 \right \rangle} &amp;= \int_{-1}^1 t\,dt = \left[ \frac{t^2}{2} \right]_{-1}^1 = 0, \\
+{\left \langle e_1,e_3 \right \rangle} &amp;= \int_{-1}^1 t^2\,dt = \left[ \frac{t^3}{3} \right]_{-1}^1 = \frac{2}{3}, \\
+{\left \langle e_2,e_2 \right \rangle} &amp;= \int_{-1}^1 t^2\,dt = \left[ \frac{t^3}{3} \right]_{-1}^1 = \frac{2}{3}, \\
+{\left \langle e_2,e_3 \right \rangle} &amp;= \int_{-1}^1 t^3\,dt = \left[ \frac{t^4}{4} \right]_{-1}^1 = 0, \\
+{\left \langle e_3,e_3 \right \rangle} &amp;= \int_{-1}^1 t^4\,dt = \left[ \frac{t^5}{5} \right]_{-1}^1 = \frac{2}{5}.
+\end{align*}
+\]</div>
+</div>
+<p>By symmetry (cf. <a href="#lem-scalar-product-properties" data-reference-type="ref+Label" data-reference="lem:scalar-product-properties">Lemma 7.5</a>), this also gives the remaining entries with <span class="arithmatex">\(i&gt;j\)</span>. We now apply Gram–Schmidt orthogonalization (<a href="#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+w_1 &amp;= \frac{e_1}{|\hspace{-0.5mm}|{e_1}|\hspace{-0.5mm}|}
+= \frac{1}{\sqrt 2}, \\
+w_2' &amp;= e_2-{\left \langle e_2,w_1 \right \rangle}w_1 = t,
+\qquad
+w_2=\frac{w_2'}{|\hspace{-0.5mm}|{w_2'}|\hspace{-0.5mm}|}=\sqrt{\frac 32}\,t, \\
+w_3' &amp;= e_3-{\left \langle e_3,w_1 \right \rangle}w_1-{\left \langle e_3,w_2 \right \rangle}w_2
+= t^2-\frac13.
+\end{align*}
+\]</div>
+</div>
+<p>Moreover,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+|\hspace{-0.5mm}|{w_3'}|\hspace{-0.5mm}|^2
+=\int_{-1}^1\left(t^2-\frac13\right)^2dt
+=\frac{8}{45},
+\]</div>
+</div>
+<p>so</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+w_3=\frac{w_3'}{|\hspace{-0.5mm}|{w_3'}|\hspace{-0.5mm}|}
+=\frac{\sqrt{10}}{4}(3t^2-1).
+\]</div>
+</div>
+<p>Therefore one orthonormal basis is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left(\frac{1}{\sqrt 2},\ \sqrt{\frac 32}\,t,\ \frac{\sqrt{10}}{4}(3t^2-1)\right).
+\]</div>
+</div>
+<p>Such polynomials, i.e., orthonormal with respect to the given scalar product, are called <em>Legendre polynomials</em>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.2</strong></p>
+<p><span id="sol-ex-euclid-r4-projection" label="sol--ex:euclid-r4-projection"></span> (See <a href="#ex-euclid-r4-projection" data-reference-type="ref+Label" data-reference="ex:euclid-r4-projection">Exercise 7.3</a>.) This solution illustrates <a href="#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="#tas-compute-orthogonal-projection">Task 7.62</a>.</p>
+<p>Let</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+W=\{(x,y,z,t)\in {\bf R}^4\mid x-t=0,\ y+z-t=0\}.
+\]</div>
+</div>
+<p>From the equations we get <span class="arithmatex">\(x=t\)</span> and <span class="arithmatex">\(y=t-z\)</span>. With free parameters <span class="arithmatex">\(z=a\)</span> and <span class="arithmatex">\(t=b\)</span>, every vector in <span class="arithmatex">\(W\)</span> has the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(x,y,z,t)=(b,b-a,a,b)=a(0,-1,1,0)+b(1,1,0,1).
+\]</div>
+</div>
+<p>Hence one basis of <span class="arithmatex">\(W\)</span> is <span class="arithmatex">\(\big((0,-1,1,0),(1,1,0,1)\big).\)</span> To compute <span class="arithmatex">\(W^\bot\)</span> in detail, let <span class="arithmatex">\(u=(x,y,z,t)\)</span> and impose orthogonality to a basis of <span class="arithmatex">\(W\)</span>, namely <span class="arithmatex">\(v_1=(0,-1,1,0)\)</span> and <span class="arithmatex">\(v_2=(1,1,0,1)\)</span> (cf. <a href="#dlm-orthogonal-complement" data-reference-type="ref+Label" data-reference="dlm:orthogonal-complement">Definition and Lemma 7.20</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle u,v_1 \right \rangle}=0,
+\qquad
+{\left \langle u,v_2 \right \rangle}=0.
+\]</div>
+</div>
+<p>This is the linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+-y+z=0,
+\qquad
+x+y+t=0,
+\]</div>
+</div>
+<p>equivalently</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc} 0&amp;-1&amp;1&amp;0\\ 1&amp;1&amp;0&amp;1 \end{array} \right )
+\left ( \begin{array}{c} x\\y\\z\\t \end{array} \right )=0.
+\]</div>
+</div>
+<p>Thus <span class="arithmatex">\(W^\bot\)</span> is the kernel of this matrix. Taking <span class="arithmatex">\(x=a\)</span> and <span class="arithmatex">\(y=b\)</span> as free parameters gives <span class="arithmatex">\(z=b\)</span> and <span class="arithmatex">\(t=-a-b\)</span>, so</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+u=(a,b,b,-a-b)=a(1,0,0,-1)+b(0,1,1,-1).
+\]</div>
+</div>
+<p>Therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+W^\bot=L\big((1,0,0,-1),(0,1,1,-1)\big).
+\]</div>
+</div>
+<p>We now compute the orthogonal projection of <span class="arithmatex">\(u=(1,5,1,6)\)</span> onto <span class="arithmatex">\(W\)</span>. We use the two basis vectors <span class="arithmatex">\(v_1=(0,-1,1,0)\)</span>, <span class="arithmatex">\(v_2=(1,1,0,1)\)</span> of <span class="arithmatex">\(W\)</span>, computed in the first part. We want to apply <a href="#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, which requires us to have an orthogonal basis. To this end, we apply Gram–Schmidt (<a href="#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle v_2,v_1 \right \rangle}=-1,
+\qquad
+v_2'=v_2-\frac{{\left \langle v_2,v_1 \right \rangle}}{{\left \langle v_1,v_1 \right \rangle}}v_1
+=v_2+\frac12 v_1=(1,\tfrac12,\tfrac12,1).
+\]</div>
+</div>
+<p>To avoid fractions, take <span class="arithmatex">\(w_2:=2v_2'=(2,1,1,2)\)</span>, which is still orthogonal to <span class="arithmatex">\(v_1\)</span>. By <a href="#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, specifically the formula in <a href="#eq-orthogonal-projection-formula" data-reference-type="ref+Label" data-reference="eq:orthogonal-projection-formula">Equation (7.26)</a>, for our orthogonal basis <span class="arithmatex">\(v_1, w_2\)</span> we have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+p_W(u)=\frac{{\left \langle u,v_1 \right \rangle}}{{\left \langle v_1,v_1 \right \rangle}}v_1
++\frac{{\left \langle u,w_2 \right \rangle}}{{\left \langle w_2,w_2 \right \rangle}}w_2.
+\]</div>
+</div>
+<p>Compute <span class="arithmatex">\({\left \langle u,v_1 \right \rangle}=-4\)</span>, <span class="arithmatex">\({\left \langle v_1,v_1 \right \rangle}=2\)</span>, <span class="arithmatex">\({\left \langle u,w_2 \right \rangle}=20\)</span>, and <span class="arithmatex">\({\left \langle w_2,w_2 \right \rangle}=10\)</span>. Thus the orthogonal projection of <span class="arithmatex">\((1,5,1,6)\)</span> onto <span class="arithmatex">\(W\)</span> is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+p_W(u)=-2v_1+2w_2=(4,4,0,4).
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.3</strong></p>
+<p><span id="sol-ex-euclid-6-1" label="sol--ex:euclid-6-1"></span> (See <a href="#ex-euclid-6-1" data-reference-type="ref+Label" data-reference="ex:euclid-6-1">Exercise 7.2</a>.) This solution illustrates <a href="#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="#tas-compute-orthogonal-projection">Task 7.62</a>.</p>
+<p>The given equation describing <span class="arithmatex">\(U\)</span> can be rewritten as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc} 1 &amp; -1 &amp; 3 \end{array} \right ) \left ( \begin{array}{c} x \\ y \\ z \end{array} \right ) = {\left \langle \left ( \begin{array}{c} 1 \\ -1 \\ 3 \end{array} \right ), \left ( \begin{array}{c} x \\ y \\ z \end{array} \right ) \right \rangle} = 0,
+\]</div>
+</div>
+<p>which gives, with free parameters <span class="arithmatex">\(y=a\)</span> and <span class="arithmatex">\(z =b\)</span>, <span class="arithmatex">\(x = a-3b\)</span>. Thus <span class="arithmatex">\(U = \{(a-3b,a,b) \ | \ a,b \in {\bf R}\} = L((1,1,0),(-3,0,1))\)</span>.</p>
+<p>The above equation tells us that <span class="arithmatex">\(U\)</span> is the orthogonal complement of the vector <span class="arithmatex">\(\left ( \begin{array}{c} 1 \\ -1 \\ 3 \end{array} \right )\)</span>. Thus, writing <span class="arithmatex">\(L := L(\left ( \begin{array}{c} 1 \\ -1 \\ 3 \end{array} \right ))\)</span> for the one-dimensional subspace spanned by that vector, we have <span class="arithmatex">\(U=L^\bot\)</span>. Therefore <span class="arithmatex">\(U^\bot = (L^\bot)^\bot \stackrel * L = L(\left ( \begin{array}{c} 1 \\ -1 \\ 3 \end{array} \right ))\)</span>, where the equality marked * is using <a href="#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a>.</p>
+<p>In order to compute the projection of <span class="arithmatex">\(t\)</span> onto <span class="arithmatex">\(U\)</span>, we apply the Gram–Schmidt orthogonalization method. The vector <span class="arithmatex">\(v_1 = (1,1,0)\)</span> has norm <span class="arithmatex">\(|\hspace{-0.5mm}| {v_1} |\hspace{-0.5mm}| = \sqrt 2\)</span>, so that <span class="arithmatex">\(w_1 = \frac 1 {\sqrt 2} (1,1,0)\)</span>. Then</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+w'_2 := v_2 - {\left \langle v_2, w_1 \right \rangle} w_1 &amp; = (-3,0,1) - \left [ (-3,0,1) \left ( \begin{array}{c} 1/\sqrt 2 \\ 1/\sqrt 2 \\ 0 \end{array} \right )\right ] w_1 \\
+&amp; = (-3,0,1) + \frac 3{\sqrt 2} \frac 1 {\sqrt 2} (1,1,0) \\
+&amp; = (-3,0,1) + \left(\frac 32, \frac 32, 0\right) \\
+&amp; = \left(-\frac32, \frac 32, 1\right).
+\end{align*}
+\]</div>
+</div>
+<p>The two vectors <span class="arithmatex">\(v_1\)</span> and <span class="arithmatex">\(w'_2\)</span> are orthogonal, so by <a href="#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a> (formula for an orthogonal basis) we get</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+t_U
+&amp; = \frac{{\left \langle t, v_1 \right \rangle}}{{\left \langle v_1, v_1 \right \rangle}} v_1
++ \frac{{\left \langle t, w'_2 \right \rangle}}{{\left \langle w'_2, w'_2 \right \rangle}} w'_2 \\
+&amp; = \frac 12 (1,1,0) + \frac{13/2}{11/2} \left(-\frac32, \frac32, 1\right) \\
+&amp; = \left(\frac 12, \frac 12, 0\right) + \frac{13}{11}\left(-\frac 32, \frac 32, 1\right) \\
+&amp; = \left(-\frac{14}{11}, \frac{25}{11}, \frac{13}{11}\right).
+\end{align*}
+\]</div>
+</div>
+<p>An alternative way to solve this, with slightly fewer computations, is the following: since <span class="arithmatex">\(t= t_U + t_\bot\)</span> is the unique decomposition, we can compute <span class="arithmatex">\(t_U = t - {t_\bot}\)</span>. By the positive definitness of <span class="arithmatex">\({\left \langle -, - \right \rangle}\)</span> we have <span class="arithmatex">\((U^\bot)^\bot = U\)</span> (cf. <a href="#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a>), so we can also work in <span class="arithmatex">\(U^\bot\)</span> rather than in <span class="arithmatex">\(U\)</span>. This is somewhat simpler since <span class="arithmatex">\(U^\bot\)</span> has dimension 1. Take the basis vector <span class="arithmatex">\(v = (1,-1,3)\)</span> of <span class="arithmatex">\(U^\bot\)</span>. Then, again by <a href="#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a> (orthogonal basis formula)</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+t_\bot &amp; = \frac{{\left \langle t, v \right \rangle}}{{\left \langle v, v \right \rangle}} v \\
+&amp; = \frac{14}{11}(1,-1,3) \\
+&amp; = \left(\frac{14}{11}, -\frac{14}{11}, \frac{42}{11}\right).
+\end{align*}
+\]</div>
+</div>
+<p>Therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+t_U = t- t_\bot = (0,1,5) - \left(\frac{14}{11}, -\frac{14}{11}, \frac{42}{11}\right) = \left(-\frac{14}{11},\frac{25}{11},\frac{13}{11}\right).
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.4</strong></p>
+<p><span id="sol-ex-euclid-6-2" label="sol--ex:euclid-6-2"></span> (See <a href="#ex-euclid-6-2" data-reference-type="ref+Label" data-reference="ex:euclid-6-2">Exercise 7.4</a>.) This solution illustrates <a href="#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="#tas-compute-orthogonal-projection">Task 7.62</a>.</p>
+<p><span class="arithmatex">\(U\)</span> is given by the solutions of the homogeneous linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 1 \end{array} \right ) \left ( \begin{array}{c} x \\ y \\ z \end{array} \right ) = \left ( \begin{array}{c} 0 \\ 0 \end{array} \right ).
+\]</div>
+</div>
+<p>The left hand matrix can be brought to reduced row echelon form using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>): <span class="arithmatex">\(\left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 1 \end{array} \right )\)</span>, so that <span class="arithmatex">\(z = a\)</span> is a free parameter and <span class="arithmatex">\(x = 0\)</span>, <span class="arithmatex">\(y = -a\)</span>. This shows that <span class="arithmatex">\(U = \{ (0,-a,a) \ | \ a \in {\bf R}\}\)</span> and <span class="arithmatex">\((0,-1,1)\)</span> is a basis vector of <span class="arithmatex">\(U\)</span>. The orthogonal complement consists of vectors orthogonal to <span class="arithmatex">\((0,-1,1)\)</span>. As in the solution of <a href="#ex-euclid-6-1" data-reference-type="ref+Label" data-reference="ex:euclid-6-1">Exercise 7.2</a> above, <span class="arithmatex">\(U\)</span> has been defined as the orthogonal complement of the two vectors <span class="arithmatex">\(\left ( \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right )\)</span> and <span class="arithmatex">\(\left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )\)</span>. These vectors therefore constitute a basis of <span class="arithmatex">\(U^\bot\)</span>.</p>
+<p>We compute the orthogonal projection of <span class="arithmatex">\(t=(5,1,3)\)</span> onto <span class="arithmatex">\(U\)</span> and <span class="arithmatex">\(U^\bot\)</span>. This can be done using Gram–Schmidt orthogonalization as above, but also by solving the linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{c} 5 \\ 1 \\ 3 \end{array} \right ) = a \left ( \begin{array}{c} 0 \\ -1 \\ 1 \end{array} \right ) + b \left ( \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right ) + c \left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right ).
+\]</div>
+</div>
+<p>This is quickly solved as <span class="arithmatex">\(\left ( \begin{array}{c} a \\ b \\ c \end{array} \right )= \left ( \begin{array}{c} 1 \\ 3 \\ 2 \end{array} \right )\)</span>, so that the projection of <span class="arithmatex">\(t\)</span> onto <span class="arithmatex">\(U\)</span> is <span class="arithmatex">\(a \cdot \left ( \begin{array}{c} 0 \\ -1 \\ 1 \end{array} \right ) = \left ( \begin{array}{c} 0 \\ -1 \\ 1 \end{array} \right )\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.5</strong></p>
+<p><span id="sol-ex-euclid-6-3" label="sol--ex:euclid-6-3"></span> (See <a href="#ex-euclid-6-3" data-reference-type="ref+Label" data-reference="ex:euclid-6-3">Exercise 7.5</a>.) This solution illustrates <a href="#tas-compute-orthogonal-complement" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-complement">Task 7.63</a>.</p>
+<p>The orthogonal complement of <span class="arithmatex">\(T\)</span> is given by vectors <span class="arithmatex">\((x,y,z)\)</span> such that <span class="arithmatex">\(x-3z=0\)</span>. I.e., with free parameters <span class="arithmatex">\(y = a\)</span>, <span class="arithmatex">\(z = b\)</span>, <span class="arithmatex">\(x = 3b\)</span>. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+T^\bot = L((3,0,1), (0,1,0)).
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.6</strong></p>
+<p><span id="sol-ex-euclid-6-4" label="sol--ex:euclid-6-4"></span> (See <a href="#ex-euclid-6-4" data-reference-type="ref+Label" data-reference="ex:euclid-6-4">Exercise 7.6</a>.) We want to find <span class="arithmatex">\(U\)</span> such that <span class="arithmatex">\(U \oplus U^\bot = {\bf R}^3\)</span> and <span class="arithmatex">\(t=(1,5,6) + t_\bot\)</span>, with <span class="arithmatex">\((1,5,6) \in U\)</span> and <span class="arithmatex">\(t_\bot \in U^\bot\)</span>. This in particular means that <span class="arithmatex">\((1,5,6) \bot t_\bot\)</span>. Solving the equation</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(1,1,0) = (1,5,6) + t_\bot
+\]</div>
+</div>
+<p>gives <span class="arithmatex">\(t_\bot = (1,1,0)-(1,5,6) = (0,-4,-6)\)</span>. But</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle (1,5,6), (0,-4,-6) \right \rangle} = -20 + 36 = 16 \ne 0,
+\]</div>
+</div>
+<p>so these two vectors are <em>not</em> orthogonal. Therefore there is <em>no</em> such subspace <span class="arithmatex">\(U\)</span>.</p>
+<p>We solve the second part similarly: we have <span class="arithmatex">\(t - (1,1,1) = (1,-1,0)\)</span>, so the Ansatz is <span class="arithmatex">\(t_\bot = (1,-1,0)\)</span>. We compute <span class="arithmatex">\({\left \langle (1,1,1), (1,-1,0) \right \rangle} = 0\)</span>, so these vectors are orthogonal. We now compute <span class="arithmatex">\(U\)</span>: <span class="arithmatex">\((1,1,1) \in U\)</span>, so that we can take <span class="arithmatex">\(U = L(1,1,1)\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.7</strong></p>
+<p><span id="sol-ex-euclid-6-6" label="sol--ex:euclid-6-6"></span> (See <a href="#ex-euclid-6-6" data-reference-type="ref+Label" data-reference="ex:euclid-6-6">Exercise 7.7</a>.) This solution illustrates <a href="#tas-compute-orthogonal-projection" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-projection">Task 7.62</a>.</p>
+<p>According to <a href="#prop-min-affine-subspace" data-reference-type="ref+Label" data-reference="prop:min-affine-subspace">Proposition 7.45</a>, the unique point <span class="arithmatex">\(v \in {\bf R}^3\)</span> that is lying on <span class="arithmatex">\(L\)</span> and as close as possible to the origin is given by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+v = v_0 - p_L(v_0),
+\]</div>
+</div>
+<p>where <span class="arithmatex">\(v_0 = \left ( \begin{array}{c} 1 \\ 3 \\ 5 \end{array} \right )\)</span>. We will use <a href="#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a> in order to compute this. The underlying subspace <span class="arithmatex">\(W\)</span> of <span class="arithmatex">\(L\)</span> is spanned by <span class="arithmatex">\(v_1 = \left ( \begin{array}{c} 1 \\ 1 \\ 4 \end{array} \right )\)</span>. Renormalizing this vector to norm one, gives <span class="arithmatex">\(w_1 = \frac{v_1}{|\hspace{-0.5mm}| {v_1} |\hspace{-0.5mm}|} = \frac{v_1}{\sqrt{18}}\)</span>. This vector <span class="arithmatex">\(w_1\)</span> is therefore an orthonormal basis of <span class="arithmatex">\(W\)</span>. We then have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+p_L(v_0)={\left \langle v_0, w_1 \right \rangle}w_1 = \frac{24}{18} \left ( \begin{array}{c} 1 \\ 1 \\ 4 \end{array} \right )
+\]</div>
+</div>
+<p>and therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+v = \left ( \begin{array}{c} 1 \\ 3 \\ 5 \end{array} \right ) -\frac{24}{18} \left ( \begin{array}{c} 1 \\ 1 \\ 4 \end{array} \right ) = \left ( \begin{array}{c} -1/3 \\ 5/3 \\ -1/3 \end{array} \right ).
+\]</div>
+</div>
+<p>This vector has norm</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+|\hspace{-0.5mm}| {v} |\hspace{-0.5mm}| = \sqrt{27/9}= \sqrt 3.
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.8</strong></p>
+<p><span id="sol-ex-euclid-6-7" label="sol--ex:euclid-6-7"></span> (See <a href="#ex-euclid-6-7" data-reference-type="ref+Label" data-reference="ex:euclid-6-7">Exercise 7.8</a>.) This solution illustrates <a href="#tas-check-lines-parallel">Task 7.70</a>, <a href="#tas-compute-distance-affine-subspaces">Task 7.74</a>.</p>
+<p>The subspace <span class="arithmatex">\(W\)</span> underlying <span class="arithmatex">\(L\)</span> is spanned by <span class="arithmatex">\(\left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )\)</span>, while the equations for <span class="arithmatex">\(L'\)</span> are equivalent to <span class="arithmatex">\(x=z\)</span> and <span class="arithmatex">\(y = z+2\)</span>. Therefore, this line has the underlying subspace <span class="arithmatex">\(\left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )\)</span> as well. By <a href="#def-parallel-skew" data-reference-type="ref+Label" data-reference="def:parallel-skew">Definition 7.42</a>, the lines are therefore parallel. Let <span class="arithmatex">\(w = \left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )\)</span> be the direction vector for both lines (cf. <a href="#def-direction-vector" data-reference-type="ref+Label" data-reference="def:direction-vector">Definition 7.50</a>). Below, we will consider its renormalization to norm 1, which is <span class="arithmatex">\(w_1 = \frac 1 {\sqrt3} \left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )\)</span>.</p>
+<p>Let <span class="arithmatex">\(v_0 = \left ( \begin{array}{c} 1 \\ 0 \\ 2 \end{array} \right )\)</span> and <span class="arithmatex">\(v'_0 = \left ( \begin{array}{c} 0 \\ -2 \\ 0 \end{array} \right )\)</span>. Then the distance vector <span class="arithmatex">\(d = v_0 - v'_0 = \left ( \begin{array}{c} 1 \\ 2 \\ 2 \end{array} \right )\)</span> is not orthogonal to <span class="arithmatex">\(L\)</span> (<span class="arithmatex">\({\left \langle d, w \right \rangle} \ne 0\)</span>). We compute the orthogonal projection of <span class="arithmatex">\(d\)</span> onto <span class="arithmatex">\(W^\bot\)</span> by computing</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+d - {\left \langle d, w_1 \right \rangle} w_1 = \left ( \begin{array}{c} 1 \\ 2 \\ 2 \end{array} \right ) - \frac 1 3 \left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right ) {\left \langle d, w \right \rangle} = \frac 13 \left ( \begin{array}{c} -2 \\ 1 \\ 1 \end{array} \right ).
+\]</div>
+</div>
+<p>This vector has norm <span class="arithmatex">\(\sqrt{2/3}\)</span>, which is therefore the distance of <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(L'\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.9</strong></p>
+<p><span id="sol-ex-euclid-6-8" label="sol--ex:euclid-6-8"></span> (See <a href="#ex-euclid-6-8" data-reference-type="ref+Label" data-reference="ex:euclid-6-8">Exercise 7.9</a>.) This solution illustrates <a href="#tas-check-lines-skew">Task 7.71</a>, <a href="#tas-compute-distance-affine-subspaces">Task 7.74</a>.</p>
+<p>The two lines have underlying vector spaces <span class="arithmatex">\(W = L(\left ( \begin{array}{c} 1 \\ 1 \\ -1 \end{array} \right ))\)</span> and <span class="arithmatex">\(W' = L(\left ( \begin{array}{c} 1 \\ -1 \\ 2 \end{array} \right ))\)</span> respectively. These two one-dimensional subspaces are not contained in each other: the two vectors are linearly independent.</p>
+<p>The general point in <span class="arithmatex">\(L\)</span> is of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+p(t) = \left ( \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right ) + t \left ( \begin{array}{c} 1 \\ 1 \\ -1 \end{array} \right ),
+\]</div>
+</div>
+<p>while those on <span class="arithmatex">\(L'\)</span> are of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+q(u) = \left ( \begin{array}{c} 2 \\ 0 \\ 0 \end{array} \right ) + u \left ( \begin{array}{c} 1 \\ -1 \\ 2 \end{array} \right ).
+\]</div>
+</div>
+<p>According to <a href="#prop-min-affine-subspace" data-reference-type="ref+Label" data-reference="prop:min-affine-subspace">Proposition 7.45</a>, we need to compute the values of <span class="arithmatex">\(t, u \in {\bf R}\)</span> such that the difference <span class="arithmatex">\(p(t) - q(u) = \left ( \begin{array}{c} t-2-u \\ 1+t+u \\ -t-2u \end{array} \right )\)</span> is orthogonal on <span class="arithmatex">\(W\)</span> and also on <span class="arithmatex">\(W'\)</span>. This leads to the linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+0 &amp; = {\left \langle \left ( \begin{array}{c} 1 \\ 1 \\ -1 \end{array} \right ), \left ( \begin{array}{c} -t-2-u \\ 1+t+u \\ -t-2u \end{array} \right ) \right \rangle} = t-2-u+1+t+u+t+2u=3t+2u-1, \\
+0 &amp; = {\left \langle \left ( \begin{array}{c} 1 \\ -1 \\ 2 \end{array} \right ), \left ( \begin{array}{c} -t-2-u \\ 1+t+u \\ -t-2u \end{array} \right ) \right \rangle} = t-2-u-1-t-u-2t-4u=-2t-6u-3.
+\end{align*}
+\]</div>
+</div>
+<p>The solution of this system is <span class="arithmatex">\(t=\frac 67\)</span>, <span class="arithmatex">\(u = \frac {-11}{14}\)</span>. One then computes <span class="arithmatex">\(p(6/7)-q(-11/14)=\left ( \begin{array}{c} -5/14 \\ 15/14 \\ 5/7 \end{array} \right )\)</span>, whose norm is equal to <span class="arithmatex">\(\frac5{\sqrt{14}}\)</span>. This is the distance between the two lines.</p>
+<p>In particular, this distance is positive. This, together with the above observation that <span class="arithmatex">\(W \ne W'\)</span> means that the lines are skew. (If one is only required to show that the lines are skew, without computing their distance, one can also solve the linear system given by the intersection of <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(L'\)</span>; one finds out that this system has no solution, so the lines are skew.)</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.10</strong></p>
+<p><span id="sol-ex-euclid-6-9" label="sol--ex:euclid-6-9"></span> (See <a href="#ex-euclid-6-9" data-reference-type="ref+Label" data-reference="ex:euclid-6-9">Exercise 7.10</a>.) This solution illustrates <a href="#tas-check-line-parallel-plane" data-reference-type="ref+Label" data-reference="tas:check-line-parallel-plane">Task 7.72</a>.</p>
+<p>A useful way to sketch lines and planes is by considering some points on them where several coordinates are zero. In the case of <span class="arithmatex">\(P\)</span>, three such points are <span class="arithmatex">\((5,0,0), (0,4,0), (0,0,2)\)</span>, while for <span class="arithmatex">\(L\)</span> two such points are <span class="arithmatex">\((0,5,0), (0,0,5)\)</span>. This leads to the following sketch:</p>
+<p><img alt="image" src="../figures/png/solutions/solutions-fig-02.png" /></p>
+<p>The equation can be rewritten as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle \left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right ), \left ( \begin{array}{c} x \\ y \\ z \end{array} \right ) \right \rangle} = 20.
+\]</div>
+</div>
+<p>According to <a href="#dlm-orthogonal-complement" data-reference-type="ref+Label" data-reference="dlm:orthogonal-complement">Definition and Lemma 7.20</a>, the underlying vector space <span class="arithmatex">\(W\)</span> is the orthogonal complement of the vector <span class="arithmatex">\(\left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right )\)</span>.</p>
+<p>The line <span class="arithmatex">\(L\)</span> has as its underlying vector space <span class="arithmatex">\(W' = L(\left ( \begin{array}{c} 0 \\ 1 \\ -1 \end{array} \right ))\)</span>. If <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(L\)</span> are parallel, then <span class="arithmatex">\(W' \subset W\)</span>. This means that <span class="arithmatex">\(\left ( \begin{array}{c} 0 \\ 1 \\ -1 \end{array} \right )\)</span> is orthogonal to <span class="arithmatex">\(\left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right )\)</span>. Their scalar product is <span class="arithmatex">\(5-10 = -5 \ne 0\)</span>, so that these vectors are <em>not</em> orthogonal and therefore <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(P\)</span> are not parallel.</p>
+<p>We compute the distance of <span class="arithmatex">\(P\)</span> to the origin using <a href="#prop-distance-hyperplane" data-reference-type="ref+Label" data-reference="prop:distance-hyperplane">Proposition 7.47</a>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+d(0,P) = \frac{20}{|\hspace{-0.5mm}| {\left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right )} |\hspace{-0.5mm}|} = \frac{20}{\sqrt{141}}.
+\]</div>
+</div>
+<p>We compute the closest point by determining the (unique) intersection point <span class="arithmatex">\(P \cap W^\bot\)</span>. We are thus seeking the real number <span class="arithmatex">\(r\)</span> such that <span class="arithmatex">\(r \left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right ) = \left ( \begin{array}{c} 4r \\ 5r \\ 10r \end{array} \right )\)</span> lies on the plane <span class="arithmatex">\(P\)</span>, i.e., such that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle \left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right ), \left ( \begin{array}{c} 4r \\ 5r \\ 10r \end{array} \right ) \right \rangle} = 20.
+\]</div>
+</div>
+<p>The left hand side equals <span class="arithmatex">\(r(16+25+100) = 141 r\)</span>, so that <span class="arithmatex">\(r = \frac{20}{141}\)</span>, and therefore the point in <span class="arithmatex">\(P\)</span> that is as close as possible to the origin is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\frac{20}{141}\left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right ).
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.11</strong></p>
+<p><span id="sol-ex-euclid-6-10" label="sol--ex:euclid-6-10"></span> (See <a href="#ex-euclid-6-10" data-reference-type="ref+Label" data-reference="ex:euclid-6-10">Exercise 7.11</a>.) We apply <a href="#thm-symmetric-orthogonally-diagonalizable" data-reference-type="ref+Label" data-reference="thm:symmetric-orthogonally-diagonalizable">Theorem 7.38</a>, according to which a matrix is <em>orthogonally</em> diagonalizable if and only if it is symmetric. This excludes <span class="arithmatex">\(A = \left ( \begin{array}{cc} 1 &amp; 2 \\ -2 &amp; 1 \end{array} \right )\)</span>. The other two matrices are symmetric and therefore orthogonally diagonalizable. The matrix <span class="arithmatex">\(A = \left ( \begin{array}{cc} 0 &amp; 0 \\ 0 &amp; 0 \end{array} \right )\)</span> is already a diagonal matrix, so for <span class="arithmatex">\(P = {\mathrm {id}}\)</span> the matrix <span class="arithmatex">\(PAP^{-1}\)</span> is diagonal. The standard basis vectors <span class="arithmatex">\(e_1, e_2\)</span> are an orthonormal eigenbasis.</p>
+<p>For <span class="arithmatex">\(A = \left ( \begin{array}{cc} 1 &amp; 2 \\ 2 &amp; 1 \end{array} \right )\)</span>, we compute the eigenvalues as was indicated after <a href="#thm-symmetric-orthogonally-diagonalizable" data-reference-type="ref+Label" data-reference="thm:symmetric-orthogonally-diagonalizable">Theorem 7.38</a>.</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\lambda_{1/2} &amp; = \frac{a+d}2 \pm \sqrt{\frac{(a-d)}4 + b^2} \\
+&amp; = 1 \pm 2.
+\end{align*}
+\]</div>
+</div>
+<p>Thus the eigenvalues are <span class="arithmatex">\(-1\)</span> and <span class="arithmatex">\(3\)</span>. We compute the eigenspaces. The matrix <span class="arithmatex">\(A - (-1){\mathrm {id}} = \left ( \begin{array}{cc} 2 &amp; 2 \\ 2 &amp; 2 \end{array} \right )\)</span> has kernel given by <span class="arithmatex">\(w_1 := e_1 - e_2\)</span>. The matrix <span class="arithmatex">\(A - 3 {\mathrm {id}} = \left ( \begin{array}{cc} -2 &amp; 2 \\ 2 &amp; -2 \end{array} \right )\)</span> has kernel given by <span class="arithmatex">\(w_2 := e_1 + e_2\)</span>. These vectors are orthogonal:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle e_1-e_2, e_1+e_2 \right \rangle} = {\left \langle \left ( \begin{array}{c} 1 \\ -1 \end{array} \right ), \left ( \begin{array}{c} 1 \\ 1 \end{array} \right ) \right \rangle} = 0.
+\]</div>
+</div>
+<p>However, they are not normal, so an orthonormal eigenbasis for <span class="arithmatex">\(A\)</span> is given by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\frac{w_1}{|\hspace{-0.5mm}| {w_1} |\hspace{-0.5mm}|} = \frac{1}{\sqrt 2} \left ( \begin{array}{c} 1 \\ -1 \end{array} \right ) \text{ and } \frac{w_2}{|\hspace{-0.5mm}| {w_2} |\hspace{-0.5mm}|} = \frac{1}{\sqrt 2} \left ( \begin{array}{c} 1 \\ 1 \end{array} \right ).
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.12</strong></p>
+<p><span id="sol-ex-euclid-6-11" label="sol--ex:euclid-6-11"></span> (See <a href="#ex-euclid-6-11" data-reference-type="ref+Label" data-reference="ex:euclid-6-11">Exercise 7.12</a>.) If <span class="arithmatex">\(Av = \lambda v\)</span>, <span class="arithmatex">\(Aw= \lambda w\)</span>, we compute</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\lambda {\left \langle v, w \right \rangle} &amp; = {\left \langle \lambda v, w \right \rangle} \\
+&amp; = {\left \langle Av, w \right \rangle} \\
+&amp; = (Av)^T w \\
+&amp; = v^T A^T w \\
+&amp; = v^T A w &amp; \text{ since }A = A^T \\
+&amp; = {\left \langle v, Aw \right \rangle} \\
+&amp; = {\left \langle v, \mu w \right \rangle} \\
+&amp; = \mu {\left \langle v, w \right \rangle}.
+\end{align*}
+\]</div>
+</div>
+<p>Since <span class="arithmatex">\(\lambda \ne \mu\)</span>, this forces <span class="arithmatex">\({\left \langle v, w \right \rangle}=0\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.13</strong></p>
+<p><span id="sol-ex-euclid-6-12" label="sol--ex:euclid-6-12"></span> (See <a href="#ex-euclid-6-12" data-reference-type="ref+Label" data-reference="ex:euclid-6-12">Exercise 7.13</a>.) This solution illustrates <a href="#tas-check-line-parallel-plane">Task 7.72</a>, <a href="#tas-compute-distance-affine-subspaces">Task 7.74</a>.</p>
+<p>By definition, the hyperplane <span class="arithmatex">\(P\)</span> is given by the equation</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle (2,0,1,-1)^T, (x_1, \dots, x_4)^T \right \rangle} = 4.
+\]</div>
+</div>
+<p>In other words, the underlying sub-vector space <span class="arithmatex">\(W \subset {\bf R}^4\)</span> of that hyperplane is the subspace</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle (2,0,1,-1)^T, (x_1, \dots, x_4)^T \right \rangle} = 0,
+\]</div>
+</div>
+<p>or, what is the same, the orthogonal complement of <span class="arithmatex">\((2,0,1,-1)^T\)</span>.</p>
+<p>The underlying subspace <span class="arithmatex">\(W'_t\)</span> of the line <span class="arithmatex">\(L_t\)</span> is spanned by <span class="arithmatex">\((t,1,0,-1)\)</span>. By <a href="#def-parallel-skew" data-reference-type="ref+Label" data-reference="def:parallel-skew">Definition 7.42</a>, <span class="arithmatex">\(P\)</span> is parallel to <span class="arithmatex">\(L_t\)</span> if <span class="arithmatex">\(W \subset W'_t\)</span> (which is impossible for dimension reasons) or if <span class="arithmatex">\(W'_t \subset W\)</span>. The latter is equivalent to <span class="arithmatex">\((t,1,0,-1) \in W\)</span> or, yet equivalently,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle (t,1,0,-1)^T, (2,0,1,-1)^T \right \rangle} = 0.
+\]</div>
+</div>
+<p>This equates to <span class="arithmatex">\(2t + 1 = 0\)</span> or <span class="arithmatex">\(t = -\frac12\)</span>.</p>
+<p>We now compute the pair(s) of points realizing the minimal distance between <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(L := L_{-\frac12}\)</span>. We will use that these are exactly the points <span class="arithmatex">\((p, l)\)</span> such that <span class="arithmatex">\(p-l \bot W\)</span> and <span class="arithmatex">\(p-l \bot W'\)</span>.</p>
+<p>The point <span class="arithmatex">\(l \in L = L_{-\frac12}\)</span> is of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+l &amp; = (1,0,0,1) + r(-\frac 12, 1, 0, -1) \\
+&amp; = (1-s, 2s, 0, 1-2s) &amp; \text{ with }s=\frac r2.
+\end{align*}
+\]</div>
+</div>
+<p>On the other hand a point <span class="arithmatex">\(p =(x_1, \dots, x_4) \in P\)</span> satisfies</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+2 x_1 + x_3 - x_4 = 4,
+\]</div>
+</div>
+<p>so we can take <span class="arithmatex">\(x_1 = a\)</span>, <span class="arithmatex">\(x_2 = b\)</span> and <span class="arithmatex">\(x_3=c\)</span> as free parameters and get <span class="arithmatex">\(x_4 = 2a+c-4\)</span>. That is <span class="arithmatex">\(p = (a,b,c,2a+c-4)\)</span>. Therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+p-l = (a+s-1,b-2s,c,2a+c+2s-5).
+\]</div>
+</div>
+<p>Note that <span class="arithmatex">\(a,b,c,s\)</span> are the unknowns. We now determine the values of these unknowns. The orthogonal complement of <span class="arithmatex">\(W\)</span>, <span class="arithmatex">\(W^\bot = (((2,0,1,-1)^T)^\bot)^\bot = L(2,0,1,-1).\)</span> Here we use that for a subspace <span class="arithmatex">\(U \subset {\bf R}^n\)</span>, we have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(U^\bot)^\bot = U.
+\]</div>
+</div>
+<p>(Indeed, <span class="arithmatex">\(U \subset (U^\bot)^\bot\)</span>: for <span class="arithmatex">\(u \in U\)</span> and <span class="arithmatex">\(u' \in U^\bot\)</span> we have <span class="arithmatex">\({\left \langle u, u' \right \rangle} = 0\)</span>, so that <span class="arithmatex">\(u \in (U^\bot)^\bot\)</span>. Both vector subspaces of <span class="arithmatex">\({\bf R}^n\)</span> have the same dimension, and therefore they agree.)</p>
+<p>This means that we are looking for <span class="arithmatex">\(a,b,c,s \in {\bf R}\)</span> such that the following conditions are satisfied</p>
+<ul>
+<li><span class="arithmatex">\(p-l\)</span> is a multiple of <span class="arithmatex">\((2,0,1,-1)\)</span>, say <span class="arithmatex">\(\lambda(2,0,1,-1) = (2\lambda,0,\lambda,-\lambda)\)</span>. This translates into a linear system</li>
+</ul>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \begin{align*}
+  a+s-1 &amp;= 2 \lambda \\
+  b-2s &amp; = 0 \\
+  c &amp; = \lambda \\
+  2a+c+2s-5 &amp; = - \lambda.
+  \end{align*}
+\]</div>
+</div>
+<ul>
+<li>We now spell out the condition that <span class="arithmatex">\(p-l\)</span> is orthogonal to <span class="arithmatex">\((-\frac12, 1, 0, -1)^T\)</span> or equivalently, to <span class="arithmatex">\((-1,2,0,-2)\)</span>:</li>
+</ul>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \begin{align*}
+  0 &amp;= {\left \langle p-l, (-1,2,0,-2)^T \right \rangle}  \\
+  &amp; = -(a+s-1)+2(b-2s)-2(2a+c+2s-5) \\
+  &amp; = -5a + 2b -2c -9s + 11.
+  \end{align*}
+\]</div>
+</div>
+<p>We obtain a linear system in the 5 unknowns <span class="arithmatex">\(a,b,c,s,\lambda\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \begin{align*}
+  a+s-2\lambda &amp; = 1\\
+  b-2s &amp; = 0\\
+  c-\lambda &amp; = 0 \\
+  2a+c+2s+\lambda &amp; = 5\\
+  -5a + 2b -2c -9s &amp; = - 11.
+  \end{align*}
+\]</div>
+</div>
+<p>One solves this using Gaussian eliminiation (or, using an appropriate computer algebra system, cf. <a href="https://www.wolframalpha.com/input?i=Solve%28%28-5a%2B2b-2c-9s%2B11%3D0%2Ca%2Bs-1%3D2l%2Cb-2s%3D0%2Cc%3Dl%2C2a%2Bc%2B2s-5%3D-l%29%29">https://www.wolframalpha.com/input?i=Solve%28%28-5a%2B2b-2c-9s%2B11%3D0%2Ca%2Bs-1%3D2l%2Cb-2s%3D0%2Cc%3Dl%2C2a%2Bc%2B2s-5%3D-l%29%29</a>) and obtains as solutions the vectors</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  (a, b=4-2a, c=\frac12, \lambda=\frac12, s=2-a).
+\]</div>
+</div>
+<p>Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \begin{align*}
+  p &amp; = (a,4-2a,\frac 12,2a-\frac 72) \\
+  l &amp; = (1-(2-a), 2(2-a), 0, 1-2(2-a)) = (a-1, 4-2a,0,-3+2a).
+  \end{align*}
+\]</div>
+</div>
+<p>This implies that for <em>any</em> point <span class="arithmatex">\(l \in L\)</span>, there is a unique point <span class="arithmatex">\(p \in P\)</span> such that <span class="arithmatex">\((p,l)\)</span> realizes the minimal distance between <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(L\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.14</strong></p>
+<p><span id="sol-ex-euclid-lines-plane" label="sol--ex:euclid-lines-plane"></span> (See <a href="#ex-euclid-lines-plane" data-reference-type="ref+Label" data-reference="ex:euclid-lines-plane">Exercise 7.14</a>.) This solution illustrates <a href="#tas-line-cartesian-to-parametric">Task 7.64</a>, <a href="#tas-plane-through-line-and-point">Task 7.67</a>, <a href="#tas-plane-vector-to-cartesian">Task 7.69</a>.</p>
+<p>For <span class="arithmatex">\(L\)</span>, solve the system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x+z &amp; = 1,\\
+y+z &amp; = -2.
+\end{align*}
+\]</div>
+</div>
+<p>With parameter <span class="arithmatex">\(z=s\)</span>, we get <span class="arithmatex">\(x=1-s\)</span>, <span class="arithmatex">\(y=-2-s\)</span>, hence</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+L=(1,-2,0)+L(-1,-1,1).
+\]</div>
+</div>
+<p>So we can take</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+v=(1,-2,0),\qquad W=L(-1,-1,1).
+\]</div>
+</div>
+<p>For <span class="arithmatex">\(L'\)</span>, from the two given points we get</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+L'=(0,0,1)+L(0,1,0).
+\]</div>
+</div>
+<p>To classify the relative position (<a href="#def-parallel-skew" data-reference-type="ref+Label" data-reference="def:parallel-skew">Definition 7.42</a>), compare direction spaces:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+W=L(-1,-1,1),\qquad W'=L(0,1,0).
+\]</div>
+</div>
+<p>These are different 1-dimensional subspaces, so <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(L'\)</span> are neither identical nor parallel. Now solve for an intersection:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(1-s,-2-s,s)=(0,t,1).
+\]</div>
+</div>
+<p>From <span class="arithmatex">\(x=0\)</span> we get <span class="arithmatex">\(s=1\)</span>, then <span class="arithmatex">\(z=1\)</span> is satisfied, and <span class="arithmatex">\(y=t\)</span> gives <span class="arithmatex">\(t=-3\)</span>. Therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+L\cap L'=\{(0,-3,1)\},
+\]</div>
+</div>
+<p>so the two lines are <em>intersecting</em>.</p>
+<p>Let <span class="arithmatex">\(P\)</span> be the plane containing <span class="arithmatex">\(L\)</span> and parallel to <span class="arithmatex">\(L'\)</span>. Then <span class="arithmatex">\(P\)</span> is spanned by the two direction vectors</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+d_1=(-1,-1,1),\qquad d_2=(0,1,0).
+\]</div>
+</div>
+<p>A normal vector can be computed by using the cross product (or by computing the orthogonal complement):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+d_1\times d_2=(-1,0,-1),
+\]</div>
+</div>
+<p>thus <span class="arithmatex">\(n=(1,0,1)\)</span> is a normal vector. Using the point <span class="arithmatex">\((1,-2,0)\in L\)</span>, the Cartesian equation of the plane (<a href="#prop-hesse" data-reference-type="ref+Label" data-reference="prop:hesse">Proposition 7.48</a>) is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+n\cdot\big((x,y,z)-(1,-2,0)\big)=0
+\iff x+z=1.
+\]</div>
+</div>
+<p>So one valid equation of <span class="arithmatex">\(P\)</span> is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+x+z-1=0.
+\]</div>
+</div>
+<p>Now fix <span class="arithmatex">\(l=(2,-1,-1)\in L\)</span> and seek <span class="arithmatex">\(l'\in L'\)</span> such that the line through <span class="arithmatex">\(l\)</span> and <span class="arithmatex">\(l'\)</span> is parallel to the plane <span class="arithmatex">\(x+z-1=0\)</span>. Write</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+l'=(0,r,1),\qquad d=l'-l=(-2,r+1,2).
+\]</div>
+</div>
+<p>The line is parallel to the plane iff <span class="arithmatex">\(d\cdot (1,0,1)=0\)</span>, and indeed</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(-2,r+1,2)\cdot(1,0,1)=-2+2=0
+\]</div>
+</div>
+<p>for every <span class="arithmatex">\(r\in{\bf R}\)</span>. Hence every point of <span class="arithmatex">\(L'\)</span> works:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+l'=(0,r,1),\quad r\in{\bf R}.
+\]</div>
+</div>
+<p>For example, one can take <span class="arithmatex">\(l'=(0,0,1)\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.15</strong></p>
+<p><span id="sol-ex-euclid-poly-operator" label="sol--ex:euclid-poly-operator"></span> (See <a href="#ex-euclid-poly-operator" data-reference-type="ref+Label" data-reference="ex:euclid-poly-operator">Exercise 7.15</a>.) Let <span class="arithmatex">\(V=P_{\le 2}\)</span> and <span class="arithmatex">\({\left \langle p,q \right \rangle}=\int_{-1}^1 p(t)q(t)\,dt\)</span>.</p>
+<p>First, <span class="arithmatex">\({\left \langle -, - \right \rangle}\)</span> is a scalar product: bilinearity and symmetry follow from properties of the integral, and for <span class="arithmatex">\(p\neq 0\)</span> we have <span class="arithmatex">\({\left \langle p,p \right \rangle}=\int_{-1}^1 p(t)^2dt&gt;0\)</span>.</p>
+<p>An orthonormal basis is the same as in the previous polynomial exercise (see <a href="#ex-examples-scalar-product" data-reference-type="ref+Label" data-reference="ex:examples-scalar-product">Example 7.16</a><a href="#item-functions" data-reference-type="ref" data-reference="item--functions">3.</a> and Gram–Schmidt in <a href="#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>): <span class="arithmatex">\(w_1=\frac1{\sqrt2}\)</span>, <span class="arithmatex">\(w_2=\sqrt{\frac32}\,t\)</span>, <span class="arithmatex">\(w_3=\frac{\sqrt{10}}4(3t^2-1)\)</span>.</p>
+<p>Now consider <span class="arithmatex">\(f:V\to V\)</span>, <span class="arithmatex">\(f(p)=t\,p'\)</span>. It is linear because derivative and multiplication by <span class="arithmatex">\(t\)</span> are linear maps. In more detail, the conditions in <a href="../maps/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a> are satisfied, for example <span class="arithmatex">\(f(p_1 + p_2) = t(p_1+p_2)' = t(p_1'+p_2') = f(p_1) + f(p_2)\)</span> and similarly for <span class="arithmatex">\(f(a p)\)</span> with <span class="arithmatex">\(a \in \mathbf R\)</span>. For the standard basis <span class="arithmatex">\(e_1=1\)</span>, <span class="arithmatex">\(e_2=t\)</span>, <span class="arithmatex">\(e_3=t^2\)</span> we have <span class="arithmatex">\(f(e_1)=0\)</span>, <span class="arithmatex">\(f(e_2)=t=e_2\)</span>, <span class="arithmatex">\(f(e_3)=2t^2=2e_3\)</span>. Hence</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\mathrm M_{f, (e_1,e_2,e_3)}=\left ( \begin{array}{ccc} 0&amp;0&amp;0\\ 0&amp;1&amp;0\\ 0&amp;0&amp;2 \end{array} \right ).
+\]</div>
+</div>
+<p>So <span class="arithmatex">\((e_1,e_2,e_3)\)</span> is an eigenbasis, with eigenvalues <span class="arithmatex">\(0,1,2\)</span>.</p>
+<p>From the above, <span class="arithmatex">\(\ker f=L(1)\)</span>, so <span class="arithmatex">\(\dim\ker f=1\)</span>; and <span class="arithmatex">\({\operatorname{im}\,}f=L(t,t^2)\)</span>, so <span class="arithmatex">\(\dim{\operatorname{im}\,}f=2\)</span>.</p>
+<p>Finally, <span class="arithmatex">\(f\)</span> has no orthonormal eigenbasis for this scalar product: the eigenspaces for <span class="arithmatex">\(0,1,2\)</span> are <span class="arithmatex">\(L(1)\)</span>, <span class="arithmatex">\(L(t)\)</span>, <span class="arithmatex">\(L(t^2)\)</span>. These are all 1-dimensional, so any eigenbasis is (up to scaling) <span class="arithmatex">\((1,t,t^2)\)</span>. But <span class="arithmatex">\({\left \langle 1,t^2 \right \rangle}=\int_{-1}^1 t^2dt=\frac23\neq 0\)</span>, so eigenvectors for <span class="arithmatex">\(\lambda=0\)</span> and <span class="arithmatex">\(\lambda=2\)</span> cannot be orthogonal.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.16</strong></p>
+<p><span id="sol-ex-euclid-u-r4-orth" label="sol--ex:euclid-u-r4-orth"></span> (See <a href="#ex-euclid-u-r4-orth" data-reference-type="ref+Label" data-reference="ex:euclid-u-r4-orth">Exercise 7.16</a>.) This solution illustrates <a href="#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="#tas-compute-orthogonal-projection">Task 7.62</a>, <a href="#tas-compute-orthogonal-complement">Task 7.63</a>.</p>
+<p>Let</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+U=\{x\in{\bf R}^4\mid x_1-x_2+x_3+2x_4=0\}.
+\]</div>
+</div>
+<p>Writing <span class="arithmatex">\(x_2=a\)</span>, <span class="arithmatex">\(x_3=b\)</span>, <span class="arithmatex">\(x_4=c\)</span>, we get <span class="arithmatex">\(x_1=a-b-2c\)</span>, so <span class="arithmatex">\(U=L(u_1,u_2,u_3)\)</span> with <span class="arithmatex">\(u_1=(1,1,0,0)\)</span>, <span class="arithmatex">\(u_2=(-1,0,1,0)\)</span>, <span class="arithmatex">\(u_3=(-2,0,0,1)\)</span>. Hence <span class="arithmatex">\(\dim U=3\)</span>.</p>
+<p>For an orthonormal basis, choose three pairwise orthogonal vectors in <span class="arithmatex">\(U\)</span>: <span class="arithmatex">\(v_1=(1,1,0,0)\)</span>, <span class="arithmatex">\(v_2=(0,0,-2,1)\)</span>, <span class="arithmatex">\(v_3=(-5,5,2,4)\)</span>. In terms of the basis vectors <span class="arithmatex">\(u_1,u_2,u_3\)</span> above, these are</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+v_1=u_1,
+\qquad
+v_2=-2u_2+u_3,
+\qquad
+v_3=5u_1+2u_2+4u_3.
+\]</div>
+</div>
+<p>One checks <span class="arithmatex">\(v_i\in U\)</span> and <span class="arithmatex">\({\left \langle v_i,v_j \right \rangle}=0\)</span> for <span class="arithmatex">\(i\neq j\)</span>. (Such vectors can be found using Gram–Schmidt orthogonalization, <a href="#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>). Their norms are <span class="arithmatex">\(|v_1|=\sqrt2\)</span>, <span class="arithmatex">\(|v_2|=\sqrt5\)</span>, <span class="arithmatex">\(|v_3|=\sqrt{70}\)</span>, so an orthonormal basis is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+w_1=\frac1{\sqrt2}(1,1,0,0),\quad
+w_2=\frac1{\sqrt5}(0,0,-2,1),\quad
+w_3=\frac1{\sqrt{70}}(-5,5,2,4).
+\]</div>
+</div>
+<p>Let <span class="arithmatex">\(n=(1,-1,1,2)\)</span>. Then <span class="arithmatex">\(U=n^\bot\)</span>, hence (<a href="#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>) <span class="arithmatex">\(p_U(x)=x-\frac{{\left \langle x,n \right \rangle}}{{\left \langle n,n \right \rangle}}n\)</span> and <span class="arithmatex">\({\left \langle n,n \right \rangle}=7\)</span>. For <span class="arithmatex">\(v=(2,3,0,0)\)</span>, <span class="arithmatex">\({\left \langle v,n \right \rangle}=-1\)</span>, so <span class="arithmatex">\(p_U(v)=v+\frac17 n=(\frac{15}7,\frac{20}7,\frac17,\frac27)\)</span>. For <span class="arithmatex">\(w=(2,5,3,0)\)</span>, <span class="arithmatex">\({\left \langle w,n \right \rangle}=0\)</span>, so <span class="arithmatex">\(p_U(w)=w=(2,5,3,0)\)</span>.</p>
+<p>Finally, <span class="arithmatex">\(U^\bot=L(n)=L(1,-1,1,2)\)</span>, where we have used <a href="#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.17</strong></p>
+<p><span id="sol-ex-euclid-6-13" label="sol--ex:euclid-6-13"></span> (See <a href="#ex-euclid-6-13" data-reference-type="ref+Label" data-reference="ex:euclid-6-13">Exercise 7.17</a>.) This solution illustrates <a href="#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="#tas-compute-orthogonal-projection">Task 7.62</a>.</p>
+<p>We compute in fact directly an ortho<em>normal</em> basis, which in particular is then orthogonal. (The property of also being normal is convenient further below.) We apply the Gram–Schmidt procedure (<a href="#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+w_1 &amp; = \frac 1{\sqrt 6} (1,2,0,-1), \\
+w_2' &amp; = (0,-4,3,4) - {\left \langle (0,-4,3,4), \frac 1 {\sqrt 6}(1,2,0,-1) \right \rangle} \frac 1 {\sqrt{6}} (1,2,0,-1) \\
+&amp; = (0,-4,3,4) + 2(1,2,0,-1) \\
+&amp; = (2,0,3,2), \\
+w_2 &amp; = \frac 1{\sqrt {17}} (2,0,3,2).
+\end{align*}
+\]</div>
+</div>
+<p>The vectors <span class="arithmatex">\(w_1\)</span> and <span class="arithmatex">\(w_2\)</span> then constitute an orthonormal basis of <span class="arithmatex">\(U\)</span>.</p>
+<p>We compute the orthogonal complement of <span class="arithmatex">\(U\)</span> by solving the equations (for some <span class="arithmatex">\(v \in {\bf R}^4\)</span>)</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+{\left \langle v, (1,2,0,-1) \right \rangle} &amp; = 0 \\
+{\left \langle v, (0,-4,3,4 \right \rangle} &amp; = 0.
+\end{align*}
+\]</div>
+</div>
+<p>We consider the matrix of the resulting linear system, and bring it into row echelon form:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc} 1 &amp; 2 &amp; 0 &amp; -1 \\ 0 &amp; -4 &amp; 3 &amp; 4 \end{array} \right ) \leadsto \left ( \begin{array}{cccc} 1 &amp; 2 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; -\frac 34 &amp; 1 \end{array} \right ) \leadsto \left ( \begin{array}{cccc} 1 &amp; 0 &amp; \frac 32 &amp; 1 \\ 0 &amp; 1 &amp; -\frac 34 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+<p>Thus, if <span class="arithmatex">\(v = (x_1, \dots, x_4)\)</span>, then <span class="arithmatex">\(x_3\)</span> and <span class="arithmatex">\(x_4\)</span> are free variables, so that a basis of <span class="arithmatex">\(U^\bot\)</span> is given by the two vectors <span class="arithmatex">\((-\frac 32, \frac 34, 1, 0)\)</span> and <span class="arithmatex">\((-1,1,0,1)\)</span>.</p>
+<p>We compute the orthogonal projection by <a href="#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+p_U(v) &amp; = {\left \langle v, w_1 \right \rangle} w_1 + {\left \langle v, w_2 \right \rangle} w_2 \\
+&amp; = (3,2,3,1).
+\end{align*}
+\]</div>
+</div>
+<p>If we write <span class="arithmatex">\(w = l + l^\bot\)</span> with <span class="arithmatex">\(l^\bot \in L^\bot\)</span>, then <span class="arithmatex">\(l^\bot = w - l = (2,-,1,0,2)-(1,1,2,0)=(1,-2,-2,2)\)</span>. This vector would need to be orthogonal to <span class="arithmatex">\((1,1,2,0)\)</span>, which however it is not (since their scalar product is <span class="arithmatex">\(-5 \ne 0\)</span>). Therefore, such a subspace <span class="arithmatex">\(L\)</span> does not exist.</p>
+<p>These computations may be carried out also using a computer algebra system, for example the Gram–Schmidt orthogonalization procedure like so: <a href="https://www.wolframalpha.com/input?i=Orthogonalize%5B%7B%7B1%2C2%2C0%2C-1%7D%2C%7B0%2C-4%2C3%2C4%7D%7D%5D">https://www.wolframalpha.com/input?i=Orthogonalize%5B%7B%7B1%2C2%2C0%2C-1%7D%2C%7B0%2C-4%2C3%2C4%7D%7D%5D</a>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.18</strong></p>
+<p><span id="sol-ex-euclid-6-14" label="sol--ex:euclid-6-14"></span> (See <a href="#ex-euclid-6-14" data-reference-type="ref+Label" data-reference="ex:euclid-6-14">Exercise 7.18</a>.) This solution illustrates <a href="#tas-check-lines-skew">Task 7.71</a>, <a href="#tas-check-line-parallel-plane">Task 7.72</a>.</p>
+<p>We first compute <span class="arithmatex">\(L\)</span> in the form <span class="arithmatex">\(L = v_0 + W\)</span>. We choose <span class="arithmatex">\(v_0 = (0,1,-1)\)</span>. In addition, the point <span class="arithmatex">\((1,2,1)\)</span> is also lying in <span class="arithmatex">\(L\)</span>. Therefore <span class="arithmatex">\(W\)</span> is spanned by <span class="arithmatex">\((1,2,1)-(0,1,-1)=(1,1,2)\)</span>.</p>
+<p>Similarly, we can compute <span class="arithmatex">\(M = (1,-2,0) + L((2,1,1))\)</span>. The two vectors <span class="arithmatex">\((1,1,2)\)</span> and <span class="arithmatex">\((2,1,1)\)</span> are linearly independent, so that <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(M\)</span> are not parallel nor identical. We compute the intersection <span class="arithmatex">\(L \cap M\)</span>. We have the equations <span class="arithmatex">\(1-y = x = 2y+1\)</span>, so that <span class="arithmatex">\(y = 0\)</span>. We also have <span class="arithmatex">\(2x-1 = z = y+2\)</span>, so that <span class="arithmatex">\(z=2\)</span> and <span class="arithmatex">\(x = \frac 32\)</span>, but then we get a contradiction to <span class="arithmatex">\(1-y=x\)</span>. Thus <span class="arithmatex">\(L \cap M = \emptyset\)</span>. Therefore, <span class="arithmatex">\(L\)</span> is skew to <span class="arithmatex">\(M\)</span>.</p>
+<p>We compute the requested plane <span class="arithmatex">\(P\)</span> by observing that its underlying vector space <span class="arithmatex">\(W\)</span> is spanned by <span class="arithmatex">\((1,-1,2)\)</span> and <span class="arithmatex">\((2,1,1)\)</span>. Moreover, the point <span class="arithmatex">\((1,0,2) \in P\)</span>. Thus <span class="arithmatex">\(P = (1,0,2) + L((1,-1,2), (2,1,1))\)</span>. The orthogonal complement of <span class="arithmatex">\(W\)</span> is spanned by <span class="arithmatex">\((1,-1,-1)\)</span>, as one sees by solving the linear system <span class="arithmatex">\(a-b+2c = 0, 2a+b+c=0\)</span>. Thus, <span class="arithmatex">\(P\)</span> is of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle v, (1,-1,-1) \right \rangle} = d.
+\]</div>
+</div>
+<p>To compute the number <span class="arithmatex">\(d\)</span>, we use that <span class="arithmatex">\((1,0,2) \in P\)</span>, so that <span class="arithmatex">\(d = {\left \langle (1,0,2), (1,-1,-1) \right \rangle} = -1\)</span>.</p>
+<p>A general point on <span class="arithmatex">\(M\)</span> is of the form <span class="arithmatex">\((1+2r,r,2+r)\)</span>. With <span class="arithmatex">\(l =(0,1,-1)\)</span>, the vector <span class="arithmatex">\(v := m-l = (1+2r, r-1,3+r)\)</span>. The line spanned by this vector is parallel to the plane defined by the equation <span class="arithmatex">\(3x-z = 0\)</span> precisely if <span class="arithmatex">\({\left \langle v, (3,0,-1) \right \rangle} = 0\)</span>. This leads to the equation</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+3+6r-3-r = 0,
+\]</div>
+</div>
+<p>i.e., <span class="arithmatex">\(r = 0\)</span>, so that <span class="arithmatex">\(m = (1,0,2)\)</span>.</p>
+<p>We compute the coordinates of <span class="arithmatex">\(r_\alpha = (x,y,z)\)</span> as <span class="arithmatex">\(z = \alpha\)</span>, <span class="arithmatex">\(x = \frac 12(1+\alpha)\)</span>, <span class="arithmatex">\(y = \frac 12(1-\alpha)\)</span>. Similarly, <span class="arithmatex">\(s_\alpha = (2\alpha - 3, \alpha - 2, \alpha)\)</span>. The midpoints <span class="arithmatex">\(m_\alpha = \frac{r_\alpha + s_\alpha}2 = (\frac{5\alpha-5}4, \frac{\alpha-3}4,\alpha)\)</span> are precisely the points on the line</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(-\frac 54, -\frac 34, 0) + L((\frac 54, \frac 14, 1)).
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.19</strong></p>
+<p><span id="sol-ex-euclid-6-15" label="sol--ex:euclid-6-15"></span> (See <a href="#ex-euclid-6-15" data-reference-type="ref+Label" data-reference="ex:euclid-6-15">Exercise 7.19</a>.) This solution illustrates <a href="#tas-plane-through-three-points">Task 7.66</a>, <a href="#tas-plane-vector-to-cartesian">Task 7.69</a>.</p>
+<p>We have <span class="arithmatex">\(L = p + L(q-p)\)</span>, i.e., <span class="arithmatex">\(L = (3,1,0) + L(-3,0,3)\)</span>. (Other solutions are possible as well, e.g., <span class="arithmatex">\(L = q + L(-3,0,3)\)</span>.) We determine whether <span class="arithmatex">\(r\)</span> lies on <span class="arithmatex">\(L\)</span> by considering the linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+3-3t &amp; = -3 \\
+1 &amp; = 0 \\
+3t &amp; = -3.
+\end{align*}
+\]</div>
+</div>
+<p>The second equation is a contradiction, therefore there is no <span class="arithmatex">\(t \in {\bf R}\)</span> satisfying this linear system. Thus <span class="arithmatex">\(r \notin L\)</span>.</p>
+<p>We describe the plane <span class="arithmatex">\(P\)</span> containing the points <span class="arithmatex">\(p, q, r\)</span> in two ways:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+P = p + L(q-p, r-p) = (3,1,0) + L((-3,0,3), (-6,-1,-3)).
+\]</div>
+</div>
+<p>The orthogonal complement of <span class="arithmatex">\(w_1 = (-3,0,3)\)</span> and <span class="arithmatex">\(w_2 = (-6,-1,-3)\)</span> is the line spanned by <span class="arithmatex">\(a := (1,-9,1)\)</span>. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+P = \{x \in {\bf R}^3 | {\left \langle x, a \right \rangle} = {\left \langle p, a \right \rangle}\}
+\]</div>
+</div>
+<p>which we can write out as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+P = \{x \in {\bf R}^3 | {\left \langle x, \left ( \begin{array}{c} 1 \\ -9 \\ 1 \end{array} \right ) \right \rangle} = -6\}
+\]</div>
+</div>
+<p>or, equivalently</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+P = \{x = (x_1, x_2, x_3) | x_1 -9x_2 + x_3 = -6\}.
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.20</strong></p>
+<p><span id="sol-ex-euclid-6-16" label="sol--ex:euclid-6-16"></span> (See <a href="#ex-euclid-6-16" data-reference-type="ref+Label" data-reference="ex:euclid-6-16">Exercise 7.20</a>.) This solution illustrates <a href="#tas-check-lines-skew" data-reference-type="ref+Label" data-reference="tas:check-lines-skew">Task 7.71</a>. The line <span class="arithmatex">\(M\)</span>, given to us by the systen <span class="arithmatex">\(x + z = 2\)</span>, <span class="arithmatex">\(x - 2 y = 2\)</span> is also described as <span class="arithmatex">\(M = (2,0,0) + L(2, 1, -2)\)</span>. Its underlying vector space is therefore spanned by <span class="arithmatex">\((2,1,-2)\)</span>, while the underlying vector space of <span class="arithmatex">\(L\)</span> is spanned by <span class="arithmatex">\((1,0,-1)\)</span>. These two vectors are linearly independent. We compute the intersection of <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(M\)</span> by taking a general point <span class="arithmatex">\(l = (3+t, 1, -t) \in L\)</span> and <span class="arithmatex">\(m = (2+2s,s,-2s) \in M\)</span>, with <span class="arithmatex">\(t, s \in {\bf R}\)</span>. The three coordinates of the equation <span class="arithmatex">\(l = m\)</span> read:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+3+t &amp;= 2+2s \\
+1 &amp; = s \\
+-t &amp; = -2s.
+\end{align*}
+\]</div>
+</div>
+<p>The second and third equations give <span class="arithmatex">\(s = 1\)</span>, <span class="arithmatex">\(t = 2\)</span>. The first then gives <span class="arithmatex">\(5 = 4\)</span>, which is a contradiction. Thus, there is no point lying on <span class="arithmatex">\(L\)</span> and on <span class="arithmatex">\(M\)</span>, i.e., <span class="arithmatex">\(L \cap M = \emptyset\)</span>. Thus <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(M\)</span> are skew, so no plane contains <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(M\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.21</strong></p>
+<p><span id="sol-ex-euclid-6-17" label="sol--ex:euclid-6-17"></span> (See <a href="#ex-euclid-6-17" data-reference-type="ref+Label" data-reference="ex:euclid-6-17">Exercise 7.21</a>.) Writing <span class="arithmatex">\(q = (x,y,z)\)</span> for <span class="arithmatex">\(x, y, z \in {\bf R}\)</span>, the line <span class="arithmatex">\(M\)</span> is then given by <span class="arithmatex">\(M = p + L(q-p) = (-1,-1,-1) + L(x+1,y+1,z+1)\)</span>.</p>
+<p>The line <span class="arithmatex">\(M\)</span> will be orthogonal to <span class="arithmatex">\(L\)</span> precisely if</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(x+1, y+1, z+1) \bot (1,0,-1),
+\]</div>
+</div>
+<p>i.e., if <span class="arithmatex">\(x+1 - z - 1 = 0\)</span>, i.e., if <span class="arithmatex">\(x = z\)</span>.</p>
+<p>As in the solution of <a href="#ex-euclid-6-16" data-reference-type="ref+Label" data-reference="ex:euclid-6-16">Exercise 7.20</a> above, the line <span class="arithmatex">\(M\)</span> (with <span class="arithmatex">\(x = z\)</span>) intersects <span class="arithmatex">\(L\)</span> precisely if the linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+3+t &amp;= -1 + s(x+1) \\
+1 &amp; = -1 + s(y+1) \\
+-t &amp; = -1 + s(x+1) \\
+\end{align*}
+\]</div>
+</div>
+<p>has a solution <span class="arithmatex">\((s,t) \in {\bf R}^2\)</span>. To get a clearer view of this, we write down the augmented matrix for this linear system, keeping in mind that <span class="arithmatex">\(x,y\)</span> are parameters in this linear system, and <span class="arithmatex">\(s, t\)</span> are the unknowns. Note this is a linear system in two unknowns, but three equations.</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\left ( \begin{array}{cc|c} -x-1 &amp; 1 &amp; -4 \\ -y-1 &amp; 0 &amp; -2 \\ -x-1 &amp; -1 &amp; -1 \end{array} \right ) &amp; \leadsto \left ( \begin{array}{cc|c} -x-1 &amp; 1 &amp; -4 \\ -y-1 &amp; 0 &amp; -2 \\ -2x-2 &amp; 0 &amp; -5 \end{array} \right ) \\
+&amp; \stackrel{\text{if } y \ne -1} \leadsto \left ( \begin{array}{cc|c} -x-1 &amp; 1 &amp; -4 \\ 1 &amp; 0 &amp; \frac{2}{y+1} \\ -2x-2 &amp; 0 &amp; -5 \end{array} \right ) \\
+&amp; \leadsto \left ( \begin{array}{cc|c} 0 &amp; 1 &amp; -4+2\frac{x+1}{y+1} \\ 1 &amp; 0 &amp; \frac{2}{y+1} \\ 0 &amp; 0 &amp; -5+2\frac{2x+2}{y+1} \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>If <span class="arithmatex">\(y = -1\)</span>, then we have no solution in the above system, due to the row <span class="arithmatex">\(0 \ 0 \ | \  {-2}\)</span> in this case. Otherwise, for <span class="arithmatex">\(y \ne -1\)</span>, we can perform the elementary row operations as indicated above. This system has <em>no</em> solution if the term <span class="arithmatex">\(-5+2\frac{2x+2}{y+1} \ne 0\)</span>. If, on the contrary, the bottom right entry is zero, then the system does have a unique solution (since we then have two leading ones in the matrix). This bottom right entry is zero precisely if <span class="arithmatex">\(5(y+1) = 4x+4\)</span>, or, equivalently, if <span class="arithmatex">\(y = \frac{4x -1}5\)</span>.</p>
+<p>We therefore find that the line <span class="arithmatex">\(M\)</span> through <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q = (x,y,z)\)</span> intersects <span class="arithmatex">\(L\)</span> orthogonally precisely if <span class="arithmatex">\(z = x\)</span>, <span class="arithmatex">\(y = \frac{4x -1}5\)</span> and <span class="arithmatex">\(y \ne -1\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.22</strong></p>
+<p><span id="sol-ex-euclid-6-18" label="sol--ex:euclid-6-18"></span> (See <a href="#ex-euclid-6-18" data-reference-type="ref+Label" data-reference="ex:euclid-6-18">Exercise 7.22</a>.) This solution illustrates <a href="#tas-line-in-plane-orthogonal-to-line" data-reference-type="ref+Label" data-reference="tas:line-in-plane-orthogonal-to-line">Task 7.68</a>.</p>
+<p>Any line <span class="arithmatex">\(M\)</span> passing through <span class="arithmatex">\(p\)</span> is of the form <span class="arithmatex">\(M = p + L(w)\)</span>. We compute <span class="arithmatex">\(w = (a,b,c)\)</span> by considering the two conditions on <span class="arithmatex">\(M\)</span>:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(M \bot L\)</span> holds exactly if <span class="arithmatex">\(w \bot (1,1,1)\)</span>, i.e., if <span class="arithmatex">\(a+b+c=0\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(M \subset P\)</span> holds exactly if <span class="arithmatex">\(w \bot (3,-4,1)\)</span>. Indeed, the underlying subspace of <span class="arithmatex">\(P\)</span> is given by <span class="arithmatex">\(3x-4y+z=0\)</span>, i.e., it is the orthogonal complement of <span class="arithmatex">\((3,-4,1)\)</span>. That is, <span class="arithmatex">\(3a-4b+c=0\)</span>.</p>
+</li>
+</ul>
+<p>We have to solve the homogeneous linear system associated to the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 3 &amp; -4 &amp; 1 \end{array} \right )
+\leadsto 
+\left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; -7 &amp; -2 \end{array} \right )
+\]</div>
+</div>
+<p>so a solution is given by <span class="arithmatex">\(b = 2\)</span>, <span class="arithmatex">\(c = -7\)</span> and <span class="arithmatex">\(a = 5\)</span>. (Any other non-zero multiple of <span class="arithmatex">\((5,2,-7)\)</span> is also a solution.) Therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+M = p + L(w) = (0,1,6) + L(5,2,-7).
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.23</strong></p>
+<p><span id="sol-ex-euclid-6-19" label="sol--ex:euclid-6-19"></span> (See <a href="#ex-euclid-6-19" data-reference-type="ref+Label" data-reference="ex:euclid-6-19">Exercise 7.23</a>.) This solution illustrates <a href="#tas-check-lines-skew">Task 7.71</a>, <a href="#tas-check-line-parallel-plane">Task 7.72</a>, <a href="#tas-compute-distance-affine-subspaces">Task 7.74</a>.</p>
+<p>The cartesian equations of the line <span class="arithmatex">\(L_2\)</span> are obtained by inserting <span class="arithmatex">\(x = t\)</span> into the equation for <span class="arithmatex">\(z\)</span>, which gives</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+y &amp; = 2 \\
+x+z &amp; = 4.
+\end{align*}
+\]</div>
+</div>
+<p>We compute the intersection of <span class="arithmatex">\(L_1\)</span> and <span class="arithmatex">\(L_2\)</span>, and at the same time determine whether they are parallel or not. The linear system for <span class="arithmatex">\(L_1 \cap L_2\)</span> is (the first two equations are for <span class="arithmatex">\(L_2\)</span>, the latter two for <span class="arithmatex">\(L_1\)</span>)</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+y &amp; = 2 \\
+x+z &amp; = 4\\
+2x-y &amp; = -3\\
+y+z &amp; = -2.
+\end{align*}
+\]</div>
+</div>
+<p>We form the augmented matrix of this linear system and bring it into row echelon form:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\left ( \begin{array}{ccc|c} 1 &amp; 0 &amp; 1 &amp; 4 \\ 0 &amp; 1 &amp; 0 &amp; 2 \\ 2 &amp; -1 &amp; 0 &amp; -3 \\ 0 &amp; 1 &amp; 1 &amp; -2 \end{array} \right )
+&amp; \leadsto
+\left ( \begin{array}{ccc|c} 1 &amp; 0 &amp; 1 &amp; 4 \\ 0 &amp; 1 &amp; 0 &amp; 2 \\ 0 &amp; -1 &amp; -2 &amp; -11 \\ 0 &amp; 1 &amp; 1 &amp; -2 \end{array} \right )
+\leadsto
+\left ( \begin{array}{ccc|c} 1 &amp; 0 &amp; 1 &amp; 4 \\ 0 &amp; 1 &amp; 0 &amp; 2 \\ 0 &amp; 0 &amp; -2 &amp; -9 \\ 0 &amp; 0 &amp; 1 &amp; -4 \end{array} \right ) \\
+&amp; \leadsto
+\left ( \begin{array}{ccc|c} 1 &amp; 0 &amp; 1 &amp; 4 \\ 0 &amp; 1 &amp; 0 &amp; 2 \\ 0 &amp; 0 &amp; -2 &amp; -9 \\ 0 &amp; 0 &amp; 0 &amp; -17 \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>If we only consider the first three columns (corresponding to the three variables), the matrix has rank 3. This shows that the lines are not parallel (otherwise the rank would be 2). The full matrix has rank 4. Therefore there is no solution of the linear system and the lines are skew.</p>
+<p>Part (2): The plane <span class="arithmatex">\(\pi\)</span> contains <span class="arithmatex">\(L_2\)</span> and the direction of <span class="arithmatex">\(L_1\)</span> (i.e., the underlying sub-vector space) is contained in the directions of <span class="arithmatex">\(\pi\)</span> (i.e., its underlying sub-vector space). We therefore first compute the direction of <span class="arithmatex">\(L_1\)</span>. The system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+L_1 : \ &amp; 2x-y=-3 \\ &amp; y+z=-2
+\end{align*}
+\]</div>
+</div>
+<p>leads to <span class="arithmatex">\(y = 2x+3\)</span>, <span class="arithmatex">\(z=-y-2=-2x-5\)</span>, in which <span class="arithmatex">\(x\)</span> is a free variable. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align}
+L_1 &amp; = \{ (x, 2x+3,-2x-5) | x \in {\bf R} \} \nonumber \\
+    &amp; = \{(0,3,-5) + x (1,2,-2) | x \in {\bf R} \}
+\end{align}
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(7.75)</strong></p>
+<p><span id="l1-ex-blah" label="L1 ex blah"></span> Thus the direction of <span class="arithmatex">\(L_1\)</span> is <span class="arithmatex">\((1,2,-2)\)</span>. (Alternatively, one may observe that the points <span class="arithmatex">\(p = (0,3,-5)\)</span> and <span class="arithmatex">\(q = (1,5,-7)\)</span> satisfy the linear system describing <span class="arithmatex">\(L_1\)</span>, so that <span class="arithmatex">\(L_1 = (0,3,-5) + L(q-p)\)</span>.)</p>
+<p>The plane <span class="arithmatex">\(\pi\)</span> is of the form <span class="arithmatex">\(\pi = \{v = (x,y,z) \in {\bf R}^3 | {\left \langle v, a \right \rangle} = d\}\)</span> for some vector <span class="arithmatex">\(a = (a_1, a_2, a_3)\)</span> and <span class="arithmatex">\(d \in {\bf R}\)</span>. I.e., <span class="arithmatex">\(\pi = \{(x,y,z) | a_1 x+a_2 y + a_3z = d\}\)</span>. Its underlying subvector space is <span class="arithmatex">\(a_1 x + a_2 +a_3z=0\)</span>. The condition <span class="arithmatex">\(L_1\)</span> being parallel to <span class="arithmatex">\(\pi\)</span> translates into <span class="arithmatex">\({\left \langle a, v_1 \right \rangle} = 0\)</span>, where <span class="arithmatex">\(v_1 = (1,2,-2)\)</span> is the direction of <span class="arithmatex">\(L_1\)</span>. The condition <span class="arithmatex">\(L_2 \subset \pi\)</span> translates into <span class="arithmatex">\({\left \langle a, v_2 \right \rangle} = 0\)</span>, where <span class="arithmatex">\(v_2 = (1,0,-1)\)</span> is the direction vector of <span class="arithmatex">\(L_2\)</span> (cf. <a href="#def-direction-vector" data-reference-type="ref+Label" data-reference="def:direction-vector">Definition 7.50</a>). These two conditions give the linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+a_1 + 2a_2 - 2a_3 &amp; = 0\\
+a_1 - a_3 &amp; = 0.
+\end{align*}
+\]</div>
+</div>
+<p>Thus <span class="arithmatex">\(a_1 = a_3\)</span> and <span class="arithmatex">\(a_1 = 2a_2\)</span>, and <span class="arithmatex">\(a_2\)</span> (say) is a free variable. We choose <span class="arithmatex">\(a_2 = 1\)</span> (note: any other non-zero number <span class="arithmatex">\(a_2\)</span> would eventually give rise to the same plane <span class="arithmatex">\(\pi\)</span> below), so that <span class="arithmatex">\(a = (a_1, a_2, a_3) = (2,1,2).\)</span> Thus, <span class="arithmatex">\(\pi = \{(x,y,z) | 2x+y+2z=d \}\)</span>, where we still need to compute <span class="arithmatex">\(d\)</span>. It is enough to choose <span class="arithmatex">\(d\)</span> such that <span class="arithmatex">\(\pi\)</span> contains any point of <span class="arithmatex">\(L_2\)</span>, for example <span class="arithmatex">\(e := (0,2,4)\)</span>. We compute <span class="arithmatex">\({\left \langle a, e \right \rangle} = 2 \cdot 0 + 1 \cdot 2 + 2 \cdot 4 = 10\)</span>. Thus, <span class="arithmatex">\(d=10\)</span>, so that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\pi = \{(x,y,z) | 2x+y+2z = 10 \}.
+\]</div>
+</div>
+<p>Part (3): By construction <span class="arithmatex">\(L_1\)</span> is parallel to <span class="arithmatex">\(\pi\)</span>, so to compute the distance of <span class="arithmatex">\(\pi\)</span> and <span class="arithmatex">\(L_1\)</span>, we may choose any point <span class="arithmatex">\(q \in L_1\)</span> and to compute its orthogonal projection onto <span class="arithmatex">\(\pi\)</span>, which we call <span class="arithmatex">\(r\)</span>. Then <span class="arithmatex">\(d(\pi, L_1) = d(q, r)\)</span>.</p>
+<p>The line passing through <span class="arithmatex">\(q\)</span> and <span class="arithmatex">\(r\)</span> is orthogonal to <span class="arithmatex">\(\pi\)</span>, so it has direction vector <span class="arithmatex">\((2,1,2)\)</span>. We choose <span class="arithmatex">\(q = (0,3,-5)\)</span>. The line passing through <span class="arithmatex">\(q\)</span> and orthogonal to <span class="arithmatex">\(\pi\)</span> is then of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+M = (0,3,-5) + L(2,1,2),
+\]</div>
+</div>
+<p>its points are of the form <span class="arithmatex">\(r_t = (2t,3+t,-5+2t)\)</span> where <span class="arithmatex">\(t \in {\bf R}\)</span>. The intersection of that line with <span class="arithmatex">\(\pi\)</span> is given by the unique value of <span class="arithmatex">\(t\)</span> such that <span class="arithmatex">\(r_t \in \pi\)</span>, i.e.,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+2 (2t)+(3+t)+2(-5-2t) = 10.
+\]</div>
+</div>
+<p>This simplifies to <span class="arithmatex">\(9t=17\)</span> or <span class="arithmatex">\(t = \frac{17}9\)</span>. Thus <span class="arithmatex">\(r = r_{17 / 9} = (\frac{34}9, \frac{44}9, -\frac{11}9)\)</span>. We then have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+d(L_1, \pi) &amp; = d (q, r) = |\hspace{-0.5mm}| {(0,3,-5)-(\frac{34}9, \frac{44}9, -\frac{11}9)} |\hspace{-0.5mm}| \\
+&amp; = |\hspace{-0.5mm}| {(-\frac{34}9,-\frac{17}9,-\frac{34}9)} |\hspace{-0.5mm}| = \frac{17}3.
+\end{align*}
+\]</div>
+</div>
+<p>Part (4): we already know the lines are skew, so there will be unique points in <span class="arithmatex">\(L_1\)</span> and <span class="arithmatex">\(L_2\)</span>, respectively, realizing the minimal distance. We compute these points using <a href="#thm-distance-affine-subspaces" data-reference-type="ref+Label" data-reference="thm:distance-affine-subspaces">Theorem 7.59</a><a href="#item-min-c" data-reference-type="ref" data-reference="item--min.c">4.</a>. A general point <span class="arithmatex">\(p_t \in L_2\)</span> is of the form <span class="arithmatex">\(p_t = (t, 2, 4-t)\)</span> (with <span class="arithmatex">\(t \in {\bf R}\)</span>). By <a href="#l1-ex-blah" data-reference-type="eqref" data-reference="L1 ex blah">Equation (7.75)</a>, a general point in <span class="arithmatex">\(L_1\)</span> is of the form <span class="arithmatex">\(q_s = (s, 3+2s,-5-2s)\)</span> (with <span class="arithmatex">\(s \in {\bf R}\)</span>). The vector <span class="arithmatex">\(p_t - q_s = (s-t, 1+2s,-9-2s+t)\)</span> needs to be orthogonal to the directions of <span class="arithmatex">\(L_1\)</span> and <span class="arithmatex">\(L_2\)</span>, which we computed above as <span class="arithmatex">\((1,2,-2)\)</span> and <span class="arithmatex">\((1,0,-1)\)</span>. This leads to the linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+0 &amp; = s-t+2(1+2s)-2(-9-2s+t) = 9s-3t+20 \\
+0 &amp; = s-t -(-9-2s+t) = 3s-2t+9
+\end{align*}
+\]</div>
+</div>
+<p>This can be solved to <span class="arithmatex">\(t=\frac 73\)</span> and <span class="arithmatex">\(s = -\frac{13}9\)</span>, which gives</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+p_{7/3} &amp; = (\frac 73, 2, \frac 53), \\
+q_{-13/9}&amp; =(-\frac{13}9, -\frac{17}9, -\frac{19}9).
+\end{align*}
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.24</strong></p>
+<p><span id="sol-ex-euclid-6-20" label="sol--ex:euclid-6-20"></span> (See <a href="#ex-euclid-6-20" data-reference-type="ref+Label" data-reference="ex:euclid-6-20">Exercise 7.24</a>.) This solution illustrates <a href="#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="#tas-compute-orthogonal-complement">Task 7.63</a>.</p>
+<p>We first compute a basis of <span class="arithmatex">\(U\)</span> by computing the kernel of the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc} 1 &amp; 0 &amp; 1 &amp; 0 \\ 2 &amp; 1 &amp; 0 &amp; -1 \end{array} \right )
+\leadsto
+\left ( \begin{array}{cccc} 1 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; -2 &amp; -1 \end{array} \right )
+\]</div>
+</div>
+<p>The third and fourth variables are free, and a basis of <span class="arithmatex">\(U\)</span> is given by the vectors <span class="arithmatex">\(u_1 = (0, 1, 0, 1)\)</span> and <span class="arithmatex">\(u_2 = (-1, 0, 1, 0)\)</span>. These two vectors happen to be orthogonal, so they form an orthogonal basis. (If one chooses a different basis of <span class="arithmatex">\(U\)</span>, one may apply the Gram–Schmidt algorithm to make them orthonormal, for example.)</p>
+<p>Since <span class="arithmatex">\(\dim U^\bot = 4 - \dim U = 2\)</span>, it suffices to find any non-zero vector <span class="arithmatex">\(w_2 \in U^\bot\)</span> that is also orthogonal to <span class="arithmatex">\(w_1\)</span>. We are thus looking for a non-zero vector in <span class="arithmatex">\(L((-1,0,1,0),(0,1,0,1),(1,1,-1,-1))^\bot\)</span>. This is the kernel of the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc} -1 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; -1 &amp; -1 \end{array} \right )
+\leadsto
+\left ( \begin{array}{cccc} 0 &amp; 1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; -1 &amp; -1 \end{array} \right ),
+\]</div>
+</div>
+<p>so if <span class="arithmatex">\(w_2 =(x_1, \dots, x_4)\)</span>, we obtain <span class="arithmatex">\(x_2 = x_4=0\)</span> and <span class="arithmatex">\(x_1 = x_3\)</span>, so <span class="arithmatex">\(w_2 = (1,0,1,0)\)</span> satisfies the requested properties.</p>
+<p>The orthogonal complement <span class="arithmatex">\(U^\perp\)</span> is defined by the equations</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+-x_1 + x_3 &amp; = 0 \\
+x_2 + x_4 &amp; = 0.
+\end{align*}
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.25</strong></p>
+<p><span id="sol-ex-euclid-6-21" label="sol--ex:euclid-6-21"></span> (See <a href="#ex-euclid-6-21" data-reference-type="ref+Label" data-reference="ex:euclid-6-21">Exercise 7.25</a>.) This solution illustrates <a href="#tas-check-lines-parallel">Task 7.70</a>, <a href="#tas-plane-through-line-and-point">Task 7.67</a>, <a href="#tas-line-in-plane-orthogonal-to-line">Task 7.68</a>.</p>
+<p>The points <span class="arithmatex">\(l_1 := (0,2,1)\)</span> and <span class="arithmatex">\(l_2 := (2, 3, 0)\)</span> lie in <span class="arithmatex">\(L\)</span>, so that the direction vector of <span class="arithmatex">\(L\)</span>, which is the difference of the two points, is <span class="arithmatex">\((2,1,-1)\)</span>.</p>
+<p>Likewise the points <span class="arithmatex">\(m_1 := (1,1,2)\)</span> and <span class="arithmatex">\((5,3,0)\)</span> lie on <span class="arithmatex">\(M\)</span>, so that its direction vector is <span class="arithmatex">\((4,2,-2)\)</span>. This is a multiple of <span class="arithmatex">\((2,1,1)\)</span>, so the two direction vectors span the same (1-dimensional) subspace of <span class="arithmatex">\({\bf R}^3\)</span>, so the lines are parallel.</p>
+<p>In order to compute the plane <span class="arithmatex">\(P\)</span> containing <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(L\)</span> we use that <span class="arithmatex">\(P\)</span> is uniquely determined (since <span class="arithmatex">\(M \ne L\)</span>) by the condition that <span class="arithmatex">\(l_1, l_2, m_1 \in P\)</span>. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+P &amp; = l_1 + L(l_2-l_1, m_1-l_1) \\
+&amp; = (0,2,1) + L((2,1,-1), (1,-1,1)).
+\end{align*}
+\]</div>
+</div>
+<p>In order to compute the cartesian form of <span class="arithmatex">\(P\)</span>, we compute the orthogonal complement of <span class="arithmatex">\((2,1,-1)\)</span> and <span class="arithmatex">\((1,-1,1)\)</span>: it is the 1-dimensional subspace of <span class="arithmatex">\({\bf R}^3\)</span> spanned by a vector <span class="arithmatex">\((a,b,c)\)</span> satisfying <span class="arithmatex">\(2a+b-c=0\)</span> and <span class="arithmatex">\(a-b+c=0\)</span>. This implies <span class="arithmatex">\(a=0\)</span> and <span class="arithmatex">\(b=c\)</span>, and <span class="arithmatex">\(c\)</span> is a free variable. Thus the normal vector of the plane <span class="arithmatex">\(P\)</span> is <span class="arithmatex">\((0, 1,1)\)</span> (or any nonzero multiple thereof). Taking into account that <span class="arithmatex">\((0,2,1) \in P\)</span>, we have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+P &amp; = \{v \in {\bf R}^3 | {\left \langle v, (0,1,1) \right \rangle} = {\left \langle (0,2,1), (0,1,1) \right \rangle} \} \\
+&amp; = \{v \in {\bf R}^3 | {\left \langle v, (0,1,1) \right \rangle} = 3 \} \\
+&amp;= \{v=(x,y,z) | y+z = 3\}.
+\end{align*}
+\]</div>
+</div>
+<p>For the second part, we first compute what a general point <span class="arithmatex">\(q \in M\)</span> looks like. From the above, we have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+M = (1,1,2) + L(4,2,-2),
+\]</div>
+</div>
+<p>so</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+q = (1+4r, 1+2r, 2-2r), r \in {\bf R}.
+\]</div>
+</div>
+<p>For <span class="arithmatex">\(p=(0,2,1)\)</span>, this implies</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+p-q = (-4r-1, -2r+1, 2r-1).
+\]</div>
+</div>
+<p>This vector needs to be orthogonal to the direction vector of <span class="arithmatex">\(L\)</span>, which is <span class="arithmatex">\((2,1,-1)\)</span>. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+0 &amp; = 2(-4r-1)+1(-2r+1)-(2r-1) \\
+&amp; = -12r
+\end{align*}
+\]</div>
+</div>
+<p>so that <span class="arithmatex">\(r=0\)</span>, and <span class="arithmatex">\(q = (1,1,2)\)</span>.</p>
+<p>For the third part, we write <span class="arithmatex">\(X\)</span> in cartesian form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+X= \{v \in {\bf R}^3 | {\left \langle v, a \right \rangle} = b\}.
+\]</div>
+</div>
+<p>We need to compute the normal vector <span class="arithmatex">\(a\)</span> and the number <span class="arithmatex">\(b\)</span>. Since we seek <span class="arithmatex">\(L \subset X\)</span>, the direction vector of <span class="arithmatex">\(L\)</span>, <span class="arithmatex">\((2,1,-1)\)</span> needs to be orthogonal to <span class="arithmatex">\(a = (\alpha, \beta, \gamma)\)</span>, i.e.</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+2 \alpha + \beta - \gamma = 0.
+\]</div>
+</div>
+<p>Moreover, the vector <span class="arithmatex">\(w := r-l_1=(-1,1,0)-(0,2,1) = (-1,-1,-1)\)</span> needs to be orthogonal to <span class="arithmatex">\(a\)</span> as well, since <span class="arithmatex">\(r\)</span> and <span class="arithmatex">\(l_1 \in X\)</span>. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+-\alpha - \beta - \gamma = 0.
+\]</div>
+</div>
+<p>We solve this as <span class="arithmatex">\(\alpha = 2 \gamma\)</span>, <span class="arithmatex">\(\beta = -3\gamma\)</span>, and <span class="arithmatex">\(\gamma \in {\bf R}\)</span> is a free variable, which we choose to be <span class="arithmatex">\(1\)</span>. Thus <span class="arithmatex">\(a = (2, -3, 1)\)</span>. We compute <span class="arithmatex">\(b\)</span> by observing that the equation defining <span class="arithmatex">\(X\)</span> needs to be satisfied for <span class="arithmatex">\(r\)</span>, so that <span class="arithmatex">\(d = {\left \langle a, r \right \rangle} = -5\)</span>. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+X = \{(x,y,z) | 2x-3y+z = -5 \}.
+\]</div>
+</div>
+<p>For the last part, we have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+N = r + L(w),
+\]</div>
+</div>
+<p>and we need to compute the direction vector <span class="arithmatex">\(w\)</span> of the line <span class="arithmatex">\(N\)</span>. Since <span class="arithmatex">\(N \subset X\)</span>, we have <span class="arithmatex">\(w \bot a = (2,-3,1)\)</span>. Since <span class="arithmatex">\(N \bot L\)</span>, we have <span class="arithmatex">\(w \bot (2,1,-1)\)</span> (the direction vector of <span class="arithmatex">\(L\)</span>). In other words, <span class="arithmatex">\(w\)</span> is a vector in the orthogonal complement of these two vectors, or equivalently, the kernel of the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc} 2 &amp; -3 &amp; 1 \\ 2 &amp; 1 &amp; -1 \end{array} \right )
+\leadsto 
+\left ( \begin{array}{ccc} 2 &amp; -3 &amp; 1 \\ 0 &amp; 4 &amp; -2 \end{array} \right ).
+\]</div>
+</div>
+<p>Thus for <span class="arithmatex">\(w = (\alpha, \beta, \gamma)\)</span>, <span class="arithmatex">\(\gamma\)</span> is a free variable, which we can choose to be 2, so that <span class="arithmatex">\(\beta = \frac 12 \gamma = 1\)</span>, and <span class="arithmatex">\(\alpha = \frac{3\beta - \gamma}2=\frac{3-2}2=\frac 12\)</span>. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+N = (-1,1,0) + L(\frac 12, 1, 2)
+\]</div>
+</div>
+<p>or, equivalently, for example:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+N = (-1,1,0) + L(1, 2, 4).
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.26</strong></p>
+<p><span id="sol-ex-euclid-6-22" label="sol--ex:euclid-6-22"></span> (See <a href="#ex-euclid-6-22" data-reference-type="ref+Label" data-reference="ex:euclid-6-22">Exercise 7.26</a>.) This solution illustrates <a href="#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="#tas-compute-orthogonal-complement">Task 7.63</a>.</p>
+<p>We form the matrix associated to the linear system and bring it into row echelon form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc} 1 &amp; -2 &amp; 0 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; -2 \\ 3 &amp; 0 &amp; 2 &amp; t \end{array} \right )
+\leadsto
+\left ( \begin{array}{cccc} 1 &amp; -2 &amp; 0 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; -2 \\ 0 &amp; 6 &amp; 2 &amp; t-3 \end{array} \right )
+\leadsto
+\left ( \begin{array}{cccc} 1 &amp; -2 &amp; 0 &amp; 1 \\ 0 &amp; 3 &amp; 1 &amp; -2 \\ 0 &amp; 0 &amp; 0 &amp; t+1 \end{array} \right )
+\]</div>
+</div>
+<p>This matrix has rank 2 if <span class="arithmatex">\(t+1 = 0\)</span>, i.e., if <span class="arithmatex">\(t=-1\)</span>. Otherwise, for <span class="arithmatex">\(t\ne -1\)</span>, its rank is 3. We compute a basis of <span class="arithmatex">\(U\)</span> for <span class="arithmatex">\(t=-1\)</span> using <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>. The result is <span class="arithmatex">\(u_1=(-2,-1,3,0)\)</span> and <span class="arithmatex">\(u_2=(1,2,0,3)\)</span>.</p>
+<p>We apply <a href="#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+w_1 &amp; = u_1 / |\hspace{-0.5mm}| {u_1} |\hspace{-0.5mm}| = \frac 1 {\sqrt{14}} u_1. \\
+w'_2 &amp; = u_2 - {\left \langle u_2, w_1 \right \rangle} w_1 \\
+&amp; = (1,2,0,3) + \frac {4}{14} (-2,-1,3,0) \\
+&amp; = (3/7, 12/7, 6/7, 3).
+\end{align*}
+\]</div>
+</div>
+<p>The vectors <span class="arithmatex">\(w_1\)</span> and <span class="arithmatex">\(w'_2\)</span> form an orthonormal basis of <span class="arithmatex">\(U\)</span>. (It is possible, but here not asked for, to compute <span class="arithmatex">\(w_2 = w'_2 / |\hspace{-0.5mm}| {w'_2} |\hspace{-0.5mm}|\)</span>, then <span class="arithmatex">\(w_1\)</span> and <span class="arithmatex">\(w_2\)</span> form an orthonormal basis of <span class="arithmatex">\(U\)</span>.)</p>
+<p>The subspace <span class="arithmatex">\(U^\perp\)</span> consists of the vectors that are orthogonal on the basis vectors of <span class="arithmatex">\(U\)</span>, i.e., the <em>kernel</em> of the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc} -2 &amp; -1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 0 &amp; 3 \end{array} \right ).
+\]</div>
+</div>
+<p>A basis of this can be computed again by <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, for example <span class="arithmatex">\((2,-1,1,0)\)</span> and <span class="arithmatex">\((1,-2,0,1)\)</span> form a basis of <span class="arithmatex">\(U^\perp\)</span>.</p>
+<p>The subspace <span class="arithmatex">\(W\)</span> will be the orthogonal complement of the line passing through <span class="arithmatex">\(v\)</span> and <span class="arithmatex">\(w\)</span>. The direction of that line is <span class="arithmatex">\(v-w = (2,0,1,-3)\)</span>, so that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+W = \{2x_1 + x_3 -3x_4 = 0\}.
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.9.27</strong></p>
+<p><span id="sol-ex-euclid-6-23" label="sol--ex:euclid-6-23"></span> (See <a href="#ex-euclid-6-23" data-reference-type="ref+Label" data-reference="ex:euclid-6-23">Exercise 7.27</a>.) This solution illustrates <a href="#tas-plane-through-three-points">Task 7.66</a>, <a href="#tas-line-in-plane-orthogonal-to-line">Task 7.68</a>, <a href="#tas-check-line-parallel-plane">Task 7.72</a>.</p>
+<p>We verify <span class="arithmatex">\(B \in X\)</span> by plugging in the coordinates of <span class="arithmatex">\(B\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+2 \cdot 1 - 1 - 2 \cdot (-1) = 3,
+\]</div>
+</div>
+<p>so it satisfies the equation defining <span class="arithmatex">\(X\)</span>. We now compute <span class="arithmatex">\(C = p_X(A)\)</span>. The normal vector of the plane <span class="arithmatex">\(X\)</span> is <span class="arithmatex">\(n = (2,-1,-2)\)</span>. Thus <span class="arithmatex">\(C = A - r n = (6-2r,-1+r,-4+2r)\)</span>, for some <span class="arithmatex">\(r \in {\bf R}\)</span>. In order for <span class="arithmatex">\(C \in X\)</span>, this needs to satisfy the equation defining <span class="arithmatex">\(X\)</span>, i.e.,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+2(6-2r)-(-1+r)-2(-4+2r) = 3,
+\]</div>
+</div>
+<p>which simplifies to <span class="arithmatex">\(21 - 9r = 3\)</span>, i.e., <span class="arithmatex">\(r = 2\)</span> and <span class="arithmatex">\(C = (2,1,0)\)</span>.</p>
+<p>The plane containing the points <span class="arithmatex">\(A, B, C\)</span> is of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A + L(C-A, B-A).
+\]</div>
+</div>
+<p>In order to present this in cartesian form, we compute the orthogonal complement of <span class="arithmatex">\(C-A=(-4,2,4)\)</span> and <span class="arithmatex">\(B-A=(-5,2,3)\)</span>, which is the line spanned by <span class="arithmatex">\(w := (-1, -4, 1)\)</span>. The plane is then given by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\{x \in {\bf R}^3 | {\left \langle x, w \right \rangle} = {\left \langle A, w \right \rangle}\},
+\]</div>
+</div>
+<p>i.e.,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\{x \in {\bf R}^3 | -x_1 - 4x_2 + x_3 = -6\}.
+\]</div>
+</div>
+<p>The line that a) passes through <span class="arithmatex">\(B\)</span>, b) is contained in the plane <span class="arithmatex">\(X\)</span> and c) is orthogonal to the line passing through <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>, is given by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+L = B + L(v).
+\]</div>
+</div>
+<p>By the conditions, <span class="arithmatex">\({\left \langle v, B-A \right \rangle} = 0\)</span> and <span class="arithmatex">\({\left \langle v, n \right \rangle} = 0\)</span>. I.e., <span class="arithmatex">\(v\)</span> is any non-zero vector in the orthogonal complement of <span class="arithmatex">\(B-A=(-5,2,3)\)</span> and <span class="arithmatex">\(n=(2,-1,-2)\)</span>, for example <span class="arithmatex">\(v = w = (-1,-4,1)\)</span>. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+L =(1,1,-1) + L(-1,-4,1).
+\]</div>
+</div>
+<p>The direction vector of <span class="arithmatex">\(M_t\)</span> can be found by choosing two points on <span class="arithmatex">\(M_t\)</span>, for example <span class="arithmatex">\(E = (0,2,-1)\)</span> and <span class="arithmatex">\(F = (1,2+t,-2)\)</span>. So the direction vector of <span class="arithmatex">\(M_t\)</span> is equal to <span class="arithmatex">\(F-E = (1,t,-1)\)</span>. This needs to be orthogonal to <span class="arithmatex">\(n = (2,-1,-2)\)</span>. I.e., <span class="arithmatex">\({\left \langle n, F-E \right \rangle} = 0\)</span>, which gives <span class="arithmatex">\(2 - t +2 = 0\)</span>, so <span class="arithmatex">\(t=4\)</span>.</p>
 </div>
 
 

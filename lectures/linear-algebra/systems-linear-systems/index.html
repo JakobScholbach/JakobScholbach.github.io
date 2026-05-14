@@ -11,10 +11,6 @@
       
       
       
-        <link rel="prev" href="../appendix/">
-      
-      
-        <link rel="next" href="../solutions-systems-of-linear-equations/">
       
       
         
@@ -25,7 +21,7 @@
     
     
       
-        <title>Complex numbers - Linear Algebra Wiki</title>
+        <title>Systems linear systems - Linear Algebra Wiki</title>
       
     
     
@@ -67,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#title-systems-linear-systems" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -99,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Complex numbers
+              Systems linear systems
             
           </span>
         </div>
@@ -435,20 +436,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
           <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
@@ -469,7 +468,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -484,17 +483,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../solutions-complex-numbers/" class="md-nav__link">
         
   
   
@@ -510,7 +502,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -709,6 +700,36 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#title-systems-linear-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        title: Systems: Linear Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of linear equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -724,91 +745,179 @@
 
 
 
-  <h1>Complex numbers</h1>
-
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.1</strong></p>
-<p><span id="sol-ex-complex-1" label="sol--ex:complex-1"></span> (See <a href="../c/#ex-complex-1" data-reference-type="ref+Label" data-reference="ex:complex-1">Exercise 1.4</a>.) We have <span class="arithmatex">\(\frac{i-1}{i+1} = \frac{(i-1)\overline{i+1}}{|i+1|^2} = \frac{(i-1)(1-i)}{2} = i\)</span>. Thus <span class="arithmatex">\(z=i^3 = -i\)</span> is the algebraic form. We have <span class="arithmatex">\(|z|=1\)</span> and <span class="arithmatex">\({\mathrm {arg}} z = \frac 32 \pi\)</span>, so</p>
+<hr />
+<h2 id="title-systems-linear-systems">title: Systems: Linear Systems<a class="headerlink" href="#title-systems-linear-systems" title="Permanent link">&para;</a></h2>
+<h1 id="systems-of-linear-equations">Systems of linear equations<a class="headerlink" href="#systems-of-linear-equations" title="Permanent link">&para;</a></h1>
+<div class="definition">
+<p class="env-number"><strong>Definition 2.7</strong></p>
+<p><span id="def-systems-definition-002" label="def:systems-definition-002"></span> A <em>system of linear equations</em> is a collection of linear equations (involving the same variables). It is also sometimes called a <em>linear system</em> or even just a <em>system</em>.</p>
+</div>
+<p>The interest in linear systems lies in finding those tuples of numbers satisfying <em>all</em> equations at once (as opposed to just one of them, say). We will start with two equations in two variables.</p>
+<div class="example">
+<p class="env-number"><strong>Example 2.8</strong></p>
+<p><span id="ex-system-2-unique" label="ex:system-2-unique"></span> The equations</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-z = \cos(\frac 32 \pi) + i \sin \frac 32 \pi.
+\begin{align}
+x+y&amp;=4 \\
+x-y&amp;=1. \nonumber
+\end{align}
 \]</div>
 </div>
-</div>
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.2</strong></p>
-<p><span id="sol-ex-complex-2" label="sol--ex:complex-2"></span> (See <a href="../c/#ex-complex-2" data-reference-type="ref+Label" data-reference="ex:complex-2">Exercise 1.5</a>.) In order to solve</p>
+<p class="env-number equation-number"><strong>(2.9)</strong></p>
+<p><span id="system-2-unique-eqn" label="system.2.unique.eqn"></span> form a system of linear equations (in the variables <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>).</p>
+<p>We solve this system algebraically by subtracting <span class="arithmatex">\(y\)</span> in the first equation, which gives</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-z = 3i |z|\overline z
+x = -y + 4,
 \]</div>
 </div>
-<p>we would like to divide by <span class="arithmatex">\(z\)</span>. This is only possible if <span class="arithmatex">\(z \ne 0\)</span>, so we first consider the case <span class="arithmatex">\(z = 0\)</span>. In this case both sides of the equation are equal to 0, so <span class="arithmatex">\(z=0\)</span> is indeed a solution. Now, we consider <span class="arithmatex">\(z \ne 0\)</span> and divide the above equation by <span class="arithmatex">\(z\)</span> and obtain</p>
+<p>and substituting this into the second equation, which gives</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-1 = 3i |z| \frac{\overline z}z.
+(-y+4)-y=1,
 \]</div>
 </div>
-<p>There are different ways to solve this equation. One may put <span class="arithmatex">\(z = a+ib\)</span> and solve the resulting quadratic equation. For illustrational purposes, we rather consider the trigonometric form <span class="arithmatex">\(z = r (\cos \alpha + i \sin \alpha)\)</span>. Then <span class="arithmatex">\(\overline z = r (\cos \alpha - i \sin \alpha) = r (\cos (-\alpha) + i \sin (-\alpha))\)</span>, and</p>
+<p>or</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-|z| \frac{\overline z}z = r \frac{r (\cos (-\alpha) + i \sin (-\alpha))}{r (\cos (\alpha) + i \sin (\alpha))}.
+-2y+4=1
 \]</div>
 </div>
-<p>Note that <span class="arithmatex">\(r = |z| \ne 0\)</span>, so we can cancel this in the right-hand fraction. We have</p>
+<p>or</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-\frac{\cos (-\alpha) + i \sin (-\alpha)}{\cos (\alpha) + i \sin (\alpha)} = \cos(-2\alpha) + i \sin(-2\alpha).
+-2y=-3
 \]</div>
 </div>
-<p>We then obtain</p>
+<p>or finally</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-\frac 1{3i} = -\frac 13 i = |z| \frac{\overline z}z = r (\cos(-2\alpha) + i \sin(-2\alpha)).
+y = \frac 3 2.
 \]</div>
 </div>
-<p>This implies <span class="arithmatex">\(r = \frac 13\)</span>. Concerning the arguments, we have to be more careful: the above equation is equivalent to saying that</p>
+<p>Inserting this back above, gives</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
--2 \alpha \equiv \frac 32 \pi \mod 2 \pi
+x = - \frac 3 2 + 4 = \frac 5 2.
 \]</div>
 </div>
-<p>cf. around <a href="../c/#eq-mod-2pi" data-reference-type="eqref" data-reference="eq:mod-2pi">Equation (1.6)</a>. There are two solutions: <span class="arithmatex">\(-2 \alpha = \frac 32 \pi\)</span> or <span class="arithmatex">\(- 2\alpha = \frac 32 \pi + 2 \pi\)</span>. The former yields <span class="arithmatex">\(\alpha = -\frac 34 \pi\)</span>, the latter <span class="arithmatex">\(\alpha = \frac \pi 4\)</span>. (Of course, we can now add integer multiples of <span class="arithmatex">\(2\pi\)</span> to these values of <span class="arithmatex">\(\alpha\)</span>, so <span class="arithmatex">\(\alpha = \frac 54 \pi\)</span> is another solution. However, this gives the same value for <span class="arithmatex">\(z\)</span>.) The resulting solutions are</p>
+<p>Note that again each equation holds (for given values of <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>) precisely if the preceding one holds. Thus, the original system has the same solution set as the last two equation (together). This system of equations therefore has a <em>unique</em> solution, namely</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-z = \frac 1 3 (\cos(-\frac 34 \pi) + i \sin (-\frac 34 \pi))
+(x = \frac 5 2, y = \frac 3 2).
 \]</div>
 </div>
-<p>and</p>
+<p>To say the same using different symbols: the solution set of the system <a href="#system-2-unique-eqn" data-reference-type="eqref" data-reference="system.2.unique.eqn">Equation (2.9)</a> is a set consisting of a single element:</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-z = \frac 1 3 (\cos(\frac 14 \pi) + i \sin (\frac 14 \pi)).
+\{(\frac 5 2, \frac 3 2) \}
 \]</div>
 </div>
-<p>To sum up, the above equation has three solutions, <span class="arithmatex">\(z = 0\)</span> and these two solutions.</p>
-</div>
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.3</strong></p>
-<p><span id="sol-ex-complex-3" label="sol--ex:complex-3"></span> (See <a href="../c/#ex-complex-3" data-reference-type="ref+Label" data-reference="ex:complex-3">Exercise 1.6</a>.) There are three solutions, namely</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_0 = \sqrt 3 - i = 2 (\cos (-\pi/6) + i \sin(-\pi/6)),
-\]</div>
-</div>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_1 = -\sqrt 3 - i = 2 (\cos (-5\pi/6) + i \sin(-5\pi/6)),
-\]</div>
-</div>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_2 = 2i = 2 (\cos (-3\pi/2) + i \sin(-3\pi/2)).
-\]</div>
-</div>
-<p>Here is a picture:</p>
+<p>It is very useful to also understand this process geometrically, which we do by plotting the two lines that are the solutions of the individual equations:</p>
 <div class="center">
-<p><img alt="image" src="../figures/png/solutions/solutions-fig-01.png" /></p>
+<p><img alt="image" src="../figures/png/systems/systems-fig-02.png" /></p>
 </div>
+<p>The algebraic computation of having precisely one solution is matched by the fact that two non-parallel lines in the plane (which are the solution sets of the individual equations) exact in precisely one point.</p>
+</div>
+<p>The above linear system <a href="#system-2-unique-eqn" data-reference-type="eqref" data-reference="system.2.unique.eqn">Equation (2.9)</a> had exactly one solution. This need not always be the case, as the following examples show:</p>
+<div class="example">
+<p class="env-number"><strong>Example 2.10</strong></p>
+<p><span id="ex-system-2-no" label="ex:system-2-no"></span> The system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x + y &amp; = 4\\
+x + y &amp; = 1
+\end{align*}
+\]</div>
+</div>
+<p>has <em>no solution</em>. This can be seen algebraically  and also geometrically:</p>
+<div class="center">
+<p><img alt="image" src="../figures/png/systems/systems-fig-03.png" /></p>
+</div>
+<p>The system has no solution, which is paralleled by the fact that two <em>parallel, but distinct</em> lines in the plane do not intersect.</p>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 2.11</strong></p>
+<p><span id="ex-system-2-infinite" label="ex:system-2-infinite"></span> The system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x + y &amp; = 4 \\
+-2x -2y &amp; = -8
+\end{align*}
+\]</div>
+</div>
+<p>has infinitely many solutions, namely all pairs of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(x, y = 4-x),
+\]</div>
+</div>
+<p>with an arbitrary real number <span class="arithmatex">\(x\)</span>. Geometrically, this is explained by taking the “intersection” of the same line twice.</p>
+<div class="center">
+<p><img alt="image" src="../figures/png/systems/systems-fig-04.png" /></p>
+</div>
+<p>In other words, even though there are two equations above, they both have the same solution set. Thus, in some sense one of the equations is redundant, i.e., the solution set of the entire system equals the solution set of either of the equations individually.</p>
+</div>
+<div class="summary">
+<p class="env-number"><strong>Summary 2.12</strong></p>
+<p><span id="sum-intersection-lines" label="sum:intersection-lines"></span> The solution set of an equation of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+ax+by = c
+\]</div>
+</div>
+<p>is a line (unless both <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> are zero).</p>
+<p>The solution set of a system of equations of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+ax+by = c
+\]</div>
+</div>
+<div class="arithmatex">
+<div class="arithmatex">\[
+dx+ey = f
+\]</div>
+</div>
+<p>can take three forms:\</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">number of solutions</th>
+<th style="text-align: left;">geometric explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">exactly one solution</td>
+<td style="text-align: left;">the unique intersection point of two non-parallel lines</td>
+</tr>
+<tr>
+<td style="text-align: left;">no solution</td>
+<td style="text-align: left;">two distinct parallel lines don’t intersect</td>
+</tr>
+<tr>
+<td style="text-align: left;">infinitely many solutions</td>
+<td style="text-align: left;">a line intersects itself in infinitely many points</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="definition">
+<p class="env-number"><strong>Definition 2.13</strong></p>
+<p><span id="def-homogeneous-linear-system" label="def:homogeneous-linear-system"></span> A <em>homogeneous linear system</em> is one in which the constant terms in all equations are zero. (I.e., in the notation in below, <span class="arithmatex">\(b_1 = \dots = b_n = 0\)</span>.)</p>
+</div>
+<div class="remark">
+<p class="env-number"><strong>Remark 2.14</strong></p>
+<p><span id="rem-trivial-solution" label="rem:trivial-solution"></span> For a homogeneous linear system, there is always <em>at least</em> one solution namely</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(x_1 = 0, \dots, x_n = 0).
+\]</div>
+</div>
+<p>This solution is called the <em>trivial solution</em>.</p>
 </div>
 
 

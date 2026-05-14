@@ -11,10 +11,6 @@
       
       
       
-        <link rel="prev" href="../appendix/">
-      
-      
-        <link rel="next" href="../solutions-systems-of-linear-equations/">
       
       
         
@@ -25,7 +21,7 @@
     
     
       
-        <title>Complex numbers - Linear Algebra Wiki</title>
+        <title>Systems linear equations - Linear Algebra Wiki</title>
       
     
     
@@ -67,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#title-systems-linear-equations" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -99,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Complex numbers
+              Systems linear equations
             
           </span>
         </div>
@@ -435,20 +436,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
           <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
@@ -469,7 +468,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -484,17 +483,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../solutions-complex-numbers/" class="md-nav__link">
         
   
   
@@ -510,7 +502,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -709,6 +700,53 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#title-systems-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        title: Systems: Linear Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Systems of Linear Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear equations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -724,91 +762,92 @@
 
 
 
-  <h1>Complex numbers</h1>
-
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.1</strong></p>
-<p><span id="sol-ex-complex-1" label="sol--ex:complex-1"></span> (See <a href="../c/#ex-complex-1" data-reference-type="ref+Label" data-reference="ex:complex-1">Exercise 1.4</a>.) We have <span class="arithmatex">\(\frac{i-1}{i+1} = \frac{(i-1)\overline{i+1}}{|i+1|^2} = \frac{(i-1)(1-i)}{2} = i\)</span>. Thus <span class="arithmatex">\(z=i^3 = -i\)</span> is the algebraic form. We have <span class="arithmatex">\(|z|=1\)</span> and <span class="arithmatex">\({\mathrm {arg}} z = \frac 32 \pi\)</span>, so</p>
+<hr />
+<h2 id="title-systems-linear-equations">title: Systems: Linear Equations<a class="headerlink" href="#title-systems-linear-equations" title="Permanent link">&para;</a></h2>
+<p><a id="sect-systems"></a></p>
+<h1 id="systems-of-linear-equations">Systems of Linear Equations<a class="headerlink" href="#systems-of-linear-equations" title="Permanent link">&para;</a></h1>
+<h2 id="linear-equations">Linear equations<a class="headerlink" href="#linear-equations" title="Permanent link">&para;</a></h2>
+<div class="definition">
+<p class="env-number"><strong>Definition 2.1</strong></p>
+<p><span id="def-systems-definition-001" label="def:systems-definition-001"></span> Let <span class="arithmatex">\(a, b, c \in {\bf R}\)</span> be fixed real numbers. An equation of the form</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-z = \cos(\frac 32 \pi) + i \sin \frac 32 \pi.
+ax+by=c
+\]</div>
+</div>
+<p>is called a <em>linear equation</em> in the <em>variables</em> (or <em>unknowns</em>) <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>.</p>
+<p>More generally, an equation of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+a_1 x_1 + \dots + a_n x_n = b
+\]</div>
+</div>
+<p>is called a <em>linear equation</em> in the <em>variables</em> <span class="arithmatex">\(x_1, \dots, x_n\)</span>. The real numbers <span class="arithmatex">\(a_1, \dots, a_n\)</span> are called the <em>coefficients</em> and <span class="arithmatex">\(b\)</span> is the <em>constant term</em> of the equation. The <em>solution set</em> consists precisely of those collections (more formally, ordered tuples) of numbers <span class="arithmatex">\(r_1\)</span>, <span class="arithmatex">\(r_2\)</span>, up to <span class="arithmatex">\(r_n\)</span> such that substituting the variables <span class="arithmatex">\(x_1, \dots, x_n\)</span> by <span class="arithmatex">\(r_1, \dots, r_n\)</span> respectively, the equation holds, i.e., such that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+a_1 r_1  + \dots + a_n r_n = b.
 \]</div>
 </div>
 </div>
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.2</strong></p>
-<p><span id="sol-ex-complex-2" label="sol--ex:complex-2"></span> (See <a href="../c/#ex-complex-2" data-reference-type="ref+Label" data-reference="ex:complex-2">Exercise 1.5</a>.) In order to solve</p>
+<p>The name “linear” stems from the geometry of the solution sets, as the following example shows:</p>
+<div class="example">
+<p class="env-number"><strong>Example 2.2</strong></p>
+<p><span id="ex-systems-example-001" label="ex:systems-example-001"></span> The equation</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-z = 3i |z|\overline z
+4 x + 2 y = 3
 \]</div>
 </div>
-<p>we would like to divide by <span class="arithmatex">\(z\)</span>. This is only possible if <span class="arithmatex">\(z \ne 0\)</span>, so we first consider the case <span class="arithmatex">\(z = 0\)</span>. In this case both sides of the equation are equal to 0, so <span class="arithmatex">\(z=0\)</span> is indeed a solution. Now, we consider <span class="arithmatex">\(z \ne 0\)</span> and divide the above equation by <span class="arithmatex">\(z\)</span> and obtain</p>
+<p class="env-number equation-number"><strong>(2.3)</strong></p>
+<p><span id="eqn-4x2y-3" label="eqn--4x2y=3"></span> is a linear equation (with coefficients <span class="arithmatex">\(4\)</span> and <span class="arithmatex">\(2\)</span> and constant term 3).</p>
+<p>We can solve this equation by subtracting <span class="arithmatex">\(4x\)</span> from both sides, which gives</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-1 = 3i |z| \frac{\overline z}z.
+2 y = -4x + 3
 \]</div>
 </div>
-<p>There are different ways to solve this equation. One may put <span class="arithmatex">\(z = a+ib\)</span> and solve the resulting quadratic equation. For illustrational purposes, we rather consider the trigonometric form <span class="arithmatex">\(z = r (\cos \alpha + i \sin \alpha)\)</span>. Then <span class="arithmatex">\(\overline z = r (\cos \alpha - i \sin \alpha) = r (\cos (-\alpha) + i \sin (-\alpha))\)</span>, and</p>
+<p>and dividing by 2, which gives</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-|z| \frac{\overline z}z = r \frac{r (\cos (-\alpha) + i \sin (-\alpha))}{r (\cos (\alpha) + i \sin (\alpha))}.
+y = -2 x + \frac 3 2.
 \]</div>
 </div>
-<p>Note that <span class="arithmatex">\(r = |z| \ne 0\)</span>, so we can cancel this in the right-hand fraction. We have</p>
+<p class="env-number equation-number"><strong>(2.4)</strong></p>
+<p><span id="eqn-4x2y-3-sol" label="eqn--4x2y=3.sol"></span> In each of these steps, one equation holds precisely if the next one holds. Thus the solution set of is the same as the solution set of the equation . That solution set is therefore the following set:</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-\frac{\cos (-\alpha) + i \sin (-\alpha)}{\cos (\alpha) + i \sin (\alpha)} = \cos(-2\alpha) + i \sin(-2\alpha).
+\{(x, -2x+\frac 3 2) \text{ with } x \in {\bf R} \}.
 \]</div>
 </div>
-<p>We then obtain</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-\frac 1{3i} = -\frac 13 i = |z| \frac{\overline z}z = r (\cos(-2\alpha) + i \sin(-2\alpha)).
-\]</div>
-</div>
-<p>This implies <span class="arithmatex">\(r = \frac 13\)</span>. Concerning the arguments, we have to be more careful: the above equation is equivalent to saying that</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
--2 \alpha \equiv \frac 32 \pi \mod 2 \pi
-\]</div>
-</div>
-<p>cf. around <a href="../c/#eq-mod-2pi" data-reference-type="eqref" data-reference="eq:mod-2pi">Equation (1.6)</a>. There are two solutions: <span class="arithmatex">\(-2 \alpha = \frac 32 \pi\)</span> or <span class="arithmatex">\(- 2\alpha = \frac 32 \pi + 2 \pi\)</span>. The former yields <span class="arithmatex">\(\alpha = -\frac 34 \pi\)</span>, the latter <span class="arithmatex">\(\alpha = \frac \pi 4\)</span>. (Of course, we can now add integer multiples of <span class="arithmatex">\(2\pi\)</span> to these values of <span class="arithmatex">\(\alpha\)</span>, so <span class="arithmatex">\(\alpha = \frac 54 \pi\)</span> is another solution. However, this gives the same value for <span class="arithmatex">\(z\)</span>.) The resulting solutions are</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z = \frac 1 3 (\cos(-\frac 34 \pi) + i \sin (-\frac 34 \pi))
-\]</div>
-</div>
-<p>and</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z = \frac 1 3 (\cos(\frac 14 \pi) + i \sin (\frac 14 \pi)).
-\]</div>
-</div>
-<p>To sum up, the above equation has three solutions, <span class="arithmatex">\(z = 0\)</span> and these two solutions.</p>
-</div>
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.3</strong></p>
-<p><span id="sol-ex-complex-3" label="sol--ex:complex-3"></span> (See <a href="../c/#ex-complex-3" data-reference-type="ref+Label" data-reference="ex:complex-3">Exercise 1.6</a>.) There are three solutions, namely</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_0 = \sqrt 3 - i = 2 (\cos (-\pi/6) + i \sin(-\pi/6)),
-\]</div>
-</div>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_1 = -\sqrt 3 - i = 2 (\cos (-5\pi/6) + i \sin(-5\pi/6)),
-\]</div>
-</div>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_2 = 2i = 2 (\cos (-3\pi/2) + i \sin(-3\pi/2)).
-\]</div>
-</div>
-<p>Here is a picture:</p>
+<p>Here we use standard set-theoretic notation, cf. §<a href="../appendix/#sect-notation" data-reference-type="ref" data-reference="sect--notation">Chapter A</a>. Thus, the above means the set of all pairs <span class="arithmatex">\((x, -2x + \frac 3 2)\)</span>, where <span class="arithmatex">\(x\)</span> is an <em>arbitrary</em> real number. In particular, since there are infinitely many real numbers <span class="arithmatex">\(x\)</span>, this is an infinite set.</p>
+<p>Graphically, the solution set is the set of points as depicted below:</p>
 <div class="center">
-<p><img alt="image" src="../figures/png/solutions/solutions-fig-01.png" /></p>
+<p><img alt="image" src="../figures/png/systems/systems-fig-01.png" /></p>
 </div>
+</div>
+<p>In general, any equation of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+ax+by=c
+\]</div>
+</div>
+<p>with <span class="arithmatex">\(a \ne 0\)</span> or <span class="arithmatex">\(b \ne 0\)</span> will have a line as a solution set (what happens if <span class="arithmatex">\(a=b=0\)</span>?, cf. <a href="../systems-gaussian-elimination/#ex-equation-no-solutions" data-reference-type="ref+Label" data-reference="ex:equation-no-solutions">Exercise 2.6</a>).</p>
+<div class="remark">
+<p class="env-number"><strong>Remark 2.5</strong></p>
+<p><span id="rem-field" label="rem:field"></span> In the computation above it was critical that we were able to <em>divide</em> 3 by 2, i.e., have the rational number <span class="arithmatex">\(\frac 3 2\)</span> at our disposal. The real numbers <span class="arithmatex">\({\bf R}\)</span> (and also the rational numbers <span class="arithmatex">\({{\bf Q}}\)</span>) form a so-called <em>field</em>, which among other properties means that one can divide by non-zero numbers. Another example of a field are the complex numbers <span class="arithmatex">\({{\bf C}}\)</span>. The integers <span class="arithmatex">\({{\bf Z}} = \{ \dots, -2, -1, 0, 1, 2, \dots \}\)</span> do <em>not</em> form a field. Solving linear systems in the integers is somewhat harder than it is in the rationals or reals. This course will focus on discussing linear algebra over the real numbers, with the exception of the discussion of eigenvalues, where the consideration of complex numbers is unavoidable.</p>
+</div>
+<div class="remark">
+<p class="env-number"><strong>Remark 2.6</strong></p>
+<p><span id="rem-systems-remark-002" label="rem:systems-remark-002"></span> A great number of equations arising in physics, biology, chemistry and of course mathematics itself are linear. <em>Nonlinear equations</em> such as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x^2 + 4 y^3 &amp;= 5 \\
+\log (x) - 4 \sin(x) &amp; = 0
+\end{align*}
+\]</div>
+</div>
+<p>are not primarily studied in linear algebra. For such more complicated equations, linear algebra is still useful, however. This is accomplished by replacing such equations by <em>linear approximations</em>. The first idea in that direction is the derivative of a function <span class="arithmatex">\(f\)</span>, which serves as a best linear approximation of a differentiable function. Such linearization techniques are beyond the scope of this lecture.</p>
 </div>
 
 

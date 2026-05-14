@@ -1,0 +1,428 @@
+[
+  {
+    "stem": "c",
+    "md_file": "c.md",
+    "title": "The Complex Numbers",
+    "sections": [
+      {
+        "level": 2,
+        "title": "Basic Properties"
+      },
+      {
+        "level": 3,
+        "title": "Trigonometric form"
+      },
+      {
+        "level": 2,
+        "title": "The Fundamental Theorem of Algebra"
+      },
+      {
+        "level": 2,
+        "title": "The complex exponential function"
+      },
+      {
+        "level": 2,
+        "title": "Exercises"
+      },
+      {
+        "level": 2,
+        "title": "Solutions to the exercises"
+      }
+    ]
+  },
+  {
+    "stem": "systems-linear-equations",
+    "md_file": "systems-linear-equations.md",
+    "title": "Systems: Linear Equations",
+    "sections": [
+      {
+        "level": 2,
+        "title": "Linear equations"
+      }
+    ]
+  },
+  {
+    "stem": "systems-linear-systems",
+    "md_file": "systems-linear-systems.md",
+    "title": "Systems: Linear Systems",
+    "sections": []
+  },
+  {
+    "stem": "systems-elementary-operations",
+    "md_file": "systems-elementary-operations.md",
+    "title": "Systems: Elementary Operations",
+    "sections": []
+  },
+  {
+    "stem": "systems-matrices",
+    "md_file": "systems-matrices.md",
+    "title": "Systems: Matrices",
+    "sections": []
+  },
+  {
+    "stem": "systems-gaussian-elimination",
+    "md_file": "systems-gaussian-elimination.md",
+    "title": "Systems: Gaussian Elimination",
+    "sections": []
+  },
+  {
+    "stem": "spaces",
+    "md_file": "spaces.md",
+    "title": "Vector Spaces",
+    "sections": [
+      {
+        "level": 2,
+        "title": "${\\bf R}^2$, ${\\bf R}^3$ and ${\\bf R}^n$"
+      },
+      {
+        "level": 3,
+        "title": "Addition of vectors"
+      },
+      {
+        "level": 3,
+        "title": "Scalar multiplication of vectors"
+      },
+      {
+        "level": 3,
+        "title": "Definition of vector spaces"
+      },
+      {
+        "level": 2,
+        "title": "Solution sets of homogeneous linear systems"
+      },
+      {
+        "level": 2,
+        "title": "Intersection of subspaces"
+      },
+      {
+        "level": 2,
+        "title": "Further examples of vector spaces"
+      },
+      {
+        "level": 3,
+        "title": "Polynomials"
+      },
+      {
+        "level": 3,
+        "title": "Direct sums"
+      },
+      {
+        "level": 3,
+        "title": "Quotient spaces"
+      },
+      {
+        "level": 2,
+        "title": "Linear combinations"
+      },
+      {
+        "level": 2,
+        "title": "Linear independence"
+      },
+      {
+        "level": 2,
+        "title": "The dimension of a vector space"
+      },
+      {
+        "level": 3,
+        "title": "Dimensions of sums and intersections"
+      },
+      {
+        "level": 2,
+        "title": "Exercises"
+      },
+      {
+        "level": 2,
+        "title": "Solutions to the exercises"
+      }
+    ]
+  },
+  {
+    "stem": "maps",
+    "md_file": "maps.md",
+    "title": "Linear Maps",
+    "sections": [
+      {
+        "level": 2,
+        "title": "Definition and first examples"
+      },
+      {
+        "level": 2,
+        "title": "Multiplication of a matrix with a vector"
+      },
+      {
+        "level": 3,
+        "title": "The case of $2 \\times 2$-matrices"
+      },
+      {
+        "level": 4,
+        "title": "Reflections"
+      },
+      {
+        "level": 4,
+        "title": "Rescalings"
+      },
+      {
+        "level": 4,
+        "title": "Shearing"
+      },
+      {
+        "level": 4,
+        "title": "Rotations"
+      },
+      {
+        "level": 2,
+        "title": "Outlook: current research"
+      },
+      {
+        "level": 2,
+        "title": "Kernel and image of a linear map"
+      },
+      {
+        "level": 2,
+        "title": "Revisiting linear systems"
+      },
+      {
+        "level": 2,
+        "title": "Linear maps defined on basis vectors"
+      },
+      {
+        "level": 2,
+        "title": "Matrices associated to linear maps"
+      },
+      {
+        "level": 2,
+        "title": "Composing linear maps and multiplying matrices"
+      },
+      {
+        "level": 3,
+        "title": "Properties of matrix multiplication"
+      },
+      {
+        "level": 4,
+        "title": "Dependence on the order of factors"
+      },
+      {
+        "level": 4,
+        "title": "Further properties of matrix multiplication"
+      },
+      {
+        "level": 4,
+        "title": "Multiplication with elementary matrices"
+      },
+      {
+        "level": 2,
+        "title": "Inverses"
+      },
+      {
+        "level": 3,
+        "title": "Definition and unicity of inverses"
+      },
+      {
+        "level": 3,
+        "title": "Linear systems associated to invertible matrices"
+      },
+      {
+        "level": 3,
+        "title": "Structural properties of taking the inverse"
+      },
+      {
+        "level": 3,
+        "title": "Invertible matrices and elementary operations"
+      },
+      {
+        "level": 3,
+        "title": "Invertibility criteria"
+      },
+      {
+        "level": 2,
+        "title": "Change of basis"
+      },
+      {
+        "level": 2,
+        "title": "Transposition of matrices"
+      },
+      {
+        "level": 2,
+        "title": "Exercises"
+      },
+      {
+        "level": 2,
+        "title": "Solutions to the exercises"
+      }
+    ]
+  },
+  {
+    "stem": "determinants",
+    "md_file": "determinants.md",
+    "title": "Determinants",
+    "sections": [
+      {
+        "level": 2,
+        "title": "Determinants of $2 \\times 2$-matrices"
+      },
+      {
+        "level": 2,
+        "title": "Determinants of larger matrices"
+      },
+      {
+        "level": 3,
+        "title": "Small matrices"
+      },
+      {
+        "level": 2,
+        "title": "Invertibility and determinants"
+      },
+      {
+        "level": 2,
+        "title": "Further properties of determinants"
+      },
+      {
+        "level": 2,
+        "title": "Exercises"
+      },
+      {
+        "level": 2,
+        "title": "Solutions to the exercises"
+      }
+    ]
+  },
+  {
+    "stem": "eigenvalues",
+    "md_file": "eigenvalues.md",
+    "title": "Eigenvalues and Eigenvectors",
+    "sections": [
+      {
+        "level": 2,
+        "title": "Definitions"
+      },
+      {
+        "level": 2,
+        "title": "The characteristic polynomial"
+      },
+      {
+        "level": 2,
+        "title": "Eigenspaces"
+      },
+      {
+        "level": 2,
+        "title": "Diagonalizing matrices"
+      },
+      {
+        "level": 2,
+        "title": "Exercises"
+      },
+      {
+        "level": 2,
+        "title": "Solutions to the exercises"
+      }
+    ]
+  },
+  {
+    "stem": "euclid",
+    "md_file": "euclid.md",
+    "title": "Euclidean Spaces",
+    "sections": [
+      {
+        "level": 2,
+        "title": "The scalar product on ${\\bf R}^n$"
+      },
+      {
+        "level": 2,
+        "title": "Positive definite matrices"
+      },
+      {
+        "level": 2,
+        "title": "Euclidean spaces"
+      },
+      {
+        "level": 2,
+        "title": "Orthogonal and symmetric matrices"
+      },
+      {
+        "level": 2,
+        "title": "Affine subspaces"
+      },
+      {
+        "level": 3,
+        "title": "Lower dimensional affine subspaces"
+      },
+      {
+        "level": 2,
+        "title": "Distance between two affine subspaces"
+      },
+      {
+        "level": 2,
+        "title": "Summary of some computational methods"
+      },
+      {
+        "level": 2,
+        "title": "Exercises"
+      },
+      {
+        "level": 2,
+        "title": "Solutions to the exercises"
+      }
+    ]
+  },
+  {
+    "stem": "appendix",
+    "md_file": "appendix.md",
+    "title": "Appendix",
+    "sections": [
+      {
+        "level": 2,
+        "title": "Sets"
+      },
+      {
+        "level": 2,
+        "title": "Logic"
+      },
+      {
+        "level": 2,
+        "title": "Numbers and arithmetic"
+      }
+    ]
+  },
+  {
+    "stem": "solutions-complex-numbers",
+    "md_file": "solutions-complex-numbers.md",
+    "title": "Solutions: Complex numbers",
+    "sections": []
+  },
+  {
+    "stem": "solutions-systems-of-linear-equations",
+    "md_file": "solutions-systems-of-linear-equations.md",
+    "title": "Solutions: Systems of linear equations",
+    "sections": []
+  },
+  {
+    "stem": "solutions-vector-spaces",
+    "md_file": "solutions-vector-spaces.md",
+    "title": "Solutions: Vector spaces",
+    "sections": []
+  },
+  {
+    "stem": "solutions-linear-maps",
+    "md_file": "solutions-linear-maps.md",
+    "title": "Solutions: Linear maps",
+    "sections": []
+  },
+  {
+    "stem": "solutions-determinants",
+    "md_file": "solutions-determinants.md",
+    "title": "Solutions: Determinants",
+    "sections": []
+  },
+  {
+    "stem": "solutions-eigenvalues-and-eigenvectors",
+    "md_file": "solutions-eigenvalues-and-eigenvectors.md",
+    "title": "Solutions: Eigenvalues and eigenvectors",
+    "sections": []
+  },
+  {
+    "stem": "solutions-euclidean-spaces",
+    "md_file": "solutions-euclidean-spaces.md",
+    "title": "Solutions: Euclidean spaces",
+    "sections": []
+  }
+]

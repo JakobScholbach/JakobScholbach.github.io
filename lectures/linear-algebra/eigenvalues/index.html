@@ -476,6 +476,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#solutions-to-the-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solutions to the exercises
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -869,6 +880,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#solutions-to-the-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solutions to the exercises
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -886,7 +908,6 @@
 
 
 
-<p><a id="sect-eigenvalues"></a></p>
 <h1 id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Permanent link">&para;</a></h1>
 <p>Eigenvalues and eigenvectors are an extremely useful concept of linear algebra. Coupled with certain numerical considerations, which are (only slightly!) beyond the scope of this course, eigenvalues have been used, for example, in the early PageRank algorithm employed by Google.</p>
 <p>The overall idea of eigenvalues and eigenvectors is this: square matrices of the form</p>
@@ -978,7 +999,7 @@ A - \lambda {\mathrm {id}} = \left ( \begin{array}{cc} 1-\lambda &amp; r \\ 0 &a
 </div>
 <h2 id="the-characteristic-polynomial">The characteristic polynomial<a class="headerlink" href="#the-characteristic-polynomial" title="Permanent link">&para;</a></h2>
 <div class="definitionlemma">
-<p class="env-number"><strong>Definition and Lemma 6.5</strong> (Related exercises: <a href="#ex-eigenvalues-exercise-001">Exercise 6.1</a>, <a href="#ex-eigenvalues-exercise-002">Exercise 6.3</a>, <a href="#ex-eigenvalues-exercise-003">Exercise 6.4</a>, <a href="#ex-eigenvalues-exercise-004">Exercise 6.6</a>, <a href="#exercise-eigenvalues-2x2">Exercise 6.2</a>)</p>
+<p class="env-number"><strong>Definition and Lemma 6.5</strong></p>
 <p><span id="dlm-eigenvalues-definitionlemma-001" label="dlm:eigenvalues-definitionlemma-001"></span> For <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span>, the function</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
@@ -1045,7 +1066,7 @@ t = 2 \cos r \pm \sqrt{- 1 + (\cos r)^2}.
 </div>
 <p>The non-existence of eigenvalues can be salvaged by working with complex numbers, instead of real numbers.</p>
 <div class="theorem">
-<p class="env-number"><strong>Theorem 6.8</strong> (Related exercises: <a href="#ex-eigenvalues-exercise-006">Exercise 6.9</a>)</p>
+<p class="env-number"><strong>Theorem 6.8</strong></p>
 <p>(<em>Fundamental theorem of algebra</em>, cf. also §<a href="../c/#sect-the-fundamental-theorem-of-algebra" data-reference-type="ref" data-reference="sect--the_fundamental_theorem_of_algebra">Section 1.2</a> for further discussion) <span id="thm-eigenvalues-theorem-001" label="thm:eigenvalues-theorem-001"></span> For every non-constant polynomial</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
@@ -1161,7 +1182,7 @@ A^2 = P^{-1}DP \cdot P^{-1}D P = P^{-1}D^2 P, A^3 = P^{-1}D^3 P
 </div>
 <p>etc. Computing the powers of <span class="arithmatex">\(D\)</span>, as opposed to those of <span class="arithmatex">\(A\)</span> is easy: one just needs to raise the diagonal entries to the corresponding power.</p>
 <div class="method">
-<p class="env-number"><strong>Method 6.15</strong> (Related exercises: <a href="#ex-5-10">Exercise 6.16</a>, <a href="#ex-5-2">Exercise 6.7</a>, <a href="#ex-eigenvalues-exercise-001">Exercise 6.1</a>, <a href="#ex-eigenvalues-exercise-002">Exercise 6.3</a>, <a href="#ex-eigenvalues-exercise-003">Exercise 6.4</a>, <a href="#ex-eigenvalues-exercise-004">Exercise 6.6</a>, <a href="#ex-eigenvalues-exercise-005">Exercise 6.8</a>)</p>
+<p class="env-number"><strong>Method 6.15</strong></p>
 <p><span id="met-diagonalizability" label="met:diagonalizability"></span> In order to diagonalize a square matrix <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span>, i.e., to determine whether <span class="arithmatex">\(P\)</span> above exists, and to compute <span class="arithmatex">\(D\)</span>, one proceeds as follows:</p>
 <ul>
 <li>
@@ -1200,15 +1221,15 @@ n = \dim {\bf R}^n \ge &amp; \dim (E_{\lambda_1} + \dots + E_{\lambda_k}) \\
 </div>
 <p>This implies the following:</p>
 <div class="corollary">
-<p class="env-number"><strong>Corollary 6.16</strong> (Related exercises: <a href="#ex-eigenvalues-exercise-002">Exercise 6.3</a>, <a href="#ex-eigenvalues-exercise-004">Exercise 6.6</a>)</p>
+<p class="env-number"><strong>Corollary 6.16</strong></p>
 <p><span id="cor-diag-max" label="cor:diag-max"></span> If an <span class="arithmatex">\(n \times n\)</span>-matrix has <span class="arithmatex">\(n\)</span> distinct eigenvalues, then it is diagonalizable.</p>
 </div>
 <div class="definition">
-<p class="env-number"><strong>Definition 6.17</strong> (Related exercises: <a href="#ex-eigenvalues-exercise-002">Exercise 6.3</a>)</p>
+<p class="env-number"><strong>Definition 6.17</strong></p>
 <p><span id="def-eigenbasis" label="def:eigenbasis"></span> Let <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span> be given. A basis <span class="arithmatex">\(v_1, \dots, v_n\)</span> of <span class="arithmatex">\({\bf R}^n\)</span> is called an <em>eigenbasis</em> for <span class="arithmatex">\(A\)</span> if each <span class="arithmatex">\(v_i\)</span> is an eigenvector (for a certain eigenvalue) of <span class="arithmatex">\(A\)</span>.</p>
 </div>
 <div class="lemma">
-<p class="env-number"><strong>Lemma 6.18</strong> (Related exercises: <a href="#ex-eigenvalues-exercise-001">Exercise 6.1</a>)</p>
+<p class="env-number"><strong>Lemma 6.18</strong></p>
 <p><span id="lem-eigenvalues-lemma-001" label="lem:eigenvalues-lemma-001"></span> For <span class="arithmatex">\(A \in {\mathrm {Mat}}_{n \times n}\)</span> the following two statements are equivalent:</p>
 <ol>
 <li>
@@ -1301,7 +1322,7 @@ P = \left ( \begin{array}{cc} i &amp; -i \\ 1 &amp; 1 \end{array} \right ).
 </div>
 <p>The question whether a given matrix <span class="arithmatex">\(A\)</span> is diagonalizable is a special case of the following more general question: given two square matrices <span class="arithmatex">\(A, B\)</span>, are they similar in the sense of the above definition?</p>
 <div class="proposition">
-<p class="env-number"><strong>Proposition 6.24</strong> (Related exercises: <a href="#ex-5-4-4">Exercise 6.12</a>, <a href="#ex-eigenvalues-exercise-005">Exercise 6.8</a>)</p>
+<p class="env-number"><strong>Proposition 6.24</strong></p>
 <p><span id="prop-similarity-necessary-conditions" label="prop:similarity-necessary-conditions"></span> If <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are similar, then the following holds:</p>
 <ol>
 <li>
@@ -1391,7 +1412,7 @@ B=
 <h2 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h2>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.1</strong></p>
-<p><span id="ex-eigenvalues-exercise-001" label="ex:eigenvalues-exercise-001"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-001" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-001">Solution C.6.1</a>.) Is the following matrix diagonalizable?</p>
+<p><span id="ex-eigenvalues-exercise-001" label="ex:eigenvalues-exercise-001"></span> (See <a href="#sol-ex-eigenvalues-exercise-001" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-001">Solution 6.6.1</a>.) Is the following matrix diagonalizable?</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 A = \left ( \begin{array}{ccc} 2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 2 \end{array} \right ).
@@ -1401,7 +1422,7 @@ A = \left ( \begin{array}{ccc} 2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp;
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.2</strong></p>
-<p><span id="exercise-eigenvalues-2x2" label="exercise.eigenvalues.2x2"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-exercise-eigenvalues-2x2" data-reference-type="ref+Label" data-reference="sol--exercise.eigenvalues.2x2">Solution C.6.2</a>.) Let <span class="arithmatex">\(A = \left ( \begin{array}{cc} a &amp; b \\ c &amp; d \end{array} \right )\)</span>. Show that:</p>
+<p><span id="exercise-eigenvalues-2x2" label="exercise.eigenvalues.2x2"></span> (See <a href="#sol-exercise-eigenvalues-2x2" data-reference-type="ref+Label" data-reference="sol--exercise.eigenvalues.2x2">Solution 6.6.2</a>.) Let <span class="arithmatex">\(A = \left ( \begin{array}{cc} a &amp; b \\ c &amp; d \end{array} \right )\)</span>. Show that:</p>
 <ul>
 <li>
 <p><span class="arithmatex">\(\chi_A(t) = t^2 - {{\mathrm {tr}}} (A) t + \det A = t^2 - (a+d) t + (ad-bc)\)</span>. Here <span class="arithmatex">\({{\mathrm {tr}}} (A)\)</span> is the <em>trace</em> of <span class="arithmatex">\(A\)</span>, cf. <a href="../maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>.</p>
@@ -1418,7 +1439,7 @@ A = \left ( \begin{array}{ccc} 2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp;
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.3</strong></p>
-<p><span id="ex-eigenvalues-exercise-002" label="ex:eigenvalues-exercise-002"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-002" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-002">Solution C.6.3</a>.) For each of the following matrices, compute <span class="arithmatex">\(\chi_A(t)\)</span>, the eigenvalues of <span class="arithmatex">\(A\)</span>, the eigenspaces for these eigenvalues. Also decide whether <span class="arithmatex">\(A\)</span> is diagonalizable and compute an eigenbasis if one exists.</p>
+<p><span id="ex-eigenvalues-exercise-002" label="ex:eigenvalues-exercise-002"></span> (See <a href="#sol-ex-eigenvalues-exercise-002" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-002">Solution 6.6.3</a>.) For each of the following matrices, compute <span class="arithmatex">\(\chi_A(t)\)</span>, the eigenvalues of <span class="arithmatex">\(A\)</span>, the eigenspaces for these eigenvalues. Also decide whether <span class="arithmatex">\(A\)</span> is diagonalizable and compute an eigenbasis if one exists.</p>
 <ol>
 <li>
 <p><span class="arithmatex">\(A = \left ( \begin{array}{cc} 3 &amp; 5 \\ 1 &amp; -1 \end{array} \right )\)</span></p>
@@ -1436,11 +1457,11 @@ A = \left ( \begin{array}{ccc} 2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp;
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.4</strong></p>
-<p><span id="ex-eigenvalues-exercise-003" label="ex:eigenvalues-exercise-003"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-003" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-003">Solution C.6.4</a>.) Consider the matrix <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 2 \\ 1 &amp; 0 &amp; 1 \end{array} \right )\)</span>. Compute its characteristic polynomial, its eigenvalues and its eigenspaces. Is <span class="arithmatex">\(A\)</span> diagonalizable? If so, find a basis of <span class="arithmatex">\({\bf R}^3\)</span> such that the associated matrix is a diagonal matrix, as in <a href="#def-diagonalizable" data-reference-type="ref+Label" data-reference="def:diagonalizable">Definition 6.14</a>.</p>
+<p><span id="ex-eigenvalues-exercise-003" label="ex:eigenvalues-exercise-003"></span> (See <a href="#sol-ex-eigenvalues-exercise-003" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-003">Solution 6.6.4</a>.) Consider the matrix <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 2 \\ 1 &amp; 0 &amp; 1 \end{array} \right )\)</span>. Compute its characteristic polynomial, its eigenvalues and its eigenspaces. Is <span class="arithmatex">\(A\)</span> diagonalizable? If so, find a basis of <span class="arithmatex">\({\bf R}^3\)</span> such that the associated matrix is a diagonal matrix, as in <a href="#def-diagonalizable" data-reference-type="ref+Label" data-reference="def:diagonalizable">Definition 6.14</a>.</p>
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.5</strong></p>
-<p><span id="ex-5-1" label="ex 5.1"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-1" data-reference-type="ref+Label" data-reference="sol--ex 5.1">Solution C.6.5</a>.) Let</p>
+<p><span id="ex-eigenvalues-5-1" label="ex:eigenvalues-5-1"></span> (See <a href="#sol-ex-eigenvalues-5-1" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-1">Solution 6.6.5</a>.) Let</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 f: {\bf R}^3 \to {\bf R}^3
@@ -1450,7 +1471,7 @@ f: {\bf R}^3 \to {\bf R}^3
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.6</strong></p>
-<p><span id="ex-eigenvalues-exercise-004" label="ex:eigenvalues-exercise-004"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-004" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-004">Solution C.6.6</a>.) For which <span class="arithmatex">\(a \in {\bf R}\)</span> is the matrix</p>
+<p><span id="ex-eigenvalues-exercise-004" label="ex:eigenvalues-exercise-004"></span> (See <a href="#sol-ex-eigenvalues-exercise-004" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-004">Solution 6.6.6</a>.) For which <span class="arithmatex">\(a \in {\bf R}\)</span> is the matrix</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 A_a = \left ( \begin{array}{ccc} a &amp; 0 &amp; 0 \\ a-2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 \end{array} \right )
@@ -1460,7 +1481,7 @@ A_a = \left ( \begin{array}{ccc} a &amp; 0 &amp; 0 \\ a-2 &amp; 1 &amp; 1 \\ 0 &
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.7</strong></p>
-<p><span id="ex-5-2" label="ex 5.2"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-2" data-reference-type="ref+Label" data-reference="sol--ex 5.2">Solution C.6.7</a>.) For a parameter <span class="arithmatex">\(a \in {\bf R}\)</span>, let</p>
+<p><span id="ex-eigenvalues-5-2" label="ex:eigenvalues-5-2"></span> (See <a href="#sol-ex-eigenvalues-5-2" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-2">Solution 6.6.7</a>.) For a parameter <span class="arithmatex">\(a \in {\bf R}\)</span>, let</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 A_a = \left ( \begin{array}{ccc} 4 &amp; 0 &amp; 4 \\ a &amp; 2 &amp; a \\ -2 &amp; 0 &amp; -2 \end{array} \right ).
@@ -1477,7 +1498,7 @@ A_a = \left ( \begin{array}{ccc} 4 &amp; 0 &amp; 4 \\ a &amp; 2 &amp; a \\ -2 &a
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.8</strong></p>
-<p><span id="ex-eigenvalues-exercise-005" label="ex:eigenvalues-exercise-005"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-005" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-005">Solution C.6.8</a>.) Consider the matrices</p>
+<p><span id="ex-eigenvalues-exercise-005" label="ex:eigenvalues-exercise-005"></span> (See <a href="#sol-ex-eigenvalues-exercise-005" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-005">Solution 6.6.8</a>.) Consider the matrices</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 A = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; 0 \\ 1 &amp; -1 &amp; 1 \end{array} \right ) \ \text{ and } \ B = \left ( \begin{array}{ccc} 2 &amp; 1 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array} \right ).
@@ -1494,7 +1515,7 @@ A = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; 0 \\ 1 &amp;
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.9</strong></p>
-<p><span id="ex-eigenvalues-exercise-006" label="ex:eigenvalues-exercise-006"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-006" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-006">Solution C.6.9</a>.) For a parameter <span class="arithmatex">\(t \in {\bf R}\)</span>, consider the matrix</p>
+<p><span id="ex-eigenvalues-exercise-006" label="ex:eigenvalues-exercise-006"></span> (See <a href="#sol-ex-eigenvalues-exercise-006" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-006">Solution 6.6.9</a>.) For a parameter <span class="arithmatex">\(t \in {\bf R}\)</span>, consider the matrix</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 A_t = \left ( \begin{array}{ccc} -1 &amp; 2 &amp; t \\ 2 &amp; 0 &amp; -2 \\ t &amp; -2 &amp; -1 \end{array} \right ).
@@ -1511,7 +1532,7 @@ A_t = \left ( \begin{array}{ccc} -1 &amp; 2 &amp; t \\ 2 &amp; 0 &amp; -2 \\ t &
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.10</strong></p>
-<p><span id="ex-eigenvalues-exercise-007" label="ex:eigenvalues-exercise-007"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-007" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-007">Solution C.6.10</a>.) Consider the space <span class="arithmatex">\({\mathrm {Mat}}_{2 \times 2}\)</span> of <span class="arithmatex">\(2 \times 2\)</span>-vector spaces. Consider <span class="arithmatex">\(A = \left ( \begin{array}{cc} -4 &amp; 8 \\ 1 &amp; -2 \end{array} \right )\)</span> and the map</p>
+<p><span id="ex-eigenvalues-exercise-007" label="ex:eigenvalues-exercise-007"></span> (See <a href="#sol-ex-eigenvalues-exercise-007" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-007">Solution 6.6.10</a>.) Consider the space <span class="arithmatex">\({\mathrm {Mat}}_{2 \times 2}\)</span> of <span class="arithmatex">\(2 \times 2\)</span>-vector spaces. Consider <span class="arithmatex">\(A = \left ( \begin{array}{cc} -4 &amp; 8 \\ 1 &amp; -2 \end{array} \right )\)</span> and the map</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 F: {\mathrm {Mat}}_{2 \times 2} \to {\mathrm {Mat}}_{2 \times 2}, X \mapsto AX.
@@ -1545,7 +1566,7 @@ F: {\mathrm {Mat}}_{2 \times 2} \to {\mathrm {Mat}}_{2 \times 2}, X \mapsto AX.
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.11</strong></p>
-<p><span id="ex-5-4-3" label="ex 5.4.3"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-4-3" data-reference-type="ref+Label" data-reference="sol--ex 5.4.3">Solution C.6.11</a>.) Consider the two matrices</p>
+<p><span id="ex-eigenvalues-5-4-3" label="ex:eigenvalues-5-4-3"></span> (See <a href="#sol-ex-eigenvalues-5-4-3" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-4-3">Solution 6.6.11</a>.) Consider the two matrices</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 A = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 2 \\ 0 &amp; 3 &amp; 0 \\ 0 &amp; 0 &amp; 3 \end{array} \right ) \text{ and } B = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 3 &amp; 2 \\ 0 &amp; 0 &amp; 3 \end{array} \right ).
@@ -1555,11 +1576,11 @@ A = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 2 \\ 0 &amp; 3 &amp; 0 \\ 0 &amp;
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.12</strong></p>
-<p><span id="ex-5-4-4" label="ex 5.4.4"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-4-4" data-reference-type="ref+Label" data-reference="sol--ex 5.4.4">Solution C.6.12</a>.) Let <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; 1 \\ 0 &amp; 0 &amp; 2 \end{array} \right )\)</span>. Determine the eigenvalues of <span class="arithmatex">\(A\)</span> and the corresponding eigenspaces. Is <span class="arithmatex">\(A\)</span> diagonalizable? Is <span class="arithmatex">\(A^2\)</span> <em>similar</em> to <span class="arithmatex">\(A\)</span>? I.e., does <span class="arithmatex">\(A^2\)</span> represent the same linear map <span class="arithmatex">\({\bf R}^3 \to {\bf R}^3\)</span> as <span class="arithmatex">\(A\)</span>?</p>
+<p><span id="ex-eigenvalues-5-4-4" label="ex:eigenvalues-5-4-4"></span> (See <a href="#sol-ex-eigenvalues-5-4-4" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-4-4">Solution 6.6.12</a>.) Let <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; 1 \\ 0 &amp; 0 &amp; 2 \end{array} \right )\)</span>. Determine the eigenvalues of <span class="arithmatex">\(A\)</span> and the corresponding eigenspaces. Is <span class="arithmatex">\(A\)</span> diagonalizable? Is <span class="arithmatex">\(A^2\)</span> <em>similar</em> to <span class="arithmatex">\(A\)</span>? I.e., does <span class="arithmatex">\(A^2\)</span> represent the same linear map <span class="arithmatex">\({\bf R}^3 \to {\bf R}^3\)</span> as <span class="arithmatex">\(A\)</span>?</p>
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.13</strong></p>
-<p><span id="ex-5-5" label="ex 5.5"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-5" data-reference-type="ref+Label" data-reference="sol--ex 5.5">Solution C.6.13</a>.) Consider the vectors <span class="arithmatex">\(v_1 = (1,0,1)\)</span>, <span class="arithmatex">\(v_2 = (1,1,1)\)</span> and <span class="arithmatex">\(v_3=(1,1,2)\)</span>.</p>
+<p><span id="ex-eigenvalues-5-5" label="ex:eigenvalues-5-5"></span> (See <a href="#sol-ex-eigenvalues-5-5" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-5">Solution 6.6.13</a>.) Consider the vectors <span class="arithmatex">\(v_1 = (1,0,1)\)</span>, <span class="arithmatex">\(v_2 = (1,1,1)\)</span> and <span class="arithmatex">\(v_3=(1,1,2)\)</span>.</p>
 <ol>
 <li>
 <p>Explain why there is a unique linear map <span class="arithmatex">\(f : {\bf R}^3 \to {\bf R}^3\)</span> such that <span class="arithmatex">\(f(v_1)=(0,0,0)\)</span>, <span class="arithmatex">\(f(v_2)=(1,0,3)\)</span> and <span class="arithmatex">\(v_3\)</span> is an eigenvector of eigenvalue 4.</p>
@@ -1577,7 +1598,7 @@ A = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 2 \\ 0 &amp; 3 &amp; 0 \\ 0 &amp;
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.14</strong></p>
-<p><span id="ex-5-7" label="ex 5.7"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-7" data-reference-type="ref+Label" data-reference="sol--ex 5.7">Solution C.6.14</a>.) Consider the matrix</p>
+<p><span id="ex-eigenvalues-5-7" label="ex:eigenvalues-5-7"></span> (See <a href="#sol-ex-eigenvalues-5-7" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-7">Solution 6.6.14</a>.) Consider the matrix</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 A = \begin{pmatrix}
@@ -1604,7 +1625,7 @@ A = \begin{pmatrix}
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.15</strong></p>
-<p><span id="ex-5-9" label="ex 5.9"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-9" data-reference-type="ref+Label" data-reference="sol--ex 5.9">Solution C.6.15</a>.) Consider the matrix</p>
+<p><span id="ex-eigenvalues-5-9" label="ex:eigenvalues-5-9"></span> (See <a href="#sol-ex-eigenvalues-5-9" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-9">Solution 6.6.15</a>.) Consider the matrix</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 A = \begin{pmatrix}
@@ -1631,7 +1652,7 @@ A = \begin{pmatrix}
 </div>
 <div class="exercise">
 <p class="env-number"><strong>Exercise 6.16</strong></p>
-<p><span id="ex-5-10" label="ex 5.10"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-5-10" data-reference-type="ref+Label" data-reference="sol--ex 5.10">Solution C.6.16</a>.) Consider the matrix <span class="arithmatex">\(A = \begin{pmatrix}
+<p><span id="ex-eigenvalues-5-10" label="ex:eigenvalues-5-10"></span> (See <a href="#sol-ex-eigenvalues-5-10" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-10">Solution 6.6.16</a>.) Consider the matrix <span class="arithmatex">\(A = \begin{pmatrix}
 1 &amp; 0 &amp; t \\
 1 &amp; 2 &amp; 1 \\
 2 &amp; 0 &amp; -1
@@ -1650,6 +1671,802 @@ A = \begin{pmatrix}
 <p>For the value of <span class="arithmatex">\(t\)</span> found in the first part of the exercise: compute a basis of all eigenspaces and decide whether <span class="arithmatex">\(A\)</span> is diagonalizable.</p>
 </li>
 </ol>
+</div>
+<h2 id="solutions-to-the-exercises">Solutions to the exercises<a class="headerlink" href="#solutions-to-the-exercises" title="Permanent link">&para;</a></h2>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.1</strong></p>
+<p><span id="sol-ex-eigenvalues-exercise-001" label="sol--ex:eigenvalues-exercise-001"></span> (See <a href="#ex-eigenvalues-exercise-001" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-001">Exercise 6.1</a>.) To decide whether the matrix <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 2 \end{array} \right )\)</span> is diagonalizable, we follow <a href="#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>.</p>
+<p>We first compute the characteristic polynomial and eigenvalues. We compute <span class="arithmatex">\(\chi_A(t) = \det(A - t \cdot \mathrm{id}_3)\)</span>, cf. <a href="#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>. Expanding the determinant of</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A - t \cdot \mathrm{id}_3 = \left ( \begin{array}{ccc} 2-t &amp; 1 &amp; 1 \\ 0 &amp; 1-t &amp; 0 \\ 1 &amp; -1 &amp; 2-t \end{array} \right ),
+\]</div>
+</div>
+<p>by developing along the second row (<a href="../determinants/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), we get</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\chi_A(t) &amp; = (1-t) \det \left ( \begin{array}{cc} 2-t &amp; 1 \\ 1 &amp; 2-t \end{array} \right ) \\
+&amp; = (1-t)\bigl[(2-t)^2 - 1\bigr] \\
+&amp; = (1-t)(3 - 4t + t^2) \\
+&amp; = (1-t)(t-1)(t-3) \\
+&amp; = -(t-1)^2(t-3).
+\end{align*}
+\]</div>
+</div>
+<p>The eigenvalues are <span class="arithmatex">\(\lambda_1 = 1\)</span> (with algebraic multiplicity 2) and <span class="arithmatex">\(\lambda_2 = 3\)</span> (with algebraic multiplicity 1).</p>
+<p>We now compute the eigenspaces. For <span class="arithmatex">\(\lambda_2 = 3\)</span>: we solve <span class="arithmatex">\((A - 3\,\mathrm{id}_3)v = 0\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A - 3\,\mathrm{id}_3 = \left ( \begin{array}{ccc} -1 &amp; 1 &amp; 1 \\ 0 &amp; -2 &amp; 0 \\ 1 &amp; -1 &amp; -1 \end{array} \right ) \leadsto \left ( \begin{array}{ccc} 1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>So <span class="arithmatex">\(E_3 = \ker(A - 3\,\mathrm{id}_3) = L\bigl((1, 0, 1)\bigr)\)</span>, which has dimension 1.</p>
+<p>For <span class="arithmatex">\(\lambda_1 = 1\)</span>: we solve <span class="arithmatex">\((A - \mathrm{id}_3)v = 0\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A - \mathrm{id}_3 = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 0 \\ 1 &amp; -1 &amp; 1 \end{array} \right ) \leadsto \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>So <span class="arithmatex">\(E_1 = \ker(A - \mathrm{id}_3) = L\bigl((-1, 0, 1)\bigr)\)</span>. Hence the rank is 2, so <span class="arithmatex">\(\dim E_1 = 1\)</span>.</p>
+<p>Finally, we check diagonalizability. By <a href="#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, <span class="arithmatex">\(A\)</span> is diagonalizable if and only if <span class="arithmatex">\(\dim E_1 + \dim E_3 = 3\)</span>. We have <span class="arithmatex">\(\dim E_1 = 1\)</span> and <span class="arithmatex">\(\dim E_3 = 1\)</span>, so <span class="arithmatex">\(\dim E_1 + \dim E_3 = 2 \ne 3\)</span>. Therefore, <span class="arithmatex">\(A\)</span> is not diagonalizable.</p>
+<p>Indeed, the eigenvalue <span class="arithmatex">\(\lambda_1 = 1\)</span> has algebraic multiplicity 2 but its eigenspace has dimension only 1, which is the obstruction to diagonalizability, cf. also <a href="#lem-eigenvalues-lemma-001" data-reference-type="ref+Label" data-reference="lem:eigenvalues-lemma-001">Lemma 6.18</a>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.2</strong></p>
+<p><span id="sol-exercise-eigenvalues-2x2" label="sol--exercise.eigenvalues.2x2"></span> (See <a href="#exercise-eigenvalues-2x2" data-reference-type="ref+Label" data-reference="exercise.eigenvalues.2x2">Exercise 6.2</a>.) For <span class="arithmatex">\(A = \left ( \begin{array}{cc} a &amp; b \\ c &amp; d \end{array} \right )\)</span> we have <span class="arithmatex">\(A - t\,\mathrm{id}_2 = \left ( \begin{array}{cc} a-t &amp; b \\ c &amp; d-t \end{array} \right )\)</span>.</p>
+<p>By definition (<a href="#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\chi_A(t) &amp; = \det \left ( \begin{array}{cc} a-t &amp; b \\ c &amp; d-t \end{array} \right ) \\
+&amp; = (a-t)(d-t) - bc \\
+&amp; = t^2 - (a+d)t + (ad-bc) \\
+&amp; = t^2 - \mathrm{tr}(A) t + \det A,
+\end{align*}
+\]</div>
+</div>
+<p>where <span class="arithmatex">\(\mathrm{tr}(A)=a+d\)</span> is the trace (see <a href="../maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>).</p>
+<p>The eigenvalues are the roots of <span class="arithmatex">\(\chi_A(t)=0\)</span>, hence</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+t^2 - (a+d)t + (ad-bc) = 0.
+\]</div>
+</div>
+<p>By the quadratic formula,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\lambda_{1,2}
+= \frac{a+d}{2} \pm \sqrt{\left(\frac{a+d}{2}\right)^2 - (ad-bc)}
+= \frac{a+d}{2} \pm \sqrt{\frac{(a-d)^2}{4}+bc}.
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.3</strong></p>
+<p><span id="sol-ex-eigenvalues-exercise-002" label="sol--ex:eigenvalues-exercise-002"></span> (See <a href="#ex-eigenvalues-exercise-002" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-002">Exercise 6.3</a>.) We compute <span class="arithmatex">\(\chi_A(t)\)</span>, eigenvalues, eigenspaces, and diagonalizability for each matrix, following <a href="#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a> and <a href="#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>.</p>
+<ol>
+<li><span class="arithmatex">\(A = \left ( \begin{array}{cc} 3 &amp; 5 \\ 1 &amp; -1 \end{array} \right )\)</span>.</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    \begin{align*}
+    \chi_A(t) &amp; = \det \left ( \begin{array}{cc} 3-t &amp; 5 \\ 1 &amp; -1-t \end{array} \right )
+    = (3-t)(-1-t)-5 \\
+    &amp; = t^2-2t-8 = (t-4)(t+2).
+    \end{align*}
+\]</div>
+</div>
+<pre><code>So the eigenvalues of $A$ are $4$ and $-2$. Since these are two distinct eigenvalues, $A$ is diagonalizable by &lt;a href="#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max"&gt;Corollary 6.16&lt;/a&gt;. One computes the eigenspaces and thus an eigenbasis for example using Gaussian elimination. For $\lambda=4$, $A-4\,\mathrm{id}_2 = \left ( \begin{array}{cc} -1 &amp; 5 \\ 1 &amp; -5 \end{array} \right ) \leadsto x=5y,$ so $E_4 = L((5,1))$.
+
+For $\lambda=-2$, $A+2\,\mathrm{id}_2 = \left ( \begin{array}{cc} 5 &amp; 5 \\ 1 &amp; 1 \end{array} \right ) \leadsto x=-y,$ so $E_{-2} = L((-1,1))$. An eigenbasis for $A$ is $\bigl((5,1),(-1,1)\bigr)$ (cf. &lt;a href="#def-eigenbasis" data-reference-type="ref+Label" data-reference="def:eigenbasis"&gt;Definition 6.17&lt;/a&gt;).
+</code></pre>
+<ol>
+<li>For the given matrix <span class="arithmatex">\(A\)</span>, we get</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    \begin{align*}
+    \chi_A(t) &amp; = \det \left ( \begin{array}{ccc} -t &amp; 1 &amp; 0 \\ 3 &amp; -t &amp; 1 \\ 2 &amp; 0 &amp; -t \end{array} \right ) \\
+    &amp; = (-t)\det\left ( \begin{array}{cc} -t &amp; 1 \\ 0 &amp; -t \end{array} \right )
+    - \det\left ( \begin{array}{cc} 3 &amp; 1 \\ 2 &amp; -t \end{array} \right ) \\
+    &amp; = -t^3 + 3t + 2 = -(t-2)(t+1)^2.
+    \end{align*}
+\]</div>
+</div>
+<pre><code>The eigenvalues are $2$ and $-1$ (the latter with algebraic multiplicity 2). Since there are only 2 (not 3) distinct eigenvalues We cannot use &lt;a href="#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max"&gt;Corollary 6.16&lt;/a&gt; to decide diagonalizability, so we need to compute the eigenspaces. For $\lambda=2$:
+</code></pre>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    A-2\,\mathrm{id}_3 = \left ( \begin{array}{ccc} -2 &amp; 1 &amp; 0 \\ 3 &amp; -2 &amp; 1 \\ 2 &amp; 0 &amp; -2 \end{array} \right ) \leadsto E_2 = L((1,2,1)).
+\]</div>
+</div>
+<pre><code>For $\lambda=-1$:
+</code></pre>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    A+\mathrm{id}_3 = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 0 \\ 3 &amp; 1 &amp; 1 \\ 2 &amp; 0 &amp; 1 \end{array} \right ) \leadsto E_{-1} = L((-1,1,2)).
+\]</div>
+</div>
+<pre><code>Hence $\dim E_2 + \dim E_{-1} = 1+1=2&lt;3$, so $A$ is not diagonalizable; i.e., does not have an eigenbasis.
+</code></pre>
+<ol>
+<li>The matrix <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; \frac 32 \\ 0 &amp; 0 &amp; 1 \end{array} \right )\)</span> is an upper triangular matrix. Thus the eigenvalues are diagonal entries: <span class="arithmatex">\(1,0,1\)</span>. Thus</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    \chi_A(t) = (1-t)^2(-t).
+\]</div>
+</div>
+<pre><code>For $\lambda=1$:
+</code></pre>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    A-\mathrm{id}_3 = \left ( \begin{array}{ccc} 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; \frac 32 \\ 0 &amp; 0 &amp; 0 \end{array} \right ),
+\]</div>
+</div>
+<pre><code>so $y=\frac 32 z$, with $x,z$ free. Therefore
+</code></pre>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    E_1 = L((1,0,0),(0,3,2)), \quad \dim E_1=2.
+\]</div>
+</div>
+<pre><code>For $\lambda=0$ we solve $Av=0$, which gives $x=0$ and $z=0$, so
+</code></pre>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    E_0 = L((0,1,0)), \quad \dim E_0=1.
+\]</div>
+</div>
+<pre><code>Hence $\dim E_1 + \dim E_0 = 3$, so $A$ is diagonalizable. An eigenbasis is $\bigl((1,0,0),(0,3,2),(0,1,0)\bigr).$
+</code></pre>
+<ol>
+<li>The matrix <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \end{array} \right )\)</span>. is again upper triangular, so the only eigenvalue is <span class="arithmatex">\(0\)</span> (algebraic multiplicity 3), and</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    \chi_A(t) = (-t)^3.
+\]</div>
+</div>
+<pre><code>The eigenspace is $E_0=\ker A$. From
+</code></pre>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    A\left ( \begin{array}{c} x \\ y \\ z \end{array} \right )
+    = \left ( \begin{array}{c} y \\ z \\ 0 \end{array} \right ) = 0,
+\]</div>
+</div>
+<pre><code>we get $y=z=0$, $x$ free. So
+</code></pre>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    E_0 = L((1,0,0)), \quad \dim E_0=1.
+\]</div>
+</div>
+<pre><code>Since $\dim E_0=1&lt;3$, $A$ is not diagonalizable, and there is no eigenbasis.
+</code></pre>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.4</strong></p>
+<p><span id="sol-ex-eigenvalues-exercise-003" label="sol--ex:eigenvalues-exercise-003"></span> (See <a href="#ex-eigenvalues-exercise-003" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-003">Exercise 6.4</a>.) Consider</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 2 \\ 1 &amp; 0 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+<p>We compute the characteristic polynomial using <a href="#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\chi_A(t) &amp; = \det(A-t\,\mathrm{id}_3) \\
+&amp; = \det \left ( \begin{array}{ccc} 1-t &amp; 0 &amp; 0 \\ 1 &amp; 1-t &amp; 2 \\ 1 &amp; 0 &amp; 1-t \end{array} \right ) \\
+&amp; = (1-t)\det \left ( \begin{array}{cc} 1-t &amp; 2 \\ 0 &amp; 1-t \end{array} \right ) \\
+&amp; = (1-t)^3.
+\end{align*}
+\]</div>
+</div>
+<p>Hence the only eigenvalue is <span class="arithmatex">\(\lambda=1\)</span>, with algebraic multiplicity <span class="arithmatex">\(3\)</span>. The eigenspace is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_1 = \ker(A-\mathrm{id}_3),
+\]</div>
+</div>
+<p>and</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A-\mathrm{id}_3
+= \left ( \begin{array}{ccc} 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 2 \\ 1 &amp; 0 &amp; 0 \end{array} \right )
+\leadsto
+\left ( \begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>So the equations are <span class="arithmatex">\(x=0\)</span> and <span class="arithmatex">\(z=0\)</span>, while <span class="arithmatex">\(y\)</span> is free. Therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_1 = L((0,1,0)), \qquad \dim E_1 = 1.
+\]</div>
+</div>
+<p>By <a href="#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, diagonalizability would require the sum of dimensions of eigenspaces to be <span class="arithmatex">\(3\)</span>. Here there is only one eigenspace and its dimension is <span class="arithmatex">\(1\)</span>, so <span class="arithmatex">\(A\)</span> is <em>not</em> diagonalizable. Consequently, there is no basis of <span class="arithmatex">\({\bf R}^3\)</span> in which the associated matrix of <span class="arithmatex">\(A\)</span> is diagonal.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.5</strong></p>
+<p><span id="sol-ex-eigenvalues-5-1" label="sol--ex:eigenvalues-5-1"></span> (See <a href="#ex-eigenvalues-5-1" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-1">Exercise 6.5</a>.) The condition <span class="arithmatex">\(\ker f = L((1,1,1))\)</span> implies that <span class="arithmatex">\(f(1,1,1)=(0,0,0)\)</span>, which we can also rewrite as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+f((1,1,1)) = 0 \cdot (1,1,1).
+\]</div>
+</div>
+<p>Thus, this vector is an eigenvector for <span class="arithmatex">\(f\)</span>, with eigenvalue 0. We therefore have three eigenvectors as follows:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+v_1 = (1,0,1) &amp; \mapsto 2 (1,0,1)\\
+v_2 = (2,0,-3) &amp; \mapsto -1 (2,0,-3) \\
+v_3 = (1,1,1) &amp; \mapsto 0 (1,1,1).
+\end{align*}
+\]</div>
+</div>
+<p>We check that these three vectors form a basis of <span class="arithmatex">\({\bf R}^3\)</span> (note that this is therefore an example of an eigenbasis). To this end, we compute the rank of</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 2 &amp; 0 &amp; -3 \\ 1 &amp; 1 &amp; 1 \end{array} \right ) \leadsto \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; -5 \\ 0 &amp; 1 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>This implies that the matrix has rank three, and therefore the three vectors form a basis of <span class="arithmatex">\({\bf R}^3\)</span>. The matrix of <span class="arithmatex">\(f\)</span> with respect to the basis <span class="arithmatex">\(\underline v = \{v_1, v_2, v_3\}\)</span> is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc} 2 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>In order to compute the matrix of <span class="arithmatex">\(f\)</span> with respect to the standard basis <span class="arithmatex">\(\underline e = \{e_1, e_2, e_3 \}\)</span>, we use the usual diagram:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\bf R}^3_{\underline e} \xrightarrow[K]{\mathrm {id}} {\bf R}^3_{\underline v} \xrightarrow[\scriptsize {\left ( \begin{array}{ccc} 2 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array} \right )}]{f} 
+{\bf R}^3_{\underline v} \xrightarrow[K^{-1}]{\mathrm {id}}
+{\bf R}^3_{\underline e}.
+\]</div>
+</div>
+<p>It turns out that <span class="arithmatex">\(K^{-1}\)</span> is easier to compute than <span class="arithmatex">\(K\)</span>. It is given by expressing the <span class="arithmatex">\(v_i\)</span> in their coordinates in the standard basis vectors, e.g. <span class="arithmatex">\(v_1 \mapsto {\mathrm {id}}(v_1) = (1,0,1) = 1 e_1 + 0 e_2 + 1 e_3\)</span>. This implies <span class="arithmatex">\(K^{-1} = \left ( \begin{array}{ccc} 1 &amp; 2 &amp; 1 \\ 0 &amp; 0 &amp; 1 \\ 1 &amp; -3 &amp; 1 \end{array} \right )\)</span>. We can use this to compute <span class="arithmatex">\(K = (K^{-1})^{-1})\)</span>, cf.. This inverse (of <span class="arithmatex">\(K^{-1}\)</span>) can be computed using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>, which gives <span class="arithmatex">\(K = \frac 15 \left ( \begin{array}{ccc} 3 &amp; -5 &amp; 2 \\ 1 &amp; 0 &amp; -1 \\ 0 &amp; 5 &amp; 0 \end{array} \right )\)</span>. Then, one computes the product</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+K^{-1} \left ( \begin{array}{ccc} 2 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array} \right ) K = \frac 15 \left ( \begin{array}{ccc} 4 &amp; -10 &amp; 6 \\ 0 &amp; 0 &amp; 0 \\ 9 &amp; -10 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+<p>This is the basis of <span class="arithmatex">\(f\)</span> with respect to the standard basis.</p>
+<p>This is a typical example of the situation that one basis of <span class="arithmatex">\({\bf R}^3\)</span> may be more adapted to describing a linear map than another one. An eigenbasis, such as <span class="arithmatex">\(v_1, v_2, v_3\)</span> gives a particularly simple matrix.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.6</strong></p>
+<p><span id="sol-ex-eigenvalues-exercise-004" label="sol--ex:eigenvalues-exercise-004"></span> (See <a href="#ex-eigenvalues-exercise-004" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-004">Exercise 6.6</a>.) For</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A_a = \left ( \begin{array}{ccc} a &amp; 0 &amp; 0 \\ a-2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 \end{array} \right ),
+\]</div>
+</div>
+<p>we compute the characteristic polynomial (<a href="#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\chi_{A_a}(t)
+&amp;= \det(A_a - t\,\mathrm{id}_3) \\
+&amp;= \det \left ( \begin{array}{ccc} a-t &amp; 0 &amp; 0 \\ a-2 &amp; 1-t &amp; 1 \\ 0 &amp; 1 &amp; 1-t \end{array} \right ) \\
+&amp;= (a-t)\det \left ( \begin{array}{cc} 1-t &amp; 1 \\ 1 &amp; 1-t \end{array} \right ) \\
+&amp;= (a-t)\bigl((1-t)^2-1\bigr)
+= (a-t)\,t\,(t-2).
+\end{align*}
+\]</div>
+</div>
+<p>So the eigenvalues are <span class="arithmatex">\(a,0,2\)</span> (with multiplicities depending on <span class="arithmatex">\(a\)</span>). We distinguish several cases:</p>
+<ol>
+<li>
+<p>If <span class="arithmatex">\(a\neq 0,2\)</span>, there are three distinct eigenvalues, hence <span class="arithmatex">\(A_a\)</span> is diagonalizable (<a href="#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a>).</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(a=0\)</span>, then <span class="arithmatex">\(A_0 = \left ( \begin{array}{ccc} 0 &amp; 0 &amp; 0 \\ -2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 \end{array} \right ).\)</span> To decide diagonalizability, we note that the eigenspace of <span class="arithmatex">\(\lambda=2\)</span> is one-dimensional, since the algebraic multiplicity of <span class="arithmatex">\(\lambda=2\)</span> is 1. We now compute the eigenspace for <span class="arithmatex">\(\lambda=0\)</span>:</p>
+</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    A_0 - 0 \,\mathrm{id}_3 = A_0 = \left ( \begin{array}{ccc} 0 &amp; 0 &amp; 0 \\ -2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 \end{array} \right ) \leadsto \left ( \begin{array}{ccc} -2 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<pre><code>This gives $x = \frac{1}{2}y + \frac{1}{2}z$ and $y + z = 0$, so $y = -z$. Thus $x = 0$ and $E_0=L((0,1,-1))$, so $\dim E_0=1$ while the algebraic multiplicity of $0$ is $2$. Therefore $A_0$ is not diagonalizable.
+</code></pre>
+<ol>
+<li>If <span class="arithmatex">\(a=2\)</span>, then</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    A_2 = \left ( \begin{array}{ccc} 2 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+<pre><code>This time, the algebraic multiplicity of $\lambda = 0$ is 1, so it remains to compute the eigenspace for $\lambda = 2$:
+</code></pre>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    A_2-2\,\mathrm{id}_3
+    = \left ( \begin{array}{ccc} 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 1 \\ 0 &amp; 1 &amp; -1 \end{array} \right ),
+\]</div>
+</div>
+<pre><code>so $y=z$ and $x$ is free; hence
+</code></pre>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    E_2 = L((1,0,0),(0,1,1)), \qquad \dim E_2=2.
+\]</div>
+</div>
+<pre><code>For $\lambda=0$, one gets $E_0=L((0,1,-1))$, thus $\dim E_0=1$. So $\dim E_2+\dim E_0=3$, and by &lt;a href="#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability"&gt;Method 6.15&lt;/a&gt;, $A_2$ is diagonalizable.
+</code></pre>
+<p>In conclusion, <span class="arithmatex">\(A_a\)</span> is diagonalizable precisely if <span class="arithmatex">\(a \ne 0\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.7</strong></p>
+<p><span id="sol-ex-eigenvalues-5-2" label="sol--ex:eigenvalues-5-2"></span> (See <a href="#ex-eigenvalues-5-2" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-2">Exercise 6.7</a>.) We have <span class="arithmatex">\(\det (A_a - t {\mathrm {id}}_3) = \det \left ( \begin{array}{ccc} 4-t &amp; 0 &amp; 4 \\ a &amp; 2-t &amp; a \\ -2 &amp; 0 &amp; -2-t \end{array} \right )\)</span>. It is convenient to develop along the second column (<a href="../determinants/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), since it has two zeros; other developments are possible and give the same result, but are more tedious to perform. This gives</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\det (A_a - t {\mathrm {id}}_3) &amp; = (2-t) \det \left ( \begin{array}{cc} 4-t &amp; 4 \\ -2 &amp; -2-t \end{array} \right ) \\
+&amp; = (2-t)\bigl[(4-t)(-2-t) + 8\bigr] \\
+&amp; = (2-t)\bigl[-8-4t+2t+t^2 + 8\bigr] \\
+&amp; = (2-t)(t^2-2t) \\
+&amp; = (2-t) \cdot t(t-2) \\
+&amp; = -(t-2)^2 t.
+\end{align*}
+\]</div>
+</div>
+<p>The roots of this polynomial, i.e., the eigenvalues are <span class="arithmatex">\(2\)</span> and 0 (regardless of the value of <span class="arithmatex">\(a\)</span>). The exponent of <span class="arithmatex">\(t-2\)</span> in the above polynomial is 2, the one for <span class="arithmatex">\(t\)</span> is 1. This implies that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+1 \le \dim E_0 \le 1 &amp; \ \text{for all } t \in {\bf R} \\ 
+1 \le \dim E_2 \le 2 &amp; \ \text{for all } t \in {\bf R}.
+\end{align*}
+\]</div>
+</div>
+<p>According to <a href="#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, <span class="arithmatex">\(A_a\)</span> will be diagonalizable precisely if <span class="arithmatex">\(\dim E_2 = 2\)</span>. We compute <span class="arithmatex">\(E_2\)</span> by bringing <span class="arithmatex">\(A_a - 2 {\mathrm {id}}\)</span> into reduced row echelon form:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\left ( \begin{array}{ccc} 4-2 &amp; 0 &amp; 4 \\ a &amp; 2-2 &amp; a \\ -2 &amp; 0 &amp; -2-2 \end{array} \right ) &amp; = 
+\left ( \begin{array}{ccc} 2 &amp; 0 &amp; 4 \\ a &amp; 0 &amp; a \\ -2 &amp; 0 &amp; -4 \end{array} \right ) \leadsto 
+\left ( \begin{array}{ccc} 2 &amp; 0 &amp; 4 \\ a &amp; 0 &amp; a \\ 0 &amp; 0 &amp; 0 \end{array} \right )  \\
+&amp; \leadsto \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 2 \\ a &amp; 0 &amp; a \\ 0 &amp; 0 &amp; 0 \end{array} \right )  
+\leadsto \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 2 \\ 0 &amp; 0 &amp; a-2a \\ 0 &amp; 0 &amp; 0 \end{array} \right ) \\
+&amp; = \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 2 \\ 0 &amp; 0 &amp; -a \\ 0 &amp; 0 &amp; 0 \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>This matrix has rank 1, or equivalently <span class="arithmatex">\(\dim E_2 = 2\)</span>, if and only if <span class="arithmatex">\(a=0\)</span>. Thus, the matrix <span class="arithmatex">\(A_a\)</span> is diagonalizable precisely if <span class="arithmatex">\(a=0\)</span>. The second part of the exercise then has only to be done for <span class="arithmatex">\(a=0\)</span>, i.e. <span class="arithmatex">\(A := A_0 = \left ( \begin{array}{ccc} 4 &amp; 0 &amp; 4 \\ 0 &amp; 2 &amp; 0 \\ -2 &amp; 0 &amp; -2 \end{array} \right )\)</span>. This can be dealt with as in the previous exercises.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.8</strong></p>
+<p><span id="sol-ex-eigenvalues-exercise-005" label="sol--ex:eigenvalues-exercise-005"></span> (See <a href="#ex-eigenvalues-exercise-005" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-005">Exercise 6.8</a>.) If <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; 0 \\ 1 &amp; -1 &amp; 1 \end{array} \right )\)</span> and <span class="arithmatex">\(B = \left ( \begin{array}{ccc} 2 &amp; 1 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array} \right ).\)</span> represent the same linear map (with respect to different bases), there needs to be a base change matrix <span class="arithmatex">\(P\)</span> such that <span class="arithmatex">\(B = P^{-1}AP\)</span>. This will imply that <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> have the same characteristic polynomial, and in particular the same eigenvalues (see <a href="#prop-similarity-necessary-conditions" data-reference-type="ref+Label" data-reference="prop:similarity-necessary-conditions">Proposition 6.24</a>). We compute</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\chi_A(t)
+&amp;= \det(A-t\,\mathrm{id}_3) \\
+&amp;= \det \left ( \begin{array}{ccc} 1-t &amp; 1 &amp; 1 \\ 0 &amp; 2-t &amp; 0 \\ 1 &amp; -1 &amp; 1-t \end{array} \right ) \\
+&amp;= (2-t)\det \left ( \begin{array}{cc} 1-t &amp; 1 \\ 1 &amp; 1-t \end{array} \right ) \\
+&amp;= (2-t)\bigl((1-t)^2-1\bigr)
+= -t(t-2)^2.
+\end{align*}
+\]</div>
+</div>
+<p>Hence the eigenvalues are <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(2\)</span> (with algebraic multiplicity <span class="arithmatex">\(2\)</span> for <span class="arithmatex">\(2\)</span>). The matrix <span class="arithmatex">\(B\)</span> is upper triangular, so</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\chi_B(t) = (2-t)^2(-t) = -t(t-2)^2 = \chi_A(t).
+\]</div>
+</div>
+<p>Thus <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> have the same characteristic polynomial and the same eigenvalues. So, from considering only the characteristic polynomial we cannot conclude that <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> do not represent the same linear map with respect to different bases.</p>
+<p>We proceed by computing the eigenspaces. In fact, again if <span class="arithmatex">\(B = P^{-1}AP\)</span>, then the eigenspaces (for any <span class="arithmatex">\(\lambda \in \mathbf{R}\)</span>) of <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are the same. We begin by computing the eigenspaces for <span class="arithmatex">\(A\)</span>. For <span class="arithmatex">\(\lambda=0\)</span>, we solve <span class="arithmatex">\(Av=0\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left\{\begin{array}{l}
+x+y+z=0 \\
+2y=0 \\
+x-y+z=0
+\end{array}\right.
+\iff
+\left\{\begin{array}{l}
+y=0 \\
+x=-z
+\end{array}\right.,
+\]</div>
+</div>
+<p>so <span class="arithmatex">\(E_0(A)=L((1,0,-1))\)</span>. For <span class="arithmatex">\(\lambda=2\)</span>, we solve <span class="arithmatex">\((A-2\,\mathrm{id}_3)v=0\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A-2\,\mathrm{id}_3 = \left ( \begin{array}{ccc} -1 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 0 \\ 1 &amp; -1 &amp; -1 \end{array} \right ),
+\]</div>
+</div>
+<p>which gives <span class="arithmatex">\(-x+y+z=0\)</span>, i.e. <span class="arithmatex">\(y=x-z\)</span>. Therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_2(A) = L((1,1,0),(0,-1,1)), \qquad \dim E_2(A)=2.
+\]</div>
+</div>
+<p>So</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\dim E_0(A)+\dim E_2(A)=1+2=3,
+\]</div>
+</div>
+<p>and by <a href="#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, <span class="arithmatex">\(A\)</span> is diagonalizable.</p>
+<p>For <span class="arithmatex">\(\lambda=0\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+Bv=0
+\iff
+\left\{\begin{array}{l}
+2x+y=0 \\
+2y=0
+\end{array}\right.
+\iff x=y=0,
+\]</div>
+</div>
+<p>so <span class="arithmatex">\(E_0(B)=L((0,0,1))\)</span>. For <span class="arithmatex">\(\lambda=2\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+B-2\,\mathrm{id}_3 = \left ( \begin{array}{ccc} 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -2 \end{array} \right ),
+\]</div>
+</div>
+<p>so <span class="arithmatex">\(y=0\)</span>, <span class="arithmatex">\(z=0\)</span>, <span class="arithmatex">\(x\)</span> free, and</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_2(B)=L((1,0,0)), \qquad \dim E_2(B)=1.
+\]</div>
+</div>
+<p>Hence</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\dim E_0(B)+\dim E_2(B)=1+1=2&lt;3,
+\]</div>
+</div>
+<p>so <span class="arithmatex">\(B\)</span> is not diagonalizable.</p>
+<p>In particular, the eigenspaces of <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are not the same, which implies that <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> do <em>not</em> represent the same linear map with respect to different bases.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.9</strong></p>
+<p><span id="sol-ex-eigenvalues-exercise-006" label="sol--ex:eigenvalues-exercise-006"></span> (See <a href="#ex-eigenvalues-exercise-006" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-006">Exercise 6.9</a>.) For</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A_t = \left ( \begin{array}{ccc} -1 &amp; 2 &amp; t \\ 2 &amp; 0 &amp; -2 \\ t &amp; -2 &amp; -1 \end{array} \right ),
+\]</div>
+</div>
+<p>the value <span class="arithmatex">\(0\)</span> is an eigenvalue precisely when</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det(A_t)=0
+\]</div>
+</div>
+<p>(<a href="#thm-eigenvalues-theorem-001" data-reference-type="ref+Label" data-reference="thm:eigenvalues-theorem-001">Theorem 6.8</a>). (Alternatively, one may also compute the rank of <span class="arithmatex">\(A_t\)</span> and check when it is <span class="arithmatex">\(\le 2\)</span>.) By developing along the first row (<a href="../determinants/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), we compute</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\det(A_t)
+&amp;= -1\det\left ( \begin{array}{cc} 0 &amp; -2 \\ -2 &amp; -1 \end{array} \right )
+-2\det\left ( \begin{array}{cc} 2 &amp; -2 \\ t &amp; -1 \end{array} \right )
++t\det\left ( \begin{array}{cc} 2 &amp; 0 \\ t &amp; -2 \end{array} \right ) \\
+&amp;= 4 + (-4t+4) -4t \\
+&amp;= 8(1-t).
+\end{align*}
+\]</div>
+</div>
+<p>Hence <span class="arithmatex">\(0\)</span> is an eigenvalue if and only if <span class="arithmatex">\(t=1\)</span>.</p>
+<p>So we now consider</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A_1=\left ( \begin{array}{ccc} -1 &amp; 2 &amp; 1 \\ 2 &amp; 0 &amp; -2 \\ 1 &amp; -2 &amp; -1 \end{array} \right ).
+\]</div>
+</div>
+<p>Its characteristic polynomial is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\chi_{A_1}(\lambda)
+&amp;=\det(A_1-\lambda\,\mathrm{id}_3) = -\lambda(\lambda+4)(\lambda-2).
+\end{align*}
+\]</div>
+</div>
+<p>Therefore the eigenvalues are <span class="arithmatex">\(\lambda_1=0\)</span>, <span class="arithmatex">\(\lambda_2=2\)</span>, <span class="arithmatex">\(\lambda_3=-4.\)</span> For <span class="arithmatex">\(\lambda=0\)</span>, solve <span class="arithmatex">\(A_1v=0\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left\{\begin{array}{l}
+-x+2y+z=0 \\
+2x-2z=0
+\end{array}\right.
+\Rightarrow x=z,\ y=0,
+\]</div>
+</div>
+<p>so <span class="arithmatex">\(E_0=L((1,0,1))\)</span>. Similarly, one computes the eigenspaces <span class="arithmatex">\(E_2=L((-1,-2,1))\)</span> and <span class="arithmatex">\(E_{-4}=L((-1,1,1))\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.10</strong></p>
+<p><span id="sol-ex-eigenvalues-exercise-007" label="sol--ex:eigenvalues-exercise-007"></span> (See <a href="#ex-eigenvalues-exercise-007" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-007">Exercise 6.10</a>.) Let</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{cc} -4 &amp; 8 \\ 1 &amp; -2 \end{array} \right ),
+\qquad
+F : {\mathrm {Mat}}_{2\times 2} \to {\mathrm {Mat}}_{2\times 2},\ X\mapsto AX.
+\]</div>
+</div>
+<p>This map is indeed linear by <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.59</a>. Fixing the basis <span class="arithmatex">\(\underline E := (E_{11},E_{12},E_{21},E_{22})\)</span>, we compute:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+F(E_{11}) &amp;= AE_{11} = \left ( \begin{array}{cc} -4&amp;0\\1&amp;0 \end{array} \right ) = -4E_{11}+E_{21},\\
+F(E_{12}) &amp;= AE_{12} = \left ( \begin{array}{cc} 0&amp;-4\\0&amp;1 \end{array} \right ) = -4E_{12}+E_{22},\\
+F(E_{21}) &amp;= AE_{21} = \left ( \begin{array}{cc} 8&amp;0\\-2&amp;0 \end{array} \right ) = 8E_{11}-2E_{21},\\
+F(E_{22}) &amp;= AE_{22} = \left ( \begin{array}{cc} 0&amp;8\\0&amp;-2 \end{array} \right ) = 8E_{12}-2E_{22}.
+\end{align*}
+\]</div>
+</div>
+<p>Therefore the matrix of <span class="arithmatex">\(F\)</span> with respect to this basis (in the domain and codomain) is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+M := \left ( \begin{array}{cccc} -4 &amp; 0 &amp; 8 &amp; 0 \\ 0 &amp; -4 &amp; 0 &amp; 8 \\ 1 &amp; 0 &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; -2 \end{array} \right ).
+\]</div>
+</div>
+<p>We now compute <span class="arithmatex">\(\ker F\)</span> and <span class="arithmatex">\(\operatorname{im} F\)</span> by Gaussian elimination on this <span class="arithmatex">\(4\times 4\)</span> matrix. Set</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+M
+\leadsto
+\left ( \begin{array}{cccc} 1 &amp; 0 &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; -2 \\ 0 &amp; -4 &amp; 0 &amp; 8 \\ -4 &amp; 0 &amp; 8 &amp; 0 \end{array} \right )
+\leadsto
+\left ( \begin{array}{cccc} 1 &amp; 0 &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; -2 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>Hence, for coordinates <span class="arithmatex">\((x_1,x_2,x_3,x_4)\)</span> in the basis <span class="arithmatex">\(\underline E=(E_{11},E_{12},E_{21},E_{22})\)</span>, the kernel equations are <span class="arithmatex">\(x_1-2x_3=0\)</span> and <span class="arithmatex">\(x_2-2x_4=0\)</span>. So</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\ker F
+=L\bigl((2,0,1,0),(0,2,0,1)\bigr)
+=L(2E_{11}+E_{21},\ 2E_{12}+E_{22})
+=L\left(\left ( \begin{array}{cc} 2 &amp; 0 \\ 1 &amp; 0 \end{array} \right ),\left ( \begin{array}{cc} 0 &amp; 2 \\ 0 &amp; 1 \end{array} \right )\right)
+.
+\]</div>
+</div>
+<p>From the same row-reduction we read <span class="arithmatex">\(\operatorname{rank} M=2\)</span> and pivot columns <span class="arithmatex">\(1,2\)</span>. Therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\operatorname{im} F
+=L\bigl(c_1,c_2\bigr)
+=L\bigl((-4,0,1,0),(0,-4,0,1)\bigr)
+=L(-4E_{11}+E_{21},\ -4E_{12}+E_{22})
+=L\left(\left ( \begin{array}{cc} -4 &amp; 0 \\ 1 &amp; 0 \end{array} \right ),\left ( \begin{array}{cc} 0 &amp; -4 \\ 0 &amp; 1 \end{array} \right )\right),
+\]</div>
+</div>
+<p>where <span class="arithmatex">\(c_1,c_2\)</span> are the first two columns of <span class="arithmatex">\(M\)</span>.</p>
+<p>For eigenvalues and eigenspaces, note that the eigenvector condition <span class="arithmatex">\(F(X)=\lambda X\)</span> is equivalent to <span class="arithmatex">\(Au=\lambda u\ \text{and}\ Av=\lambda v\)</span>. Indeed, this holds since <span class="arithmatex">\(A(u \ v) = (Au \ Av)\)</span>, for a <span class="arithmatex">\(2\times 2\)</span> matrix with columns <span class="arithmatex">\(u,v\)</span>. So <span class="arithmatex">\(u,v\)</span> must be eigenvectors for <span class="arithmatex">\(A\)</span> (for some eigenvalue <span class="arithmatex">\(\lambda\)</span>). Now</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\chi_A(t)=\det(A-t\,\mathrm{id}_2)
+=\det\left ( \begin{array}{cc} -4-t&amp;8\\1&amp;-2-t \end{array} \right )
+=t(t+6),
+\]</div>
+</div>
+<p>so the eigenvalues of <span class="arithmatex">\(A\)</span> are <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(-6\)</span>. Therefore the eigenvalues of <span class="arithmatex">\(F\)</span> are also <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(-6\)</span>.</p>
+<p>For <span class="arithmatex">\(\lambda=0\)</span>, the eigenspace is exactly <span class="arithmatex">\(\ker F\)</span>, hence</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_0(F)
+=L\left(\left ( \begin{array}{cc} 2 &amp; 0 \\ 1 &amp; 0 \end{array} \right ),\left ( \begin{array}{cc} 0 &amp; 2 \\ 0 &amp; 1 \end{array} \right )\right)
+=L(2E_{11}+E_{21},\ 2E_{12}+E_{22}).
+\]</div>
+</div>
+<p>For <span class="arithmatex">\(\lambda=-6\)</span>, first compute</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_{-6}(A)=L\left(\left ( \begin{array}{c} -4\\1 \end{array} \right )\right).
+\]</div>
+</div>
+<p>Thus both columns of <span class="arithmatex">\(X\)</span> must belong to the 1-dimensional subspace of <span class="arithmatex">\(\mathbf R^2\)</span> spanned by this vector, so</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_{-6}(F)
+=L\left(\left ( \begin{array}{cc} -4 &amp; 0 \\ 1 &amp; 0 \end{array} \right ),\left ( \begin{array}{cc} 0 &amp; -4 \\ 0 &amp; 1 \end{array} \right )\right)
+=L(-4E_{11}+E_{21},\ -4E_{12}+E_{22}).
+\]</div>
+</div>
+<p>So, at the end of the computation, the eigenspaces of <span class="arithmatex">\(F\)</span> are explicitly</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+E_0(F)=L\left(\left ( \begin{array}{cc} 2 &amp; 0 \\ 1 &amp; 0 \end{array} \right ),\left ( \begin{array}{cc} 0 &amp; 2 \\ 0 &amp; 1 \end{array} \right )\right),
+\qquad
+E_{-6}(F)=L\left(\left ( \begin{array}{cc} -4 &amp; 0 \\ 1 &amp; 0 \end{array} \right ),\left ( \begin{array}{cc} 0 &amp; -4 \\ 0 &amp; 1 \end{array} \right )\right).
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.11</strong></p>
+<p><span id="sol-ex-eigenvalues-5-4-3" label="sol--ex:eigenvalues-5-4-3"></span> (See <a href="#ex-eigenvalues-5-4-3" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-4-3">Exercise 6.11</a>.) If <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> represent the same map, then <span class="arithmatex">\(A = PBP^{-1}\)</span> for some invertible matrix <span class="arithmatex">\(P\)</span>. By <a href="../determinants/#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>, this implies that <span class="arithmatex">\(\det A = \det P \det B \det P^{-1} = \det B\)</span>. In short, <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> have to have the same determinant. This is true: <span class="arithmatex">\(\det A = \det B = 9\)</span>.</p>
+<p>In addition, again by <a href="../determinants/#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>, <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> have to have the same characteristic polynomial:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\chi_A(t) &amp; = \det (A - t{\mathrm {id}}) \\
+&amp; = \det \left ( \begin{array}{ccc} 1-t &amp; 0 &amp; 2 \\ 0 &amp; 3-t &amp; 0 \\ 0 &amp; 0 &amp; 3-t \end{array} \right ) \\
+&amp; = (1-t)(3-t)^2 \\
+&amp; = \det (B-t{\mathrm {id}}) = \chi_B(t).
+\end{align*}
+\]</div>
+</div>
+<p>Again, this is true.</p>
+<p>Finally, the dimensions of the eigenspaces of the eigenvalues (<span class="arithmatex">\(1\)</span> and <span class="arithmatex">\(3\)</span>) need to be equal. For <span class="arithmatex">\(A\)</span>, the eigenspace <span class="arithmatex">\(E_{1, A}\)</span> for the eigenvalue <span class="arithmatex">\(\lambda = 1\)</span> has <span class="arithmatex">\(\dim E_{1,A} = 2\)</span> (as one computes!). For <span class="arithmatex">\(B\)</span> instead, <span class="arithmatex">\(\dim E_{1, B} = 1\)</span>. Therefore <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> do <em>not</em> represent the same linear map.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.12</strong></p>
+<p><span id="sol-ex-eigenvalues-5-4-4" label="sol--ex:eigenvalues-5-4-4"></span> (See <a href="#ex-eigenvalues-5-4-4" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-4-4">Exercise 6.12</a>.) The matrix <span class="arithmatex">\(A\)</span> has eigenvalues <span class="arithmatex">\(1\)</span> and <span class="arithmatex">\(2\)</span>. The eigenspaces are computed as <span class="arithmatex">\(E_1 = L(1,0,0)\)</span> and <span class="arithmatex">\(E_2 = L(1,1,0)\)</span>. Their dimensions sum up to 2, which is strictly less than 3, so that <span class="arithmatex">\(A\)</span> is <em>not</em> diagonalizable.</p>
+<p>The matrix <span class="arithmatex">\(A^2\)</span> therefore has <span class="arithmatex">\(2^2 = 4\)</span> as an eigenvalue. Since similar matrices have the same eigenvalues (<a href="#prop-similarity-necessary-conditions" data-reference-type="ref+Label" data-reference="prop:similarity-necessary-conditions">Proposition 6.24</a>), <span class="arithmatex">\(A\)</span> is <em>not</em> similar to <span class="arithmatex">\(A^2\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.13</strong></p>
+<p><span id="sol-ex-eigenvalues-5-5" label="sol--ex:eigenvalues-5-5"></span> (See <a href="#ex-eigenvalues-5-5" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-5">Exercise 6.13</a>.) We first check that <span class="arithmatex">\(v_1, v_2, v_3\)</span> are a basis of <span class="arithmatex">\({\bf R}^3\)</span>. Indeed, one can compute</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\det \left ( \begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 2 \end{array} \right ) = 1 \ne 0,
+\]</div>
+</div>
+<p>so the rank is 3 and the vectors do form a basis.</p>
+<p>The condition that <span class="arithmatex">\(v_3\)</span> be an eigenvector for the eigenvalue 4 means <span class="arithmatex">\(f(v_3) = 4v_3 = (4,4,8)\)</span>. Acccording to <a href="../maps/#prop-linear-map-defined-on-basis" data-reference-type="ref+Label" data-reference="prop:linear-map-defined-on-basis">Proposition 4.39</a>, there is a unique linear map <span class="arithmatex">\(f\)</span> whose value on <span class="arithmatex">\(v_1, v_2, v_3\)</span> is prescribed.</p>
+<p>We now compute <span class="arithmatex">\(A\)</span>. We have to express <span class="arithmatex">\(f(v_i)\)</span> as a linear combination in terms of <span class="arithmatex">\(v_1, v_2, v_3\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+f(v_1) &amp; = (0,0,0) = 0 v_1 + 0v_2 + 0v_3 \\
+f(v_2) &amp; = (1,0,3) = a v_1 + bv_2+cv_3 \\
+f(v_3) &amp; = (4,4,8) = 0 v_1 + 0v_2 + 4 v_3.
+\end{align*}
+\]</div>
+</div>
+<p>We compute <span class="arithmatex">\(a,b,c\)</span> above by solving the system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(1,0,3) = (a+b+c, b+c, a+b+2c).
+\]</div>
+</div>
+<p>Thus <span class="arithmatex">\(b=-c\)</span>, <span class="arithmatex">\(1=a\)</span> and then <span class="arithmatex">\(c=2\)</span>. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{ccc} 0 &amp; 1 &amp; 0 \\ 0 &amp; -2 &amp; 0 \\ 0 &amp; 2 &amp; 4 \end{array} \right ).
+\]</div>
+</div>
+<p>In order to compute <span class="arithmatex">\(B\)</span> we could use the base change matrix, but it is also possible to compute <span class="arithmatex">\(B\)</span> directly. We will express the standard basis vectors <span class="arithmatex">\((1,0,0)\)</span> as a linear combination of the <span class="arithmatex">\(v_1, v_2, v_3\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+av_1 +bv_2 +cv_3 
+&amp; = a(1,0,1)  + b(1,1,1)+c(1,1,2) \\
+&amp; =(a+b+c,b+c,a+b+2c).
+\end{align*}
+\]</div>
+</div>
+<p>Thus, the equation <span class="arithmatex">\((1,0,0) = av_1+bv_2 +cv_3\)</span> amounts to the linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+1 &amp; = a+b+c \\
+0 &amp;= b+c \\
+0 &amp;= a+b+2c
+\end{align*}
+\]</div>
+</div>
+<p>One solves this: <span class="arithmatex">\(a=1\)</span>, <span class="arithmatex">\(b=1\)</span>, <span class="arithmatex">\(c=-1\)</span>. Similarly, one solves the linear system <span class="arithmatex">\((0,1,0) = av_1+bv_2+cv_3\)</span>. Its solution is <span class="arithmatex">\(a=-1\)</span>, <span class="arithmatex">\(b=1\)</span>, <span class="arithmatex">\(c=0\)</span>. Finally, for <span class="arithmatex">\((0,0,1)=av_1+bv_2+cv_3\)</span> one gets the solution <span class="arithmatex">\(a=0\)</span>, <span class="arithmatex">\(b=-1\)</span>, <span class="arithmatex">\(c=1\)</span>.</p>
+<p>Thus, since <span class="arithmatex">\(f\)</span> is linear (this is the key point!, cf. <a href="../maps/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>), we have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+f(1,0,0) &amp; = f(v_1+v_2-v_3) \\
+&amp; = f(v_1) +f(v_2)-f(v_3) \\
+&amp;= (0,0,0)+(1,0,3)-4(1,1,2) \\
+&amp;=(-3,-4,-5).
+\end{align*}
+\]</div>
+</div>
+<p>Likewise</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+f(0,1,0) &amp;= f(-v_1+v_2) = -f(v_1)+f(v_2) = (1,0,3) \\
+f(0,0,1)&amp; =f(-v_2+v_3) = -f(v_2)+f(v_3) = (3,4,5) \\
+\end{align*}
+\]</div>
+</div>
+<p>Therefore (writing <span class="arithmatex">\(f(1,0,0)\)</span> as the first column etc.), we get</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+B = \left ( \begin{array}{ccc} -3 &amp; 1 &amp; 3 \\ -4 &amp; 0 &amp; 4 \\ -5 &amp; 3 &amp; 5 \end{array} \right ).
+\]</div>
+</div>
+<p>The vector <span class="arithmatex">\(v_t\)</span> belongs to the image precisely if is a linear combination of the vectors <span class="arithmatex">\(f(v_1) = 0\)</span>, <span class="arithmatex">\(f(v_2)=(1,0,3)\)</span> and <span class="arithmatex">\(f(v_3) = (4,4,8)\)</span>. This translates into the linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+a+3b &amp; = 2\\
+4b&amp;=t\\
+3a+5b&amp;= 5.
+\end{align*}
+\]</div>
+</div>
+<p>One solves the first and third equation to <span class="arithmatex">\(a = \frac 54\)</span>, <span class="arithmatex">\(b=\frac 14\)</span>. Therefore, the system has a solution precisely if <span class="arithmatex">\(t=1\)</span>. (Alternatively, one may also solve the linear system <span class="arithmatex">\(B \left ( \begin{array}{c} x \\ y \\ z \end{array} \right ) = \left ( \begin{array}{c} 2 \\ t \\ 5 \end{array} \right )\)</span>.)</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.14</strong></p>
+<p><span id="sol-ex-eigenvalues-5-7" label="sol--ex:eigenvalues-5-7"></span> (See <a href="#ex-eigenvalues-5-7" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-7">Exercise 6.14</a>.) By <a href="../determinants/#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>, <span class="arithmatex">\(A\)</span> is invertible precisely iff <span class="arithmatex">\(\det A = 0\)</span>. We compute the determinant, for example using Sarrus’ rule (<a href="../determinants/#lem-sarrus-rule" data-reference-type="ref+Label" data-reference="lem:Sarrus-rule">Lemma 5.11</a>), as <span class="arithmatex">\(\det A = 0 - 24 + 6t-10t -0+30 = 6-4t\)</span>. Thus, the condition <span class="arithmatex">\(\det A = 6-4t = 0\)</span> amounts to <span class="arithmatex">\(t = \frac 32\)</span>. The matrix <span class="arithmatex">\(A\)</span> is therefore not invertible precisely if <span class="arithmatex">\(t = \frac 32\)</span>.</p>
+<p>We compute the eigenvalues of <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 0 &amp; 2 &amp; 2 \\ -3 &amp; -5 &amp; 6 \\ -2 &amp; -2 &amp; 5 \end{array} \right )\)</span> by computing its characteristic polynomial. It is given by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\chi_A(t) &amp; = t(5+t)(5-t)-24+12+4(-5-t)-12t+6(5-t) \\
+&amp; = -t^3 + 3t-2.
+\end{align*}
+\]</div>
+</div>
+<p>One zero of this polynomial is <span class="arithmatex">\(t = 1\)</span>. Dividing the above polynomial by <span class="arithmatex">\(t-1\)</span> gives <span class="arithmatex">\(-t^2 -t+2\)</span>, which has zeroes 1 and <span class="arithmatex">\(-2\)</span>, respectively. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\chi_A(t) = -(t-1)^2 (t+2).
+\]</div>
+</div>
+<p>The eigenvalues of <span class="arithmatex">\(A\)</span> are therefore <span class="arithmatex">\(\lambda = 1\)</span> and <span class="arithmatex">\(\lambda = -2\)</span>.</p>
+<p>We compute the eigenspaces by bringing <span class="arithmatex">\(A - \lambda {\mathrm {id}}\)</span> into row echelon form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+A - (-2) {\mathrm {id}} &amp; = \left ( \begin{array}{ccc} 2 &amp; 2 &amp; 2 \\ -3 &amp; -3 &amp; 6 \\ -2 &amp; -2 &amp; 3 \end{array} \right ) \leadsto \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -2 \\ 2 &amp; 2 &amp; -3 \end{array} \right ) \\
+&amp; \leadsto \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 \end{array} \right ) \leadsto \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>This matrix has rank 2, and its kernel is thus 1-dimensional. It is spanned by <span class="arithmatex">\((1,-1,0)\)</span>. Similarly</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+A - {\mathrm {id}} &amp; = \left ( \begin{array}{ccc} -1 &amp; 2 &amp; 2 \\ -3 &amp; -3 &amp; 6 \\ -2 &amp; -2 &amp; 4 \end{array} \right ) \leadsto \left ( \begin{array}{ccc} 1 &amp; -2 &amp; -2 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array} \right ) \\
+&amp; \leadsto \left ( \begin{array}{ccc} 1 &amp; 0 &amp; -2 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>This again has rank 2, so that the eigenspace <span class="arithmatex">\(E_1\)</span> is again 1-dimensional. It is spanned by <span class="arithmatex">\((2,0,1)\)</span>.</p>
+<p>Since <span class="arithmatex">\(v =(2,0,a)\)</span> was requested to be an eigenvector, it will be in one of the two eigenspaces. One sees it must lie in <span class="arithmatex">\(E_1\)</span>, and <span class="arithmatex">\((2,0,a)\)</span> lies in <span class="arithmatex">\(E_1\)</span> precisely if <span class="arithmatex">\(a=1\)</span>. Thus <span class="arithmatex">\(v=(2,0,1)\)</span>, and its eigenvalue is 1.</p>
+<p>The matrix <span class="arithmatex">\(A\)</span> is not diagonalizable, since <span class="arithmatex">\(\dim E_2 + \dim E_1 = 2 &lt; 3\)</span>.</p>
+<p>The matrix <span class="arithmatex">\(A\)</span> is not similar to <span class="arithmatex">\(A^2\)</span> since similar matrices have the same determinant. Above we computed <span class="arithmatex">\(\det A = 6-4t\)</span>, so for <span class="arithmatex">\(t = 2\)</span> we have <span class="arithmatex">\(\det A = -2\)</span>, so that <span class="arithmatex">\(\det A^2 = (-2)^2 = 4 \ne \det A\)</span>.</p>
+<p>These computations can also be performed using any computer algebra software such as Wolfram Alpha:</p>
+<ul>
+<li>
+<p><a href="https://www.wolframalpha.com/input?i=Characteristic+polynomial+%28%280%2C2%2C2%29%2C%28-3%2C-5%2C6%29%2C%28-2%2C-2%2C5%29%29">https://www.wolframalpha.com/input?i=Characteristic+polynomial+%28%280%2C2%2C2%29%2C%28-3%2C-5%2C6%29%2C%28-2%2C-2%2C5%29%29</a> (characteristic polynomial)</p>
+</li>
+<li>
+<p><a href="https://www.wolframalpha.com/input?i=Ker+%28+%28%280%2C2%2C2%29%2C%28-3%2C-5%2C6%29%2C%28-2%2C-2%2C5%29%29+-+%28%281%2C0%2C0%29%2C%280%2C1%2C0%29%2C%280%2C0%2C1%29%29%29">https://www.wolframalpha.com/input?i=Ker+%28+%28%280%2C2%2C2%29%2C%28-3%2C-5%2C6%29%2C%28-2%2C-2%2C5%29%29+-+%28%281%2C0%2C0%29%2C%280%2C1%2C0%29%2C%280%2C0%2C1%29%29%29</a> (eigenspace)</p>
+</li>
+</ul>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.15</strong></p>
+<p><span id="sol-ex-eigenvalues-5-9" label="sol--ex:eigenvalues-5-9"></span> (See <a href="#ex-eigenvalues-5-9" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-9">Exercise 6.15</a>.) The kernel of <span class="arithmatex">\(A\)</span> is different from <span class="arithmatex">\(\{0\}\)</span> precisely if <span class="arithmatex">\(A\)</span> is not invertible or, equivalently, if <span class="arithmatex">\(\det A = 0\)</span>. For example using Sarrus’ rule (<a href="../determinants/#lem-sarrus-rule" data-reference-type="ref+Label" data-reference="lem:Sarrus-rule">Lemma 5.11</a>), we have <span class="arithmatex">\(\det A = 2t-6\)</span>, so <span class="arithmatex">\(t = 3\)</span>.</p>
+<p>For <span class="arithmatex">\(t=3\)</span>, we have <span class="arithmatex">\(\chi_A(t) = -t^3+6t^2-8t = -t(t^2-6t+8) = -t(t-2)(t-4)\)</span>. The eigenvalues are then 0, 2 and 4.</p>
+<p>The eigenspaces are <span class="arithmatex">\(E_0 = \ker A = L(1,-5,2)\)</span>, <span class="arithmatex">\(E_2 = \ker (A-2{\mathrm {id}}) = L(1,1,0)\)</span> and <span class="arithmatex">\(E_4 = \ker (A-4{\mathrm {id}}) = L(-1,1,2)\)</span>. The matrix <span class="arithmatex">\(P = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; -1 \\ -5 &amp; 1 &amp; 1 \\ 2 &amp; 0 &amp; 2 \end{array} \right )\)</span> (whose columns are the three eigenvectors comprising an eigenbasis) is then such that <span class="arithmatex">\(PAP^{-1} = \left ( \begin{array}{ccc} 0 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 4 \end{array} \right )\)</span>.</p>
+<p>If <span class="arithmatex">\(B\)</span> satisfies <span class="arithmatex">\(\chi_B(t)=\chi_A(t)=-t(t-2)(t-4)\)</span>, its eigenvalues are 0, 2 and 4. These are 3 distinct eigenvalues (i.e., equal to the size of the matrix), so <span class="arithmatex">\(B\)</span> is diagonalizable.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 6.6.16</strong></p>
+<p><span id="sol-ex-eigenvalues-5-10" label="sol--ex:eigenvalues-5-10"></span> (See <a href="#ex-eigenvalues-5-10" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-10">Exercise 6.16</a>.) We compute <span class="arithmatex">\(\det A = -4t-2\)</span>, this is 0 precisely if <span class="arithmatex">\(t=-\frac 12\)</span>. Thus, <span class="arithmatex">\(A\)</span> is non-invertible for <span class="arithmatex">\(t=-\frac 12\)</span> and invertible otherwise.</p>
+<p>We compute the characteristic polynomial. It is helpful to develop the determinant of <span class="arithmatex">\(A - \lambda {\mathrm {id}}\)</span> along the second column (<a href="../determinants/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), since there are two 0’s in this column, simplifying the formula:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\det (A-\lambda {\mathrm {id}}) &amp; = (2-\lambda) \det \left ( \begin{array}{cc} 1-\lambda &amp; t \\ 2 &amp; -1-\lambda \end{array} \right ) \\
+&amp; = (2-\lambda)(\lambda^2 - 2t - 1).
+\end{align*}
+\]</div>
+</div>
+<p>The eigenvalues of <span class="arithmatex">\(A\)</span> are therefore <span class="arithmatex">\(\lambda_1 = 2\)</span> and <span class="arithmatex">\(\lambda_{2/3} = \pm \sqrt{2t+1}\)</span>. The latter two eigenvalues are real numbers precisely if <span class="arithmatex">\(2t+1 \ge 0\)</span>, i.e., if <span class="arithmatex">\(t \ge -\frac 12\)</span>.</p>
+<p>An eigenvalue appears with multiplicity 2 in the above characteristic polynomial precisely if either <span class="arithmatex">\(2t+1=0\)</span> (so that <span class="arithmatex">\(\lambda_2=\lambda_3\)</span>), i.e., <span class="arithmatex">\(t=-\frac 12\)</span>, or if <span class="arithmatex">\(\sqrt{2t+1} = 2\)</span>, i.e., if <span class="arithmatex">\(t=\frac 32\)</span>.</p>
+<p>For <span class="arithmatex">\(t=-\frac 12\)</span>, we compute the eigenspaces for the eigenvalues <span class="arithmatex">\(\lambda_1 = 2\)</span> and <span class="arithmatex">\(\lambda_2 = 0\)</span>. These are both 1-dimensional, respectively given by <span class="arithmatex">\(E_2 = L(0,1,0)\)</span> and <span class="arithmatex">\(E_0 = L(2,-3,4)\)</span>. The sum of their dimensions is 2, which is less than 3, so <span class="arithmatex">\(A\)</span> is not diagonalizable (<a href="#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>).</p>
 </div>
 
 

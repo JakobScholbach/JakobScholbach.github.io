@@ -11,10 +11,6 @@
       
       
       
-        <link rel="prev" href="../appendix/">
-      
-      
-        <link rel="next" href="../solutions-systems-of-linear-equations/">
       
       
         
@@ -25,7 +21,7 @@
     
     
       
-        <title>Complex numbers - Linear Algebra Wiki</title>
+        <title>Systems elementary operations - Linear Algebra Wiki</title>
       
     
     
@@ -67,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#title-systems-elementary-operations" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -99,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Complex numbers
+              Systems elementary operations
             
           </span>
         </div>
@@ -435,20 +436,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
           <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
@@ -469,7 +468,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -484,17 +483,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../solutions-complex-numbers/" class="md-nav__link">
         
   
   
@@ -510,7 +502,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -709,6 +700,36 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#title-systems-elementary-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        title: Systems: Elementary Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementary-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elementary operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -724,91 +745,122 @@
 
 
 
-  <h1>Complex numbers</h1>
-
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.1</strong></p>
-<p><span id="sol-ex-complex-1" label="sol--ex:complex-1"></span> (See <a href="../c/#ex-complex-1" data-reference-type="ref+Label" data-reference="ex:complex-1">Exercise 1.4</a>.) We have <span class="arithmatex">\(\frac{i-1}{i+1} = \frac{(i-1)\overline{i+1}}{|i+1|^2} = \frac{(i-1)(1-i)}{2} = i\)</span>. Thus <span class="arithmatex">\(z=i^3 = -i\)</span> is the algebraic form. We have <span class="arithmatex">\(|z|=1\)</span> and <span class="arithmatex">\({\mathrm {arg}} z = \frac 32 \pi\)</span>, so</p>
+<hr />
+<h2 id="title-systems-elementary-operations">title: Systems: Elementary Operations<a class="headerlink" href="#title-systems-elementary-operations" title="Permanent link">&para;</a></h2>
+<h1 id="elementary-operations">Elementary operations<a class="headerlink" href="#elementary-operations" title="Permanent link">&para;</a></h1>
+<p>The combination of geometric intuition with algebraic computations is very useful. However, the former is of limited use when it comes to systems with three variables, and hardly useful anymore for systems involving four or more variables. We will therefore develop notions and techniques that enable us to handle linear systems more systematically.</p>
+<div class="definition">
+<p class="env-number"><strong>Definition 2.15</strong></p>
+<p><span id="def-systems-definition-004" label="def:systems-definition-004"></span> We say that two linear systems are <em>equivalent</em> if they have the same solution sets.</p>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 2.16</strong></p>
+<p><span id="ex-systems-example-005" label="ex:systems-example-005"></span> In <a href="../systems-linear-systems/#ex-system-2-unique" data-reference-type="ref+Label" data-reference="ex:system-2-unique">Example 2.8</a>, we considered the system</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-z = \cos(\frac 32 \pi) + i \sin \frac 32 \pi.
+\begin{align*}
+x+y &amp; = 4 \\
+x-y &amp; =1
+\end{align*}
+\]</div>
+</div>
+<p>and found that it has a unique solution, namely</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(x = \frac 5 2, y = \frac 3 2).
+\]</div>
+</div>
+<p>Thus the previous system is equivalent to the system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x&amp;=\frac 5 2 \\
+y&amp;=\frac 3 2.
+\end{align*}
 \]</div>
 </div>
 </div>
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.2</strong></p>
-<p><span id="sol-ex-complex-2" label="sol--ex:complex-2"></span> (See <a href="../c/#ex-complex-2" data-reference-type="ref+Label" data-reference="ex:complex-2">Exercise 1.5</a>.) In order to solve</p>
+<p>Of course, in comparison to the original system, the latter system is much easier to understand, since one can simply read off the solution without any effort. The purpose of elementary operations is to transform a given system into an equivalent system of which the solutions can be read off.</p>
+<div class="definition">
+<p class="env-number"><strong>Definition 2.17</strong></p>
+<p><span id="def-elementary-operations-system" label="def:elementary-operations-system"></span> Given a linear system, the following operations are called <em>elementary operations</em>:</p>
+<ol>
+<li>
+<p><span id="item-change" label="item--change"></span> interchange two equations,</p>
+</li>
+<li>
+<p><span id="item-multiply" label="item--multiply"></span> multiply one equation by a <em>non-zero</em> (!) number,</p>
+</li>
+<li>
+<p><span id="item-add" label="item--add"></span> add a multiple of one equation to a <em>different</em> (!) equation.</p>
+</li>
+</ol>
+</div>
+<p>These operations are called “elementary” since they are so simple to perform. Their utility comes partly from the following fact:</p>
+<div class="theorem">
+<p class="env-number"><strong>Theorem 2.18</strong></p>
+<p><span id="thm-elementary-equivalent" label="thm:elementary-equivalent"></span> Consider a linear system. This linear system is equivalent to (i.e., has the same solutions as) any linear system obtained by performing any number of elementary operations.</p>
+</div>
+<p>This theorem, which we will prove later on (<a href="../maps/#cor-equivalent-systems" data-reference-type="ref+Label" data-reference="cor:equivalent-systems">Corollary 4.77</a>) when we have more tools at our disposal may sound a little abstract at first sight. It is however actually simple to comprehend and, very importantly, extremely useful in practice.</p>
+<div class="example">
+<p class="env-number"><strong>Example 2.19</strong></p>
+<p><span id="ex-example-elementary-operations" label="ex:example-elementary-operations"></span> Consider the system</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-z = 3i |z|\overline z
+\begin{align*}
+x + 2z &amp; = -1 \\
+-2x - 3z &amp; = 1 \\
+2 y &amp; = -2.\\
+\end{align*}
 \]</div>
 </div>
-<p>we would like to divide by <span class="arithmatex">\(z\)</span>. This is only possible if <span class="arithmatex">\(z \ne 0\)</span>, so we first consider the case <span class="arithmatex">\(z = 0\)</span>. In this case both sides of the equation are equal to 0, so <span class="arithmatex">\(z=0\)</span> is indeed a solution. Now, we consider <span class="arithmatex">\(z \ne 0\)</span> and divide the above equation by <span class="arithmatex">\(z\)</span> and obtain</p>
+<p>We add twice the first equation to the second (elementary operation <a href="#item-add" data-reference-type="ref" data-reference="item--add">3.</a>):</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-1 = 3i |z| \frac{\overline z}z.
+\begin{align*}
+x + 2z &amp; = -1 \\
+z &amp; = -1 \\
+2 y &amp; = -2.\\
+\end{align*}
 \]</div>
 </div>
-<p>There are different ways to solve this equation. One may put <span class="arithmatex">\(z = a+ib\)</span> and solve the resulting quadratic equation. For illustrational purposes, we rather consider the trigonometric form <span class="arithmatex">\(z = r (\cos \alpha + i \sin \alpha)\)</span>. Then <span class="arithmatex">\(\overline z = r (\cos \alpha - i \sin \alpha) = r (\cos (-\alpha) + i \sin (-\alpha))\)</span>, and</p>
+<p>We interchange the second and third equation (elementary operation <a href="#item-change" data-reference-type="ref" data-reference="item--change">1.</a>):</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-|z| \frac{\overline z}z = r \frac{r (\cos (-\alpha) + i \sin (-\alpha))}{r (\cos (\alpha) + i \sin (\alpha))}.
+\begin{align*}
+x + 2z &amp; = -1 \\
+2 y &amp; = -2\\
+z &amp; = -1. \\
+\end{align*}
 \]</div>
 </div>
-<p>Note that <span class="arithmatex">\(r = |z| \ne 0\)</span>, so we can cancel this in the right-hand fraction. We have</p>
+<p>We multiply the second equation by <span class="arithmatex">\(\frac 1 2\)</span> (in other words, we divide it by 2; elementary operation <a href="#item-multiply" data-reference-type="ref" data-reference="item--multiply">2.</a>):</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-\frac{\cos (-\alpha) + i \sin (-\alpha)}{\cos (\alpha) + i \sin (\alpha)} = \cos(-2\alpha) + i \sin(-2\alpha).
+\begin{align*}
+x + 2z &amp; = -1 \\
+ y &amp; = -1\\
+z &amp; = -1. \\
+\end{align*}
 \]</div>
 </div>
-<p>We then obtain</p>
+<p>We add <span class="arithmatex">\((-2)\)</span> times the third equation to the first (elementary operation <a href="#item-add" data-reference-type="ref" data-reference="item--add">3.</a>)</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-\frac 1{3i} = -\frac 13 i = |z| \frac{\overline z}z = r (\cos(-2\alpha) + i \sin(-2\alpha)).
+\begin{align*}
+x &amp; = 1 \\
+ y &amp; = -1\\
+z &amp; = -1. \\
+\end{align*}
 \]</div>
 </div>
-<p>This implies <span class="arithmatex">\(r = \frac 13\)</span>. Concerning the arguments, we have to be more careful: the above equation is equivalent to saying that</p>
+<p>These steps are combinations of elementary operations. According to <a href="#thm-elementary-equivalent" data-reference-type="ref+Label" data-reference="thm:elementary-equivalent">Theorem 2.18</a>, the original system is equivalent (i.e., has the same solutions) as the final one. The benefit is, of course, that the solutions of the final system are trivial to comprehend: it has exactly one solution, the triple</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
--2 \alpha \equiv \frac 32 \pi \mod 2 \pi
+(x = 1, y = -1, z = -1).
 \]</div>
 </div>
-<p>cf. around <a href="../c/#eq-mod-2pi" data-reference-type="eqref" data-reference="eq:mod-2pi">Equation (1.6)</a>. There are two solutions: <span class="arithmatex">\(-2 \alpha = \frac 32 \pi\)</span> or <span class="arithmatex">\(- 2\alpha = \frac 32 \pi + 2 \pi\)</span>. The former yields <span class="arithmatex">\(\alpha = -\frac 34 \pi\)</span>, the latter <span class="arithmatex">\(\alpha = \frac \pi 4\)</span>. (Of course, we can now add integer multiples of <span class="arithmatex">\(2\pi\)</span> to these values of <span class="arithmatex">\(\alpha\)</span>, so <span class="arithmatex">\(\alpha = \frac 54 \pi\)</span> is another solution. However, this gives the same value for <span class="arithmatex">\(z\)</span>.) The resulting solutions are</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z = \frac 1 3 (\cos(-\frac 34 \pi) + i \sin (-\frac 34 \pi))
-\]</div>
-</div>
-<p>and</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z = \frac 1 3 (\cos(\frac 14 \pi) + i \sin (\frac 14 \pi)).
-\]</div>
-</div>
-<p>To sum up, the above equation has three solutions, <span class="arithmatex">\(z = 0\)</span> and these two solutions.</p>
-</div>
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.3</strong></p>
-<p><span id="sol-ex-complex-3" label="sol--ex:complex-3"></span> (See <a href="../c/#ex-complex-3" data-reference-type="ref+Label" data-reference="ex:complex-3">Exercise 1.6</a>.) There are three solutions, namely</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_0 = \sqrt 3 - i = 2 (\cos (-\pi/6) + i \sin(-\pi/6)),
-\]</div>
-</div>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_1 = -\sqrt 3 - i = 2 (\cos (-5\pi/6) + i \sin(-5\pi/6)),
-\]</div>
-</div>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_2 = 2i = 2 (\cos (-3\pi/2) + i \sin(-3\pi/2)).
-\]</div>
-</div>
-<p>Here is a picture:</p>
-<div class="center">
-<p><img alt="image" src="../figures/png/solutions/solutions-fig-01.png" /></p>
-</div>
+<p>Thus, the original system also has exactly that one solution.</p>
 </div>
 
 

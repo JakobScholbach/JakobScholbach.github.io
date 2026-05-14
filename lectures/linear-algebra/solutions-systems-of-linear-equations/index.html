@@ -727,8 +727,8 @@
   <h1>Systems of linear equations</h1>
 
 <div class="solution">
-<p class="env-number"><strong>Solution C.2.1</strong></p>
-<p><span id="sol-ueb-equation-no-solutions" label="sol--ueb:equation-no-solutions"></span> (See <a href="../systems/#ueb-equation-no-solutions" data-reference-type="ref+Label" data-reference="ueb:equation-no-solutions">Exercise 2.6</a>.) If <span class="arithmatex">\(a \ne 0\)</span> <em>or</em> <span class="arithmatex">\(b \ne 0\)</span>, then the equation <span class="arithmatex">\(ax+by = c\)</span> has infinitely many solutions. Indeed, if, say <span class="arithmatex">\(a \ne 0\)</span>, we can subtract <span class="arithmatex">\(by\)</span> and divide by <span class="arithmatex">\(a\)</span>, which gives <span class="arithmatex">\(x = \frac{c-by}a\)</span>. Thus, for any <span class="arithmatex">\(y \in {\bf R}\)</span>, the pair <span class="arithmatex">\((x=\frac{c-by}a, y)\)</span> is a solution. A similar analysis works if <span class="arithmatex">\(b \ne 0\)</span>. It remains to consider the case in which <span class="arithmatex">\(a=0\)</span> and <span class="arithmatex">\(b=0\)</span>. In this case the solution set of the equation depends on <span class="arithmatex">\(c\)</span>:</p>
+<p class="env-number"><strong>Solution 2.7.1</strong></p>
+<p><span id="sol-ex-equation-no-solutions" label="sol--ex:equation-no-solutions"></span> (See <a href="../systems-gaussian-elimination/#ex-equation-no-solutions" data-reference-type="ref+Label" data-reference="ex:equation-no-solutions">Exercise 2.6</a>.) If <span class="arithmatex">\(a \ne 0\)</span> <em>or</em> <span class="arithmatex">\(b \ne 0\)</span>, then the equation <span class="arithmatex">\(ax+by = c\)</span> has infinitely many solutions. Indeed, if, say <span class="arithmatex">\(a \ne 0\)</span>, we can subtract <span class="arithmatex">\(by\)</span> and divide by <span class="arithmatex">\(a\)</span>, which gives <span class="arithmatex">\(x = \frac{c-by}a\)</span>. Thus, for any <span class="arithmatex">\(y \in {\bf R}\)</span>, the pair <span class="arithmatex">\((x=\frac{c-by}a, y)\)</span> is a solution. A similar analysis works if <span class="arithmatex">\(b \ne 0\)</span>. It remains to consider the case in which <span class="arithmatex">\(a=0\)</span> and <span class="arithmatex">\(b=0\)</span>. In this case the solution set of the equation depends on <span class="arithmatex">\(c\)</span>:</p>
 <ul>
 <li>
 <p>If <span class="arithmatex">\(c = 0\)</span>, then <em>any</em> pair <span class="arithmatex">\((x,y)\)</span> is a solution. Indeed: <span class="arithmatex">\(0 x + 0y= 0\)</span> holds true then. Thus, if <span class="arithmatex">\(a=b=c=0\)</span>, there are infinitely many solutions.</p>
@@ -739,8 +739,8 @@
 </ul>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution C.2.2</strong></p>
-<p><span id="sol-ueb-systems-1-a" label="sol--ueb:systems-1-a"></span> (See <a href="../systems/#ueb-systems-1-a" data-reference-type="ref+Label" data-reference="ueb:systems-1-a">Exercise 2.10</a>.) The matrix associated to the system is as follows, and we bring it to reduced row echelon form:</p>
+<p class="env-number"><strong>Solution 2.7.2</strong></p>
+<p><span id="sol-ex-systems-1-a" label="sol--ex:systems-1-a"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-a" data-reference-type="ref+Label" data-reference="ex:systems-1-a">Exercise 2.10</a>.) The matrix associated to the system is as follows, and we bring it to reduced row echelon form:</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
@@ -761,14 +761,14 @@
 </div>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution C.2.3</strong></p>
-<p><span id="sol-ueb-systems-1-b" label="sol--ueb:systems-1-b"></span> (See <a href="../systems/#ueb-systems-1-b" data-reference-type="ref+Label" data-reference="ueb:systems-1-b">Exercise 2.12</a>.) We apply <a href="../systems/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>. The matrix associated to the system is</p>
+<p class="env-number"><strong>Solution 2.7.3</strong></p>
+<p><span id="sol-ex-systems-1-b" label="sol--ex:systems-1-b"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-b" data-reference-type="ref+Label" data-reference="ex:systems-1-b">Exercise 2.12</a>.) We apply <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>. The matrix associated to the system is</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \left ( \begin{array}{cccc|c} 1 &amp; -1 &amp; 1 &amp; 0 &amp; -2 \\ 0 &amp; 0 &amp; 1 &amp; -1 &amp; 1 \\ 1 &amp; -1 &amp; 0 &amp; 1 &amp; -3 \\ 1 &amp; -1 &amp; 3 &amp; -2 &amp; 0 \end{array} \right ).
 \]</div>
 </div>
-<p>We compute the reduced row-echelon form of that matrix using Gaussian eliminiation (<a href="../systems/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>): we subtract the first row from the third, which gives</p>
+<p>We compute the reduced row-echelon form of that matrix using Gaussian eliminiation (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>): we subtract the first row from the third, which gives</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \left ( \begin{array}{cccc|c} 1 &amp; -1 &amp; 1 &amp; 0 &amp; -2 \\ 0 &amp; 0 &amp; 1 &amp; -1 &amp; 1 \\ 0 &amp; 0 &amp; -1 &amp; 1 &amp; -1 \\ 1 &amp; -1 &amp; 3 &amp; -2 &amp; 0 \end{array} \right ).
@@ -815,12 +815,12 @@ x_1 -\alpha + \beta &amp; = -3
 </div>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution C.2.4</strong></p>
-<p><span id="sol-ueb-systems-1-c" label="sol--ueb:systems-1-c"></span> (See <a href="../systems/#ueb-systems-1-c" data-reference-type="ref+Label" data-reference="ueb:systems-1-c">Exercise 2.14</a>.) Hint: we will apply Gaussian elimination, but it simplifies the calculations to do a certain change of rows first. (Why is that allowed?)</p>
+<p class="env-number"><strong>Solution 2.7.4</strong></p>
+<p><span id="sol-ex-systems-1-c" label="sol--ex:systems-1-c"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-c" data-reference-type="ref+Label" data-reference="ex:systems-1-c">Exercise 2.14</a>.) Hint: we will apply Gaussian elimination, but it simplifies the calculations to do a certain change of rows first. (Why is that allowed?)</p>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution C.2.5</strong></p>
-<p><span id="sol-ueb-systems-1-d" label="sol--ueb:systems-1-d"></span> (See <a href="../systems/#ueb-systems-1-d" data-reference-type="ref+Label" data-reference="ueb:systems-1-d">Exercise 2.17</a>.) Suppose <span class="arithmatex">\(x_1 = 1-t\)</span>, <span class="arithmatex">\(x_2 = 2+3t\)</span> and <span class="arithmatex">\(x_3 = 4t\)</span>. We have to determine whether there is some <span class="arithmatex">\(t\in {\bf R}\)</span> such that for these choices of <span class="arithmatex">\(x_1, x_2, x_3\)</span>, we have a solution of the given system, i.e., whether</p>
+<p class="env-number"><strong>Solution 2.7.5</strong></p>
+<p><span id="sol-ex-systems-1-d" label="sol--ex:systems-1-d"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-d" data-reference-type="ref+Label" data-reference="ex:systems-1-d">Exercise 2.17</a>.) Suppose <span class="arithmatex">\(x_1 = 1-t\)</span>, <span class="arithmatex">\(x_2 = 2+3t\)</span> and <span class="arithmatex">\(x_3 = 4t\)</span>. We have to determine whether there is some <span class="arithmatex">\(t\in {\bf R}\)</span> such that for these choices of <span class="arithmatex">\(x_1, x_2, x_3\)</span>, we have a solution of the given system, i.e., whether</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
@@ -841,8 +841,8 @@ x_1 - x_3 &amp; = 1-t-4t &amp; = 0.
 <p>This system has no solutions, so there is no <span class="arithmatex">\(t \in {\bf R}\)</span> such that the vector <span class="arithmatex">\((1-t, 2+3t, 4t)\)</span> is a solution to the original system.</p>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution C.2.6</strong></p>
-<p><span id="sol-ueb-systems-1-e" label="sol--ueb:systems-1-e"></span> (See <a href="../systems/#ueb-systems-1-e" data-reference-type="ref+Label" data-reference="ueb:systems-1-e">Exercise 2.19</a>.) We substitute <span class="arithmatex">\(x_1 = 1+t\)</span>, <span class="arithmatex">\(x_2 = t+q\)</span> and <span class="arithmatex">\(x_3 = -t+2q+1\)</span> into the given equation and get the equation</p>
+<p class="env-number"><strong>Solution 2.7.6</strong></p>
+<p><span id="sol-ex-systems-1-e" label="sol--ex:systems-1-e"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-e" data-reference-type="ref+Label" data-reference="ex:systems-1-e">Exercise 2.19</a>.) We substitute <span class="arithmatex">\(x_1 = 1+t\)</span>, <span class="arithmatex">\(x_2 = t+q\)</span> and <span class="arithmatex">\(x_3 = -t+2q+1\)</span> into the given equation and get the equation</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 3(1+t)+2(t+q)-(-t+2q+1)=5.
@@ -863,8 +863,8 @@ x_1 - x_3 &amp; = 1-t-4t &amp; = 0.
 <p>satisfies the requested conditions. Note that these are infinitely many solutions.</p>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution C.2.7</strong></p>
-<p><span id="sol-ueb-systems-1-f" label="sol--ueb:systems-1-f"></span> (See <a href="../systems/#ueb-systems-1-f" data-reference-type="ref+Label" data-reference="ueb:systems-1-f">Exercise 2.20</a>.) We have to find <span class="arithmatex">\(a_0, \dots, a_3\)</span>, so these are the unknowns. The conditions amount to the linear (!) system</p>
+<p class="env-number"><strong>Solution 2.7.7</strong></p>
+<p><span id="sol-ex-systems-1-f" label="sol--ex:systems-1-f"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-f" data-reference-type="ref+Label" data-reference="ex:systems-1-f">Exercise 2.20</a>.) We have to find <span class="arithmatex">\(a_0, \dots, a_3\)</span>, so these are the unknowns. The conditions amount to the linear (!) system</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
@@ -920,8 +920,8 @@ p(x) = 5 - 7 x + x^2 + x^3.
 </div>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution C.2.8</strong></p>
-<p><span id="sol-ex-maps-exercise-008" label="sol--ex:maps-exercise-008"></span> (See <a href="../systems/#ex-maps-exercise-008" data-reference-type="ref+Label" data-reference="ex:maps-exercise-008">Exercise 2.25</a>.) We solve, for each <span class="arithmatex">\(\lambda\in\mathbf R\)</span>, the system by Gaussian elimination (<a href="../systems/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>):</p>
+<p class="env-number"><strong>Solution 2.7.8</strong></p>
+<p><span id="sol-ex-maps-exercise-008" label="sol--ex:maps-exercise-008"></span> (See <a href="../systems-gaussian-elimination/#ex-maps-exercise-008" data-reference-type="ref+Label" data-reference="ex:maps-exercise-008">Exercise 2.25</a>.) We solve, for each <span class="arithmatex">\(\lambda\in\mathbf R\)</span>, the system by Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>):</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \left ( \begin{array}{ccc|c} \lambda &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; \lambda &amp; 1+\lambda &amp; 1\\ \lambda &amp; 1 &amp; 2 &amp; 3 \end{array} \right )
@@ -929,7 +929,7 @@ p(x) = 5 - 7 x + x^2 + x^3.
 \left ( \begin{array}{ccc|c} \lambda &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; \lambda &amp; 1+\lambda &amp; 1\\ 0 &amp; 1 &amp; 2 &amp; 3 \end{array} \right ).
 \]</div>
 </div>
-<p>We would like to divide the first row by <span class="arithmatex">\(\lambda\)</span>, which however is only a legitimate row operation (<a href="../systems/#def-elementary-row-operations" data-reference-type="ref+Label" data-reference="def:elementary-row-operations">Definition 2.28</a>) if <span class="arithmatex">\(\lambda \ne 0\)</span>. So we distinguish two cases:</p>
+<p>We would like to divide the first row by <span class="arithmatex">\(\lambda\)</span>, which however is only a legitimate row operation (<a href="../systems-gaussian-elimination/#def-elementary-row-operations" data-reference-type="ref+Label" data-reference="def:elementary-row-operations">Definition 2.28</a>) if <span class="arithmatex">\(\lambda \ne 0\)</span>. So we distinguish two cases:</p>
 <ul>
 <li><em>Case <span class="arithmatex">\(\lambda=0\)</span>.</em> The matrix becomes</li>
 </ul>

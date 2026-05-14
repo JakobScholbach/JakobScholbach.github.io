@@ -11,10 +11,6 @@
       
       
       
-        <link rel="prev" href="../appendix/">
-      
-      
-        <link rel="next" href="../solutions-systems-of-linear-equations/">
       
       
         
@@ -25,7 +21,7 @@
     
     
       
-        <title>Complex numbers - Linear Algebra Wiki</title>
+        <title>Systems matrices - Linear Algebra Wiki</title>
       
     
     
@@ -67,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#title-systems-matrices" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -99,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Complex numbers
+              Systems matrices
             
           </span>
         </div>
@@ -435,20 +436,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
           <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
@@ -469,7 +468,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -484,17 +483,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../solutions-complex-numbers/" class="md-nav__link">
         
   
   
@@ -510,7 +502,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -709,6 +700,36 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#title-systems-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        title: Systems: Matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -724,91 +745,121 @@
 
 
 
-  <h1>Complex numbers</h1>
-
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.1</strong></p>
-<p><span id="sol-ex-complex-1" label="sol--ex:complex-1"></span> (See <a href="../c/#ex-complex-1" data-reference-type="ref+Label" data-reference="ex:complex-1">Exercise 1.4</a>.) We have <span class="arithmatex">\(\frac{i-1}{i+1} = \frac{(i-1)\overline{i+1}}{|i+1|^2} = \frac{(i-1)(1-i)}{2} = i\)</span>. Thus <span class="arithmatex">\(z=i^3 = -i\)</span> is the algebraic form. We have <span class="arithmatex">\(|z|=1\)</span> and <span class="arithmatex">\({\mathrm {arg}} z = \frac 32 \pi\)</span>, so</p>
+<hr />
+<h2 id="title-systems-matrices">title: Systems: Matrices<a class="headerlink" href="#title-systems-matrices" title="Permanent link">&para;</a></h2>
+<h1 id="matrices">Matrices<a class="headerlink" href="#matrices" title="Permanent link">&para;</a></h1>
+<p>It is time to use some better tools to do the bookkeeping needed to solve linear systems. Matrices help doing that. Later on (§<a href="../maps/#sect-linear-maps" data-reference-type="ref" data-reference="sect--linear-maps">Chapter 4</a>), we will use matrices in a much more profound way.</p>
+<div class="definition">
+<p class="env-number"><strong>Definition 2.20</strong></p>
+<p><span id="def-systems-definition-006" label="def:systems-definition-006"></span> A <em>matrix</em> is a rectangular array of numbers. We speak of an <span class="arithmatex">\(m \times n\)</span>-matrix (or <span class="arithmatex">\(m\)</span>-by-<span class="arithmatex">\(n\)</span> matrix) if it has <span class="arithmatex">\(m\)</span> rows and <span class="arithmatex">\(n\)</span> columns, respectively. If <span class="arithmatex">\(m=n\)</span>, we also call it a <em>square matrix</em>.</p>
+<p>An <span class="arithmatex">\(1 \times n\)</span>-matrix (i.e., <span class="arithmatex">\(m=1\)</span> and <span class="arithmatex">\(n\)</span> is arbitrary) is called a <em>row vector</em>. Similarly, an <span class="arithmatex">\(m \times 1\)</span>-matrix is called a <em>column vector</em>.</p>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 2.21</strong></p>
+<p><span id="ex-systems-example-007" label="ex:systems-example-007"></span> It is customary to denote matrices by capital letters. For example,</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-z = \cos(\frac 32 \pi) + i \sin \frac 32 \pi.
+A = \left ( \begin{array}{cc} 3 &amp; 4 \\ 0 &amp; -7 \end{array} \right )
+\]</div>
+</div>
+<p>is a <span class="arithmatex">\(2 \times 2\)</span>-matrix (or square matrix of size 2).</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+B = \left ( \begin{array}{ccc} 1 &amp; -2 &amp; 0 \\ 1 &amp; 0 &amp; 3 \end{array} \right )
+\]</div>
+</div>
+<p>is a <span class="arithmatex">\(2 \times 3\)</span>-matrix and</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+C = \left ( \begin{array}{cc} 1 &amp; -2 \\ 0 &amp; 1 \\ 0 &amp; -3 \end{array} \right )
+\]</div>
+</div>
+<p>is a <span class="arithmatex">\(3 \times 2\)</span>-matrix.</p>
+<p>The entries of a matrix may also be variables. For example</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right )
+\]</div>
+</div>
+<p>is a column vector (or a <span class="arithmatex">\(2 \times 1\)</span>-matrix), whose entries are two variables; <span class="arithmatex">\(\left ( \begin{array}{cc} x_1 &amp; x_2 \end{array} \right )\)</span> is a row vector (or a <span class="arithmatex">\(1 \times 2\)</span>-matrix).</p>
+</div>
+<div class="notation">
+<p class="env-number"><strong>Notation 2.22</strong></p>
+<p><span id="not-matrix-notation" label="not:matrix-notation"></span> A matrix whose entries are unspecified numbers is denoted like so:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{ccccc} a_{11} &amp; a_{12} &amp; a_{13} &amp; \dots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; a_{23} &amp; \dots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m1} &amp; a_{m2} &amp; a_{m3} &amp; \dots &amp; a_{mn}\\ \end{array} \right ).
+\]</div>
+</div>
+<p>Thus, the number <span class="arithmatex">\(a_{ij}\)</span> is the entry in the <span class="arithmatex">\(i\)</span>-th row and the <span class="arithmatex">\(j\)</span>-th column. A more compressed notation expressing the same is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = (a_{ij})_{i=1, \dots, m, j = 1, \dots, n}
+\]</div>
+</div>
+<p>or even just</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = (a_{ij}).
 \]</div>
 </div>
 </div>
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.2</strong></p>
-<p><span id="sol-ex-complex-2" label="sol--ex:complex-2"></span> (See <a href="../c/#ex-complex-2" data-reference-type="ref+Label" data-reference="ex:complex-2">Exercise 1.5</a>.) In order to solve</p>
+<div class="definition">
+<p class="env-number"><strong>Definition 2.23</strong> (Related exercises: <a href="../maps/#ex-maps-partial-2026-1">Exercise 4.46</a>)</p>
+<p><span id="def-matrix-to-system" label="def:matrix-to-system"></span> Let</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-z = 3i |z|\overline z
+\begin{align}
+a_{11} x_1 + a_{12} x_2 + \dots + a_{1n} x_n &amp; = b_1 \\
+a_{21} x_1 + a_{22} x_2 + \dots + a_{2n} x_n &amp; = b_2 \nonumber \\
+\vdots  \nonumber\\
+a_{m1} x_1 + a_{m2} x_2 + \dots + a_{mn} x_n &amp; = b_m  \nonumber
+\end{align}
 \]</div>
 </div>
-<p>we would like to divide by <span class="arithmatex">\(z\)</span>. This is only possible if <span class="arithmatex">\(z \ne 0\)</span>, so we first consider the case <span class="arithmatex">\(z = 0\)</span>. In this case both sides of the equation are equal to 0, so <span class="arithmatex">\(z=0\)</span> is indeed a solution. Now, we consider <span class="arithmatex">\(z \ne 0\)</span> and divide the above equation by <span class="arithmatex">\(z\)</span> and obtain</p>
+<p class="env-number equation-number"><strong>(2.24)</strong></p>
+<p><span id="eqn-linear-system-large" label="eqn--linear.system.large"></span> be a linear system (consisting of <span class="arithmatex">\(m\)</span> equations, in the unknowns <span class="arithmatex">\(x_1, \dots, x_n\)</span>; the numbers <span class="arithmatex">\(a_{ij}\)</span> are the coefficients, the numbers <span class="arithmatex">\(b_1, \dots, b_n\)</span> are the constants).</p>
+<p>The <em>matrix associated to this system</em> is the following <span class="arithmatex">\(m \times (n+1)\)</span>-matrix (the vertical bar is just there to remind ourselves that the last column corresponds to the constants in the equations above; one also speaks of an <em>augmented matrix</em>)</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-1 = 3i |z| \frac{\overline z}z.
+A = \left ( \begin{array}{cccc|c} a_{11} &amp; a_{12} &amp; \dots &amp; a_{1n} &amp; b_1 \\ a_{21} &amp; a_{22} &amp; \dots &amp; a_{2n} &amp; b_2 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\ a_{m1} &amp; a_{m2} &amp; \dots &amp; a_{mn} &amp; b_m \\ \end{array} \right ).
 \]</div>
 </div>
-<p>There are different ways to solve this equation. One may put <span class="arithmatex">\(z = a+ib\)</span> and solve the resulting quadratic equation. For illustrational purposes, we rather consider the trigonometric form <span class="arithmatex">\(z = r (\cos \alpha + i \sin \alpha)\)</span>. Then <span class="arithmatex">\(\overline z = r (\cos \alpha - i \sin \alpha) = r (\cos (-\alpha) + i \sin (-\alpha))\)</span>, and</p>
+<p class="env-number equation-number"><strong>(2.25)</strong></p>
+<p><span id="eqn-matrix-large" label="eqn--matrix.large"></span> In other words, the matrix is the rectangular array containing the coefficients and the constants of the individual equations, and suppresses the mention of the variables.</p>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 2.26</strong></p>
+<p><span id="ex-systems-example-008" label="ex:systems-example-008"></span> The matrix associated to the system</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-|z| \frac{\overline z}z = r \frac{r (\cos (-\alpha) + i \sin (-\alpha))}{r (\cos (\alpha) + i \sin (\alpha))}.
+\begin{align*}
+x+y&amp;=4 \\
+x-y&amp;=1
+\end{align*}
 \]</div>
 </div>
-<p>Note that <span class="arithmatex">\(r = |z| \ne 0\)</span>, so we can cancel this in the right-hand fraction. We have</p>
+<p>is the <span class="arithmatex">\(2 \times 3\)</span>-matrix</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-\frac{\cos (-\alpha) + i \sin (-\alpha)}{\cos (\alpha) + i \sin (\alpha)} = \cos(-2\alpha) + i \sin(-2\alpha).
+\left ( \begin{array}{cc|c} 1 &amp; 1 &amp; 4 \\ 1 &amp; -1 &amp; 1 \end{array} \right ).
 \]</div>
 </div>
-<p>We then obtain</p>
+</div>
+<p>Of course, the process of associating a matrix to a linear system can be reversed since any <span class="arithmatex">\(m \times (n+1)\)</span>-matrix gives rise to a linear system: the matrix gives rise to the linear system . For example, the <span class="arithmatex">\(2 \times 3\)</span>- matrix</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-\frac 1{3i} = -\frac 13 i = |z| \frac{\overline z}z = r (\cos(-2\alpha) + i \sin(-2\alpha)).
+\left ( \begin{array}{cc|c} 1 &amp; -2 &amp; 0 \\ 1 &amp; 0 &amp; 3 \end{array} \right )
 \]</div>
 </div>
-<p>This implies <span class="arithmatex">\(r = \frac 13\)</span>. Concerning the arguments, we have to be more careful: the above equation is equivalent to saying that</p>
+<p>gives rise to the linear sytem</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
--2 \alpha \equiv \frac 32 \pi \mod 2 \pi
+\begin{align*}
+x - 2y &amp; = 0 \\
+x &amp; = 3.
+\end{align*}
 \]</div>
-</div>
-<p>cf. around <a href="../c/#eq-mod-2pi" data-reference-type="eqref" data-reference="eq:mod-2pi">Equation (1.6)</a>. There are two solutions: <span class="arithmatex">\(-2 \alpha = \frac 32 \pi\)</span> or <span class="arithmatex">\(- 2\alpha = \frac 32 \pi + 2 \pi\)</span>. The former yields <span class="arithmatex">\(\alpha = -\frac 34 \pi\)</span>, the latter <span class="arithmatex">\(\alpha = \frac \pi 4\)</span>. (Of course, we can now add integer multiples of <span class="arithmatex">\(2\pi\)</span> to these values of <span class="arithmatex">\(\alpha\)</span>, so <span class="arithmatex">\(\alpha = \frac 54 \pi\)</span> is another solution. However, this gives the same value for <span class="arithmatex">\(z\)</span>.) The resulting solutions are</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z = \frac 1 3 (\cos(-\frac 34 \pi) + i \sin (-\frac 34 \pi))
-\]</div>
-</div>
-<p>and</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z = \frac 1 3 (\cos(\frac 14 \pi) + i \sin (\frac 14 \pi)).
-\]</div>
-</div>
-<p>To sum up, the above equation has three solutions, <span class="arithmatex">\(z = 0\)</span> and these two solutions.</p>
-</div>
-<div class="solution">
-<p class="env-number"><strong>Solution 1.5.3</strong></p>
-<p><span id="sol-ex-complex-3" label="sol--ex:complex-3"></span> (See <a href="../c/#ex-complex-3" data-reference-type="ref+Label" data-reference="ex:complex-3">Exercise 1.6</a>.) There are three solutions, namely</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_0 = \sqrt 3 - i = 2 (\cos (-\pi/6) + i \sin(-\pi/6)),
-\]</div>
-</div>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_1 = -\sqrt 3 - i = 2 (\cos (-5\pi/6) + i \sin(-5\pi/6)),
-\]</div>
-</div>
-<div class="arithmatex">
-<div class="arithmatex">\[
-z_2 = 2i = 2 (\cos (-3\pi/2) + i \sin(-3\pi/2)).
-\]</div>
-</div>
-<p>Here is a picture:</p>
-<div class="center">
-<p><img alt="image" src="../figures/png/solutions/solutions-fig-01.png" /></p>
-</div>
 </div>
 
 
