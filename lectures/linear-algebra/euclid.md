@@ -1,5 +1,6 @@
 ---
 title: Euclidean Spaces
+render_with_liquid: false
 ---
 
 # Euclidean spaces

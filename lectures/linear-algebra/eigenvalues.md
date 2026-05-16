@@ -1,5 +1,6 @@
 ---
 title: Eigenvalues and Eigenvectors
+render_with_liquid: false
 ---
 
 # Eigenvalues and Eigenvectors

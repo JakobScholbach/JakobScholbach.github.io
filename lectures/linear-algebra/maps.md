@@ -1,5 +1,6 @@
 ---
 title: Linear Maps
+render_with_liquid: false
 ---
 
 # Linear maps

@@ -1,5 +1,6 @@
 ---
 title: Solutions
+render_with_liquid: false
 ---
 
 # Solutions of the exercises
