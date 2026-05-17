@@ -2719,9 +2719,9 @@ is a row-echelon matrix with three leading ones, so its rank is 3.
 We compute the matrix of $f$ with respect to this basis $\underline v = \{l_1, e_2, e_3\}$:
 <div class="arithmatex" markdown="1">
 \[
-{\bf R}^3_{\underline v} \stackrel [H]{{\mathrm {id}}}\longrightarrow 
+{\bf R}^3_{\underline v} \stackrel [H]{ {\mathrm {id}}}\longrightarrow 
 {\bf R}^3_{\underline e} \stackrel [A]{f} \longrightarrow 
-{\bf R}^3_{\underline e} \stackrel [H^{-1}]{{\mathrm {id}}} \longrightarrow
+{\bf R}^3_{\underline e} \stackrel [H^{-1}]{ {\mathrm {id}}} \longrightarrow
 {\bf R}^3_{\underline v}.
 \]
 </div>
@@ -2788,9 +2788,9 @@ A = \left ( \begin{array}{ccc} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{array} \
 As before, we compute that matrix of $f$ with respect to the standard basis using the method above:
 <div class="arithmatex" markdown="1">
 \[
-{\bf R}^3_{\underline e} \stackrel[K]{{\mathrm {id}}}\longrightarrow 
+{\bf R}^3_{\underline e} \stackrel[K]{ {\mathrm {id}}}\longrightarrow 
 {\bf R}^3_{\underline v} \stackrel[A]{f} \longrightarrow
-{\bf R}^3_{\underline v} \stackrel[K^{-1}]{{\mathrm {id}}} \longrightarrow
+{\bf R}^3_{\underline v} \stackrel[K^{-1}]{ {\mathrm {id}}} \longrightarrow
 {\bf R}^3_{\underline e}.
 \]
 </div>
@@ -2897,7 +2897,7 @@ B = \left ( \begin{array}{ccc} 1 & 1 & -2 \\ -2 & 4 & -2 \\ -5 & 5 & 0 \end{arra
 \]
 </div>
 
-A slightly different way to solve this is to observe that the matrix of $f$ with respect to the basis $\underline v$ in the source and the standard basis $\underline e$ in the target is $C = \left ( \begin{array}{ccc} 3 & 2 & 5 \\ 0 & 2 & 2 \\ -5 & 0 & -5 \end{array} \right )$. We consider the matrix $H = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & -2 \end{array} \right )$ whose columns are the three vectors $v_i$, i.e., the base change matrix from the basis $\underline v$ to $\underline e$. Compute the inverse of this matrix, for example using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>. This gives $H^{-1} = \left ( \begin{array}{ccc} 2 & -2 & 1 \\ 0 & 1 & 0 \\ -1 & 1 & -1 \end{array} \right )$. This is the base change matrix from $\underline e$ to the basis $\underline v$. Then $B = C H^{-1}$: ${\bf R}^3_{\underline e} \stackrel [H^{-1}]{{\mathrm {id}}} \to {\bf R}^3_{\underline v} \stackrel [C]{f} \to {\bf R}^3_{\underline e}$, which confirms the above computation. Likewise $A = H^{-1} C$, corresponding to ${\bf R}^3_{\underline v} \stackrel[C]{f}\to {\bf R}^3_{\underline e} \stackrel[H^{-1}]{{\mathrm {id}}}\to {\bf R}^3_{\underline v}$, which confirms the above computation.
+A slightly different way to solve this is to observe that the matrix of $f$ with respect to the basis $\underline v$ in the source and the standard basis $\underline e$ in the target is $C = \left ( \begin{array}{ccc} 3 & 2 & 5 \\ 0 & 2 & 2 \\ -5 & 0 & -5 \end{array} \right )$. We consider the matrix $H = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & -2 \end{array} \right )$ whose columns are the three vectors $v_i$, i.e., the base change matrix from the basis $\underline v$ to $\underline e$. Compute the inverse of this matrix, for example using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>. This gives $H^{-1} = \left ( \begin{array}{ccc} 2 & -2 & 1 \\ 0 & 1 & 0 \\ -1 & 1 & -1 \end{array} \right )$. This is the base change matrix from $\underline e$ to the basis $\underline v$. Then $B = C H^{-1}$: ${\bf R}^3_{\underline e} \stackrel [H^{-1}]{ {\mathrm {id}}} \to {\bf R}^3_{\underline v} \stackrel [C]{f} \to {\bf R}^3_{\underline e}$, which confirms the above computation. Likewise $A = H^{-1} C$, corresponding to ${\bf R}^3_{\underline v} \stackrel[C]{f}\to {\bf R}^3_{\underline e} \stackrel[H^{-1}]{ {\mathrm {id}}}\to {\bf R}^3_{\underline v}$, which confirms the above computation.
 
 The kernel and image of $f$ can be computed by bringing $B$ into row echelon form. The result is $\ker f = \{(x,x,x) | x \in {\bf R}\}$, i.e., it is 1-dimensional and has as a basis vector $(1,1,1)$. We have ${\operatorname{im}\ } f = L((1,4,5),(1,-2,-5))$.
 
@@ -4441,15 +4441,15 @@ We now compute the orthogonal projection of $u=(1,5,1,6)$ onto $W$. We use the t
 \[
 {\left \langle v_2,v_1 \right \rangle}=-1,
 \qquad
-v_2'=v_2-\frac{{\left \langle v_2,v_1 \right \rangle}}{{\left \langle v_1,v_1 \right \rangle}}v_1
+v_2'=v_2-\frac{ {\left \langle v_2,v_1 \right \rangle}}{ {\left \langle v_1,v_1 \right \rangle}}v_1
 =v_2+\frac12 v_1=(1,\tfrac12,\tfrac12,1).
 \]
 </div>
 To avoid fractions, take $w_2:=2v_2'=(2,1,1,2)$, which is still orthogonal to $v_1$. By <a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, specifically the formula in <a href="../euclid/#eq-orthogonal-projection-formula" data-reference-type="ref+Label" data-reference="eq:orthogonal-projection-formula">Equation (7.26)</a>, for our orthogonal basis $v_1, w_2$ we have
 <div class="arithmatex" markdown="1">
 \[
-p_W(u)=\frac{{\left \langle u,v_1 \right \rangle}}{{\left \langle v_1,v_1 \right \rangle}}v_1
-+\frac{{\left \langle u,w_2 \right \rangle}}{{\left \langle w_2,w_2 \right \rangle}}w_2.
+p_W(u)=\frac{ {\left \langle u,v_1 \right \rangle}}{ {\left \langle v_1,v_1 \right \rangle}}v_1
++\frac{ {\left \langle u,w_2 \right \rangle}}{ {\left \langle w_2,w_2 \right \rangle}}w_2.
 \]
 </div>
 Compute ${\left \langle u,v_1 \right \rangle}=-4$, ${\left \langle v_1,v_1 \right \rangle}=2$, ${\left \langle u,w_2 \right \rangle}=20$, and ${\left \langle w_2,w_2 \right \rangle}=10$. Thus the orthogonal projection of $(1,5,1,6)$ onto $W$ is
@@ -4494,8 +4494,8 @@ The two vectors $v_1$ and $w'_2$ are orthogonal, so by <a href="../euclid/#thm-o
 \[
 \begin{align*}
 t_U
-& = \frac{{\left \langle t, v_1 \right \rangle}}{{\left \langle v_1, v_1 \right \rangle}} v_1
-+ \frac{{\left \langle t, w'_2 \right \rangle}}{{\left \langle w'_2, w'_2 \right \rangle}} w'_2 \\
+& = \frac{ {\left \langle t, v_1 \right \rangle}}{ {\left \langle v_1, v_1 \right \rangle}} v_1
++ \frac{ {\left \langle t, w'_2 \right \rangle}}{ {\left \langle w'_2, w'_2 \right \rangle}} w'_2 \\
 & = \frac 12 (1,1,0) + \frac{13/2}{11/2} \left(-\frac32, \frac32, 1\right) \\
 & = \left(\frac 12, \frac 12, 0\right) + \frac{13}{11}\left(-\frac 32, \frac 32, 1\right) \\
 & = \left(-\frac{14}{11}, \frac{25}{11}, \frac{13}{11}\right).
@@ -4507,7 +4507,7 @@ An alternative way to solve this, with slightly fewer computations, is the follo
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
-t_\bot & = \frac{{\left \langle t, v \right \rangle}}{{\left \langle v, v \right \rangle}} v \\
+t_\bot & = \frac{ {\left \langle t, v \right \rangle}}{ {\left \langle v, v \right \rangle}} v \\
 & = \frac{14}{11}(1,-1,3) \\
 & = \left(\frac{14}{11}, -\frac{14}{11}, \frac{42}{11}\right).
 \end{align*}
@@ -5051,7 +5051,7 @@ w_3=\frac1{\sqrt{70}}(-5,5,2,4).
 \]
 </div>
 
-Let $n=(1,-1,1,2)$. Then $U=n^\bot$, hence (<a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>) $p_U(x)=x-\frac{{\left \langle x,n \right \rangle}}{{\left \langle n,n \right \rangle}}n$ and ${\left \langle n,n \right \rangle}=7$. For $v=(2,3,0,0)$, ${\left \langle v,n \right \rangle}=-1$, so $p_U(v)=v+\frac17 n=(\frac{15}7,\frac{20}7,\frac17,\frac27)$. For $w=(2,5,3,0)$, ${\left \langle w,n \right \rangle}=0$, so $p_U(w)=w=(2,5,3,0)$.
+Let $n=(1,-1,1,2)$. Then $U=n^\bot$, hence (<a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>) $p_U(x)=x-\frac{ {\left \langle x,n \right \rangle}}{ {\left \langle n,n \right \rangle}}n$ and ${\left \langle n,n \right \rangle}=7$. For $v=(2,3,0,0)$, ${\left \langle v,n \right \rangle}=-1$, so $p_U(v)=v+\frac17 n=(\frac{15}7,\frac{20}7,\frac17,\frac27)$. For $w=(2,5,3,0)$, ${\left \langle w,n \right \rangle}=0$, so $p_U(w)=w=(2,5,3,0)$.
 
 Finally, $U^\bot=L(n)=L(1,-1,1,2)$, where we have used <a href="../euclid/#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a>.
 

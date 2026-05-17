@@ -15,10 +15,10 @@ In this brief chapter, we survey some fundamental properties of the complex numb
 
 <p class="env-number"><strong>Definition 1.1</strong></p>
 
-<span id="def-complex-numbers" label="def:complex-numbers"></span> The *complex numbers* ${{\bf C}}$ are the set
+<span id="def-complex-numbers" label="def:complex-numbers"></span> The *complex numbers* ${ {\bf C}}$ are the set
 <div class="arithmatex" markdown="1">
 \[
-{{\bf C}} = \{(a,b), \text{ with } a, b \in {\bf R}\}.
+{ {\bf C}} = \{(a,b), \text{ with } a, b \in {\bf R}\}.
 \]
 </div>
 Addition and multiplication of complex numbers are defined by
@@ -48,7 +48,7 @@ In particular, the fundamental equation holds:
 i^2 (:=i i) = -1.
 \]
 </div>
-We consider the real numbers ${\bf R}$ as the subset $\{(a,0), a \in {\bf R}\} = \{a+i0 \} \subset {{\bf C}}$. The *real part* and *imaginary part* are defined as
+We consider the real numbers ${\bf R}$ as the subset $\{(a,0), a \in {\bf R}\} = \{a+i0 \} \subset { {\bf C}}$. The *real part* and *imaginary part* are defined as
 <div class="arithmatex" markdown="1">
 \[
 \Re(a+ib) := a, \Im(a+ib) := b.
@@ -62,7 +62,7 @@ The sum of complex numbers just amounts to adding the real part and the imaginar
 
 Sometimes, we refer to the set of complex numbers also as the complex plane, given that we can switch back and forth between writing $z = a+ib$ and $z=(a,b)$, i.e., a point on the plane specified by its two coordinates.
 
-Regarding the geometric properties of ${{\bf C}}$, we use the following standard terms:
+Regarding the geometric properties of ${ {\bf C}}$, we use the following standard terms:
 
 <div class="definition" markdown="1">
 
@@ -72,13 +72,13 @@ Regarding the geometric properties of ${{\bf C}}$, we use the following standard
 <span id="def-conjugation-and-absolute-value" label="def:conjugation-and-absolute-value"></span> The *complex conjugation* is the mapping
 <div class="arithmatex" markdown="1">
 \[
-\overline ? : {{\bf C}} \to {{\bf C}}, z = a+ib \mapsto \overline z := a-ib.
+\overline ? : { {\bf C}} \to { {\bf C}}, z = a+ib \mapsto \overline z := a-ib.
 \]
 </div>
 The *absolute value* is the mapping
 <div class="arithmatex" markdown="1">
 \[
-| ? | : {{\bf C}} \to {\bf R}^{\ge 0}, z = a + ib \mapsto |z| := \sqrt{z \overline z} = \sqrt{a^2 + b^2}.
+| ? | : { {\bf C}} \to {\bf R}^{\ge 0}, z = a + ib \mapsto |z| := \sqrt{z \overline z} = \sqrt{a^2 + b^2}.
 \]
 </div>
 
@@ -134,7 +134,7 @@ z^{-1} = \frac a{a^2+b^2}-\frac b{a^2+b^2}i.
 \]
 </div>
 
-Given that we can form the reciprocal of any nonzero complex number, we can also divide any complex number $w \in {{\bf C}}$ like so:
+Given that we can form the reciprocal of any nonzero complex number, we can also divide any complex number $w \in { {\bf C}}$ like so:
 <div class="arithmatex" markdown="1">
 \[
 \frac w z = \frac{w \overline z}{z \overline z} = \frac{w \overline z}{|z|^2}.
@@ -145,7 +145,7 @@ Given that we can form the reciprocal of any nonzero complex number, we can also
 
 The multiplication of complex numbers reveals its essence best by writing complex numbers in a different form, known as the trigonometric form.
 
-For any two complex numbers $z_1 = a_1 + b_1 i, z_2 = a_2 + b_2 i \in {{\bf C}}$, one has
+For any two complex numbers $z_1 = a_1 + b_1 i, z_2 = a_2 + b_2 i \in { {\bf C}}$, one has
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -233,7 +233,7 @@ This ambiguity of the argument has to taken into account when solving equations 
 
 <p class="env-number"><strong>Lemma 1.8</strong></p>
 
-<span id="lem-product-in-trigonometric-form" label="lem:product-in-trigonometric-form"></span> If $z_1, z_2 \in {{\bf C}}$ are given in trigonometric form, i.e.,
+<span id="lem-product-in-trigonometric-form" label="lem:product-in-trigonometric-form"></span> If $z_1, z_2 \in { {\bf C}}$ are given in trigonometric form, i.e.,
 <div class="arithmatex" markdown="1">
 \[
 z_1 = |z_1| (\cos ({\mathrm {arg}} z_1) + i \sin ({\mathrm {arg}} z_1))
@@ -336,7 +336,7 @@ I.e., $z^n = 1$. We are going to solve this equation using the trigonometric for
 z^n = r^n (\cos (n \alpha) + i \sin (n \alpha)).
 \]
 </div>
-This will be equal to $1 = 1 \cdot (\cos 0 + i \sin 0)$ exactly if $r^n = 1$ and if $n \alpha - 0 = n \alpha$ is an integer multiple of $2 \pi$, say $n \alpha = 2 k \pi$, for an integer $k \in {{\bf Z}}$. Thus, $\alpha = \frac{2 k \pi} n$.
+This will be equal to $1 = 1 \cdot (\cos 0 + i \sin 0)$ exactly if $r^n = 1$ and if $n \alpha - 0 = n \alpha$ is an integer multiple of $2 \pi$, say $n \alpha = 2 k \pi$, for an integer $k \in { {\bf Z}}$. Thus, $\alpha = \frac{2 k \pi} n$.
 
 <div class="center" markdown="1">
 
