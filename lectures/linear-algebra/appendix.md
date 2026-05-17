@@ -37,8 +37,8 @@ title: Appendix
 
 | Symbol | Reads | Explanation | Example |
 |:---|:---|:---|:---|
-| ${{\bf Z}}$ |  | The set of all integers. | $-34, -1, 0, 1, 2, 18, \dots \in {{\bf Z}}$, $\frac 3 4 \notin {{\bf Z}}$ |
-| ${{\bf Q}}$ |  | The set of all rational numbers. | $\frac {-3}{16}, -3.3, -1, 0, 2.4, \frac 3 4 \in {{\bf Q}}$, $\sqrt 3 \notin {{\bf Q}}$ |
+| ${ {\bf Z}}$ |  | The set of all integers. | $-34, -1, 0, 1, 2, 18, \dots \in { {\bf Z}}$, $\frac 3 4 \notin { {\bf Z}}$ |
+| ${ {\bf Q}}$ |  | The set of all rational numbers. | $\frac {-3}{16}, -3.3, -1, 0, 2.4, \frac 3 4 \in { {\bf Q}}$, $\sqrt 3 \notin { {\bf Q}}$ |
 | ${\bf R}$ |  | The set of all real numbers. | 0, 1, $-1$, $\frac 1 2$, $\sqrt 3$, $\pi$, $e \in {\bf R}$ |
 | $\sum_{e=1}^n a_e$ | Sum | This is an abbreviation for the sum of the $a_e$, where $e$ runs from 1 to $n$. (Here $a_e$ can be any expression depending on $e$.) It can also be written as $a_1 + a_2 + \dots + a_e$. | $\sum_{e=1}^3 e^2 = 1^2 + 2^2 + 3^2 = 14$. |
 

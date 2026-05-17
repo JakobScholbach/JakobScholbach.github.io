@@ -99,7 +99,7 @@ with $a \ne 0$ or $b \ne 0$ will have a line as a solution set (what happens if 
 
 <p class="env-number"><strong>Remark 2.5</strong></p>
 
-<span id="rem-field" label="rem:field"></span> In the computation above it was critical that we were able to *divide* 3 by 2, i.e., have the rational number $\frac 3 2$ at our disposal. The real numbers ${\bf R}$ (and also the rational numbers ${{\bf Q}}$) form a so-called *field*, which among other properties means that one can divide by non-zero numbers. Another example of a field are the complex numbers ${{\bf C}}$. The integers ${{\bf Z}} = \{ \dots, -2, -1, 0, 1, 2, \dots \}$ do *not* form a field. Solving linear systems in the integers is somewhat harder than it is in the rationals or reals. This course will focus on discussing linear algebra over the real numbers, with the exception of the discussion of eigenvalues, where the consideration of complex numbers is unavoidable.
+<span id="rem-field" label="rem:field"></span> In the computation above it was critical that we were able to *divide* 3 by 2, i.e., have the rational number $\frac 3 2$ at our disposal. The real numbers ${\bf R}$ (and also the rational numbers ${ {\bf Q}}$) form a so-called *field*, which among other properties means that one can divide by non-zero numbers. Another example of a field are the complex numbers ${ {\bf C}}$. The integers ${ {\bf Z}} = \{ \dots, -2, -1, 0, 1, 2, \dots \}$ do *not* form a field. Solving linear systems in the integers is somewhat harder than it is in the rationals or reals. This course will focus on discussing linear algebra over the real numbers, with the exception of the discussion of eigenvalues, where the consideration of complex numbers is unavoidable.
 
 </div>
 

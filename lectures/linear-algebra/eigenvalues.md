@@ -204,7 +204,7 @@ The non-existence of eigenvalues can be salvaged by working with complex numbers
 p(t) = a_n x^n + \dots + a_0,
 \]
 </div>
-where the coefficients $a_0, \dots, a_n$ are complex numbers (for example, they can be real numbers), there exists a *complex* number $z \in {{\bf C}}$ such that
+where the coefficients $a_0, \dots, a_n$ are complex numbers (for example, they can be real numbers), there exists a *complex* number $z \in { {\bf C}}$ such that
 <div class="arithmatex" markdown="1">
 \[
 p(z) = 0.
@@ -480,7 +480,7 @@ This space is 1-dimensional, and has a basis consisting of the (single) vector $
 <span id="ex-rotation-matrix-eigenvalues" label="ex:rotation-matrix-eigenvalues"></span> We continue the discussion of the rotation matrix $A = \left ( \begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array} \right )$. Its (complex) eigenvalues are $\lambda_1 = i$, $\lambda_2 = -i$. According to <a href="#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a>, $A$ is diagonalizable. We compute the eigenspaces, where we regard $A$ as a complex matrix:
 <div class="arithmatex" markdown="1">
 \[
-E_i = \{ v \in {{\bf C}}^2 \ | \ (A - i \cdot {\mathrm {id}}) v = 0 \}.
+E_i = \{ v \in { {\bf C}}^2 \ | \ (A - i \cdot {\mathrm {id}}) v = 0 \}.
 \]
 </div>
 If $v = \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right )$, then
@@ -492,7 +492,7 @@ If $v = \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right )$, then
 This means $z_1 = i z_2$ from the second equation; the first is then also satisfied since $-iz_1 - z_2 = -i(iz_2) - z_2=z_2-z_2 = 0$. Thus
 <div class="arithmatex" markdown="1">
 \[
-E_i = \{ (iz, z) \ | \ z \in {{\bf C}} \},
+E_i = \{ (iz, z) \ | \ z \in { {\bf C}} \},
 \]
 </div>
 i.e., as a complex vector space, $E_i$ is 1-dimensional and a basis of it is the vector $(i,1)$.
@@ -500,7 +500,7 @@ i.e., as a complex vector space, $E_i$ is 1-dimensional and a basis of it is the
 Similarly,
 <div class="arithmatex" markdown="1">
 \[
-E_{-i} = \{ v\in {{\bf C}}^2 \ | \ (A + i \cdot {\mathrm {id}})v = 0\}.
+E_{-i} = \{ v\in { {\bf C}}^2 \ | \ (A + i \cdot {\mathrm {id}})v = 0\}.
 \]
 </div>
 Computing this leads to the linear system
@@ -509,7 +509,7 @@ Computing this leads to the linear system
 (A + i \cdot {\mathrm {id}}) v = \left ( \begin{array}{cc} +i & -1 \\ 1 & +i \end{array} \right ) \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right ) = \left ( \begin{array}{c} iz_1-z_2 \\ z_1+iz_2 \end{array} \right ) \stackrel ! = \left ( \begin{array}{c} 0 \\ 0 \end{array} \right ).
 \]
 </div>
-This gives $z_1 = -iz_2$, so that $E_{-i} = \{(-iz, z) \ | \ z \in {{\bf C}}\}$, and a basis of it is the (single) vector $(-i, 1)$. Thus, the matrix $P$ above is
+This gives $z_1 = -iz_2$, so that $E_{-i} = \{(-iz, z) \ | \ z \in { {\bf C}}\}$, and a basis of it is the (single) vector $(-i, 1)$. Thus, the matrix $P$ above is
 <div class="arithmatex" markdown="1">
 \[
 P = \left ( \begin{array}{cc} i & -i \\ 1 & 1 \end{array} \right ).

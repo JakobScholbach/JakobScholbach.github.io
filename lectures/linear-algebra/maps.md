@@ -2390,7 +2390,7 @@ giving *different* coordinates of $x$ with respect to the basis $\underline w$. 
 These coefficients in ${\mathrm {id}}_V(v_i)$ form the $i$-th column of the matrix, which therefore is equal to
 <div class="arithmatex" markdown="1">
 \[
-{\mathrm M}_{{\mathrm {id}}_V, \underline v, \underline v} = \left ( \begin{array}{cccc} 1 & 0 & \dots & 0 \\ 0 & 1 & \dots & 0 \\ \vdots & & \ddots & \vdots \\ 0 & \dots & 0 & 1 \end{array} \right ) = {\mathrm {id}}_n.
+{\mathrm M}_{ {\mathrm {id}}_V, \underline v, \underline v} = \left ( \begin{array}{cccc} 1 & 0 & \dots & 0 \\ 0 & 1 & \dots & 0 \\ \vdots & & \ddots & \vdots \\ 0 & \dots & 0 & 1 \end{array} \right ) = {\mathrm {id}}_n.
 \]
 </div>
 
@@ -2416,7 +2416,7 @@ i.e., we express $v_1$ in coordinates with respect to the basis $\underline w$. 
 The matrix of ${\mathrm {id}}_V$ with respect to the bases $\underline v$ (domain) and $\underline w$ (codomain) is then
 <div class="arithmatex" markdown="1">
 \[
-{\mathrm M}_{{\mathrm {id}}_V, \underline v, \underline w} = \left ( \begin{array}{cccc} a_{11} & a_{12} & \dots & a_{1n} \\ a_{21} & a_{22} & \dots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \dots & a_{nn} \end{array} \right ).
+{\mathrm M}_{ {\mathrm {id}}_V, \underline v, \underline w} = \left ( \begin{array}{cccc} a_{11} & a_{12} & \dots & a_{1n} \\ a_{21} & a_{22} & \dots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \dots & a_{nn} \end{array} \right ).
 \]
 </div>
 We refer to this matrix as the *base change matrix* from $\underline v$ to $\underline w$.
@@ -2431,25 +2431,25 @@ We refer to this matrix as the *base change matrix* from $\underline v$ to $\und
 <span id="ex-maps-example-028" label="ex:maps-example-028"></span> Here is a concrete example of the above situation. Let $V = {\bf R}^2$, $\underline v = \{e_1, e_2\} = \{(1,0), (0,1)\}$ be the standard basis and $\underline w = \{w_1, w_2\} = \{(1,1), (1,3)\}$ be another basis. We compute the matrix following the above lines:
 <div class="arithmatex" markdown="1">
 \[
-{\mathrm {id}}_{{\bf R}^2}(1,0) = (1,0) = a_{11} (1,1) + a_{21} (1,3)
+{\mathrm {id}}_{ {\bf R}^2}(1,0) = (1,0) = a_{11} (1,1) + a_{21} (1,3)
 \]
 </div>
 has the solution $a_{11}=\frac 32$ and $a_{21} = -\frac 12$.
 <div class="arithmatex" markdown="1">
 \[
-{\mathrm {id}}_{{\bf R}^2}(0,1) = (0,1) = a_{12} (1,1) + a_{22}(1,3)
+{\mathrm {id}}_{ {\bf R}^2}(0,1) = (0,1) = a_{12} (1,1) + a_{22}(1,3)
 \]
 </div>
 has the solution $a_{12} = -\frac 12$, $a_{22}=\frac 12$, so the matrix reads
 <div class="arithmatex" markdown="1">
 \[
-{\mathrm M}_{{\mathrm {id}}_{{\bf R}^2}, \underline v, \underline w} = \left ( \begin{array}{cc} \frac 32 & -\frac 12 \\ -\frac 12 & \frac 12 \end{array} \right ).
+{\mathrm M}_{ {\mathrm {id}}_{ {\bf R}^2}, \underline v, \underline w} = \left ( \begin{array}{cc} \frac 32 & -\frac 12 \\ -\frac 12 & \frac 12 \end{array} \right ).
 \]
 </div>
 Thus, for example, the vector $(3,2) = 3e_1 + 2e_2$ can be expressed as
 <div class="arithmatex" markdown="1">
 \[
-{\mathrm M}_{{\mathrm {id}}_{{\bf R}^2}, \underline v, \underline w} {\left ( \begin{array}{c} 3 \\ 2 \end{array} \right )}_{\underline v} = \left ( \begin{array}{cc} \frac 32 & -\frac 12 \\ -\frac 12 & \frac 12 \end{array} \right ) 
+{\mathrm M}_{ {\mathrm {id}}_{ {\bf R}^2}, \underline v, \underline w} {\left ( \begin{array}{c} 3 \\ 2 \end{array} \right )}_{\underline v} = \left ( \begin{array}{cc} \frac 32 & -\frac 12 \\ -\frac 12 & \frac 12 \end{array} \right ) 
 {\left ( \begin{array}{c} 3 \\ 2 \end{array} \right )}_{\underline v} = 
 {\left ( \begin{array}{c} \frac 72 \\ -\frac 12 \end{array} \right )}_{\underline w},
 \]
@@ -2472,19 +2472,19 @@ By <a href="#prop-composition-matrices" data-reference-type="ref+Label" data-ref
 We choose the following bases on $V$, indicated by a subscript:
 <div class="arithmatex" markdown="1">
 \[
-V_{\underline v} \xrightarrow{{\mathrm {id}}_V} V_{\underline w} \xrightarrow{{\mathrm {id}}_V} V_{\underline v}.
+V_{\underline v} \xrightarrow{ {\mathrm {id}}_V} V_{\underline w} \xrightarrow{ {\mathrm {id}}_V} V_{\underline v}.
 \]
 </div>
-We consider the associated matrices ${\mathrm M}_{{\mathrm {id}}_V, \underline v, \underline w}$ for the first map, and ${\mathrm M}_{{\mathrm {id}}_V, \underline w, \underline v}$ for the second one. We have
+We consider the associated matrices ${\mathrm M}_{ {\mathrm {id}}_V, \underline v, \underline w}$ for the first map, and ${\mathrm M}_{ {\mathrm {id}}_V, \underline w, \underline v}$ for the second one. We have
 <div class="arithmatex" markdown="1">
 \[
-{\mathrm M}_{{\mathrm {id}}_V, \underline w, \underline v} \cdot {\mathrm M}_{{\mathrm {id}}_V, \underline v, \underline w} = {\mathrm M}_{{\mathrm {id}}, \underline v, \underline v} = {\mathrm {id}}_n.
+{\mathrm M}_{ {\mathrm {id}}_V, \underline w, \underline v} \cdot {\mathrm M}_{ {\mathrm {id}}_V, \underline v, \underline w} = {\mathrm M}_{ {\mathrm {id}}, \underline v, \underline v} = {\mathrm {id}}_n.
 \]
 </div>
 In other words,
 <div class="arithmatex" markdown="1">
 \[
-{\mathrm M}_{{\mathrm {id}}_V, \underline w, \underline v} = ({\mathrm M}_{{\mathrm {id}}_V, \underline v, \underline w})^{-1}.
+{\mathrm M}_{ {\mathrm {id}}_V, \underline w, \underline v} = ({\mathrm M}_{ {\mathrm {id}}_V, \underline v, \underline w})^{-1}.
 \]
 </div>
 
@@ -2501,7 +2501,7 @@ The above observations lead to the following.
 {\mathrm M}_{f, \underline w, \underline w} = A E A^{-1},
 \]
 </div>
-where $A$ is the matrix describing the change of basis from $\underline v$ to $\underline w$, i.e., $A = {\mathrm M}_{{\mathrm {id}}_V, \underline v, \underline w}$ (cf. <a href="#ex-base-change-matrix" data-reference-type="ref+Label" data-reference="ex:base-change-matrix">Example 4.84</a>).
+where $A$ is the matrix describing the change of basis from $\underline v$ to $\underline w$, i.e., $A = {\mathrm M}_{ {\mathrm {id}}_V, \underline v, \underline w}$ (cf. <a href="#ex-base-change-matrix" data-reference-type="ref+Label" data-reference="ex:base-change-matrix">Example 4.84</a>).
 
 </div>
 
@@ -2516,19 +2516,19 @@ V_{\underline v} \xrightarrow[E]{f} V_{\underline v}.
 The composition
 <div class="arithmatex" markdown="1">
 \[
-V \xrightarrow{{\mathrm {id}}_V} V \xrightarrow{f} V \xrightarrow{{\mathrm {id}}_V} V
+V \xrightarrow{ {\mathrm {id}}_V} V \xrightarrow{f} V \xrightarrow{ {\mathrm {id}}_V} V
 \]
 </div>
 is again $f$, but as above we now put a different basis on $V$:
 <div class="arithmatex" markdown="1">
 \[
-V_{\underline w} \xrightarrow[{\mathrm M}_{{\mathrm {id}}_V, \underline w, \underline v}]{{\mathrm {id}}_V} V_{\underline v} \xrightarrow[E]{f} V_{\underline v} \xrightarrow[{\mathrm M}_{{\mathrm {id}}_V, \underline v, \underline w}] {{\mathrm {id}}_V} V_{\underline w}.
+V_{\underline w} \xrightarrow[{\mathrm M}_{ {\mathrm {id}}_V, \underline w, \underline v}]{ {\mathrm {id}}_V} V_{\underline v} \xrightarrow[E]{f} V_{\underline v} \xrightarrow[{\mathrm M}_{ {\mathrm {id}}_V, \underline v, \underline w}] { {\mathrm {id}}_V} V_{\underline w}.
 \]
 </div>
 According to the above, this simplifies to
 <div class="arithmatex" markdown="1">
 \[
-V_{\underline w} \xrightarrow[A^{-1}]{{\mathrm {id}}_V} V_{\underline v} \xrightarrow[E]{f} V_{\underline v} \xrightarrow[A] {{\mathrm {id}}_V} V_{\underline w}.
+V_{\underline w} \xrightarrow[A^{-1}]{ {\mathrm {id}}_V} V_{\underline v} \xrightarrow[E]{f} V_{\underline v} \xrightarrow[A] { {\mathrm {id}}_V} V_{\underline w}.
 \]
 </div>
  ◻
@@ -2540,7 +2540,7 @@ V_{\underline w} \xrightarrow[A^{-1}]{{\mathrm {id}}_V} V_{\underline v} \xright
 
 <p class="env-number"><strong>Example 4.87</strong></p>
 
-<span id="ex-maps-example-029" label="ex:maps-example-029"></span> Consider the linear map $f : {\bf R}^2 \to {\bf R}^2$ given in the standard basis $\underline e = \{e_1, e_2\}$ by multiplication with the matrix $E = \left ( \begin{array}{cc} 2 & 0 \\ -1 & 3 \end{array} \right )$. We compute the matrix associated to $f$ with respect to the basis $\underline w = \{w_1, w_2\} = \{(1,1), (1,-2)\}$ (on the domain and codomain). According to the above, we need to compute the base change matrix $A = {\mathrm M}_{{\mathrm {id}}, \underline e, \underline w}$ and its inverse $A^{-1} = {\mathrm M}_{{\mathrm {id}}, \underline w, \underline e}$. The matrix $A^{-1}$ can be computed *more easily* than $A$, because its entries are given by coefficients in the following linear combinations:
+<span id="ex-maps-example-029" label="ex:maps-example-029"></span> Consider the linear map $f : {\bf R}^2 \to {\bf R}^2$ given in the standard basis $\underline e = \{e_1, e_2\}$ by multiplication with the matrix $E = \left ( \begin{array}{cc} 2 & 0 \\ -1 & 3 \end{array} \right )$. We compute the matrix associated to $f$ with respect to the basis $\underline w = \{w_1, w_2\} = \{(1,1), (1,-2)\}$ (on the domain and codomain). According to the above, we need to compute the base change matrix $A = {\mathrm M}_{ {\mathrm {id}}, \underline e, \underline w}$ and its inverse $A^{-1} = {\mathrm M}_{ {\mathrm {id}}, \underline w, \underline e}$. The matrix $A^{-1}$ can be computed *more easily* than $A$, because its entries are given by coefficients in the following linear combinations:
 <div class="arithmatex" markdown="1">
 \[
 {\mathrm {id}}(w_1) = w_1 = (1,1) = 1 \cdot e_1 + 1 \cdot e_2,
@@ -3185,16 +3185,16 @@ A = A^T.
 <span id="trace" label="trace"></span> (See <a href="#sol-trace" data-reference-type="ref+Label" data-reference="sol--trace">Solution 4.13.25</a>.) The *trace* of a square matrix $A = (a_{ij})$ is defined to be the sum of the entries on the main diagonal:
 <div class="arithmatex" markdown="1">
 \[
-{{\mathrm {tr}}}(A) := a_{11} + a_{22} + \dots + a_{nn}.
+{ {\mathrm {tr}}}(A) := a_{11} + a_{22} + \dots + a_{nn}.
 \]
 </div>
-Prove the following statements (if you get stuck with the notation, assume first that $A = \left ( \begin{array}{cc} a & b \\ c & d \end{array} \right )$ is a $2 \times 2$-matrix, then ${{\mathrm {tr}}} (A) = a + d$):
+Prove the following statements (if you get stuck with the notation, assume first that $A = \left ( \begin{array}{cc} a & b \\ c & d \end{array} \right )$ is a $2 \times 2$-matrix, then ${ {\mathrm {tr}}} (A) = a + d$):
 
-1.  ${{\mathrm {tr}}}(A)={{\mathrm {tr}}}(A^T)$,
+1.  ${ {\mathrm {tr}}}(A)={ {\mathrm {tr}}}(A^T)$,
 
-2.  ${{\mathrm {tr}}}(AB) = {{\mathrm {tr}}}(BA)$ (for another square matrix $B$ of the same size). This is noteworthy since $AB \ne BA$ in general!
+2.  ${ {\mathrm {tr}}}(AB) = { {\mathrm {tr}}}(BA)$ (for another square matrix $B$ of the same size). This is noteworthy since $AB \ne BA$ in general!
 
-3.  ${{\mathrm {tr}}} (A+B) = {{\mathrm {tr}}}(A) + {{\mathrm {tr}}} (B)$ (for another square matrix $B$ of the same size), ${{\mathrm {tr}}} (rA) = r {{\mathrm {tr}}}(A)$ (for $r \in {\bf R}$).
+3.  ${ {\mathrm {tr}}} (A+B) = { {\mathrm {tr}}}(A) + { {\mathrm {tr}}} (B)$ (for another square matrix $B$ of the same size), ${ {\mathrm {tr}}} (rA) = r { {\mathrm {tr}}}(A)$ (for $r \in {\bf R}$).
 
 4.  (optional, slightly more challenging) Prove there is no matrix $B$ such that $AB-BA = {\mathrm {id}}$.
 
@@ -3289,7 +3289,7 @@ where $A = \left ( \begin{array}{cc} 2 & 1 \\ 0 & 1 \\ -3 & 1 \end{array} \right
 Hint: We may consider the following diagram:
 <div class="arithmatex" markdown="1">
 \[
-{\bf R}^2_{\underline v} \xrightarrow[H]{{\mathrm {id}}} {\bf R}^2_{\underline e} \xrightarrow[A]{f} {\bf R}^3_{\underline e} \xrightarrow[K]{{\mathrm {id}}} {\bf R}^3_{\underline t}.
+{\bf R}^2_{\underline v} \xrightarrow[H]{ {\mathrm {id}}} {\bf R}^2_{\underline e} \xrightarrow[A]{f} {\bf R}^3_{\underline e} \xrightarrow[K]{ {\mathrm {id}}} {\bf R}^3_{\underline t}.
 \]
 </div>
 Here the subscripts at ${\bf R}^2$ indicate which basis we consider. The matrices $H$ and $K$ are the base change matrices from the basis $\underline v$ to the standard basis $\underline e$, resp. from the standard basis $\underline e$ to the basis $\underline t$. Then
@@ -5507,9 +5507,9 @@ is a row-echelon matrix with three leading ones, so its rank is 3.
 We compute the matrix of $f$ with respect to this basis $\underline v = \{l_1, e_2, e_3\}$:
 <div class="arithmatex" markdown="1">
 \[
-{\bf R}^3_{\underline v} \xrightarrow[H]{{\mathrm {id}}}
+{\bf R}^3_{\underline v} \xrightarrow[H]{ {\mathrm {id}}}
 {\bf R}^3_{\underline e} \xrightarrow[A]{f}
-{\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{{\mathrm {id}}}
+{\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{ {\mathrm {id}}}
 {\bf R}^3_{\underline v}.
 \]
 </div>
@@ -5576,9 +5576,9 @@ A = \left ( \begin{array}{ccc} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{array} \
 As before, we compute that matrix of $f$ with respect to the standard basis using the method above:
 <div class="arithmatex" markdown="1">
 \[
-{\bf R}^3_{\underline e} \xrightarrow[K]{{\mathrm {id}}}
+{\bf R}^3_{\underline e} \xrightarrow[K]{ {\mathrm {id}}}
 {\bf R}^3_{\underline v} \xrightarrow[A]{f}
-{\bf R}^3_{\underline v} \xrightarrow[K^{-1}]{{\mathrm {id}}}
+{\bf R}^3_{\underline v} \xrightarrow[K^{-1}]{ {\mathrm {id}}}
 {\bf R}^3_{\underline e}.
 \]
 </div>
@@ -5685,7 +5685,7 @@ B = \left ( \begin{array}{ccc} 1 & 1 & -2 \\ -2 & 4 & -2 \\ -5 & 5 & 0 \end{arra
 \]
 </div>
 
-A slightly different way to solve this is to observe that the matrix of $f$ with respect to the basis $\underline v$ in the source and the standard basis $\underline e$ in the target is $C = \left ( \begin{array}{ccc} 3 & 2 & 5 \\ 0 & 2 & 2 \\ -5 & 0 & -5 \end{array} \right )$. We consider the matrix $H = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & -2 \end{array} \right )$ whose columns are the three vectors $v_i$, i.e., the base change matrix from the basis $\underline v$ to $\underline e$. Compute the inverse of this matrix, for example using <a href="#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>. This gives $H^{-1} = \left ( \begin{array}{ccc} 2 & -2 & 1 \\ 0 & 1 & 0 \\ -1 & 1 & -1 \end{array} \right )$. This is the base change matrix from $\underline e$ to the basis $\underline v$. Then $B = C H^{-1}$: ${\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{{\mathrm {id}}} {\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e}$, which confirms the above computation. Likewise $A = H^{-1} C$, corresponding to ${\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{{\mathrm {id}}} {\bf R}^3_{\underline v}$, which confirms the above computation.
+A slightly different way to solve this is to observe that the matrix of $f$ with respect to the basis $\underline v$ in the source and the standard basis $\underline e$ in the target is $C = \left ( \begin{array}{ccc} 3 & 2 & 5 \\ 0 & 2 & 2 \\ -5 & 0 & -5 \end{array} \right )$. We consider the matrix $H = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & -2 \end{array} \right )$ whose columns are the three vectors $v_i$, i.e., the base change matrix from the basis $\underline v$ to $\underline e$. Compute the inverse of this matrix, for example using <a href="#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>. This gives $H^{-1} = \left ( \begin{array}{ccc} 2 & -2 & 1 \\ 0 & 1 & 0 \\ -1 & 1 & -1 \end{array} \right )$. This is the base change matrix from $\underline e$ to the basis $\underline v$. Then $B = C H^{-1}$: ${\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{ {\mathrm {id}}} {\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e}$, which confirms the above computation. Likewise $A = H^{-1} C$, corresponding to ${\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{ {\mathrm {id}}} {\bf R}^3_{\underline v}$, which confirms the above computation.
 
 The kernel and image of $f$ can be computed by bringing $B$ into row echelon form. The result is $\ker f = \{(x,x,x) | x \in {\bf R}\}$, i.e., it is 1-dimensional and has as a basis vector $(1,1,1)$. We have ${\operatorname{im}\ } f = L((1,4,5),(1,-2,-5))$.
 

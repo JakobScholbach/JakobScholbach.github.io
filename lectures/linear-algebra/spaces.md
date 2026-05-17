@@ -655,7 +655,7 @@ This is easy to check: revisit the definition of a vector space and see how chec
 <span id="ex-spaces-example-008" label="ex:spaces-example-008"></span> We have ${\bf R}^2 = {\bf R} \oplus {\bf R}$ and in general
 <div class="arithmatex" markdown="1">
 \[
-{\bf R}^n = \underbrace{{\bf R} \oplus \dots \oplus {\bf R}}_{n \text{ summands}}.
+{\bf R}^n = \underbrace{ {\bf R} \oplus \dots \oplus {\bf R}}_{n \text{ summands}}.
 \]
 </div>
 This is clear from the definition of the sum of vectors in ${\bf R}^n$ (<a href="#def-vector-sum" data-reference-type="ref+Label" data-reference="def:vector-sum">Definition 3.3</a>) and the scalar multiplication (<a href="#def-scalar-multiplication" data-reference-type="ref+Label" data-reference="def:scalar-multiplication">Definition 3.7</a>).

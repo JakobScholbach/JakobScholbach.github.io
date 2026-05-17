@@ -1880,9 +1880,9 @@ is a row-echelon matrix with three leading ones, so its rank is 3.
 We compute the matrix of $f$ with respect to this basis $\underline v = \{l_1, e_2, e_3\}$:
 <div class="arithmatex" markdown="1">
 \[
-{\bf R}^3_{\underline v} \xrightarrow[H]{{\mathrm {id}}}
+{\bf R}^3_{\underline v} \xrightarrow[H]{ {\mathrm {id}}}
 {\bf R}^3_{\underline e} \xrightarrow[A]{f}
-{\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{{\mathrm {id}}}
+{\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{ {\mathrm {id}}}
 {\bf R}^3_{\underline v}.
 \]
 </div>
@@ -1949,9 +1949,9 @@ A = \left ( \begin{array}{ccc} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{array} \
 As before, we compute that matrix of $f$ with respect to the standard basis using the method above:
 <div class="arithmatex" markdown="1">
 \[
-{\bf R}^3_{\underline e} \xrightarrow[K]{{\mathrm {id}}}
+{\bf R}^3_{\underline e} \xrightarrow[K]{ {\mathrm {id}}}
 {\bf R}^3_{\underline v} \xrightarrow[A]{f}
-{\bf R}^3_{\underline v} \xrightarrow[K^{-1}]{{\mathrm {id}}}
+{\bf R}^3_{\underline v} \xrightarrow[K^{-1}]{ {\mathrm {id}}}
 {\bf R}^3_{\underline e}.
 \]
 </div>
@@ -2058,7 +2058,7 @@ B = \left ( \begin{array}{ccc} 1 & 1 & -2 \\ -2 & 4 & -2 \\ -5 & 5 & 0 \end{arra
 \]
 </div>
 
-A slightly different way to solve this is to observe that the matrix of $f$ with respect to the basis $\underline v$ in the source and the standard basis $\underline e$ in the target is $C = \left ( \begin{array}{ccc} 3 & 2 & 5 \\ 0 & 2 & 2 \\ -5 & 0 & -5 \end{array} \right )$. We consider the matrix $H = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & -2 \end{array} \right )$ whose columns are the three vectors $v_i$, i.e., the base change matrix from the basis $\underline v$ to $\underline e$. Compute the inverse of this matrix, for example using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>. This gives $H^{-1} = \left ( \begin{array}{ccc} 2 & -2 & 1 \\ 0 & 1 & 0 \\ -1 & 1 & -1 \end{array} \right )$. This is the base change matrix from $\underline e$ to the basis $\underline v$. Then $B = C H^{-1}$: ${\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{{\mathrm {id}}} {\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e}$, which confirms the above computation. Likewise $A = H^{-1} C$, corresponding to ${\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{{\mathrm {id}}} {\bf R}^3_{\underline v}$, which confirms the above computation.
+A slightly different way to solve this is to observe that the matrix of $f$ with respect to the basis $\underline v$ in the source and the standard basis $\underline e$ in the target is $C = \left ( \begin{array}{ccc} 3 & 2 & 5 \\ 0 & 2 & 2 \\ -5 & 0 & -5 \end{array} \right )$. We consider the matrix $H = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & -2 \end{array} \right )$ whose columns are the three vectors $v_i$, i.e., the base change matrix from the basis $\underline v$ to $\underline e$. Compute the inverse of this matrix, for example using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>. This gives $H^{-1} = \left ( \begin{array}{ccc} 2 & -2 & 1 \\ 0 & 1 & 0 \\ -1 & 1 & -1 \end{array} \right )$. This is the base change matrix from $\underline e$ to the basis $\underline v$. Then $B = C H^{-1}$: ${\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{ {\mathrm {id}}} {\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e}$, which confirms the above computation. Likewise $A = H^{-1} C$, corresponding to ${\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{ {\mathrm {id}}} {\bf R}^3_{\underline v}$, which confirms the above computation.
 
 The kernel and image of $f$ can be computed by bringing $B$ into row echelon form. The result is $\ker f = \{(x,x,x) | x \in {\bf R}\}$, i.e., it is 1-dimensional and has as a basis vector $(1,1,1)$. We have ${\operatorname{im}\ } f = L((1,4,5),(1,-2,-5))$.
 
