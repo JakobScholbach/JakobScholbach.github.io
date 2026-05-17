@@ -927,10 +927,10 @@
 <h2 id="basic-properties">Basic Properties<a class="headerlink" href="#basic-properties" title="Permanent link">&para;</a></h2>
 <div class="definition">
 <p class="env-number"><strong>Definition 1.1</strong></p>
-<p><span id="def-complex-numbers" label="def:complex-numbers"></span> The <em>complex numbers</em> <span class="arithmatex">\({{\bf C}}\)</span> are the set</p>
+<p><span id="def-complex-numbers" label="def:complex-numbers"></span> The <em>complex numbers</em> <span class="arithmatex">\({ {\bf C}}\)</span> are the set</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-{{\bf C}} = \{(a,b), \text{ with } a, b \in {\bf R}\}.
+{ {\bf C}} = \{(a,b), \text{ with } a, b \in {\bf R}\}.
 \]</div>
 </div>
 <p>Addition and multiplication of complex numbers are defined by</p>
@@ -960,7 +960,7 @@ a+ib := (a,b).
 i^2 (:=i i) = -1.
 \]</div>
 </div>
-<p>We consider the real numbers <span class="arithmatex">\({\bf R}\)</span> as the subset <span class="arithmatex">\(\{(a,0), a \in {\bf R}\} = \{a+i0 \} \subset {{\bf C}}\)</span>. The <em>real part</em> and <em>imaginary part</em> are defined as</p>
+<p>We consider the real numbers <span class="arithmatex">\({\bf R}\)</span> as the subset <span class="arithmatex">\(\{(a,0), a \in {\bf R}\} = \{a+i0 \} \subset { {\bf C}}\)</span>. The <em>real part</em> and <em>imaginary part</em> are defined as</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \Re(a+ib) := a, \Im(a+ib) := b.
@@ -970,19 +970,19 @@ i^2 (:=i i) = -1.
 </div>
 <p>The sum of complex numbers just amounts to adding the real part and the imaginary parts separately.</p>
 <p>Sometimes, we refer to the set of complex numbers also as the complex plane, given that we can switch back and forth between writing <span class="arithmatex">\(z = a+ib\)</span> and <span class="arithmatex">\(z=(a,b)\)</span>, i.e., a point on the plane specified by its two coordinates.</p>
-<p>Regarding the geometric properties of <span class="arithmatex">\({{\bf C}}\)</span>, we use the following standard terms:</p>
+<p>Regarding the geometric properties of <span class="arithmatex">\({ {\bf C}}\)</span>, we use the following standard terms:</p>
 <div class="definition">
 <p class="env-number"><strong>Definition 1.2</strong></p>
 <p><span id="def-conjugation-and-absolute-value" label="def:conjugation-and-absolute-value"></span> The <em>complex conjugation</em> is the mapping</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-\overline ? : {{\bf C}} \to {{\bf C}}, z = a+ib \mapsto \overline z := a-ib.
+\overline ? : { {\bf C}} \to { {\bf C}}, z = a+ib \mapsto \overline z := a-ib.
 \]</div>
 </div>
 <p>The <em>absolute value</em> is the mapping</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-| ? | : {{\bf C}} \to {\bf R}^{\ge 0}, z = a + ib \mapsto |z| := \sqrt{z \overline z} = \sqrt{a^2 + b^2}.
+| ? | : { {\bf C}} \to {\bf R}^{\ge 0}, z = a + ib \mapsto |z| := \sqrt{z \overline z} = \sqrt{a^2 + b^2}.
 \]</div>
 </div>
 </div>
@@ -1021,7 +1021,7 @@ z z^{-1} = z \frac{\overline z}{z \cdot \overline z} = 1.
 z^{-1} = \frac a{a^2+b^2}-\frac b{a^2+b^2}i.
 \]</div>
 </div>
-<p>Given that we can form the reciprocal of any nonzero complex number, we can also divide any complex number <span class="arithmatex">\(w \in {{\bf C}}\)</span> like so:</p>
+<p>Given that we can form the reciprocal of any nonzero complex number, we can also divide any complex number <span class="arithmatex">\(w \in { {\bf C}}\)</span> like so:</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \frac w z = \frac{w \overline z}{z \overline z} = \frac{w \overline z}{|z|^2}.
@@ -1029,7 +1029,7 @@ z^{-1} = \frac a{a^2+b^2}-\frac b{a^2+b^2}i.
 </div>
 <h3 id="trigonometric-form">Trigonometric form<a class="headerlink" href="#trigonometric-form" title="Permanent link">&para;</a></h3>
 <p>The multiplication of complex numbers reveals its essence best by writing complex numbers in a different form, known as the trigonometric form.</p>
-<p>For any two complex numbers <span class="arithmatex">\(z_1 = a_1 + b_1 i, z_2 = a_2 + b_2 i \in {{\bf C}}\)</span>, one has</p>
+<p>For any two complex numbers <span class="arithmatex">\(z_1 = a_1 + b_1 i, z_2 = a_2 + b_2 i \in { {\bf C}}\)</span>, one has</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
@@ -1105,7 +1105,7 @@ r \cdot (\cos \alpha + i \sin \alpha) = s \cdot (\cos \beta + i \sin \beta)
 </div>
 <div class="lemma">
 <p class="env-number"><strong>Lemma 1.8</strong></p>
-<p><span id="lem-product-in-trigonometric-form" label="lem:product-in-trigonometric-form"></span> If <span class="arithmatex">\(z_1, z_2 \in {{\bf C}}\)</span> are given in trigonometric form, i.e.,</p>
+<p><span id="lem-product-in-trigonometric-form" label="lem:product-in-trigonometric-form"></span> If <span class="arithmatex">\(z_1, z_2 \in { {\bf C}}\)</span> are given in trigonometric form, i.e.,</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 z_1 = |z_1| (\cos ({\mathrm {arg}} z_1) + i \sin ({\mathrm {arg}} z_1))
@@ -1197,7 +1197,7 @@ z^n - 1 = 0.
 z^n = r^n (\cos (n \alpha) + i \sin (n \alpha)).
 \]</div>
 </div>
-<p>This will be equal to <span class="arithmatex">\(1 = 1 \cdot (\cos 0 + i \sin 0)\)</span> exactly if <span class="arithmatex">\(r^n = 1\)</span> and if <span class="arithmatex">\(n \alpha - 0 = n \alpha\)</span> is an integer multiple of <span class="arithmatex">\(2 \pi\)</span>, say <span class="arithmatex">\(n \alpha = 2 k \pi\)</span>, for an integer <span class="arithmatex">\(k \in {{\bf Z}}\)</span>. Thus, <span class="arithmatex">\(\alpha = \frac{2 k \pi} n\)</span>.</p>
+<p>This will be equal to <span class="arithmatex">\(1 = 1 \cdot (\cos 0 + i \sin 0)\)</span> exactly if <span class="arithmatex">\(r^n = 1\)</span> and if <span class="arithmatex">\(n \alpha - 0 = n \alpha\)</span> is an integer multiple of <span class="arithmatex">\(2 \pi\)</span>, say <span class="arithmatex">\(n \alpha = 2 k \pi\)</span>, for an integer <span class="arithmatex">\(k \in { {\bf Z}}\)</span>. Thus, <span class="arithmatex">\(\alpha = \frac{2 k \pi} n\)</span>.</p>
 <div class="center">
 <p><img alt="image" src="../figures/png/c/c-fig-03.png" /></p>
 </div>

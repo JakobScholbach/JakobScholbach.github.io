@@ -3326,9 +3326,9 @@ L((-1,2,3)) = L((1,-2,-3)).
 <p>We compute the matrix of <span class="arithmatex">\(f\)</span> with respect to this basis <span class="arithmatex">\(\underline v = \{l_1, e_2, e_3\}\)</span>:</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-{\bf R}^3_{\underline v} \stackrel [H]{{\mathrm {id}}}\longrightarrow 
+{\bf R}^3_{\underline v} \stackrel [H]{ {\mathrm {id}}}\longrightarrow 
 {\bf R}^3_{\underline e} \stackrel [A]{f} \longrightarrow 
-{\bf R}^3_{\underline e} \stackrel [H^{-1}]{{\mathrm {id}}} \longrightarrow
+{\bf R}^3_{\underline e} \stackrel [H^{-1}]{ {\mathrm {id}}} \longrightarrow
 {\bf R}^3_{\underline v}.
 \]</div>
 </div>
@@ -3385,9 +3385,9 @@ A = \left ( \begin{array}{ccc} 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp;
 <p>As before, we compute that matrix of <span class="arithmatex">\(f\)</span> with respect to the standard basis using the method above:</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-{\bf R}^3_{\underline e} \stackrel[K]{{\mathrm {id}}}\longrightarrow 
+{\bf R}^3_{\underline e} \stackrel[K]{ {\mathrm {id}}}\longrightarrow 
 {\bf R}^3_{\underline v} \stackrel[A]{f} \longrightarrow
-{\bf R}^3_{\underline v} \stackrel[K^{-1}]{{\mathrm {id}}} \longrightarrow
+{\bf R}^3_{\underline v} \stackrel[K^{-1}]{ {\mathrm {id}}} \longrightarrow
 {\bf R}^3_{\underline e}.
 \]</div>
 </div>
@@ -3481,7 +3481,7 @@ f(e_3) &amp; = f(v_1) - f(v_3) = (3,0,-5) - (5,2,-5) = (-2, -2, 0).
 B = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; -2 \\ -2 &amp; 4 &amp; -2 \\ -5 &amp; 5 &amp; 0 \end{array} \right ).
 \]</div>
 </div>
-<p>A slightly different way to solve this is to observe that the matrix of <span class="arithmatex">\(f\)</span> with respect to the basis <span class="arithmatex">\(\underline v\)</span> in the source and the standard basis <span class="arithmatex">\(\underline e\)</span> in the target is <span class="arithmatex">\(C = \left ( \begin{array}{ccc} 3 &amp; 2 &amp; 5 \\ 0 &amp; 2 &amp; 2 \\ -5 &amp; 0 &amp; -5 \end{array} \right )\)</span>. We consider the matrix <span class="arithmatex">\(H = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ -1 &amp; 0 &amp; -2 \end{array} \right )\)</span> whose columns are the three vectors <span class="arithmatex">\(v_i\)</span>, i.e., the base change matrix from the basis <span class="arithmatex">\(\underline v\)</span> to <span class="arithmatex">\(\underline e\)</span>. Compute the inverse of this matrix, for example using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>. This gives <span class="arithmatex">\(H^{-1} = \left ( \begin{array}{ccc} 2 &amp; -2 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ -1 &amp; 1 &amp; -1 \end{array} \right )\)</span>. This is the base change matrix from <span class="arithmatex">\(\underline e\)</span> to the basis <span class="arithmatex">\(\underline v\)</span>. Then <span class="arithmatex">\(B = C H^{-1}\)</span>: <span class="arithmatex">\({\bf R}^3_{\underline e} \stackrel [H^{-1}]{{\mathrm {id}}} \to {\bf R}^3_{\underline v} \stackrel [C]{f} \to {\bf R}^3_{\underline e}\)</span>, which confirms the above computation. Likewise <span class="arithmatex">\(A = H^{-1} C\)</span>, corresponding to <span class="arithmatex">\({\bf R}^3_{\underline v} \stackrel[C]{f}\to {\bf R}^3_{\underline e} \stackrel[H^{-1}]{{\mathrm {id}}}\to {\bf R}^3_{\underline v}\)</span>, which confirms the above computation.</p>
+<p>A slightly different way to solve this is to observe that the matrix of <span class="arithmatex">\(f\)</span> with respect to the basis <span class="arithmatex">\(\underline v\)</span> in the source and the standard basis <span class="arithmatex">\(\underline e\)</span> in the target is <span class="arithmatex">\(C = \left ( \begin{array}{ccc} 3 &amp; 2 &amp; 5 \\ 0 &amp; 2 &amp; 2 \\ -5 &amp; 0 &amp; -5 \end{array} \right )\)</span>. We consider the matrix <span class="arithmatex">\(H = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ -1 &amp; 0 &amp; -2 \end{array} \right )\)</span> whose columns are the three vectors <span class="arithmatex">\(v_i\)</span>, i.e., the base change matrix from the basis <span class="arithmatex">\(\underline v\)</span> to <span class="arithmatex">\(\underline e\)</span>. Compute the inverse of this matrix, for example using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>. This gives <span class="arithmatex">\(H^{-1} = \left ( \begin{array}{ccc} 2 &amp; -2 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ -1 &amp; 1 &amp; -1 \end{array} \right )\)</span>. This is the base change matrix from <span class="arithmatex">\(\underline e\)</span> to the basis <span class="arithmatex">\(\underline v\)</span>. Then <span class="arithmatex">\(B = C H^{-1}\)</span>: <span class="arithmatex">\({\bf R}^3_{\underline e} \stackrel [H^{-1}]{ {\mathrm {id}}} \to {\bf R}^3_{\underline v} \stackrel [C]{f} \to {\bf R}^3_{\underline e}\)</span>, which confirms the above computation. Likewise <span class="arithmatex">\(A = H^{-1} C\)</span>, corresponding to <span class="arithmatex">\({\bf R}^3_{\underline v} \stackrel[C]{f}\to {\bf R}^3_{\underline e} \stackrel[H^{-1}]{ {\mathrm {id}}}\to {\bf R}^3_{\underline v}\)</span>, which confirms the above computation.</p>
 <p>The kernel and image of <span class="arithmatex">\(f\)</span> can be computed by bringing <span class="arithmatex">\(B\)</span> into row echelon form. The result is <span class="arithmatex">\(\ker f = \{(x,x,x) | x \in {\bf R}\}\)</span>, i.e., it is 1-dimensional and has as a basis vector <span class="arithmatex">\((1,1,1)\)</span>. We have <span class="arithmatex">\({\operatorname{im}\ } f = L((1,4,5),(1,-2,-5))\)</span>.</p>
 <p>For the last part, we form the matrix</p>
 <div class="arithmatex">
@@ -4832,15 +4832,15 @@ W^\bot=L\big((1,0,0,-1),(0,1,1,-1)\big).
 <div class="arithmatex">\[
 {\left \langle v_2,v_1 \right \rangle}=-1,
 \qquad
-v_2'=v_2-\frac{{\left \langle v_2,v_1 \right \rangle}}{{\left \langle v_1,v_1 \right \rangle}}v_1
+v_2'=v_2-\frac{ {\left \langle v_2,v_1 \right \rangle}}{ {\left \langle v_1,v_1 \right \rangle}}v_1
 =v_2+\frac12 v_1=(1,\tfrac12,\tfrac12,1).
 \]</div>
 </div>
 <p>To avoid fractions, take <span class="arithmatex">\(w_2:=2v_2'=(2,1,1,2)\)</span>, which is still orthogonal to <span class="arithmatex">\(v_1\)</span>. By <a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, specifically the formula in <a href="../euclid/#eq-orthogonal-projection-formula" data-reference-type="ref+Label" data-reference="eq:orthogonal-projection-formula">Equation (7.26)</a>, for our orthogonal basis <span class="arithmatex">\(v_1, w_2\)</span> we have</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
-p_W(u)=\frac{{\left \langle u,v_1 \right \rangle}}{{\left \langle v_1,v_1 \right \rangle}}v_1
-+\frac{{\left \langle u,w_2 \right \rangle}}{{\left \langle w_2,w_2 \right \rangle}}w_2.
+p_W(u)=\frac{ {\left \langle u,v_1 \right \rangle}}{ {\left \langle v_1,v_1 \right \rangle}}v_1
++\frac{ {\left \langle u,w_2 \right \rangle}}{ {\left \langle w_2,w_2 \right \rangle}}w_2.
 \]</div>
 </div>
 <p>Compute <span class="arithmatex">\({\left \langle u,v_1 \right \rangle}=-4\)</span>, <span class="arithmatex">\({\left \langle v_1,v_1 \right \rangle}=2\)</span>, <span class="arithmatex">\({\left \langle u,w_2 \right \rangle}=20\)</span>, and <span class="arithmatex">\({\left \langle w_2,w_2 \right \rangle}=10\)</span>. Thus the orthogonal projection of <span class="arithmatex">\((1,5,1,6)\)</span> onto <span class="arithmatex">\(W\)</span> is</p>
@@ -4877,8 +4877,8 @@ w'_2 := v_2 - {\left \langle v_2, w_1 \right \rangle} w_1 &amp; = (-3,0,1) - \le
 <div class="arithmatex">\[
 \begin{align*}
 t_U
-&amp; = \frac{{\left \langle t, v_1 \right \rangle}}{{\left \langle v_1, v_1 \right \rangle}} v_1
-+ \frac{{\left \langle t, w'_2 \right \rangle}}{{\left \langle w'_2, w'_2 \right \rangle}} w'_2 \\
+&amp; = \frac{ {\left \langle t, v_1 \right \rangle}}{ {\left \langle v_1, v_1 \right \rangle}} v_1
++ \frac{ {\left \langle t, w'_2 \right \rangle}}{ {\left \langle w'_2, w'_2 \right \rangle}} w'_2 \\
 &amp; = \frac 12 (1,1,0) + \frac{13/2}{11/2} \left(-\frac32, \frac32, 1\right) \\
 &amp; = \left(\frac 12, \frac 12, 0\right) + \frac{13}{11}\left(-\frac 32, \frac 32, 1\right) \\
 &amp; = \left(-\frac{14}{11}, \frac{25}{11}, \frac{13}{11}\right).
@@ -4889,7 +4889,7 @@ t_U
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
-t_\bot &amp; = \frac{{\left \langle t, v \right \rangle}}{{\left \langle v, v \right \rangle}} v \\
+t_\bot &amp; = \frac{ {\left \langle t, v \right \rangle}}{ {\left \langle v, v \right \rangle}} v \\
 &amp; = \frac{14}{11}(1,-1,3) \\
 &amp; = \left(\frac{14}{11}, -\frac{14}{11}, \frac{42}{11}\right).
 \end{align*}
@@ -5335,7 +5335,7 @@ w_2=\frac1{\sqrt5}(0,0,-2,1),\quad
 w_3=\frac1{\sqrt{70}}(-5,5,2,4).
 \]</div>
 </div>
-<p>Let <span class="arithmatex">\(n=(1,-1,1,2)\)</span>. Then <span class="arithmatex">\(U=n^\bot\)</span>, hence (<a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>) <span class="arithmatex">\(p_U(x)=x-\frac{{\left \langle x,n \right \rangle}}{{\left \langle n,n \right \rangle}}n\)</span> and <span class="arithmatex">\({\left \langle n,n \right \rangle}=7\)</span>. For <span class="arithmatex">\(v=(2,3,0,0)\)</span>, <span class="arithmatex">\({\left \langle v,n \right \rangle}=-1\)</span>, so <span class="arithmatex">\(p_U(v)=v+\frac17 n=(\frac{15}7,\frac{20}7,\frac17,\frac27)\)</span>. For <span class="arithmatex">\(w=(2,5,3,0)\)</span>, <span class="arithmatex">\({\left \langle w,n \right \rangle}=0\)</span>, so <span class="arithmatex">\(p_U(w)=w=(2,5,3,0)\)</span>.</p>
+<p>Let <span class="arithmatex">\(n=(1,-1,1,2)\)</span>. Then <span class="arithmatex">\(U=n^\bot\)</span>, hence (<a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>) <span class="arithmatex">\(p_U(x)=x-\frac{ {\left \langle x,n \right \rangle}}{ {\left \langle n,n \right \rangle}}n\)</span> and <span class="arithmatex">\({\left \langle n,n \right \rangle}=7\)</span>. For <span class="arithmatex">\(v=(2,3,0,0)\)</span>, <span class="arithmatex">\({\left \langle v,n \right \rangle}=-1\)</span>, so <span class="arithmatex">\(p_U(v)=v+\frac17 n=(\frac{15}7,\frac{20}7,\frac17,\frac27)\)</span>. For <span class="arithmatex">\(w=(2,5,3,0)\)</span>, <span class="arithmatex">\({\left \langle w,n \right \rangle}=0\)</span>, so <span class="arithmatex">\(p_U(w)=w=(2,5,3,0)\)</span>.</p>
 <p>Finally, <span class="arithmatex">\(U^\bot=L(n)=L(1,-1,1,2)\)</span>, where we have used <a href="../euclid/#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a>.</p>
 </div>
 <div class="solution">
