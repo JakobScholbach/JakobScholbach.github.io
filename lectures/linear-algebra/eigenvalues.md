@@ -1,6 +1,5 @@
 ---
 title: Eigenvalues and Eigenvectors
-render_with_liquid: false
 ---
 
 # Eigenvalues and Eigenvectors
@@ -658,7 +657,7 @@ Hint: you will find that the eigenvalues of $A$ are among the numbers $0, 1, 2, 
 
 <span id="exercise-eigenvalues-2x2" label="exercise.eigenvalues.2x2"></span> (See <a href="#sol-exercise-eigenvalues-2x2" data-reference-type="ref+Label" data-reference="sol--exercise.eigenvalues.2x2">Solution 6.6.2</a>.) Let $A = \left ( \begin{array}{cc} a & b \\ c & d \end{array} \right )$. Show that:
 
-- $\chi_A(t) = t^2 - {{\mathrm {tr}}} (A) t + \det A = t^2 - (a+d) t + (ad-bc)$. Here ${{\mathrm {tr}}} (A)$ is the *trace* of $A$, cf. <a href="../maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>.
+- $\chi_A(t) = t^2 - \mathrm {tr} (A) t + \det A = t^2 - (a+d) t + (ad-bc)$. Here $\mathrm {tr} (A)$ is the *trace* of $A$, cf. <a href="../maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>.
 
 - The eigenvalues of $A$ are
 <div class="arithmatex" markdown="1">

@@ -1,6 +1,5 @@
 ---
 title: Appendix
-render_with_liquid: false
 ---
 
 <a id="sect-notation"></a>

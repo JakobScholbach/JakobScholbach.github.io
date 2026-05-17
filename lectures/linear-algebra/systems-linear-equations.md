@@ -1,6 +1,5 @@
 ---
 title: Systems: Linear Equations
-render_with_liquid: false
 ---
 
 <a id="sect-systems"></a>

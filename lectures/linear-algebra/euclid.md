@@ -1,6 +1,5 @@
 ---
 title: Euclidean Spaces
-render_with_liquid: false
 ---
 
 # Euclidean spaces
@@ -49,7 +48,7 @@ However, for any $v \in {\bf R}^n$, we have
 <span id="eqn-standard-s-p-positive" label="eqn--standard s p positive"></span> i.e., a scalar product of a vector with *itself* is always non-negative. This implies that
 <div class="arithmatex" markdown="1">
 \[
-|\hspace{-0.5mm}| {v} |\hspace{-0.5mm}| := \sqrt{{\left \langle v, v \right \rangle}} = \sqrt{v_1^2 + \dots + v_n^2}
+|\hspace{-0.5mm}| {v} |\hspace{-0.5mm}| := \sqrt{\left \langle v, v \right \rangle} = \sqrt{v_1^2 + \dots + v_n^2}
 \]
 </div>
 is a well-defined (real) number. It is called the *norm* of the vector $v$.
@@ -258,7 +257,7 @@ where as ${\left \langle e_k, e_k \right \rangle_{A}} = +1$ for the other three 
 for all $v \in {\bf R}^n$, $v \ne 0$. In this case we can define the *norm* (of $v$ with respect to the matrix $A$) as
 <div class="arithmatex" markdown="1">
 \[
-{|\hspace{-0.5mm}| {v} |\hspace{-0.5mm}|}_{A} := \sqrt {{\left \langle v, v \right \rangle_{A}}}.
+{|\hspace{-0.5mm}| {v} |\hspace{-0.5mm}|}_{A} := \sqrt {\left \langle v, v \right \rangle_{A}}.
 \]
 </div>
 
