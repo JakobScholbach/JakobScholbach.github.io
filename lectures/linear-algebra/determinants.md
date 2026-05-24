@@ -45,7 +45,7 @@ be a $2 \times 2$-matrix. The *determinant* of $A$ is defined as
   \det \left ( \begin{array}{cc} a & b \\ ra & rb \end{array} \right ) = a rb - bra = 0.
 \]
 </div>
-  According to <a href="../maps/#cor-rows-columns-independent" data-reference-type="ref+Label" data-reference="cor:rows-columns-independent">Corollary 4.93</a>, $A$ is *not* invertible. This is an example of the fact alluded to above (cf. <a href="#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>).
+  According to <a href="../maps/#cor-rows-columns-independent" data-reference-type="ref+Label" data-reference="cor:rows-columns-independent">Corollary 4.94</a>, $A$ is *not* invertible. This is an example of the fact alluded to above (cf. <a href="#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>).
 
 </div>
 
@@ -427,7 +427,7 @@ A \text{ is invertible} \Leftrightarrow A' \text{ is invertible} \stackrel ? \Le
 </div>
 and it remains to show the middle equivalence.
 
-The matrix $A'$ is in reduced row echelon form. Thus, either $A' = {\mathrm {id}}$ or $A'$ contains a zero row. In the first event, $A'$ is invertible, and $\det A' = 1 \ne 0$. In the second event, $A'$ is not invertible (by <a href="../maps/#cor-rows-columns-independent" data-reference-type="ref+Label" data-reference="cor:rows-columns-independent">Corollary 4.93</a>) and $\det A' = 0$ as was noted around .
+The matrix $A'$ is in reduced row echelon form. Thus, either $A' = {\mathrm {id}}$ or $A'$ contains a zero row. In the first event, $A'$ is invertible, and $\det A' = 1 \ne 0$. In the second event, $A'$ is not invertible (by <a href="../maps/#cor-rows-columns-independent" data-reference-type="ref+Label" data-reference="cor:rows-columns-independent">Corollary 4.94</a>) and $\det A' = 0$ as was noted around .
 
 We skip the proof of the adjugate formula, cf. . ◻
 
@@ -547,7 +547,7 @@ Here \* stands for an arbitrary entry. Then
 \det A = \det (A^T),
 \]
 </div>
-i.e., the determinant does not change when passing from $A$ to its transpose (<a href="../maps/#def-transpose" data-reference-type="ref+Label" data-reference="def:transpose">Definition 4.88</a>).
+i.e., the determinant does not change when passing from $A$ to its transpose (<a href="../maps/#def-transpose" data-reference-type="ref+Label" data-reference="def:transpose">Definition 4.89</a>).
 
 </div>
 
@@ -555,7 +555,7 @@ i.e., the determinant does not change when passing from $A$ to its transpose (<a
 
 *Proof.* For small matrices (of size at most $3 \times 3$), this can be proved directly from the formulae in §<a href="#sect-small-matrices" data-reference-type="ref" data-reference="sect--small matrices">1.2.1</a>.
 
-In general, one may argue like this: if $A$ is not invertible, then $A^T$ is not invertible either (by <a href="../maps/#lem-properties-transposition" data-reference-type="ref+Label" data-reference="lem:properties-transposition">Lemma 4.90</a>). In this case, both sides of the equation are zero. If $A$ is invertible, it is a product of elementary matrices: $A = U_1 \dots U_n$. We then have $A^T = U_n^T \dots U_1^T$. By the product formula (<a href="#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>), we may therefore assume $A$ is an elementary matrix. In this case, one checks the claim by inspection:
+In general, one may argue like this: if $A$ is not invertible, then $A^T$ is not invertible either (by <a href="../maps/#lem-properties-transposition" data-reference-type="ref+Label" data-reference="lem:properties-transposition">Lemma 4.91</a>). In this case, both sides of the equation are zero. If $A$ is invertible, it is a product of elementary matrices: $A = U_1 \dots U_n$. We then have $A^T = U_n^T \dots U_1^T$. By the product formula (<a href="#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>), we may therefore assume $A$ is an elementary matrix. In this case, one checks the claim by inspection:
 
 - for $A = \left ( \begin{array}{ccccccc} 1 & & & & & & \\ & \ddots & & & & & \\ & & 0 & & 1 & & \\ & & & \ddots & & & \\ & & 1 & & 0 & & \\ & & & & & \ddots & \\ & & & & & & 1 \end{array} \right )$, we have $A^T = A$, so the claim clearly holds.
 
@@ -1009,7 +1009,7 @@ A_2^{-1}=\frac12\left ( \begin{array}{ccc} -2 & -8 & 2 \\ 6 & 21 & -5 \\ 0 & 2 &
 = \left ( \begin{array}{ccc} -1 & -4 & 1 \\ 3 & \frac{21}{2} & -\frac52 \\ 0 & 1 & 0 \end{array} \right ).
 \]
 </div>
-This exercise can also be solved without using the adjugate formula, as follows: by <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a> (similarly to <a href="../maps/#ex-maps-example-025" data-reference-type="ref+Label" data-reference="ex:maps-example-025">Example 4.81</a>), we can compute $A^{-1}$ by reducing $(A \ | \ {\mathrm{id}})$ to $({\mathrm{id}} \ | \ A^{-1})$. For $A_2$:
+This exercise can also be solved without using the adjugate formula, as follows: by <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.81</a> (similarly to <a href="../maps/#ex-maps-example-025" data-reference-type="ref+Label" data-reference="ex:maps-example-025">Example 4.82</a>), we can compute $A^{-1}$ by reducing $(A \ | \ {\mathrm{id}})$ to $({\mathrm{id}} \ | \ A^{-1})$. For $A_2$:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}

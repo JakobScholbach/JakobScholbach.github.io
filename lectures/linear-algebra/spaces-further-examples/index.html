@@ -1,0 +1,2496 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wiki generated from LaTeX lecture notes">
+      
+      
+      
+      
+        <link rel="prev" href="../spaces-intersection/">
+      
+      
+        <link rel="next" href="../spaces-linear-combinations/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Further Examples - Linear Algebra Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#further-examples-of-vector-spaces" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Algebra Wiki" class="md-header__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Further Examples
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Algebra Wiki" class="md-nav__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Complex Numbers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-complex-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Systems of Linear Equations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-linear-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-elementary-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elementary Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-gaussian-elimination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gaussian Elimination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-systems-of-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vector Spaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-R2R3Rn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R², R³ and Rⁿ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-definition-solution-of-homogeneous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution Sets of Homogeneous Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intersections of Subspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Further Examples
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Further Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polynomials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-sums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct sums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quotient-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quotient spaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-linear-combinations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Combinations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-linear-independence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Independence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-dimension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimension
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-vector-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linear Maps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-definition-and-first-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definition and First Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-multiplication-of-a-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrix-Vector Multiplication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-kernel-and-image-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel and Image (1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-kernel-and-image-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel and Image (2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-revisiting-linear-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Revisiting Linear Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-linear-maps-defined-on-basis-vectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps on Basis Vectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-matrices-associated-to-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrices of Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-composing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composing Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-inverses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inverses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-change-of-basis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change of Basis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-transpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transposition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Determinants
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-determinants-of-2-x-2-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2×2 Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-determinants-of-larger-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants of Larger Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-invertibility-and-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Invertibility and Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-further-properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Further Properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Eigenvalues and Eigenvectors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-characteristic-polynomial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characteristic Polynomial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-eigenspaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-diagonalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagonalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-eigenvalues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-eigenvalues-and-eigenvectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Euclidean Spaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-scalar-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scalar Product on Rⁿ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-orthogonal-and-symmetric-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orthogonal and Symmetric Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-affine-subspaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Affine Subspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-distances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-euclid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polynomials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-sums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct sums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quotient-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quotient spaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="further-examples-of-vector-spaces">Further examples of vector spaces<a class="headerlink" href="#further-examples-of-vector-spaces" title="Permanent link">&para;</a></h1>
+<h2 id="polynomials">Polynomials<a class="headerlink" href="#polynomials" title="Permanent link">&para;</a></h2>
+<p>We introduce a number of further examples of vector spaces. Recall that a function <span class="arithmatex">\(f : {\bf R} \to {\bf R}\)</span> (i.e., cf. §<a href="../appendix/#sect-notation" data-reference-type="ref" data-reference="sect--notation">Chapter A</a>, a function that takes as an input a real number <span class="arithmatex">\(x\)</span> and whose output <span class="arithmatex">\(f(x)\)</span> is another real number) is called a <em>polynomial</em> if it is of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0,
+\]</div>
+</div>
+<p>where <span class="arithmatex">\(a_n, a_{n-1}, \dots, a_0\)</span> are real numbers. These numbers are called the <em>coefficients</em> of <span class="arithmatex">\(f\)</span>. The <em>degree</em> of <span class="arithmatex">\(f\)</span> is the largest exponent <span class="arithmatex">\(n\)</span> appearing in <span class="arithmatex">\(f\)</span> (provided that the coefficient <span class="arithmatex">\(a_n \ne 0\)</span>). Recall from §<a href="../appendix/#sect-notation" data-reference-type="ref" data-reference="sect--notation">Chapter A</a> that such an expression is abbreviated as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+f(x) = \sum_{i = 0}^n a_i x^i.
+\]</div>
+</div>
+<p>In increasing complexity, a <em>constant function</em></p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+f(x) = a
+\]</div>
+</div>
+<p>is a polynomial of degree 0 (note <span class="arithmatex">\(a = a \cdot x^0\)</span>);</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+f(x) = a_1 x + a_0
+\]</div>
+</div>
+<p>is a <em>linear polynomial</em> (also known as <em>linear function</em>). Its degree is 1 (provided <span class="arithmatex">\(a_1 \ne 0\)</span>). Next,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+f(x) = a_2 x^2 + a_1 x + a_0
+\]</div>
+</div>
+<p>is called a <em>quadratic polynomial</em> (or <em>quadratic function</em>). Its degree is 2 (provided <span class="arithmatex">\(a_2 \ne 0\)</span>; if <span class="arithmatex">\(a_2 = 0\)</span> then it is a linear polynomial). These types of functions are familiar from high-school.</p>
+<div class="center">
+<p><img alt="image" src="../figures/png/spaces/spaces-fig-07.png" /></p>
+</div>
+<div class="definitionlemma">
+<p class="env-number"><strong>Definition and Lemma 3.22</strong> (Related exercises: <a href="../exercises-spaces/#differentiable-functions">Exercise 3.3</a>, <a href="../exercises-spaces/#ex-polynomial-subspaces">Exercise 3.9</a>)</p>
+<p><span id="dlm-polynomials-vector-space" label="dlm:polynomials-vector-space"></span> The set</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\bf R}[x] := \{ f : {\bf R} \to {\bf R} \ | \ f \text{ is a polynomial} \}
+\]</div>
+</div>
+<p>is a vector space, where we define the sum and scalar multiplication as follows: given two polynomials <span class="arithmatex">\(f, g \in P\)</span>, their <em>sum</em> is the function <span class="arithmatex">\(f + g : {\bf R} \to {\bf R}\)</span>defined by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(f + g)(x) := f(x) + g(x),
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(3.23)</strong></p>
+<p><span id="sum-functions" label="sum functions"></span> and given a real number <span class="arithmatex">\(r \in {\bf R}\)</span>, the scalar multiple is the function <span class="arithmatex">\(r f : {\bf R} \to {\bf R}\)</span> defined by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(r f)(x) := r \cdot f(x).
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(3.24)</strong></p>
+<p><span id="scalar-multiple-functions" label="scalar multiple functions"></span></p>
+<p>The set</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\bf R}[x]^{\le d} := \{ \sum_{i = 0}^d a_i x^i \ | a_0, \dots, a_d \in {\bf R}\} (\subset {\bf R}[x])
+\]</div>
+</div>
+<p>of polynomials of <em>degree</em> at most <span class="arithmatex">\(d\)</span> is a subspace of <span class="arithmatex">\({\bf R}[x]\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> We have to check the conditions on a vector space (<a href="../spaces-definition-solution-of-homogeneous/#def-vector-space" data-reference-type="ref+Label" data-reference="def:vector-space">Definition 3.10</a>). As it also happens often in other examples, the most notable condition to check is that the sum and scalar multiple is again an element of the vector space. Here, we need to check that for <span class="arithmatex">\(f, g \in P\)</span> the function <span class="arithmatex">\(f + g\)</span> defined above is again a polynomial. Fortunately, this is easy: if <span class="arithmatex">\(f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0\)</span> and <span class="arithmatex">\(g(x) = b_n x^n + b_{n-1} x^{n-1} + \dots + b_0\)</span>, then, by definition</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+(f+g)(x) &amp; =  a_n x^n + a_{n-1} x^{n-1} + \dots + a_0 + b_n x^n + b_{n-1} x^{n-1} + \dots + b_0 \\
+&amp; = a_n x^n + b_n x^n + a_{n-1} x^{n-1} + b_{n-1} x^{n-1} + \dots + a_0 + b_0 \\
+&amp; = \underbrace{(a_n + b_n)}_{=:c_n} x^n + \underbrace{(a_{n-1}+b_{n-1})}_{=:c_{n-1}} x^{n-1} + \dots + \underbrace{(a_0 + b_0)}_{=:c_0} \\
+&amp; = c_n x^n + c_{n-1} x^{n-1} + \dots + c_0.
+\end{align*}
+\]</div>
+</div>
+<p>Thus, the sum of <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span> is another polynomial. Similarly, one verifies that the scalar multiple <span class="arithmatex">\(r \cdot f\)</span> is a polynomial (check this! what are its coefficients?). With these checks done, one can proceed checking the remaining conditions in <a href="../spaces-definition-solution-of-homogeneous/#def-vector-space" data-reference-type="ref+Label" data-reference="def:vector-space">Definition 3.10</a>. Checking this is comparatively uninsightful, and will be skipped.</p>
+<p>Checking that <span class="arithmatex">\({\bf R}[x]^{\le d}\)</span> is a subspace amounts to asserting that the 0 polynomial <span class="arithmatex">\(f(x) = 0\)</span> has degree at most <span class="arithmatex">\(d\)</span>, and that sums and <em>scalar</em> (!) multiples of polynomials of degree <span class="arithmatex">\(\le d\)</span> have again degree <span class="arithmatex">\(\le d\)</span>. This is clear. ◻</p>
+</div>
+<div class="remark">
+<p class="env-number"><strong>Remark 3.25</strong></p>
+<p><span id="rem-spaces-remark-003" label="rem:spaces-remark-003"></span> It is also true that the <em>product</em> of two polynomials is again a polynomial, but this is not part of what it takes to be a vector space, so we disregard that property at this point.</p>
+</div>
+<div class="remark">
+<p class="env-number"><strong>Remark 3.26</strong></p>
+<p><span id="rem-spaces-remark-004" label="rem:spaces-remark-004"></span> Instead of just polynomials, one can consider more general functions:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+{\bf R}[x] &amp; \subset  \{ f : {\bf R} \to {\bf R} \ | \  f \text{ is differentiable } \} \\ 
+&amp; \subset \{ f : {\bf R} \to {\bf R} \ | \  \text{ is continuous } \}  \\
+&amp; \subset\{ f : {\bf R} \to {\bf R} \text{ is any function} \}
+\end{align*}
+\]</div>
+</div>
+<p>are increasingly large vector spaces, cf. <a href="../exercises-spaces/#differentiable-functions" data-reference-type="ref+Label" data-reference="differentiable functions">Exercise 3.3</a>. The (huge!) space of all differentiable functions is a key player in analysis.</p>
+</div>
+<h2 id="direct-sums">Direct sums<a class="headerlink" href="#direct-sums" title="Permanent link">&para;</a></h2>
+<div class="definitionlemma">
+<p class="env-number"><strong>Definition and Lemma 3.27</strong></p>
+<p><span id="dlm-direct-sum" label="dlm:direct-sum"></span> Let <span class="arithmatex">\(V, W\)</span> be two vector spaces. Their <em>direct sum</em> is the set</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+V \oplus W := \{ (v, w) \ | \ v \in V, w \in W \}.
+\]</div>
+</div>
+<p>It is endowed with the addition given by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(v, w) + (v', w') := (v+v', w+w')
+\]</div>
+</div>
+<p>and scalar multiplication given by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+r \cdot (v, w) := (rv, rw).
+\]</div>
+</div>
+<p>These operations turn <span class="arithmatex">\(V \oplus W\)</span> into a vector space.</p>
+<p>More generally, the same definition works for finitely many[^1] vector spaces <span class="arithmatex">\(V_1, \dots, V_n\)</span>, giving rise to the direct sum <span class="arithmatex">\(V_1 \oplus \dots \oplus V_n\)</span>.</p>
+</div>
+<p>This is easy to check: revisit the definition of a vector space and see how checking each of the 8 axioms for <span class="arithmatex">\(V \oplus W\)</span> reduces to using the precise same axioms for <span class="arithmatex">\(V\)</span> and <span class="arithmatex">\(W\)</span>. In particular, the zero vector in <span class="arithmatex">\(V \oplus W\)</span> is the pair <span class="arithmatex">\((0_V, 0_W)\)</span>, where for clarity <span class="arithmatex">\(0_V\)</span> denotes the zero vector in <span class="arithmatex">\(V\)</span> and <span class="arithmatex">\(0_W\)</span> the one in <span class="arithmatex">\(W\)</span>.</p>
+<div class="example">
+<p class="env-number"><strong>Example 3.28</strong></p>
+<p><span id="ex-spaces-example-008" label="ex:spaces-example-008"></span> We have <span class="arithmatex">\({\bf R}^2 = {\bf R} \oplus {\bf R}\)</span> and in general</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\bf R}^n = \underbrace{{\bf R} \oplus \dots \oplus {\bf R}}_{n \text{ summands}}.
+\]</div>
+</div>
+<p>This is clear from the definition of the sum of vectors in <span class="arithmatex">\({\bf R}^n\)</span> (<a href="../spaces-R2R3Rn/#def-vector-sum" data-reference-type="ref+Label" data-reference="def:vector-sum">Definition 3.3</a>) and the scalar multiplication (<a href="../spaces-R2R3Rn/#def-scalar-multiplication" data-reference-type="ref+Label" data-reference="def:scalar-multiplication">Definition 3.7</a>).</p>
+</div>
+<p>Note that <span class="arithmatex">\(V \subset V \oplus W\)</span>, by regarding a vector <span class="arithmatex">\(v \in V\)</span> as the vector <span class="arithmatex">\((v, 0_W)\)</span>. Likewise we can regard some <span class="arithmatex">\(w \in W\)</span> as the vector <span class="arithmatex">\((0_V, w) \in V \oplus W\)</span>. This way, <span class="arithmatex">\(V \oplus W\)</span> is a vector space that naturally contains both <span class="arithmatex">\(V\)</span> and <span class="arithmatex">\(W\)</span>.</p>
+<div class="example">
+<p class="env-number"><strong>Example 3.29</strong></p>
+<p><span id="ex-spaces-example-009" label="ex:spaces-example-009"></span> The direct sum <span class="arithmatex">\({\bf R}^2 \oplus {\bf R}\)</span> consists of pairs <span class="arithmatex">\((v, w)\)</span> with <span class="arithmatex">\(v  = (x, y) \in {\bf R}^2\)</span> and <span class="arithmatex">\(w \in {\bf R}\)</span>. Thus, <span class="arithmatex">\({\bf R}^2 \oplus {\bf R} = \{((x,y), w) \ | \ x, y, w \in {\bf R}\}\)</span>. We can identify such a pair (consisting of a pair <span class="arithmatex">\((x,y)\)</span> and a number <span class="arithmatex">\(w\)</span>) with a triple <span class="arithmatex">\((x,y,w)\)</span>. Therefore, <span class="arithmatex">\({\bf R}^2 \oplus {\bf R}\)</span> can be identified with <span class="arithmatex">\({\bf R}^3\)</span>. The sum and scalar multiple on <span class="arithmatex">\({\bf R}^2 \oplus {\bf R}\)</span> as defined in <a href="#dlm-direct-sum" data-reference-type="ref+Label" data-reference="dlm:direct-sum">Definition and Lemma 3.27</a> then reduce to the usual sum and scalar multiple in <span class="arithmatex">\({\bf R}^3\)</span> as defined in <a href="../spaces-R2R3Rn/#def-vector-sum" data-reference-type="ref+Label" data-reference="def:vector-sum">Definition 3.3</a> and <a href="../spaces-R2R3Rn/#def-scalar-multiplication" data-reference-type="ref+Label" data-reference="def:scalar-multiplication">Definition 3.7</a>.</p>
+</div>
+<h2 id="quotient-spaces">Quotient spaces<a class="headerlink" href="#quotient-spaces" title="Permanent link">&para;</a></h2>
+<p>All the examples of vector spaces that we have encountered so far were subspaces of an already given vector space, beginning with some ambient <span class="arithmatex">\({\bf R}^n\)</span>. However, not all vector spaces embed (naturally) in some <span class="arithmatex">\({\bf R}^n\)</span>. To illustrate this, we consider an example of a so-called quotient space. Since a full treatment of this would require a few more basic notions, we only discuss this in a special case:</p>
+<div class="definition">
+<p class="env-number"><strong>Definition 3.30</strong></p>
+<p><span id="def-spaces-definition-007" label="def:spaces-definition-007"></span> Consider <span class="arithmatex">\(V = {\bf R}^2\)</span>, the plane, and a line <span class="arithmatex">\(L \subset W\)</span> through the origin. We define a set</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+V / L := \{ \text{ all lines that are parallel to } L \ \}.
+\]</div>
+</div>
+<p>(This is read “<span class="arithmatex">\(V\)</span> modulo <span class="arithmatex">\(L\)</span>.”) For example, <span class="arithmatex">\(L_1\)</span> and <span class="arithmatex">\(L_2\)</span> are <em>elements</em> in that set <span class="arithmatex">\(V / L\)</span> in the illustration below.</p>
+<div class="center">
+<p><img alt="image" src="../figures/png/spaces/spaces-fig-08.png" /></p>
+</div>
+</div>
+<p>How to define the sum and scalar multiplication on that set <span class="arithmatex">\(V/L\)</span>? Given <span class="arithmatex">\(L_1, L_2 \in V/L\)</span>, take <em>any</em> <span class="arithmatex">\(x_1 \in L_1\)</span> and any <span class="arithmatex">\(x_2 \in L_2\)</span>. (These are both vectors in <span class="arithmatex">\(V = {\bf R}^2\)</span>.) Form the unique line that passes through <span class="arithmatex">\(x_1 + x_2\)</span> and is parallel to <span class="arithmatex">\(L\)</span>. Call this line <span class="arithmatex">\(L_1 + L_2\)</span>. Similarly, the scalar multiple <span class="arithmatex">\(r \dot L_1\)</span> is the line passing through <span class="arithmatex">\(r \cdot x_1\)</span> and parallel to <span class="arithmatex">\(L\)</span>. What is remarkable is that makes sense, i.e., that the resulting lines do not depent on the choices of <span class="arithmatex">\(x_1, x_2\)</span> above. In the illustration below, we indicate two choices for <span class="arithmatex">\(x_1\)</span> (the second one being denoted <span class="arithmatex">\(x_1'\)</span>). The sum <span class="arithmatex">\(x_1 + x_2\)</span> is clearly different from <span class="arithmatex">\(x'_1 + x_2\)</span>, but they do lie on the same line (that is parallel to <span class="arithmatex">\(L\)</span>). This holds since <span class="arithmatex">\(x'_1 - x_1\)</span> lies in <span class="arithmatex">\(L\)</span>. Thus</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(x'_1 + x_2) - (x_1 + x_2) = x'_1 - x_1
+\]</div>
+</div>
+<p>also lies in <span class="arithmatex">\(L\)</span>, and therefore <span class="arithmatex">\(x'_1 + x_2\)</span> and <span class="arithmatex">\(x_1 + x_2\)</span> lie on the same line that is parallel to <span class="arithmatex">\(L\)</span>.</p>
+<p>With this settled, one can show (withouth much head-ache) that <span class="arithmatex">\(V/L\)</span> is indeed a vector space. (What is the zero vector in <span class="arithmatex">\(V/L\)</span>?)</p>
+<p>A conceptually important insight is that there is <em>no natural way</em> in which this <span class="arithmatex">\(V/L\)</span> is a subspace of <span class="arithmatex">\({\bf R}^2\)</span>. E.g., one may assign to an element <span class="arithmatex">\(L_1 \in V/L\)</span>, say, the <span class="arithmatex">\(y\)</span>-coordinate of the intersection of <span class="arithmatex">\(L_1\)</span> with the <span class="arithmatex">\(y\)</span>-axis. But, this idea is ad-hoc and problem-laden (why not take the <span class="arithmatex">\(x\)</span>-axis instead, and what is worse, what happens if <span class="arithmatex">\(L\)</span> is in fact the <span class="arithmatex">\(y\)</span>-axis...).</p>
+<p>[^1]: or even infinitely many</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

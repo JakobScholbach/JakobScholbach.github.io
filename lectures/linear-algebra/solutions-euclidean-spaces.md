@@ -3,7 +3,7 @@
 
 <p class="env-number"><strong>Solution 7.9.1</strong></p>
 
-<span id="sol-ex-euclid-polynomials-gs" label="sol--ex:euclid-polynomials-gs"></span> (See <a href="../euclid/#ex-euclid-polynomials-gs" data-reference-type="ref+Label" data-reference="ex:euclid-polynomials-gs">Exercise 7.1</a>.) This solution illustrates <a href="../euclid/#tas-compute-orthonormal-basis" data-reference-type="ref+Label" data-reference="tas:compute-orthonormal-basis">Task 7.61</a>.
+<span id="sol-ex-euclid-polynomials-gs" label="sol--ex:euclid-polynomials-gs"></span> (See <a href="../exercises-euclid/#ex-euclid-polynomials-gs" data-reference-type="ref+Label" data-reference="ex:euclid-polynomials-gs">Exercise 7.1</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthonormal-basis" data-reference-type="ref+Label" data-reference="tas:compute-orthonormal-basis">Task 7.61</a>.
 
 We consider $V=P_{\le 2}$ with the scalar product
 <div class="arithmatex" markdown="1">
@@ -11,7 +11,7 @@ We consider $V=P_{\le 2}$ with the scalar product
 {\left \langle p,q \right \rangle}=\int_{-1}^1 p(t)q(t)\,dt
 \]
 </div>
-as in <a href="../euclid/#ex-examples-scalar-product" data-reference-type="ref+Label" data-reference="ex:examples-scalar-product">Example 7.16</a><a href="../euclid/#item-functions" data-reference-type="ref" data-reference="item--functions">3.</a>. For $e_1=1$, $e_2=t$, $e_3=t^2$, we compute the scalar products, i.e., the numbers ${\left \langle e_i,e_j \right \rangle}$:
+as in <a href="../euclid-euclidean-spaces/#ex-examples-scalar-product" data-reference-type="ref+Label" data-reference="ex:examples-scalar-product">Example 7.16</a><a href="../euclid-euclidean-spaces/#item-functions" data-reference-type="ref" data-reference="item--functions">3.</a>. For $e_1=1$, $e_2=t$, $e_3=t^2$, we compute the scalar products, i.e., the numbers ${\left \langle e_i,e_j \right \rangle}$:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -24,7 +24,7 @@ as in <a href="../euclid/#ex-examples-scalar-product" data-reference-type="ref+L
 \end{align*}
 \]
 </div>
-By symmetry (cf. <a href="../euclid/#lem-scalar-product-properties" data-reference-type="ref+Label" data-reference="lem:scalar-product-properties">Lemma 7.5</a>), this also gives the remaining entries with $i>j$. We now apply Gram–Schmidt orthogonalization (<a href="../euclid/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>):
+By symmetry (cf. <a href="../euclid-scalar-product/#lem-scalar-product-properties" data-reference-type="ref+Label" data-reference="lem:scalar-product-properties">Lemma 7.5</a>), this also gives the remaining entries with $i>j$. We now apply Gram–Schmidt orthogonalization (<a href="../euclid-euclidean-spaces/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>):
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -68,7 +68,7 @@ Such polynomials, i.e., orthonormal with respect to the given scalar product, ar
 
 <p class="env-number"><strong>Solution 7.9.2</strong></p>
 
-<span id="sol-ex-euclid-r4-projection" label="sol--ex:euclid-r4-projection"></span> (See <a href="../euclid/#ex-euclid-r4-projection" data-reference-type="ref+Label" data-reference="ex:euclid-r4-projection">Exercise 7.3</a>.) This solution illustrates <a href="../euclid/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid/#tas-compute-orthogonal-projection">Task 7.62</a>.
+<span id="sol-ex-euclid-r4-projection" label="sol--ex:euclid-r4-projection"></span> (See <a href="../exercises-euclid/#ex-euclid-r4-projection" data-reference-type="ref+Label" data-reference="ex:euclid-r4-projection">Exercise 7.3</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid-summary/#tas-compute-orthogonal-projection">Task 7.62</a>.
 
 Let
 <div class="arithmatex" markdown="1">
@@ -82,7 +82,7 @@ From the equations we get $x=t$ and $y=t-z$. With free parameters $z=a$ and $t=b
 (x,y,z,t)=(b,b-a,a,b)=a(0,-1,1,0)+b(1,1,0,1).
 \]
 </div>
-Hence one basis of $W$ is $\big((0,-1,1,0),(1,1,0,1)\big).$ To compute $W^\bot$ in detail, let $u=(x,y,z,t)$ and impose orthogonality to a basis of $W$, namely $v_1=(0,-1,1,0)$ and $v_2=(1,1,0,1)$ (cf. <a href="../euclid/#dlm-orthogonal-complement" data-reference-type="ref+Label" data-reference="dlm:orthogonal-complement">Definition and Lemma 7.20</a>):
+Hence one basis of $W$ is $\big((0,-1,1,0),(1,1,0,1)\big).$ To compute $W^\bot$ in detail, let $u=(x,y,z,t)$ and impose orthogonality to a basis of $W$, namely $v_1=(0,-1,1,0)$ and $v_2=(1,1,0,1)$ (cf. <a href="../euclid-euclidean-spaces/#dlm-orthogonal-complement" data-reference-type="ref+Label" data-reference="dlm:orthogonal-complement">Definition and Lemma 7.20</a>):
 <div class="arithmatex" markdown="1">
 \[
 {\left \langle u,v_1 \right \rangle}=0,
@@ -118,7 +118,7 @@ W^\bot=L\big((1,0,0,-1),(0,1,1,-1)\big).
 \]
 </div>
 
-We now compute the orthogonal projection of $u=(1,5,1,6)$ onto $W$. We use the two basis vectors $v_1=(0,-1,1,0)$, $v_2=(1,1,0,1)$ of $W$, computed in the first part. We want to apply <a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, which requires us to have an orthogonal basis. To this end, we apply Gram–Schmidt (<a href="../euclid/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>):
+We now compute the orthogonal projection of $u=(1,5,1,6)$ onto $W$. We use the two basis vectors $v_1=(0,-1,1,0)$, $v_2=(1,1,0,1)$ of $W$, computed in the first part. We want to apply <a href="../euclid-euclidean-spaces/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, which requires us to have an orthogonal basis. To this end, we apply Gram–Schmidt (<a href="../euclid-euclidean-spaces/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>):
 <div class="arithmatex" markdown="1">
 \[
 {\left \langle v_2,v_1 \right \rangle}=-1,
@@ -127,7 +127,7 @@ v_2'=v_2-\frac{ {\left \langle v_2,v_1 \right \rangle}}{ {\left \langle v_1,v_1 
 =v_2+\frac12 v_1=(1,\tfrac12,\tfrac12,1).
 \]
 </div>
-To avoid fractions, take $w_2:=2v_2'=(2,1,1,2)$, which is still orthogonal to $v_1$. By <a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, specifically the formula in <a href="../euclid/#eq-orthogonal-projection-formula" data-reference-type="ref+Label" data-reference="eq:orthogonal-projection-formula">Equation (7.26)</a>, for our orthogonal basis $v_1, w_2$ we have
+To avoid fractions, take $w_2:=2v_2'=(2,1,1,2)$, which is still orthogonal to $v_1$. By <a href="../euclid-euclidean-spaces/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, specifically the formula in <a href="../euclid-euclidean-spaces/#eq-orthogonal-projection-formula" data-reference-type="ref+Label" data-reference="eq:orthogonal-projection-formula">Equation (7.26)</a>, for our orthogonal basis $v_1, w_2$ we have
 <div class="arithmatex" markdown="1">
 \[
 p_W(u)=\frac{ {\left \langle u,v_1 \right \rangle}}{ {\left \langle v_1,v_1 \right \rangle}}v_1
@@ -148,7 +148,7 @@ p_W(u)=-2v_1+2w_2=(4,4,0,4).
 
 <p class="env-number"><strong>Solution 7.9.3</strong></p>
 
-<span id="sol-ex-euclid-6-1" label="sol--ex:euclid-6-1"></span> (See <a href="../euclid/#ex-euclid-6-1" data-reference-type="ref+Label" data-reference="ex:euclid-6-1">Exercise 7.2</a>.) This solution illustrates <a href="../euclid/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid/#tas-compute-orthogonal-projection">Task 7.62</a>.
+<span id="sol-ex-euclid-6-1" label="sol--ex:euclid-6-1"></span> (See <a href="../exercises-euclid/#ex-euclid-6-1" data-reference-type="ref+Label" data-reference="ex:euclid-6-1">Exercise 7.2</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid-summary/#tas-compute-orthogonal-projection">Task 7.62</a>.
 
 The given equation describing $U$ can be rewritten as
 <div class="arithmatex" markdown="1">
@@ -158,7 +158,7 @@ The given equation describing $U$ can be rewritten as
 </div>
 which gives, with free parameters $y=a$ and $z =b$, $x = a-3b$. Thus $U = \{(a-3b,a,b) \ | \ a,b \in {\bf R}\} = L((1,1,0),(-3,0,1))$.
 
-The above equation tells us that $U$ is the orthogonal complement of the vector $\left ( \begin{array}{c} 1 \\ -1 \\ 3 \end{array} \right )$. Thus, writing $L := L(\left ( \begin{array}{c} 1 \\ -1 \\ 3 \end{array} \right ))$ for the one-dimensional subspace spanned by that vector, we have $U=L^\bot$. Therefore $U^\bot = (L^\bot)^\bot \stackrel * L = L(\left ( \begin{array}{c} 1 \\ -1 \\ 3 \end{array} \right ))$, where the equality marked \* is using <a href="../euclid/#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a>.
+The above equation tells us that $U$ is the orthogonal complement of the vector $\left ( \begin{array}{c} 1 \\ -1 \\ 3 \end{array} \right )$. Thus, writing $L := L(\left ( \begin{array}{c} 1 \\ -1 \\ 3 \end{array} \right ))$ for the one-dimensional subspace spanned by that vector, we have $U=L^\bot$. Therefore $U^\bot = (L^\bot)^\bot \stackrel * L = L(\left ( \begin{array}{c} 1 \\ -1 \\ 3 \end{array} \right ))$, where the equality marked \* is using <a href="../euclid-euclidean-spaces/#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a>.
 
 In order to compute the projection of $t$ onto $U$, we apply the Gram–Schmidt orthogonalization method. The vector $v_1 = (1,1,0)$ has norm $|\hspace{-0.5mm}| {v_1} |\hspace{-0.5mm}| = \sqrt 2$, so that $w_1 = \frac 1 {\sqrt 2} (1,1,0)$. Then
 <div class="arithmatex" markdown="1">
@@ -171,7 +171,7 @@ w'_2 := v_2 - {\left \langle v_2, w_1 \right \rangle} w_1 & = (-3,0,1) - \left [
 \end{align*}
 \]
 </div>
-The two vectors $v_1$ and $w'_2$ are orthogonal, so by <a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a> (formula for an orthogonal basis) we get
+The two vectors $v_1$ and $w'_2$ are orthogonal, so by <a href="../euclid-euclidean-spaces/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a> (formula for an orthogonal basis) we get
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -185,7 +185,7 @@ t_U
 \]
 </div>
 
-An alternative way to solve this, with slightly fewer computations, is the following: since $t= t_U + t_\bot$ is the unique decomposition, we can compute $t_U = t - {t_\bot}$. By the positive definitness of ${\left \langle -, - \right \rangle}$ we have $(U^\bot)^\bot = U$ (cf. <a href="../euclid/#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a>), so we can also work in $U^\bot$ rather than in $U$. This is somewhat simpler since $U^\bot$ has dimension 1. Take the basis vector $v = (1,-1,3)$ of $U^\bot$. Then, again by <a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a> (orthogonal basis formula)
+An alternative way to solve this, with slightly fewer computations, is the following: since $t= t_U + t_\bot$ is the unique decomposition, we can compute $t_U = t - {t_\bot}$. By the positive definitness of ${\left \langle -, - \right \rangle}$ we have $(U^\bot)^\bot = U$ (cf. <a href="../euclid-euclidean-spaces/#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a>), so we can also work in $U^\bot$ rather than in $U$. This is somewhat simpler since $U^\bot$ has dimension 1. Take the basis vector $v = (1,-1,3)$ of $U^\bot$. Then, again by <a href="../euclid-euclidean-spaces/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a> (orthogonal basis formula)
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -209,7 +209,7 @@ t_U = t- t_\bot = (0,1,5) - \left(\frac{14}{11}, -\frac{14}{11}, \frac{42}{11}\r
 
 <p class="env-number"><strong>Solution 7.9.4</strong></p>
 
-<span id="sol-ex-euclid-6-2" label="sol--ex:euclid-6-2"></span> (See <a href="../euclid/#ex-euclid-6-2" data-reference-type="ref+Label" data-reference="ex:euclid-6-2">Exercise 7.4</a>.) This solution illustrates <a href="../euclid/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid/#tas-compute-orthogonal-projection">Task 7.62</a>.
+<span id="sol-ex-euclid-6-2" label="sol--ex:euclid-6-2"></span> (See <a href="../exercises-euclid/#ex-euclid-6-2" data-reference-type="ref+Label" data-reference="ex:euclid-6-2">Exercise 7.4</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid-summary/#tas-compute-orthogonal-projection">Task 7.62</a>.
 
 $U$ is given by the solutions of the homogeneous linear system
 <div class="arithmatex" markdown="1">
@@ -217,7 +217,7 @@ $U$ is given by the solutions of the homogeneous linear system
 \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 1 & 1 & 1 \end{array} \right ) \left ( \begin{array}{c} x \\ y \\ z \end{array} \right ) = \left ( \begin{array}{c} 0 \\ 0 \end{array} \right ).
 \]
 </div>
-The left hand matrix can be brought to reduced row echelon form using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>): $\left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 1 & 1 \end{array} \right )$, so that $z = a$ is a free parameter and $x = 0$, $y = -a$. This shows that $U = \{ (0,-a,a) \ | \ a \in {\bf R}\}$ and $(0,-1,1)$ is a basis vector of $U$. The orthogonal complement consists of vectors orthogonal to $(0,-1,1)$. As in the solution of <a href="../euclid/#ex-euclid-6-1" data-reference-type="ref+Label" data-reference="ex:euclid-6-1">Exercise 7.2</a> above, $U$ has been defined as the orthogonal complement of the two vectors $\left ( \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right )$ and $\left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )$. These vectors therefore constitute a basis of $U^\bot$.
+The left hand matrix can be brought to reduced row echelon form using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>): $\left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 1 & 1 \end{array} \right )$, so that $z = a$ is a free parameter and $x = 0$, $y = -a$. This shows that $U = \{ (0,-a,a) \ | \ a \in {\bf R}\}$ and $(0,-1,1)$ is a basis vector of $U$. The orthogonal complement consists of vectors orthogonal to $(0,-1,1)$. As in the solution of <a href="../exercises-euclid/#ex-euclid-6-1" data-reference-type="ref+Label" data-reference="ex:euclid-6-1">Exercise 7.2</a> above, $U$ has been defined as the orthogonal complement of the two vectors $\left ( \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right )$ and $\left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )$. These vectors therefore constitute a basis of $U^\bot$.
 
 We compute the orthogonal projection of $t=(5,1,3)$ onto $U$ and $U^\bot$. This can be done using Gram–Schmidt orthogonalization as above, but also by solving the linear system
 <div class="arithmatex" markdown="1">
@@ -234,7 +234,7 @@ This is quickly solved as $\left ( \begin{array}{c} a \\ b \\ c \end{array} \rig
 
 <p class="env-number"><strong>Solution 7.9.5</strong></p>
 
-<span id="sol-ex-euclid-6-3" label="sol--ex:euclid-6-3"></span> (See <a href="../euclid/#ex-euclid-6-3" data-reference-type="ref+Label" data-reference="ex:euclid-6-3">Exercise 7.5</a>.) This solution illustrates <a href="../euclid/#tas-compute-orthogonal-complement" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-complement">Task 7.63</a>.
+<span id="sol-ex-euclid-6-3" label="sol--ex:euclid-6-3"></span> (See <a href="../exercises-euclid/#ex-euclid-6-3" data-reference-type="ref+Label" data-reference="ex:euclid-6-3">Exercise 7.5</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthogonal-complement" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-complement">Task 7.63</a>.
 
 The orthogonal complement of $T$ is given by vectors $(x,y,z)$ such that $x-3z=0$. I.e., with free parameters $y = a$, $z = b$, $x = 3b$. Thus
 <div class="arithmatex" markdown="1">
@@ -250,7 +250,7 @@ T^\bot = L((3,0,1), (0,1,0)).
 
 <p class="env-number"><strong>Solution 7.9.6</strong></p>
 
-<span id="sol-ex-euclid-6-4" label="sol--ex:euclid-6-4"></span> (See <a href="../euclid/#ex-euclid-6-4" data-reference-type="ref+Label" data-reference="ex:euclid-6-4">Exercise 7.6</a>.) We want to find $U$ such that $U \oplus U^\bot = {\bf R}^3$ and $t=(1,5,6) + t_\bot$, with $(1,5,6) \in U$ and $t_\bot \in U^\bot$. This in particular means that $(1,5,6) \bot t_\bot$. Solving the equation
+<span id="sol-ex-euclid-6-4" label="sol--ex:euclid-6-4"></span> (See <a href="../exercises-euclid/#ex-euclid-6-4" data-reference-type="ref+Label" data-reference="ex:euclid-6-4">Exercise 7.6</a>.) We want to find $U$ such that $U \oplus U^\bot = {\bf R}^3$ and $t=(1,5,6) + t_\bot$, with $(1,5,6) \in U$ and $t_\bot \in U^\bot$. This in particular means that $(1,5,6) \bot t_\bot$. Solving the equation
 <div class="arithmatex" markdown="1">
 \[
 (1,1,0) = (1,5,6) + t_\bot
@@ -273,15 +273,15 @@ We solve the second part similarly: we have $t - (1,1,1) = (1,-1,0)$, so the Ans
 
 <p class="env-number"><strong>Solution 7.9.7</strong></p>
 
-<span id="sol-ex-euclid-6-6" label="sol--ex:euclid-6-6"></span> (See <a href="../euclid/#ex-euclid-6-6" data-reference-type="ref+Label" data-reference="ex:euclid-6-6">Exercise 7.7</a>.) This solution illustrates <a href="../euclid/#tas-compute-orthogonal-projection" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-projection">Task 7.62</a>.
+<span id="sol-ex-euclid-6-6" label="sol--ex:euclid-6-6"></span> (See <a href="../exercises-euclid/#ex-euclid-6-6" data-reference-type="ref+Label" data-reference="ex:euclid-6-6">Exercise 7.7</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthogonal-projection" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-projection">Task 7.62</a>.
 
-According to <a href="../euclid/#prop-min-affine-subspace" data-reference-type="ref+Label" data-reference="prop:min-affine-subspace">Proposition 7.45</a>, the unique point $v \in {\bf R}^3$ that is lying on $L$ and as close as possible to the origin is given by
+According to <a href="../euclid-affine-subspaces/#prop-min-affine-subspace" data-reference-type="ref+Label" data-reference="prop:min-affine-subspace">Proposition 7.45</a>, the unique point $v \in {\bf R}^3$ that is lying on $L$ and as close as possible to the origin is given by
 <div class="arithmatex" markdown="1">
 \[
 v = v_0 - p_L(v_0),
 \]
 </div>
-where $v_0 = \left ( \begin{array}{c} 1 \\ 3 \\ 5 \end{array} \right )$. We will use <a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a> in order to compute this. The underlying subspace $W$ of $L$ is spanned by $v_1 = \left ( \begin{array}{c} 1 \\ 1 \\ 4 \end{array} \right )$. Renormalizing this vector to norm one, gives $w_1 = \frac{v_1}{|\hspace{-0.5mm}| {v_1} |\hspace{-0.5mm}|} = \frac{v_1}{\sqrt{18}}$. This vector $w_1$ is therefore an orthonormal basis of $W$. We then have
+where $v_0 = \left ( \begin{array}{c} 1 \\ 3 \\ 5 \end{array} \right )$. We will use <a href="../euclid-euclidean-spaces/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a> in order to compute this. The underlying subspace $W$ of $L$ is spanned by $v_1 = \left ( \begin{array}{c} 1 \\ 1 \\ 4 \end{array} \right )$. Renormalizing this vector to norm one, gives $w_1 = \frac{v_1}{|\hspace{-0.5mm}| {v_1} |\hspace{-0.5mm}|} = \frac{v_1}{\sqrt{18}}$. This vector $w_1$ is therefore an orthonormal basis of $W$. We then have
 <div class="arithmatex" markdown="1">
 \[
 p_L(v_0)={\left \langle v_0, w_1 \right \rangle}w_1 = \frac{24}{18} \left ( \begin{array}{c} 1 \\ 1 \\ 4 \end{array} \right )
@@ -307,9 +307,9 @@ This vector has norm
 
 <p class="env-number"><strong>Solution 7.9.8</strong></p>
 
-<span id="sol-ex-euclid-6-7" label="sol--ex:euclid-6-7"></span> (See <a href="../euclid/#ex-euclid-6-7" data-reference-type="ref+Label" data-reference="ex:euclid-6-7">Exercise 7.8</a>.) This solution illustrates <a href="../euclid/#tas-check-lines-parallel">Task 7.70</a>, <a href="../euclid/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
+<span id="sol-ex-euclid-6-7" label="sol--ex:euclid-6-7"></span> (See <a href="../exercises-euclid/#ex-euclid-6-7" data-reference-type="ref+Label" data-reference="ex:euclid-6-7">Exercise 7.8</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-parallel">Task 7.70</a>, <a href="../euclid-summary/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
 
-The subspace $W$ underlying $L$ is spanned by $\left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )$, while the equations for $L'$ are equivalent to $x=z$ and $y = z+2$. Therefore, this line has the underlying subspace $\left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )$ as well. By <a href="../euclid/#def-parallel-skew" data-reference-type="ref+Label" data-reference="def:parallel-skew">Definition 7.42</a>, the lines are therefore parallel. Let $w = \left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )$ be the direction vector for both lines (cf. <a href="../euclid/#def-direction-vector" data-reference-type="ref+Label" data-reference="def:direction-vector">Definition 7.50</a>). Below, we will consider its renormalization to norm 1, which is $w_1 = \frac 1 {\sqrt3} \left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )$.
+The subspace $W$ underlying $L$ is spanned by $\left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )$, while the equations for $L'$ are equivalent to $x=z$ and $y = z+2$. Therefore, this line has the underlying subspace $\left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )$ as well. By <a href="../euclid-affine-subspaces/#def-parallel-skew" data-reference-type="ref+Label" data-reference="def:parallel-skew">Definition 7.42</a>, the lines are therefore parallel. Let $w = \left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )$ be the direction vector for both lines (cf. <a href="../euclid-affine-subspaces/#def-direction-vector" data-reference-type="ref+Label" data-reference="def:direction-vector">Definition 7.50</a>). Below, we will consider its renormalization to norm 1, which is $w_1 = \frac 1 {\sqrt3} \left ( \begin{array}{c} 1 \\ 1 \\ 1 \end{array} \right )$.
 
 Let $v_0 = \left ( \begin{array}{c} 1 \\ 0 \\ 2 \end{array} \right )$ and $v'_0 = \left ( \begin{array}{c} 0 \\ -2 \\ 0 \end{array} \right )$. Then the distance vector $d = v_0 - v'_0 = \left ( \begin{array}{c} 1 \\ 2 \\ 2 \end{array} \right )$ is not orthogonal to $L$ (${\left \langle d, w \right \rangle} \ne 0$). We compute the orthogonal projection of $d$ onto $W^\bot$ by computing
 <div class="arithmatex" markdown="1">
@@ -326,7 +326,7 @@ This vector has norm $\sqrt{2/3}$, which is therefore the distance of $L$ and $L
 
 <p class="env-number"><strong>Solution 7.9.9</strong></p>
 
-<span id="sol-ex-euclid-6-8" label="sol--ex:euclid-6-8"></span> (See <a href="../euclid/#ex-euclid-6-8" data-reference-type="ref+Label" data-reference="ex:euclid-6-8">Exercise 7.9</a>.) This solution illustrates <a href="../euclid/#tas-check-lines-skew">Task 7.71</a>, <a href="../euclid/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
+<span id="sol-ex-euclid-6-8" label="sol--ex:euclid-6-8"></span> (See <a href="../exercises-euclid/#ex-euclid-6-8" data-reference-type="ref+Label" data-reference="ex:euclid-6-8">Exercise 7.9</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-skew">Task 7.71</a>, <a href="../euclid-summary/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
 
 The two lines have underlying vector spaces $W = L(\left ( \begin{array}{c} 1 \\ 1 \\ -1 \end{array} \right ))$ and $W' = L(\left ( \begin{array}{c} 1 \\ -1 \\ 2 \end{array} \right ))$ respectively. These two one-dimensional subspaces are not contained in each other: the two vectors are linearly independent.
 
@@ -342,7 +342,7 @@ while those on $L'$ are of the form
 q(u) = \left ( \begin{array}{c} 2 \\ 0 \\ 0 \end{array} \right ) + u \left ( \begin{array}{c} 1 \\ -1 \\ 2 \end{array} \right ).
 \]
 </div>
-According to <a href="../euclid/#prop-min-affine-subspace" data-reference-type="ref+Label" data-reference="prop:min-affine-subspace">Proposition 7.45</a>, we need to compute the values of $t, u \in {\bf R}$ such that the difference $p(t) - q(u) = \left ( \begin{array}{c} t-2-u \\ 1+t+u \\ -t-2u \end{array} \right )$ is orthogonal on $W$ and also on $W'$. This leads to the linear system
+According to <a href="../euclid-affine-subspaces/#prop-min-affine-subspace" data-reference-type="ref+Label" data-reference="prop:min-affine-subspace">Proposition 7.45</a>, we need to compute the values of $t, u \in {\bf R}$ such that the difference $p(t) - q(u) = \left ( \begin{array}{c} t-2-u \\ 1+t+u \\ -t-2u \end{array} \right )$ is orthogonal on $W$ and also on $W'$. This leads to the linear system
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -362,7 +362,7 @@ In particular, this distance is positive. This, together with the above observat
 
 <p class="env-number"><strong>Solution 7.9.10</strong></p>
 
-<span id="sol-ex-euclid-6-9" label="sol--ex:euclid-6-9"></span> (See <a href="../euclid/#ex-euclid-6-9" data-reference-type="ref+Label" data-reference="ex:euclid-6-9">Exercise 7.10</a>.) This solution illustrates <a href="../euclid/#tas-check-line-parallel-plane" data-reference-type="ref+Label" data-reference="tas:check-line-parallel-plane">Task 7.72</a>.
+<span id="sol-ex-euclid-6-9" label="sol--ex:euclid-6-9"></span> (See <a href="../exercises-euclid/#ex-euclid-6-9" data-reference-type="ref+Label" data-reference="ex:euclid-6-9">Exercise 7.10</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-line-parallel-plane" data-reference-type="ref+Label" data-reference="tas:check-line-parallel-plane">Task 7.72</a>.
 
 A useful way to sketch lines and planes is by considering some points on them where several coordinates are zero. In the case of $P$, three such points are $(5,0,0), (0,4,0), (0,0,2)$, while for $L$ two such points are $(0,5,0), (0,0,5)$. This leads to the following sketch:
 
@@ -374,11 +374,11 @@ The equation can be rewritten as
 {\left \langle \left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right ), \left ( \begin{array}{c} x \\ y \\ z \end{array} \right ) \right \rangle} = 20.
 \]
 </div>
-According to <a href="../euclid/#dlm-orthogonal-complement" data-reference-type="ref+Label" data-reference="dlm:orthogonal-complement">Definition and Lemma 7.20</a>, the underlying vector space $W$ is the orthogonal complement of the vector $\left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right )$.
+According to <a href="../euclid-euclidean-spaces/#dlm-orthogonal-complement" data-reference-type="ref+Label" data-reference="dlm:orthogonal-complement">Definition and Lemma 7.20</a>, the underlying vector space $W$ is the orthogonal complement of the vector $\left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right )$.
 
 The line $L$ has as its underlying vector space $W' = L(\left ( \begin{array}{c} 0 \\ 1 \\ -1 \end{array} \right ))$. If $P$ and $L$ are parallel, then $W' \subset W$. This means that $\left ( \begin{array}{c} 0 \\ 1 \\ -1 \end{array} \right )$ is orthogonal to $\left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right )$. Their scalar product is $5-10 = -5 \ne 0$, so that these vectors are *not* orthogonal and therefore $L$ and $P$ are not parallel.
 
-We compute the distance of $P$ to the origin using <a href="../euclid/#prop-distance-hyperplane" data-reference-type="ref+Label" data-reference="prop:distance-hyperplane">Proposition 7.47</a>:
+We compute the distance of $P$ to the origin using <a href="../euclid-affine-subspaces/#prop-distance-hyperplane" data-reference-type="ref+Label" data-reference="prop:distance-hyperplane">Proposition 7.47</a>:
 <div class="arithmatex" markdown="1">
 \[
 d(0,P) = \frac{20}{|\hspace{-0.5mm}| {\left ( \begin{array}{c} 4 \\ 5 \\ 10 \end{array} \right )} |\hspace{-0.5mm}|} = \frac{20}{\sqrt{141}}.
@@ -404,9 +404,9 @@ The left hand side equals $r(16+25+100) = 141 r$, so that $r = \frac{20}{141}$, 
 
 <p class="env-number"><strong>Solution 7.9.11</strong></p>
 
-<span id="sol-ex-euclid-6-10" label="sol--ex:euclid-6-10"></span> (See <a href="../euclid/#ex-euclid-6-10" data-reference-type="ref+Label" data-reference="ex:euclid-6-10">Exercise 7.11</a>.) We apply <a href="../euclid/#thm-symmetric-orthogonally-diagonalizable" data-reference-type="ref+Label" data-reference="thm:symmetric-orthogonally-diagonalizable">Theorem 7.38</a>, according to which a matrix is *orthogonally* diagonalizable if and only if it is symmetric. This excludes $A = \left ( \begin{array}{cc} 1 & 2 \\ -2 & 1 \end{array} \right )$. The other two matrices are symmetric and therefore orthogonally diagonalizable. The matrix $A = \left ( \begin{array}{cc} 0 & 0 \\ 0 & 0 \end{array} \right )$ is already a diagonal matrix, so for $P = {\mathrm {id}}$ the matrix $PAP^{-1}$ is diagonal. The standard basis vectors $e_1, e_2$ are an orthonormal eigenbasis.
+<span id="sol-ex-euclid-6-10" label="sol--ex:euclid-6-10"></span> (See <a href="../exercises-euclid/#ex-euclid-6-10" data-reference-type="ref+Label" data-reference="ex:euclid-6-10">Exercise 7.11</a>.) We apply <a href="../euclid-orthogonal-and-symmetric-matrices/#thm-symmetric-orthogonally-diagonalizable" data-reference-type="ref+Label" data-reference="thm:symmetric-orthogonally-diagonalizable">Theorem 7.38</a>, according to which a matrix is *orthogonally* diagonalizable if and only if it is symmetric. This excludes $A = \left ( \begin{array}{cc} 1 & 2 \\ -2 & 1 \end{array} \right )$. The other two matrices are symmetric and therefore orthogonally diagonalizable. The matrix $A = \left ( \begin{array}{cc} 0 & 0 \\ 0 & 0 \end{array} \right )$ is already a diagonal matrix, so for $P = {\mathrm {id}}$ the matrix $PAP^{-1}$ is diagonal. The standard basis vectors $e_1, e_2$ are an orthonormal eigenbasis.
 
-For $A = \left ( \begin{array}{cc} 1 & 2 \\ 2 & 1 \end{array} \right )$, we compute the eigenvalues as was indicated after <a href="../euclid/#thm-symmetric-orthogonally-diagonalizable" data-reference-type="ref+Label" data-reference="thm:symmetric-orthogonally-diagonalizable">Theorem 7.38</a>.
+For $A = \left ( \begin{array}{cc} 1 & 2 \\ 2 & 1 \end{array} \right )$, we compute the eigenvalues as was indicated after <a href="../euclid-orthogonal-and-symmetric-matrices/#thm-symmetric-orthogonally-diagonalizable" data-reference-type="ref+Label" data-reference="thm:symmetric-orthogonally-diagonalizable">Theorem 7.38</a>.
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -435,7 +435,7 @@ However, they are not normal, so an orthonormal eigenbasis for $A$ is given by
 
 <p class="env-number"><strong>Solution 7.9.12</strong></p>
 
-<span id="sol-ex-euclid-6-11" label="sol--ex:euclid-6-11"></span> (See <a href="../euclid/#ex-euclid-6-11" data-reference-type="ref+Label" data-reference="ex:euclid-6-11">Exercise 7.12</a>.) If $Av = \lambda v$, $Aw= \lambda w$, we compute
+<span id="sol-ex-euclid-6-11" label="sol--ex:euclid-6-11"></span> (See <a href="../exercises-euclid/#ex-euclid-6-11" data-reference-type="ref+Label" data-reference="ex:euclid-6-11">Exercise 7.12</a>.) If $Av = \lambda v$, $Aw= \lambda w$, we compute
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -459,7 +459,7 @@ Since $\lambda \ne \mu$, this forces ${\left \langle v, w \right \rangle}=0$.
 
 <p class="env-number"><strong>Solution 7.9.13</strong></p>
 
-<span id="sol-ex-euclid-6-12" label="sol--ex:euclid-6-12"></span> (See <a href="../euclid/#ex-euclid-6-12" data-reference-type="ref+Label" data-reference="ex:euclid-6-12">Exercise 7.13</a>.) This solution illustrates <a href="../euclid/#tas-check-line-parallel-plane">Task 7.72</a>, <a href="../euclid/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
+<span id="sol-ex-euclid-6-12" label="sol--ex:euclid-6-12"></span> (See <a href="../exercises-euclid/#ex-euclid-6-12" data-reference-type="ref+Label" data-reference="ex:euclid-6-12">Exercise 7.13</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-line-parallel-plane">Task 7.72</a>, <a href="../euclid-summary/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
 
 By definition, the hyperplane $P$ is given by the equation
 <div class="arithmatex" markdown="1">
@@ -475,7 +475,7 @@ In other words, the underlying sub-vector space $W \subset {\bf R}^4$ of that hy
 </div>
 or, what is the same, the orthogonal complement of $(2,0,1,-1)^T$.
 
-The underlying subspace $W'_t$ of the line $L_t$ is spanned by $(t,1,0,-1)$. By <a href="../euclid/#def-parallel-skew" data-reference-type="ref+Label" data-reference="def:parallel-skew">Definition 7.42</a>, $P$ is parallel to $L_t$ if $W \subset W'_t$ (which is impossible for dimension reasons) or if $W'_t \subset W$. The latter is equivalent to $(t,1,0,-1) \in W$ or, yet equivalently,
+The underlying subspace $W'_t$ of the line $L_t$ is spanned by $(t,1,0,-1)$. By <a href="../euclid-affine-subspaces/#def-parallel-skew" data-reference-type="ref+Label" data-reference="def:parallel-skew">Definition 7.42</a>, $P$ is parallel to $L_t$ if $W \subset W'_t$ (which is impossible for dimension reasons) or if $W'_t \subset W$. The latter is equivalent to $(t,1,0,-1) \in W$ or, yet equivalently,
 <div class="arithmatex" markdown="1">
 \[
 {\left \langle (t,1,0,-1)^T, (2,0,1,-1)^T \right \rangle} = 0.
@@ -575,7 +575,7 @@ This means that we are looking for $a,b,c,s \in {\bf R}$ such that the following
 
 <p class="env-number"><strong>Solution 7.9.14</strong></p>
 
-<span id="sol-ex-euclid-lines-plane" label="sol--ex:euclid-lines-plane"></span> (See <a href="../euclid/#ex-euclid-lines-plane" data-reference-type="ref+Label" data-reference="ex:euclid-lines-plane">Exercise 7.14</a>.) This solution illustrates <a href="../euclid/#tas-line-cartesian-to-parametric">Task 7.64</a>, <a href="../euclid/#tas-plane-through-line-and-point">Task 7.67</a>, <a href="../euclid/#tas-plane-vector-to-cartesian">Task 7.69</a>.
+<span id="sol-ex-euclid-lines-plane" label="sol--ex:euclid-lines-plane"></span> (See <a href="../exercises-euclid/#ex-euclid-lines-plane" data-reference-type="ref+Label" data-reference="ex:euclid-lines-plane">Exercise 7.14</a>.) This solution illustrates <a href="../euclid-summary/#tas-line-cartesian-to-parametric">Task 7.64</a>, <a href="../euclid-summary/#tas-plane-through-line-and-point">Task 7.67</a>, <a href="../euclid-summary/#tas-plane-vector-to-cartesian">Task 7.69</a>.
 
 For $L$, solve the system
 <div class="arithmatex" markdown="1">
@@ -606,7 +606,7 @@ L'=(0,0,1)+L(0,1,0).
 \]
 </div>
 
-To classify the relative position (<a href="../euclid/#def-parallel-skew" data-reference-type="ref+Label" data-reference="def:parallel-skew">Definition 7.42</a>), compare direction spaces:
+To classify the relative position (<a href="../euclid-affine-subspaces/#def-parallel-skew" data-reference-type="ref+Label" data-reference="def:parallel-skew">Definition 7.42</a>), compare direction spaces:
 <div class="arithmatex" markdown="1">
 \[
 W=L(-1,-1,1),\qquad W'=L(0,1,0).
@@ -638,7 +638,7 @@ A normal vector can be computed by using the cross product (or by computing the 
 d_1\times d_2=(-1,0,-1),
 \]
 </div>
-thus $n=(1,0,1)$ is a normal vector. Using the point $(1,-2,0)\in L$, the Cartesian equation of the plane (<a href="../euclid/#prop-hesse" data-reference-type="ref+Label" data-reference="prop:hesse">Proposition 7.48</a>) is
+thus $n=(1,0,1)$ is a normal vector. Using the point $(1,-2,0)\in L$, the Cartesian equation of the plane (<a href="../euclid-affine-subspaces/#prop-hesse" data-reference-type="ref+Label" data-reference="prop:hesse">Proposition 7.48</a>) is
 <div class="arithmatex" markdown="1">
 \[
 n\cdot\big((x,y,z)-(1,-2,0)\big)=0
@@ -679,13 +679,13 @@ For example, one can take $l'=(0,0,1)$.
 
 <p class="env-number"><strong>Solution 7.9.15</strong></p>
 
-<span id="sol-ex-euclid-poly-operator" label="sol--ex:euclid-poly-operator"></span> (See <a href="../euclid/#ex-euclid-poly-operator" data-reference-type="ref+Label" data-reference="ex:euclid-poly-operator">Exercise 7.15</a>.) Let $V=P_{\le 2}$ and ${\left \langle p,q \right \rangle}=\int_{-1}^1 p(t)q(t)\,dt$.
+<span id="sol-ex-euclid-poly-operator" label="sol--ex:euclid-poly-operator"></span> (See <a href="../exercises-euclid/#ex-euclid-poly-operator" data-reference-type="ref+Label" data-reference="ex:euclid-poly-operator">Exercise 7.15</a>.) Let $V=P_{\le 2}$ and ${\left \langle p,q \right \rangle}=\int_{-1}^1 p(t)q(t)\,dt$.
 
 First, ${\left \langle -, - \right \rangle}$ is a scalar product: bilinearity and symmetry follow from properties of the integral, and for $p\neq 0$ we have ${\left \langle p,p \right \rangle}=\int_{-1}^1 p(t)^2dt>0$.
 
-An orthonormal basis is the same as in the previous polynomial exercise (see <a href="../euclid/#ex-examples-scalar-product" data-reference-type="ref+Label" data-reference="ex:examples-scalar-product">Example 7.16</a><a href="../euclid/#item-functions" data-reference-type="ref" data-reference="item--functions">3.</a> and Gram–Schmidt in <a href="../euclid/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>): $w_1=\frac1{\sqrt2}$, $w_2=\sqrt{\frac32}\,t$, $w_3=\frac{\sqrt{10}}4(3t^2-1)$.
+An orthonormal basis is the same as in the previous polynomial exercise (see <a href="../euclid-euclidean-spaces/#ex-examples-scalar-product" data-reference-type="ref+Label" data-reference="ex:examples-scalar-product">Example 7.16</a><a href="../euclid-euclidean-spaces/#item-functions" data-reference-type="ref" data-reference="item--functions">3.</a> and Gram–Schmidt in <a href="../euclid-euclidean-spaces/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>): $w_1=\frac1{\sqrt2}$, $w_2=\sqrt{\frac32}\,t$, $w_3=\frac{\sqrt{10}}4(3t^2-1)$.
 
-Now consider $f:V\to V$, $f(p)=t\,p'$. It is linear because derivative and multiplication by $t$ are linear maps. In more detail, the conditions in <a href="../maps/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a> are satisfied, for example $f(p_1 + p_2) = t(p_1+p_2)' = t(p_1'+p_2') = f(p_1) + f(p_2)$ and similarly for $f(a p)$ with $a \in \mathbf R$. For the standard basis $e_1=1$, $e_2=t$, $e_3=t^2$ we have $f(e_1)=0$, $f(e_2)=t=e_2$, $f(e_3)=2t^2=2e_3$. Hence
+Now consider $f:V\to V$, $f(p)=t\,p'$. It is linear because derivative and multiplication by $t$ are linear maps. In more detail, the conditions in <a href="../maps-definition-and-first-examples/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a> are satisfied, for example $f(p_1 + p_2) = t(p_1+p_2)' = t(p_1'+p_2') = f(p_1) + f(p_2)$ and similarly for $f(a p)$ with $a \in \mathbf R$. For the standard basis $e_1=1$, $e_2=t$, $e_3=t^2$ we have $f(e_1)=0$, $f(e_2)=t=e_2$, $f(e_3)=2t^2=2e_3$. Hence
 <div class="arithmatex" markdown="1">
 \[
 \mathrm M_{f, (e_1,e_2,e_3)}=\left ( \begin{array}{ccc} 0&0&0\\ 0&1&0\\ 0&0&2 \end{array} \right ).
@@ -704,7 +704,7 @@ Finally, $f$ has no orthonormal eigenbasis for this scalar product: the eigenspa
 
 <p class="env-number"><strong>Solution 7.9.16</strong></p>
 
-<span id="sol-ex-euclid-u-r4-orth" label="sol--ex:euclid-u-r4-orth"></span> (See <a href="../euclid/#ex-euclid-u-r4-orth" data-reference-type="ref+Label" data-reference="ex:euclid-u-r4-orth">Exercise 7.16</a>.) This solution illustrates <a href="../euclid/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid/#tas-compute-orthogonal-projection">Task 7.62</a>, <a href="../euclid/#tas-compute-orthogonal-complement">Task 7.63</a>.
+<span id="sol-ex-euclid-u-r4-orth" label="sol--ex:euclid-u-r4-orth"></span> (See <a href="../exercises-euclid/#ex-euclid-u-r4-orth" data-reference-type="ref+Label" data-reference="ex:euclid-u-r4-orth">Exercise 7.16</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid-summary/#tas-compute-orthogonal-projection">Task 7.62</a>, <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>.
 
 Let
 <div class="arithmatex" markdown="1">
@@ -724,7 +724,7 @@ v_2=-2u_2+u_3,
 v_3=5u_1+2u_2+4u_3.
 \]
 </div>
-One checks $v_i\in U$ and ${\left \langle v_i,v_j \right \rangle}=0$ for $i\neq j$. (Such vectors can be found using Gram–Schmidt orthogonalization, <a href="../euclid/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>). Their norms are $|v_1|=\sqrt2$, $|v_2|=\sqrt5$, $|v_3|=\sqrt{70}$, so an orthonormal basis is
+One checks $v_i\in U$ and ${\left \langle v_i,v_j \right \rangle}=0$ for $i\neq j$. (Such vectors can be found using Gram–Schmidt orthogonalization, <a href="../euclid-euclidean-spaces/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>). Their norms are $|v_1|=\sqrt2$, $|v_2|=\sqrt5$, $|v_3|=\sqrt{70}$, so an orthonormal basis is
 <div class="arithmatex" markdown="1">
 \[
 w_1=\frac1{\sqrt2}(1,1,0,0),\quad
@@ -733,9 +733,9 @@ w_3=\frac1{\sqrt{70}}(-5,5,2,4).
 \]
 </div>
 
-Let $n=(1,-1,1,2)$. Then $U=n^\bot$, hence (<a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>) $p_U(x)=x-\frac{ {\left \langle x,n \right \rangle}}{ {\left \langle n,n \right \rangle}}n$ and ${\left \langle n,n \right \rangle}=7$. For $v=(2,3,0,0)$, ${\left \langle v,n \right \rangle}=-1$, so $p_U(v)=v+\frac17 n=(\frac{15}7,\frac{20}7,\frac17,\frac27)$. For $w=(2,5,3,0)$, ${\left \langle w,n \right \rangle}=0$, so $p_U(w)=w=(2,5,3,0)$.
+Let $n=(1,-1,1,2)$. Then $U=n^\bot$, hence (<a href="../euclid-euclidean-spaces/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>) $p_U(x)=x-\frac{ {\left \langle x,n \right \rangle}}{ {\left \langle n,n \right \rangle}}n$ and ${\left \langle n,n \right \rangle}=7$. For $v=(2,3,0,0)$, ${\left \langle v,n \right \rangle}=-1$, so $p_U(v)=v+\frac17 n=(\frac{15}7,\frac{20}7,\frac17,\frac27)$. For $w=(2,5,3,0)$, ${\left \langle w,n \right \rangle}=0$, so $p_U(w)=w=(2,5,3,0)$.
 
-Finally, $U^\bot=L(n)=L(1,-1,1,2)$, where we have used <a href="../euclid/#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a>.
+Finally, $U^\bot=L(n)=L(1,-1,1,2)$, where we have used <a href="../euclid-euclidean-spaces/#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a>.
 
 </div>
 
@@ -744,9 +744,9 @@ Finally, $U^\bot=L(n)=L(1,-1,1,2)$, where we have used <a href="../euclid/#cor-d
 
 <p class="env-number"><strong>Solution 7.9.17</strong></p>
 
-<span id="sol-ex-euclid-6-13" label="sol--ex:euclid-6-13"></span> (See <a href="../euclid/#ex-euclid-6-13" data-reference-type="ref+Label" data-reference="ex:euclid-6-13">Exercise 7.17</a>.) This solution illustrates <a href="../euclid/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid/#tas-compute-orthogonal-projection">Task 7.62</a>.
+<span id="sol-ex-euclid-6-13" label="sol--ex:euclid-6-13"></span> (See <a href="../exercises-euclid/#ex-euclid-6-13" data-reference-type="ref+Label" data-reference="ex:euclid-6-13">Exercise 7.17</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid-summary/#tas-compute-orthogonal-projection">Task 7.62</a>.
 
-We compute in fact directly an ortho*normal* basis, which in particular is then orthogonal. (The property of also being normal is convenient further below.) We apply the Gram–Schmidt procedure (<a href="../euclid/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>):
+We compute in fact directly an ortho*normal* basis, which in particular is then orthogonal. (The property of also being normal is convenient further below.) We apply the Gram–Schmidt procedure (<a href="../euclid-euclidean-spaces/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>):
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -777,7 +777,7 @@ We consider the matrix of the resulting linear system, and bring it into row ech
 </div>
 Thus, if $v = (x_1, \dots, x_4)$, then $x_3$ and $x_4$ are free variables, so that a basis of $U^\bot$ is given by the two vectors $(-\frac 32, \frac 34, 1, 0)$ and $(-1,1,0,1)$.
 
-We compute the orthogonal projection by <a href="../euclid/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>:
+We compute the orthogonal projection by <a href="../euclid-euclidean-spaces/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -798,7 +798,7 @@ These computations may be carried out also using a computer algebra system, for 
 
 <p class="env-number"><strong>Solution 7.9.18</strong></p>
 
-<span id="sol-ex-euclid-6-14" label="sol--ex:euclid-6-14"></span> (See <a href="../euclid/#ex-euclid-6-14" data-reference-type="ref+Label" data-reference="ex:euclid-6-14">Exercise 7.18</a>.) This solution illustrates <a href="../euclid/#tas-check-lines-skew">Task 7.71</a>, <a href="../euclid/#tas-check-line-parallel-plane">Task 7.72</a>.
+<span id="sol-ex-euclid-6-14" label="sol--ex:euclid-6-14"></span> (See <a href="../exercises-euclid/#ex-euclid-6-14" data-reference-type="ref+Label" data-reference="ex:euclid-6-14">Exercise 7.18</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-skew">Task 7.71</a>, <a href="../euclid-summary/#tas-check-line-parallel-plane">Task 7.72</a>.
 
 We first compute $L$ in the form $L = v_0 + W$. We choose $v_0 = (0,1,-1)$. In addition, the point $(1,2,1)$ is also lying in $L$. Therefore $W$ is spanned by $(1,2,1)-(0,1,-1)=(1,1,2)$.
 
@@ -834,7 +834,7 @@ We compute the coordinates of $r_\alpha = (x,y,z)$ as $z = \alpha$, $x = \frac 1
 
 <p class="env-number"><strong>Solution 7.9.19</strong></p>
 
-<span id="sol-ex-euclid-6-15" label="sol--ex:euclid-6-15"></span> (See <a href="../euclid/#ex-euclid-6-15" data-reference-type="ref+Label" data-reference="ex:euclid-6-15">Exercise 7.19</a>.) This solution illustrates <a href="../euclid/#tas-plane-through-three-points">Task 7.66</a>, <a href="../euclid/#tas-plane-vector-to-cartesian">Task 7.69</a>.
+<span id="sol-ex-euclid-6-15" label="sol--ex:euclid-6-15"></span> (See <a href="../exercises-euclid/#ex-euclid-6-15" data-reference-type="ref+Label" data-reference="ex:euclid-6-15">Exercise 7.19</a>.) This solution illustrates <a href="../euclid-summary/#tas-plane-through-three-points">Task 7.66</a>, <a href="../euclid-summary/#tas-plane-vector-to-cartesian">Task 7.69</a>.
 
 We have $L = p + L(q-p)$, i.e., $L = (3,1,0) + L(-3,0,3)$. (Other solutions are possible as well, e.g., $L = q + L(-3,0,3)$.) We determine whether $r$ lies on $L$ by considering the linear system
 <div class="arithmatex" markdown="1">
@@ -880,7 +880,7 @@ P = \{x = (x_1, x_2, x_3) | x_1 -9x_2 + x_3 = -6\}.
 
 <p class="env-number"><strong>Solution 7.9.20</strong></p>
 
-<span id="sol-ex-euclid-6-16" label="sol--ex:euclid-6-16"></span> (See <a href="../euclid/#ex-euclid-6-16" data-reference-type="ref+Label" data-reference="ex:euclid-6-16">Exercise 7.20</a>.) This solution illustrates <a href="../euclid/#tas-check-lines-skew" data-reference-type="ref+Label" data-reference="tas:check-lines-skew">Task 7.71</a>. The line $M$, given to us by the systen $x + z = 2$, $x - 2 y = 2$ is also described as $M = (2,0,0) + L(2, 1, -2)$. Its underlying vector space is therefore spanned by $(2,1,-2)$, while the underlying vector space of $L$ is spanned by $(1,0,-1)$. These two vectors are linearly independent. We compute the intersection of $L$ and $M$ by taking a general point $l = (3+t, 1, -t) \in L$ and $m = (2+2s,s,-2s) \in M$, with $t, s \in {\bf R}$. The three coordinates of the equation $l = m$ read:
+<span id="sol-ex-euclid-6-16" label="sol--ex:euclid-6-16"></span> (See <a href="../exercises-euclid/#ex-euclid-6-16" data-reference-type="ref+Label" data-reference="ex:euclid-6-16">Exercise 7.20</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-skew" data-reference-type="ref+Label" data-reference="tas:check-lines-skew">Task 7.71</a>. The line $M$, given to us by the systen $x + z = 2$, $x - 2 y = 2$ is also described as $M = (2,0,0) + L(2, 1, -2)$. Its underlying vector space is therefore spanned by $(2,1,-2)$, while the underlying vector space of $L$ is spanned by $(1,0,-1)$. These two vectors are linearly independent. We compute the intersection of $L$ and $M$ by taking a general point $l = (3+t, 1, -t) \in L$ and $m = (2+2s,s,-2s) \in M$, with $t, s \in {\bf R}$. The three coordinates of the equation $l = m$ read:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -899,7 +899,7 @@ The second and third equations give $s = 1$, $t = 2$. The first then gives $5 = 
 
 <p class="env-number"><strong>Solution 7.9.21</strong></p>
 
-<span id="sol-ex-euclid-6-17" label="sol--ex:euclid-6-17"></span> (See <a href="../euclid/#ex-euclid-6-17" data-reference-type="ref+Label" data-reference="ex:euclid-6-17">Exercise 7.21</a>.) Writing $q = (x,y,z)$ for $x, y, z \in {\bf R}$, the line $M$ is then given by $M = p + L(q-p) = (-1,-1,-1) + L(x+1,y+1,z+1)$.
+<span id="sol-ex-euclid-6-17" label="sol--ex:euclid-6-17"></span> (See <a href="../exercises-euclid/#ex-euclid-6-17" data-reference-type="ref+Label" data-reference="ex:euclid-6-17">Exercise 7.21</a>.) Writing $q = (x,y,z)$ for $x, y, z \in {\bf R}$, the line $M$ is then given by $M = p + L(q-p) = (-1,-1,-1) + L(x+1,y+1,z+1)$.
 
 The line $M$ will be orthogonal to $L$ precisely if
 <div class="arithmatex" markdown="1">
@@ -909,7 +909,7 @@ The line $M$ will be orthogonal to $L$ precisely if
 </div>
 i.e., if $x+1 - z - 1 = 0$, i.e., if $x = z$.
 
-As in the solution of <a href="../euclid/#ex-euclid-6-16" data-reference-type="ref+Label" data-reference="ex:euclid-6-16">Exercise 7.20</a> above, the line $M$ (with $x = z$) intersects $L$ precisely if the linear system
+As in the solution of <a href="../exercises-euclid/#ex-euclid-6-16" data-reference-type="ref+Label" data-reference="ex:euclid-6-16">Exercise 7.20</a> above, the line $M$ (with $x = z$) intersects $L$ precisely if the linear system
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -940,7 +940,7 @@ We therefore find that the line $M$ through $p$ and $q = (x,y,z)$ intersects $L$
 
 <p class="env-number"><strong>Solution 7.9.22</strong></p>
 
-<span id="sol-ex-euclid-6-18" label="sol--ex:euclid-6-18"></span> (See <a href="../euclid/#ex-euclid-6-18" data-reference-type="ref+Label" data-reference="ex:euclid-6-18">Exercise 7.22</a>.) This solution illustrates <a href="../euclid/#tas-line-in-plane-orthogonal-to-line" data-reference-type="ref+Label" data-reference="tas:line-in-plane-orthogonal-to-line">Task 7.68</a>.
+<span id="sol-ex-euclid-6-18" label="sol--ex:euclid-6-18"></span> (See <a href="../exercises-euclid/#ex-euclid-6-18" data-reference-type="ref+Label" data-reference="ex:euclid-6-18">Exercise 7.22</a>.) This solution illustrates <a href="../euclid-summary/#tas-line-in-plane-orthogonal-to-line" data-reference-type="ref+Label" data-reference="tas:line-in-plane-orthogonal-to-line">Task 7.68</a>.
 
 Any line $M$ passing through $p$ is of the form $M = p + L(w)$. We compute $w = (a,b,c)$ by considering the two conditions on $M$:
 
@@ -970,7 +970,7 @@ M = p + L(w) = (0,1,6) + L(5,2,-7).
 
 <p class="env-number"><strong>Solution 7.9.23</strong></p>
 
-<span id="sol-ex-euclid-6-19" label="sol--ex:euclid-6-19"></span> (See <a href="../euclid/#ex-euclid-6-19" data-reference-type="ref+Label" data-reference="ex:euclid-6-19">Exercise 7.23</a>.) This solution illustrates <a href="../euclid/#tas-check-lines-skew">Task 7.71</a>, <a href="../euclid/#tas-check-line-parallel-plane">Task 7.72</a>, <a href="../euclid/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
+<span id="sol-ex-euclid-6-19" label="sol--ex:euclid-6-19"></span> (See <a href="../exercises-euclid/#ex-euclid-6-19" data-reference-type="ref+Label" data-reference="ex:euclid-6-19">Exercise 7.23</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-skew">Task 7.71</a>, <a href="../euclid-summary/#tas-check-line-parallel-plane">Task 7.72</a>, <a href="../euclid-summary/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
 
 The cartesian equations of the line $L_2$ are obtained by inserting $x = t$ into the equation for $z$, which gives
 <div class="arithmatex" markdown="1">
@@ -1030,7 +1030,7 @@ L_1 & = \{ (x, 2x+3,-2x-5) | x \in {\bf R} \} \nonumber \\
 
 <span id="l1-ex-blah" label="L1 ex blah"></span> Thus the direction of $L_1$ is $(1,2,-2)$. (Alternatively, one may observe that the points $p = (0,3,-5)$ and $q = (1,5,-7)$ satisfy the linear system describing $L_1$, so that $L_1 = (0,3,-5) + L(q-p)$.)
 
-The plane $\pi$ is of the form $\pi = \{v = (x,y,z) \in {\bf R}^3 | {\left \langle v, a \right \rangle} = d\}$ for some vector $a = (a_1, a_2, a_3)$ and $d \in {\bf R}$. I.e., $\pi = \{(x,y,z) | a_1 x+a_2 y + a_3z = d\}$. Its underlying subvector space is $a_1 x + a_2 +a_3z=0$. The condition $L_1$ being parallel to $\pi$ translates into ${\left \langle a, v_1 \right \rangle} = 0$, where $v_1 = (1,2,-2)$ is the direction of $L_1$. The condition $L_2 \subset \pi$ translates into ${\left \langle a, v_2 \right \rangle} = 0$, where $v_2 = (1,0,-1)$ is the direction vector of $L_2$ (cf. <a href="../euclid/#def-direction-vector" data-reference-type="ref+Label" data-reference="def:direction-vector">Definition 7.50</a>). These two conditions give the linear system
+The plane $\pi$ is of the form $\pi = \{v = (x,y,z) \in {\bf R}^3 | {\left \langle v, a \right \rangle} = d\}$ for some vector $a = (a_1, a_2, a_3)$ and $d \in {\bf R}$. I.e., $\pi = \{(x,y,z) | a_1 x+a_2 y + a_3z = d\}$. Its underlying subvector space is $a_1 x + a_2 +a_3z=0$. The condition $L_1$ being parallel to $\pi$ translates into ${\left \langle a, v_1 \right \rangle} = 0$, where $v_1 = (1,2,-2)$ is the direction of $L_1$. The condition $L_2 \subset \pi$ translates into ${\left \langle a, v_2 \right \rangle} = 0$, where $v_2 = (1,0,-1)$ is the direction vector of $L_2$ (cf. <a href="../euclid-affine-subspaces/#def-direction-vector" data-reference-type="ref+Label" data-reference="def:direction-vector">Definition 7.50</a>). These two conditions give the linear system
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -1070,7 +1070,7 @@ d(L_1, \pi) & = d (q, r) = |\hspace{-0.5mm}| {(0,3,-5)-(\frac{34}9, \frac{44}9, 
 \]
 </div>
 
-Part (4): we already know the lines are skew, so there will be unique points in $L_1$ and $L_2$, respectively, realizing the minimal distance. We compute these points using <a href="../euclid/#thm-distance-affine-subspaces" data-reference-type="ref+Label" data-reference="thm:distance-affine-subspaces">Theorem 7.59</a><a href="../euclid/#item-min-c" data-reference-type="ref" data-reference="item--min.c">4.</a>. A general point $p_t \in L_2$ is of the form $p_t = (t, 2, 4-t)$ (with $t \in {\bf R}$). By <a href="#l1-ex-blah" data-reference-type="eqref" data-reference="L1 ex blah">Equation (7.75)</a>, a general point in $L_1$ is of the form $q_s = (s, 3+2s,-5-2s)$ (with $s \in {\bf R}$). The vector $p_t - q_s = (s-t, 1+2s,-9-2s+t)$ needs to be orthogonal to the directions of $L_1$ and $L_2$, which we computed above as $(1,2,-2)$ and $(1,0,-1)$. This leads to the linear system
+Part (4): we already know the lines are skew, so there will be unique points in $L_1$ and $L_2$, respectively, realizing the minimal distance. We compute these points using <a href="../euclid-distances/#thm-distance-affine-subspaces" data-reference-type="ref+Label" data-reference="thm:distance-affine-subspaces">Theorem 7.59</a><a href="../euclid-distances/#item-min-c" data-reference-type="ref" data-reference="item--min.c">4.</a>. A general point $p_t \in L_2$ is of the form $p_t = (t, 2, 4-t)$ (with $t \in {\bf R}$). By <a href="#l1-ex-blah" data-reference-type="eqref" data-reference="L1 ex blah">Equation (7.75)</a>, a general point in $L_1$ is of the form $q_s = (s, 3+2s,-5-2s)$ (with $s \in {\bf R}$). The vector $p_t - q_s = (s-t, 1+2s,-9-2s+t)$ needs to be orthogonal to the directions of $L_1$ and $L_2$, which we computed above as $(1,2,-2)$ and $(1,0,-1)$. This leads to the linear system
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -1096,7 +1096,7 @@ q_{-13/9}& =(-\frac{13}9, -\frac{17}9, -\frac{19}9).
 
 <p class="env-number"><strong>Solution 7.9.24</strong></p>
 
-<span id="sol-ex-euclid-6-20" label="sol--ex:euclid-6-20"></span> (See <a href="../euclid/#ex-euclid-6-20" data-reference-type="ref+Label" data-reference="ex:euclid-6-20">Exercise 7.24</a>.) This solution illustrates <a href="../euclid/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid/#tas-compute-orthogonal-complement">Task 7.63</a>.
+<span id="sol-ex-euclid-6-20" label="sol--ex:euclid-6-20"></span> (See <a href="../exercises-euclid/#ex-euclid-6-20" data-reference-type="ref+Label" data-reference="ex:euclid-6-20">Exercise 7.24</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>.
 
 We first compute a basis of $U$ by computing the kernel of the matrix
 <div class="arithmatex" markdown="1">
@@ -1135,7 +1135,7 @@ x_2 + x_4 & = 0.
 
 <p class="env-number"><strong>Solution 7.9.25</strong></p>
 
-<span id="sol-ex-euclid-6-21" label="sol--ex:euclid-6-21"></span> (See <a href="../euclid/#ex-euclid-6-21" data-reference-type="ref+Label" data-reference="ex:euclid-6-21">Exercise 7.25</a>.) This solution illustrates <a href="../euclid/#tas-check-lines-parallel">Task 7.70</a>, <a href="../euclid/#tas-plane-through-line-and-point">Task 7.67</a>, <a href="../euclid/#tas-line-in-plane-orthogonal-to-line">Task 7.68</a>.
+<span id="sol-ex-euclid-6-21" label="sol--ex:euclid-6-21"></span> (See <a href="../exercises-euclid/#ex-euclid-6-21" data-reference-type="ref+Label" data-reference="ex:euclid-6-21">Exercise 7.25</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-parallel">Task 7.70</a>, <a href="../euclid-summary/#tas-plane-through-line-and-point">Task 7.67</a>, <a href="../euclid-summary/#tas-line-in-plane-orthogonal-to-line">Task 7.68</a>.
 
 The points $l_1 := (0,2,1)$ and $l_2 := (2, 3, 0)$ lie in $L$, so that the direction vector of $L$, which is the difference of the two points, is $(2,1,-1)$.
 
@@ -1249,7 +1249,7 @@ N = (-1,1,0) + L(1, 2, 4).
 
 <p class="env-number"><strong>Solution 7.9.26</strong></p>
 
-<span id="sol-ex-euclid-6-22" label="sol--ex:euclid-6-22"></span> (See <a href="../euclid/#ex-euclid-6-22" data-reference-type="ref+Label" data-reference="ex:euclid-6-22">Exercise 7.26</a>.) This solution illustrates <a href="../euclid/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid/#tas-compute-orthogonal-complement">Task 7.63</a>.
+<span id="sol-ex-euclid-6-22" label="sol--ex:euclid-6-22"></span> (See <a href="../exercises-euclid/#ex-euclid-6-22" data-reference-type="ref+Label" data-reference="ex:euclid-6-22">Exercise 7.26</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>.
 
 We form the matrix associated to the linear system and bring it into row echelon form
 <div class="arithmatex" markdown="1">
@@ -1263,7 +1263,7 @@ We form the matrix associated to the linear system and bring it into row echelon
 </div>
 This matrix has rank 2 if $t+1 = 0$, i.e., if $t=-1$. Otherwise, for $t\ne -1$, its rank is 3. We compute a basis of $U$ for $t=-1$ using <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>. The result is $u_1=(-2,-1,3,0)$ and $u_2=(1,2,0,3)$.
 
-We apply <a href="../euclid/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>:
+We apply <a href="../euclid-euclidean-spaces/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -1298,7 +1298,7 @@ W = \{2x_1 + x_3 -3x_4 = 0\}.
 
 <p class="env-number"><strong>Solution 7.9.27</strong></p>
 
-<span id="sol-ex-euclid-6-23" label="sol--ex:euclid-6-23"></span> (See <a href="../euclid/#ex-euclid-6-23" data-reference-type="ref+Label" data-reference="ex:euclid-6-23">Exercise 7.27</a>.) This solution illustrates <a href="../euclid/#tas-plane-through-three-points">Task 7.66</a>, <a href="../euclid/#tas-line-in-plane-orthogonal-to-line">Task 7.68</a>, <a href="../euclid/#tas-check-line-parallel-plane">Task 7.72</a>.
+<span id="sol-ex-euclid-6-23" label="sol--ex:euclid-6-23"></span> (See <a href="../exercises-euclid/#ex-euclid-6-23" data-reference-type="ref+Label" data-reference="ex:euclid-6-23">Exercise 7.27</a>.) This solution illustrates <a href="../euclid-summary/#tas-plane-through-three-points">Task 7.66</a>, <a href="../euclid-summary/#tas-line-in-plane-orthogonal-to-line">Task 7.68</a>, <a href="../euclid-summary/#tas-check-line-parallel-plane">Task 7.72</a>.
 
 We verify $B \in X$ by plugging in the coordinates of $B$:
 <div class="arithmatex" markdown="1">

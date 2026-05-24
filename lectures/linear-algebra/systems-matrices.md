@@ -4,7 +4,7 @@ title: Systems: Matrices
 
 # Matrices
 
-It is time to use some better tools to do the bookkeeping needed to solve linear systems. Matrices help doing that. Later on (§<a href="../maps/#sect-linear-maps" data-reference-type="ref" data-reference="sect--linear-maps">Chapter 4</a>), we will use matrices in a much more profound way.
+It is time to use some better tools to do the bookkeeping needed to solve linear systems. Matrices help doing that. Later on (§<a href="../maps-definition-and-first-examples/#sect-linear-maps" data-reference-type="ref" data-reference="sect--linear-maps">Chapter 4</a>), we will use matrices in a much more profound way.
 
 <div class="definition" markdown="1">
 
@@ -81,7 +81,7 @@ A = (a_{ij}).
 <div class="definition" markdown="1">
 
 
-<p class="env-number"><strong>Definition 2.23</strong> (Related exercises: <a href="../maps/#ex-maps-partial-2026-1">Exercise 4.46</a>)</p>
+<p class="env-number"><strong>Definition 2.23</strong> (Related exercises: <a href="../exercises-maps/#ex-maps-partial-2026-1">Exercise 4.46</a>)</p>
 
 <span id="def-matrix-to-system" label="def:matrix-to-system"></span> Let
 <div class="arithmatex" markdown="1">

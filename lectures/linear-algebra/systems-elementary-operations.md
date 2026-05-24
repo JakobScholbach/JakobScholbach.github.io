@@ -75,7 +75,7 @@ These operations are called “elementary” since they are so simple to perform
 
 </div>
 
-This theorem, which we will prove later on (<a href="../maps/#cor-equivalent-systems" data-reference-type="ref+Label" data-reference="cor:equivalent-systems">Corollary 4.77</a>) when we have more tools at our disposal may sound a little abstract at first sight. It is however actually simple to comprehend and, very importantly, extremely useful in practice.
+This theorem, which we will prove later on (<a href="../maps-inverses/#cor-equivalent-systems" data-reference-type="ref+Label" data-reference="cor:equivalent-systems">Corollary 4.78</a>) when we have more tools at our disposal may sound a little abstract at first sight. It is however actually simple to comprehend and, very importantly, extremely useful in practice.
 
 <div class="example" markdown="1">
 

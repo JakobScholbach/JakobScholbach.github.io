@@ -417,7 +417,7 @@ d(v,w) := |\hspace{-0.5mm}| {v-w} |\hspace{-0.5mm}|.
     {\left \langle f, g \right \rangle} := \int_{-1}^1 f(x)g(x)dx
 \]
 </div>
-    is an (infinite-dimensional) Euclidean space, which is of fundamental importance in analysis.
+is an (infinite-dimensional) Euclidean space, which is of fundamental importance in analysis.
 
 4.  As in <a href="#ex-minkowski" data-reference-type="ref+Label" data-reference="ex:minkowski">Example 7.8</a>, consider again $V = {\bf R}^n$, but
 <div class="arithmatex" markdown="1">
@@ -425,7 +425,7 @@ d(v,w) := |\hspace{-0.5mm}| {v-w} |\hspace{-0.5mm}|.
     {\left \langle v, w \right \rangle} := v_1 w_1 + \dots + v_{n-1} w_{n-1} - v_n w_n.
 \]
 </div>
-    This is bilinear and symmetric, but *not* positive definite, and therefore not a scalar product.
+This is bilinear and symmetric, but *not* positive definite, and therefore not a scalar product.
 
 </div>
 
@@ -912,7 +912,7 @@ The zeroes of this polynomial are given by
 \begin{align*}
 \lambda_{1/2} & = \frac{a+d}2 \pm \sqrt{\frac{(a+d)^2}4-ad+b^2} \\
 & = \frac{a+d}2 \pm \sqrt{\frac{a^2 + d^2}4 + \frac{ad}2 - ad + b^2} \\
-& = \frac{a+d}2 \pm \sqrt{\frac{(a-d)}4 + b^2}.
+& = \frac{a+d}2 \pm \sqrt{\frac{(a-d)^2}4 + b^2}.
 \end{align*}
 \]
 </div>
@@ -971,7 +971,7 @@ In other words, an affine subspace is obtained by translating a subspace (i.e., 
 Ax = b.
 \]
 </div>
-Indeed, by <a href="../maps/#thm-solutions-inhomogeneous-system" data-reference-type="ref+Label" data-reference="thm:solutions-inhomogeneous-system">Theorem 4.36</a> its solution set is precisely an affine subspace. See also the illustration in <a href="../maps/#rem-never-subspace" data-reference-type="ref+Label" data-reference="rem:never-subspace">Remark 4.37</a>.
+Indeed, by <a href="../maps/#thm-solutions-inhomogeneous-system" data-reference-type="ref+Label" data-reference="thm:solutions-inhomogeneous-system">Theorem 4.37</a> its solution set is precisely an affine subspace. See also the illustration in <a href="../maps/#rem-never-subspace" data-reference-type="ref+Label" data-reference="rem:never-subspace">Remark 4.38</a>.
 
 <div class="lemma" markdown="1">
 
@@ -1172,7 +1172,7 @@ a_1 x_1 + \dots + a_n x_n = b
 </div>
 is a (non-homogeneous) linear system and the matrix $\left ( \begin{array}{ccc} a_1 & \dots & a_n \end{array} \right )$ has rank 1, since the vector is nonzero. Therefore $H$ has dimension $n-1$.
 
-Let $W := \{ x \in {\bf R}^n \ | {\left \langle x, a \right \rangle} = 0\}$ be the associated subspace. Then $H = v + W$ for some $v \in {\bf R}^n$, according to <a href="../maps/#thm-solutions-inhomogeneous-system" data-reference-type="ref+Label" data-reference="thm:solutions-inhomogeneous-system">Theorem 4.36</a>. Thus, $a \in W^\bot$. If we set $\lambda := \frac b {|\hspace{-0.5mm}| {a} |\hspace{-0.5mm}|^2}$, we have $\lambda a\in H$:
+Let $W := \{ x \in {\bf R}^n \ | {\left \langle x, a \right \rangle} = 0\}$ be the associated subspace. Then $H = v + W$ for some $v \in {\bf R}^n$, according to <a href="../maps/#thm-solutions-inhomogeneous-system" data-reference-type="ref+Label" data-reference="thm:solutions-inhomogeneous-system">Theorem 4.37</a>. Thus, $a \in W^\bot$. If we set $\lambda := \frac b {|\hspace{-0.5mm}| {a} |\hspace{-0.5mm}|^2}$, we have $\lambda a\in H$:
 <div class="arithmatex" markdown="1">
 \[
 {\left \langle  \frac b {|\hspace{-0.5mm}| {a} |\hspace{-0.5mm}|^2} a, a \right \rangle} = \frac b {|\hspace{-0.5mm}| {a} |\hspace{-0.5mm}|^2} {\left \langle a, a \right \rangle} = b.
@@ -1244,13 +1244,13 @@ v_0 = \left ( \begin{array}{c} 11 \\ 11 \\ 11 \end{array} \right ) & = w + v \\
 \end{align*}
 \]
 </div>
-We compute the inverse of $A = \left ( \begin{array}{ccc} 1 & 1 & 4 \\ 2 & 1 & -4 \\ 4 & 0 & 1 \end{array} \right )$ using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a> (alternatively, one can also use the adjugate matrix, as in <a href="../determinants/#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>). The result is
+We compute the inverse of $A = \left ( \begin{array}{ccc} 1 & 1 & 4 \\ 2 & 1 & -4 \\ 4 & 0 & 1 \end{array} \right )$ using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.81</a> (alternatively, one can also use the adjugate matrix, as in <a href="../determinants/#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>). The result is
 <div class="arithmatex" markdown="1">
 \[
 A^{-1} = \frac 1 {33} \left ( \begin{array}{ccc} -1 & 1 & 8 \\ 18 & 15 & -12 \\ 4 & -4 & 1 \end{array} \right ).
 \]
 </div>
-According to <a href="../maps/#thm-invertible-system" data-reference-type="ref+Label" data-reference="thm:invertible-system">Theorem 4.68</a>, the above system therefore has a unique solution, given by
+According to <a href="../maps/#thm-invertible-system" data-reference-type="ref+Label" data-reference="thm:invertible-system">Theorem 4.69</a>, the above system therefore has a unique solution, given by
 <div class="arithmatex" markdown="1">
 \[
 A^{-1} v_0 = \frac 13 \left ( \begin{array}{c} 8 \\ 21 \\ 1 \end{array} \right ).
@@ -1507,7 +1507,7 @@ or, more concretely, $x_3 = 1$.
 
 <p class="env-number"><strong>Theorem 7.59</strong></p>
 
-<span id="thm-distance-affine-subspaces" label="thm:distance-affine-subspaces"></span> Let $X = v+ W$, $X' = v' + W'$ be two affine subspaces. Let us write $d := v-v'$ and $Z := W + W'$ (<a href="../spaces/#def-sum-of-vector-spaces" data-reference-type="ref+Label" data-reference="def:sum-of-vector-spaces">Definition 3.34</a>). Let
+<span id="thm-distance-affine-subspaces" label="thm:distance-affine-subspaces"></span> Let $X = v+ W$, $X' = v' + W'$ be two affine subspaces. Let us write $d := v-v'$ and $Z := W + W'$ (<a href="../spaces/#def-sum-of-vector-spaces" data-reference-type="ref+Label" data-reference="def:sum-of-vector-spaces">Definition 3.36</a>). Let
 <div class="arithmatex" markdown="1">
 \[
 m := p_{Z^\bot}(d) = d - p_Z(d)
@@ -2231,7 +2231,7 @@ L_2 : \ & x=t \\ & y = 2 \\ & z = 4-t, t \in {\bf R}.
     |\hspace{-0.5mm}| {p_1-p_2} |\hspace{-0.5mm}| = d(p_1, p_2) = d(L_1, L_2),
 \]
 </div>
-    i.e., two points that realize the minimal distance between $L_1$ and $L_2$.
+i.e., two points that realize the minimal distance between $L_1$ and $L_2$.
 
 </div>
 

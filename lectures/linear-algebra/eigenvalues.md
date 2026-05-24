@@ -82,7 +82,7 @@ can be rewritten as
 0 = Av-\lambda v = Av - (\lambda {\mathrm {id}}) v = (A - \lambda {\mathrm {id}}) v.
 \]
 </div>
-Here we have used standard properties of matrix multiplication (<a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.59</a>). We seek a *non-zero* vector $v$ satisfying this condition. Such a vector exists if and only if $A - \lambda {\mathrm {id}}$ is *not* invertible.
+Here we have used standard properties of matrix multiplication (<a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.60</a>). We seek a *non-zero* vector $v$ satisfying this condition. Such a vector exists if and only if $A - \lambda {\mathrm {id}}$ is *not* invertible.
 
 <div class="example" markdown="1">
 
@@ -808,7 +808,7 @@ F: {\mathrm {Mat}}_{2 \times 2} \to {\mathrm {Mat}}_{2 \times 2}, X \mapsto AX.
 
 <p class="env-number"><strong>Remark 6.26</strong></p>
 
-<span id="rem-eigenvalues-remark-002" label="rem:eigenvalues-remark-002"></span> The linearity of $F$ is a consequence of <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.59</a>. It is also very similar to <a href="../maps/#prop-matrix-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-linear-map">Proposition 4.19</a>.
+<span id="rem-eigenvalues-remark-002" label="rem:eigenvalues-remark-002"></span> The linearity of $F$ is a consequence of <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.60</a>. It is also very similar to <a href="../maps/#prop-matrix-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-linear-map">Proposition 4.19</a>.
 
 </div>
 
@@ -1034,7 +1034,7 @@ By the quadratic formula,
     \end{align*}
 \]
 </div>
-    So the eigenvalues of $A$ are $4$ and $-2$. Since these are two distinct eigenvalues, $A$ is diagonalizable by <a href="#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a>. One computes the eigenspaces and thus an eigenbasis for example using Gaussian elimination. For $\lambda=4$, $A-4\,\mathrm{id}_2 = \left ( \begin{array}{cc} -1 & 5 \\ 1 & -5 \end{array} \right ) \leadsto x=5y,$ so $E_4 = L((5,1))$.
+So the eigenvalues of $A$ are $4$ and $-2$. Since these are two distinct eigenvalues, $A$ is diagonalizable by <a href="#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a>. One computes the eigenspaces and thus an eigenbasis for example using Gaussian elimination. For $\lambda=4$, $A-4\,\mathrm{id}_2 = \left ( \begin{array}{cc} -1 & 5 \\ 1 & -5 \end{array} \right ) \leadsto x=5y,$ so $E_4 = L((5,1))$.
 
     For $\lambda=-2$, $A+2\,\mathrm{id}_2 = \left ( \begin{array}{cc} 5 & 5 \\ 1 & 1 \end{array} \right ) \leadsto x=-y,$ so $E_{-2} = L((-1,1))$. An eigenbasis for $A$ is $\bigl((5,1),(-1,1)\bigr)$ (cf. <a href="#def-eigenbasis" data-reference-type="ref+Label" data-reference="def:eigenbasis">Definition 6.17</a>).
 
@@ -1049,20 +1049,20 @@ By the quadratic formula,
     \end{align*}
 \]
 </div>
-    The eigenvalues are $2$ and $-1$ (the latter with algebraic multiplicity 2). Since there are only 2 (not 3) distinct eigenvalues We cannot use <a href="#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a> to decide diagonalizability, so we need to compute the eigenspaces. For $\lambda=2$:
+The eigenvalues are $2$ and $-1$ (the latter with algebraic multiplicity 2). Since there are only 2 (not 3) distinct eigenvalues We cannot use <a href="#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a> to decide diagonalizability, so we need to compute the eigenspaces. For $\lambda=2$:
 <div class="arithmatex" markdown="1">
 \[
     A-2\,\mathrm{id}_3 = \left ( \begin{array}{ccc} -2 & 1 & 0 \\ 3 & -2 & 1 \\ 2 & 0 & -2 \end{array} \right ) \leadsto E_2 = L((1,2,1)).
 \]
 </div>
 
-    For $\lambda=-1$:
+For $\lambda=-1$:
 <div class="arithmatex" markdown="1">
 \[
     A+\mathrm{id}_3 = \left ( \begin{array}{ccc} 1 & 1 & 0 \\ 3 & 1 & 1 \\ 2 & 0 & 1 \end{array} \right ) \leadsto E_{-1} = L((-1,1,2)).
 \]
 </div>
-    Hence $\dim E_2 + \dim E_{-1} = 1+1=2<3$, so $A$ is not diagonalizable; i.e., does not have an eigenbasis.
+Hence $\dim E_2 + \dim E_{-1} = 1+1=2<3$, so $A$ is not diagonalizable; i.e., does not have an eigenbasis.
 
 3.  The matrix $A = \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 0 & \frac 32 \\ 0 & 0 & 1 \end{array} \right )$ is an upper triangular matrix. Thus the eigenvalues are diagonal entries: $1,0,1$. Thus
 <div class="arithmatex" markdown="1">
@@ -1071,27 +1071,27 @@ By the quadratic formula,
 \]
 </div>
 
-    For $\lambda=1$:
+For $\lambda=1$:
 <div class="arithmatex" markdown="1">
 \[
     A-\mathrm{id}_3 = \left ( \begin{array}{ccc} 0 & 0 & 0 \\ 0 & -1 & \frac 32 \\ 0 & 0 & 0 \end{array} \right ),
 \]
 </div>
-    so $y=\frac 32 z$, with $x,z$ free. Therefore
+so $y=\frac 32 z$, with $x,z$ free. Therefore
 <div class="arithmatex" markdown="1">
 \[
     E_1 = L((1,0,0),(0,3,2)), \quad \dim E_1=2.
 \]
 </div>
 
-    For $\lambda=0$ we solve $Av=0$, which gives $x=0$ and $z=0$, so
+For $\lambda=0$ we solve $Av=0$, which gives $x=0$ and $z=0$, so
 <div class="arithmatex" markdown="1">
 \[
     E_0 = L((0,1,0)), \quad \dim E_0=1.
 \]
 </div>
 
-    Hence $\dim E_1 + \dim E_0 = 3$, so $A$ is diagonalizable. An eigenbasis is $\bigl((1,0,0),(0,3,2),(0,1,0)\bigr).$
+Hence $\dim E_1 + \dim E_0 = 3$, so $A$ is diagonalizable. An eigenbasis is $\bigl((1,0,0),(0,3,2),(0,1,0)\bigr).$
 
 4.  The matrix $A = \left ( \begin{array}{ccc} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{array} \right )$. is again upper triangular, so the only eigenvalue is $0$ (algebraic multiplicity 3), and
 <div class="arithmatex" markdown="1">
@@ -1099,21 +1099,21 @@ By the quadratic formula,
     \chi_A(t) = (-t)^3.
 \]
 </div>
-    The eigenspace is $E_0=\ker A$. From
+The eigenspace is $E_0=\ker A$. From
 <div class="arithmatex" markdown="1">
 \[
     A\left ( \begin{array}{c} x \\ y \\ z \end{array} \right )
     = \left ( \begin{array}{c} y \\ z \\ 0 \end{array} \right ) = 0,
 \]
 </div>
-    we get $y=z=0$, $x$ free. So
+we get $y=z=0$, $x$ free. So
 <div class="arithmatex" markdown="1">
 \[
     E_0 = L((1,0,0)), \quad \dim E_0=1.
 \]
 </div>
 
-    Since $\dim E_0=1<3$, $A$ is not diagonalizable, and there is no eigenbasis.
+Since $\dim E_0=1<3$, $A$ is not diagonalizable, and there is no eigenbasis.
 
 </div>
 
@@ -1206,7 +1206,7 @@ In order to compute the matrix of $f$ with respect to the standard basis $\under
 {\bf R}^3_{\underline e}.
 \]
 </div>
-It turns out that $K^{-1}$ is easier to compute than $K$. It is given by expressing the $v_i$ in their coordinates in the standard basis vectors, e.g. $v_1 \mapsto {\mathrm {id}}(v_1) = (1,0,1) = 1 e_1 + 0 e_2 + 1 e_3$. This implies $K^{-1} = \left ( \begin{array}{ccc} 1 & 2 & 1 \\ 0 & 0 & 1 \\ 1 & -3 & 1 \end{array} \right )$. We can use this to compute $K = (K^{-1})^{-1})$, cf.. This inverse (of $K^{-1}$) can be computed using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>, which gives $K = \frac 15 \left ( \begin{array}{ccc} 3 & -5 & 2 \\ 1 & 0 & -1 \\ 0 & 5 & 0 \end{array} \right )$. Then, one computes the product
+It turns out that $K^{-1}$ is easier to compute than $K$. It is given by expressing the $v_i$ in their coordinates in the standard basis vectors, e.g. $v_1 \mapsto {\mathrm {id}}(v_1) = (1,0,1) = 1 e_1 + 0 e_2 + 1 e_3$. This implies $K^{-1} = \left ( \begin{array}{ccc} 1 & 2 & 1 \\ 0 & 0 & 1 \\ 1 & -3 & 1 \end{array} \right )$. We can use this to compute $K = (K^{-1})^{-1})$, cf.. This inverse (of $K^{-1}$) can be computed using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.81</a>, which gives $K = \frac 15 \left ( \begin{array}{ccc} 3 & -5 & 2 \\ 1 & 0 & -1 \\ 0 & 5 & 0 \end{array} \right )$. Then, one computes the product
 <div class="arithmatex" markdown="1">
 \[
 K^{-1} \left ( \begin{array}{ccc} 2 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 0 \end{array} \right ) K = \frac 15 \left ( \begin{array}{ccc} 4 & -10 & 6 \\ 0 & 0 & 0 \\ 9 & -10 & 1 \end{array} \right ).
@@ -1252,7 +1252,7 @@ So the eigenvalues are $a,0,2$ (with multiplicities depending on $a$). We distin
     A_0 - 0 \,\mathrm{id}_3 = A_0 = \left ( \begin{array}{ccc} 0 & 0 & 0 \\ -2 & 1 & 1 \\ 0 & 1 & 1 \end{array} \right ) \leadsto \left ( \begin{array}{ccc} -2 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 0 \end{array} \right ).
 \]
 </div>
-    This gives $x = \frac{1}{2}y + \frac{1}{2}z$ and $y + z = 0$, so $y = -z$. Thus $x = 0$ and $E_0=L((0,1,-1))$, so $\dim E_0=1$ while the algebraic multiplicity of $0$ is $2$. Therefore $A_0$ is not diagonalizable.
+This gives $x = \frac{1}{2}y + \frac{1}{2}z$ and $y + z = 0$, so $y = -z$. Thus $x = 0$ and $E_0=L((0,1,-1))$, so $\dim E_0=1$ while the algebraic multiplicity of $0$ is $2$. Therefore $A_0$ is not diagonalizable.
 
 3.  If $a=2$, then
 <div class="arithmatex" markdown="1">
@@ -1260,20 +1260,20 @@ So the eigenvalues are $a,0,2$ (with multiplicities depending on $a$). We distin
     A_2 = \left ( \begin{array}{ccc} 2 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 1 & 1 \end{array} \right ).
 \]
 </div>
-    This time, the algebraic multiplicity of $\lambda = 0$ is 1, so it remains to compute the eigenspace for $\lambda = 2$:
+This time, the algebraic multiplicity of $\lambda = 0$ is 1, so it remains to compute the eigenspace for $\lambda = 2$:
 <div class="arithmatex" markdown="1">
 \[
     A_2-2\,\mathrm{id}_3
     = \left ( \begin{array}{ccc} 0 & 0 & 0 \\ 0 & -1 & 1 \\ 0 & 1 & -1 \end{array} \right ),
 \]
 </div>
-    so $y=z$ and $x$ is free; hence
+so $y=z$ and $x$ is free; hence
 <div class="arithmatex" markdown="1">
 \[
     E_2 = L((1,0,0),(0,1,1)), \qquad \dim E_2=2.
 \]
 </div>
-    For $\lambda=0$, one gets $E_0=L((0,1,-1))$, thus $\dim E_0=1$. So $\dim E_2+\dim E_0=3$, and by <a href="#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, $A_2$ is diagonalizable.
+For $\lambda=0$, one gets $E_0=L((0,1,-1))$, thus $\dim E_0=1$. So $\dim E_2+\dim E_0=3$, and by <a href="#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, $A_2$ is diagonalizable.
 
 In conclusion, $A_a$ is diagonalizable precisely if $a \ne 0$.
 
@@ -1494,7 +1494,7 @@ A = \left ( \begin{array}{cc} -4 & 8 \\ 1 & -2 \end{array} \right ),
 F : {\mathrm {Mat}}_{2\times 2} \to {\mathrm {Mat}}_{2\times 2},\ X\mapsto AX.
 \]
 </div>
-This map is indeed linear by <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.59</a>. Fixing the basis $\underline E := (E_{11},E_{12},E_{21},E_{22})$, we compute:
+This map is indeed linear by <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.60</a>. Fixing the basis $\underline E := (E_{11},E_{12},E_{21},E_{22})$, we compute:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -1635,7 +1635,7 @@ The matrix $A^2$ therefore has $2^2 = 4$ as an eigenvalue. Since similar matrice
 </div>
 so the rank is 3 and the vectors do form a basis.
 
-The condition that $v_3$ be an eigenvector for the eigenvalue 4 means $f(v_3) = 4v_3 = (4,4,8)$. Acccording to <a href="../maps/#prop-linear-map-defined-on-basis" data-reference-type="ref+Label" data-reference="prop:linear-map-defined-on-basis">Proposition 4.39</a>, there is a unique linear map $f$ whose value on $v_1, v_2, v_3$ is prescribed.
+The condition that $v_3$ be an eigenvector for the eigenvalue 4 means $f(v_3) = 4v_3 = (4,4,8)$. Acccording to <a href="../maps/#prop-linear-map-defined-on-basis" data-reference-type="ref+Label" data-reference="prop:linear-map-defined-on-basis">Proposition 4.40</a>, there is a unique linear map $f$ whose value on $v_1, v_2, v_3$ is prescribed.
 
 We now compute $A$. We have to express $f(v_i)$ as a linear combination in terms of $v_1, v_2, v_3$:
 <div class="arithmatex" markdown="1">

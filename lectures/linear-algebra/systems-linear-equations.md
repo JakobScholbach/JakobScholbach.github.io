@@ -92,7 +92,7 @@ In general, any equation of the form
 ax+by=c
 \]
 </div>
-with $a \ne 0$ or $b \ne 0$ will have a line as a solution set (what happens if $a=b=0$?, cf. <a href="../systems-gaussian-elimination/#ex-equation-no-solutions" data-reference-type="ref+Label" data-reference="ex:equation-no-solutions">Exercise 2.6</a>).
+with $a \ne 0$ or $b \ne 0$ will have a line as a solution set (what happens if $a=b=0$?, cf. <a href="../exercises-systems/#ex-equation-no-solutions" data-reference-type="ref+Label" data-reference="ex:equation-no-solutions">Exercise 2.6</a>).
 
 <div class="remark" markdown="1">
 

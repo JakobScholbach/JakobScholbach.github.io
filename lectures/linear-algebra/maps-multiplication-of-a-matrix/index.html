@@ -1,0 +1,2614 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wiki generated from LaTeX lecture notes">
+      
+      
+      
+      
+        <link rel="prev" href="../maps-definition-and-first-examples/">
+      
+      
+        <link rel="next" href="../maps-kernel-and-image-1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Matrix-Vector Multiplication - Linear Algebra Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#multiplication-of-a-matrix-with-a-vector" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Algebra Wiki" class="md-header__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Matrix-Vector Multiplication
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Algebra Wiki" class="md-nav__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Complex Numbers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-complex-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Systems of Linear Equations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-linear-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-elementary-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elementary Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-gaussian-elimination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gaussian Elimination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-systems-of-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vector Spaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-R2R3Rn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R², R³ and Rⁿ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-definition-solution-of-homogeneous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution Sets of Homogeneous Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intersections of Subspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-further-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Further Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-linear-combinations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Combinations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-linear-independence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Independence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-dimension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimension
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-vector-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linear Maps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-definition-and-first-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definition and First Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrix-Vector Multiplication
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrix-Vector Multiplication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-case-of-2-times-2-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The case of \(2 \times 2\)-matrices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The case of \(2 \times 2\)-matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reflections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reflections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rescalings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rescalings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shearing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-kernel-and-image-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel and Image (1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-kernel-and-image-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel and Image (2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-revisiting-linear-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Revisiting Linear Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-linear-maps-defined-on-basis-vectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps on Basis Vectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-matrices-associated-to-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrices of Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-composing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composing Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-inverses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inverses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-change-of-basis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change of Basis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-transpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transposition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Determinants
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-determinants-of-2-x-2-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2×2 Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-determinants-of-larger-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants of Larger Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-invertibility-and-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Invertibility and Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-further-properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Further Properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Eigenvalues and Eigenvectors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-characteristic-polynomial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characteristic Polynomial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-eigenspaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-diagonalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagonalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-eigenvalues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-eigenvalues-and-eigenvectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Euclidean Spaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-scalar-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scalar Product on Rⁿ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-orthogonal-and-symmetric-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orthogonal and Symmetric Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-affine-subspaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Affine Subspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-distances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-euclid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-case-of-2-times-2-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The case of \(2 \times 2\)-matrices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The case of \(2 \times 2\)-matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reflections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reflections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rescalings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rescalings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shearing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="sect-matrix-vector-multiplication"></a></p>
+<h1 id="multiplication-of-a-matrix-with-a-vector">Multiplication of a matrix with a vector<a class="headerlink" href="#multiplication-of-a-matrix-with-a-vector" title="Permanent link">&para;</a></h1>
+<p>In this section, we define the multiplication of a matrix with a vector and show how this gives rise to a linear map. This is an extremely important way to construct linear maps.</p>
+<div class="definition">
+<p class="env-number"><strong>Definition 4.9</strong> (Related exercises: <a href="../exercises-maps/#al">Exercise 4.1</a>, <a href="../exercises-maps/#ex-maps-exercise-002">Exercise 4.2</a>)</p>
+<p><span id="def-product-matrix-vector" label="def:product-matrix-vector"></span> Let <span class="arithmatex">\(A = (a_{ij})_{1 \le i \le m, 1 \le j \le n}\)</span> (cf. <a href="../systems-matrices/#not-matrix-notation" data-reference-type="ref+Label" data-reference="not:matrix-notation">Notation 2.22</a>) be an <span class="arithmatex">\(m \times n\)</span>-matrix and <span class="arithmatex">\(v = \left ( \begin{array}{c} v_1 \\ \vdots \\ v_n \end{array} \right )\)</span> be a <span class="arithmatex">\(n \times 1\)</span>-matrix, i.e., a row vector with <span class="arithmatex">\(n\)</span> columns. The product of <span class="arithmatex">\(A\)</span> with <span class="arithmatex">\(v\)</span> is the <span class="arithmatex">\(m \times 1\)</span>-vector</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A v := \left ( \begin{array}{c} a_{11} v_1 + a_{12} v_2 + \dots + a_{1n} v_n \\ \vdots \\ a_{m1} v_1 + a_{m2} v_2 + \dots + a_{mn} v_n \end{array} \right ).
+\]</div>
+</div>
+<p>Thus, the <span class="arithmatex">\(i\)</span>-th entry of the (column) vector <span class="arithmatex">\(Av\)</span> is computed by traversing the <span class="arithmatex">\(i\)</span>-th row of <span class="arithmatex">\(A\)</span> and multiplying each entry of that row with the corresponding entry of <span class="arithmatex">\(v\)</span>.</p>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 4.10</strong></p>
+<p><span id="ex-maps-example-004" label="ex:maps-example-004"></span> Here are two concrete examples:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\left ( \begin{array}{cc} 4 &amp; -1 \\ 2 &amp; 1 \\ 0 &amp; -2 \end{array} \right ) 
+\left ( \begin{array}{c} 3 \\ 4 \end{array} \right ) &amp; = \left ( \begin{array}{c} 4 \cdot 3 - 1 \cdot 4 \\ 2 \cdot 3 +1 \cdot 4 \\ 0 \cdot 3 - 2 \cdot 4 \end{array} \right ) = \left ( \begin{array}{c} 8 \\ 10 \\ -8 \end{array} \right ).\\ 
+\left ( \begin{array}{ccc} 1 &amp; 3 &amp; -2 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; -1 \end{array} \right ) \left ( \begin{array}{c} 1 \\ 2 \\ -1 \end{array} \right ) &amp; = \left ( \begin{array}{c} 1 \cdot 1 + 3 \cdot 2 + (-2) \cdot (-1) \\ {} \\ \end{array} \right ) = \left ( \begin{array}{c} 9 \\ {} \\ \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+</div>
+<p>It makes perfectly good sense to consider matrices whose entries are variables. Compute:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc} 1 &amp; 3 &amp; -2 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; -1 \end{array} \right ) \left ( \begin{array}{c} x \\ y \\ z \end{array} \right ) = \left ( \begin{array}{c} 1 \cdot x + 3 \cdot y + (-2) \cdot z \\ {} \\ \end{array} \right ) = \left ( \begin{array}{c} x+3y-2z \\ {} \\ \end{array} \right ).
+\]</div>
+</div>
+<p>Thus, the equation (of column vectors consisting of 3 rows)</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc} 1 &amp; 3 &amp; -2 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; -1 \end{array} \right ) \left ( \begin{array}{c} x \\ y \\ z \end{array} \right ) = \left ( \begin{array}{c} 3 \\ 4 \\ -2 \end{array} \right )
+\]</div>
+</div>
+<p>is a <em>very convenient</em> way to write down the linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x + 3y-2z &amp; = 1 \\
+y &amp; = 4 \\
+x - z &amp; = -2.
+\end{align*}
+\]</div>
+</div>
+<p>This shows that the product of matrices with column vectors is very useful in enconding linear systems. We record this observation in the due generality:</p>
+<div class="observation">
+<p class="env-number"><strong>Observation 4.11</strong></p>
+<p><span id="obs-matrix-vector-system" label="obs:matrix-vector-system"></span> Let</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{ccc} a_{11} &amp; \dots &amp; a_{1n} \\ \vdots &amp; \ddots &amp; \vdots \\ a_{m1} &amp; \dots &amp; a_{mn} \end{array} \right )
+\]</div>
+</div>
+<p>be an <span class="arithmatex">\(m \times n\)</span>-matrix and</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+x = \left ( \begin{array}{c} x_1 \\ \vdots \\ x_n \end{array} \right )
+\]</div>
+</div>
+<p>be a column vector with <span class="arithmatex">\(n\)</span> rows and</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+b = \left ( \begin{array}{c} b_1 \\ \vdots \\ b_m \end{array} \right )
+\]</div>
+</div>
+<p>be a column vector with <span class="arithmatex">\(m\)</span> rows. Then the equation</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A x = b
+\]</div>
+</div>
+<p>is equivalent to the linear system (in the unknowns <span class="arithmatex">\(x_1, \dots, x_n\)</span>, consisting of <span class="arithmatex">\(m\)</span> equations)</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+a_{11} x_1 + \dots + a_{1n} x_n &amp; = b_1 \\
+\vdots \\
+a_{m1} x_1 + \dots + a_{mn} x_n &amp; = b_m. \\
+\end{align*}
+\]</div>
+</div>
+</div>
+<p><a id="sect-2-x-2-matrices"></a></p>
+<h2 id="the-case-of-2-times-2-matrices">The case of <span class="arithmatex">\(2 \times 2\)</span>-matrices<a class="headerlink" href="#the-case-of-2-times-2-matrices" title="Permanent link">&para;</a></h2>
+<p>The process of multiplying a matrix with a column vector is also geometrically very important. We now investigate this in more detail in the case where</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{cc} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{array} \right ) \in {\mathrm {Mat}}_{2 \times 2}.
+\]</div>
+</div>
+<p>For a column vector <span class="arithmatex">\(v = \left ( \begin{array}{c} v_1 \\ v_2 \end{array} \right )\)</span> the product is, according to <a href="#def-product-matrix-vector" data-reference-type="ref+Label" data-reference="def:product-matrix-vector">Definition 4.9</a>,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+Av = \left ( \begin{array}{c} a_{11} v_1 + a_{12} x_2 \\ a_{21} v_1 + a_{22} v_2 \end{array} \right ).
+\]</div>
+</div>
+<div class="arithmatex">
+<div class="arithmatex">\[
+Av = \left ( \begin{array}{c} a_{11} v_1 + a_{12} x_2 \\ a_{21} v_1 + a_{22} v_2 \end{array} \right ).
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(4.12)</strong></p>
+
+<p><span id="eqn-av" label="eqn--Av"></span> In keeping with traditional notation from geometry, we will instead write the vector <span class="arithmatex">\(v\)</span> as <span class="arithmatex">\(\left ( \begin{array}{c} x \\ y \end{array} \right )\)</span>, in which case</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+Av = \left ( \begin{array}{c} a_{11} x + a_{12} y \\ a_{21} x + a_{22} y \end{array} \right ).
+\]</div>
+</div>
+<p>It is useful to organize this situation into a function, namely the function that sends the vector <span class="arithmatex">\(v\)</span> to the vector <span class="arithmatex">\(Av\)</span>. We obtain a function</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+f : {\bf R}^2 \to {\bf R}^2, v \mapsto Av \ \text{(read ``$v$ maps to $Av$''.)}
+\]</div>
+</div>
+<p>Of course, since <span class="arithmatex">\(Av\)</span> depends on the entries of <span class="arithmatex">\(A\)</span>, so does this function <span class="arithmatex">\(f\)</span>.</p>
+<h3 id="reflections">Reflections<a class="headerlink" href="#reflections" title="Permanent link">&para;</a></h3>
+<div class="example">
+<p class="env-number"><strong>Example 4.13</strong></p>
+<p><span id="ex-reflection-matrix" label="ex:reflection-matrix"></span> We consider <span class="arithmatex">\(A = \left ( \begin{array}{cc} 1 &amp; 0 \\ 0 &amp; -1 \end{array} \right )\)</span>. According to the above we have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+Av = \left ( \begin{array}{c} x \\ -y \end{array} \right ).
+\]</div>
+</div>
+<p>We plot a few points <span class="arithmatex">\(v\)</span> and the corresponding <span class="arithmatex">\(Av\)</span>:</p>
+<div class="center">
+<p><img alt="image" src="../figures/png/maps/maps-fig-02.png" /></p>
+</div>
+<p>Thus, geometrically, <span class="arithmatex">\(Av\)</span> is the point <span class="arithmatex">\(v\)</span> reflected along the <span class="arithmatex">\(x\)</span>-axis.</p>
+</div>
+<h3 id="rescalings">Rescalings<a class="headerlink" href="#rescalings" title="Permanent link">&para;</a></h3>
+<div class="example">
+<p class="env-number"><strong>Example 4.14</strong></p>
+<p><span id="ex-maps-example-006" label="ex:maps-example-006"></span> The matrix <span class="arithmatex">\(A = \left ( \begin{array}{cc} \frac 12 &amp; 0 \\ 0 &amp; 1 \end{array} \right )\)</span> describes the map that compresses everything in the <span class="arithmatex">\(x\)</span>-direction by the factor <span class="arithmatex">\(\frac 12\)</span>, and leaves the <span class="arithmatex">\(y\)</span>-direction untouched.</p>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 4.15</strong></p>
+<p><span id="ex-rescaling-matrix" label="ex:rescaling-matrix"></span> If <span class="arithmatex">\(r\)</span>, <span class="arithmatex">\(s\)</span> are two real numbers,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{cc} r &amp; 0 \\ 0 &amp; s \end{array} \right )
+\]</div>
+</div>
+<p>rescales the <span class="arithmatex">\(x\)</span>-direction by a factor <span class="arithmatex">\(r\)</span> (so it shrinks for <span class="arithmatex">\(r &lt; 1\)</span> and enlarges for <span class="arithmatex">\(r &gt; 1\)</span>) and rescales the <span class="arithmatex">\(y\)</span>-direction by a factor <span class="arithmatex">\(s\)</span>.</p>
+<p>For <span class="arithmatex">\(A = \left ( \begin{array}{cc} \frac 12 &amp; 0 \\ 0 &amp; 2 \end{array} \right )\)</span>, this looks as follows:</p>
+<div class="center">
+<p><img alt="image" src="../figures/png/maps/maps-fig-03.png" /></p>
+</div>
+</div>
+<h3 id="shearing">Shearing<a class="headerlink" href="#shearing" title="Permanent link">&para;</a></h3>
+<div class="example">
+<p class="env-number"><strong>Example 4.16</strong></p>
+<p><span id="ex-shearing-matrix" label="ex:shearing-matrix"></span> For a fixed real number <span class="arithmatex">\(r\)</span>, the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{cc} 1 &amp; r \\ 0 &amp; 1 \end{array} \right )
+\]</div>
+</div>
+<p>sends <span class="arithmatex">\(v\)</span> to <span class="arithmatex">\(Av = \left ( \begin{array}{c} x+ry \\ y \end{array} \right )\)</span>. Thus it is a shearing operation. In the following picture <span class="arithmatex">\(A = \left ( \begin{array}{cc} 1 &amp; 2 \\ 0 &amp; 1 \end{array} \right )\)</span>.</p>
+<div class="center">
+<p><img alt="image" src="../figures/png/maps/maps-fig-04.png" /></p>
+</div>
+</div>
+<h3 id="rotations">Rotations<a class="headerlink" href="#rotations" title="Permanent link">&para;</a></h3>
+<p>We now consider rotations.</p>
+<div class="example">
+<p class="env-number"><strong>Example 4.17</strong> (Related exercises: <a href="../exercises-maps/#al">Exercise 4.1</a>, <a href="../exercises-maps/#ex-maps-exercise-002">Exercise 4.2</a>)</p>
+<p><span id="ex-rotation-matrix" label="ex:rotation-matrix"></span> For <span class="arithmatex">\(A = \left ( \begin{array}{cc} 0 &amp; -1 \\ 1 &amp; 0 \end{array} \right )\)</span>, the vector <span class="arithmatex">\(Av = \left ( \begin{array}{c} -y \\ x \end{array} \right )\)</span>. Geometrically, the function <span class="arithmatex">\(v \mapsto Av\)</span> is a counterclockwise rotation by <span class="arithmatex">\(90^\circ\)</span>.</p>
+<p>For <span class="arithmatex">\(A = \left ( \begin{array}{cc} -1 &amp; 0 \\ 0 &amp; 1 \end{array} \right )\)</span>, the vector <span class="arithmatex">\(Av = \left ( \begin{array}{c} -x \\ y \end{array} \right )\)</span> so the function <span class="arithmatex">\(v \mapsto Av\)</span> describes a counterclockwise rotation by <span class="arithmatex">\(180^\circ\)</span> (or, what is the same, a clockwise rotation by <span class="arithmatex">\(180^\circ\)</span>).</p>
+</div>
+<p>For more general rotations, we use basic properties of the trignometric functions, e.g., as recalled in §<a href="../appendix/#sect-trigonometric-functions" data-reference-type="ref" data-reference="sect--trigonometric functions">Chapter B</a>.</p>
+<div class="example">
+<p class="env-number"><strong>Example 4.18</strong> (Related exercises: <a href="../exercises-maps/#al">Exercise 4.1</a>)</p>
+<p><span id="ex-rotation-matrix-general" label="ex:rotation-matrix-general"></span> In general, for any <span class="arithmatex">\(r \in {\bf R}\)</span> the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A = \left ( \begin{array}{cc} \cos r &amp; -\sin r \\ \sin r &amp; \cos r \end{array} \right )
+\]</div>
+</div>
+<p>is such that the function</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+v \mapsto Av = \left ( \begin{array}{c} \cos r x - \sin r y \\ \sin r x + \cos r y \end{array} \right )
+\]</div>
+</div>
+<p>is a (counter-clockwise) rotation by <span class="arithmatex">\(r\)</span>. For this reason, <span class="arithmatex">\(A\)</span> is called a <em>rotation matrix</em>.</p>
+</div>
+<p>In the following illustration, <span class="arithmatex">\(A = \left ( \begin{array}{cc} 0 &amp; -1 \\ 1 &amp; 0 \end{array} \right )\)</span>.</p>
+<div class="center">
+<p><img alt="image" src="../figures/png/maps/maps-fig-05.png" /></p>
+</div>
+<p>We regard a vector <span class="arithmatex">\(v = \left ( \begin{array}{c} v_1 \\ \vdots \\ v_n \end{array} \right )\)</span> as an element of <span class="arithmatex">\({\bf R}^n\)</span>. (Thus, instead of using the notation <span class="arithmatex">\((v_1, \dots, v_n)\)</span> for an ordered tuple, as in <a href="../spaces-R2R3Rn/#def-ordered-tuple" data-reference-type="ref+Label" data-reference="def:ordered-tuple">Definition 3.1</a>, we write the <span class="arithmatex">\(n\)</span> numbers underneath in a row.) Fix an <span class="arithmatex">\(m \times n\)</span>-matrix <span class="arithmatex">\(A\)</span>. Then the product <span class="arithmatex">\(Av\)</span>, which is an column vector with <span class="arithmatex">\(m\)</span> entries, is an element in <span class="arithmatex">\({\bf R}^m\)</span>. We now regard this matrix <span class="arithmatex">\(A\)</span> as fixed, and consider the vector <span class="arithmatex">\(v\)</span> as a variable. In other words, we consider the function (or map)</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\bf R}^n \to {\bf R}^m, v \mapsto A v.
+\]</div>
+</div>
+<p>Matrix multiplication has the following basic, but crucial property.</p>
+<div class="proposition">
+<p class="env-number"><strong>Proposition 4.19</strong> (Related exercises: <a href="../exercises-maps/#ex-maps-3-7">Exercise 4.17</a>, <a href="../exercises-maps/#ex-maps-exercise-005">Exercise 4.5</a>, <a href="../exercises-maps/#ex-maps-exercise-015">Exercise 4.21</a>, <a href="../exercises-maps/#ex-maps-exercise-016">Exercise 4.22</a>)</p>
+<p><span id="prop-matrix-linear-map" label="prop:matrix-linear-map"></span> For any <span class="arithmatex">\(m \times n\)</span>-matrix <span class="arithmatex">\(A\)</span>, the above map is linear.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> We prove this in the case <span class="arithmatex">\(m = n = 2\)</span> using . (The case of general <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(n\)</span> is just notationally more involved, but otherwise the same.) Let <span class="arithmatex">\(v = \left ( \begin{array}{c} v_1 \\ v_2 \end{array} \right )\)</span>, <span class="arithmatex">\(v' = \left ( \begin{array}{c} v'_1 \\ v'_2 \end{array} \right )\)</span>. Then</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+A v + A v' &amp; = \left ( \begin{array}{c} a_{11} v_1 + a_{12} v_2 \\ a_{21} v_1 + a_{22} v_2 \end{array} \right ) + \left ( \begin{array}{c} a_{11} v'_1 + a_{12} v'_2 \\ a_{21} v'_1 + a_{22} v'_2 \end{array} \right ) \\ &amp; =
+\left ( \begin{array}{c} a_{11} (v_1+v'_1) + a_{12} (v_2+v'_2) \\ a_{21} (v_1+v'_1) + a_{22} (v_2+v'_2) \end{array} \right ) \\ &amp; = A \left ( \begin{array}{c} v_1+v_2 \\ v'_1 + v'_2 \end{array} \right ) \\ &amp; = A (v+v').
+\end{align*}
+\]</div>
+</div>
+<p>Likewise, one checks <a href="../maps-definition-and-first-examples/#linear-scalar" data-reference-type="eqref" data-reference="linear scalar">Equation (4.3)</a>, i.e., that for <span class="arithmatex">\(a \in R\)</span>,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+A (av) &amp;=  A \left ( \begin{array}{c} av_1 \\ a v_2 \end{array} \right ) \\ &amp; = \left ( \begin{array}{c} a_{11} a v_1 + a_{12} a v_2 \\ a_{21} a v_1 + a_{22} a v_2 \end{array} \right ) \\ &amp; =a \left ( \begin{array}{c} a_{11} v_1 + a_{12} v_2 \\ a_{21} v_1 + a_{22} v_2 \end{array} \right ) \\ &amp; = a A v \\ &amp;  =  a (A v).
+\end{align*}
+\]</div>
+</div>
+<p>◻</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

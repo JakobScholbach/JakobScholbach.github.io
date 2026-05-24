@@ -1,0 +1,2740 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wiki generated from LaTeX lecture notes">
+      
+      
+      
+      
+        <link rel="prev" href="../euclid-orthogonal-and-symmetric-matrices/">
+      
+      
+        <link rel="next" href="../euclid-distances/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Affine Subspaces - Linear Algebra Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#affine-subspaces" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Algebra Wiki" class="md-header__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Affine Subspaces
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Algebra Wiki" class="md-nav__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Complex Numbers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-complex-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Systems of Linear Equations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-linear-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-elementary-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elementary Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-gaussian-elimination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gaussian Elimination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-systems-of-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vector Spaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-R2R3Rn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R², R³ and Rⁿ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-definition-solution-of-homogeneous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution Sets of Homogeneous Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intersections of Subspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-further-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Further Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-linear-combinations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Combinations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-linear-independence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Independence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-dimension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimension
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-vector-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linear Maps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-definition-and-first-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definition and First Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-multiplication-of-a-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrix-Vector Multiplication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-kernel-and-image-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel and Image (1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-kernel-and-image-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel and Image (2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-revisiting-linear-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Revisiting Linear Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-linear-maps-defined-on-basis-vectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps on Basis Vectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-matrices-associated-to-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrices of Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-composing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composing Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-inverses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inverses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-change-of-basis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change of Basis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-transpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transposition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Determinants
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-determinants-of-2-x-2-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2×2 Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-determinants-of-larger-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants of Larger Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-invertibility-and-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Invertibility and Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-further-properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Further Properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Eigenvalues and Eigenvectors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-characteristic-polynomial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characteristic Polynomial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-eigenspaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-diagonalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagonalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-eigenvalues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-eigenvalues-and-eigenvectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Euclidean Spaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-scalar-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scalar Product on Rⁿ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-orthogonal-and-symmetric-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orthogonal and Symmetric Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Affine Subspaces
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Affine Subspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lower-dimensional-affine-subspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lower dimensional affine subspaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-distances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-euclid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lower-dimensional-affine-subspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lower dimensional affine subspaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="affine-subspaces">Affine subspaces<a class="headerlink" href="#affine-subspaces" title="Permanent link">&para;</a></h1>
+<div class="definition">
+<p class="env-number"><strong>Definition 7.40</strong></p>
+<p><span id="def-euclid-definition-008" label="def:euclid-definition-008"></span> Let <span class="arithmatex">\(V\)</span> be a vector space. An <em>affine subspace</em> of <span class="arithmatex">\(V\)</span> is a subset of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+v_0 + W := \{v_0 + w \ | w \in W\}
+\]</div>
+</div>
+<p>for an appropriate vector <span class="arithmatex">\(v \in V\)</span> and a sub<em>space</em> <span class="arithmatex">\(W \subset V\)</span>.</p>
+</div>
+<p>In other words, an affine subspace is obtained by translating a subspace (i.e., a sub-vector space) by a certain vector. For example, any line or a plane in <span class="arithmatex">\({\bf R}^3\)</span> that is not necessarily passing through the origin is an affine subspace. A key example of an affine subspace is the solution set of a (not necessarily homogeneous) linear system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+Ax = b.
+\]</div>
+</div>
+<p>Indeed, by <a href="../maps-revisiting-linear-systems/#thm-solutions-inhomogeneous-system" data-reference-type="ref+Label" data-reference="thm:solutions-inhomogeneous-system">Theorem 4.37</a> its solution set is precisely an affine subspace. See also the illustration in <a href="../maps-revisiting-linear-systems/#rem-never-subspace" data-reference-type="ref+Label" data-reference="rem:never-subspace">Remark 4.38</a>.</p>
+<div class="lemma">
+<p class="env-number"><strong>Lemma 7.41</strong></p>
+<p><span id="lem-base-affine-subspace" label="lem:base-affine-subspace"></span> Let <span class="arithmatex">\(X = v + W \subset {\bf R}^n\)</span> be an affine subspace. If <span class="arithmatex">\(X = v' + W'\)</span> for any vector <span class="arithmatex">\(v' \in {\bf R}^n\)</span> and a subspace <span class="arithmatex">\(W' \subset {\bf R}^n\)</span>, then the following holds:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(W = W'\)</span> and</p>
+</li>
+<li>
+<p><span class="arithmatex">\(v - v' \in W\)</span>.</p>
+</li>
+</ul>
+<p>In other words, the sub-vector space <span class="arithmatex">\(W\)</span> is uniquely determined by <span class="arithmatex">\(X\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> If <span class="arithmatex">\(v + W = v' + W'\)</span>, then <span class="arithmatex">\(v-v' \in W\)</span>. This implies</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+W' = -v' + v' + W' = - v' + X = \underbrace{-v' + v}_{\in W} + W = W.
+\]</div>
+</div>
+<p>Here we have used that for a subspace <span class="arithmatex">\(A \subset {\bf R}^n\)</span> (such as <span class="arithmatex">\(A=W\)</span>), and an element <span class="arithmatex">\(a \in A\)</span>, we have <span class="arithmatex">\(a + A = A\)</span>. ◻</p>
+</div>
+<p>We can therefore define the dimension of an affine subspace as <span class="arithmatex">\(\dim X = \dim W\)</span>, if <span class="arithmatex">\(X = v + W\)</span> as above.</p>
+<div class="definition">
+<p class="env-number"><strong>Definition 7.42</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-12">Exercise 7.13</a>, <a href="../exercises-euclid/#ex-euclid-6-7">Exercise 7.8</a>, <a href="../exercises-euclid/#ex-euclid-lines-plane">Exercise 7.14</a>)</p>
+<p><span id="def-parallel-skew" label="def:parallel-skew"></span> Let <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(X'\)</span> be two affine subspaces. Let <span class="arithmatex">\(W, W' \subset {\bf R}^n\)</span> be the associated sub-vector spaces, as per <a href="#lem-base-affine-subspace" data-reference-type="ref+Label" data-reference="lem:base-affine-subspace">Lemma 7.41</a>.</p>
+<ul>
+<li>
+<p>We say <span class="arithmatex">\(X\)</span> <em>intersects</em> <span class="arithmatex">\(X'\)</span> if <span class="arithmatex">\(X \cap X' \ne \emptyset\)</span>.</p>
+</li>
+<li>
+<p>We say <span class="arithmatex">\(X\)</span> is <em>parallel</em> to <span class="arithmatex">\(X'\)</span> if <span class="arithmatex">\(W \subset W'\)</span> or if <span class="arithmatex">\(W' \subset W\)</span>.</p>
+</li>
+<li>
+<p>We say that <span class="arithmatex">\(X\)</span> is <em>skew</em> to <span class="arithmatex">\(X'\)</span> if <span class="arithmatex">\(W \cap W' = \{0\}\)</span> and if <span class="arithmatex">\(X \cap X' = \emptyset\)</span>.</p>
+</li>
+</ul>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 7.43</strong></p>
+<p><span id="ex-euclid-example-012" label="ex:euclid-example-012"></span> We examine the relative position of the lines</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+X &amp; = (1,-3,5) + L(1,-1,2) = \{(1+t,-3-t,5+2t) \ | \ s \in {\bf R} \} \\
+X' &amp; = (4,-3,6) + L(-1,1,2) = \{(4-t,-3+t,6+2t) \ | \ t\in {\bf R} \}.
+\end{align*}
+\]</div>
+</div>
+<p>The two subspaces <span class="arithmatex">\(W\)</span> and <span class="arithmatex">\(W'\)</span> are spanned by <span class="arithmatex">\((1,-1,2)\)</span> and <span class="arithmatex">\((-1,1,2)\)</span>, respectively. These two vectors are linearly independent, so that the lines are not parallel. We determine whether they have an intersection point by solving the system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(1+s,-3-s,5+2s) = (4-t,-3+t,6+2t).
+\]</div>
+</div>
+<p>Considering the first two equations gives <span class="arithmatex">\(s+t=3\)</span> and <span class="arithmatex">\(s+t=0\)</span>, which has no solution. Thus <span class="arithmatex">\(X \cap X' = \emptyset\)</span>, which means that the lines are skew.</p>
+</div>
+<div class="definition">
+<p class="env-number"><strong>Definition 7.44</strong></p>
+<p><span id="def-euclid-definition-010" label="def:euclid-definition-010"></span> For two affine subspaces <span class="arithmatex">\(X, X' \subset {\bf R}^n\)</span> we say that two points <span class="arithmatex">\(x \in X\)</span>, <span class="arithmatex">\(x' \in X'\)</span> <em>realize the minimal distance</em> of <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(X'\)</span> if</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+d(x, x') \le d(x_1, x'_1)
+\]</div>
+</div>
+<p>for any two points <span class="arithmatex">\(x_1 \in X, x'_1 \in X'\)</span>. In this event, we also write <span class="arithmatex">\(d(X, X') := d(x, x')\)</span> for that minimal distance.</p>
+</div>
+<div class="proposition">
+<p class="env-number"><strong>Proposition 7.45</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-6">Exercise 7.7</a>, <a href="../exercises-euclid/#ex-euclid-6-8">Exercise 7.9</a>)</p>
+<p><span id="prop-min-affine-subspace" label="prop:min-affine-subspace"></span> Let <span class="arithmatex">\(X = v_0 + W\)</span> be an affine subspace of a Euclidean space <span class="arithmatex">\(V\)</span>. There is a unique vector <span class="arithmatex">\(v \in V\)</span> characterized by the following equivalent properties:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(v\)</span> is an element of <span class="arithmatex">\(X \cap W^\bot\)</span>,</p>
+</li>
+<li>
+<p><span class="arithmatex">\(v\)</span> realizes the minimal distance of the origin to <span class="arithmatex">\(W\)</span>.</p>
+</li>
+</ol>
+<p>This vector <span class="arithmatex">\(v\)</span> is given by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+v = p_{W^\bot}(v_0) = v_0 - p_W (v_0),
+\]</div>
+</div>
+<p>i.e., the projection of <span class="arithmatex">\(v_0\)</span> onto the orthogonal complement <span class="arithmatex">\(W^\bot\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> We first prove that <span class="arithmatex">\(X \cap W^\bot\)</span> contains <span class="arithmatex">\(v\)</span> as defined above. Indeed, by <a href="../euclid-euclidean-spaces/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, we can write</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+v_0 = w + v
+\]</div>
+</div>
+<p>with uniquely determined <span class="arithmatex">\(w = p_W(v_0) \in W\)</span> and <span class="arithmatex">\(v = p_{W^\bot}(v) \in W^\bot\)</span>. This means that <span class="arithmatex">\(v = v_0 - w \in X \cap W^\bot\)</span>.</p>
+<p>We now prove that <span class="arithmatex">\(X \cap W^\bot\)</span> consists only of that vector <span class="arithmatex">\(v\)</span>. If another vector <span class="arithmatex">\(v' \in W^\bot \cap X\)</span>, then <span class="arithmatex">\(v' = v_0 + \tilde w\)</span> for <span class="arithmatex">\(\tilde w \in W\)</span>, so that <span class="arithmatex">\(v - v' = w - \tilde w \in W \cap W^\bot = \{0\}\)</span>, so that <span class="arithmatex">\(v = v'\)</span>.</p>
+<p>We prove that this vector <span class="arithmatex">\(v\)</span> realizes the minimal distance to the origin. To this end, let <span class="arithmatex">\(x \in X\)</span> be any vector. We need to prove <span class="arithmatex">\(|\hspace{-0.5mm}| {x} |\hspace{-0.5mm}| \ge |\hspace{-0.5mm}| {w} |\hspace{-0.5mm}|\)</span>. Then <span class="arithmatex">\(w := v-x \in W\)</span>. We can then compute</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+|\hspace{-0.5mm}| {x} |\hspace{-0.5mm}| &amp; = |\hspace{-0.5mm}| {v+ w} |\hspace{-0.5mm}| \\ 
+&amp; = \sqrt{{\left \langle v+w, v+w \right \rangle}} \\
+&amp; = \sqrt{{\left \langle v, v \right \rangle} + 2 \underbrace{{\left \langle v, w \right \rangle}}_{=0} + {\left \langle w, w \right \rangle} } &amp; \text{by bilinearity and symmetry} \\
+&amp; = \sqrt{|\hspace{-0.5mm}| {v} |\hspace{-0.5mm}|^2 + |\hspace{-0.5mm}| {w} |\hspace{-0.5mm}|^2 } \\
+&amp; \ge |\hspace{-0.5mm}| {v} |\hspace{-0.5mm}|.
+\end{align*}
+\]</div>
+</div>
+<p>Here is a picture of the proof idea:</p>
+<div class="center">
+<p><img alt="image" src="../figures/png/euclid/euclid-fig-07.png" /></p>
+</div>
+<p>We finally show that a vector <span class="arithmatex">\(x \in X\)</span> with minimal distance to the origin agrees with <span class="arithmatex">\(v\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+|\hspace{-0.5mm}| {x} |\hspace{-0.5mm}|^2 &amp; = |\hspace{-0.5mm}| {\underbrace{x-v}_{=: w\in W} + v} |\hspace{-0.5mm}|^2 \\
+&amp; = {\left \langle w+v, w+v \right \rangle} \\
+&amp; = |\hspace{-0.5mm}| {w} |\hspace{-0.5mm}|^2 + 2 \underbrace{{\left \langle w, v \right \rangle}}_{=0} + |\hspace{-0.5mm}| {v} |\hspace{-0.5mm}|^2 &amp; \text{(bilinearity)}\\
+&amp;= |\hspace{-0.5mm}| {w} |\hspace{-0.5mm}|^2 + |\hspace{-0.5mm}| {v} |\hspace{-0.5mm}|^2. &amp; \text{ since }v \in W^\bot
+\end{align*}
+\]</div>
+</div>
+<p>Since <span class="arithmatex">\(|\hspace{-0.5mm}| {x} |\hspace{-0.5mm}| = |\hspace{-0.5mm}| {v} |\hspace{-0.5mm}|\)</span>, this implies <span class="arithmatex">\(|\hspace{-0.5mm}| {w} |\hspace{-0.5mm}|^2 = 0\)</span>, i.e., <span class="arithmatex">\(w = 0\)</span>, i.e., <span class="arithmatex">\(x = v\)</span>. ◻</p>
+</div>
+<div class="definition">
+<p class="env-number"><strong>Definition 7.46</strong></p>
+<p><span id="def-euclid-definition-011" label="def:euclid-definition-011"></span> A <em>hyperplane</em> in <span class="arithmatex">\({\bf R}^n\)</span> is an affine subspace <span class="arithmatex">\(H\)</span> of dimension <span class="arithmatex">\(n-1\)</span>, i.e., an affine subspace of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+H = v_0 + W
+\]</div>
+</div>
+<p>where <span class="arithmatex">\(W\)</span> is a subspace with <span class="arithmatex">\(\dim W = n-1\)</span>.</p>
+</div>
+<p>For example, a line is a hyperplane in <span class="arithmatex">\({\bf R}^2\)</span>, and a plane is a hyperplane in <span class="arithmatex">\({\bf R}^3\)</span>.</p>
+<div class="proposition">
+<p class="env-number"><strong>Proposition 7.47</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-9">Exercise 7.10</a>)</p>
+<p><span id="prop-distance-hyperplane" label="prop:distance-hyperplane"></span> Let <span class="arithmatex">\(a = \left ( \begin{array}{c} a_1 \\ \vdots \\ a_n \end{array} \right ) \in {\bf R}^n\)</span> be a <em>non-zero</em> (column) vector, and let <span class="arithmatex">\(b \in {\bf R}\)</span>. Then the subset</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+H := \{x \in {\bf R}^n \ | {\left \langle x, a \right \rangle} = b \}
+\]</div>
+</div>
+<p>is a hyperplane. Its distance to the origin is given by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+d(0, H) = \frac {|b|}{|\hspace{-0.5mm}| {a} |\hspace{-0.5mm}|}.
+\]</div>
+</div>
+</div>
+<div class="proof">
+<p><em>Proof.</em> We show that <span class="arithmatex">\(H\)</span> is a hyperplane. Indeed, the equation <span class="arithmatex">\({\left \langle x, a \right \rangle} = b\)</span>, which can be rewritten as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+a_1 x_1 + \dots + a_n x_n = b
+\]</div>
+</div>
+<p>is a (non-homogeneous) linear system and the matrix <span class="arithmatex">\(\left ( \begin{array}{ccc} a_1 &amp; \dots &amp; a_n \end{array} \right )\)</span> has rank 1, since the vector is nonzero. Therefore <span class="arithmatex">\(H\)</span> has dimension <span class="arithmatex">\(n-1\)</span>.</p>
+<p>Let <span class="arithmatex">\(W := \{ x \in {\bf R}^n \ | {\left \langle x, a \right \rangle} = 0\}\)</span> be the associated subspace. Then <span class="arithmatex">\(H = v + W\)</span> for some <span class="arithmatex">\(v \in {\bf R}^n\)</span>, according to <a href="../maps-revisiting-linear-systems/#thm-solutions-inhomogeneous-system" data-reference-type="ref+Label" data-reference="thm:solutions-inhomogeneous-system">Theorem 4.37</a>. Thus, <span class="arithmatex">\(a \in W^\bot\)</span>. If we set <span class="arithmatex">\(\lambda := \frac b {|\hspace{-0.5mm}| {a} |\hspace{-0.5mm}|^2}\)</span>, we have <span class="arithmatex">\(\lambda a\in H\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle  \frac b {|\hspace{-0.5mm}| {a} |\hspace{-0.5mm}|^2} a, a \right \rangle} = \frac b {|\hspace{-0.5mm}| {a} |\hspace{-0.5mm}|^2} {\left \langle a, a \right \rangle} = b.
+\]</div>
+</div>
+<p>Therefore <span class="arithmatex">\(\lambda a \in H \cap W^\bot\)</span>. Thus, by <a href="#prop-min-affine-subspace" data-reference-type="ref+Label" data-reference="prop:min-affine-subspace">Proposition 7.45</a>, <span class="arithmatex">\(\lambda a\)</span> is the closest vector (in <span class="arithmatex">\(H\)</span>) to the origin, and we have</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+d(0, H) = |\hspace{-0.5mm}| {\lambda a} |\hspace{-0.5mm}| = \frac {|b|} {|\hspace{-0.5mm}| {a} |\hspace{-0.5mm}|}.
+\]</div>
+</div>
+<p>◻</p>
+</div>
+<p>Above we saw that an equation of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle x, a \right \rangle} = b
+\]</div>
+</div>
+<p>for fixed <span class="arithmatex">\(a \ne 0\)</span> and <span class="arithmatex">\(b \in {\bf R}\)</span> determines a hyperplane. Here is a converse to this statement.</p>
+<div class="proposition">
+<p class="env-number"><strong>Proposition 7.48</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-lines-plane">Exercise 7.14</a>)</p>
+<p><span id="prop-hesse" label="prop:hesse"></span> (<em>Hesse normal form</em> of a hyperplane) Let <span class="arithmatex">\(H = v_0 + W \subset {\bf R}^n\)</span> be a hyperplane, and let <span class="arithmatex">\(d = d(0, H)\)</span> be its distance to the origin. Then there is a unique vector <span class="arithmatex">\(a \in {\bf R}^n\)</span> such that</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(|\hspace{-0.5mm}| {a} |\hspace{-0.5mm}| = 1\)</span>,</p>
+</li>
+<li>
+<p><span class="arithmatex">\(a \in H^\bot\)</span>,</p>
+</li>
+<li>
+<p><span class="arithmatex">\(H = \{ x \in {\bf R}^n \ | \ {\left \langle x, a \right \rangle} = d\}\)</span>.</p>
+</li>
+</ol>
+<p>This vector can be computed as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+a = \frac {v} {|\hspace{-0.5mm}| {v} |\hspace{-0.5mm}|},
+\]</div>
+</div>
+<p>where <span class="arithmatex">\(v\)</span> is the unique element in <span class="arithmatex">\(H \cap W^\bot\)</span> or (equivalently) the point in <span class="arithmatex">\(H\)</span> that is closest to the origin.</p>
+<p>The equation <span class="arithmatex">\({\left \langle x, a \right \rangle} = d\)</span> (which is a linear equation in the unknowns <span class="arithmatex">\(x_1, \dots, x_n\)</span>) is called the <em>Cartesian equation</em> of the hyperplane.</p>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 7.49</strong></p>
+<p><span id="ex-euclid-example-013" label="ex:euclid-example-013"></span> We continue the example in <a href="../euclid-euclidean-spaces/#ex-orthogonal-complement" data-reference-type="ref+Label" data-reference="ex:orthogonal-complement">Example 7.22</a>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+W &amp; = L (\left ( \begin{array}{c} 1 \\ 2 \\ 4 \end{array} \right ), \left ( \begin{array}{c} 1 \\ 1 \\ 0 \end{array} \right )) \\
+W^\bot &amp; = L (\left ( \begin{array}{c} 4 \\ -4 \\ 1 \end{array} \right )),
+\end{align*}
+\]</div>
+</div>
+<p>and consider the hyperplane <span class="arithmatex">\(H = \left ( \begin{array}{c} 11 \\ 11 \\ 11 \end{array} \right ) + W\)</span>. We compute <span class="arithmatex">\(H \cap W^\bot\)</span>, which by <a href="#prop-min-affine-subspace" data-reference-type="ref+Label" data-reference="prop:min-affine-subspace">Proposition 7.45</a> requires to find <span class="arithmatex">\(w \in W\)</span> and <span class="arithmatex">\(v \in W^\bot\)</span> such that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+v_0 = \left ( \begin{array}{c} 11 \\ 11 \\ 11 \end{array} \right ) &amp; = w + v \\
+&amp; = a \left ( \begin{array}{c} 1 \\ 2 \\ 4 \end{array} \right ) + b \left ( \begin{array}{c} 1 \\ 1 \\ 0 \end{array} \right ) + c \left ( \begin{array}{c} 4 \\ -4 \\ 1 \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>We compute the inverse of <span class="arithmatex">\(A = \left ( \begin{array}{ccc} 1 &amp; 1 &amp; 4 \\ 2 &amp; 1 &amp; -4 \\ 4 &amp; 0 &amp; 1 \end{array} \right )\)</span> using <a href="../maps-inverses/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.81</a> (alternatively, one can also use the adjugate matrix, as in <a href="../determinants-invertibility-and-determinants/#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>). The result is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A^{-1} = \frac 1 {33} \left ( \begin{array}{ccc} -1 &amp; 1 &amp; 8 \\ 18 &amp; 15 &amp; -12 \\ 4 &amp; -4 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+<p>According to <a href="../maps-inverses/#thm-invertible-system" data-reference-type="ref+Label" data-reference="thm:invertible-system">Theorem 4.69</a>, the above system therefore has a unique solution, given by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A^{-1} v_0 = \frac 13 \left ( \begin{array}{c} 8 \\ 21 \\ 1 \end{array} \right ).
+\]</div>
+</div>
+<p>Thus, <span class="arithmatex">\(c = \frac 13\)</span> above, so that</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+v = \frac 13 \left ( \begin{array}{c} 4 \\ -4 \\ 1 \end{array} \right ).
+\]</div>
+</div>
+<p>According to <a href="#prop-min-affine-subspace" data-reference-type="ref+Label" data-reference="prop:min-affine-subspace">Proposition 7.45</a>, this is the closest vector in <span class="arithmatex">\(H\)</span> to the origin, and the distance of <span class="arithmatex">\(H\)</span> to the origin is given by</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+d = |\hspace{-0.5mm}| {v} |\hspace{-0.5mm}| = \sqrt{\frac {33}9} = \sqrt{\frac{11}3}.
+\]</div>
+</div>
+<p>In addition,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+a = \sqrt{\frac{11}{27}} \left ( \begin{array}{c} 4 \\ -4 \\ 1 \end{array} \right ).
+\]</div>
+</div>
+</div>
+<h2 id="lower-dimensional-affine-subspaces">Lower dimensional affine subspaces<a class="headerlink" href="#lower-dimensional-affine-subspaces" title="Permanent link">&para;</a></h2>
+<p>This representation of hyperplanes can also be used to understand the geometry of subspaces of smaller dimension. For simplicity, we discuss this in the special case of lines in <span class="arithmatex">\({\bf R}^3\)</span>. A line <span class="arithmatex">\(L \subset {\bf R}^3\)</span> can be described in two ways.</p>
+<div class="definition">
+<p class="env-number"><strong>Definition 7.50</strong></p>
+<p><span id="def-parametric-equation-line" label="def:parametric-equation-line"></span> <span id="def-direction-vector" label="def:direction-vector"></span> A line <span class="arithmatex">\(L\)</span> can be described as an affine subspace</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align}
+L = v + L(w)
+\end{align}
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(7.51)</strong></p>
+<p><span id="line-parametric-equation" label="line parametric equation"></span> for appropriate vectors <span class="arithmatex">\(v, w \in {\bf R}^3\)</span>. I.e., the points in <span class="arithmatex">\(L\)</span> are of the form <span class="arithmatex">\(v + \lambda w\)</span> for <span class="arithmatex">\(\lambda \in {\bf R}\)</span>. This can be spelled out for each of the three components:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align}
+x_k = v_k + \lambda w_k \text{ for }k=1,2,3.
+\end{align}
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(7.52)</strong></p>
+<p><span id="eqn-blah" label="eqn.blah"></span> This system is referred to as the system of <em>vector equations</em> or <em>parametric equations</em>. The vector <span class="arithmatex">\(w\)</span> is referred to as the <em>direction vector</em> of the line.</p>
+</div>
+<div class="definition">
+<p class="env-number"><strong>Definition 7.53</strong></p>
+<p><span id="def-cartesian-equation-line" label="def:cartesian-equation-line"></span> A line <span class="arithmatex">\(L\)</span> can also be described by a system of two equations</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align}
+a_1 x_1+a_2 x_2+a_3 x_3 &amp; = b \\
+a'_1 x_1+a'_2 x_2+a'_3x_3  &amp; = b'. \nonumber
+\end{align}
+\]</div>
+</div>
+<p class="env-number equation-number"><strong>(7.54)</strong></p>
+<p><span id="cartesian-equation-line" label="cartesian equation line"></span> This system is referred to as the system of <em>cartesian equations</em> of <span class="arithmatex">\(L\)</span>. If we write <span class="arithmatex">\(x = \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right )\)</span> etc., it can be rewritten more compactly as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+{\left \langle x, a \right \rangle} &amp; = b \\
+{\left \langle x, a' \right \rangle} &amp; = b'.
+\end{align*}
+\]</div>
+</div>
+<p>Each of these two equations describes a hyperplane in <span class="arithmatex">\({\bf R}^3\)</span>, i.e., a plane, and the line is the intersection of these planes.</p>
+</div>
+<p>One can pass from <a href="#def-parametric-equation-line" data-reference-type="ref" data-reference="def:parametric-equation-line">Definition 7.50</a> to <a href="#def-cartesian-equation-line" data-reference-type="ref" data-reference="def:cartesian-equation-line">Definition 7.53</a> by eliminating <span class="arithmatex">\(\lambda\)</span> in <a href="#eqn-blah" data-reference-type="eqref" data-reference="eqn.blah">Equation (7.52)</a>. Conversely, in order to present <span class="arithmatex">\(L\)</span> as an affine subspace, i.e., in the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+L = v + L(w),
+\]</div>
+</div>
+<p>we solve the above linear system.</p>
+<div class="example">
+<p class="env-number"><strong>Example 7.55</strong></p>
+<p><span id="ex-euclid-example-014" label="ex:euclid-example-014"></span> The following equations</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x + y - 1 &amp; = 0 \\
+3x+y-2z-1 &amp; = 0\\
+\end{align*}
+\]</div>
+</div>
+<p>determine a line <span class="arithmatex">\(L \subset {\bf R}^3\)</span>. We compute a representation <span class="arithmatex">\(L = v + W\)</span> by solving the system:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc|c} 1 &amp; 1 &amp; 0 &amp; 1 \\ 3 &amp; 1 &amp; -2 &amp; 1 \end{array} \right ) \leadsto \left ( \begin{array}{ccc|c} 1 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; -2 &amp; -2 &amp; -2 \end{array} \right ),
+\]</div>
+</div>
+<p>so the solutions are <span class="arithmatex">\(y = 1-z\)</span>, <span class="arithmatex">\(x = 1-y = z\)</span>, i.e.,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+L=\left ( \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right ) + L(\left ( \begin{array}{c} 1 \\ -1 \\ 1 \end{array} \right )).
+\]</div>
+</div>
+</div>
+<div class="example">
+<p class="env-number"><strong>Example 7.56</strong></p>
+<p><span id="ex-vector-to-cartesian" label="ex:vector-to-cartesian"></span> The line</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+L = (1,0,1) + L(2,1,-1),
+\]</div>
+</div>
+<p>is described by the vector equations</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x_1 &amp; = 1+2\lambda \\
+x_2 &amp; = \lambda \\
+x_3 &amp;= 1-\lambda.
+\end{align*}
+\]</div>
+</div>
+<p>The cartesian equations can be determined by observing that <span class="arithmatex">\(\lambda = x_2\)</span>, so that the other two equations read</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x_1 &amp; = 1 + 2 x_2\\
+x_3 &amp;= 1-x_2 \\
+\end{align*}
+\]</div>
+</div>
+<p>which can be rewritten as</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x_1 - 2x_2 &amp; = 1\\
+x_2 + x_3 &amp;= 1 \\
+\end{align*}
+\]</div>
+</div>
+<p>or, yet equivalently</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+{\left \langle x, \left ( \begin{array}{c} 1 \\ -2 \\ 0 \end{array} \right ) \right \rangle} &amp; = 1\\
+{\left \langle x, \left ( \begin{array}{c} 0 \\ 1 \\ 1 \end{array} \right ) \right \rangle} &amp;= 1.
+\end{align*}
+\]</div>
+</div>
+</div>
+<p>The planes <span class="arithmatex">\(P\)</span> containing the given line <span class="arithmatex">\(L\)</span>, i.e. such that <span class="arithmatex">\(L \subset P\)</span> can be characterized by the equation</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle x, \lambda a + \lambda' a' \right \rangle} = \lambda b + \lambda' b',
+\]</div>
+</div>
+<p>where <span class="arithmatex">\(\lambda, \lambda' \in {\bf R}\)</span> are arbitrary such that <span class="arithmatex">\(\lambda a + \lambda' a' \ne 0\)</span>. Indeed, this equation does describe a (hyper)plane, and if <span class="arithmatex">\(x \in L\)</span>, then it satisfies this latter equation.</p>
+<div class="example">
+<p class="env-number"><strong>Example 7.57</strong></p>
+<p><span id="ex-euclid-example-016" label="ex:euclid-example-016"></span> The line defined by the equations</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+L : x_2=0, x_3=1
+\]</div>
+</div>
+<p>can be written as <span class="arithmatex">\({\left \langle x, \left ( \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right ) \right \rangle} = 0\)</span> and <span class="arithmatex">\({\left \langle x, \left ( \begin{array}{c} 0 \\ 0 \\ 1 \end{array} \right ) \right \rangle} = 1\)</span>. (It can also be written as <span class="arithmatex">\(\left ( \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right ) + L(\left ( \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right ))\)</span>.) Thus, the planes <span class="arithmatex">\(P\)</span> containing <span class="arithmatex">\(L\)</span> are all of the form</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle x, \left ( \begin{array}{c} 0 \\ \lambda \\ \lambda' \end{array} \right ) \right \rangle} = \lambda',
+\]</div>
+</div>
+<p>for arbitrary <span class="arithmatex">\(\lambda, \lambda' \in {\bf R}\)</span>. Note that the vectors <span class="arithmatex">\(\left ( \begin{array}{c} 0 \\ \lambda \\ \lambda' \end{array} \right )\)</span> are precisely the vectors orthogonal to the vector <span class="arithmatex">\(\left ( \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right )\)</span>.</p>
+</div>
+<p>Given another line <span class="arithmatex">\(L' = v' + L(w')\)</span>, this conveniently allows to determine the plane <span class="arithmatex">\(P\)</span> that is parallel to <span class="arithmatex">\(L'\)</span>. The line <span class="arithmatex">\(L'\)</span> is parallel to <span class="arithmatex">\(P\)</span> exactly if</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+w' \bot \lambda a + \lambda' a'
+\]</div>
+</div>
+<p>for appropriate <span class="arithmatex">\(\lambda, \lambda' \in {\bf R}\)</span>.</p>
+<div class="example">
+<p class="env-number"><strong>Example 7.58</strong></p>
+<p><span id="ex-euclid-example-017" label="ex:euclid-example-017"></span> Continueing the example above, let</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+L' : z=2, x=y.
+\]</div>
+</div>
+<p>It is given by <span class="arithmatex">\(L' = \left ( \begin{array}{c} 0 \\ 0 \\ 2 \end{array} \right ) + L(\left ( \begin{array}{c} 1 \\ 1 \\ 0 \end{array} \right ))\)</span>. We solve the equation</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+w' = \left ( \begin{array}{c} 1 \\ 1 \\ 0 \end{array} \right ) \bot \left ( \begin{array}{c} 0 \\ \lambda \\ \lambda' \end{array} \right ),
+\]</div>
+</div>
+<p>it gives <span class="arithmatex">\(\lambda=0\)</span>, and <span class="arithmatex">\(\lambda' \ne 0\)</span> is arbitrary. Thus, for any <span class="arithmatex">\(\lambda'\)</span>, the plane defined by the equation</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle x, \left ( \begin{array}{c} 0 \\ 0 \\ \lambda' \end{array} \right ) \right \rangle} = \lambda'
+\]</div>
+</div>
+<p>is parallel to <span class="arithmatex">\(L'\)</span> and contains <span class="arithmatex">\(L\)</span>. This gives the equation</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle x, \left ( \begin{array}{c} 0 \\ 0 \\ 1 \end{array} \right ) \right \rangle} = 1
+\]</div>
+</div>
+<p>or, more concretely, <span class="arithmatex">\(x_3 = 1\)</span>.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

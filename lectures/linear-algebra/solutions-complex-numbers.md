@@ -3,7 +3,7 @@
 
 <p class="env-number"><strong>Solution 1.5.1</strong></p>
 
-<span id="sol-ex-complex-1" label="sol--ex:complex-1"></span> (See <a href="../c/#ex-complex-1" data-reference-type="ref+Label" data-reference="ex:complex-1">Exercise 1.4</a>.) We have $\frac{i-1}{i+1} = \frac{(i-1)\overline{i+1}}{|i+1|^2} = \frac{(i-1)(1-i)}{2} = i$. Thus $z=i^3 = -i$ is the algebraic form. We have $|z|=1$ and ${\mathrm {arg}} z = \frac 32 \pi$, so
+<span id="sol-ex-complex-1" label="sol--ex:complex-1"></span> (See <a href="../exercises-c/#ex-complex-1" data-reference-type="ref+Label" data-reference="ex:complex-1">Exercise 1.4</a>.) We have $\frac{i-1}{i+1} = \frac{(i-1)\overline{i+1}}{|i+1|^2} = \frac{(i-1)(1-i)}{2} = i$. Thus $z=i^3 = -i$ is the algebraic form. We have $|z|=1$ and ${\mathrm {arg}} z = \frac 32 \pi$, so
 <div class="arithmatex" markdown="1">
 \[
 z = \cos(\frac 32 \pi) + i \sin \frac 32 \pi.
@@ -17,7 +17,7 @@ z = \cos(\frac 32 \pi) + i \sin \frac 32 \pi.
 
 <p class="env-number"><strong>Solution 1.5.2</strong></p>
 
-<span id="sol-ex-complex-2" label="sol--ex:complex-2"></span> (See <a href="../c/#ex-complex-2" data-reference-type="ref+Label" data-reference="ex:complex-2">Exercise 1.5</a>.) In order to solve
+<span id="sol-ex-complex-2" label="sol--ex:complex-2"></span> (See <a href="../exercises-c/#ex-complex-2" data-reference-type="ref+Label" data-reference="ex:complex-2">Exercise 1.5</a>.) In order to solve
 <div class="arithmatex" markdown="1">
 \[
 z = 3i |z|\overline z
@@ -74,7 +74,7 @@ To sum up, the above equation has three solutions, $z = 0$ and these two solutio
 
 <p class="env-number"><strong>Solution 1.5.3</strong></p>
 
-<span id="sol-ex-complex-3" label="sol--ex:complex-3"></span> (See <a href="../c/#ex-complex-3" data-reference-type="ref+Label" data-reference="ex:complex-3">Exercise 1.6</a>.) There are three solutions, namely
+<span id="sol-ex-complex-3" label="sol--ex:complex-3"></span> (See <a href="../exercises-c/#ex-complex-3" data-reference-type="ref+Label" data-reference="ex:complex-3">Exercise 1.6</a>.) There are three solutions, namely
 <div class="arithmatex" markdown="1">
 \[
 z_0 = \sqrt 3 - i = 2 (\cos (-\pi/6) + i \sin(-\pi/6)),

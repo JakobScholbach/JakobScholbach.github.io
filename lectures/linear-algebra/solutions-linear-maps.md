@@ -3,7 +3,7 @@
 
 <p class="env-number"><strong>Solution 4.13.1</strong></p>
 
-<span id="sol-al" label="sol--al"></span> (See <a href="../maps/#al" data-reference-type="ref+Label" data-reference="al">Exercise 4.1</a>.) By <a href="../maps/#def-product-matrix-vector">Definition 4.9</a>, <a href="../maps/#sect-2-x-2-matrices">Subsection 4.2.1</a>, for $A = \left ( \begin{array}{cc} a_{11} & a_{12} \\ a_{21} & a_{22} \end{array} \right )$ and $v = \left ( \begin{array}{c} x \\ y \end{array} \right )$, we have
+<span id="sol-al" label="sol--al"></span> (See <a href="../exercises-maps/#al" data-reference-type="ref+Label" data-reference="al">Exercise 4.1</a>.) By <a href="../maps-multiplication-of-a-matrix/#def-product-matrix-vector">Definition 4.9</a>, <a href="../maps-multiplication-of-a-matrix/#sect-2-x-2-matrices">Subsection 4.2.1</a>, for $A = \left ( \begin{array}{cc} a_{11} & a_{12} \\ a_{21} & a_{22} \end{array} \right )$ and $v = \left ( \begin{array}{c} x \\ y \end{array} \right )$, we have
 <div class="arithmatex" markdown="1">
 \[
 Av = \left ( \begin{array}{c} a_{11}x+a_{12}y \\ a_{21}x+a_{22}y \end{array} \right ).
@@ -39,26 +39,26 @@ So we determine $A$ by matching the target coordinates.
 \]
 </div>
 
-5.  By <a href="../maps/#ex-rotation-matrix-general" data-reference-type="ref+Label" data-reference="ex:rotation-matrix-general">Example 4.18</a>, a counterclockwise rotation by angle $r$ is given by
+5.  By <a href="../maps-multiplication-of-a-matrix/#ex-rotation-matrix-general" data-reference-type="ref+Label" data-reference="ex:rotation-matrix-general">Example 4.18</a>, a counterclockwise rotation by angle $r$ is given by
 <div class="arithmatex" markdown="1">
 \[
     \left ( \begin{array}{cc} \cos r & -\sin r \\ \sin r & \cos r \end{array} \right ).
 \]
 </div>
-    For $r=60^\circ=\pi/3$ this gives
+For $r=60^\circ=\pi/3$ this gives
 <div class="arithmatex" markdown="1">
 \[
     A_{\mathrm{ccw}} = \left ( \begin{array}{cc} \frac12 & -\frac{\sqrt 3}{2} \\ \frac{\sqrt 3}{2} & \frac12 \end{array} \right ).
 \]
 </div>
-    Clockwise by $60^\circ$ means $r=-\pi/3$, so
+Clockwise by $60^\circ$ means $r=-\pi/3$, so
 <div class="arithmatex" markdown="1">
 \[
     A_{\mathrm{cw}} = \left ( \begin{array}{cc} \frac12 & \frac{\sqrt 3}{2} \\ -\frac{\sqrt 3}{2} & \frac12 \end{array} \right ).
 \]
 </div>
 
-For comparison with the $90^\circ$ case, see also <a href="../maps/#ex-rotation-matrix" data-reference-type="ref+Label" data-reference="ex:rotation-matrix">Example 4.17</a>.
+For comparison with the $90^\circ$ case, see also <a href="../maps-multiplication-of-a-matrix/#ex-rotation-matrix" data-reference-type="ref+Label" data-reference="ex:rotation-matrix">Example 4.17</a>.
 
 </div>
 
@@ -67,7 +67,7 @@ For comparison with the $90^\circ$ case, see also <a href="../maps/#ex-rotation-
 
 <p class="env-number"><strong>Solution 4.13.2</strong></p>
 
-<span id="sol-ex-maps-exercise-002" label="sol--ex:maps-exercise-002"></span> (See <a href="../maps/#ex-maps-exercise-002" data-reference-type="ref+Label" data-reference="ex:maps-exercise-002">Exercise 4.2</a>.) Using <a href="../maps/#def-product-matrix-vector">Definition 4.9</a>, <a href="../maps/#sect-2-x-2-matrices">Subsection 4.2.1</a>, for
+<span id="sol-ex-maps-exercise-002" label="sol--ex:maps-exercise-002"></span> (See <a href="../exercises-maps/#ex-maps-exercise-002" data-reference-type="ref+Label" data-reference="ex:maps-exercise-002">Exercise 4.2</a>.) Using <a href="../maps-multiplication-of-a-matrix/#def-product-matrix-vector">Definition 4.9</a>, <a href="../maps-multiplication-of-a-matrix/#sect-2-x-2-matrices">Subsection 4.2.1</a>, for
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{cc} a_{11} & a_{12} \\ a_{21} & a_{22} \end{array} \right )
@@ -92,7 +92,7 @@ A = \left ( \begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array} \right ).
 \]
 </div>
 
-Geometrically, this is a counterclockwise rotation by $90^\circ$ (equivalently, clockwise by $270^\circ$), compare <a href="../maps/#ex-rotation-matrix" data-reference-type="ref+Label" data-reference="ex:rotation-matrix">Example 4.17</a>.
+Geometrically, this is a counterclockwise rotation by $90^\circ$ (equivalently, clockwise by $270^\circ$), compare <a href="../maps-multiplication-of-a-matrix/#ex-rotation-matrix" data-reference-type="ref+Label" data-reference="ex:rotation-matrix">Example 4.17</a>.
 
 </div>
 
@@ -101,14 +101,14 @@ Geometrically, this is a counterclockwise rotation by $90^\circ$ (equivalently, 
 
 <p class="env-number"><strong>Solution 4.13.3</strong></p>
 
-<span id="sol-ex-maps-exercise-003" label="sol--ex:maps-exercise-003"></span> (See <a href="../maps/#ex-maps-exercise-003" data-reference-type="ref+Label" data-reference="ex:maps-exercise-003">Exercise 4.3</a>.) By <a href="../maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.43</a> (applied to the standard basis, cf. <a href="#ex-standard-basis" data-reference-type="ref+Label" data-reference="ex:standard-basis">Example 3.59</a>), the columns of the matrix $A$ are exactly the vectors $f(e_1),\dots,f(e_4)$. Hence
+<span id="sol-ex-maps-exercise-003" label="sol--ex:maps-exercise-003"></span> (See <a href="../exercises-maps/#ex-maps-exercise-003" data-reference-type="ref+Label" data-reference="ex:maps-exercise-003">Exercise 4.3</a>.) By <a href="../maps-matrices-associated-to-linear-maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.44</a> (applied to the standard basis, cf. <a href="../spaces-bases/#ex-standard-basis" data-reference-type="ref+Label" data-reference="ex:standard-basis">Example 3.62</a>), the columns of the matrix $A$ are exactly the vectors $f(e_1),\dots,f(e_4)$. Hence
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{cccc} 1 & 0 & 0 & 13 \\ 2 & 0 & 0 & 0 \\ 3 & 7 & 0 & -1 \end{array} \right ).
 \]
 </div>
 
-By <a href="../maps/#def-kernel" data-reference-type="ref+Label" data-reference="def:kernel">Definition 4.22</a>, to determine $\ker f$, we need to solve $Ax=0$. Since there are so many zeros in the matrix, we do this by hand; alternatively one could also use Gaussian elimination (cf. <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>). With $x=(x_1,x_2,x_3,x_4)^T$, this system reads
+By <a href="../maps-kernel-and-image-1/#def-kernel" data-reference-type="ref+Label" data-reference="def:kernel">Definition 4.22</a>, to determine $\ker f$, we need to solve $Ax=0$. Since there are so many zeros in the matrix, we do this by hand; alternatively one could also use Gaussian elimination (cf. <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>). With $x=(x_1,x_2,x_3,x_4)^T$, this system reads
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -125,7 +125,7 @@ From $2x_1=0$ we get $x_1=0$, then $x_4=0$, then $x_2=0$; $x_3$ is free. So
 \]
 </div>
 
-To compute the image, we use <a href="../maps/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>:
+To compute the image, we use <a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>:
 <div class="arithmatex" markdown="1">
 \[
 \operatorname{im} f = L\left(\left ( \begin{array}{c} 1 \\ 2 \\ 3 \end{array} \right ),
@@ -142,13 +142,13 @@ u_2=\left ( \begin{array}{c} 0 \\ 0 \\ 7 \end{array} \right ),\quad
 u_3=\left ( \begin{array}{c} 13 \\ 0 \\ -1 \end{array} \right ).
 \]
 </div>
-If $a_1u_1+a_2u_2+a_3u_3=0$, then from the second coordinate $2a_1=0$, hence $a_1=0$; from the first coordinate $13a_3=0$, hence $a_3=0$; from the third coordinate $7a_2=0$, hence $a_2=0$. So $u_1,u_2,u_3$ are linearly independent and therefore form a basis of $\operatorname{im} f$. Instead of the above approach, one may also bring $A$ to row-echelon form and observe that the resulting matrix has leading ones in the first, second, and fourth columns, so we again obtain that these three columns of $A$ form a basis of $\operatorname{im} f$ (<a href="../maps/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>). In particular,
+If $a_1u_1+a_2u_2+a_3u_3=0$, then from the second coordinate $2a_1=0$, hence $a_1=0$; from the first coordinate $13a_3=0$, hence $a_3=0$; from the third coordinate $7a_2=0$, hence $a_2=0$. So $u_1,u_2,u_3$ are linearly independent and therefore form a basis of $\operatorname{im} f$. Instead of the above approach, one may also bring $A$ to row-echelon form and observe that the resulting matrix has leading ones in the first, second, and fourth columns, so we again obtain that these three columns of $A$ form a basis of $\operatorname{im} f$ (<a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>). In particular,
 <div class="arithmatex" markdown="1">
 \[
 \dim \operatorname{im} f = 3.
 \]
 </div>
-As a check, <a href="../maps/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a> gives
+As a check, <a href="../maps-kernel-and-image-1/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a> gives
 <div class="arithmatex" markdown="1">
 \[
 4 = \dim {\bf R}^4 = \dim \ker f + \dim \operatorname{im} f = 1+3.
@@ -162,7 +162,7 @@ As a check, <a href="../maps/#thm-rank-nullity-theorem" data-reference-type="ref
 
 <p class="env-number"><strong>Solution 4.13.4</strong></p>
 
-<span id="sol-ex-maps-exercise-004" label="sol--ex:maps-exercise-004"></span> (See <a href="../maps/#ex-maps-exercise-004" data-reference-type="ref+Label" data-reference="ex:maps-exercise-004">Exercise 4.4</a>.) To compute the rank, we apply <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, which requires us to bring the matrix into row-echelon form using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>). We perform the following elementary row operations (<a href="../systems-gaussian-elimination/#def-elementary-row-operations" data-reference-type="ref+Label" data-reference="def:elementary-row-operations">Definition 2.28</a>).
+<span id="sol-ex-maps-exercise-004" label="sol--ex:maps-exercise-004"></span> (See <a href="../exercises-maps/#ex-maps-exercise-004" data-reference-type="ref+Label" data-reference="ex:maps-exercise-004">Exercise 4.4</a>.) To compute the rank, we apply <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, which requires us to bring the matrix into row-echelon form using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>). We perform the following elementary row operations (<a href="../systems-gaussian-elimination/#def-elementary-row-operations" data-reference-type="ref+Label" data-reference="def:elementary-row-operations">Definition 2.28</a>).
 
 <div class="arithmatex" markdown="1">
 \[
@@ -177,7 +177,7 @@ A = \left ( \begin{array}{cccc} 0 & 1 & 2 & 1 \\ 1 & 1 & 1 & 0 \\ 0 & -1 & 1 & 1
 \end{align*}
 \]
 </div>
-This row-echelon matrix has exactly 3 leading ones, so by <a href="../maps/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a> we get $\operatorname{rk}(A) = 3.$
+This row-echelon matrix has exactly 3 leading ones, so by <a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a> we get $\operatorname{rk}(A) = 3.$
 
 </div>
 
@@ -186,7 +186,7 @@ This row-echelon matrix has exactly 3 leading ones, so by <a href="../maps/#prop
 
 <p class="env-number"><strong>Solution 4.13.5</strong></p>
 
-<span id="sol-ex-maps-exercise-005" label="sol--ex:maps-exercise-005"></span> (See <a href="../maps/#ex-maps-exercise-005" data-reference-type="ref+Label" data-reference="ex:maps-exercise-005">Exercise 4.5</a>.) From <a href="../maps/#ex-example-map-basis" data-reference-type="ref+Label" data-reference="ex:example-map-basis">Example 4.42</a> we have
+<span id="sol-ex-maps-exercise-005" label="sol--ex:maps-exercise-005"></span> (See <a href="../exercises-maps/#ex-maps-exercise-005" data-reference-type="ref+Label" data-reference="ex:maps-exercise-005">Exercise 4.5</a>.) From <a href="../maps-linear-maps-defined-on-basis-vectors/#ex-example-map-basis" data-reference-type="ref+Label" data-reference="ex:example-map-basis">Example 4.43</a> we have
 <div class="arithmatex" markdown="1">
 \[
 f(e_1)=f(v_1)=(2,-1,0), \qquad f(e_2)=f(v_2)=(1,-1,1),
@@ -199,13 +199,13 @@ f(e_3)=f(v_2-v_3)=f(v_2)-f(v_3)=(1,-3,-1).
 \]
 </div>
 
-By <a href="../maps/#prop-matrix-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-linear-map">Proposition 4.19</a>, the matrix of $f$ with respect to the standard basis in source and target has columns $f(e_1),f(e_2),f(e_3)$. Hence
+By <a href="../maps-multiplication-of-a-matrix/#prop-matrix-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-linear-map">Proposition 4.19</a>, the matrix of $f$ with respect to the standard basis in source and target has columns $f(e_1),f(e_2),f(e_3)$. Hence
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{ccc} 2 & 1 & 1 \\ -1 & -1 & -3 \\ 0 & 1 & -1 \end{array} \right ).
 \]
 </div>
-This is exactly the matrix already identified in <a href="../maps/#ex-example-map-basis" data-reference-type="ref+Label" data-reference="ex:example-map-basis">Example 4.42</a>.
+This is exactly the matrix already identified in <a href="../maps-linear-maps-defined-on-basis-vectors/#ex-example-map-basis" data-reference-type="ref+Label" data-reference="ex:example-map-basis">Example 4.43</a>.
 
 </div>
 
@@ -214,11 +214,11 @@ This is exactly the matrix already identified in <a href="../maps/#ex-example-ma
 
 <p class="env-number"><strong>Solution 4.13.6</strong></p>
 
-<span id="sol-ex-maps-exercise-006" label="sol--ex:maps-exercise-006"></span> (See <a href="../maps/#ex-maps-exercise-006" data-reference-type="ref+Label" data-reference="ex:maps-exercise-006">Exercise 4.6</a>.) Let $v_1=(1,1+\lambda,-1)$, $v_2=(2,\lambda-2,\lambda+2)$. By definition, $W_\lambda=L(v_1,v_2).$ So a basis of $W_\lambda$ is either $\{v_1,v_2\}$ (if they are linearly independent) or a single nonzero vector among them (if they are dependent), cf. <a href="../spaces/#def-linearly-independent">Definition 3.46</a>, <code>def:basis</code>.
+<span id="sol-ex-maps-exercise-006" label="sol--ex:maps-exercise-006"></span> (See <a href="../exercises-maps/#ex-maps-exercise-006" data-reference-type="ref+Label" data-reference="ex:maps-exercise-006">Exercise 4.6</a>.) Let $v_1=(1,1+\lambda,-1)$, $v_2=(2,\lambda-2,\lambda+2)$. By definition, $W_\lambda=L(v_1,v_2).$ So a basis of $W_\lambda$ is either $\{v_1,v_2\}$ (if they are linearly independent) or a single nonzero vector among them (if they are dependent), cf. <a href="../spaces-linear-independence/#def-linearly-independent">Definition 3.49</a>, <a href="../spaces-bases/#def-basis">Definition 3.61</a>.
 
 To find when they are dependent, check whether $v_2=t v_1$ for some $t\in{\bf R}$. From the first coordinate we get $2=t\cdot 1$, hence $t=2$. Then the second coordinate gives $\lambda-2=2(1+\lambda)$ which holds precisely if $\lambda=-4$. For $\lambda=-4$ the third coordinates also agree. Therefore:
 
-- If $\lambda\neq -4$, the vectors $v_1,v_2$ are linearly independent and therefore a basis of $W_\lambda$. Thus $\dim W_\lambda=2$ by <a href="../spaces/#def-dimension" data-reference-type="ref+Label" data-reference="def:dimension">Definition 3.63</a>.
+- If $\lambda\neq -4$, the vectors $v_1,v_2$ are linearly independent and therefore a basis of $W_\lambda$. Thus $\dim W_\lambda=2$ by <a href="../spaces-dimension/#def-dimension" data-reference-type="ref+Label" data-reference="def:dimension">Definition 3.66</a>.
 
 - If $\lambda=-4$, then $v_2=2v_1$, so $v_1=(1,-3,-1)$ is a basis vector of $W_{-4}$ (or any other non-zero multiple of it, such as $v_2)$. We have $\dim W_{-4}=1$.
 
@@ -229,7 +229,7 @@ To find when they are dependent, check whether $v_2=t v_1$ for some $t\in{\bf R}
 
 <p class="env-number"><strong>Solution 4.13.7</strong></p>
 
-<span id="sol-ex-maps-exercise-007" label="sol--ex:maps-exercise-007"></span> (See <a href="../maps/#ex-maps-exercise-007" data-reference-type="ref+Label" data-reference="ex:maps-exercise-007">Exercise 4.7</a>.) Let $A = \begin{pmatrix} \alpha & 0 & 0 \\ 0 & \alpha & 1+\alpha \\ \alpha & 1 & 2 \end{pmatrix}$ with $\alpha \in \mathbf{R}$. We determine $\operatorname{rank}(A)$ (for all $\alpha$) by bringing $A$ to row-echelon form and applying <a href="../maps/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>.
+<span id="sol-ex-maps-exercise-007" label="sol--ex:maps-exercise-007"></span> (See <a href="../exercises-maps/#ex-maps-exercise-007" data-reference-type="ref+Label" data-reference="ex:maps-exercise-007">Exercise 4.7</a>.) Let $A = \begin{pmatrix} \alpha & 0 & 0 \\ 0 & \alpha & 1+\alpha \\ \alpha & 1 & 2 \end{pmatrix}$ with $\alpha \in \mathbf{R}$. We determine $\operatorname{rank}(A)$ (for all $\alpha$) by bringing $A$ to row-echelon form and applying <a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>.
 
 <div class="arithmatex" markdown="1">
 \[
@@ -287,14 +287,14 @@ In total we get the following result:
 
 <p class="env-number"><strong>Solution 4.13.8</strong></p>
 
-<span id="sol-ex-maps-exercise-010" label="sol--ex:maps-exercise-010"></span> (See <a href="../maps/#ex-maps-exercise-010" data-reference-type="ref+Label" data-reference="ex:maps-exercise-010">Exercise 4.9</a>.) Let $f : \mathbf{R}^4 \to \mathbf{R}^3$ be defined by
+<span id="sol-ex-maps-exercise-010" label="sol--ex:maps-exercise-010"></span> (See <a href="../exercises-maps/#ex-maps-exercise-010" data-reference-type="ref+Label" data-reference="ex:maps-exercise-010">Exercise 4.9</a>.) Let $f : \mathbf{R}^4 \to \mathbf{R}^3$ be defined by
 <div class="arithmatex" markdown="1">
 \[
 f\left(\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}\right) = \begin{pmatrix} 2 & -1 & 1 & 1 \\ 0 & 5 & -3 & -5 \\ 3 & -4 & 3 & 4 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} = \begin{pmatrix} 2x_1 - x_2 + x_3 + x_4 \\ 5x_2 - 3x_3 - 5x_4 \\ 3x_1 - 4x_2 + 3x_3 + 4x_4 \end{pmatrix}.
 \]
 </div>
 
-1.  According to <a href="../maps/#def-kernel" data-reference-type="ref+Label" data-reference="def:kernel">Definition 4.22</a>, we need to compute the solution set of the system
+1.  According to <a href="../maps-kernel-and-image-1/#def-kernel" data-reference-type="ref+Label" data-reference="def:kernel">Definition 4.22</a>, we need to compute the solution set of the system
 <div class="arithmatex" markdown="1">
 \[
     \begin{align*}
@@ -304,7 +304,7 @@ f\left(\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}\right) = \begin{pm
     \end{align*}
 \]
 </div>
-    We do this using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>): we bring the coefficient matrix to row echelon form:
+We do this using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>): we bring the coefficient matrix to row echelon form:
 <div class="arithmatex" markdown="1">
 \[
     \begin{pmatrix}
@@ -326,7 +326,7 @@ f\left(\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}\right) = \begin{pm
         \end{pmatrix}
 \]
 </div>
-    Divide row 2 by $5$, then eliminate the $-1$ in row 1, column 2:
+Divide row 2 by $5$, then eliminate the $-1$ in row 1, column 2:
 <div class="arithmatex" markdown="1">
 \[
     \begin{pmatrix}
@@ -348,13 +348,13 @@ f\left(\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}\right) = \begin{pm
         \end{pmatrix}.
 \]
 </div>
-    Hence $x_3,x_4$ are free, and
+Hence $x_3,x_4$ are free, and
 <div class="arithmatex" markdown="1">
 \[
     x_1=-\frac15x_3,\qquad x_2=\frac35x_3+x_4.
 \]
 </div>
-    Writing $x_3=s$, $x_4=t$, we get
+Writing $x_3=s$, $x_4=t$, we get
 <div class="arithmatex" markdown="1">
 \[
     \ker f=
@@ -385,7 +385,7 @@ f\left(\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}\right) = \begin{pm
     \end{align*}
 \]
 </div>
-    The augmented matrix is
+The augmented matrix is
 <div class="arithmatex" markdown="1">
 \[
     \begin{align*}
@@ -397,7 +397,7 @@ f\left(\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}\right) = \begin{pm
     \end{align*}
 \]
 </div>
-    By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, the last row implies that there is no solution: this last row would imply $0=-12$, which is false. Therefore the system has no solution, so the preimage is the empty set:
+By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, the last row implies that there is no solution: this last row would imply $0=-12$, which is false. Therefore the system has no solution, so the preimage is the empty set:
 <div class="arithmatex" markdown="1">
 \[
     f^{-1}\!\left(\begin{pmatrix}1\\-3\\-3\end{pmatrix}\right)=\emptyset.
@@ -411,7 +411,7 @@ f\left(\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}\right) = \begin{pm
 
 <p class="env-number"><strong>Solution 4.13.9</strong></p>
 
-<span id="sol-ex-maps-3-1" label="sol--ex:maps-3-1"></span> (See <a href="../maps/#ex-maps-3-1" data-reference-type="ref+Label" data-reference="ex:maps-3-1">Exercise 4.8</a>.) By <a href="../maps/#def-kernel" data-reference-type="ref+Label" data-reference="def:kernel">Definition 4.22</a> $\ker f = \{ \left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right ) \in {\bf R}^2 \ | \ f(\left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right )) = \left ( \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right ) \}$. I.e., the kernel consists of the solutions of the homongeneous system
+<span id="sol-ex-maps-3-1" label="sol--ex:maps-3-1"></span> (See <a href="../exercises-maps/#ex-maps-3-1" data-reference-type="ref+Label" data-reference="ex:maps-3-1">Exercise 4.8</a>.) By <a href="../maps-kernel-and-image-1/#def-kernel" data-reference-type="ref+Label" data-reference="def:kernel">Definition 4.22</a> $\ker f = \{ \left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right ) \in {\bf R}^2 \ | \ f(\left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right )) = \left ( \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right ) \}$. I.e., the kernel consists of the solutions of the homongeneous system
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -423,7 +423,7 @@ x_2 & = 0 \\
 </div>
 Solving this system gives $x_2 = 0$, then $x_1 = 0$. Thus, $\ker f = \{ \left ( \begin{array}{c} 0 \\ 0 \end{array} \right ) \}$.
 
-For the second part note that by <a href="../maps/#def-image" data-reference-type="ref+Label" data-reference="def:image">Definition 4.20</a>, ${\operatorname{im}\ } f$ consists precisely of those vectors $\left ( \begin{array}{c} a \\ b \\ c \end{array} \right )$ that are of the form $\left ( \begin{array}{c} a \\ b \\ c \end{array} \right ) = f (\left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right ))$ for some $x_1, x_2 \in {\bf R}$. Thus, the question amounts to this: do there exist $x_1, x_2 \in {\bf R}$ with
+For the second part note that by <a href="../maps-kernel-and-image-1/#def-image" data-reference-type="ref+Label" data-reference="def:image">Definition 4.20</a>, ${\operatorname{im}\ } f$ consists precisely of those vectors $\left ( \begin{array}{c} a \\ b \\ c \end{array} \right )$ that are of the form $\left ( \begin{array}{c} a \\ b \\ c \end{array} \right ) = f (\left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right ))$ for some $x_1, x_2 \in {\bf R}$. Thus, the question amounts to this: do there exist $x_1, x_2 \in {\bf R}$ with
 <div class="arithmatex" markdown="1">
 \[
 f (\left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right )) = \left ( \begin{array}{c} x_1+2x_2 \\ x_2 \\ 3x_1+5x_2 \end{array} \right ) = \left ( \begin{array}{c} 1 \\ 0 \\ 3 \end{array} \right )?
@@ -448,7 +448,7 @@ One finds the solution $x_1 = 1$, $x_2 = 0$, i.e., $\left ( \begin{array}{c} 1 \
 
 <p class="env-number"><strong>Solution 4.13.10</strong></p>
 
-<span id="sol-ex-maps-3-2" label="sol--ex:maps-3-2"></span> (See <a href="../maps/#ex-maps-3-2" data-reference-type="ref+Label" data-reference="ex:maps-3-2">Exercise 4.9</a>.) By <a href="../maps/#def-kernel">Definition 4.22</a>, <a href="../maps/#def-preimage">Definition 4.20</a>, both questions are about solving linear systems. We use Gaussian elimination as in <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>.
+<span id="sol-ex-maps-3-2" label="sol--ex:maps-3-2"></span> (See <a href="../exercises-maps/#ex-maps-3-2" data-reference-type="ref+Label" data-reference="ex:maps-3-2">Exercise 4.9</a>.) By <a href="../maps-kernel-and-image-1/#def-kernel">Definition 4.22</a>, <a href="../maps-kernel-and-image-1/#def-preimage">Definition 4.20</a>, both questions are about solving linear systems. We use Gaussian elimination as in <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>.
 
 1.  To compute $\ker f$, solve the homogeneous system
 <div class="arithmatex" markdown="1">
@@ -460,7 +460,7 @@ One finds the solution $x_1 = 1$, $x_2 = 0$, i.e., $\left ( \begin{array}{c} 1 \
     \end{align*}
 \]
 </div>
-    Its augmented matrix is
+Its augmented matrix is
 <div class="arithmatex" markdown="1">
 \[
     \begin{align*}
@@ -476,7 +476,7 @@ One finds the solution $x_1 = 1$, $x_2 = 0$, i.e., $\left ( \begin{array}{c} 1 \
     \end{align*}
 \]
 </div>
-    Hence $x_3,x_4$ are free variables and $x_1=-\frac15x_3$, $x_2=\frac35x_3+x_4.$ Putting $x_3=s$, $x_4=t$, this leads to the following basis of the kernel:
+Hence $x_3,x_4$ are free variables and $x_1=-\frac15x_3$, $x_2=\frac35x_3+x_4.$ Putting $x_3=s$, $x_4=t$, this leads to the following basis of the kernel:
 <div class="arithmatex" markdown="1">
 \[
     \ker f=
@@ -516,13 +516,13 @@ One finds the solution $x_1 = 1$, $x_2 = 0$, i.e., $\left ( \begin{array}{c} 1 \
     \end{align*}
 \]
 </div>
-    As before, $x_3,x_4$ are free variables
+As before, $x_3,x_4$ are free variables
 <div class="arithmatex" markdown="1">
 \[
     x_1=\frac15-\frac15x_3,\qquad x_2=-\frac35+\frac35x_3+x_4.
 \]
 </div>
-    With $x_3=s$, $x_4=t$:
+With $x_3=s$, $x_4=t$:
 <div class="arithmatex" markdown="1">
 \[
     f^{-1}\!\left(\begin{pmatrix}1\\-3\\3\end{pmatrix}\right)
@@ -532,7 +532,7 @@ One finds the solution $x_1 = 1$, $x_2 = 0$, i.e., $\left ( \begin{array}{c} 1 \
     +t\begin{pmatrix}0\\1\\0\\1\end{pmatrix},\qquad s,t\in\mathbf R.
 \]
 </div>
-    Hence this is an affine plane (solution set of an inhomogeneous system), so it is not a subspace (compare <a href="../maps/#rem-never-subspace">Remark 4.37</a>, <a href="../maps/#thm-solutions-inhomogeneous-system">Theorem 4.36</a>). Alternatively, one may compute this preimage by just finding *one* solution of the inhomogeneous system, such as $(\frac15,-\frac35,0,0)$. Then the preimage is the translate of the kernel by this solution, cf. <a href="../maps/#thm-solutions-inhomogeneous-system" data-reference-type="ref+Label" data-reference="thm:solutions-inhomogeneous-system">Theorem 4.36</a>.
+Hence this is an affine plane (solution set of an inhomogeneous system), so it is not a subspace (compare <a href="../maps-revisiting-linear-systems/#rem-never-subspace">Remark 4.38</a>, <a href="../maps-revisiting-linear-systems/#thm-solutions-inhomogeneous-system">Theorem 4.37</a>). Alternatively, one may compute this preimage by just finding *one* solution of the inhomogeneous system, such as $(\frac15,-\frac35,0,0)$. Then the preimage is the translate of the kernel by this solution, cf. <a href="../maps-revisiting-linear-systems/#thm-solutions-inhomogeneous-system" data-reference-type="ref+Label" data-reference="thm:solutions-inhomogeneous-system">Theorem 4.37</a>.
 
 </div>
 
@@ -541,7 +541,7 @@ One finds the solution $x_1 = 1$, $x_2 = 0$, i.e., $\left ( \begin{array}{c} 1 \
 
 <p class="env-number"><strong>Solution 4.13.11</strong></p>
 
-<span id="sol-ex-maps-3-3" label="sol--ex:maps-3-3"></span> (See <a href="../maps/#ex-maps-3-3" data-reference-type="ref+Label" data-reference="ex:maps-3-3">Exercise 4.10</a>.) The rank of $A_t$ is the dimension of its row space, which we compute by bringing $A_t$ to row echelon form (<a href="../maps/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>):
+<span id="sol-ex-maps-3-3" label="sol--ex:maps-3-3"></span> (See <a href="../exercises-maps/#ex-maps-3-3" data-reference-type="ref+Label" data-reference="ex:maps-3-3">Exercise 4.10</a>.) The rank of $A_t$ is the dimension of its row space, which we compute by bringing $A_t$ to row echelon form (<a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>):
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -553,7 +553,7 @@ A_t = \left ( \begin{array}{cccc} 1 & 3 & -1 & 2 \\ 1 & 5 & 1 & 1 \\ 2 & 4 & t &
 </div>
 If $t\ne-4$, then we can further divide the last row by $t+4 (\ne 0)$, and the rank is then 3. For $t = -4$, the rank is 2.
 
-For the last task: the rank of $A_t$ is at most 3. Thus, $\dim {\operatorname{im}\ } f \le 3$, and therefore by the rank-nullity theorem (<a href="../maps/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>)
+For the last task: the rank of $A_t$ is at most 3. Thus, $\dim {\operatorname{im}\ } f \le 3$, and therefore by the rank-nullity theorem (<a href="../maps-kernel-and-image-1/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>)
 <div class="arithmatex" markdown="1">
 \[
 \dim \ker = \dim {\bf R}^4 - \dim {\operatorname{im}\ } f \ge 4 - 3 = 1.
@@ -568,7 +568,7 @@ This means that, for all $t$, the kernel of $f$ does not just consist of the zer
 
 <p class="env-number"><strong>Solution 4.13.12</strong></p>
 
-<span id="sol-ex-maps-exercise-011" label="sol--ex:maps-exercise-011"></span> (See <a href="../maps/#ex-maps-exercise-011" data-reference-type="ref+Label" data-reference="ex:maps-exercise-011">Exercise 4.11</a>.) Let $f:V\to W$ be linear and let $U\subset V$ be a subspace.
+<span id="sol-ex-maps-exercise-011" label="sol--ex:maps-exercise-011"></span> (See <a href="../exercises-maps/#ex-maps-exercise-011" data-reference-type="ref+Label" data-reference="ex:maps-exercise-011">Exercise 4.11</a>.) Let $f:V\to W$ be linear and let $U\subset V$ be a subspace.
 
 1.  We verify that $f(U)$ is a subspace of $W$. By definition,
 <div class="arithmatex" markdown="1">
@@ -576,27 +576,27 @@ This means that, for all $t$, the kernel of $f$ does not just consist of the zer
     f(U)=\{f(u)\mid u\in U\}\subset W.
 \]
 </div>
-    We verify the subspace conditions (<a href="../spaces/#def-subspace" data-reference-type="ref+Label" data-reference="def:subspace">Definition 3.17</a>), similarly as in <a href="../maps/#prop-ker-im-subspace" data-reference-type="ref+Label" data-reference="prop:ker-im-subspace">Proposition 4.23</a>:
+We verify the subspace conditions (<a href="../spaces-definition-solution-of-homogeneous/#def-subspace" data-reference-type="ref+Label" data-reference="def:subspace">Definition 3.17</a>), similarly as in <a href="../maps-kernel-and-image-1/#prop-ker-im-subspace" data-reference-type="ref+Label" data-reference="prop:ker-im-subspace">Proposition 4.23</a>:
 
-    - $0_W\in f(U)$: since $U$ is a subspace, $0_V\in U$, and linearity gives $f(0_V)=0_W$ (<a href="../maps/#rem-linear-map-basic" data-reference-type="ref+Label" data-reference="rem:linear-map-basic">Remark 4.4</a>).
+    - $0_W\in f(U)$: since $U$ is a subspace, $0_V\in U$, and linearity gives $f(0_V)=0_W$ (<a href="../maps-definition-and-first-examples/#rem-linear-map-basic" data-reference-type="ref+Label" data-reference="rem:linear-map-basic">Remark 4.4</a>).
 
-    - *Closure under addition:* if $y_1,y_2\in f(U)$, then $y_1=f(u_1),y_2=f(u_2)$ for some $u_1,u_2\in U$. Since $U$ is a subspace, $u_1+u_2\in U$, and using the linearity of $f$ (<a href="../maps/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>) we obtain
+    - *Closure under addition:* if $y_1,y_2\in f(U)$, then $y_1=f(u_1),y_2=f(u_2)$ for some $u_1,u_2\in U$. Since $U$ is a subspace, $u_1+u_2\in U$, and using the linearity of $f$ (<a href="../maps-definition-and-first-examples/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>) we obtain
 <div class="arithmatex" markdown="1">
 \[
       y_1+y_2=f(u_1)+f(u_2)=f(u_1+u_2)\in f(U).
 \]
 </div>
 
-    - *Closure under scalar multiplication:* if $y=f(u)\in f(U)$ and $\lambda\in\mathbf R$, then $\lambda u\in U$ and again using linearity of $f$:
+- *Closure under scalar multiplication:* if $y=f(u)\in f(U)$ and $\lambda\in\mathbf R$, then $\lambda u\in U$ and again using linearity of $f$:
 <div class="arithmatex" markdown="1">
 \[
       \lambda y=\lambda f(u)=f(\lambda u)\in f(U).
 \]
 </div>
 
-    Hence $f(U)$ is a subspace of $W$.
+Hence $f(U)$ is a subspace of $W$.
 
-2.  We prove $\dim f(U)\le \dim U$. Suppose $(u_1,\dots,u_n)$ is a basis of $U$. (Here we assume for simplicity that $\dim U < \infty$; in general the proof is essentially the same, though.) Then the vectors $f(u_1), \dots, f(u_n) \in W$ span $f(U)$. (Indeed, any $u \in U$ is of the form $u = \sum_{i=1}^n a_i u_i$ for certain (unique) $a_i \in \mathbf R$ (<a href="#prop-basis-coordinate-system" data-reference-type="ref+Label" data-reference="prop:basis-coordinate-system">Proposition 3.61</a>). Linearity of $f$ implies $f(u) = \sum_{i=1}^n a_i f(u_i)$, so $f(u)$ is a linear combination of the $f(u_1)$ etc.) Therefore, by the characterization of dimension via spanning sets (<a href="../spaces/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.68</a>),
+2.  We prove $\dim f(U)\le \dim U$. Suppose $(u_1,\dots,u_n)$ is a basis of $U$. (Here we assume for simplicity that $\dim U < \infty$; in general the proof is essentially the same, though.) Then the vectors $f(u_1), \dots, f(u_n) \in W$ span $f(U)$. (Indeed, any $u \in U$ is of the form $u = \sum_{i=1}^n a_i u_i$ for certain (unique) $a_i \in \mathbf R$ (<a href="../spaces-bases/#prop-basis-coordinate-system" data-reference-type="ref+Label" data-reference="prop:basis-coordinate-system">Proposition 3.64</a>). Linearity of $f$ implies $f(u) = \sum_{i=1}^n a_i f(u_i)$, so $f(u)$ is a linear combination of the $f(u_1)$ etc.) Therefore, by the characterization of dimension via spanning sets (<a href="../spaces-dimension/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.71</a>),
 <div class="arithmatex" markdown="1">
 \[
     \dim f(U)\le n=\dim U.
@@ -610,13 +610,13 @@ This means that, for all $t$, the kernel of $f$ does not just consist of the zer
 
 <p class="env-number"><strong>Solution 4.13.13</strong></p>
 
-<span id="sol-ex-maps-exercise-012" label="sol--ex:maps-exercise-012"></span> (See <a href="../maps/#ex-maps-exercise-012" data-reference-type="ref+Label" data-reference="ex:maps-exercise-012">Exercise 4.12</a>.) Let $f:V\to W$ be linear and let $U\subset W$ be a subspace. By <a href="../maps/#def-preimage" data-reference-type="ref+Label" data-reference="def:preimage">Definition 4.20</a>, $f^{-1}(U)=\{v\in V\mid f(v)\in U\}$.
+<span id="sol-ex-maps-exercise-012" label="sol--ex:maps-exercise-012"></span> (See <a href="../exercises-maps/#ex-maps-exercise-012" data-reference-type="ref+Label" data-reference="ex:maps-exercise-012">Exercise 4.12</a>.) Let $f:V\to W$ be linear and let $U\subset W$ be a subspace. By <a href="../maps-kernel-and-image-1/#def-preimage" data-reference-type="ref+Label" data-reference="def:preimage">Definition 4.20</a>, $f^{-1}(U)=\{v\in V\mid f(v)\in U\}$.
 
-We verify the subspace conditions for $f^{-1}(U)$ (<a href="../spaces/#def-subspace" data-reference-type="ref+Label" data-reference="def:subspace">Definition 3.17</a>), in the same spirit as <a href="../maps/#prop-ker-im-subspace" data-reference-type="ref+Label" data-reference="prop:ker-im-subspace">Proposition 4.23</a>.
+We verify the subspace conditions for $f^{-1}(U)$ (<a href="../spaces-definition-solution-of-homogeneous/#def-subspace" data-reference-type="ref+Label" data-reference="def:subspace">Definition 3.17</a>), in the same spirit as <a href="../maps-kernel-and-image-1/#prop-ker-im-subspace" data-reference-type="ref+Label" data-reference="prop:ker-im-subspace">Proposition 4.23</a>.
 
-- *Zero vector:* Since $f$ is linear, $f(0_V)=0_W$ (<a href="../maps/#rem-linear-map-basic" data-reference-type="ref+Label" data-reference="rem:linear-map-basic">Remark 4.4</a>). Because $U$ is a subspace, $0_W\in U$. Hence $0_V\in f^{-1}(U)$.
+- *Zero vector:* Since $f$ is linear, $f(0_V)=0_W$ (<a href="../maps-definition-and-first-examples/#rem-linear-map-basic" data-reference-type="ref+Label" data-reference="rem:linear-map-basic">Remark 4.4</a>). Because $U$ is a subspace, $0_W\in U$. Hence $0_V\in f^{-1}(U)$.
 
-- *Closure under addition:* If $v_1,v_2\in f^{-1}(U)$, then $f(v_1),f(v_2)\in U$. Since $U$ is a subspace, $f(v_1)+f(v_2)\in U$. By linearity of $f$ (<a href="../maps/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>), we have
+- *Closure under addition:* If $v_1,v_2\in f^{-1}(U)$, then $f(v_1),f(v_2)\in U$. Since $U$ is a subspace, $f(v_1)+f(v_2)\in U$. By linearity of $f$ (<a href="../maps-definition-and-first-examples/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>), we have
 <div class="arithmatex" markdown="1">
 \[
   f(v_1+v_2)=f(v_1)+f(v_2)\in U,
@@ -634,7 +634,7 @@ We verify the subspace conditions for $f^{-1}(U)$ (<a href="../spaces/#def-subsp
 
 Therefore $f^{-1}(U)$ is a subspace of $V$.
 
-As an aside, we note that the statement of this exercise, applied to $U=\{0_W\}$ this shows again that $f^{-1}(\{0_W\})=\ker f$ is a subspace, which is consistent with <a href="../maps/#prop-ker-im-subspace" data-reference-type="ref+Label" data-reference="prop:ker-im-subspace">Proposition 4.23</a>.
+As an aside, we note that the statement of this exercise, applied to $U=\{0_W\}$ this shows again that $f^{-1}(\{0_W\})=\ker f$ is a subspace, which is consistent with <a href="../maps-kernel-and-image-1/#prop-ker-im-subspace" data-reference-type="ref+Label" data-reference="prop:ker-im-subspace">Proposition 4.23</a>.
 
 </div>
 
@@ -643,7 +643,7 @@ As an aside, we note that the statement of this exercise, applied to $U=\{0_W\}$
 
 <p class="env-number"><strong>Solution 4.13.14</strong></p>
 
-<span id="sol-ex-maps-3-4" label="sol--ex:maps-3-4"></span> (See <a href="../maps/#ex-maps-3-4" data-reference-type="ref+Label" data-reference="ex:maps-3-4">Exercise 4.13</a>.) Let
+<span id="sol-ex-maps-3-4" label="sol--ex:maps-3-4"></span> (See <a href="../exercises-maps/#ex-maps-3-4" data-reference-type="ref+Label" data-reference="ex:maps-3-4">Exercise 4.13</a>.) Let
 <div class="arithmatex" markdown="1">
 \[
 A=\begin{pmatrix}
@@ -686,7 +686,7 @@ We directly bring $A$ to row-echelon form by Gaussian elimination:
 \end{pmatrix}.
 \]
 </div>
-Hence $\operatorname{rk}(A)=2$ and $\dim\ker f=4-2=2$ (by <a href="../maps/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a> and <a href="../maps/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>).
+Hence $\operatorname{rk}(A)=2$ and $\dim\ker f=4-2=2$ (by <a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a> and <a href="../maps-kernel-and-image-1/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>).
 
 For $x=(x_1,x_2,x_3,x_4)^T$, the reduced system is
 <div class="arithmatex" markdown="1">
@@ -710,14 +710,14 @@ So one convenient basis is
 \]
 </div>
 
-For the image, use pivot columns (<a href="../maps/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>). Pivot columns are 1 and 2, so
+For the image, use pivot columns (<a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>). Pivot columns are 1 and 2, so
 <div class="arithmatex" markdown="1">
 \[
 \operatorname{im} f=L(c_1,c_2),\quad c_1=\begin{pmatrix}2\\-1\\1\\0\end{pmatrix},\ c_2=\begin{pmatrix}-1\\0\\1\\2\end{pmatrix}.
 \]
 </div>
 
-Now compute $\ker f\cap\operatorname{im} f$, the intersection of these two subspaces (cf. <a href="../spaces/#sect-intersection-of-subspaces" data-reference-type="ref+Label" data-reference="sect:intersection-of-subspaces">Section 3.3</a>). A general vector in the image has the form
+Now compute $\ker f\cap\operatorname{im} f$, the intersection of these two subspaces (cf. <a href="../spaces-intersection/#sect-intersection-of-subspaces" data-reference-type="ref+Label" data-reference="sect:intersection-of-subspaces">Section 3.3</a>). A general vector in the image has the form
 <div class="arithmatex" markdown="1">
 \[
 y=ac_1+bc_2=\begin{pmatrix}2a-b\\-a\\a+b\\2b\end{pmatrix}.
@@ -752,14 +752,14 @@ Hence
 
 <p class="env-number"><strong>Solution 4.13.15</strong></p>
 
-<span id="sol-ex-maps-exercise-013" label="sol--ex:maps-exercise-013"></span> (See <a href="../maps/#ex-maps-exercise-013" data-reference-type="ref+Label" data-reference="ex:maps-exercise-013">Exercise 4.14</a>.) Let
+<span id="sol-ex-maps-exercise-013" label="sol--ex:maps-exercise-013"></span> (See <a href="../exercises-maps/#ex-maps-exercise-013" data-reference-type="ref+Label" data-reference="ex:maps-exercise-013">Exercise 4.14</a>.) Let
 <div class="arithmatex" markdown="1">
 \[
 f:{\bf R}^3\to{\bf R}^2,\qquad f(x,y,z)=(2x-z,\,x+y+z).
 \]
 </div>
 
-1.  With respect to the standard bases, the matrix is obtained from the coefficients of $x,y,z$ in each component (<a href="../maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.43</a>):
+1.  With respect to the standard bases, the matrix is obtained from the coefficients of $x,y,z$ in each component (<a href="../maps-matrices-associated-to-linear-maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.44</a>):
 <div class="arithmatex" markdown="1">
 \[
     A=\begin{pmatrix}
@@ -798,33 +798,33 @@ f:{\bf R}^3\to{\bf R}^2,\qquad f(x,y,z)=(2x-z,\,x+y+z).
     \end{pmatrix}.
 \]
 </div>
-    Hence, solving $A\begin{pmatrix}x\\y\\z\end{pmatrix}=0$, we get
+Hence, solving $A\begin{pmatrix}x\\y\\z\end{pmatrix}=0$, we get
 <div class="arithmatex" markdown="1">
 \[
     x-\frac12z=0,\qquad y+\frac32z=0.
 \]
 </div>
-    With free parameter $z=2t$, this gives $x=t$, $y=-3t$, so
+With free parameter $z=2t$, this gives $x=t$, $y=-3t$, so
 <div class="arithmatex" markdown="1">
 \[
     \ker f=L\left(\begin{pmatrix}1\\-3\\2\end{pmatrix}\right),\qquad \dim\ker f=1.
 \]
 </div>
 
-    For the image, the pivot columns are the first and second. Therefore, by <a href="../maps/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>, a basis of ${\operatorname{im}\,}f$ is given by the corresponding columns of the original matrix:
+For the image, the pivot columns are the first and second. Therefore, by <a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>, a basis of ${\operatorname{im}\,}f$ is given by the corresponding columns of the original matrix:
 <div class="arithmatex" markdown="1">
 \[
     c_1=\begin{pmatrix}2\\1\end{pmatrix},\qquad c_2=\begin{pmatrix}0\\1\end{pmatrix}.
 \]
 </div>
-    Hence
+Hence
 <div class="arithmatex" markdown="1">
 \[
     \operatorname{im} f=L(c_1,c_2)={\bf R}^2,\qquad \dim\operatorname{im}f=2.
 \]
 </div>
 
-3.  By <a href="../maps/#def-preimage" data-reference-type="ref+Label" data-reference="def:preimage">Definition 4.20</a>, $f^{-1}((0,1))$ is the solution set of the linear system
+3.  By <a href="../maps-kernel-and-image-1/#def-preimage" data-reference-type="ref+Label" data-reference="def:preimage">Definition 4.20</a>, $f^{-1}((0,1))$ is the solution set of the linear system
 <div class="arithmatex" markdown="1">
 \[
     \begin{align*}
@@ -833,14 +833,14 @@ f:{\bf R}^3\to{\bf R}^2,\qquad f(x,y,z)=(2x-z,\,x+y+z).
     \end{align*}
 \]
 </div>
-    One may again solve this by Gaussian elimination, or by inspection: $z=2x$, and then $y=1-3x$. With parameter $t:=x$:
+One may again solve this by Gaussian elimination, or by inspection: $z=2x$, and then $y=1-3x$. With parameter $t:=x$:
 <div class="arithmatex" markdown="1">
 \[
     f^{-1}((0,1))=\left\{\begin{pmatrix}t\\1-3t\\2t\end{pmatrix}:t\in{\bf R}\right\}
     =\begin{pmatrix}0\\1\\0\end{pmatrix}+t\begin{pmatrix}1\\-3\\2\end{pmatrix}.
 \]
 </div>
-    This is an affine line (solution set of an inhomogeneous system), not a subspace of ${\bf R}^3$ because it does not contain $0$ (compare <a href="../maps/#rem-never-subspace">Remark 4.37</a>, <a href="../maps/#thm-solutions-inhomogeneous-system">Theorem 4.36</a>).
+This is an affine line (solution set of an inhomogeneous system), not a subspace of ${\bf R}^3$ because it does not contain $0$ (compare <a href="../maps-revisiting-linear-systems/#rem-never-subspace">Remark 4.38</a>, <a href="../maps-revisiting-linear-systems/#thm-solutions-inhomogeneous-system">Theorem 4.37</a>).
 
 4.  Let
 <div class="arithmatex" markdown="1">
@@ -848,7 +848,7 @@ f:{\bf R}^3\to{\bf R}^2,\qquad f(x,y,z)=(2x-z,\,x+y+z).
     v_1=(0,1,2),\quad v_2=(0,-1,1),\quad v_3=(1,1,1).
 \]
 </div>
-    To check they form a basis of ${\bf R}^3$, put them as rows and bring to row-echelon form:
+To check they form a basis of ${\bf R}^3$, put them as rows and bring to row-echelon form:
 <div class="arithmatex" markdown="1">
 \[
     M=\begin{pmatrix}
@@ -870,7 +870,7 @@ f:{\bf R}^3\to{\bf R}^2,\qquad f(x,y,z)=(2x-z,\,x+y+z).
     \end{pmatrix}.
 \]
 </div>
-    This echelon matrix has three nonzero rows, hence $\operatorname{rk}(M)=3$, for example by <a href="../maps/#cor-rows-columns-independent" data-reference-type="ref+Label" data-reference="cor:rows-columns-independent">Corollary 4.93</a>. Therefore $v_1,v_2,v_3$ are linearly independent and form a basis of ${\bf R}^3$.
+This echelon matrix has three nonzero rows, hence $\operatorname{rk}(M)=3$, for example by <a href="../maps-transpose/#cor-rows-columns-independent" data-reference-type="ref+Label" data-reference="cor:rows-columns-independent">Corollary 4.94</a>. Therefore $v_1,v_2,v_3$ are linearly independent and form a basis of ${\bf R}^3$.
 
     The matrix of $f$ with respect to this domain basis and the standard basis in ${\bf R}^2$ has columns $f(v_1),f(v_2),f(v_3)$:
 <div class="arithmatex" markdown="1">
@@ -882,7 +882,7 @@ f:{\bf R}^3\to{\bf R}^2,\qquad f(x,y,z)=(2x-z,\,x+y+z).
     \end{align*}
 \]
 </div>
-    So the wanted matrix is
+So the wanted matrix is
 <div class="arithmatex" markdown="1">
 \[
     \mathrm M_{\{v_1, v_2, v_3\},\{e_1, e_2\}}=
@@ -900,7 +900,7 @@ f:{\bf R}^3\to{\bf R}^2,\qquad f(x,y,z)=(2x-z,\,x+y+z).
 
 <p class="env-number"><strong>Solution 4.13.16</strong></p>
 
-<span id="sol-ex-maps-3-5" label="sol--ex:maps-3-5"></span> (See <a href="../maps/#ex-maps-3-5" data-reference-type="ref+Label" data-reference="ex:maps-3-5">Exercise 4.15</a>.) We have $v_1 = (1,1,0)$, and compute
+<span id="sol-ex-maps-3-5" label="sol--ex:maps-3-5"></span> (See <a href="../exercises-maps/#ex-maps-3-5" data-reference-type="ref+Label" data-reference="ex:maps-3-5">Exercise 4.15</a>.) We have $v_1 = (1,1,0)$, and compute
 <div class="arithmatex" markdown="1">
 \[
 v_2 = \left ( \begin{array}{ccc} 2 & -1 & 0 \\ 1 & 0 & 2 \\ 0 & 2 & -1 \end{array} \right ) \left ( \begin{array}{c} 1 \\ 1 \\ 0 \end{array} \right ) = \left ( \begin{array}{c} 1 \\ 1 \\ 2 \end{array} \right ),
@@ -911,7 +911,7 @@ v_2 = \left ( \begin{array}{ccc} 2 & -1 & 0 \\ 1 & 0 & 2 \\ 0 & 2 & -1 \end{arra
 v_3 = \left ( \begin{array}{ccc} 2 & -1 & 0 \\ 1 & 0 & 2 \\ 0 & 2 & -1 \end{array} \right ) \left ( \begin{array}{c} 1 \\ 1 \\ 2 \end{array} \right ) = \left ( \begin{array}{c} 1 \\ 5 \\ 0 \end{array} \right ).
 \]
 </div>
-In order to confirm that they form a basis, we apply <a href="../spaces/#met-check-generating-system" data-reference-type="ref+Label" data-reference="met:check-generating-system">Method 3.44</a> and <a href="../spaces/#met-check-linear-independence" data-reference-type="ref+Label" data-reference="met:check-linear-independence">Method 3.53</a> by forming the associated matrix and bringing it into row echelon form:
+In order to confirm that they form a basis, we apply <a href="../spaces-linear-combinations/#met-check-generating-system" data-reference-type="ref+Label" data-reference="met:check-generating-system">Method 3.46</a> and <a href="../spaces-linear-independence/#met-check-linear-independence" data-reference-type="ref+Label" data-reference="met:check-linear-independence">Method 3.56</a> by forming the associated matrix and bringing it into row echelon form:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -965,7 +965,7 @@ f(v_3) = v_4 & = -9v_1 + 5v_2 + v_3.
 \end{align*}
 \]
 </div>
-According to <a href="../maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.43</a>, the matrix of $f$ with respect to $v_1, v_2, v_3$ is
+According to <a href="../maps-matrices-associated-to-linear-maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.44</a>, the matrix of $f$ with respect to $v_1, v_2, v_3$ is
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc} 0 & 0 & -9 \\ 1 & 0 & 5 \\ 0 & 1 & 1 \end{array} \right ).
@@ -979,7 +979,7 @@ According to <a href="../maps/#prop-matrix-to-linear-map" data-reference-type="r
 
 <p class="env-number"><strong>Solution 4.13.17</strong></p>
 
-<span id="sol-ex-maps-3-6" label="sol--ex:maps-3-6"></span> (See <a href="../maps/#ex-maps-3-6" data-reference-type="ref+Label" data-reference="ex:maps-3-6">Exercise 4.16</a>.) The map is $f(x,y,z,t)=(-x+z,\,-y+t,\,x-y)$. Applying $f$ to the standard basis vectors $e_1,e_2,e_3,e_4$ of $\mathbf{R}^4$ gives the columns of the matrix (<a href="../maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.43</a>):
+<span id="sol-ex-maps-3-6" label="sol--ex:maps-3-6"></span> (See <a href="../exercises-maps/#ex-maps-3-6" data-reference-type="ref+Label" data-reference="ex:maps-3-6">Exercise 4.16</a>.) The map is $f(x,y,z,t)=(-x+z,\,-y+t,\,x-y)$. Applying $f$ to the standard basis vectors $e_1,e_2,e_3,e_4$ of $\mathbf{R}^4$ gives the columns of the matrix (<a href="../maps-matrices-associated-to-linear-maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.44</a>):
 <div class="arithmatex" markdown="1">
 \[
 A = \begin{pmatrix} -1 & 0 & 1 & 0 \\ 0 & -1 & 0 & 1 \\ 1 & -1 & 0 & 0 \end{pmatrix}.
@@ -1005,7 +1005,7 @@ The free variable is $t$; setting $t=\lambda$ gives $x=\lambda$, $y=\lambda$, $z
 \]
 </div>
 
-*Image.* By the rank–nullity theorem (<a href="../maps/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>), we have $\dim\operatorname{im} f = \dim\mathbf{R}^4 - \dim\ker f = 4 - 1 = 3.$ Since $\operatorname{im} f \subseteq \mathbf{R}^3$ and has dimension $3$, we conclude from <a href="../spaces/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.68</a> that $\operatorname{im} f = \mathbf{R}^3$. Alternatively, using <a href="../maps/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>, the first three columns of $A$ above are another basis of $\operatorname{im} f$.
+*Image.* By the rank–nullity theorem (<a href="../maps-kernel-and-image-1/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>), we have $\dim\operatorname{im} f = \dim\mathbf{R}^4 - \dim\ker f = 4 - 1 = 3.$ Since $\operatorname{im} f \subseteq \mathbf{R}^3$ and has dimension $3$, we conclude from <a href="../spaces-dimension/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.71</a> that $\operatorname{im} f = \mathbf{R}^3$. Alternatively, using <a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>, the first three columns of $A$ above are another basis of $\operatorname{im} f$.
 
 </div>
 
@@ -1014,23 +1014,23 @@ The free variable is $t$; setting $t=\lambda$ gives $x=\lambda$, $y=\lambda$, $z
 
 <p class="env-number"><strong>Solution 4.13.18</strong></p>
 
-<span id="sol-ex-maps-3-7" label="sol--ex:maps-3-7"></span> (See <a href="../maps/#ex-maps-3-7" data-reference-type="ref+Label" data-reference="ex:maps-3-7">Exercise 4.17</a>.)
+<span id="sol-ex-maps-3-7" label="sol--ex:maps-3-7"></span> (See <a href="../exercises-maps/#ex-maps-3-7" data-reference-type="ref+Label" data-reference="ex:maps-3-7">Exercise 4.17</a>.)
 
 1.  We check the linearity of the functions.
 
-    $f_1$ is linear: $f_1(x)=(x_1+x_2,\,3x_1,\,2x_2)$ is given by multiplying with the matrix $\begin{pmatrix}1&1\\3&0\\0&2\end{pmatrix}$, so it is linear by <a href="../maps/#prop-matrix-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-linear-map">Proposition 4.19</a>. Alternatively, one may also check the linearity directly by applying <a href="../maps/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>.
+    $f_1$ is linear: $f_1(x)=(x_1+x_2,\,3x_1,\,2x_2)$ is given by multiplying with the matrix $\begin{pmatrix}1&1\\3&0\\0&2\end{pmatrix}$, so it is linear by <a href="../maps-multiplication-of-a-matrix/#prop-matrix-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-linear-map">Proposition 4.19</a>. Alternatively, one may also check the linearity directly by applying <a href="../maps-definition-and-first-examples/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>.
 
-    $f_2$ is *not* linear: $f_2(0)=(0,1)\neq(0,0)$, violating $f(0)=0$ (<a href="../maps/#rem-linear-map-basic" data-reference-type="ref+Label" data-reference="rem:linear-map-basic">Remark 4.4</a>).
+    $f_2$ is *not* linear: $f_2(0)=(0,1)\neq(0,0)$, violating $f(0)=0$ (<a href="../maps-definition-and-first-examples/#rem-linear-map-basic" data-reference-type="ref+Label" data-reference="rem:linear-map-basic">Remark 4.4</a>).
 
     $f_3$ is *not* linear: the first component $x_3^2$ is not a linear function of $(x_1,x_2,x_3)$ (e.g. $f_3(2e_3)=(4,0)\neq 2f_3(e_3)=(2,0)$).
 
-    The identity map $f_4$ is linear (cf. <a href="../maps/#ex-example-linear-maps" data-reference-type="ref+Label" data-reference="ex:example-linear-maps">Example 4.7</a>).
+    The identity map $f_4$ is linear (cf. <a href="../maps-definition-and-first-examples/#ex-example-linear-maps" data-reference-type="ref+Label" data-reference="ex:example-linear-maps">Example 4.7</a>).
 
     $f_5$ is linear: $f_5(x)=(x_1+x_2,\,x_2+x_3,\,x_3+x_1)$ is given by multiplication with the matrix $\begin{pmatrix}1&1&0\\0&1&1\\1&0&1\end{pmatrix}$.
 
 2.  We describe the images of these functions.
 
-    For the linear map $f_1$, we can use <a href="../maps/#prop-image-column-space" data-reference-type="ref+Label" data-reference="prop:image-column-space">Proposition 4.30</a>, according to which $\operatorname{im} f_1 = \operatorname{span}\!\left\{\begin{pmatrix}1\\3\\0\end{pmatrix},\begin{pmatrix}1\\0\\2\end{pmatrix}\right\}$, a $2$-dimensional subspace of $\mathbf{R}^3$ (the two columns are linearly independent).
+    For the linear map $f_1$, we can use <a href="../maps-kernel-and-image-2/#prop-image-column-space" data-reference-type="ref+Label" data-reference="prop:image-column-space">Proposition 4.30</a>, according to which $\operatorname{im} f_1 = \operatorname{span}\!\left\{\begin{pmatrix}1\\3\\0\end{pmatrix},\begin{pmatrix}1\\0\\2\end{pmatrix}\right\}$, a $2$-dimensional subspace of $\mathbf{R}^3$ (the two columns are linearly independent).
 
     $f_2$ is not linear, but its image is $\{(x_3+x_1,\,3x_2+4x_1+1)\mid x\in\mathbf{R}^3\}=\mathbf{R}^2$ (e.g. vary $x_1,x_2,x_3$ freely).
 
@@ -1048,17 +1048,17 @@ The free variable is $t$; setting $t=\lambda$ gives $x=\lambda$, $y=\lambda$, $z
     \end{align*}
 \]
 </div>
-    Solving this, for example using Gaussian elimination, one finds the following solutions:
+Solving this, for example using Gaussian elimination, one finds the following solutions:
 <div class="arithmatex" markdown="1">
 \[
     x_1=\frac{a-b+c}{2}, \qquad x_2=\frac{a+b-c}{2}, \qquad x_3=\frac{-a+b+c}{2}.
 \]
 </div>
-    Thus for every $\left ( \begin{array}{c} a \\ b \\ c \end{array} \right ) \in \mathbf{R}^3$ there is a solution, so $\operatorname{im} f_5=\mathbf{R}^3$.
+Thus for every $\left ( \begin{array}{c} a \\ b \\ c \end{array} \right ) \in \mathbf{R}^3$ there is a solution, so $\operatorname{im} f_5=\mathbf{R}^3$.
 
-3.  *Injectivity and surjectivity (for the linear maps $f_1,f_4,f_5$).* For the linear maps we can use the rank-nullity theorem (<a href="../maps/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>) and our knowledge about the image to determine injectivity. Recall from <a href="../maps/#lem-injective-ker" data-reference-type="ref+Label" data-reference="lem:injective-ker">Lemma 4.25</a> that a linear map $f$ is injective precisely if its kernel $\ker f$ consists only of the zero vector, or equivalently if $\dim \ker f = 0$.
+3.  *Injectivity and surjectivity (for the linear maps $f_1,f_4,f_5$).* For the linear maps we can use the rank-nullity theorem (<a href="../maps-kernel-and-image-1/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>) and our knowledge about the image to determine injectivity. Recall from <a href="../maps-kernel-and-image-1/#lem-injective-ker" data-reference-type="ref+Label" data-reference="lem:injective-ker">Lemma 4.25</a> that a linear map $f$ is injective precisely if its kernel $\ker f$ consists only of the zero vector, or equivalently if $\dim \ker f = 0$.
 
-    For $f_1$: the domain is $\mathbf{R}^2$, we have seen $\dim\operatorname{im} f_1=\dim\mathbf{R}^2=2$, so $\ker f_1=\{0\}$ by rank–nullity (<a href="../maps/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>), so $f_1$ is injective. It is not surjective since $\dim \operatorname{im} f_1 = 2 < 3 = \dim \mathbf{R}^3$.
+    For $f_1$: the domain is $\mathbf{R}^2$, we have seen $\dim\operatorname{im} f_1=\dim\mathbf{R}^2=2$, so $\ker f_1=\{0\}$ by rank–nullity (<a href="../maps-kernel-and-image-1/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>), so $f_1$ is injective. It is not surjective since $\dim \operatorname{im} f_1 = 2 < 3 = \dim \mathbf{R}^3$.
 
     The identity map $f_4$ is bijective (i.e., injective and surjective).
 
@@ -1071,7 +1071,7 @@ The free variable is $t$; setting $t=\lambda$ gives $x=\lambda$, $y=\lambda$, $z
 
 <p class="env-number"><strong>Solution 4.13.19</strong></p>
 
-<span id="sol-ex-maps-exercise-014" label="sol--ex:maps-exercise-014"></span> (See <a href="../maps/#ex-maps-exercise-014" data-reference-type="ref+Label" data-reference="ex:maps-exercise-014">Exercise 4.18</a>.)
+<span id="sol-ex-maps-exercise-014" label="sol--ex:maps-exercise-014"></span> (See <a href="../exercises-maps/#ex-maps-exercise-014" data-reference-type="ref+Label" data-reference="ex:maps-exercise-014">Exercise 4.18</a>.)
 
 1.  Put the vectors as rows of a matrix and row-reduce:
 <div class="arithmatex" markdown="1">
@@ -1099,25 +1099,25 @@ The free variable is $t$; setting $t=\lambda$ gives $x=\lambda$, $y=\lambda$, $z
     \end{pmatrix}.
 \]
 </div>
-    This row-echelon matrix has two nonzero rows, so by <a href="../maps/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a> we read off
+This row-echelon matrix has two nonzero rows, so by <a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a> we read off
 <div class="arithmatex" markdown="1">
 \[
     \dim U=2,
 \]
 </div>
-    where $U=L(v_1,v_2,v_3)$. A basis of $U$ is given by the nonzero rows of the echelon form:
+where $U=L(v_1,v_2,v_3)$. A basis of $U$ is given by the nonzero rows of the echelon form:
 <div class="arithmatex" markdown="1">
 \[
     \left\{(1,2,-3,-1),\,(0,-2,13,4)\right\}.
 \]
 </div>
-    (From the row operation $R_3-R_1=R_2-3R_1$ we get
+(From the row operation $R_3-R_1=R_2-3R_1$ we get
 <div class="arithmatex" markdown="1">
 \[
     v_2=2v_1+v_3,
 \]
 </div>
-    so equivalently $U=L(v_1,v_3)$, i.e., $v_1$ and $v_3$ also form a basis of $U$.)
+so equivalently $U=L(v_1,v_3)$, i.e., $v_1$ and $v_3$ also form a basis of $U$.)
 
 2.  We extend two independent vectors to a basis of ${\bf R}^4$. For example, take
 <div class="arithmatex" markdown="1">
@@ -1125,7 +1125,7 @@ The free variable is $t$; setting $t=\lambda$ gives $x=\lambda$, $y=\lambda$, $z
     e_1=(1,0,0,0),\qquad e_2=(0,1,0,0).
 \]
 </div>
-    Then the vectors $v_1,v_3,e_1,e_2$ form a basis of ${\bf R}^4$. To check their linear independence, we again form the matrix comprised of these vectors
+Then the vectors $v_1,v_3,e_1,e_2$ form a basis of ${\bf R}^4$. To check their linear independence, we again form the matrix comprised of these vectors
 <div class="arithmatex" markdown="1">
 \[
     \begin{pmatrix}
@@ -1136,7 +1136,7 @@ The free variable is $t$; setting $t=\lambda$ gives $x=\lambda$, $y=\lambda$, $z
     \end{pmatrix},
 \]
 </div>
-    One checks that the rank of this matrix is 4. Thus the rows are linearly independent, hence form a basis of ${\bf R}^4$.
+One checks that the rank of this matrix is 4. Thus the rows are linearly independent, hence form a basis of ${\bf R}^4$.
 
 3.  Yes, such an $f:{\bf R}^4\to{\bf R}^2$ exists. Define it on the basis $v_1,v_3,e_1,e_2$ by
 <div class="arithmatex" markdown="1">
@@ -1144,26 +1144,26 @@ The free variable is $t$; setting $t=\lambda$ gives $x=\lambda$, $y=\lambda$, $z
     f(v_1)=(1,0),\qquad f(v_3)=(0,1),\qquad f(e_1)=(0,0),\qquad f(e_2)=(0,0)
 \]
 </div>
-    (or any other choices for $f(e_1)$, $f(e_2)$ would also do). By <a href="../maps/#prop-linear-map-defined-on-basis" data-reference-type="ref+Label" data-reference="prop:linear-map-defined-on-basis">Proposition 4.39</a>, this determines a unique linear map $f:{\bf R}^4\to{\bf R}^2$. Since $U=L(v_1,v_3)$, we get
+(or any other choices for $f(e_1)$, $f(e_2)$ would also do). By <a href="../maps-linear-maps-defined-on-basis-vectors/#prop-linear-map-defined-on-basis" data-reference-type="ref+Label" data-reference="prop:linear-map-defined-on-basis">Proposition 4.40</a>, this determines a unique linear map $f:{\bf R}^4\to{\bf R}^2$. Since $U=L(v_1,v_3)$, we get
 <div class="arithmatex" markdown="1">
 \[
     f(U)=L(f(v_1),f(v_3))=L((1,0),(0,1))={\bf R}^2.
 \]
 </div>
 
-    For $g:{\bf R}^4\to{\bf R}^3$, the answer is no. Indeed, the restriction
+For $g:{\bf R}^4\to{\bf R}^3$, the answer is no. Indeed, the restriction
 <div class="arithmatex" markdown="1">
 \[
     g_{|U}:U\to {\bf R}^3
 \]
 </div>
-    is a linear map with image $g(U)$. By <a href="../maps/#cor-maps-dim" data-reference-type="ref+Label" data-reference="cor:maps-dim">Corollary 4.28</a>,
+is a linear map with image $g(U)$. By <a href="../maps-kernel-and-image-2/#cor-maps-dim" data-reference-type="ref+Label" data-reference="cor:maps-dim">Corollary 4.28</a>,
 <div class="arithmatex" markdown="1">
 \[
     \dim g(U)\le \dim U=2.
 \]
 </div>
-    Therefore $g(U)$ cannot be all of ${\bf R}^3$, since ${\bf R}^3$ has dimension $3$.
+Therefore $g(U)$ cannot be all of ${\bf R}^3$, since ${\bf R}^3$ has dimension $3$.
 
 </div>
 
@@ -1172,7 +1172,7 @@ The free variable is $t$; setting $t=\lambda$ gives $x=\lambda$, $y=\lambda$, $z
 
 <p class="env-number"><strong>Solution 4.13.20</strong></p>
 
-<span id="sol-ex-maps-example-031" label="sol--ex:maps-example-031"></span> (See <a href="../maps/#ex-maps-example-031" data-reference-type="ref+Label" data-reference="ex:maps-example-031">Exercise 4.19</a>.) We attempt to invert $A$ by row-reducing the augmented matrix $[A\mid I]$:
+<span id="sol-ex-maps-example-031" label="sol--ex:maps-example-031"></span> (See <a href="../exercises-maps/#ex-maps-example-031" data-reference-type="ref+Label" data-reference="ex:maps-example-031">Exercise 4.19</a>.) We attempt to invert $A$ by row-reducing the augmented matrix $[A\mid I]$:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -1184,7 +1184,7 @@ The free variable is $t$; setting $t=\lambda$ gives $x=\lambda$, $y=\lambda$, $z
 \end{align*}
 \]
 </div>
-The third row of the left block is all zeros, so $A$ does not row-reduce to the identity. Therefore $A$ is *not* invertible, according to <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>.
+The third row of the left block is all zeros, so $A$ does not row-reduce to the identity. Therefore $A$ is *not* invertible, according to <a href="../maps-inverses/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.81</a>.
 
 </div>
 
@@ -1193,9 +1193,9 @@ The third row of the left block is all zeros, so $A$ does not row-reduce to the 
 
 <p class="env-number"><strong>Solution 4.13.21</strong></p>
 
-<span id="sol-matrices-commute" label="sol--matrices.commute"></span> (See <a href="../maps/#matrices-commute" data-reference-type="ref+Label" data-reference="matrices.commute">Exercise 4.20</a>.) We compute $AB$ and $BA$ in each case, by applying <a href="../maps/#def-product-matrices" data-reference-type="ref+Label" data-reference="def:product-matrices">Definition 4.48</a>:
+<span id="sol-matrices-commute" label="sol--matrices.commute"></span> (See <a href="../exercises-maps/#matrices-commute" data-reference-type="ref+Label" data-reference="matrices.commute">Exercise 4.20</a>.) We compute $AB$ and $BA$ in each case, by applying <a href="../maps-composing/#def-product-matrices" data-reference-type="ref+Label" data-reference="def:product-matrices">Definition 4.49</a>:
 
-1.  For $A=\begin{pmatrix}1&2\\2&1\end{pmatrix}$, $B=\begin{pmatrix}0&1\\-1&1\end{pmatrix}$ we obtain $AB=\begin{pmatrix}-2&3\\-1&3\end{pmatrix}$, as opposed to $BA=\begin{pmatrix}2&1\\1&-1\end{pmatrix}$. Hence $AB\neq BA$, confirming that matrix multiplication is in general not commutative, cf. <a href="../maps/#war-not-commutative" data-reference-type="ref+Label" data-reference="war:not-commutative">Warning 4.54</a>.
+1.  For $A=\begin{pmatrix}1&2\\2&1\end{pmatrix}$, $B=\begin{pmatrix}0&1\\-1&1\end{pmatrix}$ we obtain $AB=\begin{pmatrix}-2&3\\-1&3\end{pmatrix}$, as opposed to $BA=\begin{pmatrix}2&1\\1&-1\end{pmatrix}$. Hence $AB\neq BA$, confirming that matrix multiplication is in general not commutative, cf. <a href="../maps-composing/#war-not-commutative" data-reference-type="ref+Label" data-reference="war:not-commutative">Warning 4.55</a>.
 
 2.  For $A=\begin{pmatrix}3&0\\0&4\end{pmatrix}$, $B=\begin{pmatrix}-1&0\\0&2\end{pmatrix}$ we compute $AB=\begin{pmatrix}-3&0\\0&8\end{pmatrix}$, which happens to be equal to $BA=\begin{pmatrix}-3&0\\0&8\end{pmatrix}$.
 
@@ -1213,7 +1213,7 @@ The third row of the left block is all zeros, so $A$ does not row-reduce to the 
      BA=\begin{pmatrix}y&xy+1\\0&y\end{pmatrix}.
 \]
 </div>
-    Since $1+xy=xy+1$, we get $AB=BA$ for all $x,y\in\mathbf{R}$. The matrices $A$ and $B$ are examples of *elementary matrices*, cf. <a href="../maps/#def-elementary-matrices" data-reference-type="ref+Label" data-reference="def:elementary-matrices">Definition 4.61</a>.
+Since $1+xy=xy+1$, we get $AB=BA$ for all $x,y\in\mathbf{R}$. The matrices $A$ and $B$ are examples of *elementary matrices*, cf. <a href="../maps-composing/#def-elementary-matrices" data-reference-type="ref+Label" data-reference="def:elementary-matrices">Definition 4.62</a>.
 
 5.  For $A=\begin{pmatrix}3&0\\0&3\end{pmatrix}=3I_2$ and arbitrary $B \in \mathrm{Mat}_{2 \times 2}$, we get
 <div class="arithmatex" markdown="1">
@@ -1221,15 +1221,15 @@ The third row of the left block is all zeros, so $A$ does not row-reduce to the 
     AB=(3I_2)B=3B=B(3I_2)=BA.
 \]
 </div>
-    So $AB=BA$ for every such $B$.
+So $AB=BA$ for every such $B$.
 
-6.  Let $A$ be arbitrary and $B=A^2$. Then, by associativity of matrix multiplication (cf. <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.59</a>),
+6.  Let $A$ be arbitrary and $B=A^2$. Then, by associativity of matrix multiplication (cf. <a href="../maps-composing/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.60</a>),
 <div class="arithmatex" markdown="1">
 \[
     AB=A\,A^2=A^3=A^2\,A=BA.
 \]
 </div>
-    So $AB=BA$ always.
+So $AB=BA$ always.
 
 </div>
 
@@ -1238,22 +1238,22 @@ The third row of the left block is all zeros, so $A$ does not row-reduce to the 
 
 <p class="env-number"><strong>Solution 4.13.22</strong></p>
 
-<span id="sol-ex-maps-exercise-015" label="sol--ex:maps-exercise-015"></span> (See <a href="../maps/#ex-maps-exercise-015" data-reference-type="ref+Label" data-reference="ex:maps-exercise-015">Exercise 4.21</a>.) We use that a matrix $A\in \mathrm{Mat}_{2\times 2}$ determines a linear map
+<span id="sol-ex-maps-exercise-015" label="sol--ex:maps-exercise-015"></span> (See <a href="../exercises-maps/#ex-maps-exercise-015" data-reference-type="ref+Label" data-reference="ex:maps-exercise-015">Exercise 4.21</a>.) We use that a matrix $A\in \mathrm{Mat}_{2\times 2}$ determines a linear map
 <div class="arithmatex" markdown="1">
 \[
 f_A:\mathbf R^2\to \mathbf R^2,\qquad x\mapsto Ax,
 \]
 </div>
-by <a href="../maps/#prop-matrix-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-linear-map">Proposition 4.19</a>, and conversely that a linear map is determined by the images of a basis, by <a href="../maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.43</a>.
+by <a href="../maps-multiplication-of-a-matrix/#prop-matrix-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-linear-map">Proposition 4.19</a>, and conversely that a linear map is determined by the images of a basis, by <a href="../maps-matrices-associated-to-linear-maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.44</a>.
 
-1.  The vectors $e_1=(1,0)$ and $e_2=(0,1)$ form the standard basis of $\mathbf R^2$ (cf. <a href="#ex-standard-basis" data-reference-type="ref+Label" data-reference="ex:standard-basis">Example 3.59</a>). Hence prescribing
+1.  The vectors $e_1=(1,0)$ and $e_2=(0,1)$ form the standard basis of $\mathbf R^2$ (cf. <a href="../spaces-bases/#ex-standard-basis" data-reference-type="ref+Label" data-reference="ex:standard-basis">Example 3.62</a>). Hence prescribing
 <div class="arithmatex" markdown="1">
 \[
     Ae_1=\begin{pmatrix}3\\4\end{pmatrix},\qquad
     Ae_2=\begin{pmatrix}4\\5\end{pmatrix}
 \]
 </div>
-    determines the linear map uniquely. By <a href="../maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.43</a>, the corresponding matrix has these vectors as its columns:
+determines the linear map uniquely. By <a href="../maps-matrices-associated-to-linear-maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.44</a>, the corresponding matrix has these vectors as its columns:
 <div class="arithmatex" markdown="1">
 \[
     A=\begin{pmatrix}3&4\\4&5\end{pmatrix}.
@@ -1268,7 +1268,7 @@ by <a href="../maps/#prop-matrix-linear-map" data-reference-type="ref+Label" dat
     A(2e_1)=2A(e_1)=2\begin{pmatrix}3\\4\end{pmatrix}=\begin{pmatrix}6\\8\end{pmatrix},
 \]
 </div>
-    using <a href="../maps/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>. So such matrices do exist.
+using <a href="../maps-definition-and-first-examples/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>. So such matrices do exist.
 
     However, the matrix is not unique, because we only prescribe the image of the line $L(e_1)$, not of a full basis. The vector $e_2=(0,1)$ may be sent to any vector of $\mathbf R^2$. Thus all solutions are of the form
 <div class="arithmatex" markdown="1">
@@ -1276,7 +1276,7 @@ by <a href="../maps/#prop-matrix-linear-map" data-reference-type="ref+Label" dat
     A=\begin{pmatrix}3&a\\4&b\end{pmatrix},\qquad a,b\in \mathbf R.
 \]
 </div>
-    Indeed, for such a matrix,
+Indeed, for such a matrix,
 <div class="arithmatex" markdown="1">
 \[
     A\begin{pmatrix}1\\0\end{pmatrix}=\begin{pmatrix}3\\4\end{pmatrix},
@@ -1291,13 +1291,13 @@ by <a href="../maps/#prop-matrix-linear-map" data-reference-type="ref+Label" dat
     A\begin{pmatrix}2\\0\end{pmatrix}=A(2e_1)=2A(e_1)=2\begin{pmatrix}3\\4\end{pmatrix}=\begin{pmatrix}6\\8\end{pmatrix},
 \]
 </div>
-    again by <a href="../maps/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>. But the exercise requires instead
+again by <a href="../maps-definition-and-first-examples/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>. But the exercise requires instead
 <div class="arithmatex" markdown="1">
 \[
     A\begin{pmatrix}2\\0\end{pmatrix}=\begin{pmatrix}3\\4\end{pmatrix},
 \]
 </div>
-    which is different. Therefore no such matrix exists.
+which is different. Therefore no such matrix exists.
 
     Geometrically, the vector $(2,0)$ lies on the same line as $(1,0)$, and a linear map must preserve scalar multiplication along that line. So once the image of $(1,0)$ is fixed, the image of $(2,0)$ is forced to be twice as large.
 
@@ -1308,7 +1308,7 @@ by <a href="../maps/#prop-matrix-linear-map" data-reference-type="ref+Label" dat
 
 <p class="env-number"><strong>Solution 4.13.23</strong></p>
 
-<span id="sol-ex-maps-exercise-016" label="sol--ex:maps-exercise-016"></span> (See <a href="../maps/#ex-maps-exercise-016" data-reference-type="ref+Label" data-reference="ex:maps-exercise-016">Exercise 4.22</a>.) One possible choice is
+<span id="sol-ex-maps-exercise-016" label="sol--ex:maps-exercise-016"></span> (See <a href="../exercises-maps/#ex-maps-exercise-016" data-reference-type="ref+Label" data-reference="ex:maps-exercise-016">Exercise 4.22</a>.) One possible choice is
 <div class="arithmatex" markdown="1">
 \[
 A=\begin{pmatrix}1&0\\0&0\end{pmatrix},
@@ -1316,7 +1316,7 @@ A=\begin{pmatrix}1&0\\0&0\end{pmatrix},
 B=\begin{pmatrix}0&0\\1&0\end{pmatrix}.
 \]
 </div>
-Both matrices are nonzero. Using the definition of matrix multiplication (<a href="../maps/#def-product-matrices" data-reference-type="ref+Label" data-reference="def:product-matrices">Definition 4.48</a>), we compute
+Both matrices are nonzero. Using the definition of matrix multiplication (<a href="../maps-composing/#def-product-matrices" data-reference-type="ref+Label" data-reference="def:product-matrices">Definition 4.49</a>), we compute
 <div class="arithmatex" markdown="1">
 \[
 AB=
@@ -1328,13 +1328,13 @@ AB=
 </div>
 Hence $AB=0$, although $A\neq 0$ and $B\neq 0$.
 
-Using that matrices give rise to linear maps (<a href="../maps/#prop-matrix-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-linear-map">Proposition 4.19</a>), this exercise may also be understood in terms of linear maps. Consider the linear maps $f_A,f_B:\mathbf R^2\to\mathbf R^2$. In light of <a href="../maps/#prop-composition-matrices" data-reference-type="ref+Label" data-reference="prop:composition-matrices">Proposition 4.51</a>, the relation $AB=0$ means that
+Using that matrices give rise to linear maps (<a href="../maps-multiplication-of-a-matrix/#prop-matrix-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-linear-map">Proposition 4.19</a>), this exercise may also be understood in terms of linear maps. Consider the linear maps $f_A,f_B:\mathbf R^2\to\mathbf R^2$. In light of <a href="../maps-composing/#prop-composition-matrices" data-reference-type="ref+Label" data-reference="prop:composition-matrices">Proposition 4.52</a>, the relation $AB=0$ means that
 <div class="arithmatex" markdown="1">
 \[
 f_A\circ f_B=0,
 \]
 </div>
-so every vector in the image of $f_B$ lies in the kernel of $f_A$ (cf. <a href="../maps/#def-image">Definition 4.20</a>, <a href="../maps/#def-kernel">Definition 4.22</a>). In our example,
+so every vector in the image of $f_B$ lies in the kernel of $f_A$ (cf. <a href="../maps-kernel-and-image-1/#def-image">Definition 4.20</a>, <a href="../maps-kernel-and-image-1/#def-kernel">Definition 4.22</a>). In our example,
 <div class="arithmatex" markdown="1">
 \[
 \operatorname{im}(f_B)=L\left(\begin{pmatrix}0\\1\end{pmatrix}\right)
@@ -1351,9 +1351,9 @@ That is why the composition is the zero map even though neither of the two maps 
 
 <p class="env-number"><strong>Solution 4.13.24</strong></p>
 
-<span id="sol-ex-maps-exercise-017" label="sol--ex:maps-exercise-017"></span> (See <a href="../maps/#ex-maps-exercise-017" data-reference-type="ref+Label" data-reference="ex:maps-exercise-017">Exercise 4.23</a>.)
+<span id="sol-ex-maps-exercise-017" label="sol--ex:maps-exercise-017"></span> (See <a href="../exercises-maps/#ex-maps-exercise-017" data-reference-type="ref+Label" data-reference="ex:maps-exercise-017">Exercise 4.23</a>.)
 
-1.  By <a href="../maps/#def-transpose" data-reference-type="ref+Label" data-reference="def:transpose">Definition 4.88</a>,
+1.  By <a href="../maps-transpose/#def-transpose" data-reference-type="ref+Label" data-reference="def:transpose">Definition 4.89</a>,
 <div class="arithmatex" markdown="1">
 \[
     \left ( \begin{array}{cc} 1 & s \\ -2 & t \end{array} \right )^T
@@ -1361,21 +1361,21 @@ That is why the composition is the zero map even though neither of the two maps 
     \left ( \begin{array}{cc} 1 & -2 \\ s & t \end{array} \right ).
 \]
 </div>
-    The matrix is symmetric if and only if it is equal to its transpose, so the off-diagonal entries must agree. Hence $s=-2$. The entry $t$ already agrees with itself on the diagonal, so $t$ is arbitrary.
+The matrix is symmetric if and only if it is equal to its transpose, so the off-diagonal entries must agree. Hence $s=-2$. The entry $t$ already agrees with itself on the diagonal, so $t$ is arbitrary.
 
-2.  Let $A=(a_{ij})$ be any square matrix. By <a href="../maps/#lem-properties-transposition" data-reference-type="ref+Label" data-reference="lem:properties-transposition">Lemma 4.90</a>, transposition is compatible with addition, so
+2.  Let $A=(a_{ij})$ be any square matrix. By <a href="../maps-transpose/#lem-properties-transposition" data-reference-type="ref+Label" data-reference="lem:properties-transposition">Lemma 4.91</a>, transposition is compatible with addition, so
 <div class="arithmatex" markdown="1">
 \[
     (A+A^T)^T = A^T + (A^T)^T.
 \]
 </div>
-    Applying again <a href="../maps/#lem-properties-transposition" data-reference-type="ref+Label" data-reference="lem:properties-transposition">Lemma 4.90</a>, we have $(A^T)^T=A$. Thus
+Applying again <a href="../maps-transpose/#lem-properties-transposition" data-reference-type="ref+Label" data-reference="lem:properties-transposition">Lemma 4.91</a>, we have $(A^T)^T=A$. Thus
 <div class="arithmatex" markdown="1">
 \[
     (A+A^T)^T = A^T + A = A + A^T.
 \]
 </div>
-    Hence $A+A^T$ is symmetric by definition.
+Hence $A+A^T$ is symmetric by definition.
 
 </div>
 
@@ -1384,40 +1384,40 @@ That is why the composition is the zero map even though neither of the two maps 
 
 <p class="env-number"><strong>Solution 4.13.25</strong></p>
 
-<span id="sol-trace" label="sol--trace"></span> (See <a href="../maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>.) Let $A=(a_{ij})$ and $B=(b_{ij})$ be square matrices of the same size.
+<span id="sol-trace" label="sol--trace"></span> (See <a href="../exercises-maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>.) Let $A=(a_{ij})$ and $B=(b_{ij})$ be square matrices of the same size.
 
-1.  By <a href="../maps/#def-transpose" data-reference-type="ref+Label" data-reference="def:transpose">Definition 4.88</a>, the diagonal entries of $A^T$ are $(A^T)_{ii}=a_{ii}$ for all $i$. By definition of the trace (<a href="../maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>), we have
+1.  By <a href="../maps-transpose/#def-transpose" data-reference-type="ref+Label" data-reference="def:transpose">Definition 4.89</a>, the diagonal entries of $A^T$ are $(A^T)_{ii}=a_{ii}$ for all $i$. By definition of the trace (<a href="../exercises-maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>), we have
 <div class="arithmatex" markdown="1">
 \[
     \operatorname{tr}(A^T)=(A^T)_{11}+\dots+(A^T)_{nn}=a_{11}+\dots+a_{nn}=\operatorname{tr}(A).
 \]
 </div>
 
-2.  Using the definition of matrix multiplication (<a href="../maps/#def-product-matrices" data-reference-type="ref+Label" data-reference="def:product-matrices">Definition 4.48</a>), the $(i,i)$-entry of $AB$ is
+2.  Using the definition of matrix multiplication (<a href="../maps-composing/#def-product-matrices" data-reference-type="ref+Label" data-reference="def:product-matrices">Definition 4.49</a>), the $(i,i)$-entry of $AB$ is
 <div class="arithmatex" markdown="1">
 \[
     (AB)_{ii}=\sum_{k=1}^n a_{ik}b_{ki}.
 \]
 </div>
-    Hence
+Hence
 <div class="arithmatex" markdown="1">
 \[
     \operatorname{tr}(AB)=\sum_{i=1}^n (AB)_{ii}=\sum_{i=1}^n \sum_{k=1}^n a_{ik}b_{ki}.
 \]
 </div>
-    Similarly,
+Similarly,
 <div class="arithmatex" markdown="1">
 \[
     \operatorname{tr}(BA)=\sum_{k=1}^n (BA)_{kk}=\sum_{k=1}^n \sum_{i=1}^n b_{ki}a_{ik}.
 \]
 </div>
-    These are the same double sum, just with the order of summation reversed. Therefore
+These are the same double sum, just with the order of summation reversed. Therefore
 <div class="arithmatex" markdown="1">
 \[
     \operatorname{tr}(AB)=\operatorname{tr}(BA).
 \]
 </div>
-    This is noteworthy because one generally has $AB\ne BA$, cf. <a href="../maps/#war-not-commutative" data-reference-type="ref+Label" data-reference="war:not-commutative">Warning 4.54</a>.
+This is noteworthy because one generally has $AB\ne BA$, cf. <a href="../maps-composing/#war-not-commutative" data-reference-type="ref+Label" data-reference="war:not-commutative">Warning 4.55</a>.
 
 3.  The trace is additive because diagonal entries add componentwise:
 <div class="arithmatex" markdown="1">
@@ -1425,7 +1425,7 @@ That is why the composition is the zero map even though neither of the two maps 
     \operatorname{tr}(A+B)=(a_{11}+b_{11})+\dots+(a_{nn}+b_{nn})=\operatorname{tr}(A)+\operatorname{tr}(B).
 \]
 </div>
-    Likewise, scalar multiplication acts componentwise on the diagonal, so
+Likewise, scalar multiplication acts componentwise on the diagonal, so
 <div class="arithmatex" markdown="1">
 \[
     \operatorname{tr}(rA)=ra_{11}+\dots+ra_{nn}=r\,\operatorname{tr}(A).
@@ -1438,19 +1438,19 @@ That is why the composition is the zero map even though neither of the two maps 
     AB-BA={\mathrm{id}}.
 \]
 </div>
-    Applying part (3) and then part (2), we obtain
+Applying part (3) and then part (2), we obtain
 <div class="arithmatex" markdown="1">
 \[
     \operatorname{tr}(AB-BA)=\operatorname{tr}(AB)-\operatorname{tr}(BA)=0.
 \]
 </div>
-    But
+But
 <div class="arithmatex" markdown="1">
 \[
     \operatorname{tr}({\mathrm{id}})=1+\dots+1=n,
 \]
 </div>
-    where $n$ is the size of the matrix. Hence $\operatorname{tr}(AB-BA)\ne \operatorname{tr}({\mathrm{id}})$, a contradiction. Therefore no such matrix $B$ exists.
+where $n$ is the size of the matrix. Hence $\operatorname{tr}(AB-BA)\ne \operatorname{tr}({\mathrm{id}})$, a contradiction. Therefore no such matrix $B$ exists.
 
 </div>
 
@@ -1459,13 +1459,13 @@ That is why the composition is the zero map even though neither of the two maps 
 
 <p class="env-number"><strong>Solution 4.13.26</strong></p>
 
-<span id="sol-ex-maps-exercise-018" label="sol--ex:maps-exercise-018"></span> (See <a href="../maps/#ex-maps-exercise-018" data-reference-type="ref+Label" data-reference="ex:maps-exercise-018">Exercise 4.25</a>.) Consider the fixed number $r \in \mathbf R$. If we look for a matrix $R$ such that for all $2 \times 2$-matrices $A$ we have $RA = rA$, then this equation applied to $A = \mathrm{id}_2$ (the identity matrix, cf. <a href="../maps/#def-identity-matrix" data-reference-type="ref+Label" data-reference="def:identity-matrix">Definition 4.57</a>) gives
+<span id="sol-ex-maps-exercise-018" label="sol--ex:maps-exercise-018"></span> (See <a href="../exercises-maps/#ex-maps-exercise-018" data-reference-type="ref+Label" data-reference="ex:maps-exercise-018">Exercise 4.25</a>.) Consider the fixed number $r \in \mathbf R$. If we look for a matrix $R$ such that for all $2 \times 2$-matrices $A$ we have $RA = rA$, then this equation applied to $A = \mathrm{id}_2$ (the identity matrix, cf. <a href="../maps-composing/#def-identity-matrix" data-reference-type="ref+Label" data-reference="def:identity-matrix">Definition 4.58</a>) gives
 <div class="arithmatex" markdown="1">
 \[
 R \mathrm{id}_2 = r \mathrm{id}_2 = \begin{pmatrix} r & 0 \\ 0 & r \end{pmatrix}.
 \]
 </div>
-By <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.59</a>, the left hand side equals $R$, so we see that we need to have $R = \begin{pmatrix} r & 0 \\ 0 & r \end{pmatrix}$. One then confirms that the equation $RA = rA$ holds for all $A$. This can be done by direct computation.
+By <a href="../maps-composing/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.60</a>, the left hand side equals $R$, so we see that we need to have $R = \begin{pmatrix} r & 0 \\ 0 & r \end{pmatrix}$. One then confirms that the equation $RA = rA$ holds for all $A$. This can be done by direct computation.
 
 </div>
 
@@ -1474,9 +1474,9 @@ By <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="
 
 <p class="env-number"><strong>Solution 4.13.27</strong></p>
 
-<span id="sol-ex-maps-exercise-019" label="sol--ex:maps-exercise-019"></span> (See <a href="../maps/#ex-maps-exercise-019" data-reference-type="ref+Label" data-reference="ex:maps-exercise-019">Exercise 4.26</a>.)
+<span id="sol-ex-maps-exercise-019" label="sol--ex:maps-exercise-019"></span> (See <a href="../exercises-maps/#ex-maps-exercise-019" data-reference-type="ref+Label" data-reference="ex:maps-exercise-019">Exercise 4.26</a>.)
 
-1.  Using <a href="../maps/#def-product-matrices" data-reference-type="ref+Label" data-reference="def:product-matrices">Definition 4.48</a>, we compute
+1.  Using <a href="../maps-composing/#def-product-matrices" data-reference-type="ref+Label" data-reference="def:product-matrices">Definition 4.49</a>, we compute
 <div class="arithmatex" markdown="1">
 \[
     A^2=
@@ -1498,7 +1498,7 @@ By <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="
     \end{pmatrix}.
 \]
 </div>
-    Multiplying once more, we obtain
+Multiplying once more, we obtain
 <div class="arithmatex" markdown="1">
 \[
     A^3=A^2A=
@@ -1527,7 +1527,7 @@ By <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="
     A^n=0.
 \]
 </div>
-    Indeed, when one multiplies strictly upper triangular matrices, the first superdiagonal can move only upward. More precisely, every entry of $A^k$ on or below the $(k-1)$-st superdiagonal is zero. After $n$ factors there is no possible nonzero position left, so all entries vanish.
+Indeed, when one multiplies strictly upper triangular matrices, the first superdiagonal can move only upward. More precisely, every entry of $A^k$ on or below the $(k-1)$-st superdiagonal is zero. After $n$ factors there is no possible nonzero position left, so all entries vanish.
 
     Equivalently, each multiplication shifts possible nonzero entries at least one step farther above the main diagonal; after $n$ steps they have all disappeared. Thus every strictly upper triangular $n\times n$-matrix is nilpotent. In terms of linear maps one can observe that such a matrix $A$ describes a linear map $f_A$ such that $f_A(e_1) = 0$, while $f_A(e_2)$ is a linear combination of $e_1$, $f_A(e_3)$ is a linear combination of $e_1$ and $e_2$, etc. Thus, the image of $f_A$ is contained in the span of $e_1, \dots, e_{n-1}$, and the image of $f_A^2$ is contained in the span of $e_1, \dots, e_{n-2}$ etc., so that $f_A^n = 0$.
 
@@ -1538,7 +1538,7 @@ By <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="
 
 <p class="env-number"><strong>Solution 4.13.28</strong></p>
 
-<span id="sol-ex-maps-3-8" label="sol--ex:maps-3-8"></span> (See <a href="../maps/#ex-maps-3-8" data-reference-type="ref+Label" data-reference="ex:maps-3-8">Exercise 4.27</a>.) We write any vector $v = (a,b) = a(1,0) + b(0,1) = ae_1 + be_2$ in terms of $v_1, v_2$:
+<span id="sol-ex-maps-3-8" label="sol--ex:maps-3-8"></span> (See <a href="../exercises-maps/#ex-maps-3-8" data-reference-type="ref+Label" data-reference="ex:maps-3-8">Exercise 4.27</a>.) We write any vector $v = (a,b) = a(1,0) + b(0,1) = ae_1 + be_2$ in terms of $v_1, v_2$:
 <div class="arithmatex" markdown="1">
 \[
 v = \alpha v_1 + \beta v_2 = \alpha(1,-3)+\beta(2,1).
@@ -1616,7 +1616,7 @@ Thus, the coordinates of $(2, -5)$ with respect to the basis $v_1, v_2$ is $(\fr
 
 <p class="env-number"><strong>Solution 4.13.29</strong></p>
 
-<span id="sol-ex-maps-3-9" label="sol--ex:maps-3-9"></span> (See <a href="../maps/#ex-maps-3-9" data-reference-type="ref+Label" data-reference="ex:maps-3-9">Exercise 4.28</a>.) We have, for example,
+<span id="sol-ex-maps-3-9" label="sol--ex:maps-3-9"></span> (See <a href="../exercises-maps/#ex-maps-3-9" data-reference-type="ref+Label" data-reference="ex:maps-3-9">Exercise 4.28</a>.) We have, for example,
 <div class="arithmatex" markdown="1">
 \[
 {\mathrm {id}}(v_1) = v_1 = (1,0,-1) = 1 \cdot e_1 + 0 \cdot e_2 + (-1) \cdot e_3.
@@ -1636,7 +1636,7 @@ Likewise for $v_2$ and $v_3$. Therefore, the base change matrix is
 
 <p class="env-number"><strong>Solution 4.13.30</strong></p>
 
-<span id="sol-ex-maps-3-10" label="sol--ex:maps-3-10"></span> (See <a href="../maps/#ex-maps-3-10" data-reference-type="ref+Label" data-reference="ex:maps-3-10">Exercise 4.30</a>.) We follow the given hint, and first compute $H$. We have
+<span id="sol-ex-maps-3-10" label="sol--ex:maps-3-10"></span> (See <a href="../exercises-maps/#ex-maps-3-10" data-reference-type="ref+Label" data-reference="ex:maps-3-10">Exercise 4.30</a>.) We follow the given hint, and first compute $H$. We have
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -1708,7 +1708,7 @@ KAH & = \left ( \begin{array}{ccc} 0 & -1 & 1 \\ 1 & 0 & -1 \\ 1 & -1 & -1 \end{
 
 <p class="env-number"><strong>Solution 4.13.31</strong></p>
 
-<span id="sol-ex-maps-3-11" label="sol--ex:maps-3-11"></span> (See <a href="../maps/#ex-maps-3-11" data-reference-type="ref+Label" data-reference="ex:maps-3-11">Exercise 4.32</a>.) We follow the solution of <a href="../maps/#ex-maps-3-10" data-reference-type="ref+Label" data-reference="ex:maps-3-10">Exercise 4.30</a>, see above:
+<span id="sol-ex-maps-3-11" label="sol--ex:maps-3-11"></span> (See <a href="../exercises-maps/#ex-maps-3-11" data-reference-type="ref+Label" data-reference="ex:maps-3-11">Exercise 4.32</a>.) We follow the solution of <a href="../exercises-maps/#ex-maps-3-10" data-reference-type="ref+Label" data-reference="ex:maps-3-10">Exercise 4.30</a>, see above:
 <div class="arithmatex" markdown="1">
 \[
 {\bf R}^2_{\underline v} \xrightarrow[H]{\mathrm {id}} {\bf R}^2_{\underline e} \xrightarrow[A]{f} {\bf R}^2_{\underline e} \xrightarrow[K]{\mathrm {id}} {\bf R}^2_{\underline v}.
@@ -1732,7 +1732,7 @@ KAH& = \left ( \begin{array}{cc} 2 & -1 \\ -1 & 1 \end{array} \right ) \left ( \
 
 <p class="env-number"><strong>Solution 4.13.32</strong></p>
 
-<span id="sol-ex-maps-3-12" label="sol--ex:maps-3-12"></span> (See <a href="../maps/#ex-maps-3-12" data-reference-type="ref+Label" data-reference="ex:maps-3-12">Exercise 4.33</a>.) For the given matrix $A$, the system $Ax =x$ is written out like so:
+<span id="sol-ex-maps-3-12" label="sol--ex:maps-3-12"></span> (See <a href="../exercises-maps/#ex-maps-3-12" data-reference-type="ref+Label" data-reference="ex:maps-3-12">Exercise 4.33</a>.) For the given matrix $A$, the system $Ax =x$ is written out like so:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -1768,7 +1768,7 @@ L((1,0,1), (0,1,0)).
 
 <p class="env-number"><strong>Solution 4.13.33</strong></p>
 
-<span id="sol-ex-maps-3-13" label="sol--ex:maps-3-13"></span> (See <a href="../maps/#ex-maps-3-13" data-reference-type="ref+Label" data-reference="ex:maps-3-13">Exercise 4.34</a>.) We write out the given system
+<span id="sol-ex-maps-3-13" label="sol--ex:maps-3-13"></span> (See <a href="../exercises-maps/#ex-maps-3-13" data-reference-type="ref+Label" data-reference="ex:maps-3-13">Exercise 4.34</a>.) We write out the given system
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 4 & 2 \\ 0 & 2 & 1 \end{array} \right ) \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right ) = 5 \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right )
@@ -1806,7 +1806,7 @@ L((0, 2, 1)).
 
 <p class="env-number"><strong>Solution 4.13.34</strong></p>
 
-<span id="sol-ex-maps-3-14" label="sol--ex:maps-3-14"></span> (See <a href="../maps/#ex-maps-3-14" data-reference-type="ref+Label" data-reference="ex:maps-3-14">Exercise 4.35</a>.) We proceed the same way as for <a href="../maps/#ex-maps-3-10" data-reference-type="ref+Label" data-reference="ex:maps-3-10">Exercise 4.30</a> (see its solution above):
+<span id="sol-ex-maps-3-14" label="sol--ex:maps-3-14"></span> (See <a href="../exercises-maps/#ex-maps-3-14" data-reference-type="ref+Label" data-reference="ex:maps-3-14">Exercise 4.35</a>.) We proceed the same way as for <a href="../exercises-maps/#ex-maps-3-10" data-reference-type="ref+Label" data-reference="ex:maps-3-10">Exercise 4.30</a> (see its solution above):
 <div class="arithmatex" markdown="1">
 \[
 {\bf R}^2_{\underline v} \xrightarrow[H]{\mathrm {id}} {\bf R}^2_{\underline e} \xrightarrow[A]{f}
@@ -1814,7 +1814,7 @@ L((0, 2, 1)).
 {\bf R}^2_{\underline v}.
 \]
 </div>
-Here $H$ is the base change matrix from $\underline v$ to the standard basis $\underline e = \{e_1 = (1,0), e_2 = (0,1)\}$. The base change matrix from $\underline e$ to $\underline v$ is then $H^{-1}$. From the given vectors we have $H  = \left ( \begin{array}{cc} 2 & 0 \\ 1 & 1 \end{array} \right )$. We compute the inverse $H^{-1}$ using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>:
+Here $H$ is the base change matrix from $\underline v$ to the standard basis $\underline e = \{e_1 = (1,0), e_2 = (0,1)\}$. The base change matrix from $\underline e$ to $\underline v$ is then $H^{-1}$. From the given vectors we have $H  = \left ( \begin{array}{cc} 2 & 0 \\ 1 & 1 \end{array} \right )$. We compute the inverse $H^{-1}$ using <a href="../maps-inverses/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.81</a>:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -1848,7 +1848,7 @@ H^{-1}AH & =
 
 <p class="env-number"><strong>Solution 4.13.35</strong></p>
 
-<span id="sol-ex-maps-3-15" label="sol--ex:maps-3-15"></span> (See <a href="../maps/#ex-maps-3-15" data-reference-type="ref+Label" data-reference="ex:maps-3-15">Exercise 4.37</a>.) This can be done as for <a href="../maps/#ex-maps-3-14" data-reference-type="ref+Label" data-reference="ex:maps-3-14">Exercise 4.35</a> above. The final solution is
+<span id="sol-ex-maps-3-15" label="sol--ex:maps-3-15"></span> (See <a href="../exercises-maps/#ex-maps-3-15" data-reference-type="ref+Label" data-reference="ex:maps-3-15">Exercise 4.37</a>.) This can be done as for <a href="../exercises-maps/#ex-maps-3-14" data-reference-type="ref+Label" data-reference="ex:maps-3-14">Exercise 4.35</a> above. The final solution is
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc} -2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & -1 \end{array} \right ).
@@ -1862,14 +1862,14 @@ H^{-1}AH & =
 
 <p class="env-number"><strong>Solution 4.13.36</strong></p>
 
-<span id="sol-ex-maps-3-16" label="sol--ex:maps-3-16"></span> (See <a href="../maps/#ex-maps-3-16" data-reference-type="ref+Label" data-reference="ex:maps-3-16">Exercise 4.38</a>.) One computes this solution space as
+<span id="sol-ex-maps-3-16" label="sol--ex:maps-3-16"></span> (See <a href="../exercises-maps/#ex-maps-3-16" data-reference-type="ref+Label" data-reference="ex:maps-3-16">Exercise 4.38</a>.) One computes this solution space as
 <div class="arithmatex" markdown="1">
 \[
 L((-1,2,3)) = L((1,-2,-3)).
 \]
 </div>
 
-According to <a href="../spaces/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.68</a><a href="../spaces/#item-independent-add" data-reference-type="ref" data-reference="item--independent.add">2.</a>, this vector $l_1 = (1,-2,-3)$ can be completed to a basis of ${\bf R}^3$ by picking *any* basis $v_1, v_2, v_3$ of ${\bf R}^3$. Then it is possible to find two of these three vectors which together with $l_1$ will form a basis of ${\bf R}^3$. We pick the standard basis, $v_1=e_2$, $v_2=e_2$ and $v_3=e_3$. We check that $l_1, e_2, e_3$ form a basis. Indeed, the matrix whose rows are these vectors,
+According to <a href="../spaces-dimension/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.71</a><a href="../spaces-dimension/#item-independent-add" data-reference-type="ref" data-reference="item--independent.add">2.</a>, this vector $l_1 = (1,-2,-3)$ can be completed to a basis of ${\bf R}^3$ by picking *any* basis $v_1, v_2, v_3$ of ${\bf R}^3$. Then it is possible to find two of these three vectors which together with $l_1$ will form a basis of ${\bf R}^3$. We pick the standard basis, $v_1=e_2$, $v_2=e_2$ and $v_3=e_3$. We check that $l_1, e_2, e_3$ form a basis. Indeed, the matrix whose rows are these vectors,
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc} 1 & -2 & -3 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{array} \right ),
@@ -1892,7 +1892,7 @@ We have
 H=\left ( \begin{array}{ccc} 1 & 0 & 0 \\ -2 & 1 & 0 \\ -3 & 0 & 1 \end{array} \right ).
 \]
 </div>
-We compute the inverse using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>:
+We compute the inverse using <a href="../maps-inverses/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.81</a>:
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc|ccc} 1 & 0 & 0 & 1 & 0 & 0 \\ -2 & 1 & 0 & 0 & 1 & 0 \\ -3 & 0 & 1 & 0 & 0 & 1 \end{array} \right ) 
@@ -1911,7 +1911,7 @@ H^{-1}AH = \left ( \begin{array}{ccc} 3 & -1 & 0 \\ 0 & 0 & 1 \\ 0 & -2 & 3 \end
 <div class="remark" markdown="1">
 
 
-<p class="env-number"><strong>Remark 4.94</strong></p>
+<p class="env-number"><strong>Remark 4.95</strong></p>
 
 <span id="rem-solutions-remark-002" label="rem:solutions-remark-002"></span> The choice of the two vectors $e_2$ and $e_3$, in addition to $l_1$ above, is arbitrary. To begin with, one may choose a different basis (other than the standard basis) to complete $l_1$ to a basis. Even if one takes the standard basis, for this particular value of $l_1$, *any* two of the three vectors $e_1, e_2, e_3$ together with $l_1$ would form a basis. The resulting base change matrix $H$ will then be different, and also the result $H^{-1}AH$ will be different.
 
@@ -1924,7 +1924,7 @@ H^{-1}AH = \left ( \begin{array}{ccc} 3 & -1 & 0 \\ 0 & 0 & 1 \\ 0 & -2 & 3 \end
 
 <p class="env-number"><strong>Solution 4.13.37</strong></p>
 
-<span id="sol-ex-maps-3-17" label="sol--ex:maps-3-17"></span> (See <a href="../maps/#ex-maps-3-17" data-reference-type="ref+Label" data-reference="ex:maps-3-17">Exercise 4.39</a>.) The vectors
+<span id="sol-ex-maps-3-17" label="sol--ex:maps-3-17"></span> (See <a href="../exercises-maps/#ex-maps-3-17" data-reference-type="ref+Label" data-reference="ex:maps-3-17">Exercise 4.39</a>.) The vectors
 <div class="arithmatex" markdown="1">
 \[
 \underline v = \{v_1 = (1,0,1), v_2 = (0,3,-1), v_3 = (0,0,1)\}
@@ -1995,7 +1995,7 @@ KAK^{-1} & = \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 3 & 0 \\ 1 & -1 & 1 \en
 
 <p class="env-number"><strong>Solution 4.13.38</strong></p>
 
-<span id="sol-ex-maps-3-18" label="sol--ex:maps-3-18"></span> (See <a href="../maps/#ex-maps-3-18" data-reference-type="ref+Label" data-reference="ex:maps-3-18">Exercise 4.41</a>.) It is convenient to observe
+<span id="sol-ex-maps-3-18" label="sol--ex:maps-3-18"></span> (See <a href="../exercises-maps/#ex-maps-3-18" data-reference-type="ref+Label" data-reference="ex:maps-3-18">Exercise 4.41</a>.) It is convenient to observe
 <div class="arithmatex" markdown="1">
 \[
 5 \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right ) = \left ( \begin{array}{ccc} 5 & 0 & 0 \\ 0 & 5 & 0 \\ 0 & 0 & 5 \end{array} \right ) 5 \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right ).
@@ -2007,13 +2007,13 @@ Thus the given system can be rewritten as
 \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 4 & 2 \\ 0 & 2 & 1 \end{array} \right ) \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right ) =  \left ( \begin{array}{ccc} 5 & 0 & 0 \\ 0 & 5 & 0 \\ 0 & 0 & 5 \end{array} \right ) \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right ).
 \]
 </div>
-By <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.59</a>, this is the same as the system
+By <a href="../maps-composing/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.60</a>, this is the same as the system
 <div class="arithmatex" markdown="1">
 \[
 \left [ \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 4 & 2 \\ 0 & 2 & 1 \end{array} \right ) - \left ( \begin{array}{ccc} 5 & 0 & 0 \\ 0 & 5 & 0 \\ 0 & 0 & 5 \end{array} \right )\right ] \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right ) =  \left ( \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right ) .
 \]
 </div>
-The left hand matrix equals $\left ( \begin{array}{ccc} -4 & 0 & 0 \\ 0 & -1 & 2 \\ 0 & 2 & -4 \end{array} \right )$. From here, one can use the standard method to solve the linear system. (As a forecast to §<a href="../determinants/#sect-determinants" data-reference-type="ref" data-reference="sect--determinants">Chapter 5</a>, one can note that the determinant of the latter matrix is 0, so that the matrix is not invertible. Hence the system above has non-zero solutions.)
+The left hand matrix equals $\left ( \begin{array}{ccc} -4 & 0 & 0 \\ 0 & -1 & 2 \\ 0 & 2 & -4 \end{array} \right )$. From here, one can use the standard method to solve the linear system. (As a forecast to §<a href="../determinants-determinants-of-2-x-2-matrices/#sect-determinants" data-reference-type="ref" data-reference="sect--determinants">Chapter 5</a>, one can note that the determinant of the latter matrix is 0, so that the matrix is not invertible. Hence the system above has non-zero solutions.)
 
 </div>
 
@@ -2022,7 +2022,7 @@ The left hand matrix equals $\left ( \begin{array}{ccc} -4 & 0 & 0 \\ 0 & -1 & 2
 
 <p class="env-number"><strong>Solution 4.13.39</strong></p>
 
-<span id="sol-ex-maps-3-19" label="sol--ex:maps-3-19"></span> (See <a href="../maps/#ex-maps-3-19" data-reference-type="ref+Label" data-reference="ex:maps-3-19">Exercise 4.43</a>.) Consider the vectors $v_1 = (1,0,-1)$, $v_2 = (1,1,0)$, $v_3 = (1,0,-2) \in {\bf R}^3$.
+<span id="sol-ex-maps-3-19" label="sol--ex:maps-3-19"></span> (See <a href="../exercises-maps/#ex-maps-3-19" data-reference-type="ref+Label" data-reference="ex:maps-3-19">Exercise 4.43</a>.) Consider the vectors $v_1 = (1,0,-1)$, $v_2 = (1,1,0)$, $v_3 = (1,0,-2) \in {\bf R}^3$.
 
 We have $f(v_1) = (3,0,-5) = v_1 + 2v_3$, $f(v_2) = 2v_2$ and $f(v_3) = (5,2,-5) = v_1 + 2v_2 + 2v_3$. Therefore the matrix $A$ with respect to the basis $\underline v := (v_1, v_2, v_3)$ in the domain and the codomain is
 <div class="arithmatex" markdown="1">
@@ -2058,7 +2058,7 @@ B = \left ( \begin{array}{ccc} 1 & 1 & -2 \\ -2 & 4 & -2 \\ -5 & 5 & 0 \end{arra
 \]
 </div>
 
-A slightly different way to solve this is to observe that the matrix of $f$ with respect to the basis $\underline v$ in the source and the standard basis $\underline e$ in the target is $C = \left ( \begin{array}{ccc} 3 & 2 & 5 \\ 0 & 2 & 2 \\ -5 & 0 & -5 \end{array} \right )$. We consider the matrix $H = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & -2 \end{array} \right )$ whose columns are the three vectors $v_i$, i.e., the base change matrix from the basis $\underline v$ to $\underline e$. Compute the inverse of this matrix, for example using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>. This gives $H^{-1} = \left ( \begin{array}{ccc} 2 & -2 & 1 \\ 0 & 1 & 0 \\ -1 & 1 & -1 \end{array} \right )$. This is the base change matrix from $\underline e$ to the basis $\underline v$. Then $B = C H^{-1}$: ${\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{ {\mathrm {id}}} {\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e}$, which confirms the above computation. Likewise $A = H^{-1} C$, corresponding to ${\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{ {\mathrm {id}}} {\bf R}^3_{\underline v}$, which confirms the above computation.
+A slightly different way to solve this is to observe that the matrix of $f$ with respect to the basis $\underline v$ in the source and the standard basis $\underline e$ in the target is $C = \left ( \begin{array}{ccc} 3 & 2 & 5 \\ 0 & 2 & 2 \\ -5 & 0 & -5 \end{array} \right )$. We consider the matrix $H = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & -2 \end{array} \right )$ whose columns are the three vectors $v_i$, i.e., the base change matrix from the basis $\underline v$ to $\underline e$. Compute the inverse of this matrix, for example using <a href="../maps-inverses/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.81</a>. This gives $H^{-1} = \left ( \begin{array}{ccc} 2 & -2 & 1 \\ 0 & 1 & 0 \\ -1 & 1 & -1 \end{array} \right )$. This is the base change matrix from $\underline e$ to the basis $\underline v$. Then $B = C H^{-1}$: ${\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{ {\mathrm {id}}} {\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e}$, which confirms the above computation. Likewise $A = H^{-1} C$, corresponding to ${\bf R}^3_{\underline v} \xrightarrow[C]{f} {\bf R}^3_{\underline e} \xrightarrow[H^{-1}]{ {\mathrm {id}}} {\bf R}^3_{\underline v}$, which confirms the above computation.
 
 The kernel and image of $f$ can be computed by bringing $B$ into row echelon form. The result is $\ker f = \{(x,x,x) | x \in {\bf R}\}$, i.e., it is 1-dimensional and has as a basis vector $(1,1,1)$. We have ${\operatorname{im}\ } f = L((1,4,5),(1,-2,-5))$.
 
@@ -2091,7 +2091,7 @@ These computations can also be performed with any computer algebra software, suc
 
 <p class="env-number"><strong>Solution 4.13.40</strong></p>
 
-<span id="sol-ex-maps-3-20" label="sol--ex:maps-3-20"></span> (See <a href="../maps/#ex-maps-3-20" data-reference-type="ref+Label" data-reference="ex:maps-3-20">Exercise 4.44</a>.) We form the matrix of $f$ and bring it to row echelon form:
+<span id="sol-ex-maps-3-20" label="sol--ex:maps-3-20"></span> (See <a href="../exercises-maps/#ex-maps-3-20" data-reference-type="ref+Label" data-reference="ex:maps-3-20">Exercise 4.44</a>.) We form the matrix of $f$ and bring it to row echelon form:
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc} 1 & -1 & 2 \\ -2 & 3 & -1 \\ 0 & 1 & 3 \\ -1 & 3 & t \end{array} \right )
@@ -2103,7 +2103,7 @@ These computations can also be performed with any computer algebra software, suc
 </div>
 The $\dim {\operatorname{im}\ } f$ equals the rank of that matrix, which is 2 if $t=4$ and 3 otherwise.
 
-For no $t \in {\bf R}$, $f$ is surjective, since $\dim {\operatorname{im}\ } f \le 3$, but it would need to be 4 for $f$ to be surjective. For $t\ne 4$ it is injective. Indeed, the rank-nullity theorem (<a href="../maps/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>) asserts that $\dim \ker f = 3 - \dim {\operatorname{im}\ } f$, which is 0 for $t \ne 4$.
+For no $t \in {\bf R}$, $f$ is surjective, since $\dim {\operatorname{im}\ } f \le 3$, but it would need to be 4 for $f$ to be surjective. For $t\ne 4$ it is injective. Indeed, the rank-nullity theorem (<a href="../maps-kernel-and-image-1/#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>) asserts that $\dim \ker f = 3 - \dim {\operatorname{im}\ } f$, which is 0 for $t \ne 4$.
 
 For $t=4$, we have $\ker f = L(-5,-3,1)$ and ${\operatorname{im}\ } f = L((-1,3,1,3), (1,-2,0,-1))$.
 
@@ -2118,7 +2118,7 @@ We have $w \notin {\operatorname{im}\ } f$ for all $t \in {\bf R}$. This can be 
 </div>
 and the underlined entry $3$ shows $w \notin {\operatorname{im}\ } f$.
 
-For $t=0$ we have seen above that $\dim {\operatorname{im}\ } f = 3$. By <a href="../spaces/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.68</a>, a basis $v_1, v_2, v_3$ of ${\operatorname{im}\ } f (\subset {\bf R}^4)$ can be extended to a basis of ${\bf R}^4$, say $v_1, v_2, v_3, v_4$. By <a href="../maps/#prop-linear-map-defined-on-basis" data-reference-type="ref+Label" data-reference="prop:linear-map-defined-on-basis">Proposition 4.39</a>, there is a unique linear map $g : {\bf R}^4 \to {\bf R}^3$ such that $g(v_i) = e_i$ (for $i=1,2,3$, and $e_i$ denotes the $i$-th standard basis vector of ${\bf R}^3$, and $g(v_4) = 0$ (or any other vector in ${\bf R}^3$). Then $g(f(x))=x$ for any $x \in {\bf R}^3$.
+For $t=0$ we have seen above that $\dim {\operatorname{im}\ } f = 3$. By <a href="../spaces-dimension/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.71</a>, a basis $v_1, v_2, v_3$ of ${\operatorname{im}\ } f (\subset {\bf R}^4)$ can be extended to a basis of ${\bf R}^4$, say $v_1, v_2, v_3, v_4$. By <a href="../maps-linear-maps-defined-on-basis-vectors/#prop-linear-map-defined-on-basis" data-reference-type="ref+Label" data-reference="prop:linear-map-defined-on-basis">Proposition 4.40</a>, there is a unique linear map $g : {\bf R}^4 \to {\bf R}^3$ such that $g(v_i) = e_i$ (for $i=1,2,3$, and $e_i$ denotes the $i$-th standard basis vector of ${\bf R}^3$, and $g(v_4) = 0$ (or any other vector in ${\bf R}^3$). Then $g(f(x))=x$ for any $x \in {\bf R}^3$.
 
 </div>
 
@@ -2127,7 +2127,7 @@ For $t=0$ we have seen above that $\dim {\operatorname{im}\ } f = 3$. By <a href
 
 <p class="env-number"><strong>Solution 4.13.41</strong></p>
 
-<span id="sol-ex-maps-2-7" label="sol--ex:maps-2-7"></span> (See <a href="../maps/#ex-maps-2-7" data-reference-type="ref+Label" data-reference="ex:maps-2-7">Exercise 4.45</a>.) The map $f$ is given by multiplication with the matrix, which we bring to row echelon form by elementary row operations
+<span id="sol-ex-maps-2-7" label="sol--ex:maps-2-7"></span> (See <a href="../exercises-maps/#ex-maps-2-7" data-reference-type="ref+Label" data-reference="ex:maps-2-7">Exercise 4.45</a>.) The map $f$ is given by multiplication with the matrix, which we bring to row echelon form by elementary row operations
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{cccc} 0 & -1 & 2 & 2 \\ 1 & 0 & -1 & 2 \\ -5 & 1 & 2 & -3 \end{array} \right ) 
@@ -2162,19 +2162,19 @@ This shows that $4-2b=3a$ and $4(4-2b)+3(b+3)=0$, i.e., $25-5b=0$, so $b=5$ and 
 
 <p class="env-number"><strong>Solution 4.13.42</strong></p>
 
-<span id="sol-ex-maps-partial-2026-1" label="sol--ex:maps-partial-2026-1"></span> (See <a href="../maps/#ex-maps-partial-2026-1" data-reference-type="ref+Label" data-reference="ex:maps-partial-2026-1">Exercise 4.46</a>.) Part (1): The subspace $W \subset \mathbf R^4$ is the solution set of a homogeneous linear system. By <a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>, the coefficient matrix describing that linear system reads $\left ( \begin{array}{cccc} 2 & -1 & -1 & 0 \\ 0 & 1 & -1 & 0 \end{array} \right )$. Thus, (after dividing the first row by 2), the leading ones in this matrix are in the first and second column, so $x_3$ and $x_4$ are free variables. By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, a basis of $W$ is given by the vectors $w_1 = (1,1,1,0)$ and $w_2 = (0,0,0,1)$. Hence $\dim W = 2$.
+<span id="sol-ex-maps-partial-2026-1" label="sol--ex:maps-partial-2026-1"></span> (See <a href="../exercises-maps/#ex-maps-partial-2026-1" data-reference-type="ref+Label" data-reference="ex:maps-partial-2026-1">Exercise 4.46</a>.) Part (1): The subspace $W \subset \mathbf R^4$ is the solution set of a homogeneous linear system. By <a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>, the coefficient matrix describing that linear system reads $\left ( \begin{array}{cccc} 2 & -1 & -1 & 0 \\ 0 & 1 & -1 & 0 \end{array} \right )$. Thus, (after dividing the first row by 2), the leading ones in this matrix are in the first and second column, so $x_3$ and $x_4$ are free variables. By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, a basis of $W$ is given by the vectors $w_1 = (1,1,1,0)$ and $w_2 = (0,0,0,1)$. Hence $\dim W = 2$.
 
 *Typical mistakes:* It is important to note that $W$ was defined as a subspace of ${\bf R}^4$. One must therefore take into account $x_4$, even though it is not present in the linear system as written.
 
 Another typical mistake is to assume one can read of the basis vectors of $W$ simply as $(2,-1,-1,0)$ and $(0,1,-1,0)$. This is *wrong*, and can already be seen to be wrong by observing that these vectors do not even lie in $W$!
 
-Part (2): To compute the subspace $U \cap W$ we first apply <a href="../spaces/#lem-span-subspace" data-reference-type="ref+Label" data-reference="lem:span-subspace">Lemma 3.32</a> to write a general vector of $U$ as
+Part (2): To compute the subspace $U \cap W$ we first apply <a href="../spaces-linear-combinations/#lem-span-subspace" data-reference-type="ref+Label" data-reference="lem:span-subspace">Lemma 3.34</a> to write a general vector of $U$ as
 <div class="arithmatex" markdown="1">
 \[
 a_1 u_1 + a_2 u_2 + a_3 u_3 = (a_1-a_2, -2a_1+a_2+3 a_3, 2a_2+a_3,a_1-a_3).
 \]
 </div>
-Recall that $U \cap W$ consists of those vectors in $U$ that also lie in $W$ (<a href="../spaces/#lem-spaces-lemma-003" data-reference-type="ref+Label" data-reference="lem:spaces-lemma-003">Lemma 3.19</a>), so we need to check when the above vector lies in $W$. This happens if and only if
+Recall that $U \cap W$ consists of those vectors in $U$ that also lie in $W$ (<a href="../spaces-intersection/#lem-spaces-lemma-003" data-reference-type="ref+Label" data-reference="lem:spaces-lemma-003">Lemma 3.19</a>), so we need to check when the above vector lies in $W$. This happens if and only if
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -2200,11 +2200,11 @@ The three vectors $u_1, u_2, u_3$ spanning $U$ are linearly independent, as one 
 \leadsto \text{etc.}
 \]
 </div>
-and seeing that there are three leading ones. Therefore, $\dim U = 3$. <a href="../spaces/#thm-dim-cap-sum" data-reference-type="ref+Label" data-reference="thm:dim-cap-sum">Theorem 3.74</a> now allows to quickly compute $\dim (U+W)=\dim U + \dim W - \dim (U \cap W) = 3+2-1=4$. By <a href="../spaces/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.68</a>, we therefore obtain $U+W = \mathbf R^4$. Thus the standard basis $e_1, \dots, e_4$ is a basis of $U+W = \mathbf R^4$.
+and seeing that there are three leading ones. Therefore, $\dim U = 3$. <a href="../spaces-dimension/#thm-dim-cap-sum" data-reference-type="ref+Label" data-reference="thm:dim-cap-sum">Theorem 3.77</a> now allows to quickly compute $\dim (U+W)=\dim U + \dim W - \dim (U \cap W) = 3+2-1=4$. By <a href="../spaces-dimension/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.71</a>, we therefore obtain $U+W = \mathbf R^4$. Thus the standard basis $e_1, \dots, e_4$ is a basis of $U+W = \mathbf R^4$.
 
 *Typical mistake:* One should not mix up columns and rows. While it is in principle possible to consider a matrix whose *columns* are the vectors $u_1, ...$, one then needs to perform elementary column operations. These are not discussed in these lecture notes (and are not necessary). For consistency with the methods applied in these notes, it is advisable to only write down these vectors in rows as mentioned above.
 
-Part (3) We know that $\dim W=2$, so if we want that $U' \oplus W = {\bf R}^4$, we must have $\dim U' = 2$ by <a href="../spaces/#rem-dimension-direct-sum" data-reference-type="ref+Label" data-reference="rem:dimension-direct-sum">Remark 3.65</a> Since we know that $U \cap W = {\bf R} (1,1,1,0)$, it therefore is enough to find two linearly independent vectors $u'_1, u'_2 \in U$ that are both independent of $r := (1,1,1,0)$. For example, $u'_1 = u_1$, $u'_2 = u_2$ satisfy these requirements, as one sees by bringing
+Part (3) We know that $\dim W=2$, so if we want that $U' \oplus W = {\bf R}^4$, we must have $\dim U' = 2$ by <a href="../spaces-dimension/#rem-dimension-direct-sum" data-reference-type="ref+Label" data-reference="rem:dimension-direct-sum">Remark 3.68</a> Since we know that $U \cap W = {\bf R} (1,1,1,0)$, it therefore is enough to find two linearly independent vectors $u'_1, u'_2 \in U$ that are both independent of $r := (1,1,1,0)$. For example, $u'_1 = u_1$, $u'_2 = u_2$ satisfy these requirements, as one sees by bringing
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{c} u_1 \\ u_2 \\ r \end{array} \right ) = \left ( \begin{array}{cccc} 1 & -2 & 0 & 1 \\ -1 & 1 & 2 & 0 \\ 1 & 1 & 1 & 0 \end{array} \right )
@@ -2219,7 +2219,7 @@ into row-echelon form.
 
 <p class="env-number"><strong>Solution 4.13.43</strong></p>
 
-<span id="sol-ex-maps-partial-2026-2" label="sol--ex:maps-partial-2026-2"></span> (See <a href="../maps/#ex-maps-partial-2026-2" data-reference-type="ref+Label" data-reference="ex:maps-partial-2026-2">Exercise 4.47</a>.) Part (1): Using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>) we bring the matrix $A$ into row echelon form (as far as possible):
+<span id="sol-ex-maps-partial-2026-2" label="sol--ex:maps-partial-2026-2"></span> (See <a href="../exercises-maps/#ex-maps-partial-2026-2" data-reference-type="ref+Label" data-reference="ex:maps-partial-2026-2">Exercise 4.47</a>.) Part (1): Using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>) we bring the matrix $A$ into row echelon form (as far as possible):
 <div class="arithmatex" markdown="1">
 \[
 A = \begin{pmatrix}

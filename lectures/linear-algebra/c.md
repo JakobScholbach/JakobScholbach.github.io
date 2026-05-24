@@ -205,7 +205,7 @@ holds exactly if
 
 <span id="eq-mod-2pi" label="eq:mod-2pi"></span>
 
-This ambiguity of the argument has to taken into account when solving equations involving complex numbers in trigonometric form. See <a href="#ex-complex-2" data-reference-type="ref+Label" data-reference="ex:complex-2">Exercise 1.5</a> and its solution for a worked example.
+This ambiguity of the argument has to taken into account when solving equations involving complex numbers in trigonometric form. See <a href="../exercises-c/#ex-complex-2" data-reference-type="ref+Label" data-reference="ex:complex-2">Exercise 1.5</a> and its solution for a worked example.
 
 <div class="example" markdown="1">
 
@@ -282,7 +282,7 @@ Each of these identities is checked by unraveling the definitions.
 
 In the parlance of abstract algebra, one says that the complex numbers form a *field*, exactly as the real or the rational numbers do.
 
-Why do we care (in linear algebra) about the complex numbers? The study of eigenvalues, a cornerstone of linear algebra and its applications throughout all sciences, is concerned with finding a zero of a given polynomial. We will apply the following theorem in <a href="../eigenvalues/#cor-cx-matrix-eigenvalues" data-reference-type="ref+Label" data-reference="cor:cx-matrix-eigenvalues">Corollary 6.10</a>.
+Why do we care (in linear algebra) about the complex numbers? The study of eigenvalues, a cornerstone of linear algebra and its applications throughout all sciences, is concerned with finding a zero of a given polynomial. We will apply the following theorem in <a href="../eigenvalues-characteristic-polynomial/#cor-cx-matrix-eigenvalues" data-reference-type="ref+Label" data-reference="cor:cx-matrix-eigenvalues">Corollary 6.10</a>.
 
 <div class="theorem" markdown="1">
 
@@ -315,7 +315,7 @@ The Fundamental Theorem of Algebra states a much stronger result: not only this 
 
 This theorem is famous for a large number of independent proofs:
 
-- There are short proofs only using basic calculus (such as the intermediate value theorem). For example .
+- There are short proofs only using basic calculus (such as the intermediate value theorem). For example (Oliveira 2011).
 
 - There is a beautiful proof whose essence can be understood purely graphically, as is explained for example in this video <https://www.youtube.com/watch?v=RBRVL6nP2Dk>. (However, to turn that geometric idea into a rigorous proof does require developing more theory.)
 
@@ -344,7 +344,7 @@ This will be equal to $1 = 1 \cdot (\cos 0 + i \sin 0)$ exactly if $r^n = 1$ and
 
 </div>
 
-This is an illustration of the case $n = 5$, in which case there are 5 solutions. (Indeed, $\cos (\frac65 \cdot 2\pi) + \sin (\frac 65 \cdot 2 \pi) = \cos (\frac15 \cdot 2\pi) + \sin (\frac 15 \cdot 2 \pi)$ since winding around by $\frac 65 \cdot 2\pi = 432^\circ$ is the same as winding around by $\frac 15 \cdot 2 \pi = 72^\circ$.)
+This is an illustration of the case $n = 5$, in which case there are 5 solutions. (Indeed, $\cos (\frac65 \cdot 2\pi) + i\sin (\frac 65 \cdot 2 \pi) = \cos (\frac15 \cdot 2\pi) + i\sin (\frac 15 \cdot 2 \pi)$ since winding around by $\frac 65 \cdot 2\pi = 432^\circ$ is the same as winding around by $\frac 15 \cdot 2 \pi = 72^\circ$.)
 
 </div>
 
@@ -357,10 +357,10 @@ z^n = w
 (for a natural number $n \ge 1$ and a fixed complex number $w$) can be conveniently solved as follows. Write $w = r (\cos \alpha + i \sin \alpha)$ in trigonometric form. Then there are $n$ solutions (distinct, unless $w = 0$) of the above equation, namely
 <div class="arithmatex" markdown="1">
 \[
-z = \sqrt[n]r (\cos (\frac{\alpha + 2k\pi}n) + i \sin \sin (\frac{\alpha + 2k\pi}n)),
+z = \sqrt[n]r (\cos (\frac{\alpha + 2k\pi}n) + i \sin (\frac{\alpha + 2k\pi}n)),
 \]
 </div>
-where $k \in \{0, 1, \dots, n-1\}$. This formula is known as *de Moivre’s formula*. See <a href="#ex-complex-3" data-reference-type="ref+Label" data-reference="ex:complex-3">Exercise 1.6</a> for a concrete example.
+where $k \in \{0, 1, \dots, n-1\}$. This formula is known as *de Moivre’s formula*. See <a href="../exercises-c/#ex-complex-3" data-reference-type="ref+Label" data-reference="ex:complex-3">Exercise 1.6</a> for a concrete example.
 
 ## The complex exponential function
 
@@ -430,12 +430,12 @@ In this section, we briefly deal the corresponding situation in the complex case
 </div>
 <div class="arithmatex" markdown="1">
 \[
-\sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}x^{2n+1} = x - \frac{x^3}6 + \frac{x^5}{120} \mp \dots,
+\sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}z^{2n+1} = z - \frac{z^3}6 + \frac{z^5}{120} \mp \dots,
 \]
 </div>
 <div class="arithmatex" markdown="1">
 \[
-\sum_{n=0}^\infty  \frac{(-1)^n}{(2n)!}x^{2n} = 1 - \frac{x^2}2 + \frac{x^4}{24} \mp \dots
+\sum_{n=0}^\infty  \frac{(-1)^n}{(2n)!}z^{2n} = 1 - \frac{z^2}2 + \frac{z^4}{24} \mp \dots
 \]
 </div>
 converge, i.e., they are a well-defined complex number. We denote them by $\exp(z)$, $\sin(z)$ and $\cos(z)$, respectively. (Some authors also write $e^z$ for $\exp (z)$).
@@ -501,7 +501,7 @@ Equivalently, we have *Euler’s identity*
 \exp ib = \sum_{n=0}^\infty \frac{(ib)^n}{n!} = 1 + ib + \frac{(ib)^2}2 + \frac{(ib)^3}6 + \frac{(ib)^4}{24} + \dots
 \]
 </div>
-We have $(ib)^n= i^n b^n$. We note that $i^n$ only depends on the residue of $n$ after dividing by 4, since $i=i^5=i^9$ etc. Indeed, $i^4 = i \cdot i \dot i \cdot i = (-1)(-1) = 1$. We group the terms in the above series according to even and odd $n$ (and basic calculus ensures that this is a legitimate process in this situation):
+We have $(ib)^n= i^n b^n$. We note that $i^n$ only depends on the residue of $n$ after dividing by 4, since $i=i^5=i^9$ etc. Indeed, $i^4 = i \cdot i \cdot i \cdot i = (-1)(-1) = 1$. We group the terms in the above series according to even and odd $n$ (and basic calculus ensures that this is a legitimate process in this situation):
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -516,180 +516,11 @@ We have $(ib)^n= i^n b^n$. We note that $i^n$ only depends on the residue of $n$
 
 </div>
 
-## Exercises
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div class="exercise" markdown="1">
+<div id="ref-Oliveira" class="csl-entry">
 
-Compute the following complex numbers in the form $z = a+ib$:
-
-- $(1-i)(2+i)$
-
-- $(1+i)^3 (:=(1+i)(1+i)(1+i))$
-
-- $i^{89}$
-
-- $e^{-i\pi}$
-
-- $3 (\cos (\pi / 2) + i \sin (\pi / 2))$
-
-- $\frac{\sqrt 3 + \sqrt 2 i}{\sqrt 2 - \sqrt 3 i}$
-
-Depict these complex numbers on the complex plane.
-
-</div>
-
-<div class="exercise" markdown="1">
-
-Prove that a complex number $z$ is a real number exactly if $z = \overline z$.
-
-</div>
-
-<div class="exercise" markdown="1">
-
-Compute the trigonometric form of the following complex numbers:
-
-- $\sqrt 3-i$.
-
-- $(1-i)^5$
-
-- $\frac{1+i}{(1-i)(\sqrt 3+i)}$
-
-- $i^n$, where $n$ is a natural number.
-
-</div>
-
-<div class="exercise" markdown="1">
-
-
-<p class="env-number"><strong>Exercise 1.4</strong></p>
-
-<span id="ex-complex-1" label="ex:complex-1"></span> (See <a href="#sol-ex-complex-1" data-reference-type="ref+Label" data-reference="sol--ex:complex-1">Solution 1.5.1</a>.) Compute the algebraic and the trigonometric form of $z = \left ( \frac{i-1}{i+1}\right )^3$.
-
-</div>
-
-<div class="exercise" markdown="1">
-
-
-<p class="env-number"><strong>Exercise 1.5</strong></p>
-
-<span id="ex-complex-2" label="ex:complex-2"></span> (See <a href="#sol-ex-complex-2" data-reference-type="ref+Label" data-reference="sol--ex:complex-2">Solution 1.5.2</a>.) Find all complex numbers $z$ satisfying the equation
-<div class="arithmatex" markdown="1">
-\[
-z = 3i |z|\overline z.
-\]
-</div>
-
-</div>
-
-<div class="exercise" markdown="1">
-
-
-<p class="env-number"><strong>Exercise 1.6</strong></p>
-
-<span id="ex-complex-3" label="ex:complex-3"></span> (See <a href="#sol-ex-complex-3" data-reference-type="ref+Label" data-reference="sol--ex:complex-3">Solution 1.5.3</a>.) Compute the solutions of the equation $(\overline z)^3 = 8i$ in algebraic and in trigonmetric form. Draw a picture of these solutions.
-
-</div>
-
-## Solutions to the exercises
-
-<div class="solution" markdown="1">
-
-
-<p class="env-number"><strong>Solution 1.5.1</strong></p>
-
-<span id="sol-ex-complex-1" label="sol--ex:complex-1"></span> (See <a href="#ex-complex-1" data-reference-type="ref+Label" data-reference="ex:complex-1">Exercise 1.4</a>.) We have $\frac{i-1}{i+1} = \frac{(i-1)\overline{i+1}}{|i+1|^2} = \frac{(i-1)(1-i)}{2} = i$. Thus $z=i^3 = -i$ is the algebraic form. We have $|z|=1$ and ${\mathrm {arg}} z = \frac 32 \pi$, so
-<div class="arithmatex" markdown="1">
-\[
-z = \cos(\frac 32 \pi) + i \sin \frac 32 \pi.
-\]
-</div>
-
-</div>
-
-<div class="solution" markdown="1">
-
-
-<p class="env-number"><strong>Solution 1.5.2</strong></p>
-
-<span id="sol-ex-complex-2" label="sol--ex:complex-2"></span> (See <a href="#ex-complex-2" data-reference-type="ref+Label" data-reference="ex:complex-2">Exercise 1.5</a>.) In order to solve
-<div class="arithmatex" markdown="1">
-\[
-z = 3i |z|\overline z
-\]
-</div>
-we would like to divide by $z$. This is only possible if $z \ne 0$, so we first consider the case $z = 0$. In this case both sides of the equation are equal to 0, so $z=0$ is indeed a solution. Now, we consider $z \ne 0$ and divide the above equation by $z$ and obtain
-<div class="arithmatex" markdown="1">
-\[
-1 = 3i |z| \frac{\overline z}z.
-\]
-</div>
-There are different ways to solve this equation. One may put $z = a+ib$ and solve the resulting quadratic equation. For illustrational purposes, we rather consider the trigonometric form $z = r (\cos \alpha + i \sin \alpha)$. Then $\overline z = r (\cos \alpha - i \sin \alpha) = r (\cos (-\alpha) + i \sin (-\alpha))$, and
-<div class="arithmatex" markdown="1">
-\[
-|z| \frac{\overline z}z = r \frac{r (\cos (-\alpha) + i \sin (-\alpha))}{r (\cos (\alpha) + i \sin (\alpha))}.
-\]
-</div>
-Note that $r = |z| \ne 0$, so we can cancel this in the right-hand fraction. We have
-<div class="arithmatex" markdown="1">
-\[
-\frac{\cos (-\alpha) + i \sin (-\alpha)}{\cos (\alpha) + i \sin (\alpha)} = \cos(-2\alpha) + i \sin(-2\alpha).
-\]
-</div>
-We then obtain
-<div class="arithmatex" markdown="1">
-\[
-\frac 1{3i} = -\frac 13 i = |z| \frac{\overline z}z = r (\cos(-2\alpha) + i \sin(-2\alpha)).
-\]
-</div>
-This implies $r = \frac 13$. Concerning the arguments, we have to be more careful: the above equation is equivalent to saying that
-<div class="arithmatex" markdown="1">
-\[
--2 \alpha \equiv \frac 32 \pi \mod 2 \pi
-\]
-</div>
-cf. around <a href="#eq-mod-2pi" data-reference-type="eqref" data-reference="eq:mod-2pi">Equation (1.6)</a>. There are two solutions: $-2 \alpha = \frac 32 \pi$ or $- 2\alpha = \frac 32 \pi + 2 \pi$. The former yields $\alpha = -\frac 34 \pi$, the latter $\alpha = \frac \pi 4$. (Of course, we can now add integer multiples of $2\pi$ to these values of $\alpha$, so $\alpha = \frac 54 \pi$ is another solution. However, this gives the same value for $z$.) The resulting solutions are
-<div class="arithmatex" markdown="1">
-\[
-z = \frac 1 3 (\cos(-\frac 34 \pi) + i \sin (-\frac 34 \pi))
-\]
-</div>
-and
-<div class="arithmatex" markdown="1">
-\[
-z = \frac 1 3 (\cos(\frac 14 \pi) + i \sin (\frac 14 \pi)).
-\]
-</div>
-To sum up, the above equation has three solutions, $z = 0$ and these two solutions.
-
-</div>
-
-<div class="solution" markdown="1">
-
-
-<p class="env-number"><strong>Solution 1.5.3</strong></p>
-
-<span id="sol-ex-complex-3" label="sol--ex:complex-3"></span> (See <a href="#ex-complex-3" data-reference-type="ref+Label" data-reference="ex:complex-3">Exercise 1.6</a>.) There are three solutions, namely
-<div class="arithmatex" markdown="1">
-\[
-z_0 = \sqrt 3 - i = 2 (\cos (-\pi/6) + i \sin(-\pi/6)),
-\]
-</div>
-<div class="arithmatex" markdown="1">
-\[
-z_1 = -\sqrt 3 - i = 2 (\cos (-5\pi/6) + i \sin(-5\pi/6)),
-\]
-</div>
-<div class="arithmatex" markdown="1">
-\[
-z_2 = 2i = 2 (\cos (-3\pi/2) + i \sin(-3\pi/2)).
-\]
-</div>
-
-Here is a picture:
-
-<div class="center" markdown="1">
-
-![image](figures/png/solutions/solutions-fig-01.png)
+Oliveira, Oswaldo Rio Branco de. 2011. *The Fundamental Theorem of Algebra: A Most Elementary Proof*. <https://doi.org/10.4169/amer.math.monthly.119.09.753>.
 
 </div>
 

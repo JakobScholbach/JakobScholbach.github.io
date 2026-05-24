@@ -3,7 +3,7 @@
 
 <p class="env-number"><strong>Solution 2.7.1</strong></p>
 
-<span id="sol-ex-equation-no-solutions" label="sol--ex:equation-no-solutions"></span> (See <a href="../systems-gaussian-elimination/#ex-equation-no-solutions" data-reference-type="ref+Label" data-reference="ex:equation-no-solutions">Exercise 2.6</a>.) If $a \ne 0$ *or* $b \ne 0$, then the equation $ax+by = c$ has infinitely many solutions. Indeed, if, say $a \ne 0$, we can subtract $by$ and divide by $a$, which gives $x = \frac{c-by}a$. Thus, for any $y \in {\bf R}$, the pair $(x=\frac{c-by}a, y)$ is a solution. A similar analysis works if $b \ne 0$. It remains to consider the case in which $a=0$ and $b=0$. In this case the solution set of the equation depends on $c$:
+<span id="sol-ex-equation-no-solutions" label="sol--ex:equation-no-solutions"></span> (See <a href="../exercises-systems/#ex-equation-no-solutions" data-reference-type="ref+Label" data-reference="ex:equation-no-solutions">Exercise 2.6</a>.) If $a \ne 0$ *or* $b \ne 0$, then the equation $ax+by = c$ has infinitely many solutions. Indeed, if, say $a \ne 0$, we can subtract $by$ and divide by $a$, which gives $x = \frac{c-by}a$. Thus, for any $y \in {\bf R}$, the pair $(x=\frac{c-by}a, y)$ is a solution. A similar analysis works if $b \ne 0$. It remains to consider the case in which $a=0$ and $b=0$. In this case the solution set of the equation depends on $c$:
 
 - If $c = 0$, then *any* pair $(x,y)$ is a solution. Indeed: $0 x + 0y= 0$ holds true then. Thus, if $a=b=c=0$, there are infinitely many solutions.
 
@@ -16,7 +16,7 @@
 
 <p class="env-number"><strong>Solution 2.7.2</strong></p>
 
-<span id="sol-ex-systems-1-a" label="sol--ex:systems-1-a"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-a" data-reference-type="ref+Label" data-reference="ex:systems-1-a">Exercise 2.10</a>.) The matrix associated to the system is as follows, and we bring it to reduced row echelon form:
+<span id="sol-ex-systems-1-a" label="sol--ex:systems-1-a"></span> (See <a href="../exercises-systems/#ex-systems-1-a" data-reference-type="ref+Label" data-reference="ex:systems-1-a">Exercise 2.10</a>.) The matrix associated to the system is as follows, and we bring it to reduced row echelon form:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -43,7 +43,7 @@ We have two leading ones (underlined), so the third unknown $x_3$ is a free vari
 
 <p class="env-number"><strong>Solution 2.7.3</strong></p>
 
-<span id="sol-ex-systems-1-b" label="sol--ex:systems-1-b"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-b" data-reference-type="ref+Label" data-reference="ex:systems-1-b">Exercise 2.12</a>.) We apply <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>. The matrix associated to the system is
+<span id="sol-ex-systems-1-b" label="sol--ex:systems-1-b"></span> (See <a href="../exercises-systems/#ex-systems-1-b" data-reference-type="ref+Label" data-reference="ex:systems-1-b">Exercise 2.12</a>.) We apply <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>. The matrix associated to the system is
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{cccc|c} 1 & -1 & 1 & 0 & -2 \\ 0 & 0 & 1 & -1 & 1 \\ 1 & -1 & 0 & 1 & -3 \\ 1 & -1 & 3 & -2 & 0 \end{array} \right ).
@@ -102,7 +102,7 @@ which we solve as $x_3 = 1 + \beta$ and $x_1 = \alpha-\beta-3$. Thus, the soluti
 
 <p class="env-number"><strong>Solution 2.7.4</strong></p>
 
-<span id="sol-ex-systems-1-c" label="sol--ex:systems-1-c"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-c" data-reference-type="ref+Label" data-reference="ex:systems-1-c">Exercise 2.14</a>.) Hint: we will apply Gaussian elimination, but it simplifies the calculations to do a certain change of rows first. (Why is that allowed?)
+<span id="sol-ex-systems-1-c" label="sol--ex:systems-1-c"></span> (See <a href="../exercises-systems/#ex-systems-1-c" data-reference-type="ref+Label" data-reference="ex:systems-1-c">Exercise 2.14</a>.) Hint: we will apply Gaussian elimination, but it simplifies the calculations to do a certain change of rows first. (Why is that allowed?)
 
 </div>
 
@@ -111,7 +111,7 @@ which we solve as $x_3 = 1 + \beta$ and $x_1 = \alpha-\beta-3$. Thus, the soluti
 
 <p class="env-number"><strong>Solution 2.7.5</strong></p>
 
-<span id="sol-ex-systems-1-d" label="sol--ex:systems-1-d"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-d" data-reference-type="ref+Label" data-reference="ex:systems-1-d">Exercise 2.17</a>.) Suppose $x_1 = 1-t$, $x_2 = 2+3t$ and $x_3 = 4t$. We have to determine whether there is some $t\in {\bf R}$ such that for these choices of $x_1, x_2, x_3$, we have a solution of the given system, i.e., whether
+<span id="sol-ex-systems-1-d" label="sol--ex:systems-1-d"></span> (See <a href="../exercises-systems/#ex-systems-1-d" data-reference-type="ref+Label" data-reference="ex:systems-1-d">Exercise 2.17</a>.) Suppose $x_1 = 1-t$, $x_2 = 2+3t$ and $x_3 = 4t$. We have to determine whether there is some $t\in {\bf R}$ such that for these choices of $x_1, x_2, x_3$, we have a solution of the given system, i.e., whether
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -138,7 +138,7 @@ This system has no solutions, so there is no $t \in {\bf R}$ such that the vecto
 
 <p class="env-number"><strong>Solution 2.7.6</strong></p>
 
-<span id="sol-ex-systems-1-e" label="sol--ex:systems-1-e"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-e" data-reference-type="ref+Label" data-reference="ex:systems-1-e">Exercise 2.19</a>.) We substitute $x_1 = 1+t$, $x_2 = t+q$ and $x_3 = -t+2q+1$ into the given equation and get the equation
+<span id="sol-ex-systems-1-e" label="sol--ex:systems-1-e"></span> (See <a href="../exercises-systems/#ex-systems-1-e" data-reference-type="ref+Label" data-reference="ex:systems-1-e">Exercise 2.19</a>.) We substitute $x_1 = 1+t$, $x_2 = t+q$ and $x_3 = -t+2q+1$ into the given equation and get the equation
 <div class="arithmatex" markdown="1">
 \[
 3(1+t)+2(t+q)-(-t+2q+1)=5.
@@ -165,7 +165,7 @@ satisfies the requested conditions. Note that these are infinitely many solution
 
 <p class="env-number"><strong>Solution 2.7.7</strong></p>
 
-<span id="sol-ex-systems-1-f" label="sol--ex:systems-1-f"></span> (See <a href="../systems-gaussian-elimination/#ex-systems-1-f" data-reference-type="ref+Label" data-reference="ex:systems-1-f">Exercise 2.20</a>.) We have to find $a_0, \dots, a_3$, so these are the unknowns. The conditions amount to the linear (!) system
+<span id="sol-ex-systems-1-f" label="sol--ex:systems-1-f"></span> (See <a href="../exercises-systems/#ex-systems-1-f" data-reference-type="ref+Label" data-reference="ex:systems-1-f">Exercise 2.20</a>.) We have to find $a_0, \dots, a_3$, so these are the unknowns. The conditions amount to the linear (!) system
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -227,7 +227,7 @@ p(x) = 5 - 7 x + x^2 + x^3.
 
 <p class="env-number"><strong>Solution 2.7.8</strong></p>
 
-<span id="sol-ex-maps-exercise-008" label="sol--ex:maps-exercise-008"></span> (See <a href="../systems-gaussian-elimination/#ex-maps-exercise-008" data-reference-type="ref+Label" data-reference="ex:maps-exercise-008">Exercise 2.25</a>.) We solve, for each $\lambda\in\mathbf R$, the system by Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>):
+<span id="sol-ex-maps-exercise-008" label="sol--ex:maps-exercise-008"></span> (See <a href="../exercises-systems/#ex-maps-exercise-008" data-reference-type="ref+Label" data-reference="ex:maps-exercise-008">Exercise 2.25</a>.) We solve, for each $\lambda\in\mathbf R$, the system by Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>):
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc|c} \lambda & 0 & 0 & 0\\ 0 & \lambda & 1+\lambda & 1\\ \lambda & 1 & 2 & 3 \end{array} \right )
@@ -263,7 +263,7 @@ We would like to divide the first row by $\lambda$, which however is only a legi
     x_1=0,\qquad x_3=\frac{3\lambda-1}{\lambda-1}=\frac{1-3\lambda}{1-\lambda},\qquad x_2=3-2x_3.
 \]
 </div>
-    So the solution is unique.
+So the solution is unique.
 
 *Summary:*
 

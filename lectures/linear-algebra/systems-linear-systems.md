@@ -7,7 +7,7 @@ title: Systems: Linear Systems
 <div class="definition" markdown="1">
 
 
-<p class="env-number"><strong>Definition 2.7</strong></p>
+<p class="env-number"><strong>Definition 2.7</strong> (Related exercises: <a href="../exercises-spaces/#ex-linear-combination-r3">Exercise 3.19</a>)</p>
 
 <span id="def-systems-definition-002" label="def:systems-definition-002"></span> A *system of linear equations* is a collection of linear equations (involving the same variables). It is also sometimes called a *linear system* or even just a *system*.
 
@@ -192,7 +192,7 @@ can take three forms:\
 <div class="definition" markdown="1">
 
 
-<p class="env-number"><strong>Definition 2.13</strong></p>
+<p class="env-number"><strong>Definition 2.13</strong> (Related exercises: <a href="../exercises-spaces/#ex-basis-w1-r4">Exercise 3.22</a>, <a href="../exercises-spaces/#ex-intersection-tw">Exercise 3.17</a>, <a href="../exercises-spaces/#ex-matrix-subspace">Exercise 3.14</a>)</p>
 
 <span id="def-homogeneous-linear-system" label="def:homogeneous-linear-system"></span> A *homogeneous linear system* is one in which the constant terms in all equations are zero. (I.e., in the notation in below, $b_1 = \dots = b_n = 0$.)
 

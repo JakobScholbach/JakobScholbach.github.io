@@ -3,15 +3,15 @@
 
 <p class="env-number"><strong>Solution 6.6.1</strong></p>
 
-<span id="sol-ex-eigenvalues-exercise-001" label="sol--ex:eigenvalues-exercise-001"></span> (See <a href="../eigenvalues/#ex-eigenvalues-exercise-001" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-001">Exercise 6.1</a>.) To decide whether the matrix $A = \left ( \begin{array}{ccc} 2 & 1 & 1 \\ 0 & 1 & 0 \\ 1 & -1 & 2 \end{array} \right )$ is diagonalizable, we follow <a href="../eigenvalues/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>.
+<span id="sol-ex-eigenvalues-exercise-001" label="sol--ex:eigenvalues-exercise-001"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-001" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-001">Exercise 6.1</a>.) To decide whether the matrix $A = \left ( \begin{array}{ccc} 2 & 1 & 1 \\ 0 & 1 & 0 \\ 1 & -1 & 2 \end{array} \right )$ is diagonalizable, we follow <a href="../eigenvalues-diagonalization/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>.
 
-We first compute the characteristic polynomial and eigenvalues. We compute $\chi_A(t) = \det(A - t \cdot \mathrm{id}_3)$, cf. <a href="../eigenvalues/#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>. Expanding the determinant of
+We first compute the characteristic polynomial and eigenvalues. We compute $\chi_A(t) = \det(A - t \cdot \mathrm{id}_3)$, cf. <a href="../eigenvalues-characteristic-polynomial/#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>. Expanding the determinant of
 <div class="arithmatex" markdown="1">
 \[
 A - t \cdot \mathrm{id}_3 = \left ( \begin{array}{ccc} 2-t & 1 & 1 \\ 0 & 1-t & 0 \\ 1 & -1 & 2-t \end{array} \right ),
 \]
 </div>
-by developing along the second row (<a href="../determinants/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), we get
+by developing along the second row (<a href="../determinants-further-properties/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), we get
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -41,9 +41,9 @@ A - \mathrm{id}_3 = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 0 & 0 \\ 1 & -1 
 </div>
 So $E_1 = \ker(A - \mathrm{id}_3) = L\bigl((-1, 0, 1)\bigr)$. Hence the rank is 2, so $\dim E_1 = 1$.
 
-Finally, we check diagonalizability. By <a href="../eigenvalues/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, $A$ is diagonalizable if and only if $\dim E_1 + \dim E_3 = 3$. We have $\dim E_1 = 1$ and $\dim E_3 = 1$, so $\dim E_1 + \dim E_3 = 2 \ne 3$. Therefore, $A$ is not diagonalizable.
+Finally, we check diagonalizability. By <a href="../eigenvalues-diagonalization/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, $A$ is diagonalizable if and only if $\dim E_1 + \dim E_3 = 3$. We have $\dim E_1 = 1$ and $\dim E_3 = 1$, so $\dim E_1 + \dim E_3 = 2 \ne 3$. Therefore, $A$ is not diagonalizable.
 
-Indeed, the eigenvalue $\lambda_1 = 1$ has algebraic multiplicity 2 but its eigenspace has dimension only 1, which is the obstruction to diagonalizability, cf. also <a href="../eigenvalues/#lem-eigenvalues-lemma-001" data-reference-type="ref+Label" data-reference="lem:eigenvalues-lemma-001">Lemma 6.18</a>.
+Indeed, the eigenvalue $\lambda_1 = 1$ has algebraic multiplicity 2 but its eigenspace has dimension only 1, which is the obstruction to diagonalizability, cf. also <a href="../eigenvalues-diagonalization/#lem-eigenvalues-lemma-001" data-reference-type="ref+Label" data-reference="lem:eigenvalues-lemma-001">Lemma 6.18</a>.
 
 </div>
 
@@ -52,9 +52,9 @@ Indeed, the eigenvalue $\lambda_1 = 1$ has algebraic multiplicity 2 but its eige
 
 <p class="env-number"><strong>Solution 6.6.2</strong></p>
 
-<span id="sol-exercise-eigenvalues-2x2" label="sol--exercise.eigenvalues.2x2"></span> (See <a href="../eigenvalues/#exercise-eigenvalues-2x2" data-reference-type="ref+Label" data-reference="exercise.eigenvalues.2x2">Exercise 6.2</a>.) For $A = \left ( \begin{array}{cc} a & b \\ c & d \end{array} \right )$ we have $A - t\,\mathrm{id}_2 = \left ( \begin{array}{cc} a-t & b \\ c & d-t \end{array} \right )$.
+<span id="sol-exercise-eigenvalues-2x2" label="sol--exercise.eigenvalues.2x2"></span> (See <a href="../exercises-eigenvalues/#exercise-eigenvalues-2x2" data-reference-type="ref+Label" data-reference="exercise.eigenvalues.2x2">Exercise 6.2</a>.) For $A = \left ( \begin{array}{cc} a & b \\ c & d \end{array} \right )$ we have $A - t\,\mathrm{id}_2 = \left ( \begin{array}{cc} a-t & b \\ c & d-t \end{array} \right )$.
 
-By definition (<a href="../eigenvalues/#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>):
+By definition (<a href="../eigenvalues-characteristic-polynomial/#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>):
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -65,7 +65,7 @@ By definition (<a href="../eigenvalues/#dlm-eigenvalues-definitionlemma-001" dat
 \end{align*}
 \]
 </div>
-where $\mathrm{tr}(A)=a+d$ is the trace (see <a href="../maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>).
+where $\mathrm{tr}(A)=a+d$ is the trace (see <a href="../exercises-maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>).
 
 The eigenvalues are the roots of $\chi_A(t)=0$, hence
 <div class="arithmatex" markdown="1">
@@ -89,7 +89,7 @@ By the quadratic formula,
 
 <p class="env-number"><strong>Solution 6.6.3</strong></p>
 
-<span id="sol-ex-eigenvalues-exercise-002" label="sol--ex:eigenvalues-exercise-002"></span> (See <a href="../eigenvalues/#ex-eigenvalues-exercise-002" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-002">Exercise 6.3</a>.) We compute $\chi_A(t)$, eigenvalues, eigenspaces, and diagonalizability for each matrix, following <a href="../eigenvalues/#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a> and <a href="../eigenvalues/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>.
+<span id="sol-ex-eigenvalues-exercise-002" label="sol--ex:eigenvalues-exercise-002"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-002" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-002">Exercise 6.3</a>.) We compute $\chi_A(t)$, eigenvalues, eigenspaces, and diagonalizability for each matrix, following <a href="../eigenvalues-characteristic-polynomial/#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a> and <a href="../eigenvalues-diagonalization/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>.
 
 1.  $A = \left ( \begin{array}{cc} 3 & 5 \\ 1 & -1 \end{array} \right )$.
 
@@ -102,9 +102,9 @@ By the quadratic formula,
     \end{align*}
 \]
 </div>
-    So the eigenvalues of $A$ are $4$ and $-2$. Since these are two distinct eigenvalues, $A$ is diagonalizable by <a href="../eigenvalues/#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a>. One computes the eigenspaces and thus an eigenbasis for example using Gaussian elimination. For $\lambda=4$, $A-4\,\mathrm{id}_2 = \left ( \begin{array}{cc} -1 & 5 \\ 1 & -5 \end{array} \right ) \leadsto x=5y,$ so $E_4 = L((5,1))$.
+So the eigenvalues of $A$ are $4$ and $-2$. Since these are two distinct eigenvalues, $A$ is diagonalizable by <a href="../eigenvalues-diagonalization/#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a>. One computes the eigenspaces and thus an eigenbasis for example using Gaussian elimination. For $\lambda=4$, $A-4\,\mathrm{id}_2 = \left ( \begin{array}{cc} -1 & 5 \\ 1 & -5 \end{array} \right ) \leadsto x=5y,$ so $E_4 = L((5,1))$.
 
-    For $\lambda=-2$, $A+2\,\mathrm{id}_2 = \left ( \begin{array}{cc} 5 & 5 \\ 1 & 1 \end{array} \right ) \leadsto x=-y,$ so $E_{-2} = L((-1,1))$. An eigenbasis for $A$ is $\bigl((5,1),(-1,1)\bigr)$ (cf. <a href="../eigenvalues/#def-eigenbasis" data-reference-type="ref+Label" data-reference="def:eigenbasis">Definition 6.17</a>).
+    For $\lambda=-2$, $A+2\,\mathrm{id}_2 = \left ( \begin{array}{cc} 5 & 5 \\ 1 & 1 \end{array} \right ) \leadsto x=-y,$ so $E_{-2} = L((-1,1))$. An eigenbasis for $A$ is $\bigl((5,1),(-1,1)\bigr)$ (cf. <a href="../eigenvalues-diagonalization/#def-eigenbasis" data-reference-type="ref+Label" data-reference="def:eigenbasis">Definition 6.17</a>).
 
 2.  For the given matrix $A$, we get
 <div class="arithmatex" markdown="1">
@@ -117,20 +117,20 @@ By the quadratic formula,
     \end{align*}
 \]
 </div>
-    The eigenvalues are $2$ and $-1$ (the latter with algebraic multiplicity 2). Since there are only 2 (not 3) distinct eigenvalues We cannot use <a href="../eigenvalues/#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a> to decide diagonalizability, so we need to compute the eigenspaces. For $\lambda=2$:
+The eigenvalues are $2$ and $-1$ (the latter with algebraic multiplicity 2). Since there are only 2 (not 3) distinct eigenvalues We cannot use <a href="../eigenvalues-diagonalization/#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a> to decide diagonalizability, so we need to compute the eigenspaces. For $\lambda=2$:
 <div class="arithmatex" markdown="1">
 \[
     A-2\,\mathrm{id}_3 = \left ( \begin{array}{ccc} -2 & 1 & 0 \\ 3 & -2 & 1 \\ 2 & 0 & -2 \end{array} \right ) \leadsto E_2 = L((1,2,1)).
 \]
 </div>
 
-    For $\lambda=-1$:
+For $\lambda=-1$:
 <div class="arithmatex" markdown="1">
 \[
     A+\mathrm{id}_3 = \left ( \begin{array}{ccc} 1 & 1 & 0 \\ 3 & 1 & 1 \\ 2 & 0 & 1 \end{array} \right ) \leadsto E_{-1} = L((-1,1,2)).
 \]
 </div>
-    Hence $\dim E_2 + \dim E_{-1} = 1+1=2<3$, so $A$ is not diagonalizable; i.e., does not have an eigenbasis.
+Hence $\dim E_2 + \dim E_{-1} = 1+1=2<3$, so $A$ is not diagonalizable; i.e., does not have an eigenbasis.
 
 3.  The matrix $A = \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 0 & \frac 32 \\ 0 & 0 & 1 \end{array} \right )$ is an upper triangular matrix. Thus the eigenvalues are diagonal entries: $1,0,1$. Thus
 <div class="arithmatex" markdown="1">
@@ -139,27 +139,27 @@ By the quadratic formula,
 \]
 </div>
 
-    For $\lambda=1$:
+For $\lambda=1$:
 <div class="arithmatex" markdown="1">
 \[
     A-\mathrm{id}_3 = \left ( \begin{array}{ccc} 0 & 0 & 0 \\ 0 & -1 & \frac 32 \\ 0 & 0 & 0 \end{array} \right ),
 \]
 </div>
-    so $y=\frac 32 z$, with $x,z$ free. Therefore
+so $y=\frac 32 z$, with $x,z$ free. Therefore
 <div class="arithmatex" markdown="1">
 \[
     E_1 = L((1,0,0),(0,3,2)), \quad \dim E_1=2.
 \]
 </div>
 
-    For $\lambda=0$ we solve $Av=0$, which gives $x=0$ and $z=0$, so
+For $\lambda=0$ we solve $Av=0$, which gives $x=0$ and $z=0$, so
 <div class="arithmatex" markdown="1">
 \[
     E_0 = L((0,1,0)), \quad \dim E_0=1.
 \]
 </div>
 
-    Hence $\dim E_1 + \dim E_0 = 3$, so $A$ is diagonalizable. An eigenbasis is $\bigl((1,0,0),(0,3,2),(0,1,0)\bigr).$
+Hence $\dim E_1 + \dim E_0 = 3$, so $A$ is diagonalizable. An eigenbasis is $\bigl((1,0,0),(0,3,2),(0,1,0)\bigr).$
 
 4.  The matrix $A = \left ( \begin{array}{ccc} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{array} \right )$. is again upper triangular, so the only eigenvalue is $0$ (algebraic multiplicity 3), and
 <div class="arithmatex" markdown="1">
@@ -167,21 +167,21 @@ By the quadratic formula,
     \chi_A(t) = (-t)^3.
 \]
 </div>
-    The eigenspace is $E_0=\ker A$. From
+The eigenspace is $E_0=\ker A$. From
 <div class="arithmatex" markdown="1">
 \[
     A\left ( \begin{array}{c} x \\ y \\ z \end{array} \right )
     = \left ( \begin{array}{c} y \\ z \\ 0 \end{array} \right ) = 0,
 \]
 </div>
-    we get $y=z=0$, $x$ free. So
+we get $y=z=0$, $x$ free. So
 <div class="arithmatex" markdown="1">
 \[
     E_0 = L((1,0,0)), \quad \dim E_0=1.
 \]
 </div>
 
-    Since $\dim E_0=1<3$, $A$ is not diagonalizable, and there is no eigenbasis.
+Since $\dim E_0=1<3$, $A$ is not diagonalizable, and there is no eigenbasis.
 
 </div>
 
@@ -190,13 +190,13 @@ By the quadratic formula,
 
 <p class="env-number"><strong>Solution 6.6.4</strong></p>
 
-<span id="sol-ex-eigenvalues-exercise-003" label="sol--ex:eigenvalues-exercise-003"></span> (See <a href="../eigenvalues/#ex-eigenvalues-exercise-003" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-003">Exercise 6.4</a>.) Consider
+<span id="sol-ex-eigenvalues-exercise-003" label="sol--ex:eigenvalues-exercise-003"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-003" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-003">Exercise 6.4</a>.) Consider
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 1 & 1 & 2 \\ 1 & 0 & 1 \end{array} \right ).
 \]
 </div>
-We compute the characteristic polynomial using <a href="../eigenvalues/#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>:
+We compute the characteristic polynomial using <a href="../eigenvalues-characteristic-polynomial/#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -229,7 +229,7 @@ E_1 = L((0,1,0)), \qquad \dim E_1 = 1.
 \]
 </div>
 
-By <a href="../eigenvalues/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, diagonalizability would require the sum of dimensions of eigenspaces to be $3$. Here there is only one eigenspace and its dimension is $1$, so $A$ is *not* diagonalizable. Consequently, there is no basis of ${\bf R}^3$ in which the associated matrix of $A$ is diagonal.
+By <a href="../eigenvalues-diagonalization/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, diagonalizability would require the sum of dimensions of eigenspaces to be $3$. Here there is only one eigenspace and its dimension is $1$, so $A$ is *not* diagonalizable. Consequently, there is no basis of ${\bf R}^3$ in which the associated matrix of $A$ is diagonal.
 
 </div>
 
@@ -238,7 +238,7 @@ By <a href="../eigenvalues/#met-diagonalizability" data-reference-type="ref+Labe
 
 <p class="env-number"><strong>Solution 6.6.5</strong></p>
 
-<span id="sol-ex-eigenvalues-5-1" label="sol--ex:eigenvalues-5-1"></span> (See <a href="../eigenvalues/#ex-eigenvalues-5-1" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-1">Exercise 6.5</a>.) The condition $\ker f = L((1,1,1))$ implies that $f(1,1,1)=(0,0,0)$, which we can also rewrite as
+<span id="sol-ex-eigenvalues-5-1" label="sol--ex:eigenvalues-5-1"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-1" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-1">Exercise 6.5</a>.) The condition $\ker f = L((1,1,1))$ implies that $f(1,1,1)=(0,0,0)$, which we can also rewrite as
 <div class="arithmatex" markdown="1">
 \[
 f((1,1,1)) = 0 \cdot (1,1,1).
@@ -274,7 +274,7 @@ In order to compute the matrix of $f$ with respect to the standard basis $\under
 {\bf R}^3_{\underline e}.
 \]
 </div>
-It turns out that $K^{-1}$ is easier to compute than $K$. It is given by expressing the $v_i$ in their coordinates in the standard basis vectors, e.g. $v_1 \mapsto {\mathrm {id}}(v_1) = (1,0,1) = 1 e_1 + 0 e_2 + 1 e_3$. This implies $K^{-1} = \left ( \begin{array}{ccc} 1 & 2 & 1 \\ 0 & 0 & 1 \\ 1 & -3 & 1 \end{array} \right )$. We can use this to compute $K = (K^{-1})^{-1})$, cf.. This inverse (of $K^{-1}$) can be computed using <a href="../maps/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.80</a>, which gives $K = \frac 15 \left ( \begin{array}{ccc} 3 & -5 & 2 \\ 1 & 0 & -1 \\ 0 & 5 & 0 \end{array} \right )$. Then, one computes the product
+It turns out that $K^{-1}$ is easier to compute than $K$. It is given by expressing the $v_i$ in their coordinates in the standard basis vectors, e.g. $v_1 \mapsto {\mathrm {id}}(v_1) = (1,0,1) = 1 e_1 + 0 e_2 + 1 e_3$. This implies $K^{-1} = \left ( \begin{array}{ccc} 1 & 2 & 1 \\ 0 & 0 & 1 \\ 1 & -3 & 1 \end{array} \right )$. We can use this to compute $K = (K^{-1})^{-1})$, cf.. This inverse (of $K^{-1}$) can be computed using <a href="../maps-inverses/#thm-invertible-elimination" data-reference-type="ref+Label" data-reference="thm:invertible-elimination">Theorem 4.81</a>, which gives $K = \frac 15 \left ( \begin{array}{ccc} 3 & -5 & 2 \\ 1 & 0 & -1 \\ 0 & 5 & 0 \end{array} \right )$. Then, one computes the product
 <div class="arithmatex" markdown="1">
 \[
 K^{-1} \left ( \begin{array}{ccc} 2 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 0 \end{array} \right ) K = \frac 15 \left ( \begin{array}{ccc} 4 & -10 & 6 \\ 0 & 0 & 0 \\ 9 & -10 & 1 \end{array} \right ).
@@ -291,13 +291,13 @@ This is a typical example of the situation that one basis of ${\bf R}^3$ may be 
 
 <p class="env-number"><strong>Solution 6.6.6</strong></p>
 
-<span id="sol-ex-eigenvalues-exercise-004" label="sol--ex:eigenvalues-exercise-004"></span> (See <a href="../eigenvalues/#ex-eigenvalues-exercise-004" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-004">Exercise 6.6</a>.) For
+<span id="sol-ex-eigenvalues-exercise-004" label="sol--ex:eigenvalues-exercise-004"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-004" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-004">Exercise 6.6</a>.) For
 <div class="arithmatex" markdown="1">
 \[
 A_a = \left ( \begin{array}{ccc} a & 0 & 0 \\ a-2 & 1 & 1 \\ 0 & 1 & 1 \end{array} \right ),
 \]
 </div>
-we compute the characteristic polynomial (<a href="../eigenvalues/#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>):
+we compute the characteristic polynomial (<a href="../eigenvalues-characteristic-polynomial/#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a>):
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -312,7 +312,7 @@ we compute the characteristic polynomial (<a href="../eigenvalues/#dlm-eigenvalu
 </div>
 So the eigenvalues are $a,0,2$ (with multiplicities depending on $a$). We distinguish several cases:
 
-1.  If $a\neq 0,2$, there are three distinct eigenvalues, hence $A_a$ is diagonalizable (<a href="../eigenvalues/#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a>).
+1.  If $a\neq 0,2$, there are three distinct eigenvalues, hence $A_a$ is diagonalizable (<a href="../eigenvalues-diagonalization/#cor-diag-max" data-reference-type="ref+Label" data-reference="cor:diag-max">Corollary 6.16</a>).
 
 2.  If $a=0$, then $A_0 = \left ( \begin{array}{ccc} 0 & 0 & 0 \\ -2 & 1 & 1 \\ 0 & 1 & 1 \end{array} \right ).$ To decide diagonalizability, we note that the eigenspace of $\lambda=2$ is one-dimensional, since the algebraic multiplicity of $\lambda=2$ is 1. We now compute the eigenspace for $\lambda=0$:
 <div class="arithmatex" markdown="1">
@@ -320,7 +320,7 @@ So the eigenvalues are $a,0,2$ (with multiplicities depending on $a$). We distin
     A_0 - 0 \,\mathrm{id}_3 = A_0 = \left ( \begin{array}{ccc} 0 & 0 & 0 \\ -2 & 1 & 1 \\ 0 & 1 & 1 \end{array} \right ) \leadsto \left ( \begin{array}{ccc} -2 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 0 \end{array} \right ).
 \]
 </div>
-    This gives $x = \frac{1}{2}y + \frac{1}{2}z$ and $y + z = 0$, so $y = -z$. Thus $x = 0$ and $E_0=L((0,1,-1))$, so $\dim E_0=1$ while the algebraic multiplicity of $0$ is $2$. Therefore $A_0$ is not diagonalizable.
+This gives $x = \frac{1}{2}y + \frac{1}{2}z$ and $y + z = 0$, so $y = -z$. Thus $x = 0$ and $E_0=L((0,1,-1))$, so $\dim E_0=1$ while the algebraic multiplicity of $0$ is $2$. Therefore $A_0$ is not diagonalizable.
 
 3.  If $a=2$, then
 <div class="arithmatex" markdown="1">
@@ -328,20 +328,20 @@ So the eigenvalues are $a,0,2$ (with multiplicities depending on $a$). We distin
     A_2 = \left ( \begin{array}{ccc} 2 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 1 & 1 \end{array} \right ).
 \]
 </div>
-    This time, the algebraic multiplicity of $\lambda = 0$ is 1, so it remains to compute the eigenspace for $\lambda = 2$:
+This time, the algebraic multiplicity of $\lambda = 0$ is 1, so it remains to compute the eigenspace for $\lambda = 2$:
 <div class="arithmatex" markdown="1">
 \[
     A_2-2\,\mathrm{id}_3
     = \left ( \begin{array}{ccc} 0 & 0 & 0 \\ 0 & -1 & 1 \\ 0 & 1 & -1 \end{array} \right ),
 \]
 </div>
-    so $y=z$ and $x$ is free; hence
+so $y=z$ and $x$ is free; hence
 <div class="arithmatex" markdown="1">
 \[
     E_2 = L((1,0,0),(0,1,1)), \qquad \dim E_2=2.
 \]
 </div>
-    For $\lambda=0$, one gets $E_0=L((0,1,-1))$, thus $\dim E_0=1$. So $\dim E_2+\dim E_0=3$, and by <a href="../eigenvalues/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, $A_2$ is diagonalizable.
+For $\lambda=0$, one gets $E_0=L((0,1,-1))$, thus $\dim E_0=1$. So $\dim E_2+\dim E_0=3$, and by <a href="../eigenvalues-diagonalization/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, $A_2$ is diagonalizable.
 
 In conclusion, $A_a$ is diagonalizable precisely if $a \ne 0$.
 
@@ -352,7 +352,7 @@ In conclusion, $A_a$ is diagonalizable precisely if $a \ne 0$.
 
 <p class="env-number"><strong>Solution 6.6.7</strong></p>
 
-<span id="sol-ex-eigenvalues-5-2" label="sol--ex:eigenvalues-5-2"></span> (See <a href="../eigenvalues/#ex-eigenvalues-5-2" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-2">Exercise 6.7</a>.) We have $\det (A_a - t {\mathrm {id}}_3) = \det \left ( \begin{array}{ccc} 4-t & 0 & 4 \\ a & 2-t & a \\ -2 & 0 & -2-t \end{array} \right )$. It is convenient to develop along the second column (<a href="../determinants/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), since it has two zeros; other developments are possible and give the same result, but are more tedious to perform. This gives
+<span id="sol-ex-eigenvalues-5-2" label="sol--ex:eigenvalues-5-2"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-2" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-2">Exercise 6.7</a>.) We have $\det (A_a - t {\mathrm {id}}_3) = \det \left ( \begin{array}{ccc} 4-t & 0 & 4 \\ a & 2-t & a \\ -2 & 0 & -2-t \end{array} \right )$. It is convenient to develop along the second column (<a href="../determinants-further-properties/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), since it has two zeros; other developments are possible and give the same result, but are more tedious to perform. This gives
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -374,7 +374,7 @@ The roots of this polynomial, i.e., the eigenvalues are $2$ and 0 (regardless of
 \end{align*}
 \]
 </div>
-According to <a href="../eigenvalues/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, $A_a$ will be diagonalizable precisely if $\dim E_2 = 2$. We compute $E_2$ by bringing $A_a - 2 {\mathrm {id}}$ into reduced row echelon form:
+According to <a href="../eigenvalues-diagonalization/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, $A_a$ will be diagonalizable precisely if $\dim E_2 = 2$. We compute $E_2$ by bringing $A_a - 2 {\mathrm {id}}$ into reduced row echelon form:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -396,7 +396,7 @@ This matrix has rank 1, or equivalently $\dim E_2 = 2$, if and only if $a=0$. Th
 
 <p class="env-number"><strong>Solution 6.6.8</strong></p>
 
-<span id="sol-ex-eigenvalues-exercise-005" label="sol--ex:eigenvalues-exercise-005"></span> (See <a href="../eigenvalues/#ex-eigenvalues-exercise-005" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-005">Exercise 6.8</a>.) If $A = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 2 & 0 \\ 1 & -1 & 1 \end{array} \right )$ and $B = \left ( \begin{array}{ccc} 2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 0 \end{array} \right ).$ represent the same linear map (with respect to different bases), there needs to be a base change matrix $P$ such that $B = P^{-1}AP$. This will imply that $A$ and $B$ have the same characteristic polynomial, and in particular the same eigenvalues (see <a href="../eigenvalues/#prop-similarity-necessary-conditions" data-reference-type="ref+Label" data-reference="prop:similarity-necessary-conditions">Proposition 6.24</a>). We compute
+<span id="sol-ex-eigenvalues-exercise-005" label="sol--ex:eigenvalues-exercise-005"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-005" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-005">Exercise 6.8</a>.) If $A = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 2 & 0 \\ 1 & -1 & 1 \end{array} \right )$ and $B = \left ( \begin{array}{ccc} 2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 0 \end{array} \right ).$ represent the same linear map (with respect to different bases), there needs to be a base change matrix $P$ such that $B = P^{-1}AP$. This will imply that $A$ and $B$ have the same characteristic polynomial, and in particular the same eigenvalues (see <a href="../eigenvalues-diagonalization/#prop-similarity-necessary-conditions" data-reference-type="ref+Label" data-reference="prop:similarity-necessary-conditions">Proposition 6.24</a>). We compute
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -450,7 +450,7 @@ So
 \dim E_0(A)+\dim E_2(A)=1+2=3,
 \]
 </div>
-and by <a href="../eigenvalues/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, $A$ is diagonalizable.
+and by <a href="../eigenvalues-diagonalization/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>, $A$ is diagonalizable.
 
 For $\lambda=0$:
 <div class="arithmatex" markdown="1">
@@ -493,7 +493,7 @@ In particular, the eigenspaces of $A$ and $B$ are not the same, which implies th
 
 <p class="env-number"><strong>Solution 6.6.9</strong></p>
 
-<span id="sol-ex-eigenvalues-exercise-006" label="sol--ex:eigenvalues-exercise-006"></span> (See <a href="../eigenvalues/#ex-eigenvalues-exercise-006" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-006">Exercise 6.9</a>.) For
+<span id="sol-ex-eigenvalues-exercise-006" label="sol--ex:eigenvalues-exercise-006"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-006" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-006">Exercise 6.9</a>.) For
 <div class="arithmatex" markdown="1">
 \[
 A_t = \left ( \begin{array}{ccc} -1 & 2 & t \\ 2 & 0 & -2 \\ t & -2 & -1 \end{array} \right ),
@@ -505,7 +505,7 @@ the value $0$ is an eigenvalue precisely when
 \det(A_t)=0
 \]
 </div>
-(<a href="../eigenvalues/#thm-eigenvalues-theorem-001" data-reference-type="ref+Label" data-reference="thm:eigenvalues-theorem-001">Theorem 6.8</a>). (Alternatively, one may also compute the rank of $A_t$ and check when it is $\le 2$.) By developing along the first row (<a href="../determinants/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), we compute
+(<a href="../eigenvalues-characteristic-polynomial/#thm-eigenvalues-theorem-001" data-reference-type="ref+Label" data-reference="thm:eigenvalues-theorem-001">Theorem 6.8</a>). (Alternatively, one may also compute the rank of $A_t$ and check when it is $\le 2$.) By developing along the first row (<a href="../determinants-further-properties/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), we compute
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -554,7 +554,7 @@ so $E_0=L((1,0,1))$. Similarly, one computes the eigenspaces $E_2=L((-1,-2,1))$ 
 
 <p class="env-number"><strong>Solution 6.6.10</strong></p>
 
-<span id="sol-ex-eigenvalues-exercise-007" label="sol--ex:eigenvalues-exercise-007"></span> (See <a href="../eigenvalues/#ex-eigenvalues-exercise-007" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-007">Exercise 6.10</a>.) Let
+<span id="sol-ex-eigenvalues-exercise-007" label="sol--ex:eigenvalues-exercise-007"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-007" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-007">Exercise 6.10</a>.) Let
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{cc} -4 & 8 \\ 1 & -2 \end{array} \right ),
@@ -562,7 +562,7 @@ A = \left ( \begin{array}{cc} -4 & 8 \\ 1 & -2 \end{array} \right ),
 F : {\mathrm {Mat}}_{2\times 2} \to {\mathrm {Mat}}_{2\times 2},\ X\mapsto AX.
 \]
 </div>
-This map is indeed linear by <a href="../maps/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.59</a>. Fixing the basis $\underline E := (E_{11},E_{12},E_{21},E_{22})$, we compute:
+This map is indeed linear by <a href="../maps-composing/#lem-matrix-multiplication-properties" data-reference-type="ref+Label" data-reference="lem:matrix-multiplication-properties">Lemma 4.60</a>. Fixing the basis $\underline E := (E_{11},E_{12},E_{21},E_{22})$, we compute:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -660,9 +660,9 @@ E_{-6}(F)=L\left(\left ( \begin{array}{cc} -4 & 0 \\ 1 & 0 \end{array} \right ),
 
 <p class="env-number"><strong>Solution 6.6.11</strong></p>
 
-<span id="sol-ex-eigenvalues-5-4-3" label="sol--ex:eigenvalues-5-4-3"></span> (See <a href="../eigenvalues/#ex-eigenvalues-5-4-3" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-4-3">Exercise 6.11</a>.) If $A$ and $B$ represent the same map, then $A = PBP^{-1}$ for some invertible matrix $P$. By <a href="../determinants/#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>, this implies that $\det A = \det P \det B \det P^{-1} = \det B$. In short, $A$ and $B$ have to have the same determinant. This is true: $\det A = \det B = 9$.
+<span id="sol-ex-eigenvalues-5-4-3" label="sol--ex:eigenvalues-5-4-3"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-4-3" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-4-3">Exercise 6.11</a>.) If $A$ and $B$ represent the same map, then $A = PBP^{-1}$ for some invertible matrix $P$. By <a href="../determinants-further-properties/#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>, this implies that $\det A = \det P \det B \det P^{-1} = \det B$. In short, $A$ and $B$ have to have the same determinant. This is true: $\det A = \det B = 9$.
 
-In addition, again by <a href="../determinants/#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>, $A$ and $B$ have to have the same characteristic polynomial:
+In addition, again by <a href="../determinants-further-properties/#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>, $A$ and $B$ have to have the same characteristic polynomial:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -684,9 +684,9 @@ Finally, the dimensions of the eigenspaces of the eigenvalues ($1$ and $3$) need
 
 <p class="env-number"><strong>Solution 6.6.12</strong></p>
 
-<span id="sol-ex-eigenvalues-5-4-4" label="sol--ex:eigenvalues-5-4-4"></span> (See <a href="../eigenvalues/#ex-eigenvalues-5-4-4" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-4-4">Exercise 6.12</a>.) The matrix $A$ has eigenvalues $1$ and $2$. The eigenspaces are computed as $E_1 = L(1,0,0)$ and $E_2 = L(1,1,0)$. Their dimensions sum up to 2, which is strictly less than 3, so that $A$ is *not* diagonalizable.
+<span id="sol-ex-eigenvalues-5-4-4" label="sol--ex:eigenvalues-5-4-4"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-4-4" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-4-4">Exercise 6.12</a>.) The matrix $A$ has eigenvalues $1$ and $2$. The eigenspaces are computed as $E_1 = L(1,0,0)$ and $E_2 = L(1,1,0)$. Their dimensions sum up to 2, which is strictly less than 3, so that $A$ is *not* diagonalizable.
 
-The matrix $A^2$ therefore has $2^2 = 4$ as an eigenvalue. Since similar matrices have the same eigenvalues (<a href="../eigenvalues/#prop-similarity-necessary-conditions" data-reference-type="ref+Label" data-reference="prop:similarity-necessary-conditions">Proposition 6.24</a>), $A$ is *not* similar to $A^2$.
+The matrix $A^2$ therefore has $2^2 = 4$ as an eigenvalue. Since similar matrices have the same eigenvalues (<a href="../eigenvalues-diagonalization/#prop-similarity-necessary-conditions" data-reference-type="ref+Label" data-reference="prop:similarity-necessary-conditions">Proposition 6.24</a>), $A$ is *not* similar to $A^2$.
 
 </div>
 
@@ -695,7 +695,7 @@ The matrix $A^2$ therefore has $2^2 = 4$ as an eigenvalue. Since similar matrice
 
 <p class="env-number"><strong>Solution 6.6.13</strong></p>
 
-<span id="sol-ex-eigenvalues-5-5" label="sol--ex:eigenvalues-5-5"></span> (See <a href="../eigenvalues/#ex-eigenvalues-5-5" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-5">Exercise 6.13</a>.) We first check that $v_1, v_2, v_3$ are a basis of ${\bf R}^3$. Indeed, one can compute
+<span id="sol-ex-eigenvalues-5-5" label="sol--ex:eigenvalues-5-5"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-5" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-5">Exercise 6.13</a>.) We first check that $v_1, v_2, v_3$ are a basis of ${\bf R}^3$. Indeed, one can compute
 <div class="arithmatex" markdown="1">
 \[
 \det \left ( \begin{array}{ccc} 1 & 0 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 2 \end{array} \right ) = 1 \ne 0,
@@ -703,7 +703,7 @@ The matrix $A^2$ therefore has $2^2 = 4$ as an eigenvalue. Since similar matrice
 </div>
 so the rank is 3 and the vectors do form a basis.
 
-The condition that $v_3$ be an eigenvector for the eigenvalue 4 means $f(v_3) = 4v_3 = (4,4,8)$. Acccording to <a href="../maps/#prop-linear-map-defined-on-basis" data-reference-type="ref+Label" data-reference="prop:linear-map-defined-on-basis">Proposition 4.39</a>, there is a unique linear map $f$ whose value on $v_1, v_2, v_3$ is prescribed.
+The condition that $v_3$ be an eigenvector for the eigenvalue 4 means $f(v_3) = 4v_3 = (4,4,8)$. Acccording to <a href="../maps-linear-maps-defined-on-basis-vectors/#prop-linear-map-defined-on-basis" data-reference-type="ref+Label" data-reference="prop:linear-map-defined-on-basis">Proposition 4.40</a>, there is a unique linear map $f$ whose value on $v_1, v_2, v_3$ is prescribed.
 
 We now compute $A$. We have to express $f(v_i)$ as a linear combination in terms of $v_1, v_2, v_3$:
 <div class="arithmatex" markdown="1">
@@ -750,7 +750,7 @@ Thus, the equation $(1,0,0) = av_1+bv_2 +cv_3$ amounts to the linear system
 </div>
 One solves this: $a=1$, $b=1$, $c=-1$. Similarly, one solves the linear system $(0,1,0) = av_1+bv_2+cv_3$. Its solution is $a=-1$, $b=1$, $c=0$. Finally, for $(0,0,1)=av_1+bv_2+cv_3$ one gets the solution $a=0$, $b=-1$, $c=1$.
 
-Thus, since $f$ is linear (this is the key point!, cf. <a href="../maps/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>), we have
+Thus, since $f$ is linear (this is the key point!, cf. <a href="../maps-definition-and-first-examples/#def-linear-map" data-reference-type="ref+Label" data-reference="def:linear-map">Definition 4.1</a>), we have
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -796,7 +796,7 @@ One solves the first and third equation to $a = \frac 54$, $b=\frac 14$. Therefo
 
 <p class="env-number"><strong>Solution 6.6.14</strong></p>
 
-<span id="sol-ex-eigenvalues-5-7" label="sol--ex:eigenvalues-5-7"></span> (See <a href="../eigenvalues/#ex-eigenvalues-5-7" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-7">Exercise 6.14</a>.) By <a href="../determinants/#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>, $A$ is invertible precisely iff $\det A = 0$. We compute the determinant, for example using Sarrus’ rule (<a href="../determinants/#lem-sarrus-rule" data-reference-type="ref+Label" data-reference="lem:Sarrus-rule">Lemma 5.11</a>), as $\det A = 0 - 24 + 6t-10t -0+30 = 6-4t$. Thus, the condition $\det A = 6-4t = 0$ amounts to $t = \frac 32$. The matrix $A$ is therefore not invertible precisely if $t = \frac 32$.
+<span id="sol-ex-eigenvalues-5-7" label="sol--ex:eigenvalues-5-7"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-7" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-7">Exercise 6.14</a>.) By <a href="../determinants-invertibility-and-determinants/#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>, $A$ is invertible precisely iff $\det A = 0$. We compute the determinant, for example using Sarrus’ rule (<a href="../determinants-determinants-of-larger-matrices/#lem-sarrus-rule" data-reference-type="ref+Label" data-reference="lem:Sarrus-rule">Lemma 5.11</a>), as $\det A = 0 - 24 + 6t-10t -0+30 = 6-4t$. Thus, the condition $\det A = 6-4t = 0$ amounts to $t = \frac 32$. The matrix $A$ is therefore not invertible precisely if $t = \frac 32$.
 
 We compute the eigenvalues of $A = \left ( \begin{array}{ccc} 0 & 2 & 2 \\ -3 & -5 & 6 \\ -2 & -2 & 5 \end{array} \right )$ by computing its characteristic polynomial. It is given by
 <div class="arithmatex" markdown="1">
@@ -854,7 +854,7 @@ These computations can also be performed using any computer algebra software suc
 
 <p class="env-number"><strong>Solution 6.6.15</strong></p>
 
-<span id="sol-ex-eigenvalues-5-9" label="sol--ex:eigenvalues-5-9"></span> (See <a href="../eigenvalues/#ex-eigenvalues-5-9" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-9">Exercise 6.15</a>.) The kernel of $A$ is different from $\{0\}$ precisely if $A$ is not invertible or, equivalently, if $\det A = 0$. For example using Sarrus’ rule (<a href="../determinants/#lem-sarrus-rule" data-reference-type="ref+Label" data-reference="lem:Sarrus-rule">Lemma 5.11</a>), we have $\det A = 2t-6$, so $t = 3$.
+<span id="sol-ex-eigenvalues-5-9" label="sol--ex:eigenvalues-5-9"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-9" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-9">Exercise 6.15</a>.) The kernel of $A$ is different from $\{0\}$ precisely if $A$ is not invertible or, equivalently, if $\det A = 0$. For example using Sarrus’ rule (<a href="../determinants-determinants-of-larger-matrices/#lem-sarrus-rule" data-reference-type="ref+Label" data-reference="lem:Sarrus-rule">Lemma 5.11</a>), we have $\det A = 2t-6$, so $t = 3$.
 
 For $t=3$, we have $\chi_A(t) = -t^3+6t^2-8t = -t(t^2-6t+8) = -t(t-2)(t-4)$. The eigenvalues are then 0, 2 and 4.
 
@@ -869,9 +869,9 @@ If $B$ satisfies $\chi_B(t)=\chi_A(t)=-t(t-2)(t-4)$, its eigenvalues are 0, 2 an
 
 <p class="env-number"><strong>Solution 6.6.16</strong></p>
 
-<span id="sol-ex-eigenvalues-5-10" label="sol--ex:eigenvalues-5-10"></span> (See <a href="../eigenvalues/#ex-eigenvalues-5-10" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-10">Exercise 6.16</a>.) We compute $\det A = -4t-2$, this is 0 precisely if $t=-\frac 12$. Thus, $A$ is non-invertible for $t=-\frac 12$ and invertible otherwise.
+<span id="sol-ex-eigenvalues-5-10" label="sol--ex:eigenvalues-5-10"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-10" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-10">Exercise 6.16</a>.) We compute $\det A = -4t-2$, this is 0 precisely if $t=-\frac 12$. Thus, $A$ is non-invertible for $t=-\frac 12$ and invertible otherwise.
 
-We compute the characteristic polynomial. It is helpful to develop the determinant of $A - \lambda {\mathrm {id}}$ along the second column (<a href="../determinants/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), since there are two 0’s in this column, simplifying the formula:
+We compute the characteristic polynomial. It is helpful to develop the determinant of $A - \lambda {\mathrm {id}}$ along the second column (<a href="../determinants-further-properties/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), since there are two 0’s in this column, simplifying the formula:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -884,6 +884,6 @@ The eigenvalues of $A$ are therefore $\lambda_1 = 2$ and $\lambda_{2/3} = \pm \s
 
 An eigenvalue appears with multiplicity 2 in the above characteristic polynomial precisely if either $2t+1=0$ (so that $\lambda_2=\lambda_3$), i.e., $t=-\frac 12$, or if $\sqrt{2t+1} = 2$, i.e., if $t=\frac 32$.
 
-For $t=-\frac 12$, we compute the eigenspaces for the eigenvalues $\lambda_1 = 2$ and $\lambda_2 = 0$. These are both 1-dimensional, respectively given by $E_2 = L(0,1,0)$ and $E_0 = L(2,-3,4)$. The sum of their dimensions is 2, which is less than 3, so $A$ is not diagonalizable (<a href="../eigenvalues/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>).
+For $t=-\frac 12$, we compute the eigenspaces for the eigenvalues $\lambda_1 = 2$ and $\lambda_2 = 0$. These are both 1-dimensional, respectively given by $E_2 = L(0,1,0)$ and $E_0 = L(2,-3,4)$. The sum of their dimensions is 2, which is less than 3, so $A$ is not diagonalizable (<a href="../eigenvalues-diagonalization/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>).
 
 </div>

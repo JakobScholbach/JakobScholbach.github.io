@@ -1,0 +1,2347 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wiki generated from LaTeX lecture notes">
+      
+      
+      
+      
+        <link rel="prev" href="../euclid-distances/">
+      
+      
+        <link rel="next" href="../exercises-euclid/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Summary - Linear Algebra Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#summary-of-some-computational-methods" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Algebra Wiki" class="md-header__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Summary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Algebra Wiki" class="md-nav__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Complex Numbers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-complex-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Systems of Linear Equations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-linear-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-elementary-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elementary Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems-gaussian-elimination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gaussian Elimination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-systems-of-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vector Spaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-R2R3Rn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R², R³ and Rⁿ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-definition-solution-of-homogeneous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution Sets of Homogeneous Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intersections of Subspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-further-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Further Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-linear-combinations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Combinations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-linear-independence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Independence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaces-dimension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimension
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-vector-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linear Maps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-definition-and-first-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definition and First Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-multiplication-of-a-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrix-Vector Multiplication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-kernel-and-image-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel and Image (1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-kernel-and-image-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel and Image (2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-revisiting-linear-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Revisiting Linear Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-linear-maps-defined-on-basis-vectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps on Basis Vectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-matrices-associated-to-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrices of Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-composing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composing Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-inverses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inverses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-change-of-basis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change of Basis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maps-transpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transposition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Determinants
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-determinants-of-2-x-2-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2×2 Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-determinants-of-larger-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants of Larger Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-invertibility-and-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Invertibility and Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../determinants-further-properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Further Properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Eigenvalues and Eigenvectors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-characteristic-polynomial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characteristic Polynomial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-eigenspaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eigenvalues-diagonalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagonalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-eigenvalues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-eigenvalues-and-eigenvectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Euclidean Spaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-scalar-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scalar Product on Rⁿ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-orthogonal-and-symmetric-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orthogonal and Symmetric Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-affine-subspaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Affine Subspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../euclid-distances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercises-euclid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solutions-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="summary-of-some-computational-methods">Summary of some computational methods<a class="headerlink" href="#summary-of-some-computational-methods" title="Permanent link">&para;</a></h1>
+<div class="task">
+<p class="env-number"><strong>Task 7.61</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-13">Exercise 7.17</a>, <a href="../exercises-euclid/#ex-euclid-6-20">Exercise 7.24</a>, <a href="../exercises-euclid/#ex-euclid-6-22">Exercise 7.26</a>, <a href="../exercises-euclid/#ex-euclid-polynomials-gs">Exercise 7.1</a>, <a href="../exercises-euclid/#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
+<p><span id="tas-compute-orthonormal-basis" label="tas:compute-orthonormal-basis"></span> Compute an orthonormal basis of a subspace <span class="arithmatex">\(U \subset {\bf R}^n\)</span>.</p>
+<p><em>Method:</em> First compute any (not necessarily orthonormal) basis of <span class="arithmatex">\(U\)</span>. Then orthonormalize that basis using the Gram–Schmidt algorithm (<a href="../euclid-euclidean-spaces/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>).</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.62</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-1">Exercise 7.2</a>, <a href="../exercises-euclid/#ex-euclid-6-13">Exercise 7.17</a>, <a href="../exercises-euclid/#ex-euclid-6-2">Exercise 7.4</a>, <a href="../exercises-euclid/#ex-euclid-6-6">Exercise 7.7</a>, <a href="../exercises-euclid/#ex-euclid-r4-projection">Exercise 7.3</a>, <a href="../exercises-euclid/#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
+<p><span id="tas-compute-orthogonal-projection" label="tas:compute-orthogonal-projection"></span> Given <span class="arithmatex">\(x \in {\bf R}^n\)</span> and a subspace <span class="arithmatex">\(U \subset {\bf R}^n\)</span>, compute the orthogonal projection <span class="arithmatex">\(p_U(x)\)</span>.</p>
+<p><em>Method:</em> Compute an orthonormal basis <span class="arithmatex">\(u_1, \dots, u_k\)</span> of <span class="arithmatex">\(U\)</span> (cf. <a href="#tas-compute-orthonormal-basis" data-reference-type="ref+Label" data-reference="tas:compute-orthonormal-basis">Task 7.61</a>), then use</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+p_U(x) = \sum_{i=1}^k {\left \langle x, u_i \right \rangle} u_i.
+\]</div>
+</div>
+<p>One may also compute <span class="arithmatex">\(U^\bot\)</span> (cf. <a href="#tas-compute-orthogonal-complement" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-complement">Task 7.63</a>), then compute <span class="arithmatex">\(p_{U^\bot}(x)\)</span>, and finally <span class="arithmatex">\(p_U(x) = x-p_{U^\bot}(x)\)</span>. This may be easier in practice, especially if <span class="arithmatex">\(\dim U &gt; \dim U^\bot\)</span>.</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.63</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-1">Exercise 7.2</a>, <a href="../exercises-euclid/#ex-euclid-6-13">Exercise 7.17</a>, <a href="../exercises-euclid/#ex-euclid-6-2">Exercise 7.4</a>, <a href="../exercises-euclid/#ex-euclid-6-20">Exercise 7.24</a>, <a href="../exercises-euclid/#ex-euclid-6-22">Exercise 7.26</a>, <a href="../exercises-euclid/#ex-euclid-6-3">Exercise 7.5</a>, <a href="../exercises-euclid/#ex-euclid-r4-projection">Exercise 7.3</a>, <a href="../exercises-euclid/#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
+<p><span id="tas-compute-orthogonal-complement" label="tas:compute-orthogonal-complement"></span> Compute the orthogonal complement <span class="arithmatex">\(U^\bot\)</span> of a given a subspace <span class="arithmatex">\(U \subset {\bf R}^n\)</span>.</p>
+<p><em>Method:</em> Compute a basis <span class="arithmatex">\(u_1, \dots, u_k\)</span> of <span class="arithmatex">\(U\)</span>. Then solve the homogeneous system</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle x, u_1 \right \rangle} = 0, \dots, {\left \langle x, u_k \right \rangle} = 0.
+\]</div>
+</div>
+<p>Equivalently, form the matrix</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{c} u_1 \\ \dots \\ u_k \end{array} \right )
+\]</div>
+</div>
+<p>(whose rows are the basis vectors <span class="arithmatex">\(u_1\)</span> etc.), and compute its kernel.</p>
+</div>
+<p>The next two tasks are related to the different representations of lines.</p>
+<div class="task">
+<p class="env-number"><strong>Task 7.64</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-lines-plane">Exercise 7.14</a>)</p>
+<p><span id="tas-line-cartesian-to-parametric" label="tas:line-cartesian-to-parametric"></span> Convert a line <span class="arithmatex">\(L\)</span> from cartesian equations (as in <a href="../euclid-affine-subspaces/#def-cartesian-equation-line" data-reference-type="ref+Label" data-reference="def:cartesian-equation-line">Definition 7.53</a>) to a vector/parametric equation (as in <a href="../euclid-affine-subspaces/#def-parametric-equation-line" data-reference-type="ref+Label" data-reference="def:parametric-equation-line">Definition 7.50</a>).</p>
+<p><em>Method:</em> Pick two distinct points <span class="arithmatex">\(p, q\)</span> satisfying the cartesian equations. Then write</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+L = p + L(p-q).
+\]</div>
+</div>
+<p>Choosing different points instead of <span class="arithmatex">\(p, q\)</span> will give different vector equations; but if <span class="arithmatex">\(L = p' + L(p'-q')\)</span>, the two vectors <span class="arithmatex">\(p-q\)</span> and <span class="arithmatex">\(p'-q'\)</span> will necessarily be (non-zero) multiples of each other (by <a href="../euclid-affine-subspaces/#lem-base-affine-subspace" data-reference-type="ref+Label" data-reference="lem:base-affine-subspace">Lemma 7.41</a>).</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.65</strong></p>
+<p><span id="tas-line-parametric-to-cartesian" label="tas:line-parametric-to-cartesian"></span> Convert a line from vector equation form (<a href="../euclid-affine-subspaces/#def-parametric-equation-line" data-reference-type="ref+Label" data-reference="def:parametric-equation-line">Definition 7.50</a>) <span class="arithmatex">\(L = v+L(w)\)</span> into cartesian equations.</p>
+<p><em>Method:</em> Express one coordinate in terms of the free parameter and substitute into the other coordinate equations.</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.66</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-15">Exercise 7.19</a>, <a href="../exercises-euclid/#ex-euclid-6-23">Exercise 7.27</a>)</p>
+<p><span id="tas-plane-through-three-points" label="tas:plane-through-three-points"></span> Compute a cartesian equation for the plane <span class="arithmatex">\(P\)</span> containing three non-collinear points <span class="arithmatex">\(p, q, r \in {\bf R}^3\)</span>.</p>
+<p><em>Method:</em> First write</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+P = p + L(q-p, r-p).
+\]</div>
+</div>
+<p>Then compute a normal vector to <span class="arithmatex">\(L(q-p, r-p)\)</span> and write the corresponding cartesian equation. As in <a href="#tas-line-cartesian-to-parametric" data-reference-type="ref+Label" data-reference="tas:line-cartesian-to-parametric">Task 7.64</a>, different choices of <span class="arithmatex">\(p, q, r\)</span> may give different intermediate vectors, but they span the same underlying subspace.</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.67</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-21">Exercise 7.25</a>, <a href="../exercises-euclid/#ex-euclid-lines-plane">Exercise 7.14</a>)</p>
+<p><span id="tas-plane-through-line-and-point" label="tas:plane-through-line-and-point"></span> Given a line <span class="arithmatex">\(L\)</span> and a point <span class="arithmatex">\(r \notin L\)</span>, find the plane <span class="arithmatex">\(P\)</span> containing <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(r\)</span>.</p>
+<p><em>Method:</em> Choose two distinct points <span class="arithmatex">\(p, q \in L\)</span>, then apply <a href="#tas-plane-through-three-points" data-reference-type="ref+Label" data-reference="tas:plane-through-three-points">Task 7.66</a> to the three points <span class="arithmatex">\(p, q, r\)</span>.</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.68</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-18">Exercise 7.22</a>, <a href="../exercises-euclid/#ex-euclid-6-21">Exercise 7.25</a>, <a href="../exercises-euclid/#ex-euclid-6-23">Exercise 7.27</a>)</p>
+<p><span id="tas-line-in-plane-orthogonal-to-line" label="tas:line-in-plane-orthogonal-to-line"></span> Given a plane <span class="arithmatex">\(P = \{x \mid {\left \langle x, a \right \rangle} = d \}\)</span>, a line <span class="arithmatex">\(L = v + L(w) \subset P\)</span>, and a point <span class="arithmatex">\(p \in P\)</span>, find the line <span class="arithmatex">\(M \subset P\)</span> through <span class="arithmatex">\(p\)</span> orthogonal to <span class="arithmatex">\(L\)</span>.</p>
+<p><em>Method:</em> Write <span class="arithmatex">\(M = p + L(w')\)</span>. Determine <span class="arithmatex">\(w'\)</span> by imposing <span class="arithmatex">\(w' \bot a\)</span> and <span class="arithmatex">\(w' \bot w\)</span>, i.e., compute</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+w' \in (L(a,w))^\bot
+\]</div>
+</div>
+<p>as in <a href="#tas-compute-orthogonal-complement" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-complement">Task 7.63</a>.</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.69</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-15">Exercise 7.19</a>, <a href="../exercises-euclid/#ex-euclid-lines-plane">Exercise 7.14</a>)</p>
+<p><span id="tas-plane-vector-to-cartesian" label="tas:plane-vector-to-cartesian"></span> Given a plane in vector form <span class="arithmatex">\(P = v + L(w_1, w_2)\)</span>, compute a cartesian equation</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+P = \{x \in {\bf R}^3 \mid {\left \langle x, a \right \rangle} = d \}.
+\]</div>
+</div>
+<p><em>Method:</em> Compute <span class="arithmatex">\(W=L(w_1,w_2)\)</span> and then <span class="arithmatex">\(W^\bot\)</span>. Choose any non-zero <span class="arithmatex">\(a \in W^\bot\)</span>, and set</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+d={\left \langle a, v \right \rangle}.
+\]</div>
+</div>
+<p>Note: a presentation of <span class="arithmatex">\(P\)</span> as above is not unique, but another presentation as <span class="arithmatex">\(P = \{x \in {\bf R}^3 | {\left \langle x, a' \right \rangle} = d'\}\)</span> will be such that <span class="arithmatex">\(a = \lambda a'\)</span> for some <span class="arithmatex">\(\lambda \in {\bf R}, \lambda \ne 0\)</span>, and <span class="arithmatex">\(d = \lambda d'\)</span>.</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.70</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-21">Exercise 7.25</a>, <a href="../exercises-euclid/#ex-euclid-6-7">Exercise 7.8</a>)</p>
+<p><span id="tas-check-lines-parallel" label="tas:check-lines-parallel"></span> Decide whether two lines are parallel.</p>
+<p><em>Method:</em> If the lines are in parametric form (<span class="arithmatex">\(L = v+L(w)\)</span> and <span class="arithmatex">\(L' = v'+L(w')\)</span>), check whether <span class="arithmatex">\(w\)</span> and <span class="arithmatex">\(w'\)</span> are linearly dependent. If the lines are given in cartesian form, first convert them via <a href="#tas-line-cartesian-to-parametric" data-reference-type="ref+Label" data-reference="tas:line-cartesian-to-parametric">Task 7.64</a>.</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.71</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-14">Exercise 7.18</a>, <a href="../exercises-euclid/#ex-euclid-6-16">Exercise 7.20</a>, <a href="../exercises-euclid/#ex-euclid-6-19">Exercise 7.23</a>, <a href="../exercises-euclid/#ex-euclid-6-8">Exercise 7.9</a>)</p>
+<p><span id="tas-check-lines-skew" label="tas:check-lines-skew"></span> Decide whether two lines <span class="arithmatex">\(L = v+L(w)\)</span> and <span class="arithmatex">\(L' = v'+L(w')\)</span> are skew.</p>
+<p><em>Method:</em> Verify both conditions: (a) <span class="arithmatex">\(w\)</span> and <span class="arithmatex">\(w'\)</span> are linearly independent, and (b) <span class="arithmatex">\(L \cap L' = \emptyset\)</span>. For condition (b), it is often convenient to use cartesian equations first (cf. <a href="#tas-line-parametric-to-cartesian" data-reference-type="ref+Label" data-reference="tas:line-parametric-to-cartesian">Task 7.65</a>).</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.72</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-12">Exercise 7.13</a>, <a href="../exercises-euclid/#ex-euclid-6-14">Exercise 7.18</a>, <a href="../exercises-euclid/#ex-euclid-6-19">Exercise 7.23</a>, <a href="../exercises-euclid/#ex-euclid-6-23">Exercise 7.27</a>, <a href="../exercises-euclid/#ex-euclid-6-9">Exercise 7.10</a>)</p>
+<p><span id="tas-check-line-parallel-plane" label="tas:check-line-parallel-plane"></span> Decide whether a line <span class="arithmatex">\(L = v+L(w)\)</span> is parallel to a plane <span class="arithmatex">\(P\)</span>.</p>
+<p><em>Method:</em> If <span class="arithmatex">\(P = v' + L(w'_1,w'_2)\)</span>, check whether <span class="arithmatex">\(w\)</span> is a linear combination of <span class="arithmatex">\(w'_1,w'_2\)</span> (equivalently, <span class="arithmatex">\(W \subset W'\)</span>). If <span class="arithmatex">\(P = \{x \mid {\left \langle x, a \right \rangle}=d\}\)</span>, check whether <span class="arithmatex">\({\left \langle w,a \right \rangle}=0\)</span>.</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.73</strong></p>
+<p><span id="tas-check-line-orthogonal-plane" label="tas:check-line-orthogonal-plane"></span> Decide whether a line <span class="arithmatex">\(L = v+L(w)\)</span> is orthogonal to a plane <span class="arithmatex">\(P\)</span>.</p>
+<p><em>Method:</em> If <span class="arithmatex">\(P = \{x \mid {\left \langle x, a \right \rangle}=d\}\)</span>, check whether <span class="arithmatex">\(w\)</span> and <span class="arithmatex">\(a\)</span> are linearly dependent. If <span class="arithmatex">\(P = v'+L(w'_1,w'_2)\)</span>, check whether <span class="arithmatex">\({\left \langle w,w'_1 \right \rangle}=0\)</span> and <span class="arithmatex">\({\left \langle w,w'_2 \right \rangle}=0\)</span>.</p>
+</div>
+<div class="task">
+<p class="env-number"><strong>Task 7.74</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-12">Exercise 7.13</a>, <a href="../exercises-euclid/#ex-euclid-6-19">Exercise 7.23</a>, <a href="../exercises-euclid/#ex-euclid-6-7">Exercise 7.8</a>, <a href="../exercises-euclid/#ex-euclid-6-8">Exercise 7.9</a>)</p>
+<p><span id="tas-compute-distance-affine-subspaces" label="tas:compute-distance-affine-subspaces"></span> Compute the distance of two affine subspaces <span class="arithmatex">\(X = v + W\)</span> and <span class="arithmatex">\(X' = v' + W'\)</span> (including the point case <span class="arithmatex">\(W=\{0\}\)</span>).</p>
+<p><em>Method:</em> Use one of the following equivalent approaches:</p>
+<ul>
+<li>
+<p>apply <a href="../euclid-distances/#thm-distance-affine-subspaces" data-reference-type="ref+Label" data-reference="thm:distance-affine-subspaces">Theorem 7.59</a> via part <a href="../euclid-distances/#item-min-e" data-reference-type="ref" data-reference="item--min.e">1.</a>: compute <span class="arithmatex">\(Z = W+W'\)</span>, <span class="arithmatex">\(d := v-v'\)</span>, and compute the orthogonal projection <span class="arithmatex">\(m = p_{Z^\bot}(d)\)</span>, or equivalently <span class="arithmatex">\(m = d-p_Z(d)\)</span> (cf. <a href="#tas-compute-orthogonal-projection" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-projection">Task 7.62</a>). Let <span class="arithmatex">\(x\)</span> be a general point in <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(x'\)</span> a general point in <span class="arithmatex">\(X'\)</span>, and solve the linear system <span class="arithmatex">\(x-x'=m\)</span>, – or –,</p>
+</li>
+<li>
+<p>apply <a href="../euclid-distances/#thm-distance-affine-subspaces" data-reference-type="ref+Label" data-reference="thm:distance-affine-subspaces">Theorem 7.59</a> via part <a href="../euclid-distances/#item-min-c" data-reference-type="ref" data-reference="item--min.c">4.</a>: again let <span class="arithmatex">\(x\)</span> be a general point in <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(x'\)</span> a general point in <span class="arithmatex">\(X'\)</span>, compute <span class="arithmatex">\(x-x'\)</span> and solve the homogeneous linear system given by <span class="arithmatex">\({\left \langle x, w \right \rangle} = 0\)</span> and <span class="arithmatex">\({\left \langle x, w' \right \rangle} = 0\)</span>, where <span class="arithmatex">\(w\)</span> runs through a set of vectors spanning <span class="arithmatex">\(W\)</span>, and <span class="arithmatex">\(w'\)</span> runs through a set of vectors spanning <span class="arithmatex">\(W'\)</span>.</p>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
