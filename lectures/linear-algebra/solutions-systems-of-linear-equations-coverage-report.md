@@ -7,7 +7,7 @@
 
 - Missing environment types: **0**
 - Missing TikZ PNG exports: **0** / 0
-- Missing labels: **0** / 8
+- Missing labels: **0** / 24
 
 ## Missing Environments
 

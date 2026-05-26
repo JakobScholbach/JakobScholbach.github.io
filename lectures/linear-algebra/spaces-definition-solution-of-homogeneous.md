@@ -178,7 +178,7 @@ We have seen in <a href="#ex-non-vector-spaces" data-reference-type="ref+Label" 
 <div class="proposition" markdown="1">
 
 
-<p class="env-number"><strong>Proposition 3.18</strong> (Related exercises: <a href="../exercises-spaces/#ex-basis-w1-r4">Exercise 3.22</a>, <a href="../exercises-spaces/#ex-intersection-tw">Exercise 3.17</a>, <a href="../exercises-spaces/#ex-matrix-subspace">Exercise 3.14</a>, <a href="../exercises-spaces/#ex-ut-basis-r4">Exercise 3.29</a>)</p>
+<p class="env-number"><strong>Proposition 3.18</strong> (Related exercises: <a href="../exercises-spaces/#ex-basis-w1-r4">Exercise 3.22</a>, <a href="../exercises-spaces/#ex-intersection-tw">Exercise 3.17</a>, <a href="../exercises-spaces/#ex-matrix-subspace">Exercise 3.14</a>, <a href="../exercises-systems/#ex-systems-homogeneous-3eqs">Exercise 2.15</a>, <a href="../exercises-systems/#ex-systems-homogeneous-t">Exercise 2.14</a>, <a href="../exercises-spaces/#ex-ut-basis-r4">Exercise 3.29</a>)</p>
 
 <span id="prop-homogeneous-system-subspace" label="prop:homogeneous-system-subspace"></span> Consider a *homogeneous* linear system in $n$ variables $x_1, \dots, x_n$, and $m$ equations, as in <a href="#homogeneous-system" data-reference-type="eqref" data-reference="homogeneous.system">Equation (3.14)</a>. Its solution set is a subspace of ${\bf R}^n$.
 

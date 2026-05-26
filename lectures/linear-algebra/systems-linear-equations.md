@@ -10,7 +10,7 @@ title: Systems: Linear Equations
 <div class="definition" markdown="1">
 
 
-<p class="env-number"><strong>Definition 2.1</strong></p>
+<p class="env-number"><strong>Definition 2.1</strong> (Related exercises: <a href="../exercises-systems/#ex-systems-line-x3-vars">Exercise 2.2</a>, <a href="../exercises-systems/#ex-systems-line-xy3">Exercise 2.1</a>)</p>
 
 <span id="def-systems-definition-001" label="def:systems-definition-001"></span> Let $a, b, c \in {\bf R}$ be fixed real numbers. An equation of the form
 <div class="arithmatex" markdown="1">

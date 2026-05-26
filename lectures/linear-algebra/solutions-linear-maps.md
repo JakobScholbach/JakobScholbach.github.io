@@ -1,7 +1,7 @@
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.1</strong></p>
+<p class="env-number"><strong>Solution 4.1</strong></p>
 
 <span id="sol-al" label="sol--al"></span> (See <a href="../exercises-maps/#al" data-reference-type="ref+Label" data-reference="al">Exercise 4.1</a>.) By <a href="../maps-multiplication-of-a-matrix/#def-product-matrix-vector">Definition 4.9</a>, <a href="../maps-multiplication-of-a-matrix/#sect-2-x-2-matrices">Subsection 4.2.1</a>, for $A = \left ( \begin{array}{cc} a_{11} & a_{12} \\ a_{21} & a_{22} \end{array} \right )$ and $v = \left ( \begin{array}{c} x \\ y \end{array} \right )$, we have
 <div class="arithmatex" markdown="1">
@@ -65,7 +65,7 @@ For comparison with the $90^\circ$ case, see also <a href="../maps-multiplicatio
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.2</strong></p>
+<p class="env-number"><strong>Solution 4.2</strong></p>
 
 <span id="sol-ex-maps-exercise-002" label="sol--ex:maps-exercise-002"></span> (See <a href="../exercises-maps/#ex-maps-exercise-002" data-reference-type="ref+Label" data-reference="ex:maps-exercise-002">Exercise 4.2</a>.) Using <a href="../maps-multiplication-of-a-matrix/#def-product-matrix-vector">Definition 4.9</a>, <a href="../maps-multiplication-of-a-matrix/#sect-2-x-2-matrices">Subsection 4.2.1</a>, for
 <div class="arithmatex" markdown="1">
@@ -99,7 +99,7 @@ Geometrically, this is a counterclockwise rotation by $90^\circ$ (equivalently, 
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.3</strong></p>
+<p class="env-number"><strong>Solution 4.3</strong></p>
 
 <span id="sol-ex-maps-exercise-003" label="sol--ex:maps-exercise-003"></span> (See <a href="../exercises-maps/#ex-maps-exercise-003" data-reference-type="ref+Label" data-reference="ex:maps-exercise-003">Exercise 4.3</a>.) By <a href="../maps-matrices-associated-to-linear-maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.44</a> (applied to the standard basis, cf. <a href="../spaces-bases/#ex-standard-basis" data-reference-type="ref+Label" data-reference="ex:standard-basis">Example 3.62</a>), the columns of the matrix $A$ are exactly the vectors $f(e_1),\dots,f(e_4)$. Hence
 <div class="arithmatex" markdown="1">
@@ -160,7 +160,7 @@ As a check, <a href="../maps-kernel-and-image-1/#thm-rank-nullity-theorem" data-
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.4</strong></p>
+<p class="env-number"><strong>Solution 4.4</strong></p>
 
 <span id="sol-ex-maps-exercise-004" label="sol--ex:maps-exercise-004"></span> (See <a href="../exercises-maps/#ex-maps-exercise-004" data-reference-type="ref+Label" data-reference="ex:maps-exercise-004">Exercise 4.4</a>.) To compute the rank, we apply <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, which requires us to bring the matrix into row-echelon form using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>). We perform the following elementary row operations (<a href="../systems-gaussian-elimination/#def-elementary-row-operations" data-reference-type="ref+Label" data-reference="def:elementary-row-operations">Definition 2.28</a>).
 
@@ -184,7 +184,7 @@ This row-echelon matrix has exactly 3 leading ones, so by <a href="../maps-kerne
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.5</strong></p>
+<p class="env-number"><strong>Solution 4.5</strong></p>
 
 <span id="sol-ex-maps-exercise-005" label="sol--ex:maps-exercise-005"></span> (See <a href="../exercises-maps/#ex-maps-exercise-005" data-reference-type="ref+Label" data-reference="ex:maps-exercise-005">Exercise 4.5</a>.) From <a href="../maps-linear-maps-defined-on-basis-vectors/#ex-example-map-basis" data-reference-type="ref+Label" data-reference="ex:example-map-basis">Example 4.43</a> we have
 <div class="arithmatex" markdown="1">
@@ -212,7 +212,7 @@ This is exactly the matrix already identified in <a href="../maps-linear-maps-de
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.6</strong></p>
+<p class="env-number"><strong>Solution 4.6</strong></p>
 
 <span id="sol-ex-maps-exercise-006" label="sol--ex:maps-exercise-006"></span> (See <a href="../exercises-maps/#ex-maps-exercise-006" data-reference-type="ref+Label" data-reference="ex:maps-exercise-006">Exercise 4.6</a>.) Let $v_1=(1,1+\lambda,-1)$, $v_2=(2,\lambda-2,\lambda+2)$. By definition, $W_\lambda=L(v_1,v_2).$ So a basis of $W_\lambda$ is either $\{v_1,v_2\}$ (if they are linearly independent) or a single nonzero vector among them (if they are dependent), cf. <a href="../spaces-linear-independence/#def-linearly-independent">Definition 3.49</a>, <a href="../spaces-bases/#def-basis">Definition 3.61</a>.
 
@@ -227,7 +227,7 @@ To find when they are dependent, check whether $v_2=t v_1$ for some $t\in{\bf R}
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.7</strong></p>
+<p class="env-number"><strong>Solution 4.7</strong></p>
 
 <span id="sol-ex-maps-exercise-007" label="sol--ex:maps-exercise-007"></span> (See <a href="../exercises-maps/#ex-maps-exercise-007" data-reference-type="ref+Label" data-reference="ex:maps-exercise-007">Exercise 4.7</a>.) Let $A = \begin{pmatrix} \alpha & 0 & 0 \\ 0 & \alpha & 1+\alpha \\ \alpha & 1 & 2 \end{pmatrix}$ with $\alpha \in \mathbf{R}$. We determine $\operatorname{rank}(A)$ (for all $\alpha$) by bringing $A$ to row-echelon form and applying <a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>.
 
@@ -285,7 +285,7 @@ In total we get the following result:
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.8</strong></p>
+<p class="env-number"><strong>Solution 4.8</strong></p>
 
 <span id="sol-ex-maps-exercise-010" label="sol--ex:maps-exercise-010"></span> (See <a href="../exercises-maps/#ex-maps-exercise-010" data-reference-type="ref+Label" data-reference="ex:maps-exercise-010">Exercise 4.9</a>.) Let $f : \mathbf{R}^4 \to \mathbf{R}^3$ be defined by
 <div class="arithmatex" markdown="1">
@@ -409,7 +409,7 @@ By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" dat
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.9</strong></p>
+<p class="env-number"><strong>Solution 4.9</strong></p>
 
 <span id="sol-ex-maps-3-1" label="sol--ex:maps-3-1"></span> (See <a href="../exercises-maps/#ex-maps-3-1" data-reference-type="ref+Label" data-reference="ex:maps-3-1">Exercise 4.8</a>.) By <a href="../maps-kernel-and-image-1/#def-kernel" data-reference-type="ref+Label" data-reference="def:kernel">Definition 4.22</a> $\ker f = \{ \left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right ) \in {\bf R}^2 \ | \ f(\left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right )) = \left ( \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right ) \}$. I.e., the kernel consists of the solutions of the homongeneous system
 <div class="arithmatex" markdown="1">
@@ -446,7 +446,7 @@ One finds the solution $x_1 = 1$, $x_2 = 0$, i.e., $\left ( \begin{array}{c} 1 \
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.10</strong></p>
+<p class="env-number"><strong>Solution 4.10</strong></p>
 
 <span id="sol-ex-maps-3-2" label="sol--ex:maps-3-2"></span> (See <a href="../exercises-maps/#ex-maps-3-2" data-reference-type="ref+Label" data-reference="ex:maps-3-2">Exercise 4.9</a>.) By <a href="../maps-kernel-and-image-1/#def-kernel">Definition 4.22</a>, <a href="../maps-kernel-and-image-1/#def-preimage">Definition 4.20</a>, both questions are about solving linear systems. We use Gaussian elimination as in <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>.
 
@@ -539,7 +539,7 @@ Hence this is an affine plane (solution set of an inhomogeneous system), so it i
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.11</strong></p>
+<p class="env-number"><strong>Solution 4.11</strong></p>
 
 <span id="sol-ex-maps-3-3" label="sol--ex:maps-3-3"></span> (See <a href="../exercises-maps/#ex-maps-3-3" data-reference-type="ref+Label" data-reference="ex:maps-3-3">Exercise 4.10</a>.) The rank of $A_t$ is the dimension of its row space, which we compute by bringing $A_t$ to row echelon form (<a href="../maps-kernel-and-image-2/#prop-basis-row-column-space" data-reference-type="ref+Label" data-reference="prop:basis-row-column-space">Proposition 4.32</a>):
 <div class="arithmatex" markdown="1">
@@ -566,7 +566,7 @@ This means that, for all $t$, the kernel of $f$ does not just consist of the zer
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.12</strong></p>
+<p class="env-number"><strong>Solution 4.12</strong></p>
 
 <span id="sol-ex-maps-exercise-011" label="sol--ex:maps-exercise-011"></span> (See <a href="../exercises-maps/#ex-maps-exercise-011" data-reference-type="ref+Label" data-reference="ex:maps-exercise-011">Exercise 4.11</a>.) Let $f:V\to W$ be linear and let $U\subset V$ be a subspace.
 
@@ -608,7 +608,7 @@ Hence $f(U)$ is a subspace of $W$.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.13</strong></p>
+<p class="env-number"><strong>Solution 4.13</strong></p>
 
 <span id="sol-ex-maps-exercise-012" label="sol--ex:maps-exercise-012"></span> (See <a href="../exercises-maps/#ex-maps-exercise-012" data-reference-type="ref+Label" data-reference="ex:maps-exercise-012">Exercise 4.12</a>.) Let $f:V\to W$ be linear and let $U\subset W$ be a subspace. By <a href="../maps-kernel-and-image-1/#def-preimage" data-reference-type="ref+Label" data-reference="def:preimage">Definition 4.20</a>, $f^{-1}(U)=\{v\in V\mid f(v)\in U\}$.
 
@@ -641,7 +641,7 @@ As an aside, we note that the statement of this exercise, applied to $U=\{0_W\}$
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.14</strong></p>
+<p class="env-number"><strong>Solution 4.14</strong></p>
 
 <span id="sol-ex-maps-3-4" label="sol--ex:maps-3-4"></span> (See <a href="../exercises-maps/#ex-maps-3-4" data-reference-type="ref+Label" data-reference="ex:maps-3-4">Exercise 4.13</a>.) Let
 <div class="arithmatex" markdown="1">
@@ -750,7 +750,7 @@ Hence
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.15</strong></p>
+<p class="env-number"><strong>Solution 4.15</strong></p>
 
 <span id="sol-ex-maps-exercise-013" label="sol--ex:maps-exercise-013"></span> (See <a href="../exercises-maps/#ex-maps-exercise-013" data-reference-type="ref+Label" data-reference="ex:maps-exercise-013">Exercise 4.14</a>.) Let
 <div class="arithmatex" markdown="1">
@@ -898,7 +898,7 @@ So the wanted matrix is
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.16</strong></p>
+<p class="env-number"><strong>Solution 4.16</strong></p>
 
 <span id="sol-ex-maps-3-5" label="sol--ex:maps-3-5"></span> (See <a href="../exercises-maps/#ex-maps-3-5" data-reference-type="ref+Label" data-reference="ex:maps-3-5">Exercise 4.15</a>.) We have $v_1 = (1,1,0)$, and compute
 <div class="arithmatex" markdown="1">
@@ -977,7 +977,7 @@ According to <a href="../maps-matrices-associated-to-linear-maps/#prop-matrix-to
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.17</strong></p>
+<p class="env-number"><strong>Solution 4.17</strong></p>
 
 <span id="sol-ex-maps-3-6" label="sol--ex:maps-3-6"></span> (See <a href="../exercises-maps/#ex-maps-3-6" data-reference-type="ref+Label" data-reference="ex:maps-3-6">Exercise 4.16</a>.) The map is $f(x,y,z,t)=(-x+z,\,-y+t,\,x-y)$. Applying $f$ to the standard basis vectors $e_1,e_2,e_3,e_4$ of $\mathbf{R}^4$ gives the columns of the matrix (<a href="../maps-matrices-associated-to-linear-maps/#prop-matrix-to-linear-map" data-reference-type="ref+Label" data-reference="prop:matrix-to-linear-map">Proposition 4.44</a>):
 <div class="arithmatex" markdown="1">
@@ -1012,7 +1012,7 @@ The free variable is $t$; setting $t=\lambda$ gives $x=\lambda$, $y=\lambda$, $z
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.18</strong></p>
+<p class="env-number"><strong>Solution 4.18</strong></p>
 
 <span id="sol-ex-maps-3-7" label="sol--ex:maps-3-7"></span> (See <a href="../exercises-maps/#ex-maps-3-7" data-reference-type="ref+Label" data-reference="ex:maps-3-7">Exercise 4.17</a>.)
 
@@ -1069,7 +1069,7 @@ Thus for every $\left ( \begin{array}{c} a \\ b \\ c \end{array} \right ) \in \m
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.19</strong></p>
+<p class="env-number"><strong>Solution 4.19</strong></p>
 
 <span id="sol-ex-maps-exercise-014" label="sol--ex:maps-exercise-014"></span> (See <a href="../exercises-maps/#ex-maps-exercise-014" data-reference-type="ref+Label" data-reference="ex:maps-exercise-014">Exercise 4.18</a>.)
 
@@ -1170,7 +1170,7 @@ Therefore $g(U)$ cannot be all of ${\bf R}^3$, since ${\bf R}^3$ has dimension $
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.20</strong></p>
+<p class="env-number"><strong>Solution 4.20</strong></p>
 
 <span id="sol-ex-maps-example-031" label="sol--ex:maps-example-031"></span> (See <a href="../exercises-maps/#ex-maps-example-031" data-reference-type="ref+Label" data-reference="ex:maps-example-031">Exercise 4.19</a>.) We attempt to invert $A$ by row-reducing the augmented matrix $[A\mid I]$:
 <div class="arithmatex" markdown="1">
@@ -1191,7 +1191,7 @@ The third row of the left block is all zeros, so $A$ does not row-reduce to the 
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.21</strong></p>
+<p class="env-number"><strong>Solution 4.21</strong></p>
 
 <span id="sol-matrices-commute" label="sol--matrices.commute"></span> (See <a href="../exercises-maps/#matrices-commute" data-reference-type="ref+Label" data-reference="matrices.commute">Exercise 4.20</a>.) We compute $AB$ and $BA$ in each case, by applying <a href="../maps-composing/#def-product-matrices" data-reference-type="ref+Label" data-reference="def:product-matrices">Definition 4.49</a>:
 
@@ -1236,7 +1236,7 @@ So $AB=BA$ always.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.22</strong></p>
+<p class="env-number"><strong>Solution 4.22</strong></p>
 
 <span id="sol-ex-maps-exercise-015" label="sol--ex:maps-exercise-015"></span> (See <a href="../exercises-maps/#ex-maps-exercise-015" data-reference-type="ref+Label" data-reference="ex:maps-exercise-015">Exercise 4.21</a>.) We use that a matrix $A\in \mathrm{Mat}_{2\times 2}$ determines a linear map
 <div class="arithmatex" markdown="1">
@@ -1306,7 +1306,7 @@ which is different. Therefore no such matrix exists.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.23</strong></p>
+<p class="env-number"><strong>Solution 4.23</strong></p>
 
 <span id="sol-ex-maps-exercise-016" label="sol--ex:maps-exercise-016"></span> (See <a href="../exercises-maps/#ex-maps-exercise-016" data-reference-type="ref+Label" data-reference="ex:maps-exercise-016">Exercise 4.22</a>.) One possible choice is
 <div class="arithmatex" markdown="1">
@@ -1349,7 +1349,7 @@ That is why the composition is the zero map even though neither of the two maps 
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.24</strong></p>
+<p class="env-number"><strong>Solution 4.24</strong></p>
 
 <span id="sol-ex-maps-exercise-017" label="sol--ex:maps-exercise-017"></span> (See <a href="../exercises-maps/#ex-maps-exercise-017" data-reference-type="ref+Label" data-reference="ex:maps-exercise-017">Exercise 4.23</a>.)
 
@@ -1382,7 +1382,7 @@ Hence $A+A^T$ is symmetric by definition.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.25</strong></p>
+<p class="env-number"><strong>Solution 4.25</strong></p>
 
 <span id="sol-trace" label="sol--trace"></span> (See <a href="../exercises-maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>.) Let $A=(a_{ij})$ and $B=(b_{ij})$ be square matrices of the same size.
 
@@ -1457,7 +1457,7 @@ where $n$ is the size of the matrix. Hence $\operatorname{tr}(AB-BA)\ne \operato
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.26</strong></p>
+<p class="env-number"><strong>Solution 4.26</strong></p>
 
 <span id="sol-ex-maps-exercise-018" label="sol--ex:maps-exercise-018"></span> (See <a href="../exercises-maps/#ex-maps-exercise-018" data-reference-type="ref+Label" data-reference="ex:maps-exercise-018">Exercise 4.25</a>.) Consider the fixed number $r \in \mathbf R$. If we look for a matrix $R$ such that for all $2 \times 2$-matrices $A$ we have $RA = rA$, then this equation applied to $A = \mathrm{id}_2$ (the identity matrix, cf. <a href="../maps-composing/#def-identity-matrix" data-reference-type="ref+Label" data-reference="def:identity-matrix">Definition 4.58</a>) gives
 <div class="arithmatex" markdown="1">
@@ -1472,7 +1472,7 @@ By <a href="../maps-composing/#lem-matrix-multiplication-properties" data-refere
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.27</strong></p>
+<p class="env-number"><strong>Solution 4.27</strong></p>
 
 <span id="sol-ex-maps-exercise-019" label="sol--ex:maps-exercise-019"></span> (See <a href="../exercises-maps/#ex-maps-exercise-019" data-reference-type="ref+Label" data-reference="ex:maps-exercise-019">Exercise 4.26</a>.)
 
@@ -1536,7 +1536,7 @@ Indeed, when one multiplies strictly upper triangular matrices, the first superd
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.28</strong></p>
+<p class="env-number"><strong>Solution 4.28</strong></p>
 
 <span id="sol-ex-maps-3-8" label="sol--ex:maps-3-8"></span> (See <a href="../exercises-maps/#ex-maps-3-8" data-reference-type="ref+Label" data-reference="ex:maps-3-8">Exercise 4.27</a>.) We write any vector $v = (a,b) = a(1,0) + b(0,1) = ae_1 + be_2$ in terms of $v_1, v_2$:
 <div class="arithmatex" markdown="1">
@@ -1614,7 +1614,7 @@ Thus, the coordinates of $(2, -5)$ with respect to the basis $v_1, v_2$ is $(\fr
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.29</strong></p>
+<p class="env-number"><strong>Solution 4.29</strong></p>
 
 <span id="sol-ex-maps-3-9" label="sol--ex:maps-3-9"></span> (See <a href="../exercises-maps/#ex-maps-3-9" data-reference-type="ref+Label" data-reference="ex:maps-3-9">Exercise 4.28</a>.) We have, for example,
 <div class="arithmatex" markdown="1">
@@ -1634,7 +1634,7 @@ Likewise for $v_2$ and $v_3$. Therefore, the base change matrix is
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.30</strong></p>
+<p class="env-number"><strong>Solution 4.30</strong></p>
 
 <span id="sol-ex-maps-3-10" label="sol--ex:maps-3-10"></span> (See <a href="../exercises-maps/#ex-maps-3-10" data-reference-type="ref+Label" data-reference="ex:maps-3-10">Exercise 4.30</a>.) We follow the given hint, and first compute $H$. We have
 <div class="arithmatex" markdown="1">
@@ -1706,7 +1706,7 @@ KAH & = \left ( \begin{array}{ccc} 0 & -1 & 1 \\ 1 & 0 & -1 \\ 1 & -1 & -1 \end{
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.31</strong></p>
+<p class="env-number"><strong>Solution 4.31</strong></p>
 
 <span id="sol-ex-maps-3-11" label="sol--ex:maps-3-11"></span> (See <a href="../exercises-maps/#ex-maps-3-11" data-reference-type="ref+Label" data-reference="ex:maps-3-11">Exercise 4.32</a>.) We follow the solution of <a href="../exercises-maps/#ex-maps-3-10" data-reference-type="ref+Label" data-reference="ex:maps-3-10">Exercise 4.30</a>, see above:
 <div class="arithmatex" markdown="1">
@@ -1730,7 +1730,7 @@ KAH& = \left ( \begin{array}{cc} 2 & -1 \\ -1 & 1 \end{array} \right ) \left ( \
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.32</strong></p>
+<p class="env-number"><strong>Solution 4.32</strong></p>
 
 <span id="sol-ex-maps-3-12" label="sol--ex:maps-3-12"></span> (See <a href="../exercises-maps/#ex-maps-3-12" data-reference-type="ref+Label" data-reference="ex:maps-3-12">Exercise 4.33</a>.) For the given matrix $A$, the system $Ax =x$ is written out like so:
 <div class="arithmatex" markdown="1">
@@ -1766,7 +1766,7 @@ L((1,0,1), (0,1,0)).
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.33</strong></p>
+<p class="env-number"><strong>Solution 4.33</strong></p>
 
 <span id="sol-ex-maps-3-13" label="sol--ex:maps-3-13"></span> (See <a href="../exercises-maps/#ex-maps-3-13" data-reference-type="ref+Label" data-reference="ex:maps-3-13">Exercise 4.34</a>.) We write out the given system
 <div class="arithmatex" markdown="1">
@@ -1804,7 +1804,7 @@ L((0, 2, 1)).
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.34</strong></p>
+<p class="env-number"><strong>Solution 4.34</strong></p>
 
 <span id="sol-ex-maps-3-14" label="sol--ex:maps-3-14"></span> (See <a href="../exercises-maps/#ex-maps-3-14" data-reference-type="ref+Label" data-reference="ex:maps-3-14">Exercise 4.35</a>.) We proceed the same way as for <a href="../exercises-maps/#ex-maps-3-10" data-reference-type="ref+Label" data-reference="ex:maps-3-10">Exercise 4.30</a> (see its solution above):
 <div class="arithmatex" markdown="1">
@@ -1846,7 +1846,7 @@ H^{-1}AH & =
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.35</strong></p>
+<p class="env-number"><strong>Solution 4.35</strong></p>
 
 <span id="sol-ex-maps-3-15" label="sol--ex:maps-3-15"></span> (See <a href="../exercises-maps/#ex-maps-3-15" data-reference-type="ref+Label" data-reference="ex:maps-3-15">Exercise 4.37</a>.) This can be done as for <a href="../exercises-maps/#ex-maps-3-14" data-reference-type="ref+Label" data-reference="ex:maps-3-14">Exercise 4.35</a> above. The final solution is
 <div class="arithmatex" markdown="1">
@@ -1860,7 +1860,7 @@ H^{-1}AH & =
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.36</strong></p>
+<p class="env-number"><strong>Solution 4.36</strong></p>
 
 <span id="sol-ex-maps-3-16" label="sol--ex:maps-3-16"></span> (See <a href="../exercises-maps/#ex-maps-3-16" data-reference-type="ref+Label" data-reference="ex:maps-3-16">Exercise 4.38</a>.) One computes this solution space as
 <div class="arithmatex" markdown="1">
@@ -1922,7 +1922,7 @@ H^{-1}AH = \left ( \begin{array}{ccc} 3 & -1 & 0 \\ 0 & 0 & 1 \\ 0 & -2 & 3 \end
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.37</strong></p>
+<p class="env-number"><strong>Solution 4.37</strong></p>
 
 <span id="sol-ex-maps-3-17" label="sol--ex:maps-3-17"></span> (See <a href="../exercises-maps/#ex-maps-3-17" data-reference-type="ref+Label" data-reference="ex:maps-3-17">Exercise 4.39</a>.) The vectors
 <div class="arithmatex" markdown="1">
@@ -1993,7 +1993,7 @@ KAK^{-1} & = \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 3 & 0 \\ 1 & -1 & 1 \en
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.38</strong></p>
+<p class="env-number"><strong>Solution 4.38</strong></p>
 
 <span id="sol-ex-maps-3-18" label="sol--ex:maps-3-18"></span> (See <a href="../exercises-maps/#ex-maps-3-18" data-reference-type="ref+Label" data-reference="ex:maps-3-18">Exercise 4.41</a>.) It is convenient to observe
 <div class="arithmatex" markdown="1">
@@ -2020,7 +2020,7 @@ The left hand matrix equals $\left ( \begin{array}{ccc} -4 & 0 & 0 \\ 0 & -1 & 2
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.39</strong></p>
+<p class="env-number"><strong>Solution 4.39</strong></p>
 
 <span id="sol-ex-maps-3-19" label="sol--ex:maps-3-19"></span> (See <a href="../exercises-maps/#ex-maps-3-19" data-reference-type="ref+Label" data-reference="ex:maps-3-19">Exercise 4.43</a>.) Consider the vectors $v_1 = (1,0,-1)$, $v_2 = (1,1,0)$, $v_3 = (1,0,-2) \in {\bf R}^3$.
 
@@ -2089,7 +2089,7 @@ These computations can also be performed with any computer algebra software, suc
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.40</strong></p>
+<p class="env-number"><strong>Solution 4.40</strong></p>
 
 <span id="sol-ex-maps-3-20" label="sol--ex:maps-3-20"></span> (See <a href="../exercises-maps/#ex-maps-3-20" data-reference-type="ref+Label" data-reference="ex:maps-3-20">Exercise 4.44</a>.) We form the matrix of $f$ and bring it to row echelon form:
 <div class="arithmatex" markdown="1">
@@ -2125,7 +2125,7 @@ For $t=0$ we have seen above that $\dim {\operatorname{im}\ } f = 3$. By <a href
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.41</strong></p>
+<p class="env-number"><strong>Solution 4.41</strong></p>
 
 <span id="sol-ex-maps-2-7" label="sol--ex:maps-2-7"></span> (See <a href="../exercises-maps/#ex-maps-2-7" data-reference-type="ref+Label" data-reference="ex:maps-2-7">Exercise 4.45</a>.) The map $f$ is given by multiplication with the matrix, which we bring to row echelon form by elementary row operations
 <div class="arithmatex" markdown="1">
@@ -2160,7 +2160,7 @@ This shows that $4-2b=3a$ and $4(4-2b)+3(b+3)=0$, i.e., $25-5b=0$, so $b=5$ and 
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.42</strong></p>
+<p class="env-number"><strong>Solution 4.42</strong></p>
 
 <span id="sol-ex-maps-partial-2026-1" label="sol--ex:maps-partial-2026-1"></span> (See <a href="../exercises-maps/#ex-maps-partial-2026-1" data-reference-type="ref+Label" data-reference="ex:maps-partial-2026-1">Exercise 4.46</a>.) Part (1): The subspace $W \subset \mathbf R^4$ is the solution set of a homogeneous linear system. By <a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>, the coefficient matrix describing that linear system reads $\left ( \begin{array}{cccc} 2 & -1 & -1 & 0 \\ 0 & 1 & -1 & 0 \end{array} \right )$. Thus, (after dividing the first row by 2), the leading ones in this matrix are in the first and second column, so $x_3$ and $x_4$ are free variables. By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, a basis of $W$ is given by the vectors $w_1 = (1,1,1,0)$ and $w_2 = (0,0,0,1)$. Hence $\dim W = 2$.
 
@@ -2217,7 +2217,7 @@ into row-echelon form.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 4.13.43</strong></p>
+<p class="env-number"><strong>Solution 4.43</strong></p>
 
 <span id="sol-ex-maps-partial-2026-2" label="sol--ex:maps-partial-2026-2"></span> (See <a href="../exercises-maps/#ex-maps-partial-2026-2" data-reference-type="ref+Label" data-reference="ex:maps-partial-2026-2">Exercise 4.47</a>.) Part (1): Using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>) we bring the matrix $A$ into row echelon form (as far as possible):
 <div class="arithmatex" markdown="1">

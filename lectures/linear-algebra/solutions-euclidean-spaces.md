@@ -1,7 +1,7 @@
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.1</strong></p>
+<p class="env-number"><strong>Solution 7.1</strong></p>
 
 <span id="sol-ex-euclid-polynomials-gs" label="sol--ex:euclid-polynomials-gs"></span> (See <a href="../exercises-euclid/#ex-euclid-polynomials-gs" data-reference-type="ref+Label" data-reference="ex:euclid-polynomials-gs">Exercise 7.1</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthonormal-basis" data-reference-type="ref+Label" data-reference="tas:compute-orthonormal-basis">Task 7.61</a>.
 
@@ -66,7 +66,7 @@ Such polynomials, i.e., orthonormal with respect to the given scalar product, ar
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.2</strong></p>
+<p class="env-number"><strong>Solution 7.2</strong></p>
 
 <span id="sol-ex-euclid-r4-projection" label="sol--ex:euclid-r4-projection"></span> (See <a href="../exercises-euclid/#ex-euclid-r4-projection" data-reference-type="ref+Label" data-reference="ex:euclid-r4-projection">Exercise 7.3</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid-summary/#tas-compute-orthogonal-projection">Task 7.62</a>.
 
@@ -146,7 +146,7 @@ p_W(u)=-2v_1+2w_2=(4,4,0,4).
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.3</strong></p>
+<p class="env-number"><strong>Solution 7.3</strong></p>
 
 <span id="sol-ex-euclid-6-1" label="sol--ex:euclid-6-1"></span> (See <a href="../exercises-euclid/#ex-euclid-6-1" data-reference-type="ref+Label" data-reference="ex:euclid-6-1">Exercise 7.2</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid-summary/#tas-compute-orthogonal-projection">Task 7.62</a>.
 
@@ -207,7 +207,7 @@ t_U = t- t_\bot = (0,1,5) - \left(\frac{14}{11}, -\frac{14}{11}, \frac{42}{11}\r
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.4</strong></p>
+<p class="env-number"><strong>Solution 7.4</strong></p>
 
 <span id="sol-ex-euclid-6-2" label="sol--ex:euclid-6-2"></span> (See <a href="../exercises-euclid/#ex-euclid-6-2" data-reference-type="ref+Label" data-reference="ex:euclid-6-2">Exercise 7.4</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid-summary/#tas-compute-orthogonal-projection">Task 7.62</a>.
 
@@ -232,7 +232,7 @@ This is quickly solved as $\left ( \begin{array}{c} a \\ b \\ c \end{array} \rig
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.5</strong></p>
+<p class="env-number"><strong>Solution 7.5</strong></p>
 
 <span id="sol-ex-euclid-6-3" label="sol--ex:euclid-6-3"></span> (See <a href="../exercises-euclid/#ex-euclid-6-3" data-reference-type="ref+Label" data-reference="ex:euclid-6-3">Exercise 7.5</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthogonal-complement" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-complement">Task 7.63</a>.
 
@@ -248,7 +248,7 @@ T^\bot = L((3,0,1), (0,1,0)).
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.6</strong></p>
+<p class="env-number"><strong>Solution 7.6</strong></p>
 
 <span id="sol-ex-euclid-6-4" label="sol--ex:euclid-6-4"></span> (See <a href="../exercises-euclid/#ex-euclid-6-4" data-reference-type="ref+Label" data-reference="ex:euclid-6-4">Exercise 7.6</a>.) We want to find $U$ such that $U \oplus U^\bot = {\bf R}^3$ and $t=(1,5,6) + t_\bot$, with $(1,5,6) \in U$ and $t_\bot \in U^\bot$. This in particular means that $(1,5,6) \bot t_\bot$. Solving the equation
 <div class="arithmatex" markdown="1">
@@ -271,7 +271,7 @@ We solve the second part similarly: we have $t - (1,1,1) = (1,-1,0)$, so the Ans
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.7</strong></p>
+<p class="env-number"><strong>Solution 7.7</strong></p>
 
 <span id="sol-ex-euclid-6-6" label="sol--ex:euclid-6-6"></span> (See <a href="../exercises-euclid/#ex-euclid-6-6" data-reference-type="ref+Label" data-reference="ex:euclid-6-6">Exercise 7.7</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthogonal-projection" data-reference-type="ref+Label" data-reference="tas:compute-orthogonal-projection">Task 7.62</a>.
 
@@ -305,7 +305,7 @@ This vector has norm
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.8</strong></p>
+<p class="env-number"><strong>Solution 7.8</strong></p>
 
 <span id="sol-ex-euclid-6-7" label="sol--ex:euclid-6-7"></span> (See <a href="../exercises-euclid/#ex-euclid-6-7" data-reference-type="ref+Label" data-reference="ex:euclid-6-7">Exercise 7.8</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-parallel">Task 7.70</a>, <a href="../euclid-summary/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
 
@@ -324,7 +324,7 @@ This vector has norm $\sqrt{2/3}$, which is therefore the distance of $L$ and $L
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.9</strong></p>
+<p class="env-number"><strong>Solution 7.9</strong></p>
 
 <span id="sol-ex-euclid-6-8" label="sol--ex:euclid-6-8"></span> (See <a href="../exercises-euclid/#ex-euclid-6-8" data-reference-type="ref+Label" data-reference="ex:euclid-6-8">Exercise 7.9</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-skew">Task 7.71</a>, <a href="../euclid-summary/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
 
@@ -360,7 +360,7 @@ In particular, this distance is positive. This, together with the above observat
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.10</strong></p>
+<p class="env-number"><strong>Solution 7.10</strong></p>
 
 <span id="sol-ex-euclid-6-9" label="sol--ex:euclid-6-9"></span> (See <a href="../exercises-euclid/#ex-euclid-6-9" data-reference-type="ref+Label" data-reference="ex:euclid-6-9">Exercise 7.10</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-line-parallel-plane" data-reference-type="ref+Label" data-reference="tas:check-line-parallel-plane">Task 7.72</a>.
 
@@ -402,7 +402,7 @@ The left hand side equals $r(16+25+100) = 141 r$, so that $r = \frac{20}{141}$, 
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.11</strong></p>
+<p class="env-number"><strong>Solution 7.11</strong></p>
 
 <span id="sol-ex-euclid-6-10" label="sol--ex:euclid-6-10"></span> (See <a href="../exercises-euclid/#ex-euclid-6-10" data-reference-type="ref+Label" data-reference="ex:euclid-6-10">Exercise 7.11</a>.) We apply <a href="../euclid-orthogonal-and-symmetric-matrices/#thm-symmetric-orthogonally-diagonalizable" data-reference-type="ref+Label" data-reference="thm:symmetric-orthogonally-diagonalizable">Theorem 7.38</a>, according to which a matrix is *orthogonally* diagonalizable if and only if it is symmetric. This excludes $A = \left ( \begin{array}{cc} 1 & 2 \\ -2 & 1 \end{array} \right )$. The other two matrices are symmetric and therefore orthogonally diagonalizable. The matrix $A = \left ( \begin{array}{cc} 0 & 0 \\ 0 & 0 \end{array} \right )$ is already a diagonal matrix, so for $P = {\mathrm {id}}$ the matrix $PAP^{-1}$ is diagonal. The standard basis vectors $e_1, e_2$ are an orthonormal eigenbasis.
 
@@ -433,7 +433,7 @@ However, they are not normal, so an orthonormal eigenbasis for $A$ is given by
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.12</strong></p>
+<p class="env-number"><strong>Solution 7.12</strong></p>
 
 <span id="sol-ex-euclid-6-11" label="sol--ex:euclid-6-11"></span> (See <a href="../exercises-euclid/#ex-euclid-6-11" data-reference-type="ref+Label" data-reference="ex:euclid-6-11">Exercise 7.12</a>.) If $Av = \lambda v$, $Aw= \lambda w$, we compute
 <div class="arithmatex" markdown="1">
@@ -457,7 +457,7 @@ Since $\lambda \ne \mu$, this forces ${\left \langle v, w \right \rangle}=0$.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.13</strong></p>
+<p class="env-number"><strong>Solution 7.13</strong></p>
 
 <span id="sol-ex-euclid-6-12" label="sol--ex:euclid-6-12"></span> (See <a href="../exercises-euclid/#ex-euclid-6-12" data-reference-type="ref+Label" data-reference="ex:euclid-6-12">Exercise 7.13</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-line-parallel-plane">Task 7.72</a>, <a href="../euclid-summary/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
 
@@ -573,7 +573,7 @@ This means that we are looking for $a,b,c,s \in {\bf R}$ such that the following
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.14</strong></p>
+<p class="env-number"><strong>Solution 7.14</strong></p>
 
 <span id="sol-ex-euclid-lines-plane" label="sol--ex:euclid-lines-plane"></span> (See <a href="../exercises-euclid/#ex-euclid-lines-plane" data-reference-type="ref+Label" data-reference="ex:euclid-lines-plane">Exercise 7.14</a>.) This solution illustrates <a href="../euclid-summary/#tas-line-cartesian-to-parametric">Task 7.64</a>, <a href="../euclid-summary/#tas-plane-through-line-and-point">Task 7.67</a>, <a href="../euclid-summary/#tas-plane-vector-to-cartesian">Task 7.69</a>.
 
@@ -677,7 +677,7 @@ For example, one can take $l'=(0,0,1)$.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.15</strong></p>
+<p class="env-number"><strong>Solution 7.15</strong></p>
 
 <span id="sol-ex-euclid-poly-operator" label="sol--ex:euclid-poly-operator"></span> (See <a href="../exercises-euclid/#ex-euclid-poly-operator" data-reference-type="ref+Label" data-reference="ex:euclid-poly-operator">Exercise 7.15</a>.) Let $V=P_{\le 2}$ and ${\left \langle p,q \right \rangle}=\int_{-1}^1 p(t)q(t)\,dt$.
 
@@ -702,7 +702,7 @@ Finally, $f$ has no orthonormal eigenbasis for this scalar product: the eigenspa
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.16</strong></p>
+<p class="env-number"><strong>Solution 7.16</strong></p>
 
 <span id="sol-ex-euclid-u-r4-orth" label="sol--ex:euclid-u-r4-orth"></span> (See <a href="../exercises-euclid/#ex-euclid-u-r4-orth" data-reference-type="ref+Label" data-reference="ex:euclid-u-r4-orth">Exercise 7.16</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid-summary/#tas-compute-orthogonal-projection">Task 7.62</a>, <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>.
 
@@ -742,7 +742,7 @@ Finally, $U^\bot=L(n)=L(1,-1,1,2)$, where we have used <a href="../euclid-euclid
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.17</strong></p>
+<p class="env-number"><strong>Solution 7.17</strong></p>
 
 <span id="sol-ex-euclid-6-13" label="sol--ex:euclid-6-13"></span> (See <a href="../exercises-euclid/#ex-euclid-6-13" data-reference-type="ref+Label" data-reference="ex:euclid-6-13">Exercise 7.17</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>, <a href="../euclid-summary/#tas-compute-orthogonal-projection">Task 7.62</a>.
 
@@ -796,7 +796,7 @@ These computations may be carried out also using a computer algebra system, for 
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.18</strong></p>
+<p class="env-number"><strong>Solution 7.18</strong></p>
 
 <span id="sol-ex-euclid-6-14" label="sol--ex:euclid-6-14"></span> (See <a href="../exercises-euclid/#ex-euclid-6-14" data-reference-type="ref+Label" data-reference="ex:euclid-6-14">Exercise 7.18</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-skew">Task 7.71</a>, <a href="../euclid-summary/#tas-check-line-parallel-plane">Task 7.72</a>.
 
@@ -832,7 +832,7 @@ We compute the coordinates of $r_\alpha = (x,y,z)$ as $z = \alpha$, $x = \frac 1
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.19</strong></p>
+<p class="env-number"><strong>Solution 7.19</strong></p>
 
 <span id="sol-ex-euclid-6-15" label="sol--ex:euclid-6-15"></span> (See <a href="../exercises-euclid/#ex-euclid-6-15" data-reference-type="ref+Label" data-reference="ex:euclid-6-15">Exercise 7.19</a>.) This solution illustrates <a href="../euclid-summary/#tas-plane-through-three-points">Task 7.66</a>, <a href="../euclid-summary/#tas-plane-vector-to-cartesian">Task 7.69</a>.
 
@@ -878,7 +878,7 @@ P = \{x = (x_1, x_2, x_3) | x_1 -9x_2 + x_3 = -6\}.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.20</strong></p>
+<p class="env-number"><strong>Solution 7.20</strong></p>
 
 <span id="sol-ex-euclid-6-16" label="sol--ex:euclid-6-16"></span> (See <a href="../exercises-euclid/#ex-euclid-6-16" data-reference-type="ref+Label" data-reference="ex:euclid-6-16">Exercise 7.20</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-skew" data-reference-type="ref+Label" data-reference="tas:check-lines-skew">Task 7.71</a>. The line $M$, given to us by the systen $x + z = 2$, $x - 2 y = 2$ is also described as $M = (2,0,0) + L(2, 1, -2)$. Its underlying vector space is therefore spanned by $(2,1,-2)$, while the underlying vector space of $L$ is spanned by $(1,0,-1)$. These two vectors are linearly independent. We compute the intersection of $L$ and $M$ by taking a general point $l = (3+t, 1, -t) \in L$ and $m = (2+2s,s,-2s) \in M$, with $t, s \in {\bf R}$. The three coordinates of the equation $l = m$ read:
 <div class="arithmatex" markdown="1">
@@ -897,7 +897,7 @@ The second and third equations give $s = 1$, $t = 2$. The first then gives $5 = 
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.21</strong></p>
+<p class="env-number"><strong>Solution 7.21</strong></p>
 
 <span id="sol-ex-euclid-6-17" label="sol--ex:euclid-6-17"></span> (See <a href="../exercises-euclid/#ex-euclid-6-17" data-reference-type="ref+Label" data-reference="ex:euclid-6-17">Exercise 7.21</a>.) Writing $q = (x,y,z)$ for $x, y, z \in {\bf R}$, the line $M$ is then given by $M = p + L(q-p) = (-1,-1,-1) + L(x+1,y+1,z+1)$.
 
@@ -938,7 +938,7 @@ We therefore find that the line $M$ through $p$ and $q = (x,y,z)$ intersects $L$
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.22</strong></p>
+<p class="env-number"><strong>Solution 7.22</strong></p>
 
 <span id="sol-ex-euclid-6-18" label="sol--ex:euclid-6-18"></span> (See <a href="../exercises-euclid/#ex-euclid-6-18" data-reference-type="ref+Label" data-reference="ex:euclid-6-18">Exercise 7.22</a>.) This solution illustrates <a href="../euclid-summary/#tas-line-in-plane-orthogonal-to-line" data-reference-type="ref+Label" data-reference="tas:line-in-plane-orthogonal-to-line">Task 7.68</a>.
 
@@ -968,7 +968,7 @@ M = p + L(w) = (0,1,6) + L(5,2,-7).
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.23</strong></p>
+<p class="env-number"><strong>Solution 7.23</strong></p>
 
 <span id="sol-ex-euclid-6-19" label="sol--ex:euclid-6-19"></span> (See <a href="../exercises-euclid/#ex-euclid-6-19" data-reference-type="ref+Label" data-reference="ex:euclid-6-19">Exercise 7.23</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-skew">Task 7.71</a>, <a href="../euclid-summary/#tas-check-line-parallel-plane">Task 7.72</a>, <a href="../euclid-summary/#tas-compute-distance-affine-subspaces">Task 7.74</a>.
 
@@ -1094,7 +1094,7 @@ q_{-13/9}& =(-\frac{13}9, -\frac{17}9, -\frac{19}9).
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.24</strong></p>
+<p class="env-number"><strong>Solution 7.24</strong></p>
 
 <span id="sol-ex-euclid-6-20" label="sol--ex:euclid-6-20"></span> (See <a href="../exercises-euclid/#ex-euclid-6-20" data-reference-type="ref+Label" data-reference="ex:euclid-6-20">Exercise 7.24</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>.
 
@@ -1133,7 +1133,7 @@ x_2 + x_4 & = 0.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.25</strong></p>
+<p class="env-number"><strong>Solution 7.25</strong></p>
 
 <span id="sol-ex-euclid-6-21" label="sol--ex:euclid-6-21"></span> (See <a href="../exercises-euclid/#ex-euclid-6-21" data-reference-type="ref+Label" data-reference="ex:euclid-6-21">Exercise 7.25</a>.) This solution illustrates <a href="../euclid-summary/#tas-check-lines-parallel">Task 7.70</a>, <a href="../euclid-summary/#tas-plane-through-line-and-point">Task 7.67</a>, <a href="../euclid-summary/#tas-line-in-plane-orthogonal-to-line">Task 7.68</a>.
 
@@ -1247,7 +1247,7 @@ N = (-1,1,0) + L(1, 2, 4).
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.26</strong></p>
+<p class="env-number"><strong>Solution 7.26</strong></p>
 
 <span id="sol-ex-euclid-6-22" label="sol--ex:euclid-6-22"></span> (See <a href="../exercises-euclid/#ex-euclid-6-22" data-reference-type="ref+Label" data-reference="ex:euclid-6-22">Exercise 7.26</a>.) This solution illustrates <a href="../euclid-summary/#tas-compute-orthonormal-basis">Task 7.61</a>, <a href="../euclid-summary/#tas-compute-orthogonal-complement">Task 7.63</a>.
 
@@ -1296,7 +1296,7 @@ W = \{2x_1 + x_3 -3x_4 = 0\}.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 7.9.27</strong></p>
+<p class="env-number"><strong>Solution 7.27</strong></p>
 
 <span id="sol-ex-euclid-6-23" label="sol--ex:euclid-6-23"></span> (See <a href="../exercises-euclid/#ex-euclid-6-23" data-reference-type="ref+Label" data-reference="ex:euclid-6-23">Exercise 7.27</a>.) This solution illustrates <a href="../euclid-summary/#tas-plane-through-three-points">Task 7.66</a>, <a href="../euclid-summary/#tas-line-in-plane-orthogonal-to-line">Task 7.68</a>, <a href="../euclid-summary/#tas-check-line-parallel-plane">Task 7.72</a>.
 

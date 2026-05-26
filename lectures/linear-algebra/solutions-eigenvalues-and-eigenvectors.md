@@ -1,7 +1,7 @@
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.1</strong></p>
+<p class="env-number"><strong>Solution 6.1</strong></p>
 
 <span id="sol-ex-eigenvalues-exercise-001" label="sol--ex:eigenvalues-exercise-001"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-001" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-001">Exercise 6.1</a>.) To decide whether the matrix $A = \left ( \begin{array}{ccc} 2 & 1 & 1 \\ 0 & 1 & 0 \\ 1 & -1 & 2 \end{array} \right )$ is diagonalizable, we follow <a href="../eigenvalues-diagonalization/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>.
 
@@ -50,7 +50,7 @@ Indeed, the eigenvalue $\lambda_1 = 1$ has algebraic multiplicity 2 but its eige
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.2</strong></p>
+<p class="env-number"><strong>Solution 6.2</strong></p>
 
 <span id="sol-exercise-eigenvalues-2x2" label="sol--exercise.eigenvalues.2x2"></span> (See <a href="../exercises-eigenvalues/#exercise-eigenvalues-2x2" data-reference-type="ref+Label" data-reference="exercise.eigenvalues.2x2">Exercise 6.2</a>.) For $A = \left ( \begin{array}{cc} a & b \\ c & d \end{array} \right )$ we have $A - t\,\mathrm{id}_2 = \left ( \begin{array}{cc} a-t & b \\ c & d-t \end{array} \right )$.
 
@@ -87,7 +87,7 @@ By the quadratic formula,
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.3</strong></p>
+<p class="env-number"><strong>Solution 6.3</strong></p>
 
 <span id="sol-ex-eigenvalues-exercise-002" label="sol--ex:eigenvalues-exercise-002"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-002" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-002">Exercise 6.3</a>.) We compute $\chi_A(t)$, eigenvalues, eigenspaces, and diagonalizability for each matrix, following <a href="../eigenvalues-characteristic-polynomial/#dlm-eigenvalues-definitionlemma-001" data-reference-type="ref+Label" data-reference="dlm:eigenvalues-definitionlemma-001">Definition and Lemma 6.5</a> and <a href="../eigenvalues-diagonalization/#met-diagonalizability" data-reference-type="ref+Label" data-reference="met:diagonalizability">Method 6.15</a>.
 
@@ -188,7 +188,7 @@ Since $\dim E_0=1<3$, $A$ is not diagonalizable, and there is no eigenbasis.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.4</strong></p>
+<p class="env-number"><strong>Solution 6.4</strong></p>
 
 <span id="sol-ex-eigenvalues-exercise-003" label="sol--ex:eigenvalues-exercise-003"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-003" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-003">Exercise 6.4</a>.) Consider
 <div class="arithmatex" markdown="1">
@@ -236,7 +236,7 @@ By <a href="../eigenvalues-diagonalization/#met-diagonalizability" data-referenc
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.5</strong></p>
+<p class="env-number"><strong>Solution 6.5</strong></p>
 
 <span id="sol-ex-eigenvalues-5-1" label="sol--ex:eigenvalues-5-1"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-1" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-1">Exercise 6.5</a>.) The condition $\ker f = L((1,1,1))$ implies that $f(1,1,1)=(0,0,0)$, which we can also rewrite as
 <div class="arithmatex" markdown="1">
@@ -289,7 +289,7 @@ This is a typical example of the situation that one basis of ${\bf R}^3$ may be 
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.6</strong></p>
+<p class="env-number"><strong>Solution 6.6</strong></p>
 
 <span id="sol-ex-eigenvalues-exercise-004" label="sol--ex:eigenvalues-exercise-004"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-004" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-004">Exercise 6.6</a>.) For
 <div class="arithmatex" markdown="1">
@@ -350,7 +350,7 @@ In conclusion, $A_a$ is diagonalizable precisely if $a \ne 0$.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.7</strong></p>
+<p class="env-number"><strong>Solution 6.7</strong></p>
 
 <span id="sol-ex-eigenvalues-5-2" label="sol--ex:eigenvalues-5-2"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-2" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-2">Exercise 6.7</a>.) We have $\det (A_a - t {\mathrm {id}}_3) = \det \left ( \begin{array}{ccc} 4-t & 0 & 4 \\ a & 2-t & a \\ -2 & 0 & -2-t \end{array} \right )$. It is convenient to develop along the second column (<a href="../determinants-further-properties/#prop-cofactor-expansion" data-reference-type="ref+Label" data-reference="prop:cofactor-expansion">Proposition 5.23</a>), since it has two zeros; other developments are possible and give the same result, but are more tedious to perform. This gives
 <div class="arithmatex" markdown="1">
@@ -394,7 +394,7 @@ This matrix has rank 1, or equivalently $\dim E_2 = 2$, if and only if $a=0$. Th
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.8</strong></p>
+<p class="env-number"><strong>Solution 6.8</strong></p>
 
 <span id="sol-ex-eigenvalues-exercise-005" label="sol--ex:eigenvalues-exercise-005"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-005" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-005">Exercise 6.8</a>.) If $A = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 2 & 0 \\ 1 & -1 & 1 \end{array} \right )$ and $B = \left ( \begin{array}{ccc} 2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 0 \end{array} \right ).$ represent the same linear map (with respect to different bases), there needs to be a base change matrix $P$ such that $B = P^{-1}AP$. This will imply that $A$ and $B$ have the same characteristic polynomial, and in particular the same eigenvalues (see <a href="../eigenvalues-diagonalization/#prop-similarity-necessary-conditions" data-reference-type="ref+Label" data-reference="prop:similarity-necessary-conditions">Proposition 6.24</a>). We compute
 <div class="arithmatex" markdown="1">
@@ -491,7 +491,7 @@ In particular, the eigenspaces of $A$ and $B$ are not the same, which implies th
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.9</strong></p>
+<p class="env-number"><strong>Solution 6.9</strong></p>
 
 <span id="sol-ex-eigenvalues-exercise-006" label="sol--ex:eigenvalues-exercise-006"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-006" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-006">Exercise 6.9</a>.) For
 <div class="arithmatex" markdown="1">
@@ -552,7 +552,7 @@ so $E_0=L((1,0,1))$. Similarly, one computes the eigenspaces $E_2=L((-1,-2,1))$ 
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.10</strong></p>
+<p class="env-number"><strong>Solution 6.10</strong></p>
 
 <span id="sol-ex-eigenvalues-exercise-007" label="sol--ex:eigenvalues-exercise-007"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-exercise-007" data-reference-type="ref+Label" data-reference="ex:eigenvalues-exercise-007">Exercise 6.10</a>.) Let
 <div class="arithmatex" markdown="1">
@@ -658,7 +658,7 @@ E_{-6}(F)=L\left(\left ( \begin{array}{cc} -4 & 0 \\ 1 & 0 \end{array} \right ),
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.11</strong></p>
+<p class="env-number"><strong>Solution 6.11</strong></p>
 
 <span id="sol-ex-eigenvalues-5-4-3" label="sol--ex:eigenvalues-5-4-3"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-4-3" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-4-3">Exercise 6.11</a>.) If $A$ and $B$ represent the same map, then $A = PBP^{-1}$ for some invertible matrix $P$. By <a href="../determinants-further-properties/#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>, this implies that $\det A = \det P \det B \det P^{-1} = \det B$. In short, $A$ and $B$ have to have the same determinant. This is true: $\det A = \det B = 9$.
 
@@ -682,7 +682,7 @@ Finally, the dimensions of the eigenspaces of the eigenvalues ($1$ and $3$) need
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.12</strong></p>
+<p class="env-number"><strong>Solution 6.12</strong></p>
 
 <span id="sol-ex-eigenvalues-5-4-4" label="sol--ex:eigenvalues-5-4-4"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-4-4" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-4-4">Exercise 6.12</a>.) The matrix $A$ has eigenvalues $1$ and $2$. The eigenspaces are computed as $E_1 = L(1,0,0)$ and $E_2 = L(1,1,0)$. Their dimensions sum up to 2, which is strictly less than 3, so that $A$ is *not* diagonalizable.
 
@@ -693,7 +693,7 @@ The matrix $A^2$ therefore has $2^2 = 4$ as an eigenvalue. Since similar matrice
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.13</strong></p>
+<p class="env-number"><strong>Solution 6.13</strong></p>
 
 <span id="sol-ex-eigenvalues-5-5" label="sol--ex:eigenvalues-5-5"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-5" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-5">Exercise 6.13</a>.) We first check that $v_1, v_2, v_3$ are a basis of ${\bf R}^3$. Indeed, one can compute
 <div class="arithmatex" markdown="1">
@@ -794,7 +794,7 @@ One solves the first and third equation to $a = \frac 54$, $b=\frac 14$. Therefo
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.14</strong></p>
+<p class="env-number"><strong>Solution 6.14</strong></p>
 
 <span id="sol-ex-eigenvalues-5-7" label="sol--ex:eigenvalues-5-7"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-7" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-7">Exercise 6.14</a>.) By <a href="../determinants-invertibility-and-determinants/#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>, $A$ is invertible precisely iff $\det A = 0$. We compute the determinant, for example using Sarrus’ rule (<a href="../determinants-determinants-of-larger-matrices/#lem-sarrus-rule" data-reference-type="ref+Label" data-reference="lem:Sarrus-rule">Lemma 5.11</a>), as $\det A = 0 - 24 + 6t-10t -0+30 = 6-4t$. Thus, the condition $\det A = 6-4t = 0$ amounts to $t = \frac 32$. The matrix $A$ is therefore not invertible precisely if $t = \frac 32$.
 
@@ -852,7 +852,7 @@ These computations can also be performed using any computer algebra software suc
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.15</strong></p>
+<p class="env-number"><strong>Solution 6.15</strong></p>
 
 <span id="sol-ex-eigenvalues-5-9" label="sol--ex:eigenvalues-5-9"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-9" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-9">Exercise 6.15</a>.) The kernel of $A$ is different from $\{0\}$ precisely if $A$ is not invertible or, equivalently, if $\det A = 0$. For example using Sarrus’ rule (<a href="../determinants-determinants-of-larger-matrices/#lem-sarrus-rule" data-reference-type="ref+Label" data-reference="lem:Sarrus-rule">Lemma 5.11</a>), we have $\det A = 2t-6$, so $t = 3$.
 
@@ -867,7 +867,7 @@ If $B$ satisfies $\chi_B(t)=\chi_A(t)=-t(t-2)(t-4)$, its eigenvalues are 0, 2 an
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 6.6.16</strong></p>
+<p class="env-number"><strong>Solution 6.16</strong></p>
 
 <span id="sol-ex-eigenvalues-5-10" label="sol--ex:eigenvalues-5-10"></span> (See <a href="../exercises-eigenvalues/#ex-eigenvalues-5-10" data-reference-type="ref+Label" data-reference="ex:eigenvalues-5-10">Exercise 6.16</a>.) We compute $\det A = -4t-2$, this is 0 precisely if $t=-\frac 12$. Thus, $A$ is non-invertible for $t=-\frac 12$ and invertible otherwise.
 

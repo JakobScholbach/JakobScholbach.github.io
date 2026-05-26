@@ -43,7 +43,7 @@ Compute the trigonometric form of the following complex numbers:
 
 <p class="env-number"><strong>Exercise 1.4</strong></p>
 
-<span id="ex-complex-1" label="ex:complex-1"></span> (See <a href="../solutions-complex-numbers/#sol-ex-complex-1" data-reference-type="ref+Label" data-reference="sol--ex:complex-1">Solution 1.5.1</a>.) Compute the algebraic and the trigonometric form of $z = \left ( \frac{i-1}{i+1}\right )^3$.
+<span id="ex-complex-1" label="ex:complex-1"></span> (See <a href="../solutions-complex-numbers/#sol-ex-complex-1" data-reference-type="ref+Label" data-reference="sol--ex:complex-1">Solution 1.1</a>.) Compute the algebraic and the trigonometric form of $z = \left ( \frac{i-1}{i+1}\right )^3$.
 
 </div>
 
@@ -52,7 +52,7 @@ Compute the trigonometric form of the following complex numbers:
 
 <p class="env-number"><strong>Exercise 1.5</strong></p>
 
-<span id="ex-complex-2" label="ex:complex-2"></span> (See <a href="../solutions-complex-numbers/#sol-ex-complex-2" data-reference-type="ref+Label" data-reference="sol--ex:complex-2">Solution 1.5.2</a>.) Find all complex numbers $z$ satisfying the equation
+<span id="ex-complex-2" label="ex:complex-2"></span> (See <a href="../solutions-complex-numbers/#sol-ex-complex-2" data-reference-type="ref+Label" data-reference="sol--ex:complex-2">Solution 1.2</a>.) Find all complex numbers $z$ satisfying the equation
 <div class="arithmatex" markdown="1">
 \[
 z = 3i |z|\overline z.
@@ -66,6 +66,6 @@ z = 3i |z|\overline z.
 
 <p class="env-number"><strong>Exercise 1.6</strong></p>
 
-<span id="ex-complex-3" label="ex:complex-3"></span> (See <a href="../solutions-complex-numbers/#sol-ex-complex-3" data-reference-type="ref+Label" data-reference="sol--ex:complex-3">Solution 1.5.3</a>.) Compute the solutions of the equation $(\overline z)^3 = 8i$ in algebraic and in trigonmetric form. Draw a picture of these solutions.
+<span id="ex-complex-3" label="ex:complex-3"></span> (See <a href="../solutions-complex-numbers/#sol-ex-complex-3" data-reference-type="ref+Label" data-reference="sol--ex:complex-3">Solution 1.3</a>.) Compute the solutions of the equation $(\overline z)^3 = 8i$ in algebraic and in trigonmetric form. Draw a picture of these solutions.
 
 </div>

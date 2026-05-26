@@ -18,7 +18,7 @@ Let $v_1, \dots, v_m \in V$ be $m$ vectors in some vector space. Then we have
 <div class="definition" markdown="1">
 
 
-<p class="env-number"><strong>Definition 3.49</strong> (Related exercises: <a href="../exercises-spaces/#ex-basis-w1-r4">Exercise 3.22</a>, <a href="../exercises-spaces/#ex-linear-independence">Exercise 3.7</a>, <a href="../exercises-maps/#ex-maps-exercise-006">Exercise 4.6</a>, <a href="../exercises-spaces/#ex-mat-subspace-dim">Exercise 3.24</a>, <a href="../exercises-spaces/#ex-polynomial-basis-ab">Exercise 3.21</a>, <a href="../exercises-spaces/#ex-r2-spanning">Exercise 3.18</a>, <a href="../exercises-spaces/#ex-three-vectors-r2">Exercise 3.8</a>)</p>
+<p class="env-number"><strong>Definition 3.49</strong> (Related exercises: <a href="../exercises-spaces/#ex-basis-w1-r4">Exercise 3.22</a>, <a href="../exercises-spaces/#ex-linear-independence">Exercise 3.7</a>, <a href="../exercises-maps/#ex-maps-exercise-006">Exercise 4.6</a>, <a href="../exercises-spaces/#ex-mat-subspace-dim">Exercise 3.24</a>, <a href="../exercises-spaces/#ex-polynomial-basis-ab">Exercise 3.21</a>, <a href="../exercises-spaces/#ex-r2-spanning">Exercise 3.18</a>, <a href="../exercises-systems/#ex-systems-param-ab">Exercise 2.9</a>, <a href="../exercises-spaces/#ex-three-vectors-r2">Exercise 3.8</a>)</p>
 
 <span id="def-linearly-independent" label="def:linearly-independent"></span> We say $v_1, \dots, v_m$ are *linearly dependent* if there is a *non-zero* linear combination of these that gives the zero vector. I.e., if there are $a_1, \dots, a_m \in {\bf R}$ of *which at least one is non-zero*, such that
 <div class="arithmatex" markdown="1">

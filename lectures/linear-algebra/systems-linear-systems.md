@@ -18,7 +18,7 @@ The interest in linear systems lies in finding those tuples of numbers satisfyin
 <div class="example" markdown="1">
 
 
-<p class="env-number"><strong>Example 2.8</strong></p>
+<p class="env-number"><strong>Example 2.8</strong> (Related exercises: <a href="../exercises-systems/#ex-systems-rref-from-exa">Exercise 2.7</a>)</p>
 
 <span id="ex-system-2-unique" label="ex:system-2-unique"></span> The equations
 <div class="arithmatex" markdown="1">
@@ -100,7 +100,7 @@ The above linear system <a href="#system-2-unique-eqn" data-reference-type="eqre
 <div class="example" markdown="1">
 
 
-<p class="env-number"><strong>Example 2.10</strong></p>
+<p class="env-number"><strong>Example 2.10</strong> (Related exercises: <a href="../exercises-systems/#ex-systems-rref-from-exa">Exercise 2.7</a>)</p>
 
 <span id="ex-system-2-no" label="ex:system-2-no"></span> The system
 <div class="arithmatex" markdown="1">
@@ -126,7 +126,7 @@ The system has no solution, which is paralleled by the fact that two *parallel, 
 <div class="example" markdown="1">
 
 
-<p class="env-number"><strong>Example 2.11</strong></p>
+<p class="env-number"><strong>Example 2.11</strong> (Related exercises: <a href="../exercises-systems/#ex-systems-rref-from-exa">Exercise 2.7</a>)</p>
 
 <span id="ex-system-2-infinite" label="ex:system-2-infinite"></span> The system
 <div class="arithmatex" markdown="1">
@@ -192,7 +192,7 @@ can take three forms:\
 <div class="definition" markdown="1">
 
 
-<p class="env-number"><strong>Definition 2.13</strong> (Related exercises: <a href="../exercises-spaces/#ex-basis-w1-r4">Exercise 3.22</a>, <a href="../exercises-spaces/#ex-intersection-tw">Exercise 3.17</a>, <a href="../exercises-spaces/#ex-matrix-subspace">Exercise 3.14</a>)</p>
+<p class="env-number"><strong>Definition 2.13</strong> (Related exercises: <a href="../exercises-spaces/#ex-basis-w1-r4">Exercise 3.22</a>, <a href="../exercises-spaces/#ex-intersection-tw">Exercise 3.17</a>, <a href="../exercises-spaces/#ex-matrix-subspace">Exercise 3.14</a>, <a href="../exercises-systems/#ex-systems-homogeneous-3eqs">Exercise 2.15</a>, <a href="../exercises-systems/#ex-systems-homogeneous-t">Exercise 2.14</a>, <a href="../exercises-systems/#ex-systems-line-xy3">Exercise 2.1</a>)</p>
 
 <span id="def-homogeneous-linear-system" label="def:homogeneous-linear-system"></span> A *homogeneous linear system* is one in which the constant terms in all equations are zero. (I.e., in the notation in below, $b_1 = \dots = b_n = 0$.)
 
@@ -201,7 +201,7 @@ can take three forms:\
 <div class="remark" markdown="1">
 
 
-<p class="env-number"><strong>Remark 2.14</strong></p>
+<p class="env-number"><strong>Remark 2.14</strong> (Related exercises: <a href="../exercises-systems/#ex-systems-homogeneous-3eqs">Exercise 2.15</a>, <a href="../exercises-systems/#ex-systems-homogeneous-t">Exercise 2.14</a>)</p>
 
 <span id="rem-trivial-solution" label="rem:trivial-solution"></span> For a homogeneous linear system, there is always *at least* one solution namely
 <div class="arithmatex" markdown="1">

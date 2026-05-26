@@ -2150,7 +2150,203 @@
   <h1>Solutions</h1>
 
 <div class="solution">
-<p class="env-number"><strong>Solution 2.7.1</strong></p>
+<p class="env-number"><strong>Solution 2.1</strong></p>
+<p><span id="sol-ex-systems-line-xy3" label="sol--ex:systems-line-xy3"></span> (See <a href="../exercises-systems/#ex-systems-line-xy3" data-reference-type="ref+Label" data-reference="ex:systems-line-xy3">Exercise 2.1</a>.) By <a href="../systems-linear-equations/#def-systems-definition-001" data-reference-type="ref+Label" data-reference="def:systems-definition-001">Definition 2.1</a>, the equation <span class="arithmatex">\(x+y=3\)</span> is a linear equation in two variables. Solving for <span class="arithmatex">\(y\)</span> gives <span class="arithmatex">\(y = 3-x\)</span>, so for every <span class="arithmatex">\(x \in \mathbf{R}\)</span> the pair <span class="arithmatex">\((x,\, 3-x)\)</span> is a solution. The solution set is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\{ (x,\, 3-x) \mid x \in \mathbf{R} \}.
+\]</div>
+</div>
+<p>Geometrically this is a straight line in the <span class="arithmatex">\(xy\)</span>-plane with slope <span class="arithmatex">\(-1\)</span>, passing through the points <span class="arithmatex">\((0,3)\)</span> and <span class="arithmatex">\((3,0)\)</span>:</p>
+<div class="center"></div>
+<p>The equation is <em>not</em> homogeneous (see <a href="../systems-linear-systems/#def-homogeneous-linear-system" data-reference-type="ref+Label" data-reference="def:homogeneous-linear-system">Definition 2.13</a>), because the right-hand side equals <span class="arithmatex">\(3 \ne 0\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.2</strong></p>
+<p><span id="sol-ex-systems-line-x3-vars" label="sol--ex:systems-line-x3-vars"></span> (See <a href="../exercises-systems/#ex-systems-line-x3-vars" data-reference-type="ref+Label" data-reference="ex:systems-line-x3-vars">Exercise 2.2</a>.) By <a href="../systems-linear-equations/#def-systems-definition-001" data-reference-type="ref+Label" data-reference="def:systems-definition-001">Definition 2.1</a>, the equation <span class="arithmatex">\(x = 3\)</span> is a linear equation.</p>
+<p><em>One variable.</em> Here the only unknown is <span class="arithmatex">\(x\)</span>, and the equation uniquely determines it: <span class="arithmatex">\(x = 3\)</span>. The solution set is therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\{3\} \subset \mathbf{R},
+\]</div>
+</div>
+<p>a single point on the real line.</p>
+<p><em>Two variables.</em> When we think of the equation as <span class="arithmatex">\(x + 0 \cdot y = 3\)</span> in the unknowns <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>, the variable <span class="arithmatex">\(y\)</span> does not appear and can take any value in <span class="arithmatex">\(\mathbf{R}\)</span>. For each <span class="arithmatex">\(y \in \mathbf{R}\)</span> the pair <span class="arithmatex">\((3, y)\)</span> is a solution, so the solution set is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\{(3,\, y) \mid y \in \mathbf{R}\} \subset \mathbf{R}^2.
+\]</div>
+</div>
+<p>Geometrically this is the vertical line <span class="arithmatex">\(x = 3\)</span> in the <span class="arithmatex">\(xy\)</span>-plane:</p>
+<div class="center"></div>
+<p>Note that the solution set in the two-variable case is much larger than in the one-variable case: adding a variable introduces a whole new dimension of solutions.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.3</strong></p>
+<p><span id="sol-ex-systems-gauss-4vars" label="sol--ex:systems-gauss-4vars"></span> (See <a href="../exercises-systems/#ex-systems-gauss-4vars" data-reference-type="ref+Label" data-reference="ex:systems-gauss-4vars">Exercise 2.3</a>.) The augmented matrix associated to the system is (see <a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>)</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 2 &amp; -1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 5 &amp; -3 &amp; -5 &amp; -3 \\ 3 &amp; -4 &amp; 3 &amp; 4 &amp; 3 \end{array} \right ).
+\]</div>
+</div>
+<p>We bring this matrix to reduced row-echelon form using <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>. Subtracting the first row from the third gives <span class="arithmatex">\(R_3 = (1, -3, 2, 3 \mid 2)\)</span>, and swapping this with the first row yields</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 1 &amp; -3 &amp; 2 &amp; 3 &amp; 2 \\ 0 &amp; 5 &amp; -3 &amp; -5 &amp; -3 \\ 2 &amp; -1 &amp; 1 &amp; 1 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+<p>Subtracting <span class="arithmatex">\(2\)</span> times the first row from the third eliminates <span class="arithmatex">\(x_1\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 1 &amp; -3 &amp; 2 &amp; 3 &amp; 2 \\ 0 &amp; 5 &amp; -3 &amp; -5 &amp; -3 \\ 0 &amp; 5 &amp; -3 &amp; -5 &amp; -3 \end{array} \right ).
+\]</div>
+</div>
+<p>The third row equals the second, so subtracting the second row from the third produces a zero row. Dividing the second row by <span class="arithmatex">\(5\)</span> creates the next leading <span class="arithmatex">\(1\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 1 &amp; -3 &amp; 2 &amp; 3 &amp; 2 \\ 0 &amp; 1 &amp; -\tfrac{3}{5} &amp; -1 &amp; -\tfrac{3}{5} \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>Adding <span class="arithmatex">\(3\)</span> times the second row to the first eliminates <span class="arithmatex">\(x_2\)</span> from the first row and yields the reduced row-echelon form (see <a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} \underline{1} &amp; 0 &amp; \tfrac{1}{5} &amp; 0 &amp; \tfrac{1}{5} \\[4pt] 0 &amp; \underline{1} &amp; -\tfrac{3}{5} &amp; -1 &amp; -\tfrac{3}{5} \\[4pt] 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>There are two leading ones (underlined), in columns <span class="arithmatex">\(1\)</span> and <span class="arithmatex">\(2\)</span>, so <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_2\)</span> are non-free, while <span class="arithmatex">\(x_3\)</span> and <span class="arithmatex">\(x_4\)</span> are free variables. Setting <span class="arithmatex">\(x_3 = s\)</span> and <span class="arithmatex">\(x_4 = t\)</span> with <span class="arithmatex">\(s, t \in \mathbf{R}\)</span>, the non-zero rows give</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x_1 &amp;= \tfrac{1}{5} - \tfrac{s}{5}, \\
+x_2 &amp;= -\tfrac{3}{5} + \tfrac{3s}{5} + t.
+\end{align*}
+\]</div>
+</div>
+<p>The solution set is therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left\{ \Bigl(\tfrac{1-s}{5},\; \tfrac{3(s-1)}{5} + t,\; s,\; t\Bigr) \;\middle|\; s, t \in \mathbf{R} \right\}.
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.4</strong></p>
+<p><span id="sol-ex-systems-matrix-5x7" label="sol--ex:systems-matrix-5x7"></span> (See <a href="../exercises-systems/#ex-systems-matrix-5x7" data-reference-type="ref+Label" data-reference="ex:systems-matrix-5x7">Exercise 2.4</a>.) The matrix <span class="arithmatex">\(A\)</span> has <span class="arithmatex">\(5\)</span> rows and <span class="arithmatex">\(7\)</span> columns, so it is a <span class="arithmatex">\(5\times 7\)</span> matrix (according to the terminology introduced in <a href="../systems-matrices/#def-systems-definition-006" data-reference-type="ref+Label" data-reference="def:systems-definition-006">Definition 2.20</a>). The coefficient part has <span class="arithmatex">\(6\)</span> columns (corresponding to the six unknowns <span class="arithmatex">\(x_1,\ldots,x_6\)</span>) and one augmented column, so <span class="arithmatex">\(A\)</span> is used as an augmented matrix for a linear system with <span class="arithmatex">\(5\)</span> equations in <span class="arithmatex">\(6\)</span> unknowns (see <a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>).</p>
+<p>The entries are <span class="arithmatex">\(a_{13} = 3\)</span> (row <span class="arithmatex">\(1\)</span>, column <span class="arithmatex">\(3\)</span>) and <span class="arithmatex">\(a_{31} = 0\)</span> (row <span class="arithmatex">\(3\)</span>, column <span class="arithmatex">\(1\)</span>).</p>
+<p>The associated linear system is (see <a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x_1 + 3x_3 &amp;= 1, \\
+x_2 + 2x_3 + 4x_4 + x_5 &amp;= 0, \\
+2x_4 + x_5 &amp;= 2, \\
+x_6 &amp;= 3, \\
+0 &amp;= 0.
+\end{align*}
+\]</div>
+</div>
+<p>(The fifth equation <span class="arithmatex">\(0=0\)</span> is trivially satisfied and imposes no constraint.)</p>
+<p>The matrix is in <em>row-echelon form</em> (see <a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>): the zero row is at the bottom, and the leading entries in rows <span class="arithmatex">\(1\)</span>–<span class="arithmatex">\(4\)</span> lie in columns <span class="arithmatex">\(1,2,4,6\)</span>, which are strictly increasing from left to right.</p>
+<p>It is <em>not</em> in reduced row-echelon form, because (i) row <span class="arithmatex">\(3\)</span> has leading entry <span class="arithmatex">\(2\)</span>, not <span class="arithmatex">\(1\)</span>, and (ii) column <span class="arithmatex">\(4\)</span> contains a nonzero entry (<span class="arithmatex">\(4\)</span>) in row <span class="arithmatex">\(2\)</span> above the leading entry of row <span class="arithmatex">\(3\)</span>.</p>
+<p>We apply the Gaussian algorithm (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>) to reach <em>reduced</em> row echelon form. First, scale row <span class="arithmatex">\(3\)</span> by <span class="arithmatex">\(\tfrac{1}{2}\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+A \xrightarrow{\frac{1}{2}R_3\to R_3}
+\left ( \begin{array}{cccccc|c} 1 &amp; 0 &amp; 3 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 2 &amp; 4 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; \tfrac{1}{2} &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>Then eliminate <span class="arithmatex">\(x_4\)</span> from row <span class="arithmatex">\(2\)</span> via <span class="arithmatex">\(R_2 \to R_2 - 4R_3\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_2-4R_3\to R_2}
+\left ( \begin{array}{cccccc|c} \underline{1} &amp; 0 &amp; 3 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; \underline{1} &amp; 2 &amp; 0 &amp; -1 &amp; 0 &amp; -4 \\ 0 &amp; 0 &amp; 0 &amp; \underline{1} &amp; \tfrac{1}{2} &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \underline{1} &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>This is the reduced row-echelon form: each leading <span class="arithmatex">\(1\)</span> (underlined) is the only nonzero entry in its column.</p>
+<p>The leading <span class="arithmatex">\(1\)</span>s are in columns <span class="arithmatex">\(1, 2, 4, 6\)</span> (four of them). Hence the <em>pivot variables</em> are <span class="arithmatex">\(x_1, x_2, x_4, x_6\)</span>, and the <em>free variables</em> are <span class="arithmatex">\(x_3\)</span> and <span class="arithmatex">\(x_5\)</span>.</p>
+<p>We read off the solution using <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>. Set <span class="arithmatex">\(x_3 = s\)</span> and <span class="arithmatex">\(x_5 = t\)</span> with <span class="arithmatex">\(s,t\in\mathbf{R}\)</span>. Then:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x_1 &amp;= 1 - 3s, \\
+x_2 &amp;= -4 - 2s + t, \\
+x_4 &amp;= 1 - \tfrac{t}{2}, \\
+x_6 &amp;= 3.
+\end{align*}
+\]</div>
+</div>
+<p>The solution set is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\bigl\{\,(1-3s,\; -4-2s+t,\; s,\; 1-\tfrac{t}{2},\; t,\; 3)\;\bigm|\; s,t\in\mathbf{R}\,\bigr\}.
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.5</strong></p>
+<p><span id="sol-ex-systems-two-systems" label="sol--ex:systems-two-systems"></span> (See <a href="../exercises-systems/#ex-systems-two-systems" data-reference-type="ref+Label" data-reference="ex:systems-two-systems">Exercise 2.5</a>.) We apply <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a> to each system. The augmented matrix for the first system is (see <a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>)</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{ccc|c} 1 &amp; 1 &amp; -1 &amp; 1 \\ 3 &amp; -1 &amp; 2 &amp; 5 \\ 4 &amp; 0 &amp; 1 &amp; 6 \end{array} \right ).
+\]</div>
+</div>
+<p>Eliminating <span class="arithmatex">\(x\)</span> from rows <span class="arithmatex">\(2\)</span> and <span class="arithmatex">\(3\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_2-3R_1\to R_2,\;R_3-4R_1\to R_3}
+\left ( \begin{array}{ccc|c} 1 &amp; 1 &amp; -1 &amp; 1 \\ 0 &amp; -4 &amp; 5 &amp; 2 \\ 0 &amp; -4 &amp; 5 &amp; 2 \end{array} \right ).
+\]</div>
+</div>
+<p>The second and third rows are identical, so subtracting row <span class="arithmatex">\(2\)</span> from row <span class="arithmatex">\(3\)</span> produces a zero row. Dividing row <span class="arithmatex">\(2\)</span> by <span class="arithmatex">\(-4\)</span> creates the next leading <span class="arithmatex">\(1\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_3-R_2\to R_3,\;-\frac{1}{4}R_2\to R_2}
+\left ( \begin{array}{ccc|c} 1 &amp; 1 &amp; -1 &amp; 1 \\ 0 &amp; 1 &amp; -\tfrac{5}{4} &amp; -\tfrac{1}{2} \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>Subtracting row <span class="arithmatex">\(2\)</span> from row <span class="arithmatex">\(1\)</span> yields the reduced row-echelon form (see <a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_1-R_2\to R_1}
+\left ( \begin{array}{ccc|c} \underline{1} &amp; 0 &amp; \tfrac{1}{4} &amp; \tfrac{3}{2} \\[4pt] 0 &amp; \underline{1} &amp; -\tfrac{5}{4} &amp; -\tfrac{1}{2} \\[4pt] 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>The pivot variables are <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>; the variable <span class="arithmatex">\(z\)</span> is free. Setting <span class="arithmatex">\(z = t\)</span> with <span class="arithmatex">\(t \in \mathbf{R}\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x &amp;= \tfrac{3}{2} - \tfrac{t}{4}, \\
+y &amp;= -\tfrac{1}{2} + \tfrac{5t}{4}.
+\end{align*}
+\]</div>
+</div>
+<p>The solution set is <span class="arithmatex">\(\bigl\{\,\bigl(\tfrac{3}{2}-\tfrac{t}{4},\;-\tfrac{1}{2}+\tfrac{5t}{4},\;t\bigr)\bigm|\;t\in\mathbf{R}\,\bigr\}\)</span>.</p>
+<p>We proceed similarly with the second system. The augmented matrix is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\left ( \begin{array}{ccc|c} 1 &amp; 1 &amp; -1 &amp; 1 \\ 3 &amp; -1 &amp; 2 &amp; 0 \\ 1 &amp; 1 &amp; -2 &amp; 2 \end{array} \right ) &amp; \xrightarrow{R_2-3R_1\to R_2,\;R_3-R_1\to R_3} &amp; 
+\left ( \begin{array}{ccc|c} 1 &amp; 1 &amp; -1 &amp; 1 \\ 0 &amp; -4 &amp; 5 &amp; -3 \\ 0 &amp; 0 &amp; -1 &amp; 1 \end{array} \right ) \\
+&amp; \xrightarrow{-R_3\to R_3} &amp;
+\left ( \begin{array}{ccc|c} 1 &amp; 1 &amp; -1 &amp; 1 \\ 0 &amp; -4 &amp; 5 &amp; -3 \\ 0 &amp; 0 &amp; 1 &amp; -1 \end{array} \right ) \\
+&amp; \xrightarrow{R_2-5R_3\to R_2,\;R_1+R_3\to R_1} &amp; 
+\left ( \begin{array}{ccc|c} 1 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; -4 &amp; 0 &amp; 2 \\ 0 &amp; 0 &amp; 1 &amp; -1 \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>Scale row <span class="arithmatex">\(2\)</span> and eliminate <span class="arithmatex">\(y\)</span> from row <span class="arithmatex">\(1\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{-\frac{1}{4}R_2\to R_2}
+\left ( \begin{array}{ccc|c} 1 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; -\tfrac{1}{2} \\ 0 &amp; 0 &amp; 1 &amp; -1 \end{array} \right )
+\xrightarrow{R_1-R_2\to R_1}
+\left ( \begin{array}{ccc|c} \underline{1} &amp; 0 &amp; 0 &amp; \tfrac{1}{2} \\[4pt] 0 &amp; \underline{1} &amp; 0 &amp; -\tfrac{1}{2} \\[4pt] 0 &amp; 0 &amp; \underline{1} &amp; -1 \end{array} \right ).
+\]</div>
+</div>
+<p>All three variables are pivot variables; there are no free variables. The system has the unique solution <span class="arithmatex">\((x, y, z) = \bigl(\tfrac{1}{2},\;-\tfrac{1}{2},\;-1\bigr)\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.6</strong></p>
 <p><span id="sol-ex-equation-no-solutions" label="sol--ex:equation-no-solutions"></span> (See <a href="../exercises-systems/#ex-equation-no-solutions" data-reference-type="ref+Label" data-reference="ex:equation-no-solutions">Exercise 2.6</a>.) If <span class="arithmatex">\(a \ne 0\)</span> <em>or</em> <span class="arithmatex">\(b \ne 0\)</span>, then the equation <span class="arithmatex">\(ax+by = c\)</span> has infinitely many solutions. Indeed, if, say <span class="arithmatex">\(a \ne 0\)</span>, we can subtract <span class="arithmatex">\(by\)</span> and divide by <span class="arithmatex">\(a\)</span>, which gives <span class="arithmatex">\(x = \frac{c-by}a\)</span>. Thus, for any <span class="arithmatex">\(y \in {\bf R}\)</span>, the pair <span class="arithmatex">\((x=\frac{c-by}a, y)\)</span> is a solution. A similar analysis works if <span class="arithmatex">\(b \ne 0\)</span>. It remains to consider the case in which <span class="arithmatex">\(a=0\)</span> and <span class="arithmatex">\(b=0\)</span>. In this case the solution set of the equation depends on <span class="arithmatex">\(c\)</span>:</p>
 <ul>
 <li>
@@ -2162,7 +2358,180 @@
 </ul>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution 2.7.2</strong></p>
+<p class="env-number"><strong>Solution 2.7</strong></p>
+<p><span id="sol-ex-systems-rref-from-exa" label="sol--ex:systems-rref-from-exa"></span> (See <a href="../exercises-systems/#ex-systems-rref-from-exa" data-reference-type="ref+Label" data-reference="ex:systems-rref-from-exa">Exercise 2.7</a>.) We apply <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a> to bring each augmented matrix (see <a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>) to reduced row-echelon form (see <a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>).</p>
+<p>We consider the system from <a href="../systems-linear-systems/#ex-system-2-unique" data-reference-type="ref+Label" data-reference="ex:system-2-unique">Example 2.8</a>: <span class="arithmatex">\(x+y=4\)</span>, <span class="arithmatex">\(x-y=1\)</span>. We bring the augmented matrix to reduced row-echelon form:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+    \left ( \begin{array}{cc|c} 1 &amp; 1 &amp; 4 \\ 1 &amp; -1 &amp; 1 \end{array} \right )
+%Subtract row~$1$ from row~$2$, then scale row~$2$ by $-\tfrac{1}{2}$:
+&amp; \xrightarrow{R_2 - R_1 \to R_2} &amp; 
+\left ( \begin{array}{cc|c} 1 &amp; 1 &amp; 4 \\ 0 &amp; -2 &amp; -3 \end{array} \right ) \\
+&amp; \xrightarrow{-\frac{1}{2}R_2 \to R_2} &amp; 
+\left ( \begin{array}{cc|c} 1 &amp; 1 &amp; 4 \\ 0 &amp; 1 &amp; \tfrac{3}{2} \end{array} \right ) \\
+%Eliminate $y$ from row~$1$:
+&amp; \xrightarrow{R_1 - R_2 \to R_1} &amp; 
+\left ( \begin{array}{cc|c} \underline{1} &amp; 0 &amp; \tfrac{5}{2} \\[4pt] 0 &amp; \underline{1} &amp; \tfrac{3}{2} \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>Both variables are pivot variables; the system has the unique solution <span class="arithmatex">\((x, y) = \bigl(\tfrac{5}{2}, \tfrac{3}{2}\bigr)\)</span>.</p>
+<p>We now consider the system from <a href="../systems-linear-systems/#ex-system-2-no" data-reference-type="ref+Label" data-reference="ex:system-2-no">Example 2.10</a>: <span class="arithmatex">\(x+y=4\)</span>, <span class="arithmatex">\(x+y=1\)</span>. Again we bring the augmented matrix to reduced row-echelon form:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\left ( \begin{array}{cc|c} 1 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 1 \end{array} \right ) &amp; 
+%Subtract row~$1$ from row~$2$, then scale row~$2$ by $-\tfrac{1}{3}$:
+\xrightarrow{R_2 - R_1 \to R_2} &amp; 
+\left ( \begin{array}{cc|c} 1 &amp; 1 &amp; 4 \\ 0 &amp; 0 &amp; -3 \end{array} \right ) \\
+&amp;
+\xrightarrow{-\frac{1}{3}R_2 \to R_2}
+&amp;
+\left ( \begin{array}{cc|c} \underline{1} &amp; 1 &amp; 4 \\ 0 &amp; 0 &amp; \underline{1} \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>The last row encodes <span class="arithmatex">\(0 = 1\)</span>, which is a contradiction (cf. <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, specifically <a href="../systems-gaussian-elimination/#item-gaussian-solve-3" data-reference-type="ref+Label" data-reference="item--gaussian-solve-3">3.</a> there). The system has no solution.</p>
+<p>We now consider the system from <a href="../systems-linear-systems/#ex-system-2-infinite" data-reference-type="ref+Label" data-reference="ex:system-2-infinite">Example 2.11</a>: <span class="arithmatex">\(x+y=4\)</span>, <span class="arithmatex">\(-2x-2y=-8\)</span>. The augmented matrix is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cc|c} 1 &amp; 1 &amp; 4 \\ -2 &amp; -2 &amp; -8 \end{array} \right )
+\xrightarrow{R_2 + 2R_1 \to R_2}
+\left ( \begin{array}{cc|c} \underline{1} &amp; 1 &amp; 4 \\ 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>This is already in reduced row-echelon form. The variable <span class="arithmatex">\(x\)</span> is a pivot variable; <span class="arithmatex">\(y\)</span> is free. Setting <span class="arithmatex">\(y = t\)</span> with <span class="arithmatex">\(t \in \mathbf{R}\)</span>, the solution set is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\{(4 - t,\, t) \mid t \in \mathbf{R}\}.
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.8</strong></p>
+<p><span id="sol-ex-systems-param-b" label="sol--ex:systems-param-b"></span> (See <a href="../exercises-systems/#ex-systems-param-b" data-reference-type="ref+Label" data-reference="ex:systems-param-b">Exercise 2.8</a>.) By <a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>, the augmented matrix of the system is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cc|c} 1 &amp; 1 &amp; 1 \\ 1 &amp; -1 &amp; b \end{array} \right ).
+\]</div>
+</div>
+<p>We apply Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>) and perform elementary row operations to bring the matrix to reduced row echelon form:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_2 - R_1 \to R_2}
+\left ( \begin{array}{cc|c} \underline{1} &amp; 1 &amp; 1 \\ 0 &amp; -2 &amp; b-1 \end{array} \right ) %.$$
+%Dividing row~$2$ by $-2$ gives a leading $1$:
+%$$
+\xrightarrow{-\tfrac{1}{2}R_2 \to R_2}
+\left ( \begin{array}{cc|c} \underline{1} &amp; 1 &amp; 1 \\ 0 &amp; \underline{1} &amp; \tfrac{1-b}{2} \end{array} \right ) %.$$
+%Subtracting row~$2$ from row~$1$ yields the reduced row-echelon form (see \Cref{def:row-echelon-form}):
+%$$
+\xrightarrow{R_1 - R_2 \to R_1}
+\left ( \begin{array}{cc|c} \underline{1} &amp; 0 &amp; \tfrac{1+b}{2} \\ 0 &amp; \underline{1} &amp; \tfrac{1-b}{2} \end{array} \right ).
+\]</div>
+</div>
+<p>Both variables are pivot variables; there are no free variables. By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, the system has a unique solution for every <span class="arithmatex">\(b \in \mathbf{R}\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+x = \tfrac{1+b}{2}, \qquad y = \tfrac{1-b}{2}.
+\]</div>
+</div>
+<p><em>Geometric illustration.</em> Each equation represents a line in the <span class="arithmatex">\(xy\)</span>-plane. The first equation <span class="arithmatex">\(x+y=1\)</span> always gives the same line (slope <span class="arithmatex">\(-1\)</span>, passing through <span class="arithmatex">\((0,1)\)</span> and <span class="arithmatex">\((1,0)\)</span>). The second equation <span class="arithmatex">\(x-y=b\)</span> gives a family of parallel lines (slope <span class="arithmatex">\(1\)</span>); a change of the parameter <span class="arithmatex">\(b\)</span> amounts to a shift of this line. Since the two lines have different slopes (<span class="arithmatex">\(-1\)</span> and <span class="arithmatex">\(1\)</span>), they always intersect in exactly one point, confirming the unique solution for all <span class="arithmatex">\(b\)</span>.</p>
+<div class="center"></div>
+<p>For <span class="arithmatex">\(b=0\)</span>: the unique solution is <span class="arithmatex">\(\bigl(\tfrac{1}{2}, \tfrac{1}{2}\bigr)\)</span> (intersection of <span class="arithmatex">\(x+y=1\)</span> and <span class="arithmatex">\(x-y=0\)</span>). For <span class="arithmatex">\(b=1\)</span>: the unique solution is <span class="arithmatex">\((1, 0)\)</span> (intersection of <span class="arithmatex">\(x+y=1\)</span> and <span class="arithmatex">\(x-y=1\)</span>).</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.9</strong></p>
+<p><span id="sol-ex-systems-param-ab" label="sol--ex:systems-param-ab"></span> (See <a href="../exercises-systems/#ex-systems-param-ab" data-reference-type="ref+Label" data-reference="ex:systems-param-ab">Exercise 2.9</a>.) By <a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>, the augmented matrix of the system is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cc|c} a &amp; b &amp; 1 \\ 1 &amp; -1 &amp; 2 \end{array} \right ).
+\]</div>
+</div>
+<p>Our goal is to use elementary row operations to bring this matrix to reduced row-echelon form. We swap rows <span class="arithmatex">\(1\)</span> and <span class="arithmatex">\(2\)</span> (see <a href="../systems-gaussian-elimination/#def-elementary-row-operations" data-reference-type="ref+Label" data-reference="def:elementary-row-operations">Definition 2.28</a>) to obtain a leading <span class="arithmatex">\(1\)</span> in the first row:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_1 \leftrightarrow R_2}
+\left ( \begin{array}{cc|c} \underline{1} &amp; -1 &amp; 2 \\ a &amp; b &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+<p>Subtracting <span class="arithmatex">\(a\)</span> times row <span class="arithmatex">\(1\)</span> from row <span class="arithmatex">\(2\)</span> eliminates <span class="arithmatex">\(x\)</span> from row <span class="arithmatex">\(2\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_2 - aR_1 \to R_2}
+\left ( \begin{array}{cc|c} \underline{1} &amp; -1 &amp; 2 \\ 0 &amp; a+b &amp; 1-2a \end{array} \right ).
+\]</div>
+</div>
+<p>In order to arrive at a row echelon form, we need to have “1” or “0” in place of the entry “<span class="arithmatex">\(a+b\)</span>”. So, we now distinguish cases depending on <span class="arithmatex">\(a+b\)</span>.</p>
+<ol>
+<li>This is the case <span class="arithmatex">\(a + b \neq 0\)</span>. In this case we can divide row <span class="arithmatex">\(2\)</span> by <span class="arithmatex">\(a+b\)</span>:</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    \xrightarrow{\tfrac{1}{a+b}R_2 \to R_2}
+    \left ( \begin{array}{cc|c} \underline{1} &amp; -1 &amp; 2 \\ 0 &amp; \underline{1} &amp; \tfrac{1-2a}{a+b} \end{array} \right ).
+\]</div>
+</div>
+<p>Add row <span class="arithmatex">\(2\)</span> to row <span class="arithmatex">\(1\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    \xrightarrow{R_1 + R_2 \to R_1}
+    \left ( \begin{array}{cc|c} \underline{1} &amp; 0 &amp; \tfrac{2b+1}{a+b} \\ 0 &amp; \underline{1} &amp; \tfrac{1-2a}{a+b} \end{array} \right ).
+\]</div>
+</div>
+<p>This is the reduced row-echelon form (<a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>). Both variables are pivot variables; by <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a> the system has a unique solution:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    x = \frac{2b+1}{a+b}, \qquad y = \frac{1-2a}{a+b}.
+\]</div>
+</div>
+<ol>
+<li>This is the case <span class="arithmatex">\(a + b = 0\)</span>, i.e., <span class="arithmatex">\(b = -a\)</span>. The matrix reads</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    \left ( \begin{array}{cc|c} 1 &amp; -1 &amp; 2 \\ 0 &amp; 0 &amp; 1-2a \end{array} \right ).
+\]</div>
+</div>
+<p>In order to decide whether <a href="../systems-gaussian-elimination/#item-gaussian-solve-3" data-reference-type="ref+Label" data-reference="item--gaussian-solve-3">3.</a> of <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a> applies, we again distinguish two cases:</p>
+<pre><code>1.  This is the subcase $a \neq \tfrac{1}{2}$ (so $1 - 2a \neq 0$). The second row encodes $0 = 1-2a \neq 0$, a contradiction. The system has *no solution*.
+
+2.  This is the subcase $a = \tfrac{1}{2}$, $b = -\tfrac{1}{2}$. The second row is $0 = 0$ and vanishes. The variable $y$ is free; set $y = t$ with $t \in \mathbf{R}$. Then $x = 2 + t$, giving *infinitely many solutions*:
+</code></pre>
+<div class="arithmatex">
+<div class="arithmatex">\[
+        \{(2+t,\, t) \mid t \in \mathbf{R}\}.
+\]</div>
+</div>
+<p><em>Summary.</em> The system has:</p>
+<ul>
+<li>
+<p>a <em>unique solution</em> if and only if <span class="arithmatex">\(a + b \neq 0\)</span>;</p>
+</li>
+<li>
+<p><em>no solution</em> if and only if <span class="arithmatex">\(a + b = 0\)</span> and <span class="arithmatex">\(a \neq \tfrac{1}{2}\)</span>;</p>
+</li>
+<li>
+<p><em>infinitely many solutions</em> if and only if <span class="arithmatex">\(a = \tfrac{1}{2}\)</span> and <span class="arithmatex">\(b = -\tfrac{1}{2}\)</span>.</p>
+</li>
+</ul>
+<p><em>Geometric explanation.</em> The second equation <span class="arithmatex">\(x - y = 2\)</span> always defines the same line <span class="arithmatex">\(\ell_2\)</span> (slope <span class="arithmatex">\(1\)</span>, passing through <span class="arithmatex">\((2,0)\)</span> and <span class="arithmatex">\((0,-2)\)</span>). The first equation <span class="arithmatex">\(ax + by = 1\)</span> defines a line <span class="arithmatex">\(\ell_1\)</span> provided <span class="arithmatex">\((a,b) \neq (0,0)\)</span>; if <span class="arithmatex">\(a = b = 0\)</span> it reads <span class="arithmatex">\(0 = 1\)</span>, which has no solution (this falls under sub-case 2a since <span class="arithmatex">\(a+b=0\)</span> and <span class="arithmatex">\(a \neq \frac12\)</span>).</p>
+<p>The two lines <span class="arithmatex">\(\ell_1\)</span> and <span class="arithmatex">\(\ell_2\)</span> are parallel precisely when <span class="arithmatex">\((a,b)\)</span> is a scalar multiple of <span class="arithmatex">\((1,-1)\)</span>, i.e., <span class="arithmatex">\(b = -a\)</span> (equivalently <span class="arithmatex">\(a+b=0\)</span>; in terminology introduced later, in <a href="../spaces-linear-independence/#def-linearly-independent" data-reference-type="ref+Label" data-reference="def:linearly-independent">Definition 3.49</a> the vector <span class="arithmatex">\((a,b)\)</span> is called linearly dependent of <span class="arithmatex">\((1,1)\)</span>):</p>
+<ul>
+<li>
+<p>If <span class="arithmatex">\(a + b \neq 0\)</span>, the lines are not parallel and intersect in exactly one point: unique solution.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(a + b = 0\)</span> and <span class="arithmatex">\(a \neq \tfrac{1}{2}\)</span>, the lines are parallel but distinct: no solution.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(a = \tfrac{1}{2}\)</span>, <span class="arithmatex">\(b = -\tfrac{1}{2}\)</span>, then <span class="arithmatex">\(\ell_1\)</span> is <span class="arithmatex">\(\tfrac{1}{2}x - \tfrac{1}{2}y = 1\)</span>, i.e., <span class="arithmatex">\(x - y = 2\)</span>, which is the same as <span class="arithmatex">\(\ell_2\)</span>: infinitely many solutions.</p>
+</li>
+</ul>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.10</strong></p>
 <p><span id="sol-ex-systems-1-a" label="sol--ex:systems-1-a"></span> (See <a href="../exercises-systems/#ex-systems-1-a" data-reference-type="ref+Label" data-reference="ex:systems-1-a">Exercise 2.10</a>.) The matrix associated to the system is as follows, and we bring it to reduced row echelon form:</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
@@ -2184,7 +2553,52 @@
 </div>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution 2.7.3</strong></p>
+<p class="env-number"><strong>Solution 2.11</strong></p>
+<p><span id="sol-ex-systems-unique-4x5" label="sol--ex:systems-unique-4x5"></span> (See <a href="../exercises-systems/#ex-systems-unique-4x5" data-reference-type="ref+Label" data-reference="ex:systems-unique-4x5">Exercise 2.11</a>.) We apply <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>. We compute the reduced row-echelon form of the augmented matrix using Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>). We subtract the first row from the third and from the fourth:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 2 &amp; -1 &amp; 1 &amp; -1 &amp; 1 \\ 0 &amp; 1 &amp; -3 &amp; 1 &amp; 3 \\ 0 &amp; 2 &amp; -5 &amp; 2 &amp; 5 \\ 0 &amp; 1 &amp; -3 &amp; 2 &amp; 1 \\ \end{array} \right ).
+\]</div>
+</div>
+<p>We subtract twice the second row from the third, and subtract the second row from the fourth:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 2 &amp; -1 &amp; 1 &amp; -1 &amp; 1 \\ 0 &amp; 1 &amp; -3 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; -2 \\ \end{array} \right ).
+\]</div>
+</div>
+<p>This matrix is in row-echelon form (<a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>). We now eliminate the remaining non-pivot entries. We subtract the third row from the first and add three times the third row to the second:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 2 &amp; -1 &amp; 0 &amp; -1 &amp; 2 \\ 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; -2 \\ \end{array} \right ).
+\]</div>
+</div>
+<p>We add the fourth row to the first and subtract the fourth row from the second:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 2 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; -2 \\ \end{array} \right ).
+\]</div>
+</div>
+<p>We add the second row to the first:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 2 &amp; 0 &amp; 0 &amp; 0 &amp; 2 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 2 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; -2 \\ \end{array} \right ).
+\]</div>
+</div>
+<p>Finally, we multiply the first row by <span class="arithmatex">\(\tfrac{1}{2}\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} {\underline 1} &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; {\underline 1} &amp; 0 &amp; 0 &amp; 2 \\ 0 &amp; 0 &amp; {\underline 1} &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; {\underline 1} &amp; -2 \\ \end{array} \right ).
+\]</div>
+</div>
+<p>This is the reduced row-echelon form, with all four variables <span class="arithmatex">\(x_1, x_2, x_3, x_4\)</span> being pivot variables (there are no free variables). The unique solution is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(x_1, x_2, x_3, x_4) = (1, 2, -1, -2).
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.12</strong></p>
 <p><span id="sol-ex-systems-1-b" label="sol--ex:systems-1-b"></span> (See <a href="../exercises-systems/#ex-systems-1-b" data-reference-type="ref+Label" data-reference="ex:systems-1-b">Exercise 2.12</a>.) We apply <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>. The matrix associated to the system is</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
@@ -2238,12 +2652,172 @@ x_1 -\alpha + \beta &amp; = -3
 </div>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution 2.7.4</strong></p>
-<p><span id="sol-ex-systems-1-c" label="sol--ex:systems-1-c"></span> (See <a href="../exercises-systems/#ex-systems-1-c" data-reference-type="ref+Label" data-reference="ex:systems-1-c">Exercise 2.14</a>.) Hint: we will apply Gaussian elimination, but it simplifies the calculations to do a certain change of rows first. (Why is that allowed?)</p>
+<p class="env-number"><strong>Solution 2.13</strong></p>
+<p><span id="sol-ex-systems-param-h" label="sol--ex:systems-param-h"></span> (See <a href="../exercises-systems/#ex-systems-param-h" data-reference-type="ref+Label" data-reference="ex:systems-param-h">Exercise 2.13</a>.) By <a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>, the augmented matrix of the system is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cc|c} 1 &amp; h &amp; 4 \\ 3 &amp; 6 &amp; 8 \end{array} \right ).
+\]</div>
+</div>
+<p>We apply <a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>. Subtracting <span class="arithmatex">\(3\)</span> times row <span class="arithmatex">\(1\)</span> from row <span class="arithmatex">\(2\)</span> eliminates <span class="arithmatex">\(x\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_2 - 3R_1 \to R_2}
+\left ( \begin{array}{cc|c} 1 &amp; h &amp; 4 \\ 0 &amp; 6-3h &amp; -4 \end{array} \right ).
+\]</div>
+</div>
+<p>We now distinguish cases depending on the value of <span class="arithmatex">\(6 - 3h = 3(2-h)\)</span>.</p>
+<ol>
+<li>We consider the case <span class="arithmatex">\(6 - 3h \neq 0\)</span>, i.e., <span class="arithmatex">\(h \neq 2\)</span>. In this case we can divide row <span class="arithmatex">\(2\)</span> by <span class="arithmatex">\(3(2-h)\)</span>:</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    \xrightarrow{\tfrac{1}{3(2-h)}R_2 \to R_2}
+    \left ( \begin{array}{cc|c} \underline{1} &amp; h &amp; 4 \\ 0 &amp; \underline{1} &amp; \tfrac{-4}{3(2-h)} \end{array} \right ) %.$$
+    %Subtract $h$ times row~$2$ from row~$1$:
+    %$$
+    \xrightarrow{R_1 - hR_2 \to R_1}
+    \left ( \begin{array}{cc|c} \underline{1} &amp; 0 &amp; \tfrac{8(3-h)}{3(2-h)} \\ 0 &amp; \underline{1} &amp; \tfrac{-4}{3(2-h)} \end{array} \right ).
+\]</div>
+</div>
+<p>This is the reduced row-echelon form (<a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>). Both variables are pivot variables; by <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a> the system has the unique solution</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    x = \frac{8(3-h)}{3(2-h)}, \qquad y = \frac{-4}{3(2-h)}.
+\]</div>
+</div>
+<ol>
+<li>We now consider the case <span class="arithmatex">\(h=2\)</span>. The matrix becomes</li>
+</ol>
+<div class="arithmatex">
+<div class="arithmatex">\[
+    \left ( \begin{array}{cc|c} 1 &amp; 2 &amp; 4 \\ 0 &amp; 0 &amp; -4 \end{array} \right ).
+\]</div>
+</div>
+<p>The second row encodes <span class="arithmatex">\(0 = -4\)</span>, a contradiction. The system has <em>no solution</em>.</p>
+<p>Thus, the system has a unique solution if <span class="arithmatex">\(h \neq 2\)</span>, and no solution if <span class="arithmatex">\(h = 2\)</span>.</p>
+<p><em>Geometric illustration.</em> The second equation <span class="arithmatex">\(3x + 6y = 8\)</span> always defines the fixed line <span class="arithmatex">\(\ell_2\colon y = \tfrac{4}{3} - \tfrac{x}{2}\)</span> (slope <span class="arithmatex">\(-\tfrac{1}{2}\)</span>). The first equation <span class="arithmatex">\(x + hy = 4\)</span> defines a line <span class="arithmatex">\(\ell_1\)</span> with slope <span class="arithmatex">\(-\tfrac{1}{h}\)</span> (for <span class="arithmatex">\(h \neq 0\)</span>); for <span class="arithmatex">\(h = 0\)</span> it is the vertical line <span class="arithmatex">\(x = 4\)</span>.</p>
+<p>For <span class="arithmatex">\(h \neq 2\)</span>, the lines <span class="arithmatex">\(\ell_1\)</span> and <span class="arithmatex">\(\ell_2\)</span> are not parallel (their slopes differ), so they intersect in exactly one point: unique solution. For <span class="arithmatex">\(h = 2\)</span>, both lines have slope <span class="arithmatex">\(-\tfrac{1}{2}\)</span>; the first is <span class="arithmatex">\(x + 2y = 4\)</span> and the second is <span class="arithmatex">\(x + 2y = \tfrac{8}{3}\)</span>. Since <span class="arithmatex">\(4 \neq \tfrac{8}{3}\)</span>, the lines are parallel and distinct: no solution.</p>
+<div class="center"></div>
+<p>For <span class="arithmatex">\(h = 3\)</span>: the unique solution is <span class="arithmatex">\(\bigl(0,\,\tfrac{4}{3}\bigr)\)</span> (intersection of <span class="arithmatex">\(\ell_1\colon x+3y=4\)</span> and <span class="arithmatex">\(\ell_2\colon 3x+6y=8\)</span>). For <span class="arithmatex">\(h = 2\)</span>: the lines <span class="arithmatex">\(x+2y=4\)</span> and <span class="arithmatex">\(3x+6y=8\)</span> are parallel; no solution.</p>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution 2.7.5</strong></p>
-<p><span id="sol-ex-systems-1-d" label="sol--ex:systems-1-d"></span> (See <a href="../exercises-systems/#ex-systems-1-d" data-reference-type="ref+Label" data-reference="ex:systems-1-d">Exercise 2.17</a>.) Suppose <span class="arithmatex">\(x_1 = 1-t\)</span>, <span class="arithmatex">\(x_2 = 2+3t\)</span> and <span class="arithmatex">\(x_3 = 4t\)</span>. We have to determine whether there is some <span class="arithmatex">\(t\in {\bf R}\)</span> such that for these choices of <span class="arithmatex">\(x_1, x_2, x_3\)</span>, we have a solution of the given system, i.e., whether</p>
+<p class="env-number"><strong>Solution 2.14</strong></p>
+<p><span id="sol-ex-systems-homogeneous-t" label="sol--ex:systems-homogeneous-t"></span> (See <a href="../exercises-systems/#ex-systems-homogeneous-t" data-reference-type="ref+Label" data-reference="ex:systems-homogeneous-t">Exercise 2.14</a>.) By <a href="../systems-linear-systems/#def-homogeneous-linear-system" data-reference-type="ref+Label" data-reference="def:homogeneous-linear-system">Definition 2.13</a> this is a homogeneous system; in particular the trivial solution <span class="arithmatex">\((x_1,x_2,x_3,x_4)=(0,0,0,0)\)</span> always exists (<a href="../systems-linear-systems/#rem-trivial-solution" data-reference-type="ref+Label" data-reference="rem:trivial-solution">Remark 2.14</a>). (Later on, in <a href="../spaces-definition-solution-of-homogeneous/#prop-homogeneous-system-subspace" data-reference-type="ref+Label" data-reference="prop:homogeneous-system-subspace">Proposition 3.18</a>, we will observe that the solution set of a homogeneous system in four variables is a sub-vector space of <span class="arithmatex">\(\mathbf{R}^4\)</span>).</p>
+<p>For <span class="arithmatex">\(t=0\)</span>, we perform Gaussian elimination similarly as in the exercises above. One has</p>
+<div class="arithmatex">
+<p>[
+\left ( \begin{array}{cccc|c} 2 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \ 1 &amp; -2 &amp; 0 &amp; 3 &amp; 0 \ 4 &amp; -4 &amp; 0 &amp; 5 &amp; 0 \end{array} \right ) \leadsto </p>
+<p>\left ( \begin{array}{cccc|c} {\underline 1} &amp; 0 &amp; 0 &amp; -\tfrac{1}{2} &amp; 0 \ 0 &amp; {\underline 1} &amp; 0 &amp; -\tfrac{7}{4} &amp; 0 \ 0 &amp; 0 &amp; {\underline 1} &amp; 1 &amp; 0 \end{array} \right ).
+]</p>
+</div>
+<p>This is the reduced row-echelon form of the above matrix. The pivot variables are <span class="arithmatex">\(x_1, x_2, x_3\)</span>; the free variable is <span class="arithmatex">\(x_4\)</span>. Setting <span class="arithmatex">\(x_4 = s\)</span> and applying <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+x_1 = \tfrac{1}{2}s, \quad x_2 = \tfrac{7}{4}s, \quad x_3 = -s.
+\]</div>
+</div>
+<p>The solution set is <span class="arithmatex">\(\bigl\{s\cdot\bigl(\tfrac{1}{2},\, \tfrac{7}{4},\, -1,\, 1\bigr) \mid s \in \mathbf{R}\bigr\}\)</span>.</p>
+<p>We now consider general <span class="arithmatex">\(t\)</span>. We swap row <span class="arithmatex">\(1\)</span> and row <span class="arithmatex">\(2\)</span> and eliminate the first column:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 2 &amp; 0 &amp; 1 &amp; -t &amp; 0 \\ 1 &amp; -2 &amp; 0 &amp; 3 &amp; 0 \\ 4 &amp; -4 &amp; t &amp; 5 &amp; 0 \end{array} \right )
+\xrightarrow{R_1 \leftrightarrow R_2}
+\left ( \begin{array}{cccc|c} 1 &amp; -2 &amp; 0 &amp; 3 &amp; 0 \\ 2 &amp; 0 &amp; 1 &amp; -t &amp; 0 \\ 4 &amp; -4 &amp; t &amp; 5 &amp; 0 \end{array} \right )
+\]</div>
+</div>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{\substack{R_2 - 2R_1 \to R_2 \\ R_3 - 4R_1 \to R_3}}
+\left ( \begin{array}{cccc|c} 1 &amp; -2 &amp; 0 &amp; 3 &amp; 0 \\ 0 &amp; 4 &amp; 1 &amp; -t-6 &amp; 0 \\ 0 &amp; 4 &amp; t &amp; -7 &amp; 0 \end{array} \right )
+\xrightarrow{R_3 - R_2 \to R_3}
+\left ( \begin{array}{cccc|c} 1 &amp; -2 &amp; 0 &amp; 3 &amp; 0 \\ 0 &amp; 4 &amp; 1 &amp; -t-6 &amp; 0 \\ 0 &amp; 0 &amp; t-1 &amp; t-1 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>We distinguish cases depending on <span class="arithmatex">\(t-1\)</span>.</p>
+<p><strong>Case 1: <span class="arithmatex">\(t = 1\)</span>.</strong> Row <span class="arithmatex">\(3\)</span> becomes all zeros. Scaling row <span class="arithmatex">\(2\)</span> by <span class="arithmatex">\(\tfrac{1}{4}\)</span> and then eliminating:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{\frac{1}{4}R_2 \to R_2}
+\left ( \begin{array}{cccc|c} 1 &amp; -2 &amp; 0 &amp; 3 &amp; 0 \\ 0 &amp; 1 &amp; \tfrac{1}{4} &amp; -\tfrac{7}{4} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right )
+\xrightarrow{R_1 + 2R_2 \to R_1}
+\left ( \begin{array}{cccc|c} {\underline 1} &amp; 0 &amp; \tfrac{1}{2} &amp; -\tfrac{1}{2} &amp; 0 \\ 0 &amp; {\underline 1} &amp; \tfrac{1}{4} &amp; -\tfrac{7}{4} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>Pivot variables are <span class="arithmatex">\(x_1, x_2\)</span>; free variables are <span class="arithmatex">\(x_3 = s\)</span> and <span class="arithmatex">\(x_4 = r\)</span>. By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>: <span class="arithmatex">\(x_1 = -\tfrac{1}{2}s + \tfrac{1}{2}r\)</span> and <span class="arithmatex">\(x_2 = -\tfrac{1}{4}s + \tfrac{7}{4}r\)</span>. The solution set is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\Bigl\{s\cdot\Bigl(-\tfrac{1}{2},\,-\tfrac{1}{4},\,1,\,0\Bigr) + r\cdot\Bigl(\tfrac{1}{2},\,\tfrac{7}{4},\,0,\,1\Bigr) \;\Big|\; s,r\in\mathbf{R}\Bigr\}.
+\]</div>
+</div>
+<p>We observe that we have two free variables; in terminology introduced later on (<a href="../spaces-dimension/#def-dimension" data-reference-type="ref+Label" data-reference="def:dimension">Definition 3.66</a>) we will say that the solution set is a two-dimensional subspace of <span class="arithmatex">\(\mathbf{R}^4\)</span>.</p>
+<p><strong>Case 2: <span class="arithmatex">\(t \neq 1\)</span>.</strong> Divide row <span class="arithmatex">\(3\)</span> by <span class="arithmatex">\(t-1\)</span>, then eliminate:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{\frac{1}{t-1}R_3 \to R_3}
+\left ( \begin{array}{cccc|c} 1 &amp; -2 &amp; 0 &amp; 3 &amp; 0 \\ 0 &amp; 4 &amp; 1 &amp; -t-6 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \end{array} \right )
+\xrightarrow{R_2 - R_3 \to R_2}
+\left ( \begin{array}{cccc|c} 1 &amp; -2 &amp; 0 &amp; 3 &amp; 0 \\ 0 &amp; 4 &amp; 0 &amp; -t-7 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>Scale row <span class="arithmatex">\(2\)</span> by <span class="arithmatex">\(\tfrac{1}{4}\)</span> and eliminate column <span class="arithmatex">\(2\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{\frac{1}{4}R_2 \to R_2}
+\left ( \begin{array}{cccc|c} 1 &amp; -2 &amp; 0 &amp; 3 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; \frac{-t-7}{4} &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \end{array} \right )
+\xrightarrow{R_1 + 2R_2 \to R_1}
+\left ( \begin{array}{cccc|c} {\underline 1} &amp; 0 &amp; 0 &amp; \frac{-1-t}{2} &amp; 0 \\ 0 &amp; {\underline 1} &amp; 0 &amp; \frac{-t-7}{4} &amp; 0 \\ 0 &amp; 0 &amp; {\underline 1} &amp; 1 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>Pivot variables are <span class="arithmatex">\(x_1, x_2, x_3\)</span>; free variable is <span class="arithmatex">\(x_4 = s\)</span>. By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>: <span class="arithmatex">\(x_1 = \tfrac{1+t}{2}s\)</span>, <span class="arithmatex">\(x_2 = \tfrac{t+7}{4}s\)</span>, <span class="arithmatex">\(x_3 = -s\)</span>. The solution set is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\Bigl\{s\cdot\Bigl(\tfrac{1+t}{2},\,\tfrac{t+7}{4},\,-1,\,1\Bigr) \;\Big|\; s\in\mathbf{R}\Bigr\}.
+\]</div>
+</div>
+<p>Unlike before, we have one free variable only, so the solution set is a one-dimensional subspace of <span class="arithmatex">\(\mathbf{R}^4\)</span>.</p>
+<p><em>Summary.</em> For <span class="arithmatex">\(t\neq 1\)</span> the solution set is the span of a single vector (one-dimensional), while for <span class="arithmatex">\(t=1\)</span> it is the span of two linearly independent vectors (two-dimensional). In both cases the trivial solution, i.e., the zero vector <span class="arithmatex">\(0\)</span> is included.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.15</strong></p>
+<p><span id="sol-ex-systems-homogeneous-3eqs" label="sol--ex:systems-homogeneous-3eqs"></span> (See <a href="../exercises-systems/#ex-systems-homogeneous-3eqs" data-reference-type="ref+Label" data-reference="ex:systems-homogeneous-3eqs">Exercise 2.15</a>.) By <a href="../systems-linear-systems/#def-homogeneous-linear-system" data-reference-type="ref+Label" data-reference="def:homogeneous-linear-system">Definition 2.13</a> this is a homogeneous system, so the trivial solution always exists (<a href="../systems-linear-systems/#rem-trivial-solution" data-reference-type="ref+Label" data-reference="rem:trivial-solution">Remark 2.14</a>). We form the augmented matrix and apply Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 1 &amp; 0 &amp; -1 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; -2 &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>Subtract row <span class="arithmatex">\(1\)</span> from row <span class="arithmatex">\(3\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_3 - R_1 \to R_3}
+\left ( \begin{array}{cccc|c} 1 &amp; 0 &amp; -1 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; -2 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>Subtract row <span class="arithmatex">\(2\)</span> from row <span class="arithmatex">\(3\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_3 - R_2 \to R_3}
+\left ( \begin{array}{cccc|c} {\underline 1} &amp; 0 &amp; -1 &amp; 2 &amp; 0 \\ 0 &amp; {\underline 1} &amp; 2 &amp; -2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>This is already the reduced row-echelon form (<a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>). The pivot variables are <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_2\)</span>; the free variables are <span class="arithmatex">\(x_3\)</span> and <span class="arithmatex">\(x_4\)</span>.</p>
+<p>Setting <span class="arithmatex">\(x_3 = s\)</span> and <span class="arithmatex">\(x_4 = t\)</span> with <span class="arithmatex">\(s, t \in \mathbf{R}\)</span>, <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a> gives</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+x_1 = x_3 - 2x_4 = s - 2t, \qquad x_2 = -2x_3 + 2x_4 = -2s + 2t.
+\]</div>
+</div>
+<p>The solution set is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\bigl\{(s-2t,\,-2s+2t,\,s,\,t) \mid s,t\in\mathbf{R}\bigr\}
+= \bigl\{s(1,-2,1,0)+t(-2,2,0,1) \mid s,t\in\mathbf{R}\bigr\}.
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.16</strong></p>
+<p><span id="sol-ex-systems-1-d" label="sol--ex:systems-1-d"></span> (See <a href="../exercises-systems/#ex-systems-1-d" data-reference-type="ref+Label" data-reference="ex:systems-1-d">Exercise 2.16</a>.) Suppose <span class="arithmatex">\(x_1 = 1-t\)</span>, <span class="arithmatex">\(x_2 = 2+3t\)</span> and <span class="arithmatex">\(x_3 = 4t\)</span>. We have to determine whether there is some <span class="arithmatex">\(t\in {\bf R}\)</span> such that for these choices of <span class="arithmatex">\(x_1, x_2, x_3\)</span>, we have a solution of the given system, i.e., whether</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
@@ -2264,8 +2838,35 @@ x_1 - x_3 &amp; = 1-t-4t &amp; = 0.
 <p>This system has no solutions, so there is no <span class="arithmatex">\(t \in {\bf R}\)</span> such that the vector <span class="arithmatex">\((1-t, 2+3t, 4t)\)</span> is a solution to the original system.</p>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution 2.7.6</strong></p>
-<p><span id="sol-ex-systems-1-e" label="sol--ex:systems-1-e"></span> (See <a href="../exercises-systems/#ex-systems-1-e" data-reference-type="ref+Label" data-reference="ex:systems-1-e">Exercise 2.19</a>.) We substitute <span class="arithmatex">\(x_1 = 1+t\)</span>, <span class="arithmatex">\(x_2 = t+q\)</span> and <span class="arithmatex">\(x_3 = -t+2q+1\)</span> into the given equation and get the equation</p>
+<p class="env-number"><strong>Solution 2.17</strong></p>
+<p><span id="sol-ex-systems-unique-param-t" label="sol--ex:systems-unique-param-t"></span> (See <a href="../exercises-systems/#ex-systems-unique-param-t" data-reference-type="ref+Label" data-reference="ex:systems-unique-param-t">Exercise 2.17</a>.) We substitute <span class="arithmatex">\(x_1 = 3+t\)</span>, <span class="arithmatex">\(x_2 = 2+t\)</span>, <span class="arithmatex">\(x_3 = \tfrac{2}{3}+t\)</span> into both equations and determine for which <span class="arithmatex">\(t \in \mathbf{R}\)</span> both are satisfied simultaneously. We begin by considering the first equation:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x_1 - x_2 + 3x_3
+&amp;= (3+t)-(2+t)+3\!\left(\tfrac{2}{3}+t\right) \\
+&amp;= 1 + 2 + 3t \\
+&amp;= 3 + 3t.
+\end{align*}
+\]</div>
+</div>
+<p>Setting this equal to <span class="arithmatex">\(0\)</span> gives <span class="arithmatex">\(3+3t = 0\)</span>, i.e., <span class="arithmatex">\(t = -1\)</span>. The second equation reads</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+x_1 - x_2 = (3+t)-(2+t) = 1.
+\]</div>
+</div>
+<p>This equals <span class="arithmatex">\(1\)</span> for <em>every</em> <span class="arithmatex">\(t \in \mathbf{R}\)</span>, so the second equation imposes no restriction on <span class="arithmatex">\(t\)</span>.</p>
+<p>The first equation uniquely determines <span class="arithmatex">\(t = -1\)</span>, while the second is satisfied for all <span class="arithmatex">\(t\)</span>. Hence there is exactly one value <span class="arithmatex">\(t = -1\)</span> such that <span class="arithmatex">\((3+t, 2+t, \tfrac{2}{3}+t)\)</span> is a solution of the system. For this value the solution vector is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+(x_1, x_2, x_3) = \bigl(2,\; 1,\; -\tfrac{1}{3}\bigr).
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.18</strong></p>
+<p><span id="sol-ex-systems-1-e" label="sol--ex:systems-1-e"></span> (See <a href="../exercises-systems/#ex-systems-1-e" data-reference-type="ref+Label" data-reference="ex:systems-1-e">Exercise 2.18</a>.) We substitute <span class="arithmatex">\(x_1 = 1+t\)</span>, <span class="arithmatex">\(x_2 = t+q\)</span> and <span class="arithmatex">\(x_3 = -t+2q+1\)</span> into the given equation and get the equation</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 3(1+t)+2(t+q)-(-t+2q+1)=5.
@@ -2283,11 +2884,11 @@ x_1 - x_3 &amp; = 1-t-4t &amp; = 0.
 (x_1 = 1-\frac 12, x_2 = -\frac 12 + q, x_3 = \frac 12 + 2q+1) = (\frac 12, -\frac 12+q, \frac 32 + 2q)
 \]</div>
 </div>
-<p>satisfies the requested conditions. Note that these are infinitely many solutions.</p>
+<p>satisfies the requested conditions. (Note that these are infinitely many solutions.)</p>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution 2.7.7</strong></p>
-<p><span id="sol-ex-systems-1-f" label="sol--ex:systems-1-f"></span> (See <a href="../exercises-systems/#ex-systems-1-f" data-reference-type="ref+Label" data-reference="ex:systems-1-f">Exercise 2.20</a>.) We have to find <span class="arithmatex">\(a_0, \dots, a_3\)</span>, so these are the unknowns. The conditions amount to the linear (!) system</p>
+<p class="env-number"><strong>Solution 2.19</strong></p>
+<p><span id="sol-ex-systems-1-f" label="sol--ex:systems-1-f"></span> (See <a href="../exercises-systems/#ex-systems-1-f" data-reference-type="ref+Label" data-reference="ex:systems-1-f">Exercise 2.19</a>.) We have to find <span class="arithmatex">\(a_0, \dots, a_3\)</span>, so these are the unknowns. The conditions amount to the linear (!) system</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \begin{align*}
@@ -2343,8 +2944,228 @@ p(x) = 5 - 7 x + x^2 + x^3.
 </div>
 </div>
 <div class="solution">
-<p class="env-number"><strong>Solution 2.7.8</strong></p>
-<p><span id="sol-ex-maps-exercise-008" label="sol--ex:maps-exercise-008"></span> (See <a href="../exercises-systems/#ex-maps-exercise-008" data-reference-type="ref+Label" data-reference="ex:maps-exercise-008">Exercise 2.25</a>.) We solve, for each <span class="arithmatex">\(\lambda\in\mathbf R\)</span>, the system by Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>):</p>
+<p class="env-number"><strong>Solution 2.20</strong></p>
+<p><span id="sol-ex-systems-aug-3x5" label="sol--ex:systems-aug-3x5"></span> (See <a href="../exercises-systems/#ex-systems-aug-3x5" data-reference-type="ref+Label" data-reference="ex:systems-aug-3x5">Exercise 2.20</a>.) We apply <a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a> to the given augmented matrix. Subtracting twice the first row from the second, and subtracting the first row from the third, gives</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\left ( \begin{array}{cccc|c} 1 &amp; 1 &amp; 2 &amp; 3 &amp; 1 \\ 2 &amp; 0 &amp; 1 &amp; 2 &amp; 1 \\ 1 &amp; 3 &amp; 5 &amp; 7 &amp; 2 \end{array} \right )
+&amp; \xrightarrow{R_2 \leftarrow R_2-2R_1,\; R_3 \leftarrow R_3-R_1}
+\left ( \begin{array}{cccc|c} 1 &amp; 1 &amp; 2 &amp; 3 &amp; 1 \\ 0 &amp; -2 &amp; -3 &amp; -4 &amp; -1 \\ 0 &amp; 2 &amp; 3 &amp; 4 &amp; 1 \end{array} \right ) \\
+%Adding the second row to the third yields a zero row:
+%$$
+&amp; \xrightarrow{R_3 \leftarrow R_3+R_2}
+\left ( \begin{array}{cccc|c} 1 &amp; 1 &amp; 2 &amp; 3 &amp; 1 \\ 0 &amp; -2 &amp; -3 &amp; -4 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ) \\
+%Multiplying the second row by $-\tfrac{1}{2}$ gives the row-echelon form (see \Cref{def:row-echelon-form}):
+% $$
+\xrightarrow{R_2 \leftarrow -\frac{1}{2}R_2}
+\left ( \begin{array}{cccc|c} 1 &amp; 1 &amp; 2 &amp; 3 &amp; 1 \\ 0 &amp; 1 &amp; \tfrac{3}{2} &amp; 2 &amp; \tfrac{1}{2} \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>This matrix is in row-echelon form (see <a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>). In order to get to reduced row-echelon form we continue like so:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_1 \leftarrow R_1-R_2}
+\left ( \begin{array}{cccc|c} 1 &amp; 0 &amp; \tfrac{1}{2} &amp; 1 &amp; \tfrac{1}{2} \\ 0 &amp; 1 &amp; \tfrac{3}{2} &amp; 2 &amp; \tfrac{1}{2} \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, the pivot columns are <span class="arithmatex">\(1\)</span> and <span class="arithmatex">\(2\)</span>, so <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_2\)</span> are the leading variables, while <span class="arithmatex">\(x_3\)</span> and <span class="arithmatex">\(x_4\)</span> are free variables. Setting <span class="arithmatex">\(x_3 = s\)</span> and <span class="arithmatex">\(x_4 = t\)</span> with <span class="arithmatex">\(s, t \in {\bf R}\)</span>, the two non-trivial rows give</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+x_1 &amp;= \tfrac{1}{2} - \tfrac{1}{2}s - t, \\
+x_2 &amp;= \tfrac{1}{2} - \tfrac{3}{2}s - 2t.
+\end{align*}
+\]</div>
+</div>
+<p>The solution set is therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left\{
+\begin{pmatrix} \tfrac{1}{2} \\ \tfrac{1}{2} \\ 0 \\ 0 \end{pmatrix}
++ s \begin{pmatrix} -\tfrac{1}{2} \\ -\tfrac{3}{2} \\ 1 \\ 0 \end{pmatrix}
++ t \begin{pmatrix} -1 \\ -2 \\ 0 \\ 1 \end{pmatrix}
+: s, t \in {\bf R}
+\right\}.
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.21</strong></p>
+<p><span id="sol-ex-systems-alpha-matrix" label="sol--ex:systems-alpha-matrix"></span> (See <a href="../exercises-systems/#ex-systems-alpha-matrix" data-reference-type="ref+Label" data-reference="ex:systems-alpha-matrix">Exercise 2.21</a>.) We apply <a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a> to the given augmented matrix. Subtracting twice the first row from the second, and subtracting the first row from the third, gives</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccc|c} 1 &amp; 1 &amp; 2 &amp; 3 &amp; -1 \\ 2 &amp; 0 &amp; 1 &amp; 2 &amp; \alpha \\ 1 &amp; 3 &amp; 5 &amp; 7 &amp; 0 \end{array} \right )
+\xrightarrow{R_2 \leftarrow R_2-2R_1,\; R_3 \leftarrow R_3-R_1}
+\left ( \begin{array}{cccc|c} 1 &amp; 1 &amp; 2 &amp; 3 &amp; -1 \\ 0 &amp; -2 &amp; -3 &amp; -4 &amp; \alpha+2 \\ 0 &amp; 2 &amp; 3 &amp; 4 &amp; 1 \end{array} \right ).
+\]</div>
+</div>
+<p>Adding the second row to the third:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\xrightarrow{R_3 \leftarrow R_3+R_2}
+\left ( \begin{array}{cccc|c} 1 &amp; 1 &amp; 2 &amp; 3 &amp; -1 \\ 0 &amp; -2 &amp; -3 &amp; -4 &amp; \alpha+2 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; \alpha+3 \end{array} \right ).
+\]</div>
+</div>
+<p>The last row encodes the equation <span class="arithmatex">\(0 = \alpha+3\)</span>, which requires <span class="arithmatex">\(\alpha = -3\)</span> for any solution to exist (compare <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, <a href="../systems-gaussian-elimination/#item-gaussian-solve-3" data-reference-type="ref+Label" data-reference="item--gaussian-solve-3">3.</a> there).</p>
+<ul>
+<li>
+<p><em>Case <span class="arithmatex">\(\alpha \neq -3\)</span>.</em> The last row gives the contradiction <span class="arithmatex">\(0 = \alpha+3 \neq 0\)</span>, so the system has no solution.</p>
+</li>
+<li>
+<p><em>Case <span class="arithmatex">\(\alpha = -3\)</span>.</em> The last row vanishes. With <span class="arithmatex">\(\alpha+2 = -1\)</span>, the matrix becomes</p>
+</li>
+</ul>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \left ( \begin{array}{cccc|c} 1 &amp; 1 &amp; 2 &amp; 3 &amp; -1 \\ 0 &amp; -2 &amp; -3 &amp; -4 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>Multiplying the second row by <span class="arithmatex">\(-\tfrac{1}{2}\)</span> and then subtracting it from the first produces the reduced row-echelon form (see <a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \xrightarrow{R_2 \leftarrow -\frac{1}{2}R_2}
+    \left ( \begin{array}{cccc|c} 1 &amp; 1 &amp; 2 &amp; 3 &amp; -1 \\ 0 &amp; 1 &amp; \tfrac{3}{2} &amp; 2 &amp; \tfrac{1}{2} \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right )
+    \xrightarrow{R_1 \leftarrow R_1-R_2}
+    \left ( \begin{array}{cccc|c} 1 &amp; 0 &amp; \tfrac{1}{2} &amp; 1 &amp; -\tfrac{3}{2} \\ 0 &amp; 1 &amp; \tfrac{3}{2} &amp; 2 &amp; \tfrac{1}{2} \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p>By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_2\)</span> are leading variables while <span class="arithmatex">\(x_3 = s\)</span> and <span class="arithmatex">\(x_4 = t\)</span> are free. The two non-trivial rows give</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \begin{align*}
+    x_1 &amp;= -\tfrac{3}{2} - \tfrac{1}{2}s - t, \\
+    x_2 &amp;= \tfrac{1}{2} - \tfrac{3}{2}s - 2t.
+  \end{align*}
+\]</div>
+</div>
+<p>The solution set is therefore</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \left\{
+    \begin{pmatrix} -\tfrac{3}{2} \\ \tfrac{1}{2} \\ 0 \\ 0 \end{pmatrix}
+    + s \begin{pmatrix} -\tfrac{1}{2} \\ -\tfrac{3}{2} \\ 1 \\ 0 \end{pmatrix}
+    + t \begin{pmatrix} -1 \\ -2 \\ 0 \\ 1 \end{pmatrix}
+    : s, t \in {\bf R}
+    \right\}.
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.22</strong></p>
+<p><span id="sol-ex-systems-alpha-2eqs" label="sol--ex:systems-alpha-2eqs"></span> (See <a href="../exercises-systems/#ex-systems-alpha-2eqs" data-reference-type="ref+Label" data-reference="ex:systems-alpha-2eqs">Exercise 2.22</a>.) We apply <a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a> to the augmented matrix of the system. Dividing the first row by <span class="arithmatex">\(2\)</span> and then subtracting <span class="arithmatex">\((\alpha+2)\)</span> times the first row from the second gives</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+  \left ( \begin{array}{ccc|c} 2 &amp; -1 &amp; 1 &amp; 1 \\ \alpha+2 &amp; -2 &amp; \alpha &amp; -\alpha \end{array} \right )
+&amp; \xrightarrow{R_1 \leftarrow \frac{1}{2}R_1}
+\left ( \begin{array}{ccc|c} 1 &amp; -\tfrac{1}{2} &amp; \tfrac{1}{2} &amp; \tfrac{1}{2} \\ \alpha+2 &amp; -2 &amp; \alpha &amp; -\alpha \end{array} \right ) \\
+&amp; \xrightarrow{R_2 \leftarrow R_2 - (\alpha+2)R_1}
+\left ( \begin{array}{ccc|c} 1 &amp; -\tfrac{1}{2} &amp; \tfrac{1}{2} &amp; \tfrac{1}{2} \\ 0 &amp; \tfrac{\alpha-2}{2} &amp; \tfrac{\alpha-2}{2} &amp; \tfrac{-3\alpha-2}{2} \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>The second row encodes the equation <span class="arithmatex">\(\tfrac{\alpha-2}{2}(y + z) = \tfrac{-3\alpha-2}{2}\)</span>, which forces a case split on <span class="arithmatex">\(\alpha = 2\)</span>:</p>
+<ul>
+<li>
+<p><em>Case <span class="arithmatex">\(\alpha = 2\)</span>.</em> The second row becomes <span class="arithmatex">\(0 \cdot y + 0 \cdot z = -4\)</span>, i.e., <span class="arithmatex">\(0 = -4\)</span>, a contradiction. The system has <em>no solution</em>.</p>
+</li>
+<li>
+<p><em>Case <span class="arithmatex">\(\alpha \neq 2\)</span>.</em> We may divide the second row by <span class="arithmatex">\(\tfrac{\alpha-2}{2}\)</span> and then eliminate the <span class="arithmatex">\(-\tfrac{1}{2}\)</span> entry in the first row (<a href="../systems-gaussian-elimination/#def-elementary-row-operations" data-reference-type="ref+Label" data-reference="def:elementary-row-operations">Definition 2.28</a>):</p>
+</li>
+</ul>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \xrightarrow{R_2 \leftarrow \frac{2}{\alpha-2}R_2}
+    \left ( \begin{array}{ccc|c} 1 &amp; -\tfrac{1}{2} &amp; \tfrac{1}{2} &amp; \tfrac{1}{2} \\ 0 &amp; 1 &amp; 1 &amp; \tfrac{-3\alpha-2}{\alpha-2} \end{array} \right )
+    \xrightarrow{R_1 \leftarrow R_1 + \frac{1}{2}R_2}
+    \left ( \begin{array}{ccc|c} 1 &amp; 0 &amp; 1 &amp; \tfrac{-(\alpha+2)}{\alpha-2} \\ 0 &amp; 1 &amp; 1 &amp; \tfrac{-3\alpha-2}{\alpha-2} \end{array} \right ).
+\]</div>
+</div>
+<p>By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, <span class="arithmatex">\(z\)</span> is free; setting <span class="arithmatex">\(z = t\)</span> gives</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \begin{align*}
+    x &amp;= \tfrac{-(\alpha+2)}{\alpha-2} - t, \\
+    y &amp;= \tfrac{-3\alpha-2}{\alpha-2} - t.
+  \end{align*}
+\]</div>
+</div>
+<p>The system has infinitely many solutions, forming the line</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+  \left\{
+    \begin{pmatrix} \tfrac{-(\alpha+2)}{\alpha-2} \\ \tfrac{-3\alpha-2}{\alpha-2} \\ 0 \end{pmatrix}
+    + t \begin{pmatrix} -1 \\ -1 \\ 1 \end{pmatrix}
+    : t \in {\bf R}
+    \right\} \subset {\bf R}^3.
+\]</div>
+</div>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.23</strong></p>
+<p><span id="sol-ex-systems-network" label="sol--ex:systems-network"></span> (See <a href="../exercises-systems/#ex-systems-network" data-reference-type="ref+Label" data-reference="ex:systems-network">Exercise 2.23</a>.)</p>
+<p><em>Setting up the system.</em> Let <span class="arithmatex">\(U, V, W, X, Y, Z \geq 0\)</span> denote the number of cars per hour flowing through the respective streets. Since each intersection neither creates nor destroys cars, inflow must equal outflow at each node:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+A\colon &amp;\quad U + V + X = 500, \\
+B\colon &amp;\quad U + W + Z = 400, \\
+C\colon &amp;\quad X + Y = Z + 100, \\
+D\colon &amp;\quad V = W + Y.
+\end{align*}
+\]</div>
+</div>
+<p>Rewriting with all unknowns on the left and forming the augmented matrix (columns ordered <span class="arithmatex">\(U, V, W, X, Y, Z\)</span>):</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left ( \begin{array}{cccccc|c} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 500 \\ 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 400 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; -1 &amp; 100 \\ 0 &amp; 1 &amp; -1 &amp; 0 &amp; -1 &amp; 0 &amp; 0 \end{array} \right ).
+\]</div>
+</div>
+<p><em>Gaussian elimination.</em> We apply <a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>. Subtracting the first row from the second eliminates <span class="arithmatex">\(U\)</span> from row <span class="arithmatex">\(2\)</span>; then adding the (updated) second row to the fourth eliminates <span class="arithmatex">\(V\)</span> from row <span class="arithmatex">\(4\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+\xrightarrow{R_2 \leftarrow R_2 - R_1} &amp;
+\left ( \begin{array}{cccccc|c} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 500 \\ 0 &amp; -1 &amp; 1 &amp; -1 &amp; 0 &amp; 1 &amp; -100 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; -1 &amp; 100 \\ 0 &amp; 1 &amp; -1 &amp; 0 &amp; -1 &amp; 0 &amp; 0 \end{array} \right ) \\
+\xrightarrow{R_4 \leftarrow R_4 + R_2} &amp; 
+\left ( \begin{array}{cccccc|c} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 500 \\ 0 &amp; -1 &amp; 1 &amp; -1 &amp; 0 &amp; 1 &amp; -100 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; -1 &amp; 100 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 &amp; 1 &amp; -100 \end{array} \right ) 
+% Adding the third row to the fourth yields a zero row:
+%$$
+\xrightarrow{R_4 \leftarrow R_4 + R_3} &amp; 
+\left ( \begin{array}{cccccc|c} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 500 \\ 0 &amp; -1 &amp; 1 &amp; -1 &amp; 0 &amp; 1 &amp; -100 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; -1 &amp; 100 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right ).
+\end{align*}
+\]</div>
+</div>
+<p>This is in row-echelon form (<a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>).</p>
+<p><em>Reading off the solution.</em> By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>, the pivot columns are <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(2\)</span>, <span class="arithmatex">\(4\)</span>, so <span class="arithmatex">\(U\)</span>, <span class="arithmatex">\(V\)</span>, <span class="arithmatex">\(X\)</span> are the non-free variables, while <span class="arithmatex">\(W = s\)</span>, <span class="arithmatex">\(Y = t\)</span>, <span class="arithmatex">\(Z = r\)</span> are free (<span class="arithmatex">\(s, t, r \in {\bf R}\)</span>). The three non-trivial rows give</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\begin{align*}
+X &amp;= 100 - t + r.
+V &amp;= 100 + s - X + Z = s + t, \\
+U &amp;= 500 - V - X = 400 - s - r. \\
+\end{align*}
+\]</div>
+</div>
+<p>The solution set is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+\left\{
+\begin{pmatrix} 400 \\ 0 \\ 0 \\ 100 \\ 0 \\ 0 \end{pmatrix}
++ s \begin{pmatrix} -1 \\ 1 \\ 1 \\ 0 \\ 0 \\ 0 \end{pmatrix}
++ t \begin{pmatrix} 0 \\ 1 \\ 0 \\ -1 \\ 1 \\ 0 \end{pmatrix}
++ r \begin{pmatrix} -1 \\ 0 \\ 0 \\ 1 \\ 0 \\ 1 \end{pmatrix}
+: s, t, r \in {\bf R}
+\right\} \subset {\bf R}^6,
+\]</div>
+</div>
+<p>where the entries correspond to <span class="arithmatex">\((U, V, W, X, Y, Z)\)</span>. The physically admissible scenarios are those in which all six flow values are non-negative; these are the parameter triples <span class="arithmatex">\((s, t, r)\)</span> additionally satisfying <span class="arithmatex">\(s, t, r \geq 0\)</span>, <span class="arithmatex">\(s + r \leq 400\)</span>, and <span class="arithmatex">\(r - t \leq 100\)</span>.</p>
+</div>
+<div class="solution">
+<p class="env-number"><strong>Solution 2.24</strong></p>
+<p><span id="sol-ex-maps-exercise-008" label="sol--ex:maps-exercise-008"></span> (See <a href="../exercises-systems/#ex-maps-exercise-008" data-reference-type="ref+Label" data-reference="ex:maps-exercise-008">Exercise 2.24</a>.) We solve, for each <span class="arithmatex">\(\lambda\in\mathbf R\)</span>, the system by Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>):</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
 \left ( \begin{array}{ccc|c} \lambda &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; \lambda &amp; 1+\lambda &amp; 1\\ \lambda &amp; 1 &amp; 2 &amp; 3 \end{array} \right )

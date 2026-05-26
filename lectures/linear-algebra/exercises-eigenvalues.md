@@ -3,7 +3,7 @@
 
 <p class="env-number"><strong>Exercise 6.1</strong></p>
 
-<span id="ex-eigenvalues-exercise-001" label="ex:eigenvalues-exercise-001"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-001" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-001">Solution 6.6.1</a>.) Is the following matrix diagonalizable?
+<span id="ex-eigenvalues-exercise-001" label="ex:eigenvalues-exercise-001"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-001" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-001">Solution 6.1</a>.) Is the following matrix diagonalizable?
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{ccc} 2 & 1 & 1 \\ 0 & 1 & 0 \\ 1 & -1 & 2 \end{array} \right ).
@@ -19,7 +19,7 @@ Hint: you will find that the eigenvalues of $A$ are among the numbers $0, 1, 2, 
 
 <p class="env-number"><strong>Exercise 6.2</strong></p>
 
-<span id="exercise-eigenvalues-2x2" label="exercise.eigenvalues.2x2"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-exercise-eigenvalues-2x2" data-reference-type="ref+Label" data-reference="sol--exercise.eigenvalues.2x2">Solution 6.6.2</a>.) Let $A = \left ( \begin{array}{cc} a & b \\ c & d \end{array} \right )$. Show that:
+<span id="exercise-eigenvalues-2x2" label="exercise.eigenvalues.2x2"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-exercise-eigenvalues-2x2" data-reference-type="ref+Label" data-reference="sol--exercise.eigenvalues.2x2">Solution 6.2</a>.) Let $A = \left ( \begin{array}{cc} a & b \\ c & d \end{array} \right )$. Show that:
 
 - $\chi_A(t) = t^2 - \mathrm {tr} (A) t + \det A = t^2 - (a+d) t + (ad-bc)$. Here $\mathrm {tr} (A)$ is the *trace* of $A$, cf. <a href="../exercises-maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>.
 
@@ -37,7 +37,7 @@ Hint: you will find that the eigenvalues of $A$ are among the numbers $0, 1, 2, 
 
 <p class="env-number"><strong>Exercise 6.3</strong></p>
 
-<span id="ex-eigenvalues-exercise-002" label="ex:eigenvalues-exercise-002"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-002" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-002">Solution 6.6.3</a>.) For each of the following matrices, compute $\chi_A(t)$, the eigenvalues of $A$, the eigenspaces for these eigenvalues. Also decide whether $A$ is diagonalizable and compute an eigenbasis if one exists.
+<span id="ex-eigenvalues-exercise-002" label="ex:eigenvalues-exercise-002"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-002" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-002">Solution 6.3</a>.) For each of the following matrices, compute $\chi_A(t)$, the eigenvalues of $A$, the eigenspaces for these eigenvalues. Also decide whether $A$ is diagonalizable and compute an eigenbasis if one exists.
 
 1.  $A = \left ( \begin{array}{cc} 3 & 5 \\ 1 & -1 \end{array} \right )$
 
@@ -54,7 +54,7 @@ Hint: you will find that the eigenvalues of $A$ are among the numbers $0, 1, 2, 
 
 <p class="env-number"><strong>Exercise 6.4</strong></p>
 
-<span id="ex-eigenvalues-exercise-003" label="ex:eigenvalues-exercise-003"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-003" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-003">Solution 6.6.4</a>.) Consider the matrix $A = \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 1 & 1 & 2 \\ 1 & 0 & 1 \end{array} \right )$. Compute its characteristic polynomial, its eigenvalues and its eigenspaces. Is $A$ diagonalizable? If so, find a basis of ${\bf R}^3$ such that the associated matrix is a diagonal matrix, as in <a href="../eigenvalues-diagonalization/#def-diagonalizable" data-reference-type="ref+Label" data-reference="def:diagonalizable">Definition 6.14</a>.
+<span id="ex-eigenvalues-exercise-003" label="ex:eigenvalues-exercise-003"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-003" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-003">Solution 6.4</a>.) Consider the matrix $A = \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 1 & 1 & 2 \\ 1 & 0 & 1 \end{array} \right )$. Compute its characteristic polynomial, its eigenvalues and its eigenspaces. Is $A$ diagonalizable? If so, find a basis of ${\bf R}^3$ such that the associated matrix is a diagonal matrix, as in <a href="../eigenvalues-diagonalization/#def-diagonalizable" data-reference-type="ref+Label" data-reference="def:diagonalizable">Definition 6.14</a>.
 
 </div>
 
@@ -63,7 +63,7 @@ Hint: you will find that the eigenvalues of $A$ are among the numbers $0, 1, 2, 
 
 <p class="env-number"><strong>Exercise 6.5</strong></p>
 
-<span id="ex-eigenvalues-5-1" label="ex:eigenvalues-5-1"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-1" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-1">Solution 6.6.5</a>.) Let
+<span id="ex-eigenvalues-5-1" label="ex:eigenvalues-5-1"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-1" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-1">Solution 6.5</a>.) Let
 <div class="arithmatex" markdown="1">
 \[
 f: {\bf R}^3 \to {\bf R}^3
@@ -78,7 +78,7 @@ be the linear map such that $f(1,0,1)=(2,0,2)$, $\ker f = L((1,1,1))$ and $f(2,0
 
 <p class="env-number"><strong>Exercise 6.6</strong></p>
 
-<span id="ex-eigenvalues-exercise-004" label="ex:eigenvalues-exercise-004"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-004" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-004">Solution 6.6.6</a>.) For which $a \in {\bf R}$ is the matrix
+<span id="ex-eigenvalues-exercise-004" label="ex:eigenvalues-exercise-004"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-004" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-004">Solution 6.6</a>.) For which $a \in {\bf R}$ is the matrix
 <div class="arithmatex" markdown="1">
 \[
 A_a = \left ( \begin{array}{ccc} a & 0 & 0 \\ a-2 & 1 & 1 \\ 0 & 1 & 1 \end{array} \right )
@@ -93,7 +93,7 @@ diagonalizable?
 
 <p class="env-number"><strong>Exercise 6.7</strong></p>
 
-<span id="ex-eigenvalues-5-2" label="ex:eigenvalues-5-2"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-2" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-2">Solution 6.6.7</a>.) For a parameter $a \in {\bf R}$, let
+<span id="ex-eigenvalues-5-2" label="ex:eigenvalues-5-2"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-2" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-2">Solution 6.7</a>.) For a parameter $a \in {\bf R}$, let
 <div class="arithmatex" markdown="1">
 \[
 A_a = \left ( \begin{array}{ccc} 4 & 0 & 4 \\ a & 2 & a \\ -2 & 0 & -2 \end{array} \right ).
@@ -111,7 +111,7 @@ A_a = \left ( \begin{array}{ccc} 4 & 0 & 4 \\ a & 2 & a \\ -2 & 0 & -2 \end{arra
 
 <p class="env-number"><strong>Exercise 6.8</strong></p>
 
-<span id="ex-eigenvalues-exercise-005" label="ex:eigenvalues-exercise-005"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-005" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-005">Solution 6.6.8</a>.) Consider the matrices
+<span id="ex-eigenvalues-exercise-005" label="ex:eigenvalues-exercise-005"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-005" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-005">Solution 6.8</a>.) Consider the matrices
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 2 & 0 \\ 1 & -1 & 1 \end{array} \right ) \ \text{ and } \ B = \left ( \begin{array}{ccc} 2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 0 \end{array} \right ).
@@ -129,7 +129,7 @@ A = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 2 & 0 \\ 1 & -1 & 1 \end{array} 
 
 <p class="env-number"><strong>Exercise 6.9</strong></p>
 
-<span id="ex-eigenvalues-exercise-006" label="ex:eigenvalues-exercise-006"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-006" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-006">Solution 6.6.9</a>.) For a parameter $t \in {\bf R}$, consider the matrix
+<span id="ex-eigenvalues-exercise-006" label="ex:eigenvalues-exercise-006"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-006" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-006">Solution 6.9</a>.) For a parameter $t \in {\bf R}$, consider the matrix
 <div class="arithmatex" markdown="1">
 \[
 A_t = \left ( \begin{array}{ccc} -1 & 2 & t \\ 2 & 0 & -2 \\ t & -2 & -1 \end{array} \right ).
@@ -147,7 +147,7 @@ A_t = \left ( \begin{array}{ccc} -1 & 2 & t \\ 2 & 0 & -2 \\ t & -2 & -1 \end{ar
 
 <p class="env-number"><strong>Exercise 6.10</strong></p>
 
-<span id="ex-eigenvalues-exercise-007" label="ex:eigenvalues-exercise-007"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-007" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-007">Solution 6.6.10</a>.) Consider the space ${\mathrm {Mat}}_{2 \times 2}$ of $2 \times 2$-vector spaces. Consider $A = \left ( \begin{array}{cc} -4 & 8 \\ 1 & -2 \end{array} \right )$ and the map
+<span id="ex-eigenvalues-exercise-007" label="ex:eigenvalues-exercise-007"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-exercise-007" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-exercise-007">Solution 6.10</a>.) Consider the space ${\mathrm {Mat}}_{2 \times 2}$ of $2 \times 2$-vector spaces. Consider $A = \left ( \begin{array}{cc} -4 & 8 \\ 1 & -2 \end{array} \right )$ and the map
 <div class="arithmatex" markdown="1">
 \[
 F: {\mathrm {Mat}}_{2 \times 2} \to {\mathrm {Mat}}_{2 \times 2}, X \mapsto AX.
@@ -183,7 +183,7 @@ F: {\mathrm {Mat}}_{2 \times 2} \to {\mathrm {Mat}}_{2 \times 2}, X \mapsto AX.
 
 <p class="env-number"><strong>Exercise 6.11</strong></p>
 
-<span id="ex-eigenvalues-5-4-3" label="ex:eigenvalues-5-4-3"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-4-3" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-4-3">Solution 6.6.11</a>.) Consider the two matrices
+<span id="ex-eigenvalues-5-4-3" label="ex:eigenvalues-5-4-3"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-4-3" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-4-3">Solution 6.11</a>.) Consider the two matrices
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{ccc} 1 & 0 & 2 \\ 0 & 3 & 0 \\ 0 & 0 & 3 \end{array} \right ) \text{ and } B = \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 3 & 2 \\ 0 & 0 & 3 \end{array} \right ).
@@ -198,7 +198,7 @@ Do they represent the same linear map $f : {\bf R}^3 \to {\bf R}^3$ (with respec
 
 <p class="env-number"><strong>Exercise 6.12</strong></p>
 
-<span id="ex-eigenvalues-5-4-4" label="ex:eigenvalues-5-4-4"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-4-4" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-4-4">Solution 6.6.12</a>.) Let $A = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 2 & 1 \\ 0 & 0 & 2 \end{array} \right )$. Determine the eigenvalues of $A$ and the corresponding eigenspaces. Is $A$ diagonalizable? Is $A^2$ *similar* to $A$? I.e., does $A^2$ represent the same linear map ${\bf R}^3 \to {\bf R}^3$ as $A$?
+<span id="ex-eigenvalues-5-4-4" label="ex:eigenvalues-5-4-4"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-4-4" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-4-4">Solution 6.12</a>.) Let $A = \left ( \begin{array}{ccc} 1 & 1 & 1 \\ 0 & 2 & 1 \\ 0 & 0 & 2 \end{array} \right )$. Determine the eigenvalues of $A$ and the corresponding eigenspaces. Is $A$ diagonalizable? Is $A^2$ *similar* to $A$? I.e., does $A^2$ represent the same linear map ${\bf R}^3 \to {\bf R}^3$ as $A$?
 
 </div>
 
@@ -207,7 +207,7 @@ Do they represent the same linear map $f : {\bf R}^3 \to {\bf R}^3$ (with respec
 
 <p class="env-number"><strong>Exercise 6.13</strong></p>
 
-<span id="ex-eigenvalues-5-5" label="ex:eigenvalues-5-5"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-5" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-5">Solution 6.6.13</a>.) Consider the vectors $v_1 = (1,0,1)$, $v_2 = (1,1,1)$ and $v_3=(1,1,2)$.
+<span id="ex-eigenvalues-5-5" label="ex:eigenvalues-5-5"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-5" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-5">Solution 6.13</a>.) Consider the vectors $v_1 = (1,0,1)$, $v_2 = (1,1,1)$ and $v_3=(1,1,2)$.
 
 1.  Explain why there is a unique linear map $f : {\bf R}^3 \to {\bf R}^3$ such that $f(v_1)=(0,0,0)$, $f(v_2)=(1,0,3)$ and $v_3$ is an eigenvector of eigenvalue 4.
 
@@ -224,7 +224,7 @@ Do they represent the same linear map $f : {\bf R}^3 \to {\bf R}^3$ (with respec
 
 <p class="env-number"><strong>Exercise 6.14</strong></p>
 
-<span id="ex-eigenvalues-5-7" label="ex:eigenvalues-5-7"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-7" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-7">Solution 6.6.14</a>.) Consider the matrix
+<span id="ex-eigenvalues-5-7" label="ex:eigenvalues-5-7"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-7" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-7">Solution 6.14</a>.) Consider the matrix
 <div class="arithmatex" markdown="1">
 \[
 A = \begin{pmatrix}
@@ -250,7 +250,7 @@ A = \begin{pmatrix}
 
 <p class="env-number"><strong>Exercise 6.15</strong></p>
 
-<span id="ex-eigenvalues-5-9" label="ex:eigenvalues-5-9"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-9" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-9">Solution 6.6.15</a>.) Consider the matrix
+<span id="ex-eigenvalues-5-9" label="ex:eigenvalues-5-9"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-9" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-9">Solution 6.15</a>.) Consider the matrix
 <div class="arithmatex" markdown="1">
 \[
 A = \begin{pmatrix}
@@ -276,7 +276,7 @@ A = \begin{pmatrix}
 
 <p class="env-number"><strong>Exercise 6.16</strong></p>
 
-<span id="ex-eigenvalues-5-10" label="ex:eigenvalues-5-10"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-10" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-10">Solution 6.6.16</a>.) Consider the matrix $A = \begin{pmatrix}
+<span id="ex-eigenvalues-5-10" label="ex:eigenvalues-5-10"></span> (See <a href="../solutions-eigenvalues-and-eigenvectors/#sol-ex-eigenvalues-5-10" data-reference-type="ref+Label" data-reference="sol--ex:eigenvalues-5-10">Solution 6.16</a>.) Consider the matrix $A = \begin{pmatrix}
 1 & 0 & t \\
 1 & 2 & 1 \\
 2 & 0 & -1

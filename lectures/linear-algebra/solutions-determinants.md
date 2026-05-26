@@ -1,7 +1,7 @@
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 5.6.1</strong></p>
+<p class="env-number"><strong>Solution 5.1</strong></p>
 
 <span id="sol-ex-determinants-exercise-001" label="sol--ex:determinants-exercise-001"></span> (See <a href="../exercises-determinants/#ex-determinants-exercise-001" data-reference-type="ref+Label" data-reference="ex:determinants-exercise-001">Exercise 5.1</a>.) By <a href="../determinants-invertibility-and-determinants/#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a>, the matrix $A$ is invertible if and only if $\det A \ne 0$. Using Sarrus’ rule, cf. <a href="../determinants-determinants-of-larger-matrices/#lem-sarrus-rule" data-reference-type="ref+Label" data-reference="lem:Sarrus-rule">Lemma 5.11</a>, we compute
 <div class="arithmatex" markdown="1">
@@ -53,7 +53,7 @@ A^{-1} = \frac{1}{3a-9b-9} \left ( \begin{array}{ccc} 3 & -4b-3 & -b-3 \\ -9 & 4
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 5.6.2</strong></p>
+<p class="env-number"><strong>Solution 5.2</strong></p>
 
 <span id="sol-ex-determinants-exercise-002" label="sol--ex:determinants-exercise-002"></span> (See <a href="../exercises-determinants/#ex-determinants-exercise-002" data-reference-type="ref+Label" data-reference="ex:determinants-exercise-002">Exercise 5.2</a>.) From $A^2 = {\mathrm {id}}$ and the product formula in <a href="../determinants-further-properties/#prop-product-formula" data-reference-type="ref+Label" data-reference="prop:product-formula">Proposition 5.18</a>, we get
 <div class="arithmatex" markdown="1">
@@ -85,7 +85,7 @@ Since $\det A \in {\bf R}$, this implies
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 5.6.3</strong></p>
+<p class="env-number"><strong>Solution 5.3</strong></p>
 
 <span id="sol-ex-determinants-exercise-003" label="sol--ex:determinants-exercise-003"></span> (See <a href="../exercises-determinants/#ex-determinants-exercise-003" data-reference-type="ref+Label" data-reference="ex:determinants-exercise-003">Exercise 5.3</a>.) Using the $2 \times 2$ determinant formula from <a href="../determinants-determinants-of-2-x-2-matrices/#def-det-2-x-2" data-reference-type="ref+Label" data-reference="def:det-2-x-2">Definition 5.1</a>, we get
 <div class="arithmatex" markdown="1">
@@ -105,7 +105,7 @@ So every rotation matrix has determinant $1$. (In particular, by <a href="../det
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 5.6.4</strong></p>
+<p class="env-number"><strong>Solution 5.4</strong></p>
 
 <span id="sol-ex-determinants-exercise-004" label="sol--ex:determinants-exercise-004"></span> (See <a href="../exercises-determinants/#ex-determinants-exercise-004" data-reference-type="ref+Label" data-reference="ex:determinants-exercise-004">Exercise 5.4</a>.) We compute the determinant of
 <div class="arithmatex" markdown="1">
@@ -177,7 +177,7 @@ Hence
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 5.6.5</strong></p>
+<p class="env-number"><strong>Solution 5.5</strong></p>
 
 <span id="sol-ex-determinants-4-1" label="sol--ex:determinants-4-1"></span> (See <a href="../exercises-determinants/#ex-determinants-4-1" data-reference-type="ref+Label" data-reference="ex:determinants-4-1">Exercise 5.5</a>.) According to <a href="../determinants-further-properties/#prop-det-triangular-matrix" data-reference-type="ref+Label" data-reference="prop:det-triangular-matrix">Proposition 5.20</a>, the determinant is the product of the diagonal entries, i.e., it equals $3 \cdot 4 \cdot 5 = 60$.
 
@@ -186,7 +186,7 @@ Hence
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 5.6.6</strong></p>
+<p class="env-number"><strong>Solution 5.6</strong></p>
 
 <span id="sol-ex-determinants-4-2" label="sol--ex:determinants-4-2"></span> (See <a href="../exercises-determinants/#ex-determinants-4-2" data-reference-type="ref+Label" data-reference="ex:determinants-4-2">Exercise 5.6</a>.) The matrix $\left ( \begin{array}{ccc} 1 & 5 & 8 \\ 40 & -9 & 1 \\ 0 & 0 & 0 \end{array} \right )$ has a zero row, so the determinant is $0$ (cf. <a href="../determinants-determinants-of-larger-matrices/#rem-determinants-remark-001" data-reference-type="ref+Label" data-reference="rem:determinants-remark-001">Remark 5.7</a>). The second matrix, $\left ( \begin{array}{ccc} 1 & 5 & 8 \\ 40 & -9 & 1 \\ 1 & 5 & 8 \end{array} \right )$ has two equal rows, so the determinant is $0$ (cf. <a href="../determinants-determinants-of-larger-matrices/#rem-det-zero-equal-rows" data-reference-type="ref+Label" data-reference="rem:det-zero-equal-rows">Remark 5.9</a>).
 
@@ -197,7 +197,7 @@ Equivalently, both matrices are non-invertible (their rows are linearly dependen
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 5.6.7</strong></p>
+<p class="env-number"><strong>Solution 5.7</strong></p>
 
 <span id="sol-ex-determinants-exercise-005" label="sol--ex:determinants-exercise-005"></span> (See <a href="../exercises-determinants/#ex-determinants-exercise-005" data-reference-type="ref+Label" data-reference="ex:determinants-exercise-005">Exercise 5.7</a>.) The first matrix
 <div class="arithmatex" markdown="1">
@@ -237,7 +237,7 @@ Hence the determinants are $54$ and $0$.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 5.6.8</strong></p>
+<p class="env-number"><strong>Solution 5.8</strong></p>
 
 <span id="sol-ex-determinants-exercise-006" label="sol--ex:determinants-exercise-006"></span> (See <a href="../exercises-determinants/#ex-determinants-exercise-006" data-reference-type="ref+Label" data-reference="ex:determinants-exercise-006">Exercise 5.8</a>.) By <a href="../determinants-invertibility-and-determinants/#thm-det-zero-niff-invertible" data-reference-type="ref+Label" data-reference="thm:det-zero-niff-invertible">Theorem 5.15</a> and , $A^{-1} = \frac{1}{\det A}\,\mathrm{adj}(A).$ For
 <div class="arithmatex" markdown="1">

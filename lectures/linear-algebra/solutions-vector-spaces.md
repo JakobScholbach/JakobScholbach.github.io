@@ -1,7 +1,7 @@
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.1</strong></p>
+<p class="env-number"><strong>Solution 3.1</strong></p>
 
 <span id="sol-ex-exotic-scalar-multiplication" label="sol--ex:exotic-scalar-multiplication"></span> (See <a href="../exercises-spaces/#ex-exotic-scalar-multiplication" data-reference-type="ref+Label" data-reference="ex:exotic-scalar-multiplication">Exercise 3.1</a>.) To decide whether we get a vector space, we need to check the axioms of a vector space (<a href="../spaces-definition-solution-of-homogeneous/#def-vector-space" data-reference-type="ref+Label" data-reference="def:vector-space">Definition 3.10</a>), especially
 
@@ -68,7 +68,7 @@ Therefore, in all three cases, $V$ is *not* a vector space.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.2</strong></p>
+<p class="env-number"><strong>Solution 3.2</strong></p>
 
 <span id="sol-ex-subspace-statements" label="sol--ex:subspace-statements"></span> (See <a href="../exercises-spaces/#ex-subspace-statements" data-reference-type="ref+Label" data-reference="ex:subspace-statements">Exercise 3.2</a>.) Recall <a href="../spaces-definition-solution-of-homogeneous/#def-subspace" data-reference-type="ref+Label" data-reference="def:subspace">Definition 3.17</a>: a subspace $V \subset {\bf R}^2$ must (i) contain the zero vector, (ii) be closed under addition, and (iii) be closed under scalar multiplication.
 
@@ -85,7 +85,7 @@ Therefore, in all three cases, $V$ is *not* a vector space.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.3</strong></p>
+<p class="env-number"><strong>Solution 3.3</strong></p>
 
 <span id="sol-differentiable-functions" label="sol--differentiable functions"></span> (See <a href="../exercises-spaces/#differentiable-functions" data-reference-type="ref+Label" data-reference="differentiable functions">Exercise 3.3</a>.) Let $D := \{ f : {\bf R} \to {\bf R} \mid f \text{ is differentiable} \}$, with sum and scalar multiple as in <a href="../spaces-further-examples/#sum-functions" data-reference-type="eqref" data-reference="sum functions">Equation (3.23)</a> and <a href="../spaces-further-examples/#scalar-multiple-functions" data-reference-type="eqref" data-reference="scalar multiple functions">Equation (3.24)</a>. Following the structure of <a href="../spaces-further-examples/#dlm-polynomials-vector-space" data-reference-type="ref+Label" data-reference="dlm:polynomials-vector-space">Definition and Lemma 3.22</a>, we check the conditions of being a subvector space of the space of *all* functions $f : {\bf R} \to {\bf R}$. We note that the space of all functions does form a vector space. Its vector space axioms (commutativity and associativity of addition, distributivity, etc.) are inherited pointwise from ${\bf R}$: for any $x \in {\bf R}$, the values $f(x), g(x), h(x)$ are real numbers satisfying all these properties, hence so do the functions $f, g, h$.
 
@@ -102,7 +102,7 @@ We verify the conditions of <a href="../spaces-definition-solution-of-homogeneou
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.4</strong></p>
+<p class="env-number"><strong>Solution 3.4</strong></p>
 
 <span id="sol-ex-union-subspaces" label="sol--ex:union-subspaces"></span> (See <a href="../exercises-spaces/#ex-union-subspaces" data-reference-type="ref+Label" data-reference="ex:union-subspaces">Exercise 3.4</a>.) *Union that is not a subspace.* Take $V = L((1,0))$ (the $x$-axis) and $W = L((0,1))$ (the $y$-axis). Both are subspaces of ${\bf R}^2$. We have $(1,0) \in V \subset V \cup W$ and $(0,1) \in W \subset V \cup W$, but
 <div class="arithmatex" markdown="1">
@@ -119,7 +119,7 @@ since $(1,1)$ is not a scalar multiple of $(1,0)$ and not a scalar multiple of $
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.5</strong></p>
+<p class="env-number"><strong>Solution 3.5</strong></p>
 
 <span id="sol-ex-span-r4" label="sol--ex:span-r4"></span> (See <a href="../exercises-spaces/#ex-span-r4" data-reference-type="ref+Label" data-reference="ex:span-r4">Exercise 3.5</a>.) By definition of the span (<a href="../spaces-linear-combinations/#lem-span-subspace" data-reference-type="ref+Label" data-reference="lem:span-subspace">Lemma 3.34</a>), in each case we need to solve $\lambda_1 v_1 + \lambda_2 v_2 = w$. Then $w$ lies in the span of $v_1$ and $v_2$ precisely if there is a solution $(\lambda_1, \lambda_2)$ of that system.
 
@@ -169,7 +169,7 @@ One solves this similarly as above and finds that the system has the solution $\
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.6</strong></p>
+<p class="env-number"><strong>Solution 3.6</strong></p>
 
 <span id="sol-ex-spanning-r4" label="sol--ex:spanning-r4"></span> (See <a href="../exercises-spaces/#ex-spanning-r4" data-reference-type="ref+Label" data-reference="ex:spanning-r4">Exercise 3.6</a>.) By <a href="../spaces-dimension/#cor-indep-span" data-reference-type="ref+Label" data-reference="cor:indep-span">Corollary 3.73</a>, four vectors in ${\bf R}^4$ span ${\bf R}^4$ if and only if they are linearly independent, which by <a href="../spaces-linear-independence/#met-check-linear-independence" data-reference-type="ref+Label" data-reference="met:check-linear-independence">Method 3.56</a> is equivalent to the matrix formed by the vectors (as rows) having rank 4 after Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>).
 
@@ -200,7 +200,7 @@ The resulting row-echelon matrix has only 3 non-zero rows, so the rank equals 3
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.7</strong></p>
+<p class="env-number"><strong>Solution 3.7</strong></p>
 
 <span id="sol-ex-linear-independence" label="sol--ex:linear-independence"></span> (See <a href="../exercises-spaces/#ex-linear-independence" data-reference-type="ref+Label" data-reference="ex:linear-independence">Exercise 3.7</a>.) By <a href="../spaces-linear-independence/#def-linearly-independent" data-reference-type="ref+Label" data-reference="def:linearly-independent">Definition 3.49</a> and <a href="../spaces-linear-independence/#met-check-linear-independence" data-reference-type="ref+Label" data-reference="met:check-linear-independence">Method 3.56</a>, we form the matrix with the given vectors as rows and apply Gaussian elimination (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>, <a href="../systems-gaussian-elimination/#def-elementary-row-operations" data-reference-type="ref+Label" data-reference="def:elementary-row-operations">Definition 2.28</a>). The vectors are linearly independent if and only if the resulting row-echelon matrix (<a href="../systems-gaussian-elimination/#def-row-echelon-form" data-reference-type="ref+Label" data-reference="def:row-echelon-form">Definition 2.27</a>) has no zero rows.
 
@@ -257,7 +257,7 @@ Again, the vectors are *linearly dependent*.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.8</strong></p>
+<p class="env-number"><strong>Solution 3.8</strong></p>
 
 <span id="sol-ex-three-vectors-r2" label="sol--ex:three-vectors-r2"></span> (See <a href="../exercises-spaces/#ex-three-vectors-r2" data-reference-type="ref+Label" data-reference="ex:three-vectors-r2">Exercise 3.8</a>.) Since $\dim {\bf R}^2 = 2$, any three vectors in ${\bf R}^2$ are automatically linearly dependent: by <a href="../spaces-dimension/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.71</a><a href="../spaces-dimension/#item-independent-add" data-reference-type="ref" data-reference="item--independent.add">2.</a>, a linearly independent set can have at most $\dim V = 2$ elements, so the last condition of the exercise is satisfied for *any* choice of three vectors in ${\bf R}^2$. It therefore suffices to find three vectors that are pairwise linearly independent. By <a href="../spaces-linear-independence/#def-linearly-independent" data-reference-type="ref+Label" data-reference="def:linearly-independent">Definition 3.49</a>, two vectors are linearly independent if and only if neither is a scalar multiple of the other. A natural starting point is $v_1 = (1,0)$ and $v_2 = (0,1)$ (the standard basis vectors, clearly not scalar multiples of each other). For $v_3$ we need a vector that is not a scalar multiple of $v_1$ or of $v_2$; one such choice is $v_3 = v_1 + v_2 = (1,1)$, which also makes the dependence relation among the triple transparent.
 
@@ -266,7 +266,7 @@ Again, the vectors are *linearly dependent*.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.9</strong></p>
+<p class="env-number"><strong>Solution 3.9</strong></p>
 
 <span id="sol-ex-polynomial-subspaces" label="sol--ex:polynomial-subspaces"></span> (See <a href="../exercises-spaces/#ex-polynomial-subspaces" data-reference-type="ref+Label" data-reference="ex:polynomial-subspaces">Exercise 3.9</a>.) We check the three conditions of <a href="../spaces-definition-solution-of-homogeneous/#def-subspace" data-reference-type="ref+Label" data-reference="def:subspace">Definition 3.17</a> for each subset of $V = {\bf R}[x]^{\le 3}$ (<a href="../spaces-further-examples/#dlm-polynomials-vector-space" data-reference-type="ref+Label" data-reference="dlm:polynomials-vector-space">Definition and Lemma 3.22</a>).
 
@@ -299,7 +299,7 @@ Again, the vectors are *linearly dependent*.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.10</strong></p>
+<p class="env-number"><strong>Solution 3.10</strong></p>
 
 <span id="sol-ex-poly-span-1" label="sol--ex poly span 1"></span> (See <a href="../exercises-spaces/#ex-poly-span-1" data-reference-type="ref+Label" data-reference="ex poly span 1">Exercise 3.10</a>.) We seek $a, b, c \in {\bf R}$ such that $a(x+1) + b(x-1) + c(x^2-1) = p(x)$ (<a href="../spaces-linear-combinations/#def-spaces-definition-008" data-reference-type="ref+Label" data-reference="def:spaces-definition-008">Definition 3.31</a>). Expanding the left side and collecting by degree:
 <div class="arithmatex" markdown="1">
@@ -335,7 +335,7 @@ Thus, if $p(x) = p_2 x^2 + p_1 x + p_0$, then we need $c = p_2$, $a+b = p_1$, an
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.11</strong></p>
+<p class="env-number"><strong>Solution 3.11</strong></p>
 
 <span id="sol-ex-poly-span-2" label="sol--ex poly span 2"></span> (See <a href="../exercises-spaces/#ex-poly-span-2" data-reference-type="ref+Label" data-reference="ex poly span 2">Exercise 3.11</a>.) The sentence is *incorrect*, since the coefficient $\tfrac{x}{4}$ is *not* a scalar. By <a href="../spaces-linear-combinations/#def-spaces-definition-008" data-reference-type="ref+Label" data-reference="def:spaces-definition-008">Definition 3.31</a>, a linear combination of vectors $v_1, \dots, v_m$ is an expression $a_1 v_1 + \dots + a_m v_m$ where the coefficients $a_i$ are *real numbers*. The expression $\tfrac{x}{4} \cdot x^2 + 3 \cdot x + 1$ uses $\tfrac{x}{4}$ as the coefficient of $x^2$, but $\tfrac{x}{4}$ is a polynomial in $x$, not a real number. It is therefore not a valid scalar coefficient.
 
@@ -344,7 +344,7 @@ Thus, if $p(x) = p_2 x^2 + p_1 x + p_0$, then we need $c = p_2$, $a+b = p_1$, an
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.12</strong></p>
+<p class="env-number"><strong>Solution 3.12</strong></p>
 
 <span id="sol-base-change-matrix" label="sol--base change matrix"></span> (See <a href="../exercises-spaces/#base-change-matrix" data-reference-type="ref+Label" data-reference="base change matrix">Exercise 3.12</a>.) From <a href="../spaces-bases/#ex-three-vectors-basis" data-reference-type="ref+Label" data-reference="ex:three-vectors-basis">Example 3.63</a> the basis is $v_1=(0,2,1)$, $v_2=(1,0,2)$, $v_3=(-1,1,1)$. We seek coefficients $\alpha_i,\beta_i,\gamma_i$ with $e_i = \alpha_i v_1 + \beta_i v_2 + \gamma_i v_3$ for each $i$ (<a href="../spaces-bases/#def-basis" data-reference-type="ref+Label" data-reference="def:basis">Definition 3.61</a>, <a href="../spaces-linear-combinations/#def-spaces-definition-008" data-reference-type="ref+Label" data-reference="def:spaces-definition-008">Definition 3.31</a>). All three systems share the same coefficient matrix (columns $v_1,v_2,v_3$), so we row-reduce the augmented matrix $[v_1 \ v_2 \  v_3 \mid e_1 \  e_2 \ e_3]$ in one pass (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>):
 <div class="arithmatex" markdown="1">
@@ -382,7 +382,7 @@ e_3 &= -\tfrac{1}{5}\,v_1 + \tfrac{2}{5}\,v_2 + \tfrac{2}{5}\,v_3.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.13</strong></p>
+<p class="env-number"><strong>Solution 3.13</strong></p>
 
 <span id="sol-ex-spaces-2-1" label="sol--ex:spaces-2-1"></span> (See <a href="../exercises-spaces/#ex-spaces-2-1" data-reference-type="ref+Label" data-reference="ex:spaces-2-1">Exercise 3.13</a>.) A linear combination of $A$ and $B$ is of the form
 <div class="arithmatex" markdown="1">
@@ -414,7 +414,7 @@ The second gives $\alpha = -2\beta$, inserting into the first gives $-2 \beta+3 
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.14</strong></p>
+<p class="env-number"><strong>Solution 3.14</strong></p>
 
 <span id="sol-ex-matrix-subspace" label="sol--ex:matrix-subspace"></span> (See <a href="../exercises-spaces/#ex-matrix-subspace" data-reference-type="ref+Label" data-reference="ex:matrix-subspace">Exercise 3.14</a>.)
 
@@ -464,7 +464,7 @@ Hence $T = L(v_1, v_2, v_3, v_4)$ (<a href="../spaces-linear-combinations/#lem-s
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.15</strong></p>
+<p class="env-number"><strong>Solution 3.15</strong></p>
 
 <span id="sol-ex-spaces-2-2" label="sol--ex:spaces-2-2"></span> (See <a href="../exercises-spaces/#ex-spaces-2-2" data-reference-type="ref+Label" data-reference="ex:spaces-2-2">Exercise 3.15</a>.) The system $x + y + z+t=0$ corresponds to the matrix
 <div class="arithmatex" markdown="1">
@@ -494,7 +494,7 @@ S & = \{(-\alpha, \alpha, 0,0) + (-\beta, 0, \beta, 0) + (-\gamma, 0, 0, \gamma)
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.16</strong></p>
+<p class="env-number"><strong>Solution 3.16</strong></p>
 
 <span id="sol-ex-spaces-2-3" label="sol--ex:spaces-2-3"></span> (See <a href="../exercises-spaces/#ex-spaces-2-3" data-reference-type="ref+Label" data-reference="ex:spaces-2-3">Exercise 3.16</a>.) By definition (cf. <a href="../spaces-linear-combinations/#lem-span-subspace" data-reference-type="ref+Label" data-reference="lem:span-subspace">Lemma 3.34</a>), $S$ consists of all the linear combinations of the three given vectors. These can be written as
 <div class="arithmatex" markdown="1">
@@ -548,7 +548,7 @@ S \cap T & = \{-\frac 43 c(1,-1,0,1) + c(2,1,-2,0)+c(0,0,1,1) \ | \ c \in {\bf R
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.17</strong></p>
+<p class="env-number"><strong>Solution 3.17</strong></p>
 
 <span id="sol-ex-intersection-tw" label="sol--ex:intersection-tw"></span> (See <a href="../exercises-spaces/#ex-intersection-tw" data-reference-type="ref+Label" data-reference="ex:intersection-tw">Exercise 3.17</a>.) $T$ is a subspace by <a href="../spaces-definition-solution-of-homogeneous/#prop-homogeneous-system-subspace" data-reference-type="ref+Label" data-reference="prop:homogeneous-system-subspace">Proposition 3.18</a> (<a href="../systems-linear-systems/#def-homogeneous-linear-system" data-reference-type="ref+Label" data-reference="def:homogeneous-linear-system">Definition 2.13</a>). To find $T \cap W$ we parametrise $W$ and then impose $T$’s equations (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>).
 
@@ -596,7 +596,7 @@ which has <a href="../spaces-bases/#def-basis" data-reference-type="ref+Label" d
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.18</strong></p>
+<p class="env-number"><strong>Solution 3.18</strong></p>
 
 <span id="sol-ex-r2-spanning" label="sol--ex:r2-spanning"></span> (See <a href="../exercises-spaces/#ex-r2-spanning" data-reference-type="ref+Label" data-reference="ex:r2-spanning">Exercise 3.18</a>.) By <a href="../spaces-dimension/#cor-indep-span" data-reference-type="ref+Label" data-reference="cor:indep-span">Corollary 3.73</a>, two vectors in ${\bf R}^2$ span ${\bf R}^2$ if and only if they are linearly independent (<a href="../spaces-linear-independence/#def-linearly-independent" data-reference-type="ref+Label" data-reference="def:linearly-independent">Definition 3.49</a>). Two vectors in ${\bf R}^2$ are linearly dependent if and only if one of them is a scalar multiple of the other.
 
@@ -609,7 +609,7 @@ which has <a href="../spaces-bases/#def-basis" data-reference-type="ref+Label" d
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.19</strong></p>
+<p class="env-number"><strong>Solution 3.19</strong></p>
 
 <span id="sol-ex-linear-combination-r3" label="sol--ex:linear-combination-r3"></span> (See <a href="../exercises-spaces/#ex-linear-combination-r3" data-reference-type="ref+Label" data-reference="ex:linear-combination-r3">Exercise 3.19</a>.) We ask whether there exist $a_1, a_2, a_3 \in {\bf R}$ with $a_1 v_1 + a_2 v_2 + a_3 v_3 = (1,5,0)$ (<a href="../spaces-linear-combinations/#def-spaces-definition-008" data-reference-type="ref+Label" data-reference="def:spaces-definition-008">Definition 3.31</a>). This is the linear system (<a href="../systems-linear-systems/#def-systems-definition-002" data-reference-type="ref+Label" data-reference="def:systems-definition-002">Definition 2.7</a>) with augmented matrix
 <div class="arithmatex" markdown="1">
@@ -633,9 +633,9 @@ Back-substitution gives $a_3 = 4$, then $a_2 = 4$, then $a_1 = -7$. The system i
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.20</strong></p>
+<p class="env-number"><strong>Solution 3.20</strong></p>
 
-<span id="sol-ex-polynomial-basis-change" label="sol--ex:polynomial-basis-change"></span> (See <a href="../exercises-spaces/#ex-polynomial-basis-change" data-reference-type="ref+Label" data-reference="ex:polynomial-basis-change">Exercise 3.20</a>.) As was noted in <a href="../spaces-dimension/#ex-spaces-example-024" data-reference-type="ref+Label" data-reference="ex:spaces-example-024">Example 3.75</a>, the polynomials $1,(x-1),(x-1)^2,(x-1)^3,(x-1)^4$ form a basis of ${\bf R}[x]^{\le 4}$. Hence every polynomial of degree $\le 4$ has a unique such expansion. We use the substitution $y = x-1$ (i.e. $x = 1+y$) and expand via the binomial theorem (alternatively, the exercise may also be solved similarly as in <a href="#sol-ex-poly-span-1" data-reference-type="ref+Label" data-reference="sol--ex poly span 1">Solution 3.10.10</a>).
+<span id="sol-ex-polynomial-basis-change" label="sol--ex:polynomial-basis-change"></span> (See <a href="../exercises-spaces/#ex-polynomial-basis-change" data-reference-type="ref+Label" data-reference="ex:polynomial-basis-change">Exercise 3.20</a>.) As was noted in <a href="../spaces-dimension/#ex-spaces-example-024" data-reference-type="ref+Label" data-reference="ex:spaces-example-024">Example 3.75</a>, the polynomials $1,(x-1),(x-1)^2,(x-1)^3,(x-1)^4$ form a basis of ${\bf R}[x]^{\le 4}$. Hence every polynomial of degree $\le 4$ has a unique such expansion. We use the substitution $y = x-1$ (i.e. $x = 1+y$) and expand via the binomial theorem (alternatively, the exercise may also be solved similarly as in <a href="#sol-ex-poly-span-1" data-reference-type="ref+Label" data-reference="sol--ex poly span 1">Solution 3.10</a>).
 
 1.  $f(x) = x^4 = (1+y)^4 = 1 + 4y + 6y^2 + 4y^3 + y^4$, so
 <div class="arithmatex" markdown="1">
@@ -673,7 +673,7 @@ Collecting by degree: constant $1-3+4+2 = 4$; degree 1: $3-6+4 = 1$; degree 2:
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.21</strong></p>
+<p class="env-number"><strong>Solution 3.21</strong></p>
 
 <span id="sol-ex-polynomial-basis-ab" label="sol--ex:polynomial-basis-ab"></span> (See <a href="../exercises-spaces/#ex-polynomial-basis-ab" data-reference-type="ref+Label" data-reference="ex:polynomial-basis-ab">Exercise 3.21</a>.) By <a href="../spaces-bases/#def-basis" data-reference-type="ref+Label" data-reference="def:basis">Definition 3.61</a> we must show that $\{x-a, x-b\}$ is linearly independent and spans ${\bf R}[x]^{\le 1}$.
 
@@ -698,7 +698,7 @@ From the first equation $\mu = -\lambda$; substituting into the second gives $\l
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.22</strong></p>
+<p class="env-number"><strong>Solution 3.22</strong></p>
 
 <span id="sol-ex-basis-w1-r4" label="sol--ex:basis-w1-r4"></span> (See <a href="../exercises-spaces/#ex-basis-w1-r4" data-reference-type="ref+Label" data-reference="ex:basis-w1-r4">Exercise 3.22</a>.) *Basis and dimension of $W_1$.* $W_1$ is the solution set of the homogeneous system (<a href="../systems-linear-systems/#def-homogeneous-linear-system" data-reference-type="ref+Label" data-reference="def:homogeneous-linear-system">Definition 2.13</a>) $y+t=0$, $y+z=0$, so it is a subspace by <a href="../spaces-definition-solution-of-homogeneous/#prop-homogeneous-system-subspace" data-reference-type="ref+Label" data-reference="prop:homogeneous-system-subspace">Proposition 3.18</a>. Solving (<a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" data-reference-type="ref+Label" data-reference="met:gaussian-elimination-solve">Method 2.31</a>): the dependent variables are $z = -y$ and $t = -y$, while $x$ and $y$ are free. Setting $(x,y) = (1,0)$ and $(0,1)$ in turn:
 <div class="arithmatex" markdown="1">
@@ -727,7 +727,7 @@ Hence $\lambda = 0$, and $W_1 \cap W_2 = \{0\}$ is the trivial subspace.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.23</strong></p>
+<p class="env-number"><strong>Solution 3.23</strong></p>
 
 <span id="sol-ex-wk-basis" label="sol--ex:wk-basis"></span> (See <a href="../exercises-spaces/#ex-wk-basis" data-reference-type="ref+Label" data-reference="ex:wk-basis">Exercise 3.23</a>.) *Part 1: Basis and dimension of $W_k$.* We write the generators of $W_k = L((1,0,-1,0),(1,1,0,1),(1,2,k,1))$ (cf. <a href="../spaces-linear-combinations/#def-generating-system" data-reference-type="ref+Label" data-reference="def:generating-system">Definition 3.42</a>) as rows of a matrix and apply the Gaussian algorithm (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>):
 <div class="arithmatex" markdown="1">
@@ -764,7 +764,7 @@ Row 4 gives $-\gamma = 0$, i.e. $\gamma = 0$. Substituting into row 3: $(k-1)
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.24</strong></p>
+<p class="env-number"><strong>Solution 3.24</strong></p>
 
 <span id="sol-ex-mat-subspace-dim" label="sol--ex:mat-subspace-dim"></span> (See <a href="../exercises-spaces/#ex-mat-subspace-dim" data-reference-type="ref+Label" data-reference="ex:mat-subspace-dim">Exercise 3.24</a>.) *Part 1: $W$ is a subspace with $\dim W = 2$.* Every element of $W$ decomposes as
 <div class="arithmatex" markdown="1">
@@ -791,7 +791,7 @@ and $\dim(V \cap W) = 1$.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.25</strong></p>
+<p class="env-number"><strong>Solution 3.25</strong></p>
 
 <span id="sol-ex-spaces-2-4" label="sol--ex:spaces-2-4"></span> (See <a href="../exercises-spaces/#ex-spaces-2-4" data-reference-type="ref+Label" data-reference="ex:spaces-2-4">Exercise 3.25</a>.) We have to find a vector $v \in W_1$ that is also contained in $W_2$. This means that
 <div class="arithmatex" markdown="1">
@@ -895,7 +895,7 @@ Using again <a href="../spaces-linear-independence/#met-check-linear-independenc
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.26</strong></p>
+<p class="env-number"><strong>Solution 3.26</strong></p>
 
 <span id="sol-ex-sum-intersection-r4" label="sol--ex:sum-intersection-r4"></span> (See <a href="../exercises-spaces/#ex-sum-intersection-r4" data-reference-type="ref+Label" data-reference="ex:sum-intersection-r4">Exercise 3.26</a>.) Denote $v_1=(1,1,1,2)$, $v_2=(2,0,3,5)$, $w_1=(1,1,0,1)$, $w_2=(0,2,-2,-2)$.
 
@@ -952,7 +952,7 @@ Hence $W_1 \cap W_2 = L((-1,1,-2,-3))$ with basis $\{(-1,1,-2,-3)\}$ and $\dim(W
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.27</strong></p>
+<p class="env-number"><strong>Solution 3.27</strong></p>
 
 <span id="sol-ex-spaces-2-5" label="sol--ex:spaces-2-5"></span> (See <a href="../exercises-spaces/#ex-spaces-2-5" data-reference-type="ref+Label" data-reference="ex:spaces-2-5">Exercise 3.27</a>.) We will show that $v_1, v_2, v_3$ are linearly independent (in ${\bf R}^4$ and therefore also in the subspace $W$) and therefore form a basis of $W$. We use <a href="../spaces-linear-independence/#met-check-linear-independence" data-reference-type="ref+Label" data-reference="met:check-linear-independence">Method 3.56</a>:
 <div class="arithmatex" markdown="1">
@@ -999,7 +999,7 @@ W \subsetneq {\bf R}^4 = L(v_1, v_2, v_3, v).
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.28</strong></p>
+<p class="env-number"><strong>Solution 3.28</strong></p>
 
 <span id="sol-ex-spaces-2-6" label="sol--ex:spaces-2-6"></span> (See <a href="../exercises-spaces/#ex-spaces-2-6" data-reference-type="ref+Label" data-reference="ex:spaces-2-6">Exercise 3.28</a>.) We bring the matrix formed by these vectors in row-echelon form:
 <div class="arithmatex" markdown="1">
@@ -1103,7 +1103,7 @@ In particular, $\dim U \cap W = 1$.
 <div class="solution" markdown="1">
 
 
-<p class="env-number"><strong>Solution 3.10.29</strong></p>
+<p class="env-number"><strong>Solution 3.29</strong></p>
 
 <span id="sol-ex-ut-basis-r4" label="sol--ex:ut-basis-r4"></span> (See <a href="../exercises-spaces/#ex-ut-basis-r4" data-reference-type="ref+Label" data-reference="ex:ut-basis-r4">Exercise 3.29</a>.) *Part 1: Values of $t$ with $\dim U_t = 2$.* We row-reduce the matrix with $v_1,v_2,v_3,v_4$ as rows (<a href="../systems-gaussian-elimination/#met-gaussian-algorithm" data-reference-type="ref+Label" data-reference="met:gaussian-algorithm">Method 2.29</a>):
 <div class="arithmatex" markdown="1">

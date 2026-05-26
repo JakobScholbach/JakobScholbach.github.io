@@ -3,7 +3,7 @@
 
 <p class="env-number"><strong>Exercise 4.1</strong></p>
 
-<span id="al" label="al"></span> (See <a href="../solutions-linear-maps/#sol-al" data-reference-type="ref+Label" data-reference="sol--al">Solution 4.13.1</a>.) Determine which $2 \times 2$-matrix $A$ is such that the function
+<span id="al" label="al"></span> (See <a href="../solutions-linear-maps/#sol-al" data-reference-type="ref+Label" data-reference="sol--al">Solution 4.1</a>.) Determine which $2 \times 2$-matrix $A$ is such that the function
 <div class="arithmatex" markdown="1">
 \[
 f : {\bf R}^2 \to {\bf R}^2, v \mapsto Av
@@ -28,7 +28,7 @@ are the following:
 
 <p class="env-number"><strong>Exercise 4.2</strong></p>
 
-<span id="ex-maps-exercise-002" label="ex:maps-exercise-002"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-002" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-002">Solution 4.13.2</a>.) Determine the matrix $A$ such that $Av = \left ( \begin{array}{c} -y \\ x \end{array} \right )$. Describe the behaviour of the function $v \mapsto Av$ geometrically.
+<span id="ex-maps-exercise-002" label="ex:maps-exercise-002"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-002" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-002">Solution 4.2</a>.) Determine the matrix $A$ such that $Av = \left ( \begin{array}{c} -y \\ x \end{array} \right )$. Describe the behaviour of the function $v \mapsto Av$ geometrically.
 
 </div>
 
@@ -37,7 +37,7 @@ are the following:
 
 <p class="env-number"><strong>Exercise 4.3</strong></p>
 
-<span id="ex-maps-exercise-003" label="ex:maps-exercise-003"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-003" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-003">Solution 4.13.3</a>.) Write down the matrix $A$ such that the function $f : {\bf R}^4 \to {\bf R}^3, v \mapsto Av$ satisfies
+<span id="ex-maps-exercise-003" label="ex:maps-exercise-003"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-003" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-003">Solution 4.3</a>.) Write down the matrix $A$ such that the function $f : {\bf R}^4 \to {\bf R}^3, v \mapsto Av$ satisfies
 <div class="arithmatex" markdown="1">
 \[
 f((1,0,0,0)) = (1,2,3), f((0,1,0,0)) = (0, 0, 7),
@@ -57,7 +57,7 @@ Determine $\ker f$ and ${\operatorname{im}\ } f$ (i.e., determine a basis and th
 
 <p class="env-number"><strong>Exercise 4.4</strong></p>
 
-<span id="ex-maps-exercise-004" label="ex:maps-exercise-004"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-004" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-004">Solution 4.13.4</a>.) Compute the rank of
+<span id="ex-maps-exercise-004" label="ex:maps-exercise-004"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-004" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-004">Solution 4.4</a>.) Compute the rank of
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{cccc} 0 & 1 & 2 & 1 \\ 1 & 1 & 1 & 0 \\ 0 & -1 & 1 & 1 \\ 1 & 1 & 4 & 2 \end{array} \right ).
@@ -71,7 +71,7 @@ A = \left ( \begin{array}{cccc} 0 & 1 & 2 & 1 \\ 1 & 1 & 1 & 0 \\ 0 & -1 & 1 & 1
 
 <p class="env-number"><strong>Exercise 4.5</strong></p>
 
-<span id="ex-maps-exercise-005" label="ex:maps-exercise-005"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-005" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-005">Solution 4.13.5</a>.) Consider the linear map $f : {\bf R}^3 \to {\bf R}^3$ described in <a href="../maps-linear-maps-defined-on-basis-vectors/#ex-example-map-basis" data-reference-type="ref+Label" data-reference="ex:example-map-basis">Example 4.43</a>. Determine the matrix of $f$ with respect to the standard basis $e_1, e_2, e_3$ (both in the “source” ${\bf R}^3$, and also in the “target” ${\bf R}^3$).
+<span id="ex-maps-exercise-005" label="ex:maps-exercise-005"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-005" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-005">Solution 4.5</a>.) Consider the linear map $f : {\bf R}^3 \to {\bf R}^3$ described in <a href="../maps-linear-maps-defined-on-basis-vectors/#ex-example-map-basis" data-reference-type="ref+Label" data-reference="ex:example-map-basis">Example 4.43</a>. Determine the matrix of $f$ with respect to the standard basis $e_1, e_2, e_3$ (both in the “source” ${\bf R}^3$, and also in the “target” ${\bf R}^3$).
 
 </div>
 
@@ -80,7 +80,7 @@ A = \left ( \begin{array}{cccc} 0 & 1 & 2 & 1 \\ 1 & 1 & 1 & 0 \\ 0 & -1 & 1 & 1
 
 <p class="env-number"><strong>Exercise 4.6</strong></p>
 
-<span id="ex-maps-exercise-006" label="ex:maps-exercise-006"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-006" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-006">Solution 4.13.6</a>.) For $\lambda \in {\bf R}$ consider the subspace of ${\bf R}^3$ defined as
+<span id="ex-maps-exercise-006" label="ex:maps-exercise-006"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-006" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-006">Solution 4.6</a>.) For $\lambda \in {\bf R}$ consider the subspace of ${\bf R}^3$ defined as
 <div class="arithmatex" markdown="1">
 \[
 W_\lambda = L((1,1+\lambda,-1), (2,\lambda-2,\lambda+2)).
@@ -95,7 +95,7 @@ For each $\lambda \in {\bf R}$, find a basis and the dimension of $W_\lambda$.
 
 <p class="env-number"><strong>Exercise 4.7</strong></p>
 
-<span id="ex-maps-exercise-007" label="ex:maps-exercise-007"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-007" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-007">Solution 4.13.7</a>.) Determine the rank of
+<span id="ex-maps-exercise-007" label="ex:maps-exercise-007"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-007" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-007">Solution 4.7</a>.) Determine the rank of
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc} \alpha & 0 & 0 \\ 0 & \alpha & 1+\alpha \\ \alpha & 1 & 2 \end{array} \right )
@@ -110,7 +110,7 @@ for each $\alpha \in {\bf R}$.
 
 <p class="env-number"><strong>Exercise 4.8</strong></p>
 
-<span id="ex-maps-3-1" label="ex:maps-3-1"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-1" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-1">Solution 4.13.9</a>.) Consider the linear map
+<span id="ex-maps-3-1" label="ex:maps-3-1"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-1" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-1">Solution 4.9</a>.) Consider the linear map
 <div class="arithmatex" markdown="1">
 \[
 f : {\bf R}^2 \to {\bf R}^3, \left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right ) \mapsto \left ( \begin{array}{cc} 1 & 2 \\ 0 & 1 \\ 3 & 5 \end{array} \right ) \left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right ) = \left ( \begin{array}{c} x_1+2x_2 \\ x_2 \\ 3x_1+5x_2 \end{array} \right ).
@@ -128,7 +128,7 @@ f : {\bf R}^2 \to {\bf R}^3, \left ( \begin{array}{c} x_1 \\ x_2 \end{array} \ri
 
 <p class="env-number"><strong>Exercise 4.9</strong></p>
 
-<span id="ex-maps-3-2" label="ex:maps-3-2"></span> <span id="ex-maps-exercise-010" label="ex:maps-exercise-010"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-2" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-2">Solution 4.13.10</a>.) Consider the linear map
+<span id="ex-maps-3-2" label="ex:maps-3-2"></span> <span id="ex-maps-exercise-010" label="ex:maps-exercise-010"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-2" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-2">Solution 4.10</a>.) Consider the linear map
 <div class="arithmatex" markdown="1">
 \[
 f : {\bf R}^4 \to {\bf R}^3
@@ -151,7 +151,7 @@ f : {\bf R}^4 \to {\bf R}^3
 
 <p class="env-number"><strong>Exercise 4.10</strong></p>
 
-<span id="ex-maps-3-3" label="ex:maps-3-3"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-3" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-3">Solution 4.13.11</a>.) Consider the matrix
+<span id="ex-maps-3-3" label="ex:maps-3-3"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-3" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-3">Solution 4.11</a>.) Consider the matrix
 <div class="arithmatex" markdown="1">
 \[
 A_t = \left ( \begin{array}{cccc} 1 & 3 & -1 & 2 \\ 1 & 5 & 1 & 1 \\ 2 & 4 & t & 5 \end{array} \right ).
@@ -192,7 +192,7 @@ has only the trivial solution (i.e., only the zero vector)?
 
 <p class="env-number"><strong>Exercise 4.11</strong></p>
 
-<span id="ex-maps-exercise-011" label="ex:maps-exercise-011"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-011" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-011">Solution 4.13.12</a>.) Let $f : V \to W$ be a linear map. For a subspace $U \subset V$ we define the *image* of $U$ to be
+<span id="ex-maps-exercise-011" label="ex:maps-exercise-011"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-011" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-011">Solution 4.12</a>.) Let $f : V \to W$ be a linear map. For a subspace $U \subset V$ we define the *image* of $U$ to be
 <div class="arithmatex" markdown="1">
 \[
 f(U) := \{ f(v) \ | \ v \in U\}.
@@ -211,7 +211,7 @@ f(U) := \{ f(v) \ | \ v \in U\}.
 
 <p class="env-number"><strong>Exercise 4.12</strong></p>
 
-<span id="ex-maps-exercise-012" label="ex:maps-exercise-012"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-012" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-012">Solution 4.13.13</a>.) Let $f : V \to W$ be a linear map. For a subspace $U \subset W$, we define the *preimage* of $U$ to be
+<span id="ex-maps-exercise-012" label="ex:maps-exercise-012"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-012" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-012">Solution 4.13</a>.) Let $f : V \to W$ be a linear map. For a subspace $U \subset W$, we define the *preimage* of $U$ to be
 <div class="arithmatex" markdown="1">
 \[
 f^{-1}(U) := \{ v \in V \ | \ f(v) \in U\}.
@@ -228,7 +228,7 @@ Arguing as in <a href="../maps-kernel-and-image-1/#prop-ker-im-subspace" data-re
 
 <p class="env-number"><strong>Exercise 4.13</strong></p>
 
-<span id="ex-maps-3-4" label="ex:maps-3-4"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-4" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-4">Solution 4.13.14</a>.) Consider the linear map $f : {\bf R}^4 \to {\bf R}^4$ given by multiplication with the matrix
+<span id="ex-maps-3-4" label="ex:maps-3-4"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-4" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-4">Solution 4.14</a>.) Consider the linear map $f : {\bf R}^4 \to {\bf R}^4$ given by multiplication with the matrix
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{cccc} 2 & -1 & -\frac 52 & 1 \\ -1 & 0 & 1 & -\frac12 \\ 1 & 1 & -\frac 12 & \frac 12 \\ 0 & 2 & 1 & 0 \end{array} \right ).
@@ -243,7 +243,7 @@ Determine $\ker f$, ${\operatorname{im}\ } f$ and $\ker f \cap {\operatorname{im
 
 <p class="env-number"><strong>Exercise 4.14</strong></p>
 
-<span id="ex-maps-exercise-013" label="ex:maps-exercise-013"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-013" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-013">Solution 4.13.15</a>.) Consider the linear map
+<span id="ex-maps-exercise-013" label="ex:maps-exercise-013"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-013" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-013">Solution 4.15</a>.) Consider the linear map
 <div class="arithmatex" markdown="1">
 \[
 f : {\bf R}^3 \to {\bf R}^2
@@ -271,7 +271,7 @@ f(x,y,z) = (2x-z, x+y+z).
 
 <p class="env-number"><strong>Exercise 4.15</strong></p>
 
-<span id="ex-maps-3-5" label="ex:maps-3-5"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-5" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-5">Solution 4.13.16</a>.) Consider the linear map $f: {\bf R}^3 \to {\bf R}^3$ whose matrix with respect to the standard basis (of both the domain and the codomain ${\bf R}^3$) is
+<span id="ex-maps-3-5" label="ex:maps-3-5"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-5" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-5">Solution 4.16</a>.) Consider the linear map $f: {\bf R}^3 \to {\bf R}^3$ whose matrix with respect to the standard basis (of both the domain and the codomain ${\bf R}^3$) is
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc} 2 & -1 & 0 \\ 1 & 0 & 2 \\ 0 & 2 & -1 \end{array} \right ).
@@ -296,7 +296,7 @@ f(x,y,z) = (2x-z, x+y+z).
 
 <p class="env-number"><strong>Exercise 4.16</strong></p>
 
-<span id="ex-maps-3-6" label="ex:maps-3-6"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-6" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-6">Solution 4.13.17</a>.) Consider the linear map
+<span id="ex-maps-3-6" label="ex:maps-3-6"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-6" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-6">Solution 4.17</a>.) Consider the linear map
 <div class="arithmatex" markdown="1">
 \[
 \begin{alignat*}
@@ -318,7 +318,7 @@ f(x,y,z) = (2x-z, x+y+z).
 
 <p class="env-number"><strong>Exercise 4.17</strong></p>
 
-<span id="ex-maps-3-7" label="ex:maps-3-7"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-7" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-7">Solution 4.13.18</a>.) Consider the following functions:
+<span id="ex-maps-3-7" label="ex:maps-3-7"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-7" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-7">Solution 4.18</a>.) Consider the following functions:
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -352,7 +352,7 @@ f(x,y,z) = (2x-z, x+y+z).
 
 <p class="env-number"><strong>Exercise 4.18</strong></p>
 
-<span id="ex-maps-exercise-014" label="ex:maps-exercise-014"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-014" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-014">Solution 4.13.19</a>.) Consider the vectors in ${\bf R}^4$
+<span id="ex-maps-exercise-014" label="ex:maps-exercise-014"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-014" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-014">Solution 4.19</a>.) Consider the vectors in ${\bf R}^4$
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}
@@ -376,7 +376,7 @@ v_3 & = (1, 0, 10, 3).
 
 <p class="env-number"><strong>Exercise 4.19</strong></p>
 
-<span id="ex-maps-example-031" label="ex:maps-example-031"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-example-031" data-reference-type="ref+Label" data-reference="sol--ex:maps-example-031">Solution 4.13.20</a>.) Decide whether
+<span id="ex-maps-example-031" label="ex:maps-example-031"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-example-031" data-reference-type="ref+Label" data-reference="sol--ex:maps-example-031">Solution 4.20</a>.) Decide whether
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{ccc} 1 & 3 & -1 \\ 2 & 1 & 5 \\ 1 & -7 & 13 \end{array} \right )
@@ -391,7 +391,7 @@ is invertible. If $A$ is invertible, determine its inverse.
 
 <p class="env-number"><strong>Exercise 4.20</strong></p>
 
-<span id="matrices-commute" label="matrices.commute"></span> (See <a href="../solutions-linear-maps/#sol-matrices-commute" data-reference-type="ref+Label" data-reference="sol--matrices.commute">Solution 4.13.21</a>.) Decide whether $AB = BA$ holds for the following matrices:
+<span id="matrices-commute" label="matrices.commute"></span> (See <a href="../solutions-linear-maps/#sol-matrices-commute" data-reference-type="ref+Label" data-reference="sol--matrices.commute">Solution 4.21</a>.) Decide whether $AB = BA$ holds for the following matrices:
 
 1.  $A = \left ( \begin{array}{cc} 1 & 2 \\ 2 & 1 \end{array} \right )$, $B = \left ( \begin{array}{cc} 0 & 1 \\ -1 & 1 \end{array} \right )$
 
@@ -410,7 +410,7 @@ is invertible. If $A$ is invertible, determine its inverse.
 
 <p class="env-number"><strong>Exercise 4.21</strong></p>
 
-<span id="ex-maps-exercise-015" label="ex:maps-exercise-015"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-015" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-015">Solution 4.13.22</a>.) Determine in each case whether there is a matrix $A$ satisfying the following condition. If so, is there a unique such matrix or can there be several matrices satisfying the condition? Describe your findings geometrically.
+<span id="ex-maps-exercise-015" label="ex:maps-exercise-015"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-015" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-015">Solution 4.22</a>.) Determine in each case whether there is a matrix $A$ satisfying the following condition. If so, is there a unique such matrix or can there be several matrices satisfying the condition? Describe your findings geometrically.
 
 - $A \left ( \begin{array}{c} 1 \\ 0 \end{array} \right ) = \left ( \begin{array}{c} 3 \\ 4 \end{array} \right )$ and $A \left ( \begin{array}{c} 0 \\ 1 \end{array} \right ) = \left ( \begin{array}{c} 4 \\ 5 \end{array} \right )$
 
@@ -425,7 +425,7 @@ is invertible. If $A$ is invertible, determine its inverse.
 
 <p class="env-number"><strong>Exercise 4.22</strong></p>
 
-<span id="ex-maps-exercise-016" label="ex:maps-exercise-016"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-016" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-016">Solution 4.13.23</a>.) Find two $2 \times 2$-matrices $A, B$ such that
+<span id="ex-maps-exercise-016" label="ex:maps-exercise-016"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-016" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-016">Solution 4.23</a>.) Find two $2 \times 2$-matrices $A, B$ such that
 <div class="arithmatex" markdown="1">
 \[
 AB = 0
@@ -440,7 +440,7 @@ AB = 0
 
 <p class="env-number"><strong>Exercise 4.23</strong></p>
 
-<span id="ex-maps-exercise-017" label="ex:maps-exercise-017"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-017" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-017">Solution 4.13.24</a>.) A square matrix $A$ is called *symmetric* if
+<span id="ex-maps-exercise-017" label="ex:maps-exercise-017"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-017" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-017">Solution 4.24</a>.) A square matrix $A$ is called *symmetric* if
 <div class="arithmatex" markdown="1">
 \[
 A = A^T.
@@ -458,7 +458,7 @@ A = A^T.
 
 <p class="env-number"><strong>Exercise 4.24</strong></p>
 
-<span id="trace" label="trace"></span> (See <a href="../solutions-linear-maps/#sol-trace" data-reference-type="ref+Label" data-reference="sol--trace">Solution 4.13.25</a>.) The *trace* of a square matrix $A = (a_{ij})$ is defined to be the sum of the entries on the main diagonal:
+<span id="trace" label="trace"></span> (See <a href="../solutions-linear-maps/#sol-trace" data-reference-type="ref+Label" data-reference="sol--trace">Solution 4.25</a>.) The *trace* of a square matrix $A = (a_{ij})$ is defined to be the sum of the entries on the main diagonal:
 <div class="arithmatex" markdown="1">
 \[
 { {\mathrm {tr}}}(A) := a_{11} + a_{22} + \dots + a_{nn}.
@@ -481,7 +481,7 @@ Prove the following statements (if you get stuck with the notation, assume first
 
 <p class="env-number"><strong>Exercise 4.25</strong></p>
 
-<span id="ex-maps-exercise-018" label="ex:maps-exercise-018"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-018" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-018">Solution 4.13.26</a>.) Let $A = \left ( \begin{array}{cc} a & b \\ c & d \end{array} \right )$ be an arbitrary $2 \times 2$-matrix and $r \in {\bf R}$. Recall that the scalar multiple $rA = \left ( \begin{array}{cc} ra & rb \\ rc & rd \end{array} \right )$. Find a $2 \times 2$-matrix $R$ such that the matrix product $RA$ equals the scalar multiple:
+<span id="ex-maps-exercise-018" label="ex:maps-exercise-018"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-018" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-018">Solution 4.26</a>.) Let $A = \left ( \begin{array}{cc} a & b \\ c & d \end{array} \right )$ be an arbitrary $2 \times 2$-matrix and $r \in {\bf R}$. Recall that the scalar multiple $rA = \left ( \begin{array}{cc} ra & rb \\ rc & rd \end{array} \right )$. Find a $2 \times 2$-matrix $R$ such that the matrix product $RA$ equals the scalar multiple:
 <div class="arithmatex" markdown="1">
 \[
 RA = rA.
@@ -495,7 +495,7 @@ RA = rA.
 
 <p class="env-number"><strong>Exercise 4.26</strong></p>
 
-<span id="ex-maps-exercise-019" label="ex:maps-exercise-019"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-019" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-019">Solution 4.13.27</a>.)
+<span id="ex-maps-exercise-019" label="ex:maps-exercise-019"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-exercise-019" data-reference-type="ref+Label" data-reference="sol--ex:maps-exercise-019">Solution 4.27</a>.)
 
 1.  Let
 <div class="arithmatex" markdown="1">
@@ -514,7 +514,7 @@ be a so-called *strictly upper triangular matrix* (of size $3 \times 3$). Comput
 
 <p class="env-number"><strong>Exercise 4.27</strong></p>
 
-<span id="ex-maps-3-8" label="ex:maps-3-8"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-8" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-8">Solution 4.13.28</a>.) Consider the identity map
+<span id="ex-maps-3-8" label="ex:maps-3-8"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-8" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-8">Solution 4.28</a>.) Consider the identity map
 <div class="arithmatex" markdown="1">
 \[
 {\mathrm {id}} : {\bf R}^2 \to {\bf R}^2, (x, y) \mapsto (x,y).
@@ -533,7 +533,7 @@ Consider the standard basis $e_1 = (1,0)$ and $e_2 = (0,1)$ of the domain, and t
 
 <p class="env-number"><strong>Exercise 4.28</strong></p>
 
-<span id="ex-maps-3-9" label="ex:maps-3-9"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-9" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-9">Solution 4.13.29</a>.) Consider the identity map
+<span id="ex-maps-3-9" label="ex:maps-3-9"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-9" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-9">Solution 4.29</a>.) Consider the identity map
 <div class="arithmatex" markdown="1">
 \[
 {\mathrm {id}} : {\bf R}^3 \to {\bf R}^3
@@ -554,7 +554,7 @@ Find the base change matrix from the standard basis $e_1, e_2, e_3$ in ${\bf R}^
 
 <p class="env-number"><strong>Exercise 4.30</strong></p>
 
-<span id="ex-maps-3-10" label="ex:maps-3-10"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-10" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-10">Solution 4.13.30</a>.) Consider the linear map
+<span id="ex-maps-3-10" label="ex:maps-3-10"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-10" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-10">Solution 4.30</a>.) Consider the linear map
 <div class="arithmatex" markdown="1">
 \[
 f: {\bf R}^2 \to {\bf R}^3, v \mapsto Av,
@@ -606,7 +606,7 @@ v_1 = (0,-1,1), v_2 = (0,1,0), v_3 = (-1,0,1).
 
 <p class="env-number"><strong>Exercise 4.32</strong></p>
 
-<span id="ex-maps-3-11" label="ex:maps-3-11"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-11" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-11">Solution 4.13.31</a>.) Consider the linear map
+<span id="ex-maps-3-11" label="ex:maps-3-11"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-11" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-11">Solution 4.31</a>.) Consider the linear map
 <div class="arithmatex" markdown="1">
 \[
 f: {\bf R}^2 \to {\bf R}^2,
@@ -623,7 +623,7 @@ Find its matrix with respect to the basis $v_1 = (1,1)$, $v_2 = (1,2)$ both in t
 
 <p class="env-number"><strong>Exercise 4.33</strong></p>
 
-<span id="ex-maps-3-12" label="ex:maps-3-12"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-12" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-12">Solution 4.13.32</a>.) Let $A = \left ( \begin{array}{ccc} 0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{array} \right )$. Determine the vectors $x = \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right )$ such that
+<span id="ex-maps-3-12" label="ex:maps-3-12"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-12" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-12">Solution 4.32</a>.) Let $A = \left ( \begin{array}{ccc} 0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{array} \right )$. Determine the vectors $x = \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right )$ such that
 <div class="arithmatex" markdown="1">
 \[
 A x = x.
@@ -637,7 +637,7 @@ A x = x.
 
 <p class="env-number"><strong>Exercise 4.34</strong></p>
 
-<span id="ex-maps-3-13" label="ex:maps-3-13"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-13" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-13">Solution 4.13.33</a>.) Find, if possible the vectors $x = \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right )$ such that
+<span id="ex-maps-3-13" label="ex:maps-3-13"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-13" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-13">Solution 4.33</a>.) Find, if possible the vectors $x = \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right )$ such that
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 4 & 2 \\ 0 & 2 & 1 \end{array} \right ) x = 5 x.
@@ -651,7 +651,7 @@ A x = x.
 
 <p class="env-number"><strong>Exercise 4.35</strong></p>
 
-<span id="ex-maps-3-14" label="ex:maps-3-14"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-14" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-14">Solution 4.13.34</a>.) Consider the matrix $A = \left ( \begin{array}{cc} 3 & 0 \\ 8 & -1 \end{array} \right )$ which represents $f: {\bf R}^2 \to {\bf R}^2$ with respect to the standard basis. Find the matrix of $f$ with respect to the basis
+<span id="ex-maps-3-14" label="ex:maps-3-14"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-14" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-14">Solution 4.34</a>.) Consider the matrix $A = \left ( \begin{array}{cc} 3 & 0 \\ 8 & -1 \end{array} \right )$ which represents $f: {\bf R}^2 \to {\bf R}^2$ with respect to the standard basis. Find the matrix of $f$ with respect to the basis
 <div class="arithmatex" markdown="1">
 \[
 \underline v = \{v_1 = (2,1), v_2 = (0,1) \}.
@@ -677,7 +677,7 @@ Compute the matrix of $f$ with respect to that basis.
 
 <p class="env-number"><strong>Exercise 4.37</strong></p>
 
-<span id="ex-maps-3-15" label="ex:maps-3-15"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-15" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-15">Solution 4.13.35</a>.) Let $f: {\bf R}^3 \to {\bf R}^3$ be the map whose matrix with respect to the standard basis is
+<span id="ex-maps-3-15" label="ex:maps-3-15"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-15" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-15">Solution 4.35</a>.) Let $f: {\bf R}^3 \to {\bf R}^3$ be the map whose matrix with respect to the standard basis is
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc} -1 & 1 & 0 \\ 0 & 2 & 0 \\ 1 & -1 & -2 \end{array} \right ).
@@ -697,7 +697,7 @@ Compute the matrix with respect to the basis
 
 <p class="env-number"><strong>Exercise 4.38</strong></p>
 
-<span id="ex-maps-3-16" label="ex:maps-3-16"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-16" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-16">Solution 4.13.36</a>.) Let $f: {\bf R}^3 \to {\bf R}^3$ be the linear map whose matrix with respect to the standard basis is
+<span id="ex-maps-3-16" label="ex:maps-3-16"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-16" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-16">Solution 4.36</a>.) Let $f: {\bf R}^3 \to {\bf R}^3$ be the linear map whose matrix with respect to the standard basis is
 <div class="arithmatex" markdown="1">
 \[
 A = \left ( \begin{array}{ccc} 1 & -1 & 0 \\ 1 & 2 & 1 \\ 2 & 1 & 3 \end{array} \right ).
@@ -721,7 +721,7 @@ A = \left ( \begin{array}{ccc} 1 & -1 & 0 \\ 1 & 2 & 1 \\ 2 & 1 & 3 \end{array} 
 
 <p class="env-number"><strong>Exercise 4.39</strong></p>
 
-<span id="ex-maps-3-17" label="ex:maps-3-17"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-17" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-17">Solution 4.13.37</a>.) Consider the linear map $f: {\bf R}^3 \to {\bf R}^3$ whose kernel is $L((1,0,1))$ and such that
+<span id="ex-maps-3-17" label="ex:maps-3-17"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-17" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-17">Solution 4.37</a>.) Consider the linear map $f: {\bf R}^3 \to {\bf R}^3$ whose kernel is $L((1,0,1))$ and such that
 <div class="arithmatex" markdown="1">
 \[
 f(0,3,-1) = (0,3,-1), f(0,0,1) = (0,0,2).
@@ -767,7 +767,7 @@ where $A$ is a certain square matrix, $x$ is a vector and $\lambda \in {\bf R}$ 
 
 <p class="env-number"><strong>Exercise 4.41</strong></p>
 
-<span id="ex-maps-3-18" label="ex:maps-3-18"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-18" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-18">Solution 4.13.38</a>.) Find the solutions of the linear system
+<span id="ex-maps-3-18" label="ex:maps-3-18"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-18" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-18">Solution 4.38</a>.) Find the solutions of the linear system
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 4 & 2 \\ 0 & 2 & 1 \end{array} \right ) \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right ) = 5 \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right ).
@@ -792,7 +792,7 @@ Solve the system
 
 <p class="env-number"><strong>Exercise 4.43</strong></p>
 
-<span id="ex-maps-3-19" label="ex:maps-3-19"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-19" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-19">Solution 4.13.39</a>.) Consider the vectors $v_1 = (1,0,-1)$, $v_2 = (1,1,0)$, $v_3 = (1,0,-2) \in {\bf R}^3$.
+<span id="ex-maps-3-19" label="ex:maps-3-19"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-19" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-19">Solution 4.39</a>.) Consider the vectors $v_1 = (1,0,-1)$, $v_2 = (1,1,0)$, $v_3 = (1,0,-2) \in {\bf R}^3$.
 
 Let $f\colon {\bf R}^3 \to {\bf R}^3$ be the linear map such that $f(v_1) = (3,0,-5)$, $f(v_2) = (2,2,0)$ (in the terminology of <a href="../eigenvalues-definitions/#def-eigenthings" data-reference-type="ref+Label" data-reference="def:eigenthings">Definition 6.1</a>, $v_2$is an eigenvector with eigenvalue $2$) and $f(v_3) = (5,2,-5)$.
 
@@ -811,7 +811,7 @@ Let $f\colon {\bf R}^3 \to {\bf R}^3$ be the linear map such that $f(v_1) = (3,0
 
 <p class="env-number"><strong>Exercise 4.44</strong></p>
 
-<span id="ex-maps-3-20" label="ex:maps-3-20"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-20" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-20">Solution 4.13.40</a>.) Let $f\colon {\bf R}^3 \to {\bf R}^4$ be the following linear map:
+<span id="ex-maps-3-20" label="ex:maps-3-20"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-3-20" data-reference-type="ref+Label" data-reference="sol--ex:maps-3-20">Solution 4.40</a>.) Let $f\colon {\bf R}^3 \to {\bf R}^4$ be the following linear map:
 <div class="arithmatex" markdown="1">
 \[
 f(x,y,z) = (x-y+2z,\; -2x+3y-z,\; y+3z,\; -x+3y+tz)
@@ -835,7 +835,7 @@ f(x,y,z) = (x-y+2z,\; -2x+3y-z,\; y+3z,\; -x+3y+tz)
 
 <p class="env-number"><strong>Exercise 4.45</strong></p>
 
-<span id="ex-maps-2-7" label="ex:maps-2-7"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-2-7" data-reference-type="ref+Label" data-reference="sol--ex:maps-2-7">Solution 4.13.41</a>.) Let $f\colon {\bf R}^3 \to {\bf R}^4$ be the following linear map:
+<span id="ex-maps-2-7" label="ex:maps-2-7"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-2-7" data-reference-type="ref+Label" data-reference="sol--ex:maps-2-7">Solution 4.41</a>.) Let $f\colon {\bf R}^3 \to {\bf R}^4$ be the following linear map:
 <div class="arithmatex" markdown="1">
 \[
 f(x,y,z) = (-y+2z,\; 2x+y,\; -x+2y-5z,\; x+2y-3z)
@@ -857,7 +857,7 @@ f(x,y,z) = (-y+2z,\; 2x+y,\; -x+2y-5z,\; x+2y-3z)
 
 <p class="env-number"><strong>Exercise 4.46</strong></p>
 
-<span id="ex-maps-partial-2026-1" label="ex:maps-partial-2026-1"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-partial-2026-1" data-reference-type="ref+Label" data-reference="sol--ex:maps-partial-2026-1">Solution 4.13.42</a>.) Let $U$ be the subspace of ${\bf R}^4$ generated by the vectors $u_1 = (1,-2,0,1)$, $u_2 = (-1,1,2,0)$, $u_3 = (0,3,1,-1)$. Let $W\subset {\bf R}^4$ be the subspace with equations
+<span id="ex-maps-partial-2026-1" label="ex:maps-partial-2026-1"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-partial-2026-1" data-reference-type="ref+Label" data-reference="sol--ex:maps-partial-2026-1">Solution 4.42</a>.) Let $U$ be the subspace of ${\bf R}^4$ generated by the vectors $u_1 = (1,-2,0,1)$, $u_2 = (-1,1,2,0)$, $u_3 = (0,3,1,-1)$. Let $W\subset {\bf R}^4$ be the subspace with equations
 <div class="arithmatex" markdown="1">
 \[
 W: \left\{ \begin{aligned}
@@ -880,7 +880,7 @@ W: \left\{ \begin{aligned}
 
 <p class="env-number"><strong>Exercise 4.47</strong></p>
 
-<span id="ex-maps-partial-2026-2" label="ex:maps-partial-2026-2"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-partial-2026-2" data-reference-type="ref+Label" data-reference="sol--ex:maps-partial-2026-2">Solution 4.13.43</a>.) Consider the matrix
+<span id="ex-maps-partial-2026-2" label="ex:maps-partial-2026-2"></span> (See <a href="../solutions-linear-maps/#sol-ex-maps-partial-2026-2" data-reference-type="ref+Label" data-reference="sol--ex:maps-partial-2026-2">Solution 4.43</a>.) Consider the matrix
 <div class="arithmatex" markdown="1">
 \[
 A = \begin{pmatrix}
