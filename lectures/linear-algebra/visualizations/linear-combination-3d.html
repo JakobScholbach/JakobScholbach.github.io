@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Linear Combination in ℝ³</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #canvas-wrap { flex: 1; min-width: 0; }
+    #panel {
+      width: 270px;
+      flex-shrink: 0;
+      background: #161b22;
+      border-left: 1px solid #30363d;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+      font-size: 0.875rem;
+    }
+    h1 { font-size: 1rem; font-weight: 600; color: #e6edf3; }
+    .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #8b949e; margin-bottom: 8px; }
+    hr { border: none; border-top: 1px solid #21262d; }
+
+    .vec-group { margin-bottom: 12px; }
+    .vec-name { font-weight: 600; margin-bottom: 6px; }
+    .vec-inputs { display: grid; grid-template-columns: 14px 1fr; gap: 4px 6px; align-items: center; }
+    .vec-inputs label { font-size: 0.75rem; color: #8b949e; }
+    .vec-inputs input {
+      background: #0d1117; border: 1px solid #30363d; border-radius: 4px;
+      color: #c9d1d9; padding: 3px 6px; font-size: 0.8rem; width: 100%;
+    }
+    .vec-inputs input:focus { outline: none; border-color: #388bfd; }
+
+    .slider-group { margin-bottom: 10px; }
+    .slider-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+    .slider-name { font-weight: 600; font-size: 0.9rem; }
+    .slider-val { font-family: monospace; font-size: 0.8rem; }
+    input[type=range] { width: 100%; cursor: pointer; accent-color: #388bfd; }
+
+    .result-box {
+      background: #0d1117; border: 1px solid #30363d; border-radius: 6px;
+      padding: 10px 12px; font-family: monospace; font-size: 0.8rem;
+      line-height: 1.9; white-space: pre;
+    }
+
+    .legend { display: flex; flex-direction: column; gap: 6px; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; }
+    .swatch { width: 16px; height: 4px; border-radius: 2px; flex-shrink: 0; }
+    .swatch-dashed {
+      width: 16px; height: 0; border-top: 2px dashed; flex-shrink: 0; opacity: 0.6;
+    }
+    .hint { font-size: 0.72rem; color: #8b949e; margin-top: 8px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap"></div>
+
+<div id="panel">
+  <div>
+    <h1>Linear Combination</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">w = αv₁ + βv₂ &nbsp;in ℝ³</div>
+  </div>
+
+  <hr>
+
+  <div>
+    <div class="sec">Vectors</div>
+    <div class="vec-group">
+      <div class="vec-name" style="color:#4fc3f7">v₁</div>
+      <div class="vec-inputs">
+        <label>x</label><input type="number" id="v1x" value="2"  step="0.5">
+        <label>y</label><input type="number" id="v1y" value="0"  step="0.5">
+        <label>z</label><input type="number" id="v1z" value="0"  step="0.5">
+      </div>
+    </div>
+    <div class="vec-group" style="margin-bottom:0">
+      <div class="vec-name" style="color:#81c784">v₂</div>
+      <div class="vec-inputs">
+        <label>x</label><input type="number" id="v2x" value="0"  step="0.5">
+        <label>y</label><input type="number" id="v2y" value="2"  step="0.5">
+        <label>z</label><input type="number" id="v2z" value="1"  step="0.5">
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div>
+    <div class="sec">Coefficients</div>
+    <div class="slider-group">
+      <div class="slider-header">
+        <span class="slider-name" style="color:#4fc3f7">α</span>
+        <span class="slider-val" id="alpha-val" style="color:#4fc3f7">1.00</span>
+      </div>
+      <input type="range" id="alpha" min="-2" max="2" step="0.05" value="1">
+    </div>
+    <div class="slider-group">
+      <div class="slider-header">
+        <span class="slider-name" style="color:#81c784">β</span>
+        <span class="slider-val" id="beta-val" style="color:#81c784">1.00</span>
+      </div>
+      <input type="range" id="beta" min="-2" max="2" step="0.05" value="1">
+    </div>
+  </div>
+
+  <hr>
+
+  <div>
+    <div class="sec">Result w = αv₁ + βv₂</div>
+    <div class="result-box" id="result-display"></div>
+  </div>
+
+  <hr>
+
+  <div>
+    <div class="sec">Legend</div>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="swatch" style="background:#4fc3f7;opacity:0.38"></div>
+        <span>v₁ (reference)</span>
+      </div>
+      <div class="legend-item">
+        <div class="swatch" style="background:#4fc3f7"></div>
+        <span>αv₁</span>
+      </div>
+      <div class="legend-item">
+        <div class="swatch" style="background:#81c784;opacity:0.38"></div>
+        <span>v₂ (reference)</span>
+      </div>
+      <div class="legend-item">
+        <div class="swatch" style="background:#81c784"></div>
+        <span>βv₂</span>
+      </div>
+      <div class="legend-item">
+        <div class="swatch-dashed" style="border-color:#81c784"></div>
+        <div class="swatch-dashed" style="border-color:#4fc3f7;margin-left:-8px"></div>
+        <span>parallelogram</span>
+      </div>
+      <div class="legend-item">
+        <div class="swatch" style="background:#ffb74d"></div>
+        <span>w = αv₁ + βv₂</span>
+      </div>
+      <div class="legend-item">
+        <div class="swatch" style="background:#6655bb;opacity:0.6"></div>
+        <span>span{v₁, v₂}</span>
+      </div>
+    </div>
+    <p class="hint">
+      Drag to orbit &nbsp;·&nbsp; Scroll to zoom<br>
+      Axes: <span style="color:#ff6b6b">x</span>
+            <span style="color:#77dd77">y</span>
+            <span style="color:#6699ff">z</span>
+    </p>
+  </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const wrap = document.getElementById('canvas-wrap');
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+wrap.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0d1117);
+
+const camera = new THREE.PerspectiveCamera(50, wrap.clientWidth / wrap.clientHeight, 0.01, 200);
+camera.position.set(5, 4, 6);
+camera.lookAt(0, 0, 0);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.07;
+
+// Static scene elements
+scene.add(new THREE.AxesHelper(3.5));
+scene.add(new THREE.GridHelper(8, 8, 0x1c2030, 0x161c2a));
+
+// Dynamic objects (rebuilt on every update)
+let dynamic = [];
+function clearDynamic() { dynamic.forEach(o => scene.remove(o)); dynamic = []; }
+function add(obj) { if (obj) { scene.add(obj); dynamic.push(obj); } }
+
+const O = new THREE.Vector3();
+
+function makeArrow(from, to, color, opacity = 1) {
+  const dir = new THREE.Vector3().subVectors(to, from);
+  const len = dir.length();
+  if (len < 1e-6) return null;
+  const headLen = Math.min(len * 0.22, 0.35);
+  const a = new THREE.ArrowHelper(dir.normalize(), from, len, color, headLen, headLen * 0.55);
+  if (opacity < 1) {
+    a.line.material.transparent = true;
+    a.line.material.opacity = opacity;
+    a.cone.material.transparent = true;
+    a.cone.material.opacity = opacity;
+  }
+  return a;
+}
+
+function makeDashedLine(from, to, color) {
+  const geo = new THREE.BufferGeometry().setFromPoints([from.clone(), to.clone()]);
+  const mat = new THREE.LineDashedMaterial({ color, dashSize: 0.13, gapSize: 0.07, opacity: 0.55, transparent: true });
+  const l = new THREE.Line(geo, mat);
+  l.computeLineDistances();
+  return l;
+}
+
+function makeSpanPlane(u, v) {
+  if (u.clone().cross(v).length() < 1e-6) return null;
+  const N = 28, R = 2.8;
+  const pos = [], idx = [];
+  for (let i = 0; i <= N; i++) for (let j = 0; j <= N; j++) {
+    const s = -R + 2*R*i/N, t = -R + 2*R*j/N;
+    pos.push(s*u.x+t*v.x, s*u.y+t*v.y, s*u.z+t*v.z);
+  }
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+    const a = i*(N+1)+j, b=a+1, c=a+N+1, d=c+1;
+    idx.push(a,b,c, b,d,c);
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setIndex(idx);
+  return new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
+    color: 0x5544aa, transparent: true, opacity: 0.10,
+    side: THREE.DoubleSide, depthWrite: false,
+  }));
+}
+
+// State
+let v1 = new THREE.Vector3(2, 0, 0);
+let v2 = new THREE.Vector3(0, 2, 1);
+let alpha = 1.0, beta = 1.0;
+
+function update() {
+  clearDynamic();
+
+  const av1 = v1.clone().multiplyScalar(alpha);  // αv₁
+  const bv2 = v2.clone().multiplyScalar(beta);   // βv₂
+  const w   = av1.clone().add(bv2);              // w = αv₁ + βv₂
+
+  // Span plane (drawn first so it renders behind arrows)
+  add(makeSpanPlane(v1, v2));
+
+  // Original vectors (dim reference)
+  add(makeArrow(O, v1, 0x4fc3f7, 0.35));
+  add(makeArrow(O, v2, 0x81c784, 0.35));
+
+  // Scaled vectors αv₁ and βv₂
+  add(makeArrow(O, av1, 0x4fc3f7));
+  add(makeArrow(O, bv2, 0x81c784));
+
+  // Parallelogram completion: translate βv₂ to tip of αv₁, and vice versa
+  if (av1.distanceTo(w) > 1e-6) add(makeDashedLine(av1, w, 0x81c784));
+  if (bv2.distanceTo(w) > 1e-6) add(makeDashedLine(bv2, w, 0x4fc3f7));
+
+  // Result w
+  add(makeArrow(O, w, 0xffb74d));
+
+  // Update numeric display
+  const f = n => n.toFixed(2);
+  const wx = alpha*v1.x + beta*v2.x;
+  const wy = alpha*v1.y + beta*v2.y;
+  const wz = alpha*v1.z + beta*v2.z;
+  document.getElementById('result-display').innerHTML =
+    `<span style="color:#4fc3f7">${f(alpha)}</span>·(${f(v1.x)}, ${f(v1.y)}, ${f(v1.z)})\n` +
+    `+ <span style="color:#81c784">${f(beta)}</span>·(${f(v2.x)}, ${f(v2.y)}, ${f(v2.z)})\n` +
+    `= <span style="color:#ffb74d">(${f(wx)}, ${f(wy)}, ${f(wz)})</span>`;
+}
+
+function readVec(id) {
+  return new THREE.Vector3(
+    parseFloat(document.getElementById(id+'x').value) || 0,
+    parseFloat(document.getElementById(id+'y').value) || 0,
+    parseFloat(document.getElementById(id+'z').value) || 0,
+  );
+}
+
+['x','y','z'].forEach(c => {
+  document.getElementById('v1'+c).addEventListener('input', () => { v1 = readVec('v1'); update(); });
+  document.getElementById('v2'+c).addEventListener('input', () => { v2 = readVec('v2'); update(); });
+});
+document.getElementById('alpha').addEventListener('input', e => {
+  alpha = parseFloat(e.target.value);
+  document.getElementById('alpha-val').textContent = alpha.toFixed(2);
+  update();
+});
+document.getElementById('beta').addEventListener('input', e => {
+  beta = parseFloat(e.target.value);
+  document.getElementById('beta-val').textContent = beta.toFixed(2);
+  update();
+});
+
+window.addEventListener('resize', () => {
+  camera.aspect = wrap.clientWidth / wrap.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+update();
+animate();
+</script>
+</body>
+</html>
