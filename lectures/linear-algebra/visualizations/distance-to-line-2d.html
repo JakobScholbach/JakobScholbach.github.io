@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Distance to a Line in ℝ²</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #1f2328;
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    #canvas-wrap { flex: 1; min-width: 0; }
+    canvas { display: block; }
+    #panel {
+      width: 270px; flex-shrink: 0;
+      background: #f6f8fa; border-left: 1px solid #d0d7de;
+      padding: 16px; display: flex; flex-direction: column; gap: 14px;
+      overflow-y: auto; font-size: 0.875rem;
+    }
+    h1 { font-size: 1rem; font-weight: 600; }
+    .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
+    hr { border: none; border-top: 1px solid #d0d7de; }
+    .row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .vname { font-weight: 700; min-width: 20px; }
+    .vval  { font-family: monospace; font-size: 0.78rem; color: #656d76; }
+    .info-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.82rem; line-height: 2;
+    }
+    .info-box.closest { background: #e8f5e9; border-color: #81c784; }
+    .legend { display: flex; flex-direction: column; gap: 5px; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; }
+    .sw      { width: 16px; height: 4px; border-radius: 2px; flex-shrink: 0; }
+    .sw-dash { width: 16px; height: 0; border-top: 2px dashed #888; flex-shrink: 0; opacity: 0.6; }
+    .sw-dot  { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .hint { font-size: 0.72rem; color: #656d76; margin-top: 6px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap">
+  <canvas id="canvas"></canvas>
+</div>
+
+<div id="panel">
+  <div>
+    <h1>Distance to a Line</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">L through origin &nbsp;·&nbsp; p ∈ L &nbsp;·&nbsp; dist(v, p)</div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Coordinates</div>
+    <div class="row"><span class="vname" style="color:#bc1e47">v</span><span class="vval" id="vcoord">—</span></div>
+    <div class="row"><span class="vname" style="color:#009246">p</span><span class="vval" id="pcoord">—</span></div>
+  </div>
+  <hr>
+  <div id="dist-box" class="info-box">
+    <div style="color:#656d76;font-size:0.8rem">Click on line L to place p</div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Legend</div>
+    <div class="legend">
+      <div class="legend-item"><div class="sw" style="background:#bc1e47"></div><span>v (vector)</span></div>
+      <div class="legend-item"><div class="sw" style="background:#0081cd"></div><span>L (line through origin)</span></div>
+      <div class="legend-item"><div class="sw-dash"></div><span>L⊥ (orthogonal complement)</span></div>
+      <div class="legend-item"><div class="sw-dot" style="background:#009246"></div><span>p (point on L)</span></div>
+      <div class="legend-item"><div class="sw" style="background:#009246;opacity:0.85"></div><span>segment pv (distance)</span></div>
+      <div class="legend-item"><div class="sw" style="background:#fec247"></div><span>angle ∠(L, pv)</span></div>
+    </div>
+    <p class="hint">
+      Click on L to place p<br>
+      Drag <span style="color:#bc1e47">●</span> to move v &nbsp;·&nbsp; Drag <span style="color:#0081cd">●</span> to rotate L<br>
+      Near the closest point → magnetic snap
+    </p>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx    = canvas.getContext('2d');
+const wrap   = document.getElementById('canvas-wrap');
+
+const C = {
+  red:    '#bc1e47',
+  blue:   '#0081cd',
+  green:  '#009246',
+  yellow: '#fec247',
+  gray:   '#888888',
+};
+
+// ── state ──────────────────────────────────────────────────────────────────
+let lineAngle = Math.PI / 6;
+let v = { x: 1.5, y: 1.8 };
+let p_t = null;               // p = p_t * lineDir(); null if unset
+
+const SNAP_THRESH = 0.5;      // world units — magnetic snap radius
+const LINE_HIT   = 0.22;      // world units — click-on-line tolerance
+
+// ── layout ─────────────────────────────────────────────────────────────────
+let S   = 80;   // pixels per world unit
+let cx0 = 0;    // canvas-pixel x of world origin
+let cy0 = 0;
+
+function resize() {
+  canvas.width  = wrap.clientWidth;
+  canvas.height = wrap.clientHeight;
+  S   = Math.min(canvas.width, canvas.height) / 9;
+  cx0 = canvas.width  / 2;
+  cy0 = canvas.height / 2;
+  draw();
+}
+
+const toC = (wx, wy) => [cx0 + wx * S, cy0 - wy * S];
+const toW = (px, py) => [(px - cx0) / S, -(py - cy0) / S];
+
+function lDir() { return { x: Math.cos(lineAngle), y: Math.sin(lineAngle) }; }
+
+function projOnLine(wx, wy) {
+  const d = lDir();
+  const t = wx * d.x + wy * d.y;
+  return { t, x: t * d.x, y: t * d.y };
+}
+
+// ── drawing helpers ─────────────────────────────────────────────────────────
+
+function strokeLine(x1, y1, x2, y2, color, lw, dash, alpha) {
+  ctx.save();
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
+  ctx.strokeStyle = color; ctx.lineWidth = lw;
+  if (dash) ctx.setLineDash(dash);
+  if (alpha != null) ctx.globalAlpha = alpha;
+  ctx.stroke(); ctx.restore();
+}
+
+function drawArrow(wx1, wy1, wx2, wy2, color, lw) {
+  const [x1, y1] = toC(wx1, wy1), [x2, y2] = toC(wx2, wy2);
+  const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy);
+  if (len < 5) return;
+  const ux = dx / len, uy = dy / len;
+  const hl = Math.min(len * 0.22, 16), ha = 0.45;
+  ctx.save();
+  ctx.strokeStyle = color; ctx.lineWidth = lw;
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(ha) - uy*Math.sin(ha)), y2 - hl*(uy*Math.cos(ha) + ux*Math.sin(ha)));
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(-ha) - uy*Math.sin(-ha)), y2 - hl*(uy*Math.cos(-ha) + ux*Math.sin(-ha)));
+  ctx.stroke(); ctx.restore();
+}
+
+function drawDot(cx, cy, r, fill) {
+  ctx.save();
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  ctx.fillStyle = fill; ctx.fill();
+  ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.restore();
+}
+
+// ── main draw ───────────────────────────────────────────────────────────────
+
+function draw() {
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+
+  // grid
+  ctx.save();
+  ctx.strokeStyle = '#e8e8e8'; ctx.lineWidth = 1;
+  const step = S;
+  for (let x = cx0 % step; x < W; x += step) strokeLine(x, 0, x, H, '#e8e8e8', 1);
+  for (let y = cy0 % step; y < H; y += step) strokeLine(0, y, W, y, '#e8e8e8', 1);
+  strokeLine(0, cy0, W, cy0, '#c8c8c8', 1.5);
+  strokeLine(cx0, 0, cx0, H, '#c8c8c8', 1.5);
+  ctx.restore();
+
+  const d    = lDir();
+  const perp = { x: -d.y, y: d.x };
+  const ext  = Math.max(W, H) / S * 0.65;
+
+  // L⊥  — dashed gray
+  const [p1x, p1y] = toC(-perp.x * ext, -perp.y * ext);
+  const [p2x, p2y] = toC( perp.x * ext,  perp.y * ext);
+  strokeLine(p1x, p1y, p2x, p2y, C.gray, 1.5, [6, 5], 0.48);
+  {
+    const [lx, ly] = toC(perp.x * ext * 0.72, perp.y * ext * 0.72);
+    ctx.save(); ctx.fillStyle = C.gray; ctx.globalAlpha = 0.7;
+    ctx.font = 'italic 14px serif'; ctx.fillText('L⊥', lx + 5, ly - 4);
+    ctx.restore();
+  }
+
+  // L  — solid blue
+  const [l1x, l1y] = toC(-d.x * ext, -d.y * ext);
+  const [l2x, l2y] = toC( d.x * ext,  d.y * ext);
+  strokeLine(l1x, l1y, l2x, l2y, C.blue, 2);
+  {
+    const [lx, ly] = toC(d.x * ext * 0.76, d.y * ext * 0.76);
+    ctx.save(); ctx.fillStyle = C.blue;
+    ctx.font = 'bold italic 14px serif'; ctx.fillText('L', lx + 5, ly - 4);
+    ctx.restore();
+  }
+
+  // ── p and related geometry ─────────────────────────────────────────────────
+  if (p_t !== null) {
+    const px = p_t * d.x, py = p_t * d.y;
+    const opt      = projOnLine(v.x, v.y);
+    const isClosest = Math.abs(p_t - opt.t) < 0.02;
+
+    const [pcx, pcy] = toC(px, py);
+    const [vcx, vcy] = toC(v.x, v.y);
+    const dvx = vcx - pcx, dvy = vcy - pcy;
+    const dvlen = Math.hypot(dvx, dvy);
+
+    // Dashed green segment p → v
+    strokeLine(pcx, pcy, vcx, vcy, C.green, 2, [5, 4], 0.85);
+
+    // Distance label on segment midpoint
+    if (dvlen > 20) {
+      const dist = Math.hypot(v.x - px, v.y - py);
+      const mx_ = (pcx + vcx) / 2, my_ = (pcy + vcy) / 2;
+      // Perpendicular offset for label
+      const nx = -dvy / dvlen, ny = dvx / dvlen;
+      const loff = 14;
+      ctx.save();
+      ctx.fillStyle = C.green; ctx.font = '12px monospace';
+      ctx.globalAlpha = 0.9;
+      ctx.fillText(dist.toFixed(2), mx_ + nx * loff - 14, my_ + ny * loff + 4);
+      ctx.restore();
+    }
+
+    if (dvlen > 8) {
+      if (isClosest) {
+        // Right-angle square at p
+        const sq  = 10;
+        const un  = [dvx / dvlen, dvy / dvlen];   // unit toward v  (canvas)
+        const ulc = [d.x, -d.y];                   // line dir (canvas, y flipped)
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(pcx + un[0]*sq,               pcy + un[1]*sq);
+        ctx.lineTo(pcx + un[0]*sq + ulc[0]*sq,   pcy + un[1]*sq + ulc[1]*sq);
+        ctx.lineTo(pcx + ulc[0]*sq,               pcy + ulc[1]*sq);
+        ctx.strokeStyle = C.green; ctx.lineWidth = 1.5; ctx.globalAlpha = 0.8;
+        ctx.stroke(); ctx.restore();
+      } else {
+        // Angle arc at p — shorter arc between line dir and pv dir
+        const a1   = Math.atan2(-d.y, d.x);             // line dir in canvas
+        const a2   = Math.atan2(dvy, dvx);               // pv   dir in canvas
+        const diff = ((a2 - a1) % (2*Math.PI) + 2*Math.PI) % (2*Math.PI);
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(pcx, pcy, 22, a1, a2, diff > Math.PI);
+        ctx.strokeStyle = C.yellow; ctx.lineWidth = 2.5; ctx.globalAlpha = 0.9;
+        ctx.stroke(); ctx.restore();
+      }
+    }
+
+    // p dot + label
+    drawDot(pcx, pcy, 7, C.green);
+    ctx.save(); ctx.fillStyle = C.green; ctx.font = 'bold italic 13px serif';
+    ctx.fillText('p', pcx + 10, pcy - 5); ctx.restore();
+
+    updatePanel(px, py, isClosest);
+  } else {
+    document.getElementById('pcoord').textContent = '—';
+    document.getElementById('dist-box').innerHTML = '<div style="color:#656d76;font-size:0.8rem">Click on line L to place p</div>';
+    document.getElementById('dist-box').className = 'info-box';
+  }
+
+  // Vector v arrow + handle
+  drawArrow(0, 0, v.x, v.y, C.red, 2.5);
+  const [vcx, vcy] = toC(v.x, v.y);
+  ctx.save(); ctx.fillStyle = C.red; ctx.font = 'bold italic 14px serif';
+  ctx.fillText('v', vcx + 10, vcy - 6); ctx.restore();
+  drawDot(vcx, vcy, 8, C.red);
+
+  // Line direction handle — blue dot 3 units from origin along L
+  const HLEN = Math.min(3, ext * 0.62);
+  const [lhcx, lhcy] = toC(d.x * HLEN, d.y * HLEN);
+  drawDot(lhcx, lhcy, 7, C.blue);
+
+  // Origin dot
+  const [ocx, ocy] = toC(0, 0);
+  ctx.save(); ctx.beginPath(); ctx.arc(ocx, ocy, 3.5, 0, Math.PI * 2);
+  ctx.fillStyle = '#444'; ctx.fill(); ctx.restore();
+
+  // Update v coordinate display
+  document.getElementById('vcoord').textContent = `(${v.x.toFixed(2)}, ${v.y.toFixed(2)})`;
+}
+
+function updatePanel(px, py, isClosest) {
+  const d    = lDir();
+  const dist = Math.hypot(v.x - px, v.y - py);
+  const vvx  = v.x - px, vvy = v.y - py, vvlen = Math.hypot(vvx, vvy);
+
+  let angleDeg = '—';
+  if (vvlen > 0.01) {
+    const cosA = Math.abs(d.x * vvx + d.y * vvy) / vvlen;
+    angleDeg = (Math.acos(Math.min(1, cosA)) * 180 / Math.PI).toFixed(1);
+  }
+
+  document.getElementById('pcoord').textContent = `(${px.toFixed(2)}, ${py.toFixed(2)})`;
+
+  let html = `<div><b>|v − p|</b> = ${dist.toFixed(3)}</div>`;
+  html    += `<div><b>∠(L, pv)</b> = ${angleDeg}°</div>`;
+  if (isClosest) {
+    html += `<div style="color:#009246;font-weight:600;margin-top:4px">p = proj<sub>L</sub>(v) — closest point</div>`;
+    html += `<div style="color:#656d76;font-size:0.78rem">pv ⊥ L &nbsp; (angle = 90°)</div>`;
+  }
+
+  document.getElementById('dist-box').innerHTML = html;
+  document.getElementById('dist-box').className = 'info-box' + (isClosest ? ' closest' : '');
+}
+
+// ── interaction ──────────────────────────────────────────────────────────────
+
+let drag = null;
+
+canvas.addEventListener('mousemove', e => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+  const [wx, wy] = toW(mx, my);
+  const d = lDir();
+  const HLEN = Math.min(3, Math.max(canvas.width, canvas.height) / S * 0.62 * 0.62);
+
+  if (drag === 'v')    { v.x = wx; v.y = wy; draw(); return; }
+  if (drag === 'line') { lineAngle = Math.atan2(wy, wx); draw(); return; }
+
+  const [vcx,  vcy]  = toC(v.x, v.y);
+  const [lhcx, lhcy] = toC(d.x * HLEN, d.y * HLEN);
+  const proj  = projOnLine(wx, wy);
+  const dLine = Math.hypot(wx - proj.x, wy - proj.y);
+
+  if      (Math.hypot(mx - vcx, my - vcy) < 13)  canvas.style.cursor = 'grab';
+  else if (Math.hypot(mx - lhcx, my - lhcy) < 12) canvas.style.cursor = 'grab';
+  else if (dLine < LINE_HIT)                        canvas.style.cursor = 'crosshair';
+  else                                              canvas.style.cursor = '';
+});
+
+canvas.addEventListener('mousedown', e => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+  const [wx, wy] = toW(mx, my);
+  const d = lDir();
+  const HLEN = Math.min(3, Math.max(canvas.width, canvas.height) / S * 0.62 * 0.62);
+
+  const [vcx,  vcy]  = toC(v.x, v.y);
+  const [lhcx, lhcy] = toC(d.x * HLEN, d.y * HLEN);
+
+  if (Math.hypot(mx - vcx, my - vcy) < 13) {
+    drag = 'v'; canvas.style.cursor = 'grabbing'; e.preventDefault(); return;
+  }
+  if (Math.hypot(mx - lhcx, my - lhcy) < 12) {
+    drag = 'line'; canvas.style.cursor = 'grabbing'; e.preventDefault(); return;
+  }
+
+  // Click on line → set p, with magnetic snap to closest point
+  const proj  = projOnLine(wx, wy);
+  const dLine = Math.hypot(wx - proj.x, wy - proj.y);
+  if (dLine < LINE_HIT) {
+    const opt = projOnLine(v.x, v.y);
+    p_t = Math.abs(proj.t - opt.t) < SNAP_THRESH ? opt.t : proj.t;
+    draw(); e.preventDefault();
+  }
+});
+
+canvas.addEventListener('mouseup',    () => { drag = null; canvas.style.cursor = ''; });
+canvas.addEventListener('mouseleave', () => { drag = null; });
+
+window.addEventListener('resize', resize);
+resize();
+</script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Determinant — Area &amp; Orientation</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #1f2328;
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    #canvas-wrap { flex: 1; min-width: 0; }
+    canvas { display: block; }
+    #panel {
+      width: 270px; flex-shrink: 0;
+      background: #f6f8fa; border-left: 1px solid #d0d7de;
+      padding: 16px; display: flex; flex-direction: column; gap: 14px;
+      overflow-y: auto; font-size: 0.875rem;
+    }
+    h1 { font-size: 1rem; font-weight: 600; }
+    .sec {
+      font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px;
+    }
+    hr { border: none; border-top: 1px solid #d0d7de; }
+    .mat-outer { display: flex; align-items: center; gap: 1px; font-family: monospace; font-size: 0.85rem; }
+    .bracket { font-size: 2rem; color: #888; line-height: 1; }
+    .mat-inner { display: grid; grid-template-columns: max-content max-content; gap: 4px 14px; padding: 2px 6px; }
+    .m-red  { color: #bc1e47; font-weight: 700; }
+    .m-blue { color: #0081cd; font-weight: 700; }
+    .result-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.82rem; line-height: 1.9;
+      font-family: monospace;
+    }
+    .formula-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.78rem; line-height: 1.9;
+      font-family: monospace; color: #656d76;
+    }
+    .orient-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.82rem; line-height: 1.7;
+    }
+    .pos  { color: #009246; font-weight: 700; }
+    .neg  { color: #bc1e47; font-weight: 700; }
+    .zero { color: #656d76; font-weight: 700; }
+    .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap"><canvas id="canvas"></canvas></div>
+
+<div id="panel">
+  <div>
+    <h1>Determinant</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">Area &amp; orientation in ℝ²</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Matrix A = [v₁ | v₂]</div>
+    <div class="mat-outer">
+      <span class="bracket">[</span>
+      <div class="mat-inner">
+        <span class="m-red"  id="m00">—</span><span class="m-blue" id="m01">—</span>
+        <span class="m-red"  id="m10">—</span><span class="m-blue" id="m11">—</span>
+      </div>
+      <span class="bracket">]</span>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Computation</div>
+    <div id="formula-box" class="formula-box">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Result</div>
+    <div id="det-box" class="result-box">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Orientation</div>
+    <div id="orient-box" class="orient-box">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <p class="hint">
+      Drag <span style="color:#bc1e47">●</span> to move v₁<br>
+      Drag <span style="color:#0081cd">●</span> to move v₂
+    </p>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx    = canvas.getContext('2d');
+const wrap   = document.getElementById('canvas-wrap');
+
+const COLORS = ['#bc1e47', '#0081cd'];
+const NAMES  = ['v₁', 'v₂'];
+
+let vectors = [
+  { x: 2,   y: 0   },
+  { x: 0.5, y: 2   },
+];
+
+let S = 80, cx0 = 0, cy0 = 0;
+
+function resize() {
+  canvas.width  = wrap.clientWidth;
+  canvas.height = wrap.clientHeight;
+  S   = Math.min(canvas.width, canvas.height) / 8;
+  cx0 = canvas.width  / 2;
+  cy0 = canvas.height / 2;
+  draw();
+}
+
+const toC = (wx, wy) => [cx0 + wx * S, cy0 - wy * S];
+const toW = (px, py) => [(px - cx0) / S, -(py - cy0) / S];
+
+function det2(v1, v2) {
+  return v1.x * v2.y - v1.y * v2.x;
+}
+
+function drawArrow(wx1, wy1, wx2, wy2, color, lw) {
+  const [x1, y1] = toC(wx1, wy1), [x2, y2] = toC(wx2, wy2);
+  const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy);
+  if (len < 5) return;
+  const ux = dx / len, uy = dy / len;
+  const hl = Math.min(len * 0.22, 16), ha = 0.45;
+  ctx.save();
+  ctx.strokeStyle = color; ctx.lineWidth = lw;
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(ha)  - uy*Math.sin(ha)),  y2 - hl*(uy*Math.cos(ha)  + ux*Math.sin(ha)));
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(-ha) - uy*Math.sin(-ha)), y2 - hl*(uy*Math.cos(-ha) + ux*Math.sin(-ha)));
+  ctx.stroke();
+  ctx.restore();
+}
+
+function drawDot(px, py, r, fill) {
+  ctx.save();
+  ctx.beginPath(); ctx.arc(px, py, r, 0, Math.PI * 2);
+  ctx.fillStyle = fill; ctx.fill();
+  ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.restore();
+}
+
+function drawGrid() {
+  const W = canvas.width, H = canvas.height;
+  const step = S;
+  for (let x = cx0 % step; x < W; x += step) {
+    ctx.save(); ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H);
+    ctx.strokeStyle = '#e8e8e8'; ctx.lineWidth = 1; ctx.stroke(); ctx.restore();
+  }
+  for (let y = cy0 % step; y < H; y += step) {
+    ctx.save(); ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y);
+    ctx.strokeStyle = '#e8e8e8'; ctx.lineWidth = 1; ctx.stroke(); ctx.restore();
+  }
+  ctx.save(); ctx.beginPath(); ctx.moveTo(0, cy0); ctx.lineTo(W, cy0);
+  ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+  ctx.save(); ctx.beginPath(); ctx.moveTo(cx0, 0); ctx.lineTo(cx0, H);
+  ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+}
+
+// Midpoint canvas-angle of an arc from a1 to a2 in the given direction.
+// anticlockwise=true means decreasing canvas angle (CCW in math coords).
+function arcMidAngle(a1, a2, anticlockwise) {
+  if (anticlockwise) {
+    let da = a1 - a2;
+    while (da < 0)           da += 2 * Math.PI;
+    while (da > 2*Math.PI)   da -= 2 * Math.PI;
+    return a1 - da / 2;
+  } else {
+    let da = a2 - a1;
+    while (da < 0)           da += 2 * Math.PI;
+    while (da > 2*Math.PI)   da -= 2 * Math.PI;
+    return a1 + da / 2;
+  }
+}
+
+function drawOrientationArc(v1, v2, d) {
+  const [ox, oy] = toC(0, 0);
+  const arcR = Math.max(28, Math.min(S * 0.55, 52));
+
+  // In canvas coords y is flipped, so canvas_angle = atan2(-wy, wx).
+  // det > 0 in math (v2 CCW from v1) corresponds to anticlockwise=true on canvas.
+  const a1 = Math.atan2(-v1.y, v1.x);
+  const a2 = Math.atan2(-v2.y, v2.x);
+  const anticlockwise = d > 0;
+  const color = d > 0 ? '#009246' : '#bc1e47';
+
+  ctx.save();
+
+  // Arc
+  ctx.beginPath();
+  ctx.arc(ox, oy, arcR, a1, a2, anticlockwise);
+  ctx.strokeStyle = color; ctx.lineWidth = 2.5;
+  ctx.stroke();
+
+  // Arrowhead at a2 tangent to the arc
+  const tx = anticlockwise ?  Math.sin(a2) : -Math.sin(a2);
+  const ty = anticlockwise ? -Math.cos(a2) :  Math.cos(a2);
+  const tipX = ox + arcR * Math.cos(a2);
+  const tipY = oy + arcR * Math.sin(a2);
+  const hl = 9, ha = 0.45;
+  ctx.beginPath();
+  ctx.moveTo(tipX, tipY);
+  ctx.lineTo(tipX - hl*(tx*Math.cos(ha)  - ty*Math.sin(ha)),  tipY - hl*(ty*Math.cos(ha)  + tx*Math.sin(ha)));
+  ctx.moveTo(tipX, tipY);
+  ctx.lineTo(tipX - hl*(tx*Math.cos(-ha) - ty*Math.sin(-ha)), tipY - hl*(ty*Math.cos(-ha) + tx*Math.sin(-ha)));
+  ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.stroke();
+
+  // "+" / "−" sign near arc midpoint
+  const am = arcMidAngle(a1, a2, anticlockwise);
+  const lblR = arcR + 16;
+  ctx.font = 'bold 14px system-ui';
+  ctx.fillStyle = color;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText(d > 0 ? '+' : '−', ox + lblR * Math.cos(am), oy + lblR * Math.sin(am));
+
+  ctx.restore();
+}
+
+function draw() {
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+  drawGrid();
+
+  const v1 = vectors[0], v2 = vectors[1];
+  const d    = det2(v1, v2);
+  const absD = Math.abs(d);
+  const degen = absD < 0.05;
+  const len1 = Math.hypot(v1.x, v1.y), len2 = Math.hypot(v2.x, v2.y);
+
+  const [ox,  oy]  = toC(0, 0);
+  const [ax,  ay]  = toC(v1.x, v1.y);
+  const [bx,  by]  = toC(v2.x, v2.y);
+  const [cx2, cy2] = toC(v1.x + v2.x, v1.y + v2.y);
+
+  // Parallelogram fill — color encodes orientation sign
+  if (len1 > 1e-6 && len2 > 1e-6) {
+    const fillColor = degen
+      ? 'rgba(254,194,71,0.18)'
+      : d > 0 ? 'rgba(0,146,70,0.13)' : 'rgba(188,30,71,0.11)';
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(ox, oy); ctx.lineTo(ax, ay);
+    ctx.lineTo(cx2, cy2); ctx.lineTo(bx, by);
+    ctx.closePath();
+    ctx.fillStyle = fillColor; ctx.fill();
+    ctx.restore();
+
+    // Dashed completion edges
+    ctx.save();
+    ctx.setLineDash([6, 4]);
+    ctx.strokeStyle = 'rgba(136,136,136,0.5)'; ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(ax, ay); ctx.lineTo(cx2, cy2);
+    ctx.moveTo(bx, by); ctx.lineTo(cx2, cy2);
+    ctx.stroke();
+    ctx.restore();
+
+    // Corner dot at v1+v2
+    ctx.save(); ctx.beginPath(); ctx.arc(cx2, cy2, 3, 0, Math.PI*2);
+    ctx.fillStyle = '#999'; ctx.fill(); ctx.restore();
+  }
+
+  // Orientation arc (only when non-degenerate and both vectors have length)
+  if (!degen && len1 > 1e-6 && len2 > 1e-6) {
+    drawOrientationArc(v1, v2, d);
+  }
+
+  // Area label in center of parallelogram
+  if (!degen && len1 > 1e-6 && len2 > 1e-6) {
+    const [midX, midY] = toC((v1.x + v2.x) / 2, (v1.y + v2.y) / 2);
+    const lbl = `area = ${absD.toFixed(2)}`;
+    const lblColor = d > 0 ? '#009246' : '#bc1e47';
+    ctx.save();
+    ctx.font = 'bold 12px system-ui';
+    const mw = ctx.measureText(lbl).width;
+    ctx.fillStyle = 'rgba(255,255,255,0.85)';
+    ctx.fillRect(midX - mw/2 - 4, midY - 9, mw + 8, 18);
+    ctx.fillStyle = lblColor;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(lbl, midX, midY);
+    ctx.restore();
+  }
+
+  // Vectors
+  drawArrow(0, 0, v1.x, v1.y, COLORS[0], 2.5);
+  drawArrow(0, 0, v2.x, v2.y, COLORS[1], 2.5);
+
+  // Tip handles and labels
+  vectors.forEach((v, i) => {
+    const [vx, vy] = toC(v.x, v.y);
+    drawDot(vx, vy, 8, COLORS[i]);
+    ctx.save();
+    ctx.fillStyle = COLORS[i];
+    ctx.font = 'bold italic 14px serif';
+    ctx.fillText(NAMES[i], vx + 11, vy - 6);
+    ctx.restore();
+  });
+
+  // Origin dot
+  ctx.save(); ctx.beginPath(); ctx.arc(ox, oy, 3.5, 0, Math.PI*2);
+  ctx.fillStyle = '#444'; ctx.fill(); ctx.restore();
+
+  updatePanel(v1, v2, d);
+}
+
+function updatePanel(v1, v2, d) {
+  document.getElementById('m00').textContent = v1.x.toFixed(2);
+  document.getElementById('m10').textContent = v1.y.toFixed(2);
+  document.getElementById('m01').textContent = v2.x.toFixed(2);
+  document.getElementById('m11').textContent = v2.y.toFixed(2);
+
+  const absD  = Math.abs(d);
+  const degen = absD < 0.05;
+  const r = '#bc1e47', b = '#0081cd';
+  const f = n => n.toFixed(2);
+
+  // Computation box
+  document.getElementById('formula-box').innerHTML =
+    `det A = v₁.x · v₂.y − v₁.y · v₂.x<br>` +
+    `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span style="color:${r}">${f(v1.x)}</span>·<span style="color:${b}">${f(v2.y)}</span>` +
+    ` − <span style="color:${r}">${f(v1.y)}</span>·<span style="color:${b}">${f(v2.x)}</span><br>` +
+    `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = ${d.toFixed(3)}`;
+
+  // Result box
+  if (degen) {
+    document.getElementById('det-box').innerHTML =
+      `det A = 0.000<br>|det A| = 0<br>Area = 0`;
+  } else {
+    const signCls = d > 0 ? 'pos' : 'neg';
+    const signStr = d > 0 ? '+' : '−';
+    document.getElementById('det-box').innerHTML =
+      `det A = <span class="${signCls}">${signStr}${absD.toFixed(3)}</span><br>` +
+      `|det A| = ${absD.toFixed(3)}<br>` +
+      `Area of parallelogram = ${absD.toFixed(3)}`;
+  }
+
+  // Orientation box
+  let orientHTML;
+  if (degen) {
+    orientHTML =
+      `<span class="zero">Degenerate</span><br>` +
+      `v₁ and v₂ are linearly dependent.<br>` +
+      `The parallelogram collapses to a line.`;
+  } else if (d > 0) {
+    orientHTML =
+      `<span class="pos">Positive (+)</span><br>` +
+      `v₂ is <b>counterclockwise</b> from v₁.<br>` +
+      `Standard (right-hand) orientation.`;
+  } else {
+    orientHTML =
+      `<span class="neg">Negative (−)</span><br>` +
+      `v₂ is <b>clockwise</b> from v₁.<br>` +
+      `Reversed orientation.`;
+  }
+  document.getElementById('orient-box').innerHTML = orientHTML;
+}
+
+// ── Drag interaction ──────────────────────────────────────────────────────────
+
+let drag = -1;
+
+function nearHandle(mx, my) {
+  for (let i = 0; i < vectors.length; i++) {
+    const [vx, vy] = toC(vectors[i].x, vectors[i].y);
+    if (Math.hypot(mx - vx, my - vy) < 14) return i;
+  }
+  return -1;
+}
+
+canvas.addEventListener('mousemove', e => {
+  const r  = canvas.getBoundingClientRect();
+  const mx = e.clientX - r.left, my = e.clientY - r.top;
+  if (drag >= 0) {
+    const [wx, wy] = toW(mx, my);
+    vectors[drag].x = wx;
+    vectors[drag].y = wy;
+    draw();
+    return;
+  }
+  canvas.style.cursor = nearHandle(mx, my) >= 0 ? 'grab' : '';
+});
+
+canvas.addEventListener('mousedown', e => {
+  const r  = canvas.getBoundingClientRect();
+  const mx = e.clientX - r.left, my = e.clientY - r.top;
+  const h = nearHandle(mx, my);
+  if (h >= 0) { drag = h; canvas.style.cursor = 'grabbing'; e.preventDefault(); }
+});
+
+canvas.addEventListener('mouseup',    () => { drag = -1; canvas.style.cursor = ''; });
+canvas.addEventListener('mouseleave', () => { drag = -1; });
+
+window.addEventListener('resize', resize);
+resize();
+</script>
+</body>
+</html>

@@ -21,7 +21,7 @@
     
     
       
-        <title>Visualization Guidelines - Linear Algebra Wiki</title>
+        <title>PRD - Linear Algebra Wiki</title>
       
     
     
@@ -63,11 +63,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#visualization-guidelines" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Visualization Guidelines
+              PRD
             
           </span>
         </div>
@@ -2122,110 +2117,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#color-palette" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Color palette
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adding-a-new-visualization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adding a new visualization
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adding a new visualization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-the-html-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Create the HTML file
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-register-it-in-the-latex-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Register it in the LaTeX source
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-rebuild-the-wiki-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Rebuild the wiki page
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#javascript-color-constants" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        JavaScript color constants
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#layout-template" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Layout template
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2242,169 +2133,28 @@
 
 
 
-<h1 id="visualization-guidelines">Visualization Guidelines<a class="headerlink" href="#visualization-guidelines" title="Permanent link">&para;</a></h1>
-<p>Interactive visualizations live in <code>wiki/docs/visualizations/</code> as self-contained HTML files.
-They are authored here (source-of-truth), flow through the existing MkDocs build, and are deployed alongside the wiki via <code>deploy_wiki_to_personal_site.ps1</code>.</p>
-<hr />
-<h2 id="color-palette">Color palette<a class="headerlink" href="#color-palette" title="Permanent link">&para;</a></h2>
-<p>These are the four named colors defined in <code>skript/linear.tex</code> and used throughout the TikZ figures. Use the same colors in visualizations so students see a consistent visual language between the static PDF figures and the interactive web versions.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Hex</th>
-<th>RGB</th>
-<th>Role in figures</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>myred</code></td>
-<td><code>#bc1e47</code></td>
-<td>188, 30, 71</td>
-<td>First / primary vector or object</td>
-</tr>
-<tr>
-<td><code>myblue</code></td>
-<td><code>#0081cd</code></td>
-<td>0, 129, 205</td>
-<td>Second / secondary vector or object</td>
-</tr>
-<tr>
-<td><code>mygreen</code></td>
-<td><code>#009246</code></td>
-<td>0, 146, 70</td>
-<td>Result, sum, or combination</td>
-</tr>
-<tr>
-<td><code>myyellow</code></td>
-<td><code>#fec247</code></td>
-<td>254, 194, 71</td>
-<td>Angles, arcs, auxiliary geometry</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Supporting colors</strong> (not in the LaTeX palette but needed for web):</p>
-<table>
-<thead>
-<tr>
-<th>Role</th>
-<th>Hex</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Span / region</td>
-<td><code>#fec247</code> at 12% opacity</td>
-<td>myyellow washed out</td>
-</tr>
-<tr>
-<td>Construction lines</td>
-<td><code>#888888</code> at 55% opacity</td>
-<td>neutral gray, dashed</td>
-</tr>
-<tr>
-<td>Axes (Three.js default)</td>
-<td>red / green / blue</td>
-<td>leave as-is (AxesHelper)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Semantic rules</strong> (derived from TikZ figures in <code>skript/figures/src/</code>):
-- First vector → <code>myred</code>
-- Second vector → <code>myblue</code>
-- Their sum / result → <code>mygreen</code>
-- Angle or auxiliary arc → <code>myyellow</code>
-- Parallelogram / construction lines → gray dashed</p>
-<hr />
-<h2 id="adding-a-new-visualization">Adding a new visualization<a class="headerlink" href="#adding-a-new-visualization" title="Permanent link">&para;</a></h2>
-<h3 id="1-create-the-html-file">1. Create the HTML file<a class="headerlink" href="#1-create-the-html-file" title="Permanent link">&para;</a></h3>
-<p>Place it at <code>wiki/docs/visualizations/&lt;name&gt;.html</code>.<br />
-Name it after the concept, matching the LaTeX label style, e.g. <code>linear-combination-3d.html</code>.</p>
-<p>The file must be self-contained (all JS via CDN importmap). Use this Three.js importmap header:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;importmap&quot;</span><span class="p">&gt;</span>
-<span class="p">{</span>
-<span class="w">  </span><span class="s2">&quot;imports&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;three&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;three/addons/&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/&quot;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span>
-<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">THREE</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;three&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">OrbitControls</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;three/addons/controls/OrbitControls.js&#39;</span><span class="p">;</span>
-<span class="c1">// ...</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Pin the Three.js version explicitly (<code>@0.160.0</code>). Update all visualizations together when bumping.</p>
-<h3 id="2-register-it-in-the-latex-source">2. Register it in the LaTeX source<a class="headerlink" href="#2-register-it-in-the-latex-source" title="Permanent link">&para;</a></h3>
-<p>In the relevant <code>.tex</code> subfile, place:</p>
-<div class="highlight"><pre><span></span><code><span class="k">\visualization</span><span class="nb">{</span>&lt;name&gt;<span class="nb">}</span>
-</code></pre></div>
-<p>This renders as a small blue clickable link in the PDF (defined in <code>linear.tex</code>) and is replaced by an <code>&lt;iframe&gt;</code> in the wiki by <code>convert_to_wiki.py</code>.</p>
-<p>The <code>\visualization</code> command is a no-op for layout — it does not float or break the paragraph flow. Place it on its own line between paragraphs, typically just before or after the relevant definition or example.</p>
-<h3 id="3-rebuild-the-wiki-page">3. Rebuild the wiki page<a class="headerlink" href="#3-rebuild-the-wiki-page" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>python wiki/tools/convert_to_wiki.py --file &lt;subfile-stem&gt;
-</code></pre></div>
-<p>The generated <code>wiki/docs/&lt;stem&gt;.md</code> will contain the iframe. No manual edits to <code>.md</code> files.</p>
-<hr />
-<h2 id="javascript-color-constants">JavaScript color constants<a class="headerlink" href="#javascript-color-constants" title="Permanent link">&para;</a></h2>
-<p>Copy-paste block for new files:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">red</span><span class="o">:</span><span class="w">    </span><span class="mh">0xbc1e47</span><span class="p">,</span><span class="w">  </span><span class="c1">// myred   — first vector</span>
-<span class="w">  </span><span class="nx">blue</span><span class="o">:</span><span class="w">   </span><span class="mh">0x0081cd</span><span class="p">,</span><span class="w">  </span><span class="c1">// myblue  — second vector</span>
-<span class="w">  </span><span class="nx">green</span><span class="o">:</span><span class="w">  </span><span class="mh">0x009246</span><span class="p">,</span><span class="w">  </span><span class="c1">// mygreen — result / sum</span>
-<span class="w">  </span><span class="nx">yellow</span><span class="o">:</span><span class="w"> </span><span class="mh">0xfec247</span><span class="p">,</span><span class="w">  </span><span class="c1">// myyellow — angles / auxiliary</span>
-<span class="w">  </span><span class="nx">gray</span><span class="o">:</span><span class="w">   </span><span class="mh">0x888888</span><span class="p">,</span><span class="w">  </span><span class="c1">// construction lines (dashed)</span>
-<span class="p">};</span>
-</code></pre></div>
-<hr />
-<h2 id="layout-template">Layout template<a class="headerlink" href="#layout-template" title="Permanent link">&para;</a></h2>
-<p>The standard layout is a full-viewport split: 3D canvas on the left, narrow control panel on the right. See <code>linear-combination-3d.html</code> for the reference implementation.</p>
-<p>Panel width: <code>270px</code>. Panel background: <code>#f6f8fa</code>. Canvas background: <code>#ffffff</code>.</p>
-<p>Use a <strong>white</strong> page background so the visualizations sit cleanly inside the MkDocs wiki pages. Color choices for UI chrome:</p>
-<table>
-<thead>
-<tr>
-<th>Element</th>
-<th>Hex</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Page / canvas background</td>
-<td><code>#ffffff</code></td>
-</tr>
-<tr>
-<td>Panel background</td>
-<td><code>#f6f8fa</code></td>
-</tr>
-<tr>
-<td>Borders / dividers</td>
-<td><code>#d0d7de</code></td>
-</tr>
-<tr>
-<td>Primary text</td>
-<td><code>#1f2328</code></td>
-</tr>
-<tr>
-<td>Muted / label text</td>
-<td><code>#656d76</code></td>
-</tr>
-<tr>
-<td>Result box background</td>
-<td><code>#f6f8fa</code></td>
-</tr>
-</tbody>
-</table>
-<p>Three.js scene:
-- <code>scene.background = new THREE.Color(0xffffff)</code>
-- <code>GridHelper(…, 0xe0e0e0, 0xd0d0d0)</code> — light gray lines, visible on white</p>
-<hr />
-<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
-<p>The visualizations are automatically included when the deploy script runs — no extra steps needed beyond running <code>convert_to_wiki.py</code> and <code>deploy_wiki_to_personal_site.ps1</code> as usual.</p>
-<p>Live base URL: <code>https://jakobscholbach.github.io/lectures/linear-algebra/visualizations/</code></p>
+  <h1>PRD</h1>
+
+<p>PRD</p>
+<ul>
+<li>Create interactive visualizations as follows. All such visualizations follow the general instructions in <code>wiki\docs\visualizations\guidelines.md</code>.</li>
+<li>The resulting html files are placed in <code>C:\Users\wohnu\Documents\git repos\lectures\linear-algebra\wiki\docs\visualizations</code></li>
+<li>
+<p>The user should be able to "edit" coordinates of vectors by dragging the tip.</p>
+</li>
+<li>
+<p>In 3D, a plane is shown with two orthonormal vectors spanning them (also shown). Then another vector <span class="arithmatex">\(w\)</span> is shown (not in this plane), together with the orthogonal complement of the plane and the projections of <span class="arithmatex">\(w\)</span> onto the plane and onto its orthogonal complement. The vectors should be "editable" by dragging their tips. The entire thing can be rotated with the mouse.</p>
+</li>
+<li>
+<p>In 2D, a line (through the origin) and its orthogonal complement are shown. A vector <span class="arithmatex">\(v\)</span> not on the line is shown. The user can click on the line, say point <span class="arithmatex">\(p\)</span> and the illustration computes the distance of the point <span class="arithmatex">\(v\)</span> to the <span class="arithmatex">\(p\)</span>. If it is closest point, this will be shown. Also the angle of the line and the line segment <span class="arithmatex">\(pv\)</span> is computed and shown. The effect should be a big magnetic, so if the user clicks slightly away from the closest point, it "corrects" it and puts it to where the closest point is actually.</p>
+</li>
+<li>
+<p>In 3D, initially 3 vectors are shown. The user can add or remove vectors (always at least one vector). It is always shown whether the vectors are linearly independent / span R^3 / form a basis. </p>
+</li>
+<li>
+<p>In 3D, two vectors v1 and v2 spanning a plane V subset R^3 are shown. A vector w not in W is shown. Two sliders allow to change the coefficients of the linear combination. It is always shown that a1 v1 + a2 v2 is not equal to w. The purpose is to highlight that the system Ax = w is inconsistent.</p>
+</li>
+</ul>
 
 
 

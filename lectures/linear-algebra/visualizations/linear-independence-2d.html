@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Linear Independence in ℝ²</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #1f2328;
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    #canvas-wrap { flex: 1; min-width: 0; }
+    canvas { display: block; }
+    #panel {
+      width: 270px; flex-shrink: 0;
+      background: #f6f8fa; border-left: 1px solid #d0d7de;
+      padding: 16px; display: flex; flex-direction: column; gap: 14px;
+      overflow-y: auto; font-size: 0.875rem;
+    }
+    h1 { font-size: 1rem; font-weight: 600; }
+    .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
+    hr { border: none; border-top: 1px solid #d0d7de; }
+    .row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .vname { font-weight: 700; min-width: 24px; }
+    .vval { font-family: monospace; font-size: 0.78rem; color: #656d76; }
+    .status-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.82rem; line-height: 2;
+    }
+    .check { color: #009246; font-weight: 700; }
+    .cross { color: #bc1e47; font-weight: 700; }
+    .det-box { font-family: monospace; font-size: 0.82rem; color: #1f2328; }
+    .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap">
+  <canvas id="canvas"></canvas>
+</div>
+
+<div id="panel">
+  <div>
+    <h1>Linear Independence</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">Two vectors in ℝ²</div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Vectors</div>
+    <div class="row">
+      <span class="vname" style="color:#bc1e47">v₁</span>
+      <span class="vval" id="coord0">—</span>
+    </div>
+    <div class="row">
+      <span class="vname" style="color:#0081cd">v₂</span>
+      <span class="vval" id="coord1">—</span>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Determinant</div>
+    <div class="det-box" id="det-box">—</div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Status</div>
+    <div id="status-box" class="status-box">—</div>
+  </div>
+  <hr>
+  <div>
+    <p class="hint">
+      Drag <span style="color:#bc1e47">●</span> to move v₁<br>
+      Drag <span style="color:#0081cd">●</span> to move v₂
+    </p>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx    = canvas.getContext('2d');
+const wrap   = document.getElementById('canvas-wrap');
+
+const COLORS = ['#bc1e47', '#0081cd'];
+const NAMES  = ['v₁', 'v₂'];
+
+let vectors = [
+  { x: 2, y: 1 },
+  { x: 0.5, y: 2 },
+];
+
+let S   = 80;
+let cx0 = 0;
+let cy0 = 0;
+
+function resize() {
+  canvas.width  = wrap.clientWidth;
+  canvas.height = wrap.clientHeight;
+  S   = Math.min(canvas.width, canvas.height) / 9;
+  cx0 = canvas.width  / 2;
+  cy0 = canvas.height / 2;
+  draw();
+}
+
+const toC = (wx, wy) => [cx0 + wx * S, cy0 - wy * S];
+const toW = (px, py) => [(px - cx0) / S, -(py - cy0) / S];
+
+function det2(v1, v2) {
+  return v1.x * v2.y - v1.y * v2.x;
+}
+
+function drawArrow(wx1, wy1, wx2, wy2, color, lw) {
+  const [x1, y1] = toC(wx1, wy1), [x2, y2] = toC(wx2, wy2);
+  const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy);
+  if (len < 5) return;
+  const ux = dx / len, uy = dy / len;
+  const hl = Math.min(len * 0.22, 16), ha = 0.45;
+  ctx.save();
+  ctx.strokeStyle = color; ctx.lineWidth = lw;
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(ha)  - uy*Math.sin(ha)),  y2 - hl*(uy*Math.cos(ha)  + ux*Math.sin(ha)));
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(-ha) - uy*Math.sin(-ha)), y2 - hl*(uy*Math.cos(-ha) + ux*Math.sin(-ha)));
+  ctx.stroke(); ctx.restore();
+}
+
+function drawDot(px, py, r, fill) {
+  ctx.save();
+  ctx.beginPath(); ctx.arc(px, py, r, 0, Math.PI * 2);
+  ctx.fillStyle = fill; ctx.fill();
+  ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.restore();
+}
+
+function draw() {
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+
+  // Grid lines
+  const step = S;
+  for (let x = cx0 % step; x < W; x += step) {
+    ctx.save(); ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H);
+    ctx.strokeStyle = '#e8e8e8'; ctx.lineWidth = 1; ctx.stroke(); ctx.restore();
+  }
+  for (let y = cy0 % step; y < H; y += step) {
+    ctx.save(); ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y);
+    ctx.strokeStyle = '#e8e8e8'; ctx.lineWidth = 1; ctx.stroke(); ctx.restore();
+  }
+  ctx.save(); ctx.beginPath(); ctx.moveTo(0, cy0); ctx.lineTo(W, cy0);
+  ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+  ctx.save(); ctx.beginPath(); ctx.moveTo(cx0, 0); ctx.lineTo(cx0, H);
+  ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+
+  const v1 = vectors[0], v2 = vectors[1];
+  const d = det2(v1, v2);
+  const indep = Math.abs(d) > 0.05;
+
+  if (indep) {
+    // Filled parallelogram spanned by v1, v2
+    const [ox, oy] = toC(0, 0);
+    const [ax, ay] = toC(v1.x, v1.y);
+    const [bx, by] = toC(v2.x, v2.y);
+    const [cx2, cy2] = toC(v1.x + v2.x, v1.y + v2.y);
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(ox, oy); ctx.lineTo(ax, ay);
+    ctx.lineTo(cx2, cy2); ctx.lineTo(bx, by);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(254,194,71,0.18)';
+    ctx.fill();
+    ctx.setLineDash([5, 4]);
+    ctx.strokeStyle = 'rgba(254,194,71,0.65)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.restore();
+  } else {
+    // Dependent: draw the line spanned by the nonzero vector
+    const ref = Math.hypot(v1.x, v1.y) > 1e-6 ? v1 : v2;
+    const rlen = Math.hypot(ref.x, ref.y);
+    if (rlen > 1e-6) {
+      const ext = Math.max(W, H) / S * 0.65;
+      const nx = ref.x / rlen, ny = ref.y / rlen;
+      const [l1x, l1y] = toC(-nx * ext, -ny * ext);
+      const [l2x, l2y] = toC( nx * ext,  ny * ext);
+      ctx.save();
+      ctx.beginPath(); ctx.moveTo(l1x, l1y); ctx.lineTo(l2x, l2y);
+      ctx.strokeStyle = 'rgba(254,194,71,0.65)'; ctx.lineWidth = 3;
+      ctx.setLineDash([8, 5]);
+      ctx.stroke(); ctx.restore();
+    }
+  }
+
+  // Draw vectors
+  drawArrow(0, 0, v1.x, v1.y, COLORS[0], 2.5);
+  drawArrow(0, 0, v2.x, v2.y, COLORS[1], 2.5);
+
+  // Tip handles and labels
+  vectors.forEach((v, i) => {
+    const [vx, vy] = toC(v.x, v.y);
+    drawDot(vx, vy, 8, COLORS[i]);
+    ctx.save();
+    ctx.fillStyle = COLORS[i];
+    ctx.font = 'bold italic 14px serif';
+    ctx.fillText(NAMES[i], vx + 10, vy - 6);
+    ctx.restore();
+  });
+
+  // Origin dot
+  const [ox, oy] = toC(0, 0);
+  ctx.save(); ctx.beginPath(); ctx.arc(ox, oy, 3.5, 0, Math.PI * 2);
+  ctx.fillStyle = '#444'; ctx.fill(); ctx.restore();
+
+  // Panel updates
+  vectors.forEach((v, i) => {
+    document.getElementById(`coord${i}`).textContent = `(${v.x.toFixed(2)}, ${v.y.toFixed(2)})`;
+  });
+
+  document.getElementById('det-box').textContent =
+    `det[v₁ v₂] = ${d.toFixed(3)}`;
+
+  const ck = ok => ok ? '<span class="check">✓</span>' : '<span class="cross">✗</span>';
+  document.getElementById('status-box').innerHTML =
+    `<div>${ck(indep)} Linearly independent</div>` +
+    `<div>${ck(indep)} Span ℝ²</div>` +
+    `<div>${ck(indep)} Basis of ℝ²</div>`;
+}
+
+// ── Drag interaction ──────────────────────────────────────────────────────────
+
+let drag = -1;
+
+function nearHandle(mx, my) {
+  for (let i = 0; i < vectors.length; i++) {
+    const [vx, vy] = toC(vectors[i].x, vectors[i].y);
+    if (Math.hypot(mx - vx, my - vy) < 14) return i;
+  }
+  return -1;
+}
+
+canvas.addEventListener('mousemove', e => {
+  const r  = canvas.getBoundingClientRect();
+  const mx = e.clientX - r.left, my = e.clientY - r.top;
+  if (drag >= 0) {
+    const [wx, wy] = toW(mx, my);
+    vectors[drag].x = wx;
+    vectors[drag].y = wy;
+    draw();
+    return;
+  }
+  canvas.style.cursor = nearHandle(mx, my) >= 0 ? 'grab' : '';
+});
+
+canvas.addEventListener('mousedown', e => {
+  const r  = canvas.getBoundingClientRect();
+  const mx = e.clientX - r.left, my = e.clientY - r.top;
+  const h = nearHandle(mx, my);
+  if (h >= 0) {
+    drag = h;
+    canvas.style.cursor = 'grabbing';
+    e.preventDefault();
+  }
+});
+
+canvas.addEventListener('mouseup',    () => { drag = -1; canvas.style.cursor = ''; });
+canvas.addEventListener('mouseleave', () => { drag = -1; });
+
+window.addEventListener('resize', resize);
+resize();
+</script>
+</body>
+</html>

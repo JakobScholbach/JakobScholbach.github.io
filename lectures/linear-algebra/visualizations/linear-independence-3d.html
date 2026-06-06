@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Linear Independence in ℝ³</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #1f2328;
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    #canvas-wrap { flex: 1; min-width: 0; }
+    #panel {
+      width: 270px; flex-shrink: 0;
+      background: #f6f8fa; border-left: 1px solid #d0d7de;
+      padding: 16px; display: flex; flex-direction: column; gap: 14px;
+      overflow-y: auto; font-size: 0.875rem;
+    }
+    h1 { font-size: 1rem; font-weight: 600; }
+    .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
+    hr { border: none; border-top: 1px solid #d0d7de; }
+    .row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .vname { font-weight: 700; min-width: 24px; }
+    .vval { font-family: monospace; font-size: 0.78rem; color: #656d76; }
+    .status-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.82rem; line-height: 2;
+    }
+    .check { color: #009246; font-weight: 700; }
+    .cross { color: #bc1e47; font-weight: 700; }
+    button {
+      padding: 4px 10px; border: 1px solid #d0d7de; border-radius: 4px;
+      background: #fff; cursor: pointer; font-size: 0.82rem; color: #1f2328;
+    }
+    button:hover:not(:disabled) { background: #f0f0f0; }
+    button:disabled { opacity: 0.4; cursor: default; }
+    .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap"></div>
+
+<div id="panel">
+  <div>
+    <h1>Linear Independence</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">Vectors in ℝ³</div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Vectors</div>
+    <div id="vec-list"></div>
+    <div style="display:flex;gap:6px;margin-top:10px">
+      <button id="btn-add">+ Add</button>
+      <button id="btn-remove">− Remove last</button>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Status</div>
+    <div id="status-box" class="status-box">—</div>
+  </div>
+  <hr>
+  <div>
+    <p class="hint">
+      Drag colored sphere at vector tip to move it<br>
+      Drag background to orbit &nbsp;·&nbsp; scroll to zoom<br>
+      Axes: <span style="color:#ff4444">x</span>&nbsp;<span style="color:#44cc44">y</span>&nbsp;<span style="color:#4488ff">z</span>
+    </p>
+  </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const PALETTE     = [0xbc1e47, 0x0081cd, 0x009246, 0xfec247, 0x7c3aed, 0xe06b00];
+const PALETTE_CSS = ['#bc1e47', '#0081cd', '#009246', '#fec247', '#7c3aed', '#e06b00'];
+const NAMES       = ['v₁', 'v₂', 'v₃', 'v₄', 'v₅', 'v₆'];
+const MAX_VECS    = PALETTE.length;
+
+const wrap = document.getElementById('canvas-wrap');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+wrap.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xffffff);
+
+const camera = new THREE.PerspectiveCamera(50, wrap.clientWidth / wrap.clientHeight, 0.01, 200);
+camera.position.set(4, 5, 6);
+camera.lookAt(0, 0, 0);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.07;
+
+scene.add(new THREE.AxesHelper(3.5));
+scene.add(new THREE.GridHelper(8, 8, 0xe0e0e0, 0xd0d0d0));
+
+const O = new THREE.Vector3();
+
+// Initial vectors — standard basis (a basis of ℝ³)
+let vectors = [
+  new THREE.Vector3(1, 0, 0),
+  new THREE.Vector3(0, 1, 0),
+  new THREE.Vector3(0, 0, 1),
+];
+
+// Dynamic scene objects (arrows, span surfaces)
+let dyn = [];
+const clearDyn = () => { dyn.forEach(o => scene.remove(o)); dyn = []; };
+const addObj   = obj => { if (obj) { scene.add(obj); dyn.push(obj); } };
+
+// Sphere handles at vector tips — rebuilt on add/remove
+const hGeo = new THREE.SphereGeometry(0.13, 12, 8);
+let handles = [];
+
+function rebuildHandles() {
+  handles.forEach(h => scene.remove(h));
+  handles = vectors.map((v, i) => {
+    const h = new THREE.Mesh(hGeo, new THREE.MeshBasicMaterial({ color: PALETTE[i] }));
+    h.userData.index = i;
+    h.position.copy(v);
+    scene.add(h);
+    return h;
+  });
+}
+
+function makeArrow(from, to, color) {
+  const d = new THREE.Vector3().subVectors(to, from);
+  const len = d.length();
+  if (len < 1e-6) return null;
+  const hl = Math.min(len * 0.22, 0.35);
+  return new THREE.ArrowHelper(d.normalize(), from, len, color, hl, hl * 0.55);
+}
+
+function makeSpanPlane(u, v) {
+  if (u.clone().cross(v).length() < 1e-6) return null;
+  const N = 24, R = 2.8, pos = [], idx = [];
+  for (let i = 0; i <= N; i++) for (let j = 0; j <= N; j++) {
+    const s = -R + 2*R*i/N, t = -R + 2*R*j/N;
+    pos.push(s*u.x+t*v.x, s*u.y+t*v.y, s*u.z+t*v.z);
+  }
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+    const a = i*(N+1)+j, b=a+1, c=a+N+1, d=c+1;
+    idx.push(a,b,c, b,d,c);
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setIndex(idx);
+  return new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
+    color: 0xfec247, transparent: true, opacity: 0.12, side: THREE.DoubleSide, depthWrite: false,
+  }));
+}
+
+// Gaussian elimination rank
+function computeRank(vecs) {
+  if (!vecs.length) return 0;
+  const M = vecs.map(v => [v.x, v.y, v.z]);
+  const rows = M.length;
+  let r = 0;
+  for (let col = 0; col < 3 && r < rows; col++) {
+    let pivRow = -1, pivAbs = 0;
+    for (let row = r; row < rows; row++) {
+      if (Math.abs(M[row][col]) > pivAbs) { pivAbs = Math.abs(M[row][col]); pivRow = row; }
+    }
+    if (pivAbs < 1e-9) continue;
+    [M[r], M[pivRow]] = [M[pivRow], M[r]];
+    const s = M[r][col];
+    for (let row = 0; row < rows; row++) {
+      if (row === r) continue;
+      const f = M[row][col] / s;
+      for (let c = 0; c < 3; c++) M[row][c] -= f * M[r][c];
+    }
+    r++;
+  }
+  return r;
+}
+
+function update() {
+  clearDyn();
+
+  const n  = vectors.length;
+  const rk = computeRank(vectors);
+
+  // Draw span surface for exactly 2 linearly independent vectors
+  if (n === 2 && rk === 2) addObj(makeSpanPlane(vectors[0], vectors[1]));
+  // For 3+ vectors with rank 2, show the span plane of the first independent pair found
+  if (n >= 3 && rk === 2) {
+    outer: for (let i = 0; i < n - 1; i++) for (let j = i+1; j < n; j++) {
+      if (vectors[i].clone().cross(vectors[j]).length() > 1e-6) {
+        addObj(makeSpanPlane(vectors[i], vectors[j])); break outer;
+      }
+    }
+  }
+
+  // Draw arrows
+  vectors.forEach((v, i) => {
+    addObj(makeArrow(O, v, PALETTE[i]));
+    handles[i].position.copy(v);
+  });
+
+  // Panel — vector coordinates
+  const f = x => x.toFixed(2);
+  document.getElementById('vec-list').innerHTML = vectors.map((v, i) =>
+    `<div class="row">
+      <span class="vname" style="color:${PALETTE_CSS[i]}">${NAMES[i]}</span>
+      <span class="vval">(${f(v.x)}, ${f(v.y)}, ${f(v.z)})</span>
+    </div>`
+  ).join('');
+
+  // Status
+  const indep   = rk === n;
+  const spansR3 = rk === 3;
+  const isBasis = indep && spansR3;
+  const ck = ok => ok ? '<span class="check">✓</span>' : '<span class="cross">✗</span>';
+
+  document.getElementById('status-box').innerHTML =
+    `<div style="color:#656d76;margin-bottom:2px;font-size:0.78rem">` +
+      `${n} vector${n > 1 ? 's' : ''} &nbsp;|&nbsp; rank = ${rk}` +
+    `</div>` +
+    `<div>${ck(indep)} Linearly independent</div>` +
+    `<div>${ck(spansR3)} Span ℝ³</div>` +
+    `<div>${ck(isBasis)} Basis of ℝ³</div>`;
+
+  document.getElementById('btn-remove').disabled = n <= 1;
+  document.getElementById('btn-add').disabled    = n >= MAX_VECS;
+}
+
+// Default vectors to add (4th, 5th, 6th)
+const ADD_DEFAULTS = [
+  new THREE.Vector3(1, 1, 0),
+  new THREE.Vector3(0, 1, 1),
+  new THREE.Vector3(1, 0, 1),
+];
+
+document.getElementById('btn-add').addEventListener('click', () => {
+  if (vectors.length >= MAX_VECS) return;
+  const v = ADD_DEFAULTS[vectors.length - 3] ?? new THREE.Vector3(0.5, 0.5, 0.5);
+  vectors.push(v.clone());
+  rebuildHandles();
+  update();
+});
+
+document.getElementById('btn-remove').addEventListener('click', () => {
+  if (vectors.length <= 1) return;
+  vectors.pop();
+  rebuildHandles();
+  update();
+});
+
+// Drag
+const rc = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+const dragPlane = new THREE.Plane();
+let dragIdx = -1, hovering = false;
+
+const toNDC = e => {
+  const r = renderer.domElement.getBoundingClientRect();
+  return new THREE.Vector2(
+    ((e.clientX - r.left) / r.width)  *  2 - 1,
+    ((e.clientY - r.top)  / r.height) * -2 + 1,
+  );
+};
+
+renderer.domElement.addEventListener('mousemove', e => {
+  mouse.copy(toNDC(e));
+  rc.setFromCamera(mouse, camera);
+  if (dragIdx >= 0) {
+    const pt = new THREE.Vector3();
+    if (rc.ray.intersectPlane(dragPlane, pt)) { vectors[dragIdx].copy(pt); update(); }
+    return;
+  }
+  const hit = rc.intersectObjects(handles).length > 0;
+  if (hit !== hovering) {
+    hovering = hit;
+    renderer.domElement.style.cursor = hit ? 'grab' : '';
+  }
+});
+
+renderer.domElement.addEventListener('mousedown', e => {
+  mouse.copy(toNDC(e));
+  rc.setFromCamera(mouse, camera);
+  const hits = rc.intersectObjects(handles);
+  if (!hits.length) return;
+  dragIdx = hits[0].object.userData.index;
+  controls.enabled = false;
+  renderer.domElement.style.cursor = 'grabbing';
+  const camDir = new THREE.Vector3();
+  camera.getWorldDirection(camDir);
+  dragPlane.setFromNormalAndCoplanarPoint(camDir, hits[0].point);
+  e.preventDefault();
+});
+
+renderer.domElement.addEventListener('mouseup', () => {
+  if (dragIdx < 0) return;
+  dragIdx = -1;
+  controls.enabled = true;
+  renderer.domElement.style.cursor = hovering ? 'grab' : '';
+});
+
+renderer.domElement.addEventListener('mouseleave', () => {
+  dragIdx = -1;
+  controls.enabled = true;
+  hovering = false;
+});
+
+window.addEventListener('resize', () => {
+  camera.aspect = wrap.clientWidth / wrap.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+rebuildHandles();
+update();
+animate();
+</script>
+</body>
+</html>

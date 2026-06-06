@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Orthogonal Projection in ℝ³</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #1f2328;
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    #canvas-wrap { flex: 1; min-width: 0; }
+    #panel {
+      width: 270px; flex-shrink: 0;
+      background: #f6f8fa; border-left: 1px solid #d0d7de;
+      padding: 16px; display: flex; flex-direction: column; gap: 14px;
+      overflow-y: auto; font-size: 0.875rem;
+    }
+    h1 { font-size: 1rem; font-weight: 600; }
+    .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
+    hr { border: none; border-top: 1px solid #d0d7de; }
+    .row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .vname { font-weight: 700; min-width: 20px; }
+    .vval { font-family: monospace; font-size: 0.78rem; color: #656d76; }
+    .proj-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.82rem; line-height: 1.9;
+    }
+    .legend { display: flex; flex-direction: column; gap: 5px; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; }
+    .sw { width: 16px; height: 4px; border-radius: 2px; flex-shrink: 0; }
+    .sw-dash { width: 16px; height: 0; border-top: 2px dashed #888; flex-shrink: 0; opacity: 0.6; }
+    .hint { font-size: 0.72rem; color: #656d76; margin-top: 6px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap"></div>
+
+<div id="panel">
+  <div>
+    <h1>Orthogonal Projection</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">w = proj<sub>V</sub>w + proj<sub>V<sup>⊥</sup></sub>w</div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Plane V = span{e₁, e₂}</div>
+    <div class="row"><span class="vname" style="color:#bc1e47">e₁</span><span class="vval" id="e1v">—</span></div>
+    <div class="row"><span class="vname" style="color:#0081cd">e₂</span><span class="vval" id="e2v">—</span></div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Vector w (not in V)</div>
+    <div class="row"><span class="vname" style="color:#7c3aed">w</span><span class="vval" id="wv">—</span></div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Decomposition</div>
+    <div class="proj-box" id="pbox"></div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Legend</div>
+    <div class="legend">
+      <div class="legend-item"><div class="sw" style="background:#bc1e47"></div><span>e₁ (basis of V)</span></div>
+      <div class="legend-item"><div class="sw" style="background:#0081cd"></div><span>e₂ (basis of V)</span></div>
+      <div class="legend-item"><div class="sw" style="background:#7c3aed"></div><span>w</span></div>
+      <div class="legend-item"><div class="sw" style="background:#009246"></div><span>proj<sub>V</sub>(w)</span></div>
+      <div class="legend-item"><div class="sw" style="background:#fec247"></div><span>proj<sub>V⊥</sub>(w)</span></div>
+      <div class="legend-item"><div class="sw-dash"></div><span>V⊥ axis / construction</span></div>
+      <div class="legend-item">
+        <div style="width:14px;height:10px;background:#fec247;opacity:0.22;border:1px solid #e0a800;flex-shrink:0;border-radius:1px"></div>
+        <span>plane V</span>
+      </div>
+    </div>
+    <p class="hint">
+      Drag colored sphere at vector tip to move it<br>
+      Drag background to orbit &nbsp;·&nbsp; scroll to zoom<br>
+      Axes: <span style="color:#ff4444">x</span>&nbsp;<span style="color:#44cc44">y</span>&nbsp;<span style="color:#4488ff">z</span>
+    </p>
+  </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const C = {
+  red:    0xbc1e47,
+  blue:   0x0081cd,
+  green:  0x009246,
+  yellow: 0xfec247,
+  gray:   0x888888,
+  purple: 0x7c3aed,
+};
+
+const wrap = document.getElementById('canvas-wrap');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+wrap.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xffffff);
+
+const camera = new THREE.PerspectiveCamera(50, wrap.clientWidth / wrap.clientHeight, 0.01, 200);
+camera.position.set(4, 5, 6);
+camera.lookAt(0, 0, 0);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.07;
+
+scene.add(new THREE.AxesHelper(3.5));
+scene.add(new THREE.GridHelper(8, 8, 0xe0e0e0, 0xd0d0d0));
+
+const O = new THREE.Vector3();
+let e1 = new THREE.Vector3(1, 0, 0);
+let e2 = new THREE.Vector3(0, 1, 0);
+let w  = new THREE.Vector3(1, 1, 2);
+
+let dyn = [];
+const clearDyn = () => { dyn.forEach(o => scene.remove(o)); dyn = []; };
+const addObj   = obj => { if (obj) { scene.add(obj); dyn.push(obj); } };
+
+function makeArrow(from, to, color, opacity = 1) {
+  const d = new THREE.Vector3().subVectors(to, from);
+  const len = d.length();
+  if (len < 1e-6) return null;
+  const hl = Math.min(len * 0.22, 0.35);
+  const a = new THREE.ArrowHelper(d.normalize(), from, len, color, hl, hl * 0.55);
+  if (opacity < 1) {
+    [a.line.material, a.cone.material].forEach(m => { m.transparent = true; m.opacity = opacity; });
+  }
+  return a;
+}
+
+function makeDash(from, to, color, opacity = 0.55) {
+  const geo = new THREE.BufferGeometry().setFromPoints([from.clone(), to.clone()]);
+  const mat = new THREE.LineDashedMaterial({ color, dashSize: 0.12, gapSize: 0.06, opacity, transparent: true });
+  const l = new THREE.Line(geo, mat);
+  l.computeLineDistances();
+  return l;
+}
+
+function makeSpanPlane(u, v) {
+  if (u.clone().cross(v).length() < 1e-6) return null;
+  const N = 28, R = 2.8, pos = [], idx = [];
+  for (let i = 0; i <= N; i++) for (let j = 0; j <= N; j++) {
+    const s = -R + 2*R*i/N, t = -R + 2*R*j/N;
+    pos.push(s*u.x+t*v.x, s*u.y+t*v.y, s*u.z+t*v.z);
+  }
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+    const a = i*(N+1)+j, b=a+1, c=a+N+1, d=c+1;
+    idx.push(a,b,c, b,d,c);
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setIndex(idx);
+  return new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
+    color: C.yellow, transparent: true, opacity: 0.12, side: THREE.DoubleSide, depthWrite: false,
+  }));
+}
+
+function makeRightAngle(corner, perpDir, inPlaneDir, size = 0.18) {
+  const p = perpDir.clone().normalize().multiplyScalar(size);
+  const q = inPlaneDir.clone().normalize().multiplyScalar(size);
+  const pts = [corner.clone().add(p), corner.clone().add(p).add(q), corner.clone().add(q)];
+  return new THREE.Line(
+    new THREE.BufferGeometry().setFromPoints(pts),
+    new THREE.LineBasicMaterial({ color: C.gray, opacity: 0.5, transparent: true })
+  );
+}
+
+// Persistent drag handles — small colored spheres at vector tips
+const hGeo = new THREE.SphereGeometry(0.13, 12, 8);
+const mkHandle = (color, type) => {
+  const h = new THREE.Mesh(hGeo, new THREE.MeshBasicMaterial({ color }));
+  h.userData.type = type;
+  scene.add(h);
+  return h;
+};
+const H = { e1: mkHandle(C.red, 'e1'), e2: mkHandle(C.blue, 'e2'), w: mkHandle(C.purple, 'w') };
+const hList = Object.values(H);
+
+function update() {
+  clearDyn();
+
+  const n    = e1.clone().cross(e2).normalize();
+  const projV = e1.clone().multiplyScalar(w.dot(e1)).add(e2.clone().multiplyScalar(w.dot(e2)));
+  const projP = w.clone().sub(projV);
+
+  addObj(makeSpanPlane(e1, e2));
+  addObj(makeDash(n.clone().multiplyScalar(-2.5), n.clone().multiplyScalar(2.5), C.gray, 0.35));
+
+  addObj(makeArrow(O, e1, C.red));
+  addObj(makeArrow(O, e2, C.blue));
+  addObj(makeArrow(O, w,  C.purple));
+  if (projV.length() > 1e-6) addObj(makeArrow(O, projV, C.green));
+  if (projP.length() > 1e-6) addObj(makeArrow(O, projP, C.yellow));
+
+  // Decomposition construction lines
+  addObj(makeDash(projV, w, C.gray));
+  addObj(makeDash(projP, w, C.gray));
+
+  // Right-angle marker at the foot of the perpendicular
+  if (projV.length() > 1e-6 && projP.length() > 1e-6)
+    addObj(makeRightAngle(projV, projP.clone(), e1.clone()));
+
+  H.e1.position.copy(e1);
+  H.e2.position.copy(e2);
+  H.w.position.copy(w);
+
+  const f = x => x.toFixed(2);
+  document.getElementById('e1v').textContent = `(${f(e1.x)}, ${f(e1.y)}, ${f(e1.z)})`;
+  document.getElementById('e2v').textContent = `(${f(e2.x)}, ${f(e2.y)}, ${f(e2.z)})`;
+  document.getElementById('wv').textContent  = `(${f(w.x)}, ${f(w.y)}, ${f(w.z)})`;
+  document.getElementById('pbox').innerHTML =
+    `<div><span style="color:#009246">proj<sub>V</sub>(w)</span> &nbsp;= (${f(projV.x)}, ${f(projV.y)}, ${f(projV.z)})</div>` +
+    `<div><span style="color:#fec247">proj<sub>V⊥</sub>(w)</span> = (${f(projP.x)}, ${f(projP.y)}, ${f(projP.z)})</div>`;
+}
+
+// Drag state
+const rc = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+const dragPlane = new THREE.Plane();
+let dragType = null, hovering = false;
+
+const toNDC = e => {
+  const r = renderer.domElement.getBoundingClientRect();
+  return new THREE.Vector2(
+    ((e.clientX - r.left) / r.width)  *  2 - 1,
+    ((e.clientY - r.top)  / r.height) * -2 + 1,
+  );
+};
+
+renderer.domElement.addEventListener('mousemove', e => {
+  mouse.copy(toNDC(e));
+  rc.setFromCamera(mouse, camera);
+
+  if (dragType) {
+    if (dragType === 'w') {
+      const pt = new THREE.Vector3();
+      if (rc.ray.intersectPlane(dragPlane, pt)) { w.copy(pt); update(); }
+    } else {
+      // Constrain e1/e2 to unit sphere via closest-point-on-ray approach
+      const closest = new THREE.Vector3();
+      rc.ray.closestPointToPoint(O, closest);
+      if (closest.length() < 0.01) return;
+
+      if (dragType === 'e1') {
+        e1.copy(closest).normalize();
+        // Gram-Schmidt: reorthogonalize e2 w.r.t. new e1
+        e2.sub(e1.clone().multiplyScalar(e2.dot(e1)));
+        if (e2.length() < 1e-6) {
+          const tmp = Math.abs(e1.x) < 0.9 ? new THREE.Vector3(1,0,0) : new THREE.Vector3(0,1,0);
+          e2.copy(tmp).sub(e1.clone().multiplyScalar(tmp.dot(e1)));
+        }
+        e2.normalize();
+      } else {
+        // e2: project onto e1-perpendicular subspace, then normalize
+        const perp = closest.clone().sub(e1.clone().multiplyScalar(closest.dot(e1)));
+        if (perp.length() < 0.01) return;
+        e2.copy(perp).normalize();
+      }
+      update();
+    }
+    return;
+  }
+
+  // Hover cursor
+  const hit = rc.intersectObjects(hList).length > 0;
+  if (hit !== hovering) {
+    hovering = hit;
+    renderer.domElement.style.cursor = hit ? 'grab' : '';
+  }
+});
+
+renderer.domElement.addEventListener('mousedown', e => {
+  mouse.copy(toNDC(e));
+  rc.setFromCamera(mouse, camera);
+  const hits = rc.intersectObjects(hList);
+  if (!hits.length) return;
+  dragType = hits[0].object.userData.type;
+  controls.enabled = false;
+  renderer.domElement.style.cursor = 'grabbing';
+  const camDir = new THREE.Vector3();
+  camera.getWorldDirection(camDir);
+  dragPlane.setFromNormalAndCoplanarPoint(camDir, hits[0].point);
+  e.preventDefault();
+});
+
+renderer.domElement.addEventListener('mouseup', () => {
+  if (!dragType) return;
+  dragType = null;
+  controls.enabled = true;
+  renderer.domElement.style.cursor = hovering ? 'grab' : '';
+});
+
+renderer.domElement.addEventListener('mouseleave', () => {
+  dragType = null;
+  controls.enabled = true;
+  hovering = false;
+  renderer.domElement.style.cursor = '';
+});
+
+window.addEventListener('resize', () => {
+  camera.aspect = wrap.clientWidth / wrap.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+update();
+animate();
+</script>
+</body>
+</html>

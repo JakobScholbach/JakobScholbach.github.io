@@ -1,0 +1,2915 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wiki generated from LaTeX lecture notes">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Interactive Linear Algebra - Interactive Demo List - Linear Algebra Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#interactive-linear-algebra-interactive-demo-list" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Linear Algebra Wiki" class="md-header__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interactive Linear Algebra - Interactive Demo List
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Linear Algebra Wiki" class="md-nav__button md-logo" aria-label="Linear Algebra Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Complex Numbers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Complex Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises-c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions-complex-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Systems of Linear Equations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems-linear-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems-elementary-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elementary Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems-gaussian-elimination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gaussian Elimination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions-systems-of-linear-equations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vector Spaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spaces-R2R3Rn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R², R³ and Rⁿ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spaces-definition-solution-of-homogeneous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution Sets of Homogeneous Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spaces-intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intersections of Subspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spaces-further-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Further Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spaces-linear-combinations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Combinations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spaces-linear-independence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Independence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spaces-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spaces-dimension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimension
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions-vector-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linear Maps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps-definition-and-first-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definition and First Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps-multiplication-of-a-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrix-Vector Multiplication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps-kernel-and-image-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel and Image (1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps-kernel-and-image-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel and Image (2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps-revisiting-linear-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Revisiting Linear Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps-linear-maps-defined-on-basis-vectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Maps on Basis Vectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps-matrices-associated-to-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrices of Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps-composing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composing Linear Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps-inverses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inverses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps-change-of-basis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change of Basis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps-transpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transposition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions-linear-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Determinants
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../determinants-determinants-of-2-x-2-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2×2 Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../determinants-determinants-of-larger-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinants of Larger Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../determinants-invertibility-and-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Invertibility and Determinants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../determinants-further-properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Further Properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions-determinants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Eigenvalues and Eigenvectors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eigenvalues-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eigenvalues-characteristic-polynomial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characteristic Polynomial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eigenvalues-eigenspaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eigenspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eigenvalues-diagonalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagonalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises-eigenvalues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions-eigenvalues-and-eigenvectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Euclidean Spaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../euclid-scalar-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scalar Product on Rⁿ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../euclid-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Euclidean Spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../euclid-orthogonal-and-symmetric-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orthogonal and Symmetric Matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../euclid-affine-subspaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Affine Subspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../euclid-distances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../euclid-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises-euclid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solutions-euclidean-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations-algebra-systems-of-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations: Algebra - Systems of Linear Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations-algebra-row-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations: Algebra - Row Reduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations-algebra-parametric-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations: Algebra - Parametric Form
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations-geometry-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations: Geometry - Vectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations-geometry-vector-equations-and-spans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations: Geometry - Vector Equations and Spans
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations-geometry-matrix-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations: Geometry - Matrix Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations-geometry-solution-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations: Geometry - Solution Sets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations-geometry-linear-independence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations: Geometry - Linear Independence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations-geometry-basis-and-dimension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations: Geometry - Basis and Dimension
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations-geometry-bases-as-coordinate-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations: Geometry - Bases as Coordinate Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems-of-linear-equations-geometry-the-rank-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems of Linear Equations: Geometry - The Rank Theorem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-transformations-and-matrix-algebra-matrix-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Transformations and Matrix Algebra - Matrix Transformations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-transformations-and-matrix-algebra-one-to-one-and-onto-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Transformations and Matrix Algebra - One-to-one and Onto Transformations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-transformations-and-matrix-algebra-linear-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Transformations and Matrix Algebra - Linear Transformations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-transformations-and-matrix-algebra-matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Transformations and Matrix Algebra - Matrix Multiplication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-transformations-and-matrix-algebra-matrix-inverses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Transformations and Matrix Algebra - Matrix Inverses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenvalues and Eigenvectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and-eigenvectors-eigenvalues-and-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenvalues and Eigenvectors - Eigenvalues and Eigenvectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and-eigenvectors-the-characteristic-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenvalues and Eigenvectors - The Characteristic Polynomial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and-eigenvectors-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenvalues and Eigenvectors - Similarity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and-eigenvectors-diagonalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenvalues and Eigenvectors - Diagonalization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and-eigenvectors-complex-eigenvalues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenvalues and Eigenvectors - Complex Eigenvalues
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and-eigenvectors-stochastic-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenvalues and Eigenvectors - Stochastic Matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orthogonality-orthogonal-complements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orthogonality - Orthogonal Complements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orthogonality-orthogonal-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orthogonality - Orthogonal Projection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orthogonality-orthogonal-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orthogonality - Orthogonal Sets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orthogonality-the-method-of-least-squares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orthogonality - The Method of Least Squares
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="interactive-linear-algebra-interactive-demo-list">Interactive Linear Algebra - Interactive Demo List<a class="headerlink" href="#interactive-linear-algebra-interactive-demo-list" title="Permanent link">&para;</a></h1>
+<p>Extracted from /mnt/data/ila.pdf. Total demos: 156.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 12 - Rabbit population dynamics</strong> - Left: the population of rabbits in a given year. Right: the proportions of rabbits in that year. Choose any values you like for the starting population, and click “Advance 1 year” several times. What do you notice about the long-term behavior of the ratios? This phenomenon turns out to be due to eigenvectors.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/rabbits/book_demo.html</li>
+<li><strong>p. 14 - Best-fit ellipse points</strong> - Click and drag the points on the grid on the right.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/bestfit-implicit.html?func=x^2+A<em>y^2+B</em>x<em>y+C</em>x+D*y+EE&amp;v1=0,2&amp;v2=2,1&amp;v3=1,-1&amp;v4=-1,-2&amp;v5=-3,1&amp;v6=-1,1&amp;range=5&amp;rangez=25&amp;camera1=-2.14,.814,1.69</li>
+</ol>
+<h2 id="systems-of-linear-equations-algebra-systems-of-linear-equations">Systems of Linear Equations: Algebra - Systems of Linear Equations<a class="headerlink" href="#systems-of-linear-equations-algebra-systems-of-linear-equations" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 22 - Points in 3-Space</strong> - A point in 3-space, and its coordinates. Click and drag the point, or move the sliders.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/point.html</li>
+<li><strong>p. 27 - The planes defined by the equations x + y + z = 1 and x − z = 0 intersect in the red line,</strong> - The planes defined by the equations x + y + z = 1 and x − z = 0 intersect in the red line, which is the solution set of the system of both equations.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/planes.html</li>
+<li><strong>p. 28 - The planes defined by the equations x + y + z = 1 and x − z = 0 intersect in the yellow li</strong> - The planes defined by the equations x + y + z = 1 and x − z = 0 intersect in the yellow line, which is parameterized by (x, y,z) = (t,1 −2t, t). Move the slider to change the parameterized point.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/parametric2.html</li>
+<li><strong>p. 29 - The plane in R3 defined by the equation x + y + z = 1</strong> - The plane in R3 defined by the equation x + y + z = 1. This plane is parameterized by two numbers t, w; move the sliders to change the parameterized point.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/plane.html?coeffs=t,w&amp;range=5</li>
+</ol>
+<h2 id="systems-of-linear-equations-algebra-row-reduction">Systems of Linear Equations: Algebra - Row Reduction<a class="headerlink" href="#systems-of-linear-equations-algebra-row-reduction" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 39 - Animated slideshow of the row reduction in this example</strong> - Animated slideshow of the row reduction in this example.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/rowred2.html</li>
+</ol>
+<h2 id="systems-of-linear-equations-algebra-parametric-form">Systems of Linear Equations: Algebra - Parametric Form<a class="headerlink" href="#systems-of-linear-equations-algebra-parametric-form" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 43 - A picture of the solution set (the yellow line) of the linear system in this example</strong> - A picture of the solution set (the yellow line) of the linear system in this example. There is a unique solution for every value of z; move the slider to change z.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/parametric1.html</li>
+<li><strong>p. 45 - A plane described by two parameters y and z</strong> - A plane described by two parameters y and z. Any point on the plane is obtained by substituting suitable values for y and z.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/plane.html</li>
+</ol>
+<h2 id="systems-of-linear-equations-geometry-vectors">Systems of Linear Equations: Geometry - Vectors<a class="headerlink" href="#systems-of-linear-equations-geometry-vectors" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 49 - A vector in R3, by coordinates</strong> - A vector in R3, and its coordinates. Drag the arrow head and tail.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/vector.html</li>
+<li><strong>p. 51 - The parallelogram law for vector addition</strong> - The parallelogram law for vector addition. Click and drag the heads of v and w.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/vector-add.html</li>
+<li><strong>p. 52 - Vector subtraction</strong> - Vector subtraction. Click and drag the heads of v and w.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/vector-sub.html</li>
+<li><strong>p. 53 - Scalar multiplication</strong> - Scalar multiplication. Drag the slider to change the scalar.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/vector-mul.html</li>
+<li><strong>p. 54 - Linear combinations of two vectors in R2</strong> - Linear combinations of two vectors in R2: move the sliders to change the coefficients of v1 and v2. Note that any vector on the plane can be obtained as a linear combination of v1, v2 with suitable coefficients.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=1,2&amp;v2=1,0&amp;range=5&amp;captions=combo</li>
+<li><strong>p. 54 - Linear combinations of three vectors</strong> - Linear combinations of three vectors: move the sliders to change the coefficients of v1, v2, v3. Note how the parallelogram law for addition of three vectors is more of a “parallepiped law”.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=2,-1,1&amp;v2=1,1,-1&amp;v3=-1,1,4&amp;range=5&amp;captions=combo</li>
+<li><strong>p. 55 - Linear combinations of two collinear vectors</strong> - Linear combinations of two collinear vectors in R2. Move the sliders to change the coefficients of v1, v2. Note that there is no way to “escape” the line.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=2,2&amp;v2=-1,-1&amp;range=5&amp;captions=combo&amp;grid=disabled</li>
+</ol>
+<h2 id="systems-of-linear-equations-geometry-vector-equations-and-spans">Systems of Linear Equations: Geometry - Vector Equations and Spans<a class="headerlink" href="#systems-of-linear-equations-geometry-vector-equations-and-spans" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 56 - A picture of the above vector equation</strong> - A picture of the above vector equation. Try to solve the equation geometrically by moving the sliders.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=1,2,6&amp;v2=-1,-2,-1&amp;target=8,16,3&amp;range=20&amp;camera=3,.5,1.5</li>
+<li><strong>p. 59 - This is a picture of an inconsistent linear system</strong> - This is a picture of an inconsistent linear system: the vector w on the right-hand side of the equation x1v1 + x2v2 = w is not in the span of v1, v2. Convince yourself of this by trying to solve the equation x1v1 + x2v2 = w by moving the sliders, and by row reduction. Compare this figure.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=1,2,6&amp;v2=-1,-2,-1&amp;target=2,-2,0&amp;range=8&amp;camera=3,.5,1.5</li>
+<li><strong>p. 61 - Span of two vectors in R2</strong> - Interactive picture of a span of two vectors in R2. Check “Show x.v + y.w” and move the sliders to see how every point in the violet region is in fact a linear combination of the two vectors.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=1,2&amp;v2=1,0&amp;showPlane=true&amp;range=5&amp;labels=v,w</li>
+<li><strong>p. 61 - Span of two vectors in R3</strong> - Interactive picture of a span of two vectors in R3. Check “Show x.v + y.w” and move the sliders to see how every point in the violet region is in fact a linear combination of the two vectors.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=3,2,4&amp;v2=-4,2,1&amp;labels=v,w</li>
+<li><strong>p. 62 - Span of three vectors in R3</strong> - Interactive picture of a span of three vectors in R3. Check “Show x.v + y.w + z.u” and move the sliders to see how every point in the violet region is in fact a linear combination of the three vectors.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?labels=v,w,u</li>
+</ol>
+<h2 id="systems-of-linear-equations-geometry-matrix-equations">Systems of Linear Equations: Geometry - Matrix Equations<a class="headerlink" href="#systems-of-linear-equations-geometry-matrix-equations" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 67 - The vector w is not contained in Span{v1, v2}, so the equation Ax = b is inconsistent</strong> - The vector w is not contained in Span{v1, v2}, so the equation Ax = b is inconsistent. (Try moving the sliders to solve the equation.)</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=2,-1,1&amp;v2=1,0,-1&amp;target=0,2,2&amp;range=5</li>
+<li><strong>p. 69 - The vector w is contained in Span{v1, v2}, so the equation Ax = b is consistent</strong> - The vector w is contained in Span{v1, v2}, so the equation Ax = b is consistent. (Move the sliders to solve the equation.)</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=2,-1,1&amp;v2=1,0,-1&amp;target=1,-1,2&amp;range=5</li>
+<li><strong>p. 70 - The criteria of the theorem are satisfied</strong> - An example where the criteria of the above theorem are satisfied. The violet region is the span of the columns v1, v2, v3 of A, which is the same as the set of all b such that Ax = b has a solution. If you drag b, the demo will solve Ax = b for you and move x.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=2,1,-1:1,0,2&amp;range2=5&amp;show=false&amp;closed=true</li>
+<li><strong>p. 70 - The critera of the theorem are not satisfied</strong> - An example where the criteria of the above theorem are not satisfied. The violet line is the span of the columns v1, v2, v3 of A, which is the same as the set of all b such that Ax = b has a solution. Try dragging b in and out of the column span.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?show=false&amp;closed=true</li>
+</ol>
+<h2 id="systems-of-linear-equations-geometry-solution-sets">Systems of Linear Equations: Geometry - Solution Sets<a class="headerlink" href="#systems-of-linear-equations-geometry-solution-sets" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 74 - Solution set of Ax = 0 as a line</strong> - Interactive picture of the solution set of Ax = 0. If you drag x along the line spanned by (3, 1), the product Ax is always zero.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?lock=true&amp;x=3,1&amp;mat=1,-3:2,-6&amp;range2=5&amp;closed=true</li>
+<li><strong>p. 76 - the solution set of Ax = 0</strong> - Interactive picture of the solution set of Ax = 0. If you drag x along the violet plane, the product Ax is always equal to zero. This is what it means for the plane to be the solution set of Ax = 0.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?lock=true&amp;closed=true&amp;x=0,0,0</li>
+<li><strong>p. 78 - the solution set of Ax = b</strong> - Interactive picture of the solution set of Ax = b. If you drag x along the violet line, the product Ax is always equal to b. This is what it means for the line to be the solution set of Ax = b.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?x=-3,0&amp;mat=1,-3:2,-6&amp;lock=true&amp;closed=true</li>
+<li><strong>p. 80 - the solution set of Ax = b</strong> - Interactive picture of the solution set of Ax = b. If you drag x along the violet plane, the product Ax is always equal to b. This is what it means for the plane to be the solution set of Ax = b.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?lock=true&amp;closed=true&amp;range1=3&amp;x=1,0,0</li>
+<li><strong>p. 82 - Solution set and span of the columns (1)</strong> - Left: the solution set of Ax = b is in violet. Right: the span of the columns of A is in violet. As you move x, you change b, so the solution set changes—but all solution sets are parallel planes. If you move b within the span of the columns, the solution set also changes, and the demo solves the equation to find a particular solution x. If you move b outside of the span of the columns, the system becomes inconsistent, and the solution set disappears.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,3:2,6&amp;x=1,1</li>
+<li><strong>p. 83 - Solution set and span of the columns (2)</strong> - Left: the solution set of Ax = b is in violet. Right: the span of the columns of A is in violet. As you move x, you change b, so the solution set changes—but all solution sets are parallel planes. If you move b within the span of the columns, the solution set also changes, and the demo solves the equation to find a particular solution x. If you move b outside of the span of the columns, the system becomes inconsistent, and the solution set disappears.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html</li>
+<li><strong>p. 83 - Solution set and span of the columns (3)</strong> - Left: the solution set of Ax = b is in violet. Right: the span of the columns of A is in violet. As you move x, you change b, so the solution set changes—but all solution sets are parallel planes. If you move b within the span of the columns, the solution set also changes, and the demo solves the equation to find a particular solution x. If you move b outside of the span of the columns, the system becomes inconsistent, and the solution set disappears.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,0,-1:0,1,1:1,1,0</li>
+</ol>
+<h2 id="systems-of-linear-equations-geometry-linear-independence">Systems of Linear Equations: Geometry - Linear Independence<a class="headerlink" href="#systems-of-linear-equations-geometry-linear-independence" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 85 - Move the sliders to solve the homogeneous vector equation in this example</strong> - Move the sliders to solve the homogeneous vector equation in this example. Do you see why the vectors need to be coplanar in order for there to exist a nontrivial solution?</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=1,1,1&amp;v2=1,-1,2&amp;v3=3,1,4&amp;target=0,0,0</li>
+<li><strong>p. 86 - Move the sliders to solve the homogeneous vector equation in this example</strong> - Move the sliders to solve the homogeneous vector equation in this example. Do you see why the vectors would need to be coplanar in order for there to exist a nontrivial solution?</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=1,1,-2&amp;v2=1,-1,2&amp;v3=3,1,4&amp;target=0,0,0&amp;range=4</li>
+<li><strong>p. 93 - Linear independence of two vectors in R2</strong> - Move the vector heads and the demo will tell you if they are linearly independent and show you their span.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?captions=indep&amp;v1=2,1&amp;v2=-1,-.5&amp;labels=v,w&amp;range=5&amp;showPlane=true&amp;closed</li>
+<li><strong>p. 93 - Linear dependence of three vectors in R2</strong> - Move the vector heads and the demo will tell you that they are linearly dependent and show you their span.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?captions=indep&amp;v1=2,1&amp;v2=-1,-.5&amp;v3=0,-1.5&amp;labels=v,w,u&amp;range=5&amp;showPlane=true&amp;closed</li>
+<li><strong>p. 96 - Linear independence of two vectors in R3</strong> - Move the vector heads and the demo will tell you if they are linearly independent and show you their span.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?captions=indep&amp;v1=2,-1,1&amp;v2=1,0,-1&amp;labels=v,w&amp;range=5&amp;closed</li>
+<li><strong>p. 96 - Linear independence of three vectors in R3</strong> - Move the vector heads and the demo will tell you if they are linearly independent and show you their span.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?captions=indep&amp;v1=2,-1,1&amp;v2=1,0,-1&amp;v3=.5,-.5,1&amp;labels=v,w,u&amp;range=5&amp;closed</li>
+</ol>
+<h2 id="systems-of-linear-equations-geometry-basis-and-dimension">Systems of Linear Equations: Geometry - Basis and Dimension<a class="headerlink" href="#systems-of-linear-equations-geometry-basis-and-dimension" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 114 - A picture of the plane V and its basis B = {v1, v2}</strong> - A picture of the plane V and its basis B = {v1, v2}. Note that B spans V and is linearly independent.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=-3,1,0&amp;v2=0,1,-3&amp;range=5&amp;captions=indep</li>
+<li><strong>p. 116 - A picture of the plane V and its basis B = {v1, v2}</strong> - A picture of the plane V and its basis B = {v1, v2}.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=1,-2,2&amp;v2=2,-3,4&amp;range=6&amp;captions=indep</li>
+<li><strong>p. 117 - A picture of the plane V and its basis B = {v1, v2}</strong> - A picture of the plane V and its basis B = {v1, v2}.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=0,4,0&amp;v2=-1,5,-2&amp;range=6&amp;captions=indep</li>
+<li><strong>p. 119 - A picture of the plane V and its basis B = {w1, w2}</strong> - A picture of the plane V and its basis B = {w1, w2}.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=3,-5,6&amp;v2=-2,5,-4&amp;range=6&amp;captions=indep&amp;labels=w1,w2</li>
+</ol>
+<h2 id="systems-of-linear-equations-geometry-bases-as-coordinate-systems">Systems of Linear Equations: Geometry - Bases as Coordinate Systems<a class="headerlink" href="#systems-of-linear-equations-geometry-bases-as-coordinate-systems" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 123 - A picture of the basis B = {v1, v2} of R2</strong> - A picture of the basis B = {v1, v2} of R2. The grid indicates the coordinate system defined by the basis B; one set of lines measures the v1-coordinate, and the other set measures the v2-coordinate. Use the sliders to find the B-coordinates of w.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=1,1&amp;v2=1,-1&amp;target=3,-1&amp;range=6&amp;&amp;tlabel=w</li>
+<li><strong>p. 123 - B-coordinates and the vector x</strong> - Left: the B-coordinates of a vector x. Right: the vector x. The violet grid on the right is a picture of the coordinate system defined by the basis B; one set of lines measures the v1-coordinate, and the other set measures the v2-coordinate. Drag the heads of the vectors x and [x]B to understand the correspondence between x and its B-coordinate vector.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?captions=basis&amp;mat=2,1:-1,0:1,-1&amp;range2=5</li>
+<li><strong>p. 124 - A picture of the plane V and the basis B = {v1, v2}</strong> - A picture of the plane V and the basis B = {v1, v2}. The violet grid is a picture of the coordinate system defined by the basis B; one set of lines measures the v1-coordinate, and the other set measures the v2-coordinate. Use the sliders to find the B-coordinates of v.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=1,0,1&amp;v2=1,1,1&amp;target=5,3,5&amp;range=6&amp;camera=-3,0,2&amp;tlabel=v</li>
+<li><strong>p. 125 - A picture of the plane V and the basis B = {v1, v2}</strong> - A picture of the plane V and the basis B = {v1, v2}. The violet grid is a picture of the coordinate system defined by the basis B; one set of lines measures the v1-coordinate, and the other set measures the v2-coordinate. Use the sliders to find the B-coordinates of x.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=2,3,2&amp;v2=-1,1,1&amp;target=4,11,8&amp;tlabel=x&amp;range=12&amp;camera=.5,-3,2&amp;tlabel=x</li>
+</ol>
+<h2 id="systems-of-linear-equations-geometry-the-rank-theorem">Systems of Linear Equations: Geometry - The Rank Theorem<a class="headerlink" href="#systems-of-linear-equations-geometry-the-rank-theorem" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 130 - Rank is 1, nullity is 2</strong> - This 3 × 3 matrix has rank 1 and nullity 2. The violet plane on the left is the null space, and the violet line on the right is the column space.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?captions=rankthm</li>
+<li><strong>p. 130 - Rank is 2, nullity is 1</strong> - This 3×3 matrix has rank 2 and nullity 1. The violet line on the left is the null space, and the violet plane on the right is the column space.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,-1,2:-1,2,4&amp;captions=rankthm</li>
+</ol>
+<h2 id="linear-transformations-and-matrix-algebra-matrix-transformations">Linear Transformations and Matrix Algebra - Matrix Transformations<a class="headerlink" href="#linear-transformations-and-matrix-algebra-matrix-transformations" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 133 - A 2 × 3 matrix</strong> - A picture of a 2 × 3 matrix, regarded as a function. The input vector is x, which is a vector in R3, and the output vector is b = Ax, which is a vector in R2. The violet line on the right is the column space; as you vary x, the output b is constrained to lie on this line.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?show=false</li>
+<li><strong>p. 133 - A 3 × 2 matrix</strong> - A picture of a 3 × 2 matrix, regarded as a function. The input vector is x, which is a vector in R2, and the output vector is b = Ax, which is a vector in R3. The violet plane on the right is the column space; as you vary x, the output b is constrained to lie on this plane.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,0:0,1:1,0&amp;range2=5&amp;closed=true&amp;show=false</li>
+<li><strong>p. 134 - Multiplication by the matrix A projects a vector onto the x y-plane</strong> - Multiplication by the matrix A projects a vector onto the x y-plane. Move the input vector x to see how the output vector b changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,0,0:0,1,0:0,0,0&amp;range2=5&amp;closed=true</li>
+<li><strong>p. 135 - Multiplication by the matrix A reflects over the y-axis</strong> - Multiplication by the matrix A reflects over the y-axis. Move the input vector x to see how the output vector b changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/twobytwo.html?mat=-1,0,0,1&amp;closed=true</li>
+<li><strong>p. 135 - Multiplication by the matrix A dilates the plane by a factor of 1</strong> - Multiplication by the matrix A dilates the plane by a factor of 1.5. Move the input vector x to see how the output vector b changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/twobytwo.html?mat=1.5,0,0,1.5&amp;closed=true&amp;pic=theo3.jpg</li>
+<li><strong>p. 136 - Multiplication by the matrix A does not move the vector x</strong> - Multiplication by the matrix A does not move the vector x: that is, b = Ax = x. Move the input vector x to see how the output vector b changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/twobytwo.html?mat=1,0,0,1&amp;closed=true&amp;pic=theo11.jpg</li>
+<li><strong>p. 137 - Multiplication by the matrix A rotates the vector x counterclockwise by 90◦</strong> - Multiplication by the matrix A rotates the vector x counterclockwise by 90◦. Move the input vector x to see how the output vector b changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/twobytwo.html?mat=0,-1,1,0&amp;closed=true&amp;pic=theo8.jpg</li>
+<li><strong>p. 138 - Multiplication by the matrix A adds the y-coordinate to the x-coordinate</strong> - Multiplication by the matrix A adds the y-coordinate to the x-coordinate. Move the input vector x to see how the output vector b changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/twobytwo.html?mat=1,1,0,1&amp;closed=true&amp;pic=sheep.jpg</li>
+<li><strong>p. 142 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. The input vector is x, which is a vector in R3, and the output vector is b = T(x) = Ax, which is a vector in R2. The violet line on the right is the range of T; as you vary x, the output b is constrained to lie on this line.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?show=false</li>
+<li><strong>p. 143 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. The input vector is x, which is a vector in R2, and the output vector is b = T(x) = Ax, which is a vector in R3. The violet plane on the right is the range of T; as you vary x, the output b is constrained to lie on this plane.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,0:0,1:1,0&amp;range2=5&amp;closed=true&amp;show=false</li>
+</ol>
+<h2 id="linear-transformations-and-matrix-algebra-one-to-one-and-onto-transformations">Linear Transformations and Matrix Algebra - One-to-one and Onto Transformations<a class="headerlink" href="#linear-transformations-and-matrix-algebra-one-to-one-and-onto-transformations" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 150 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. As you drag the input vector on the left side, you see that different input vectors yield different output vectors on the right side.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,0:0,1:1,0&amp;range2=5&amp;closed=true&amp;show=true</li>
+<li><strong>p. 150 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. The transformation T projects a vector onto the x y-plane. The violet line is the solution set of T(x) = 0. If you drag x along the violet line, the output T(x) = Ax does not change. This demonstrates that T(x) = 0 has more than one solution, so T is not one-to-one.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,0,0:0,1,0:0,0,0&amp;range2=5&amp;closed=true&amp;lock=true&amp;x=0,0,0</li>
+<li><strong>p. 151 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. The violet line is the null space of A, i.e., solution set of T(x) = 0. If you drag x along the violet line, the output T(x) = Ax does not change. This demonstrates that T(x) = 0 has more than one solution, so T is not one-to-one.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,1,0:0,1,1&amp;range2=5&amp;closed=true&amp;show=true&amp;lock=true&amp;x=0,0,0</li>
+<li><strong>p. 152 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. The violet plane is the solution set of T(x) = 0. If you drag x along the violet plane, the output T(x) = Ax does not change. This demonstrates that T(x) = 0 has more than one solution, so T is not one-to-one.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?show=true&amp;closed=true&amp;lock=true&amp;x=0,0,0</li>
+<li><strong>p. 155 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. Every vector on the right side is the output of T for a suitable input. If you drag b, the demo will find an input vector x with output b.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,1,0:0,1,1&amp;range2=5&amp;closed=true&amp;show=false&amp;x=1,2,.5</li>
+<li><strong>p. 155 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. The range of T is the violet plane on the right; this is smaller than the codomain R3. If you drag b off of the violet plane, then the equation Ax = b becomes inconsistent; this means T(x) = b has no solution.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,0:0,1:1,0&amp;range2=5&amp;closed=true&amp;show=false</li>
+<li><strong>p. 156 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. The range of T is the violet line on the right; this is smaller than the codomain R2. If you drag b off of the violet line, then the equation Ax = b becomes inconsistent; this means T(x) = b has no solution.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?show=false&amp;closed=true</li>
+<li><strong>p. 157 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. The violet plane is the solution set of T(x) = 0. If you drag x along the violet plane, the output T(x) = Ax does not change. This demonstrates that T(x) = 0 has more than one solution, so T is not one-to-one. The range of T is the violet line on the right; this is smaller than the codomain R2. If you drag b off of the violet line, then the equation Ax = b becomes inconsistent; this means T(x) = b has no solution.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?show=true&amp;closed=true</li>
+<li><strong>p. 158 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. The range of T is the violet plane on the right; this is smaller than the codomain R3. If you drag b off of the violet plane, then the equation Ax = b becomes inconsistent; this means T(x) = b has no solution. However, for b lying on the violet plane, there is a unique vector x such that T(x) = b.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,0:0,1:1,0&amp;range2=5&amp;closed=true&amp;show=</li>
+<li><strong>p. 158 - A picture of the matrix transformation T</strong> - A picture of the matrix transformation T. Every vector on the right side is the output of T for a suitable input. If you drag b, the demo will find an input vector x with output b. The violet line is the null space of A, i.e., solution set of T(x) = 0. If you drag x along the violet line, the output T(x) = Ax does not change. This demonstrates that T(x) = 0 has more than one solution, so T is not one-to-one.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,1,0:0,1,1&amp;range2=5&amp;closed=true&amp;show=true&amp;x=1,2,.5</li>
+<li><strong>p. 159 - Counterclockwise rotation by 90◦is a matrix transformation</strong> - Counterclockwise rotation by 90◦is a matrix transformation. This transformation is onto (if b is a vector in R2, then it is the output vector for the input vector which is b rotated clockwise by 90◦), and it is one-to-one (different vectors rotate to different vectors).</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/twobytwo.html?mat=0,-1,1,0&amp;closed=true&amp;pic=theo8.jpg</li>
+</ol>
+<h2 id="linear-transformations-and-matrix-algebra-linear-transformations">Linear Transformations and Matrix Algebra - Linear Transformations<a class="headerlink" href="#linear-transformations-and-matrix-algebra-linear-transformations" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 170 - Illustration of a transformation defined in steps</strong> - Illustration of a transformation defined in steps. Click and drag the vector on the left.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/steps.html</li>
+</ol>
+<h2 id="linear-transformations-and-matrix-algebra-matrix-multiplication">Linear Transformations and Matrix Algebra - Matrix Multiplication<a class="headerlink" href="#linear-transformations-and-matrix-algebra-matrix-multiplication" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 173 - Composition of two matrix transformations</strong> - A composition of two matrix transformations, i.e., a transformation performed in two steps. On the left is the domain of U/the domain of T ◦U; in the middle is the codomain of U/the domain of T, and on the right is the codomain of T/the codomain of T ◦U. The vector x is the input of U and of T ◦U; the vector in the middle is the output of U/the input of T, and the vector on the right is the output of T/of T ◦U. Click and drag x.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/compose3d.html?mat2=1,1,0:0,1,1&amp;mat1=1,0:0,1:1,0&amp;rangeT=off&amp;rangeU=off&amp;rangeTU=off&amp;range=5&amp;closed=true</li>
+<li><strong>p. 174 - Illustration of a transformation defined in steps</strong> - Illustration of a transformation defined in steps. On the left is the domain of U/the domain of S; in the middle is the codomain of U/the domain of T, and on the right is the codomain of T/the codomain of S. The vector u is the input of U and of S; the vector in the middle is the output of U/the input of T, and the vector on the right is the output of T/of S. Click and drag u.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/steps.html?out=S</li>
+<li><strong>p. 174 - Transformation defined in steps: projections</strong> - Illustration of a transformation defined in steps. Note that projecting onto the x y- plane, followed by projecting onto the xz-plane, is the projection onto the x-axis.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/compose3d.html?mat1=1,0,0:0,1,0:0,0,0&amp;mat2=1,0,0:0,0,0:0,0,1&amp;rangeT=off&amp;rangeU=off&amp;rangeTU=off&amp;range=5&amp;closed=true</li>
+<li><strong>p. 175 - Illustration of the composition T ◦U</strong> - Illustration of the composition T ◦U.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/compose2d.html?mat1=1,0,1,1&amp;mat2=1,1,0,1&amp;closed&amp;vec=1,0&amp;show1=on</li>
+<li><strong>p. 175 - Illustration of the composition U ◦T</strong> - Illustration of the composition U ◦T.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/compose2d.html?mat2=1,0,1,1&amp;mat1=1,1,0,1&amp;closed&amp;vec=1,0&amp;names=U,T&amp;show1=on</li>
+<li><strong>p. 181 - The matrix of the composition T ◦U is the product of the matrices for T and U</strong> - The matrix of the composition T ◦U is the product of the matrices for T and U.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/compose3d.html?mat2=1,1,0:0,1,1&amp;mat1=1,0:0,1:1,0&amp;rangeT=off&amp;rangeU=off&amp;rangeTU=off&amp;range=5&amp;closed=true</li>
+<li><strong>p. 183 - Composition demo for S = T ◦ U</strong> - Composition demo for S = T ◦ U: reflect over the xy-plane and then project onto the yz-plane; the standard matrix is the product of the two matrices.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/compose3d.html?mat1=1,0,0:0,1,0:0,0,-1&amp;mat2=0,0,0:0,1,0:0,0,1&amp;rangeT=off&amp;rangeU=off&amp;rangeTU=off&amp;range=5&amp;closed=true</li>
+</ol>
+<h2 id="linear-transformations-and-matrix-algebra-matrix-inverses">Linear Transformations and Matrix Algebra - Matrix Inverses<a class="headerlink" href="#linear-transformations-and-matrix-algebra-matrix-inverses" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 195 - Shrinking by a factor of 2/3 followed by scaling by a factor of 3/2 is the identity transf</strong> - Shrinking by a factor of 2/3 followed by scaling by a factor of 3/2 is the identity transformation.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/compose2d.html?closed&amp;mat1=2/3,0,0,2/3&amp;mat2=1.5,0,0,1.5&amp;show1</li>
+<li><strong>p. 195 - Scaling by a factor of 3/2 followed by shrinking by a factor of 2/3 is the identity transf</strong> - Scaling by a factor of 3/2 followed by shrinking by a factor of 2/3 is the identity transformation.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/compose2d.html?closed&amp;mat2=2/3,0,0,2/3&amp;mat1=1.5,0,0,1.5&amp;show1&amp;names=U,T</li>
+<li><strong>p. 196 - Counterclockwise rotation by 45◦followed by clockwise rotation by 45◦is the identity trans</strong> - Counterclockwise rotation by 45◦followed by clockwise rotation by 45◦is the identity transformation.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/compose2d.html?closed&amp;mat1=1/sqrt(2),-1/sqrt(2),1/sqrt(2),1/sqrt(2)&amp;mat2=1/sqrt(2),1/sqrt(2),-1/sqrt(2),1/sqrt(2)&amp;show1&amp;names=U,T</li>
+<li><strong>p. 196 - Clockwise rotation by 45◦followed by counterclockwise rotation by 45◦is the identity trans</strong> - Clockwise rotation by 45◦followed by counterclockwise rotation by 45◦is the identity transformation.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/compose2d.html?closed&amp;mat2=1/sqrt(2),-1/sqrt(2),1/sqrt(2),1/sqrt(2)&amp;mat1=1/sqrt(2),1/sqrt(2),-1/sqrt(2),1/sqrt(2)&amp;show1</li>
+<li><strong>p. 196 - The transformation T is equal to its own inverse</strong> - The transformation T is equal to its own inverse: applying T twice takes a vector back to where it started.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/compose2d.html?closed=true&amp;mat1=-1,0,0,1&amp;mat2=-1,0,0,1&amp;show1&amp;names=T,T'</li>
+<li><strong>p. 197 - Projection onto the x y-plane is not an invertible transformation</strong> - Projection onto the x y-plane is not an invertible transformation: all points on each vertical line are sent to the same point by T, so there is no way to undo T.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/Axequalsb.html?mat=1,0,0:0,1,0:0,0,0&amp;range2=5&amp;closed=true&amp;show=true</li>
+</ol>
+<h2 id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 255 - Rabbit population dynamics</strong> - Left: the population of rabbits in a given year. Right: the proportions of rabbits in that year. Choose any values you like for the starting population, and click “Advance 1 year” several times. What do you notice about the long-term behavior of the ratios? This phenomenon turns out to be due to eigenvectors.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/rabbits/book_demo.html</li>
+</ol>
+<h2 id="eigenvalues-and-eigenvectors-eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors - Eigenvalues and Eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors-eigenvalues-and-eigenvectors" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 260 - An eigenvector of A is a vector x such that Ax is collinear with x and the origin</strong> - An eigenvector of A is a vector x such that Ax is collinear with x and the origin. Click and drag the head of x to convince yourself that all such vectors lie either on L, or on the line perpendicular to L.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=0,-1:-1,0&amp;nospace</li>
+<li><strong>p. 261 - An eigenvector of A is a vector x such that Ax is collinear with x and the origin</strong> - An eigenvector of A is a vector x such that Ax is collinear with x and the origin. Click and drag the head of x to convince yourself that all such vectors lie on the coordinate axes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=1,0:0,0&amp;nospace</li>
+<li><strong>p. 262 - Every nonzero vector is an eigenvector of the identity matrix</strong> - Every nonzero vector is an eigenvector of the identity matrix.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=1,0:0,1&amp;nospace</li>
+<li><strong>p. 262 - Every nonzero vector is an eigenvector of a dilation matrix</strong> - Every nonzero vector is an eigenvector of a dilation matrix.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=1.5,0:0,1.5&amp;nospace</li>
+<li><strong>p. 263 - All eigenvectors of a shear lie on the x-axis</strong> - All eigenvectors of a shear lie on the x-axis. Click and drag the head of x to find the eigenvectors.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=1,1:0,1&amp;nospace</li>
+<li><strong>p. 264 - This rotation matrix has no eigenvectors</strong> - This rotation matrix has no eigenvectors. Click and drag the head of x to find one.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=0,-1:1,0&amp;nospace</li>
+<li><strong>p. 267 - The 3-eigenspace is the line spanned by (-4, 1)</strong> - The 3-eigenspace is the line spanned by (-4, 1). The -2-eigenspace is the line spanned by (1, 1). Click and drag x to see how A acts on the vector.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=2,-4:-1,-1&amp;nomult</li>
+<li><strong>p. 268 - The 2-eigenspace is the violet plane</strong> - The 2-eigenspace is the violet plane, and the 1/2-eigenspace is the green line. Click and drag x to see how A acts on that vector.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=7/2,0,3:-3/2,2,-3:-3/2,0,-1&amp;nomult</li>
+<li><strong>p. 269 - The violet line L is the 1-eigenspace, and the green line L⊥is the −1-eigenspace</strong> - The violet line L is the 1-eigenspace, and the green line L⊥is the −1-eigenspace.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=0,-1:-1,0&amp;nomult</li>
+</ol>
+<h2 id="eigenvalues-and-eigenvectors-the-characteristic-polynomial">Eigenvalues and Eigenvectors - The Characteristic Polynomial<a class="headerlink" href="#eigenvalues-and-eigenvectors-the-characteristic-polynomial" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 272 - The green line is the (3 - 2√2)-eigenspace, and the violet line is the (3 + 2√2)-eigenspac</strong> - The green line is the (3 - 2√2)-eigenspace, and the violet line is the (3 + 2√2)-eigenspace.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=5,2:2,1&amp;nomult</li>
+<li><strong>p. 273 - The green line is the −1-eigenspace, and the violet line is the 2-eigenspace</strong> - The green line is the −1-eigenspace, and the violet line is the 2-eigenspace.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=0,6,8:1/2,0,0:0,1/2,0&amp;nomult</li>
+</ol>
+<h2 id="eigenvalues-and-eigenvectors-similarity">Eigenvalues and Eigenvectors - Similarity<a class="headerlink" href="#eigenvalues-and-eigenvectors-similarity" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 279 - The matrices A and D behave similarly</strong> - The matrices A and D behave similarly. Click “multiply” to multiply the colored points by D on the left and A on the right. (We will see in Section 5.4 why the points follow hyperbolic paths.)</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=2,0:0,1/2&amp;v1=2/3,1&amp;v2=-1,1&amp;y=1,5</li>
+<li><strong>p. 286 - The geometric relationship between the similar matrices A and B acting on R2</strong> - The geometric relationship between the similar matrices A and B acting on R2. Click and drag the heads of x and [x]B. Study this picture until you can reliably predict where the other three vectors will be after moving one of them: this is the essence of the geometry of similar matrices.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/similarity.html?B=2,0:0,-1&amp;C=1,1:1,-1&amp;closed</li>
+<li><strong>p. 287 - The geometric relationship between the similar matrices A′ and B acting on R2</strong> - The geometric relationship between the similar matrices A′ and B acting on R2. Click and drag the heads of x and [x]B′.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/similarity.html?B=2,0:0,-1&amp;C=-1/2,-3/2:1,1/2&amp;closed</li>
+<li><strong>p. 290 - The geometric relationship between the similar matrices A and B acting on R2</strong> - The geometric relationship between the similar matrices A and B acting on R2. Click and drag the heads of x and [x]B.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/similarity.html?B=0,-1:1,0&amp;C=2,-1/2:1,1/2&amp;snap=off</li>
+<li><strong>p. 292 - The geometric relationship between the similar matrices A and B acting on R3</strong> - The geometric relationship between the similar matrices A and B acting on R3. Click and drag the heads of x and [x]B.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/similarity.html?B=-1,0,0:0,-1,0:0,0,2&amp;C=-1,1,0:1,1,1:-1,0,1&amp;closed</li>
+<li><strong>p. 294 - The eigenspaces of A are the lines through v1 and v2</strong> - The eigenspaces of A are the lines through v1 and v2. These are the images under C of the coordinate axes, which are the eigenspaces of B.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=1/2,3/2:3/2,1/2&amp;nomult</li>
+<li><strong>p. 295 - The eigenspaces of A′ are the lines through v′ 1 and v′ 2</strong> - The eigenspaces of A′ are the lines through v′ 1 and v′ 2. These are the images under C′ of the coordinate axes, which are the eigenspaces of B.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=-8/5,-9/5:6/5,13/5&amp;nomult</li>
+<li><strong>p. 295 - The −1-eigenspace of A is the green plane, and the 2-eigenspace of A is the violet line</strong> - The −1-eigenspace of A is the green plane, and the 2-eigenspace of A is the violet line. These are the images under C of the x y-plane and the z-axis, respectively, which are the eigenspaces of B.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=-1,0,0:-1,0,2:-1,1,1&amp;nomult</li>
+</ol>
+<h2 id="eigenvalues-and-eigenvectors-diagonalization">Eigenvalues and Eigenvectors - Diagonalization<a class="headerlink" href="#eigenvalues-and-eigenvectors-diagonalization" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 301 - The green line is the −1-eigenspace of A, and the violet line is the 2-eigenspace</strong> - The green line is the −1-eigenspace of A, and the violet line is the 2-eigenspace. There are two linearly independent (noncollinear) eigenvectors visible in the picture: choose any nonzero vector on the green line, and any nonzero vector on the violet line.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=1/2,3/2:3/2,1/2&amp;nomult</li>
+<li><strong>p. 303 - The green plane is the 1-eigenspace of A, and the violet line is the 2-eigenspace</strong> - The green plane is the 1-eigenspace of A, and the violet line is the 2-eigenspace. There are three linearly independent eigenvectors visible in the picture: choose any two noncollinear vectors on the green plane, and any nonzero vector on the violet line.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=4,-3,0:2,-1,0:1,-1,1&amp;nomult</li>
+<li><strong>p. 304 - All eigenvectors of a shear lie on the x-axis</strong> - All eigenvectors of a shear lie on the x-axis.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=1,1:0,1&amp;nomult</li>
+<li><strong>p. 304 - The line L (violet) is the 1-eigenspace of A, and L⊥(green) is the 0-eigenspace</strong> - The line L (violet) is the 1-eigenspace of A, and L⊥(green) is the 0-eigenspace. Since there are linearly independent eigenvectors, we know that A is diagonalizable.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=25/26,5/26:5/26,1/26&amp;nomult</li>
+<li><strong>p. 305 - All eigenvectors of A lie on the x- and z-axes</strong> - All eigenvectors of A lie on the x- and z-axes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=1,1,0:0,1,0:0,0,2&amp;nomult</li>
+<li><strong>p. 305 - This rotation matrix has no eigenvectors</strong> - This rotation matrix has no eigenvectors.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=0,-1:1,0&amp;nospace</li>
+<li><strong>p. 308 - Dynamics of the matrices A and D</strong> - Dynamics of the matrices A and D. Click “multiply” to multiply the colored points by D on the left and A on the right.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=2,0:0,1/2&amp;v1=2/3,1&amp;v2=-1,1&amp;y=1,5</li>
+<li><strong>p. 309 - Dynamics of the matrices A and D</strong> - Dynamics of the matrices A and D. Click “multiply” to multiply the colored points by D on the left and A on the right.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=2,0:0,3&amp;v1=2/3,1&amp;v2=-1,1&amp;y=2,1</li>
+<li><strong>p. 309 - Dynamics of the matrices A′ and D−1</strong> - Dynamics of the matrices A′ and D−1. Click “multiply” to multiply the colored points by D−1 on the left and A′ on the right.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=1/2,0:0,1/3&amp;v1=2/3,1&amp;v2=-1,1&amp;y=9,3</li>
+<li><strong>p. 310 - Dynamics of the matrices A and D</strong> - Dynamics of the matrices A and D. Click “multiply” to multiply the colored points by D on the left and A on the right.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=1,0:0,1/2&amp;v1=-1,1&amp;v2=1/2,1&amp;y=2,7</li>
+<li><strong>p. 310 - Dynamics of the matrices A and D</strong> - Dynamics of the matrices A and D. Click “multiply” to multiply the colored points by D on the left and A on the right.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=1/2,0:0,2&amp;eigenz=3/2&amp;v1=-7/6,2/6,5/6&amp;v2=-1/6,-9/6,0&amp;v3=2/6,-1/6,3/6&amp;y=8,1,1</li>
+<li><strong>p. 311 - Eigenspace of the shear matrix, with multiplicities</strong> - Eigenspace of the shear matrix, with multiplicities.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=1,1:0,1</li>
+<li><strong>p. 311 - Eigenspace of the identity matrix, with multiplicities</strong> - Eigenspace of the identity matrix, with multiplicities.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=1,0:0,1</li>
+<li><strong>p. 312 - The green plane is the 1-eigenspace of A, and the violet line is the 2-eigenspace</strong> - The green plane is the 1-eigenspace of A, and the violet line is the 2-eigenspace. Hence the geometric multiplicity of the 1-eigenspace is 2, and the geometric multiplicity of the 2-eigenspace is 1.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=4,-3,0:2,-1,0:1,-1,1</li>
+<li><strong>p. 312 - Both eigenspaces of A are lines, so they both have geometric multiplicity 1</strong> - Both eigenspaces of A are lines, so they both have geometric multiplicity 1.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/eigenspace.html?mat=1,1,0:0,1,0:0,0,2</li>
+<li><strong>p. 317 - Matrix C maps coordinate subspaces to eigenspaces</strong> - The matrix C takes the x y-plane to the 1-eigenspace of A (the grid) and the z-axis to the 2-eigenspace (the green line).</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/similarity.html?C=1,0,3:1,0,2:0,1,1&amp;B=1,0,0:0,1,0:0,0,2</li>
+</ol>
+<h2 id="eigenvalues-and-eigenvectors-complex-eigenvalues">Eigenvalues and Eigenvectors - Complex Eigenvalues<a class="headerlink" href="#eigenvalues-and-eigenvectors-complex-eigenvalues" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 326 - Rotation-scaling by 45 degrees and factor sqrt(2)</strong> - Multiplication by A rotates the plane by 45 degrees and dilates by a factor of sqrt(2). Move the input vector x to see how the output vector b changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/twobytwo.html?mat=1,-1,1,1&amp;closed=true&amp;pic=theo5.jpg</li>
+<li><strong>p. 327 - Multiplication by the matrix A rotates the plane by 5π/6 and dilates by a factor of 2</strong> - Multiplication by A rotates the plane by 5π/6 and dilates by a factor of 2. Move the input vector x to see how the output vector b changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/twobytwo.html?mat=-sqrt(3),-1,1,-sqrt(3)&amp;closed=true&amp;pic=theo1.jpg</li>
+<li><strong>p. 331 - The geometric action of A and B on the plane</strong> - The geometric action of A and B on the plane. Click “multiply” to multiply the colored points by B on the left and A on the right.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=1,-1:1,1&amp;v1=1,1&amp;v2=0,1&amp;y=0,1&amp;matnames=A,B,C</li>
+<li><strong>p. 333 - The geometric action of A and B on the plane</strong> - The geometric action of A and B on the plane. Click “multiply” to multiply the colored points by B on the left and A on the right.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=-sqrt(3),-1:1,-sqrt(3)&amp;v1=2,1&amp;v2=0,1&amp;y=0,1&amp;matnames=A,B,C</li>
+<li><strong>p. 336 - The geometric action of A and B on the plane</strong> - The geometric action of A and B on the plane. Click “multiply” to multiply the colored points by B on the left and A on the right.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=sqrt(3/2),-1/sqrt(2):1/sqrt(2),sqrt(3/2)&amp;v1=2,1&amp;v2=0,1&amp;y=0,1&amp;matnames=A,B,C</li>
+<li><strong>p. 337 - The geometric action of A and B on the plane</strong> - The geometric action of A and B on the plane. Click “multiply” to multiply the colored points by B on the left and A on the right.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=sqrt(3)/2,-1/2:1/2,sqrt(3)/2&amp;v1=2,1&amp;v2=0,1&amp;y=0,5&amp;matnames=A,B,C</li>
+<li><strong>p. 337 - The geometric action of A and B on the plane</strong> - The geometric action of A and B on the plane. Click “multiply” to multiply the colored points by B on the left and A on the right.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=sqrt(3/8),-1/sqrt(8):1/sqrt(8),sqrt(3/8)&amp;v1=2,1&amp;v2=0,1&amp;y=0,9&amp;matnames=A,B,C</li>
+<li><strong>p. 340 - The geometric action of A and B on R3</strong> - The geometric action of A and B on R3. Click “multiply” to multiply the colored points by B on the left and A on the right. (We have scaled C by 1/6 so that the vectors x and y have roughly the same size.)</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=1,-1:1,1&amp;eigenz=2&amp;v1=-7/6,2/6,5/6&amp;v2=-1/6,-9/6,0&amp;v3=2/6,-1/6,3/6&amp;y=1,0,.5&amp;matnames=A,B,C</li>
+</ol>
+<h2 id="eigenvalues-and-eigenvectors-stochastic-matrices">Eigenvalues and Eigenvectors - Stochastic Matrices<a class="headerlink" href="#eigenvalues-and-eigenvectors-stochastic-matrices" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 343 - Rabbit population dynamics</strong> - Left: the population of rabbits in a given year. Right: the proportions of rabbits in that year. Choose any values you like for the starting population, and click “Advance 1 year” several times. Notice that the ratio xt : yt : zt approaches 16 : 4 : 1, and that all three quantities eventually double each year.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/rabbits/book_demo.html</li>
+<li><strong>p. 348 - Dynamics of the stochastic matrix A</strong> - Dynamics of the stochastic matrix A. Click “multiply” to multiply the colored points by D on the left and A on the right. Note that on both sides, all vectors are “sucked into the 1-eigenspace” (the red line).</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=1,0:0,1/2&amp;v1=1,1&amp;v2=1,-1&amp;vec=false&amp;path=false</li>
+<li><strong>p. 350 - Dynamics of the stochastic matrix A</strong> - Dynamics of the stochastic matrix A. Click “multiply” to multiply the colored points by D on the left and A on the right. Note that on both sides, all vectors are “sucked into the 1-eigenspace” (the green line). (We have scaled C by 1/4 so that vectors have roughly the same size on the right and the left. The “jump” that happens when you press “multiply” is a negation of the −.2-eigenspace, which is not animated.)</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/dynamics2.html?mat=1,0:0,-1/5&amp;eigenz=1/10&amp;v1=7/4,6/4,5/4&amp;v2=-1/4,0,1/4&amp;v3=1/4,-3/4,2/4&amp;vec=false&amp;path=false</li>
+</ol>
+<h2 id="orthogonality-orthogonal-complements">Orthogonality - Orthogonal Complements<a class="headerlink" href="#orthogonality-orthogonal-complements" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 366 - Orthogonal complements in R2</strong> - The orthogonal complement of the line spanned by v is the perpendicular line. Click and drag the head of v to move it.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=2,3&amp;captions=orthog&amp;labels=v</li>
+<li><strong>p. 367 - Orthogonal complements in R3</strong> - The orthogonal complement of the line spanned by v is the perpendicular plane. Click and drag the head of v to move it.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=.3,0,1&amp;captions=orthog&amp;range=3&amp;labels=v</li>
+<li><strong>p. 367 - Orthogonal complements in R3</strong> - The orthogonal complement of the plane spanned by v, w is the perpendicular line. Click and drag the heads of v, w to change the plane.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=.957,0,-.287&amp;v2=0,1,0&amp;captions=orthog&amp;range=3&amp;labels=v,w</li>
+<li><strong>p. 370 - The set of all vectors perpendicular to v</strong> - The set of all vectors perpendicular to v.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=1,1,-1&amp;captions=orthog&amp;range=3&amp;labels=v</li>
+<li><strong>p. 371 - The orthogonal complement of the plane spanned by v = (1,1,−1) and w = (1,1,1)</strong> - The orthogonal complement of the plane spanned by v = (1,1,−1) and w = (1,1,1).</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/spans.html?v1=1,1,-1&amp;v2=1,1,1&amp;captions=orthog&amp;range=3&amp;labels=v,w</li>
+</ol>
+<h2 id="orthogonality-orthogonal-projection">Orthogonality - Orthogonal Projection<a class="headerlink" href="#orthogonality-orthogonal-projection" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 377 - Orthogonal decomposition with respect to the xy-plane</strong> - Orthogonal decomposition of a vector with respect to the x y-plane in R3. Note that xW is in the x y-plane and xW ⊥is in the z-axis. Click and drag the head of the vector x to see how the orthogonal decomposition changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=1,0,0&amp;u2=0,1,0&amp;vec=-1.1,2,1.5&amp;range=3&amp;mode=decomp&amp;closed</li>
+<li><strong>p. 377 - Orthogonal decomposition in R2</strong> - Orthogonal decomposition of a vector with respect to a line W in R2. Note that xW is in W and xW ⊥is in the line perpendicular to W. Click and drag the head of the vector x to see how the orthogonal decomposition changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=1,.5&amp;vec=1,-1&amp;range=3&amp;mode=decomp&amp;closed&amp;subname=W</li>
+<li><strong>p. 377 - Orthogonal decomposition in R3</strong> - Orthogonal decomposition of a vector with respect to a plane W in R3. Note that xW is in W and xW ⊥is in the line perpendicular to W. Click and drag the head of the vector x to see how the orthogonal decomposition changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=1,0,0&amp;u2=0,1.1,-.2&amp;vec=-1.1,2,1.5&amp;range=3&amp;mode=decomp&amp;closed</li>
+<li><strong>p. 378 - Orthogonal decomposition in R3</strong> - Orthogonal decomposition of a vector with respect to a line W in R3. Note that xW is in W and xW ⊥is in the plane perpendicular to W. Click and drag the head of the vector x to see how the orthogonal decomposition changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=0,1.1,.2&amp;vec=-1.1,2,1.5&amp;range=3&amp;mode=decomp&amp;closed&amp;subname=W</li>
+<li><strong>p. 380 - Distance from the line L</strong> - Distance from the line L.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=3,2&amp;vec=-6,4&amp;labels=u&amp;closed&amp;mode=distance</li>
+<li><strong>p. 380 - Orthogonal projection onto the line L</strong> - Orthogonal projection onto the line L.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=-1,1,1&amp;vec=-2,3,-1&amp;labels=u&amp;range=3.5&amp;closed</li>
+<li><strong>p. 382 - Orthogonal projection onto the plane W</strong> - Orthogonal projection onto the plane W.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=1,0,-1&amp;u2=-1,-2,-1&amp;vec=1,2,3&amp;labels=v1,v2&amp;range=3.5&amp;closed&amp;mode=decomp</li>
+<li><strong>p. 383 - Orthogonal projection onto the plane W</strong> - Orthogonal projection onto the plane W.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=1,1,-1&amp;u2=1,0,1&amp;vec=1,1,1&amp;labels=v1,v2&amp;range=3.5&amp;closed&amp;mode=decomp</li>
+</ol>
+<h2 id="orthogonality-orthogonal-sets">Orthogonality - Orthogonal Sets<a class="headerlink" href="#orthogonality-orthogonal-sets" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 396 - Orthogonal projection of a vector onto the x y-plane in R3</strong> - Orthogonal projection of a vector onto the x y-plane in R3. Note that xW is the sum of the projections of x onto the e1- and e2-coordinate axes (shown in orange and brown, respectively).</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=1,0,0&amp;u2=0,1,0&amp;labels=e1,e2&amp;vec=-1.1,2,1.5&amp;range=3&amp;closed</li>
+<li><strong>p. 397 - Orthogonal projection of a vector onto the plane W</strong> - Orthogonal projection of a vector onto the plane W. Note that xW is the sum of the projections of x onto the lines spanned by u1 and u2 (shown in orange and brown, respectively).</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=1,0,-1&amp;u2=1,1,1&amp;vec=2,3,-2&amp;range=3.5&amp;closed</li>
+<li><strong>p. 398 - Computing B-coordinates using the Projection Formula</strong> - Computing B-coordinates using the Projection Formula.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=1,2&amp;u2=-4,2&amp;vec=0,3&amp;mode=basis&amp;closed&amp;range=4.5</li>
+<li><strong>p. 399 - When v1 and v2 are not orthogonal, then xR2 = x is not necessarily equal to the sum (red)</strong> - When v1 and v2 are not orthogonal, then xR2 = x is not necessarily equal to the sum (red) of the projections (orange and brown) of x onto the lines spanned by v1 and v2.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/projection.html?u1=2,-.5&amp;u2=1,2&amp;vec=1,1&amp;range=3&amp;mode=badbasis&amp;labels=v1,v2&amp;closed</li>
+</ol>
+<h2 id="orthogonality-the-method-of-least-squares">Orthogonality - The Method of Least Squares<a class="headerlink" href="#orthogonality-the-method-of-least-squares" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>p. 406 - Least-squares closest vector in Col(A)</strong> - The violet plane is Col(A). The closest that Ax can get to b is the closest vector on Col(A) to b, which is the orthogonal projection bCol(A) (in blue). The vectors v1, v2 are the columns of A, and the coefficients of bx are the lengths of the green lines. Click and drag b to move it.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/leastsquares.html?v1=0,1,0&amp;v2=1.1,0,-.2&amp;range=2&amp;vec=1.4,-1.1,1.45</li>
+<li><strong>p. 408 - Least-squares projection onto Col(A)</strong> - The violet plane is Col(A). The closest that Ax can get to b is the closest vector on Col(A) to b, which is the orthogonal projection bCol(A) (in blue). The vectors v1, v2 are the columns of A, and the coefficients of bx are the B-coordinates of bCol(A), where B = {v1, v2}.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/leastsquares.html?v1=0,1,2&amp;v2=1,1,1&amp;range=6.5&amp;vec=6,0,0&amp;camera=3,-1.5,-.1</li>
+<li><strong>p. 409 - Least-squares projection with red Col(A) plane</strong> - The red plane is Col(A). The closest that Ax can get to b is the closest vector on Col(A) to b, which is the orthogonal projection bCol(A) (in blue). The vectors v1, v2 are the columns of A, and the coefficients of bx are the B-coordinates of bCol(A), where B = {v1, v2}.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/leastsquares.html?v1=2,-1,0&amp;v2=0,1,2&amp;vec=1,0,-1&amp;range=3</li>
+<li><strong>p. 410 - The three columns of A are coplanar, so there are many least-squares solutions</strong> - The three columns of A are coplanar, so there are many least-squares solutions. (The demo picks one solution when you move b.)</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/leastsquares.html?v1=1,1,1&amp;v2=0,1,2&amp;v3=1,-1,-3&amp;vec=6,0,0&amp;range=6.5&amp;camera=3,-1.5,-.1</li>
+<li><strong>p. 414 - Best-fit line</strong> - The best-fit line minimizes the sum of the squares of the vertical distances (violet). Click and drag the points to see how the best-fit line changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/bestfit.html?v1=0,6&amp;v2=1,0&amp;v3=2,0&amp;range=7</li>
+<li><strong>p. 417 - The best-fit parabola minimizes the sum of the squares of the vertical distances (violet)</strong> - The best-fit parabola minimizes the sum of the squares of the vertical distances (violet). Click and drag the points to see how the best-fit parabola changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/bestfit.html?func=A<em>x^2+B</em>x+C&amp;v1=-1,.5&amp;v2=1,-1&amp;v3=2,-.5&amp;v4=3,2&amp;range=5</li>
+<li><strong>p. 419 - The best-fit linear function minimizes the sum of the squares of the vertical distances (v</strong> - The best-fit linear function minimizes the sum of the squares of the vertical distances (violet). Click and drag the points to see how the best-fit linear function changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/bestfit.html?func=A<em>x+B</em>y+C&amp;v1=1,0,0&amp;v2=0,1,1&amp;v3=-1,0,3&amp;v4=0,-1,4&amp;range=5</li>
+<li><strong>p. 422 - The best-fit function minimizes the sum of the squares of the vertical distances (violet)</strong> - The best-fit function minimizes the sum of the squares of the vertical distances (violet). Click and drag the points to see how the best-fit function changes.</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/bestfit.html?func=A+B<em>cos(x)+C</em>sin(x)+D<em>cos(2</em>x)+EE<em>sin(2</em>x)+F<em>cos(3</em>x)+G<em>sin(3</em>x)&amp;v1=-4,-1&amp;v2=-3,0&amp;v3=-2,-1.5&amp;v4=-1,.5&amp;v5=0,1&amp;v6=1,-1&amp;v7=2,-.5&amp;v8=3,2&amp;v9=4,-1&amp;range=5</li>
+<li><strong>p. 425 - The best-fit ellipse minimizes the sum of the squares of the vertical distances (violet) f</strong> - The best-fit ellipse minimizes the sum of the squares of the vertical distances (violet) from the points (x, y,0) to the graph of f (x, y) on the left. The ellipse itself is the zero set of f (x, y), on the right. Click and drag the points on the right to see how the best-fit ellipse changes. Can you arrange the points so that the best-fit conic section is actually a hyperbola?</li>
+<li>URL: https://textbooks.math.gatech.edu/ila/demos/bestfit-implicit.html?func=x^2+A<em>y^2+B</em>x<em>y+C</em>x+D*y+EE&amp;v1=0,2&amp;v2=2,1&amp;v3=1,-1&amp;v4=-1,-2&amp;v5=-3,1&amp;v6=-1,1&amp;range=5&amp;rangez=25&amp;camera1=-2.14,.814,1.69</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

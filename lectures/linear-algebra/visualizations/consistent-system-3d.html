@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Consistent Linear System in ℝ³</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #1f2328;
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    #canvas-wrap { flex: 1; min-width: 0; }
+    #panel {
+      width: 270px; flex-shrink: 0;
+      background: #f6f8fa; border-left: 1px solid #d0d7de;
+      padding: 16px; display: flex; flex-direction: column; gap: 14px;
+      overflow-y: auto; font-size: 0.875rem;
+    }
+    h1 { font-size: 1rem; font-weight: 600; }
+    .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
+    hr { border: none; border-top: 1px solid #d0d7de; }
+    .row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .vname { font-weight: 700; min-width: 24px; }
+    .vval { font-family: monospace; font-size: 0.78rem; color: #656d76; }
+    .slider-row { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; }
+    .slider-label { display: flex; justify-content: space-between; font-size: 0.82rem; }
+    input[type=range] { width: 100%; accent-color: #009246; }
+    .result-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.78rem; line-height: 2; font-family: monospace;
+    }
+    .badge {
+      border-radius: 6px;
+      padding: 8px 12px; font-size: 0.82rem; font-weight: 600;
+      text-align: center; transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .badge-neq { background: #fff3f5; border: 1px solid #bc1e47; color: #bc1e47; }
+    .badge-eq  { background: #f0fff4; border: 1px solid #009246; color: #009246; }
+    .sol-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.78rem; line-height: 1.8; font-family: monospace;
+      color: #656d76;
+    }
+    .legend { display: flex; flex-direction: column; gap: 5px; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; }
+    .sw { width: 16px; height: 4px; border-radius: 2px; flex-shrink: 0; }
+    .sw-dash { width: 16px; height: 0; border-top: 2px dashed #888; flex-shrink: 0; opacity: 0.6; }
+    .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap"></div>
+
+<div id="panel">
+  <div>
+    <h1>Consistent System</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">A = [v₁ | v₂],&nbsp; w ∈ V,&nbsp; Ax = w is solvable</div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Columns of A (plane V)</div>
+    <div class="row"><span class="vname" style="color:#bc1e47">v₁</span><span class="vval" id="v1val">—</span></div>
+    <div class="row"><span class="vname" style="color:#0081cd">v₂</span><span class="vval" id="v2val">—</span></div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Target vector (w ∈ V)</div>
+    <div class="row"><span class="vname" style="color:#7c3aed">w</span><span class="vval" id="wval">—</span></div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Coefficients of trial solution</div>
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>a₁ = <strong id="a1val">0.50</strong></span>
+        <span style="color:#656d76;font-size:0.75rem">drag slider</span>
+      </div>
+      <input type="range" id="slider-a1" min="-3" max="3" step="0.05" value="0.5">
+    </div>
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>a₂ = <strong id="a2val">0.50</strong></span>
+        <span style="color:#656d76;font-size:0.75rem">drag slider</span>
+      </div>
+      <input type="range" id="slider-a2" min="-3" max="3" step="0.05" value="0.5">
+    </div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Comparison</div>
+    <div class="result-box" id="result-box">—</div>
+  </div>
+  <div class="badge badge-neq" id="eq-badge">a₁v₁ + a₂v₂ ≠ w</div>
+  <hr>
+  <div>
+    <div class="sec">Exact solution</div>
+    <div class="sol-box" id="sol-box">—</div>
+  </div>
+  <hr>
+  <div>
+    <div class="sec">Legend</div>
+    <div class="legend">
+      <div class="legend-item"><div class="sw" style="background:#bc1e47"></div><span>v₁ (column 1 of A)</span></div>
+      <div class="legend-item"><div class="sw" style="background:#0081cd"></div><span>v₂ (column 2 of A)</span></div>
+      <div class="legend-item"><div class="sw" style="background:#7c3aed"></div><span>w (target, in V)</span></div>
+      <div class="legend-item"><div class="sw" style="background:#009246"></div><span>a₁v₁ + a₂v₂ (trial)</span></div>
+      <div class="legend-item"><div class="sw-dash"></div><span>gap to w</span></div>
+      <div class="legend-item">
+        <div style="width:14px;height:10px;background:#fec247;opacity:0.22;border:1px solid #e0a800;flex-shrink:0;border-radius:1px"></div>
+        <span>plane V = col(A)</span>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <p class="hint">
+      Drag colored sphere at tip to move each vector<br>
+      w is kept inside V automatically<br>
+      Move sliders to find a₁, a₂ with a₁v₁+a₂v₂ = w<br>
+      Drag background to orbit &nbsp;·&nbsp; scroll to zoom<br>
+      Axes: <span style="color:#ff4444">x</span>&nbsp;<span style="color:#44cc44">y</span>&nbsp;<span style="color:#4488ff">z</span>
+    </p>
+  </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const C = {
+  red:    0xbc1e47,
+  blue:   0x0081cd,
+  green:  0x009246,
+  yellow: 0xfec247,
+  gray:   0x888888,
+  purple: 0x7c3aed,
+};
+
+const SOLVED_THRESHOLD = 0.05;
+
+const wrap = document.getElementById('canvas-wrap');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+wrap.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xffffff);
+
+const camera = new THREE.PerspectiveCamera(50, wrap.clientWidth / wrap.clientHeight, 0.01, 200);
+camera.position.set(4, 5, 6);
+camera.lookAt(0, 0, 0);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.07;
+
+scene.add(new THREE.AxesHelper(3.5));
+scene.add(new THREE.GridHelper(8, 8, 0xe0e0e0, 0xd0d0d0));
+
+const O = new THREE.Vector3();
+let v1 = new THREE.Vector3(1, 0, 0);
+let v2 = new THREE.Vector3(0, 1, 0);
+let w  = new THREE.Vector3(0.8, 0.6, 0);   // 0.8*v1 + 0.6*v2, lies in V initially
+let a1 = 0.5, a2 = 0.5;
+
+// Project w onto span{v1, v2}, keeping it in the plane at all times.
+function enforceWInsidePlane() {
+  const n = v1.clone().cross(v2);
+  if (n.length() < 1e-6) return;
+  n.normalize();
+  const d = w.dot(n);
+  w.addScaledVector(n, -d);          // remove normal component
+  if (w.length() < 0.3) {
+    // Keep w at least a little away from the origin
+    const proj = w.clone().normalize().multiplyScalar(0.3);
+    w.copy(proj);
+  }
+}
+
+// Solve a1*v1 + a2*v2 = w (w guaranteed in span{v1,v2}).
+// Returns { a1, a2 } or null if v1, v2 are parallel.
+function computeExactSolution() {
+  const a = v1.dot(v1), b = v1.dot(v2);
+  const c = b,          d = v2.dot(v2);
+  const det = a * d - b * c;
+  if (Math.abs(det) < 1e-10) return null;
+  const r1 = v1.dot(w), r2 = v2.dot(w);
+  return {
+    a1: (r1 * d - b * r2) / det,
+    a2: (a * r2 - r1 * c) / det,
+  };
+}
+
+let dyn = [];
+const clearDyn = () => { dyn.forEach(o => scene.remove(o)); dyn = []; };
+const addObj = obj => { if (obj) { scene.add(obj); dyn.push(obj); } };
+
+function makeArrow(from, to, color, opacity = 1) {
+  const d = new THREE.Vector3().subVectors(to, from);
+  const len = d.length();
+  if (len < 1e-6) return null;
+  const hl = Math.min(len * 0.22, 0.35);
+  const a = new THREE.ArrowHelper(d.normalize(), from, len, color, hl, hl * 0.55);
+  if (opacity < 1) {
+    [a.line.material, a.cone.material].forEach(m => { m.transparent = true; m.opacity = opacity; });
+  }
+  return a;
+}
+
+function makeDash(from, to, color, opacity = 0.6) {
+  const geo = new THREE.BufferGeometry().setFromPoints([from.clone(), to.clone()]);
+  const mat = new THREE.LineDashedMaterial({ color, dashSize: 0.12, gapSize: 0.07, opacity, transparent: true });
+  const l = new THREE.Line(geo, mat);
+  l.computeLineDistances();
+  return l;
+}
+
+function makeSpanPlane(u, v) {
+  const cross = u.clone().cross(v);
+  if (cross.length() < 1e-6) return null;
+  const N = 28, R = 2.8, pos = [], idx = [];
+  for (let i = 0; i <= N; i++) for (let j = 0; j <= N; j++) {
+    const s = -R + 2*R*i/N, t = -R + 2*R*j/N;
+    pos.push(s*u.x+t*v.x, s*u.y+t*v.y, s*u.z+t*v.z);
+  }
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+    const a = i*(N+1)+j, b=a+1, c=a+N+1, d=c+1;
+    idx.push(a,b,c, b,d,c);
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setIndex(idx);
+  return new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
+    color: C.yellow, transparent: true, opacity: 0.12, side: THREE.DoubleSide, depthWrite: false,
+  }));
+}
+
+// Highlight ring when solved: a circle around w/trial coincident point
+function makeSolvedRing(pos) {
+  const pts = [];
+  const r = 0.18, segs = 32;
+  const up = new THREE.Vector3(0, 1, 0);
+  const normal = v1.clone().cross(v2).normalize();
+  const q = new THREE.Quaternion().setFromUnitVectors(up, normal);
+  for (let i = 0; i <= segs; i++) {
+    const angle = (i / segs) * Math.PI * 2;
+    const p = new THREE.Vector3(Math.cos(angle) * r, 0, Math.sin(angle) * r);
+    p.applyQuaternion(q);
+    p.add(pos);
+    pts.push(p);
+  }
+  const geo = new THREE.BufferGeometry().setFromPoints(pts);
+  const mat = new THREE.LineBasicMaterial({ color: C.green, linewidth: 2 });
+  return new THREE.Line(geo, mat);
+}
+
+// Draggable sphere handles at vector tips
+const hGeo = new THREE.SphereGeometry(0.13, 12, 8);
+const mkHandle = (color, type) => {
+  const h = new THREE.Mesh(hGeo, new THREE.MeshBasicMaterial({ color }));
+  h.userData.type = type;
+  scene.add(h);
+  return h;
+};
+const H = {
+  v1: mkHandle(C.red,    'v1'),
+  v2: mkHandle(C.blue,   'v2'),
+  w:  mkHandle(C.purple, 'w'),
+};
+const hList = Object.values(H);
+
+const badge   = document.getElementById('eq-badge');
+const solBox  = document.getElementById('sol-box');
+
+function update() {
+  clearDyn();
+  enforceWInsidePlane();
+
+  const comb = v1.clone().multiplyScalar(a1).add(v2.clone().multiplyScalar(a2));
+  const gap  = comb.clone().sub(w).length();
+  const solved = gap < SOLVED_THRESHOLD;
+
+  addObj(makeSpanPlane(v1, v2));
+  addObj(makeArrow(O, v1, C.red));
+  addObj(makeArrow(O, v2, C.blue));
+  addObj(makeArrow(O, w,  C.purple));
+  if (comb.length() > 1e-6) addObj(makeArrow(O, comb, C.green));
+
+  if (!solved) {
+    addObj(makeDash(comb, w, C.gray, 0.8));
+  } else {
+    addObj(makeSolvedRing(w));
+  }
+
+  H.v1.position.copy(v1);
+  H.v2.position.copy(v2);
+  H.w.position.copy(w);
+
+  const f = x => x.toFixed(2);
+  document.getElementById('v1val').textContent = `(${f(v1.x)}, ${f(v1.y)}, ${f(v1.z)})`;
+  document.getElementById('v2val').textContent = `(${f(v2.x)}, ${f(v2.y)}, ${f(v2.z)})`;
+  document.getElementById('wval').textContent  = `(${f(w.x)}, ${f(w.y)}, ${f(w.z)})`;
+
+  document.getElementById('result-box').innerHTML =
+    `<div><span style="color:#009246">a₁v₁+a₂v₂</span> = (${f(comb.x)}, ${f(comb.y)}, ${f(comb.z)})</div>` +
+    `<div><span style="color:#7c3aed">w</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= (${f(w.x)}, ${f(w.y)}, ${f(w.z)})</div>` +
+    `<div style="margin-top:4px;border-top:1px solid #e0e0e0;padding-top:4px;color:#656d76">‖gap‖ = ${f(gap)}</div>`;
+
+  if (solved) {
+    badge.textContent = 'a₁v₁ + a₂v₂ = w ✓';
+    badge.className = 'badge badge-eq';
+  } else {
+    badge.textContent = 'a₁v₁ + a₂v₂ ≠ w';
+    badge.className = 'badge badge-neq';
+  }
+
+  const sol = computeExactSolution();
+  if (sol) {
+    solBox.innerHTML =
+      `<div>a₁ = ${sol.a1.toFixed(3)}</div>` +
+      `<div>a₂ = ${sol.a2.toFixed(3)}</div>` +
+      `<div style="margin-top:4px;border-top:1px solid #e0e0e0;padding-top:4px;color:#999;font-size:0.72rem">` +
+      `Set sliders to these values to reach w</div>`;
+  } else {
+    solBox.textContent = 'v₁ and v₂ are parallel — no unique solution';
+  }
+}
+
+// Sliders
+const sliderA1 = document.getElementById('slider-a1');
+const sliderA2 = document.getElementById('slider-a2');
+const a1valEl  = document.getElementById('a1val');
+const a2valEl  = document.getElementById('a2val');
+
+sliderA1.addEventListener('input', () => {
+  a1 = parseFloat(sliderA1.value);
+  a1valEl.textContent = a1.toFixed(2);
+  update();
+});
+sliderA2.addEventListener('input', () => {
+  a2 = parseFloat(sliderA2.value);
+  a2valEl.textContent = a2.toFixed(2);
+  update();
+});
+
+// Drag interaction
+const raycaster = new THREE.Raycaster();
+raycaster.params.Mesh = { threshold: 0.1 };
+const mouse2d = new THREE.Vector2();
+const dragPlane = new THREE.Plane();
+const dragIntersect = new THREE.Vector3();
+let dragging = null;
+
+function getHandle(event) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  mouse2d.set(
+    ((event.clientX - rect.left) / rect.width)  * 2 - 1,
+    -((event.clientY - rect.top)  / rect.height) * 2 + 1
+  );
+  raycaster.setFromCamera(mouse2d, camera);
+  const hits = raycaster.intersectObjects(hList);
+  return hits.length ? hits[0].object : null;
+}
+
+renderer.domElement.addEventListener('pointerdown', e => {
+  const h = getHandle(e);
+  if (!h) return;
+  dragging = h;
+  controls.enabled = false;
+  dragPlane.setFromNormalAndCoplanarPoint(
+    camera.getWorldDirection(new THREE.Vector3()).negate(),
+    h.position
+  );
+});
+
+renderer.domElement.addEventListener('pointermove', e => {
+  if (!dragging) return;
+  const rect = renderer.domElement.getBoundingClientRect();
+  mouse2d.set(
+    ((e.clientX - rect.left) / rect.width)  * 2 - 1,
+    -((e.clientY - rect.top)  / rect.height) * 2 + 1
+  );
+  raycaster.setFromCamera(mouse2d, camera);
+  if (!raycaster.ray.intersectPlane(dragPlane, dragIntersect)) return;
+
+  const t = dragging.userData.type;
+  if (t === 'v1') {
+    v1.copy(dragIntersect);
+    if (v1.length() < 0.3) v1.normalize().multiplyScalar(0.3);
+  } else if (t === 'v2') {
+    v2.copy(dragIntersect);
+    if (v2.length() < 0.3) v2.normalize().multiplyScalar(0.3);
+  } else if (t === 'w') {
+    w.copy(dragIntersect);
+  }
+  update();
+});
+
+renderer.domElement.addEventListener('pointerup', () => {
+  dragging = null;
+  controls.enabled = true;
+});
+
+window.addEventListener('resize', () => {
+  camera.aspect = wrap.clientWidth / wrap.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+});
+
+update();
+
+(function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+})();
+</script>
+</body>
+</html>

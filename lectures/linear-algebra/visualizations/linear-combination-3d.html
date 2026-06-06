@@ -7,8 +7,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: system-ui, -apple-system, sans-serif;
-      background: #0d1117;
-      color: #c9d1d9;
+      background: #ffffff;
+      color: #1f2328;
       display: flex;
       height: 100vh;
       overflow: hidden;
@@ -17,8 +17,8 @@
     #panel {
       width: 270px;
       flex-shrink: 0;
-      background: #161b22;
-      border-left: 1px solid #30363d;
+      background: #f6f8fa;
+      border-left: 1px solid #d0d7de;
       padding: 16px;
       display: flex;
       flex-direction: column;
@@ -26,17 +26,37 @@
       overflow-y: auto;
       font-size: 0.875rem;
     }
-    h1 { font-size: 1rem; font-weight: 600; color: #e6edf3; }
-    .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #8b949e; margin-bottom: 8px; }
-    hr { border: none; border-top: 1px solid #21262d; }
+
+    @media (max-width: 600px) {
+      body {
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto;
+      }
+      #canvas-wrap {
+        width: 100%;
+        height: 55vw;
+        min-height: 260px;
+        flex: none;
+      }
+      #panel {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #d0d7de;
+        overflow-y: visible;
+      }
+    }
+    h1 { font-size: 1rem; font-weight: 600; color: #1f2328; }
+    .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 8px; }
+    hr { border: none; border-top: 1px solid #d0d7de; }
 
     .vec-group { margin-bottom: 12px; }
     .vec-name { font-weight: 600; margin-bottom: 6px; }
     .vec-inputs { display: grid; grid-template-columns: 14px 1fr; gap: 4px 6px; align-items: center; }
     .vec-inputs label { font-size: 0.75rem; color: #8b949e; }
     .vec-inputs input {
-      background: #0d1117; border: 1px solid #30363d; border-radius: 4px;
-      color: #c9d1d9; padding: 3px 6px; font-size: 0.8rem; width: 100%;
+      background: #ffffff; border: 1px solid #d0d7de; border-radius: 4px;
+      color: #1f2328; padding: 3px 6px; font-size: 0.8rem; width: 100%;
     }
     .vec-inputs input:focus { outline: none; border-color: #0081cd; }
 
@@ -47,7 +67,7 @@
     input[type=range] { width: 100%; cursor: pointer; accent-color: #0081cd; }
 
     .result-box {
-      background: #0d1117; border: 1px solid #30363d; border-radius: 6px;
+      background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px;
       padding: 10px 12px; font-family: monospace; font-size: 0.8rem;
       line-height: 1.9; white-space: pre;
     }
@@ -58,7 +78,7 @@
     .swatch-dashed {
       width: 16px; height: 0; border-top: 2px dashed; flex-shrink: 0; opacity: 0.6;
     }
-    .hint { font-size: 0.72rem; color: #8b949e; margin-top: 8px; line-height: 1.5; }
+    .hint { font-size: 0.72rem; color: #656d76; margin-top: 8px; line-height: 1.5; }
   </style>
 </head>
 <body>
@@ -184,7 +204,7 @@ renderer.setSize(wrap.clientWidth, wrap.clientHeight);
 wrap.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x0d1117);
+scene.background = new THREE.Color(0xffffff);
 
 const camera = new THREE.PerspectiveCamera(50, wrap.clientWidth / wrap.clientHeight, 0.01, 200);
 camera.position.set(5, 4, 6);
@@ -196,7 +216,7 @@ controls.dampingFactor = 0.07;
 
 // Static scene elements
 scene.add(new THREE.AxesHelper(3.5));
-scene.add(new THREE.GridHelper(8, 8, 0x1c2030, 0x161c2a));
+scene.add(new THREE.GridHelper(8, 8, 0xe0e0e0, 0xd0d0d0));
 
 // Dynamic objects (rebuilt on every update)
 let dynamic = [];
@@ -322,11 +342,12 @@ document.getElementById('beta').addEventListener('input', e => {
   update();
 });
 
-window.addEventListener('resize', () => {
+function onResize() {
   camera.aspect = wrap.clientWidth / wrap.clientHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(wrap.clientWidth, wrap.clientHeight);
-});
+}
+window.addEventListener('resize', onResize);
 
 function animate() {
   requestAnimationFrame(animate);
