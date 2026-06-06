@@ -224,6 +224,12 @@ while the *nullity* of $f$ is defined to be $\dim (\ker f)$.
 
 A proof of this theorem appears in any linear algebra textbook, e.g. (Nicholson 1995, Theorem 7.2.4). As a remark on the proof, we note that one can prove the following fact, which is very useful in its own right.
 
+
+
+<iframe src="../visualizations/linear-map-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+Linear maps from $\bf R^3$ to $\bf R^3$ with different ranks
+
 <div class="theorem" markdown="1">
 
 

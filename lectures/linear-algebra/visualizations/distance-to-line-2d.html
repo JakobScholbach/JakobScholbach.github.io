@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Distance to a Line in ℝ²</title>
+  <title>Distance to a Line in R²</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -17,6 +17,11 @@
       background: #f6f8fa; border-left: 1px solid #d0d7de;
       padding: 16px; display: flex; flex-direction: column; gap: 14px;
       overflow-y: auto; font-size: 0.875rem;
+    }
+    @media (max-width: 600px) {
+      body { flex-direction: column; height: auto; overflow-y: auto; }
+      #canvas-wrap { width: 100%; height: 55vw; min-height: 260px; flex: none; }
+      #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; overflow-y: visible; }
     }
     h1 { font-size: 1rem; font-weight: 600; }
     .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
@@ -70,7 +75,7 @@
       <div class="legend-item"><div class="sw" style="background:#fec247"></div><span>angle ∠(L, pv)</span></div>
     </div>
     <p class="hint">
-      Click on L to place p<br>
+      Click on L to place p, then drag <span style="color:#009246">●</span> to slide it along L<br>
       Drag <span style="color:#bc1e47">●</span> to move v &nbsp;·&nbsp; Drag <span style="color:#0081cd">●</span> to rotate L<br>
       Near the closest point → magnetic snap
     </p>
@@ -175,6 +180,13 @@ function draw() {
   strokeLine(cx0, 0, cx0, H, '#c8c8c8', 1.5);
   ctx.restore();
 
+  // Axis labels x, y
+  ctx.save();
+  ctx.fillStyle = '#888'; ctx.font = 'italic 14px serif'; ctx.textBaseline = 'middle';
+  ctx.fillText('x', W - 14, cy0 - 12);
+  ctx.fillText('y', cx0 + 10, 14);
+  ctx.restore();
+
   const d    = lDir();
   const perp = { x: -d.y, y: d.x };
   const ext  = Math.max(W, H) / S * 0.65;
@@ -184,7 +196,8 @@ function draw() {
   const [p2x, p2y] = toC( perp.x * ext,  perp.y * ext);
   strokeLine(p1x, p1y, p2x, p2y, C.gray, 1.5, [6, 5], 0.48);
   {
-    const [lx, ly] = toC(perp.x * ext * 0.72, perp.y * ext * 0.72);
+    // label kept near the origin so it stays visible at any line angle
+    const [lx, ly] = toC(perp.x * 1.5, perp.y * 1.5);
     ctx.save(); ctx.fillStyle = C.gray; ctx.globalAlpha = 0.7;
     ctx.font = 'italic 14px serif'; ctx.fillText('L⊥', lx + 5, ly - 4);
     ctx.restore();
@@ -195,7 +208,8 @@ function draw() {
   const [l2x, l2y] = toC( d.x * ext,  d.y * ext);
   strokeLine(l1x, l1y, l2x, l2y, C.blue, 2);
   {
-    const [lx, ly] = toC(d.x * ext * 0.76, d.y * ext * 0.76);
+    // label kept near the origin so it stays visible at any line angle
+    const [lx, ly] = toC(d.x * 1.5, d.y * 1.5);
     ctx.save(); ctx.fillStyle = C.blue;
     ctx.font = 'bold italic 14px serif'; ctx.fillText('L', lx + 5, ly - 4);
     ctx.restore();
@@ -296,12 +310,12 @@ function updatePanel(px, py, isClosest) {
   let angleDeg = '—';
   if (vvlen > 0.01) {
     const cosA = Math.abs(d.x * vvx + d.y * vvy) / vvlen;
-    angleDeg = (Math.acos(Math.min(1, cosA)) * 180 / Math.PI).toFixed(1);
+    angleDeg = (Math.acos(Math.min(1, cosA)) * 180 / Math.PI).toFixed(2);
   }
 
   document.getElementById('pcoord').textContent = `(${px.toFixed(2)}, ${py.toFixed(2)})`;
 
-  let html = `<div><b>|v − p|</b> = ${dist.toFixed(3)}</div>`;
+  let html = `<div><b>|v − p|</b> = ${dist.toFixed(2)}</div>`;
   html    += `<div><b>∠(L, pv)</b> = ${angleDeg}°</div>`;
   if (isClosest) {
     html += `<div style="color:#009246;font-weight:600;margin-top:4px">p = proj<sub>L</sub>(v) — closest point</div>`;
@@ -325,13 +339,27 @@ canvas.addEventListener('mousemove', e => {
 
   if (drag === 'v')    { v.x = wx; v.y = wy; draw(); return; }
   if (drag === 'line') { lineAngle = Math.atan2(wy, wx); draw(); return; }
+  if (drag === 'p') {
+    // p is constrained to L; project the cursor onto L, then magnetic snap
+    const proj = projOnLine(wx, wy);
+    const opt  = projOnLine(v.x, v.y);
+    p_t = Math.abs(proj.t - opt.t) < SNAP_THRESH ? opt.t : proj.t;
+    draw(); return;
+  }
 
   const [vcx,  vcy]  = toC(v.x, v.y);
   const [lhcx, lhcy] = toC(d.x * HLEN, d.y * HLEN);
   const proj  = projOnLine(wx, wy);
   const dLine = Math.hypot(wx - proj.x, wy - proj.y);
 
+  let onP = false;
+  if (p_t !== null) {
+    const [pcx, pcy] = toC(p_t * d.x, p_t * d.y);
+    onP = Math.hypot(mx - pcx, my - pcy) < 13;
+  }
+
   if      (Math.hypot(mx - vcx, my - vcy) < 13)  canvas.style.cursor = 'grab';
+  else if (onP)                                     canvas.style.cursor = 'grab';
   else if (Math.hypot(mx - lhcx, my - lhcy) < 12) canvas.style.cursor = 'grab';
   else if (dLine < LINE_HIT)                        canvas.style.cursor = 'crosshair';
   else                                              canvas.style.cursor = '';
@@ -349,6 +377,13 @@ canvas.addEventListener('mousedown', e => {
 
   if (Math.hypot(mx - vcx, my - vcy) < 13) {
     drag = 'v'; canvas.style.cursor = 'grabbing'; e.preventDefault(); return;
+  }
+  // grab the p dot to slide it along L
+  if (p_t !== null) {
+    const [pcx, pcy] = toC(p_t * d.x, p_t * d.y);
+    if (Math.hypot(mx - pcx, my - pcy) < 13) {
+      drag = 'p'; canvas.style.cursor = 'grabbing'; e.preventDefault(); return;
+    }
   }
   if (Math.hypot(mx - lhcx, my - lhcy) < 12) {
     drag = 'line'; canvas.style.cursor = 'grabbing'; e.preventDefault(); return;

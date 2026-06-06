@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plane and line in R³</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #1f2328;
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    #canvas-wrap { flex: 1; min-width: 0; position: relative; background: #fff; }
+    #panel {
+      width: 270px; flex-shrink: 0;
+      background: #f6f8fa; border-left: 1px solid #d0d7de;
+      padding: 16px; display: flex; flex-direction: column; gap: 14px;
+      overflow-y: auto; font-size: 0.875rem;
+    }
+    @media (max-width: 600px) {
+      body { flex-direction: column; height: auto; overflow-y: auto; }
+      #canvas-wrap { width: 100%; height: 70vw; min-height: 280px; flex: none; }
+      #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; overflow-y: visible; }
+    }
+    h1 { font-size: 1rem; font-weight: 600; }
+    .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
+    hr { border: none; border-top: 1px solid #d0d7de; }
+    .presets { display: flex; gap: 6px; flex-wrap: wrap; }
+    button.preset {
+      flex: 1 1 auto; padding: 7px 8px; cursor: pointer;
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      font-size: 0.8rem; color: #1f2328; font-family: inherit;
+    }
+    button.preset:hover { background: #f0f3f6; border-color: #b0b8c0; }
+    .result-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.82rem; line-height: 1.7; font-family: monospace;
+    }
+    .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
+    .swatch { display: inline-block; width: 11px; height: 11px; border-radius: 2px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap"></div>
+
+<div id="panel">
+  <div>
+    <h1>Plane &amp; line in R³</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">Drag the points to move the plane and the line</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Presets</div>
+    <div class="presets">
+      <button class="preset" data-p="crossing">crossing</button>
+      <button class="preset" data-p="parallel">parallel</button>
+      <button class="preset" data-p="inplane">line in plane</button>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Relative position</div>
+    <div id="info-box" class="result-box">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <p class="hint">
+      <span class="swatch" style="background:#0081cd"></span> the affine plane
+      P through three draggable points.<br>
+      <span class="swatch" style="background:#bc1e47"></span> the affine line
+      L through two draggable points.<br>
+      <span class="swatch" style="background:#009246"></span> their intersection
+      point (when it exists).<br>
+      Drag any <span style="color:#0081cd">●</span> or
+      <span style="color:#bc1e47">●</span> to reshape the plane / line.<br>
+      The line is parallel to the plane when its direction lies inside the
+      plane's direction space — then there is no intersection (or the whole line
+      lies in the plane).<br>
+      Drag the background to orbit · scroll to zoom · axes labelled x, y, z.
+    </p>
+  </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const C = {
+  red:    0xbc1e47,   // the line L
+  blue:   0x0081cd,   // the plane P
+  green:  0x009246,   // intersection point
+  yellow: 0xfec247,
+  gray:   0x888888,
+};
+
+// Three points spanning the plane P, two points spanning the line L.
+// Each is a draggable handle.
+const planePts = [
+  new THREE.Vector3(-2, 0, -1.5),
+  new THREE.Vector3( 2, 0.5, -1),
+  new THREE.Vector3( 0, 1.5, 2),
+];
+const linePts = [
+  new THREE.Vector3(-1.5, -2, 1),
+  new THREE.Vector3( 1, 2.5, -0.5),
+];
+
+// ── Scene ───────────────────────────────────────────────────────────────────
+const host = document.getElementById('canvas-wrap');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(host.clientWidth, host.clientHeight);
+host.appendChild(renderer.domElement);
+renderer.domElement.style.touchAction = 'none';
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xffffff);
+
+const camera = new THREE.PerspectiveCamera(50, host.clientWidth / host.clientHeight, 0.01, 200);
+camera.position.set(6, 5, 7);
+camera.lookAt(0, 0, 0);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = 0.07;
+
+const L = 3.5;
+const axMat = new THREE.LineBasicMaterial({ color: C.gray });
+const seg = (a, b) => scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]), axMat));
+seg(new THREE.Vector3(-L,0,0), new THREE.Vector3(L,0,0));
+seg(new THREE.Vector3(0,-L,0), new THREE.Vector3(0,L,0));
+seg(new THREE.Vector3(0,0,-L), new THREE.Vector3(0,0,L));
+
+function makeAxisLabel(text, pos) {
+  const cv = document.createElement('canvas');
+  cv.width = cv.height = 64;
+  const c = cv.getContext('2d');
+  c.fillStyle = '#1f2328'; c.font = 'bold 40px serif';
+  c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillText(text, 32, 32);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: new THREE.CanvasTexture(cv), transparent: true, depthTest: false }));
+  sp.position.copy(pos); sp.scale.set(0.5, 0.5, 0.5);
+  return sp;
+}
+scene.add(makeAxisLabel('x', new THREE.Vector3(L+0.35, 0, 0)));
+scene.add(makeAxisLabel('y', new THREE.Vector3(0, L+0.35, 0)));
+scene.add(makeAxisLabel('z', new THREE.Vector3(0, 0, L+0.35)));
+scene.add(new THREE.GridHelper(8, 8, 0xe0e0e0, 0xd0d0d0));
+
+let dyn = [];
+function clearDyn() { dyn.forEach(o => scene.remove(o)); dyn = []; }
+function addObj(o) { if (o) { scene.add(o); dyn.push(o); } }
+
+// A finite patch of the plane  p0 + s*u + t*v,  s,t ∈ [-R, R].
+function makePlane(p0, u, v, color, opacity) {
+  const N = 12, R = 2.4, pos = [], idx = [];
+  for (let i=0;i<=N;i++) for (let j=0;j<=N;j++) {
+    const s=-R+2*R*i/N, t=-R+2*R*j/N;
+    pos.push(p0.x + s*u.x + t*v.x, p0.y + s*u.y + t*v.y, p0.z + s*u.z + t*v.z);
+  }
+  for (let i=0;i<N;i++) for (let j=0;j<N;j++) {
+    const a=i*(N+1)+j, b=a+1, cc=a+N+1, dd=cc+1; idx.push(a,b,cc, b,dd,cc);
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setIndex(idx); g.computeVertexNormals();
+  return new THREE.Mesh(g, new THREE.MeshBasicMaterial({
+    color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false }));
+}
+
+// Draggable handles: 3 blue (plane), 2 red (line).
+const handles = [];
+function makeHandle(vec, color) {
+  const m = new THREE.Mesh(new THREE.SphereGeometry(0.15, 14, 10),
+    new THREE.MeshBasicMaterial({ color }));
+  m.position.copy(vec);
+  m.userData.ref = vec;
+  scene.add(m); handles.push(m);
+  return m;
+}
+planePts.forEach(p => makeHandle(p, C.blue));
+linePts.forEach(p => makeHandle(p, C.red));
+
+function fmt(n) { return (Math.abs(n) < 5e-3 ? 0 : n).toFixed(2); }
+
+function update() {
+  clearDyn();
+
+  // plane direction space  W = span{u, v},  normal n
+  const u = planePts[1].clone().sub(planePts[0]);
+  const v = planePts[2].clone().sub(planePts[0]);
+  const n = new THREE.Vector3().crossVectors(u, v);
+  const nLen = n.length();
+
+  // line through linePts[0] with direction d
+  const d = linePts[1].clone().sub(linePts[0]);
+
+  // draw the plane (extend its patch via two in-plane basis vectors)
+  let ub = u.clone(), vb = v.clone();
+  if (ub.length() > 1e-6) ub.normalize();
+  if (vb.length() > 1e-6) {
+    // make vb orthogonal to ub so the patch is well shaped
+    vb.sub(ub.clone().multiplyScalar(vb.dot(ub)));
+    if (vb.length() > 1e-6) vb.normalize();
+  }
+  addObj(makePlane(planePts[0], ub, vb, C.blue, 0.16));
+
+  // draw the (extended) line as a long segment through the two points
+  if (d.length() > 1e-6) {
+    const dn = d.clone().normalize();
+    const a = linePts[0].clone().add(dn.clone().multiplyScalar(-6));
+    const b = linePts[0].clone().add(dn.clone().multiplyScalar( 6));
+    const lm = new THREE.LineBasicMaterial({ color: C.red, linewidth: 2 });
+    addObj(new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]), lm));
+  }
+
+  // ── relative position ─────────────────────────────────────────────────────
+  let html;
+  const nDotD = n.dot(d);
+  const degenerate = nLen < 1e-4 || d.length() < 1e-4;
+
+  if (degenerate) {
+    html = '<span style="color:#9a6700">Degenerate: the three plane points are '
+         + 'collinear or the two line points coincide — drag them apart.</span>';
+  } else if (Math.abs(nDotD) < 1e-4 * d.length() * nLen) {
+    // direction d lies in the plane  ⇒  line parallel to plane
+    const off = n.dot(linePts[0].clone().sub(planePts[0])) / nLen;  // signed distance ·? actually /nLen gives distance
+    if (Math.abs(off) < 5e-3) {
+      html = '<b>Line lies in the plane.</b><br>'
+           + 'd · n = 0 and a point of L satisfies the plane equation, '
+           + 'so L ⊂ P (infinitely many common points).';
+    } else {
+      html = '<b>Line is parallel to the plane.</b><br>'
+           + 'direction d ⊥ n (d · n = 0), so L has no intersection with P.<br>'
+           + `distance(L, P) = ${fmt(Math.abs(off))}`;
+    }
+  } else {
+    // unique intersection at  linePts[0] + s·d  with  n·(p0 + s d - planePts[0]) = 0
+    const s = n.dot(planePts[0].clone().sub(linePts[0])) / nDotD;
+    const ip = linePts[0].clone().add(d.clone().multiplyScalar(s));
+    // intersection marker
+    const mk = new THREE.Mesh(new THREE.SphereGeometry(0.17, 16, 12),
+      new THREE.MeshBasicMaterial({ color: C.green }));
+    mk.position.copy(ip); addObj(mk);
+    html = '<b>Line crosses the plane.</b><br>'
+         + 'd · n ≠ 0, so L meets P in exactly one point:<br>'
+         + `<span style="color:#009246">(${fmt(ip.x)}, ${fmt(ip.y)}, ${fmt(ip.z)})</span>`;
+  }
+  document.getElementById('info-box').innerHTML = html;
+}
+
+// ── Presets ───────────────────────────────────────────────────────────────
+const PRESETS = {
+  crossing: {
+    plane: [[-2,0,-1.5],[2,0.5,-1],[0,1.5,2]],
+    line:  [[-1.5,-2,1],[1,2.5,-0.5]],
+  },
+  parallel: {
+    // plane direction space = span{(4,0,0),(2,1.5,3.5)}; line direction (4,0,0)+? chosen in-plane, offset up
+    plane: [[-2,-1,-1.5],[2,-1,-1.5],[0,0.5,2]],
+    line:  [[-2,1.5,0],[2,1.5,0]],   // direction (4,0,0) lies in the plane's direction space, shifted off
+  },
+  inplane: {
+    plane: [[-2,0,-1.5],[2,0.5,-1],[0,1.5,2]],
+    line:  [[-2,0,-1.5],[0,1.5,2]],  // two of the plane's own points ⇒ line inside the plane
+  },
+};
+document.querySelectorAll('button.preset').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const pr = PRESETS[btn.dataset.p];
+    pr.plane.forEach((c, i) => planePts[i].set(c[0], c[1], c[2]));
+    pr.line.forEach((c, i) => linePts[i].set(c[0], c[1], c[2]));
+    handles.forEach(h => h.position.copy(h.userData.ref));
+    update();
+  });
+});
+
+// ── Drag the handles (mouse + touch via pointer events) ─────────────────────
+const rc = new THREE.Raycaster();
+const ndc = new THREE.Vector2();
+const dragPlane = new THREE.Plane();
+let dragTarget = null, hovering = false;
+
+function toNDC(e) {
+  const r = renderer.domElement.getBoundingClientRect();
+  ndc.set(((e.clientX-r.left)/r.width)*2-1, ((e.clientY-r.top)/r.height)*-2+1);
+}
+renderer.domElement.addEventListener('pointerdown', e => {
+  toNDC(e); rc.setFromCamera(ndc, camera);
+  const hit = rc.intersectObjects(handles);
+  if (hit.length) {
+    dragTarget = hit[0].object; controls.enabled = false;
+    renderer.domElement.style.cursor = 'grabbing';
+    const camDir = new THREE.Vector3(); camera.getWorldDirection(camDir);
+    dragPlane.setFromNormalAndCoplanarPoint(camDir, dragTarget.position);
+    e.preventDefault();
+  }
+});
+renderer.domElement.addEventListener('pointermove', e => {
+  toNDC(e); rc.setFromCamera(ndc, camera);
+  if (dragTarget) {
+    const pt = new THREE.Vector3();
+    if (rc.ray.intersectPlane(dragPlane, pt)) {
+      pt.clampScalar(-3.4, 3.4);
+      dragTarget.position.copy(pt);
+      dragTarget.userData.ref.copy(pt);
+      update();
+    }
+    e.preventDefault(); return;
+  }
+  const hit = rc.intersectObjects(handles).length > 0;
+  if (hit !== hovering) { hovering = hit; renderer.domElement.style.cursor = hit ? 'grab' : ''; }
+});
+function endDrag() {
+  if (!dragTarget) return;
+  dragTarget = null; controls.enabled = true;
+  renderer.domElement.style.cursor = hovering ? 'grab' : '';
+}
+renderer.domElement.addEventListener('pointerup', endDrag);
+renderer.domElement.addEventListener('pointerleave', endDrag);
+
+// ── Resize / animate ────────────────────────────────────────────────────────
+window.addEventListener('resize', () => {
+  const w = host.clientWidth, h = host.clientHeight;
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+update();
+animate();
+</script>
+</body>
+</html>

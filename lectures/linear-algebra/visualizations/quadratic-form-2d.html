@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quadratic forms &amp; distance level sets</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #1f2328;
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    #canvas-wrap { flex: 1; min-width: 0; }
+    canvas { display: block; touch-action: none; }
+    #panel {
+      width: 270px; flex-shrink: 0;
+      background: #f6f8fa; border-left: 1px solid #d0d7de;
+      padding: 16px; display: flex; flex-direction: column; gap: 14px;
+      overflow-y: auto; font-size: 0.875rem;
+    }
+    @media (max-width: 600px) {
+      body { flex-direction: column; height: auto; overflow-y: auto; }
+      #canvas-wrap { width: 100%; height: 70vw; min-height: 280px; flex: none; }
+      #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; overflow-y: visible; }
+    }
+    h1 { font-size: 1rem; font-weight: 600; }
+    .sec {
+      font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px;
+    }
+    hr { border: none; border-top: 1px solid #d0d7de; }
+    .mat-outer { display: flex; align-items: center; gap: 1px; }
+    .bracket { font-size: 2.6rem; color: #888; line-height: 1; }
+    .mat-inner { display: grid; grid-template-columns: max-content max-content; gap: 6px 8px; padding: 2px 6px; }
+    .mat-inner input {
+      width: 46px; padding: 4px 5px; text-align: center;
+      font-family: monospace; font-size: 0.85rem;
+      border: 1px solid #d0d7de; border-radius: 5px; background: #fff; color: #1f2328;
+    }
+    .mat-inner input:focus { outline: none; border-color: #0081cd; }
+    .presets { display: flex; flex-wrap: wrap; gap: 6px; }
+    button.preset {
+      flex: 1 1 auto; padding: 6px 8px; cursor: pointer; white-space: nowrap;
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      font-size: 0.76rem; color: #1f2328; font-family: inherit;
+    }
+    button.preset:hover { background: #f0f3f6; border-color: #b0b8c0; }
+    button.preset:active { background: #e6eaee; }
+    .result-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.82rem; line-height: 1.8;
+      font-family: monospace;
+    }
+    .class-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.86rem; line-height: 1.5;
+      text-align: center; font-weight: 700;
+    }
+    .note {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.8rem; line-height: 1.6;
+    }
+    .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
+    .swatch { display: inline-block; width: 11px; height: 11px; border-radius: 2px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap"><canvas id="canvas"></canvas></div>
+
+<div id="panel">
+  <div>
+    <h1>Quadratic forms</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">
+      &ldquo;distance&rdquo; level sets {v : v<sup>T</sup>A v = c} in <b>R</b>²
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Symmetric matrix A</div>
+    <div class="mat-outer">
+      <span class="bracket">(</span>
+      <div class="mat-inner">
+        <input id="a00" type="number" step="0.1" value="2">
+        <input id="a01" type="number" step="0.1" value="0.5">
+        <input id="a10" type="number" step="0.1" value="0.5">
+        <input id="a11" type="number" step="0.1" value="1">
+      </div>
+      <span class="bracket">)</span>
+    </div>
+    <p class="hint" style="margin-top:6px">A is kept symmetric: a₁₂ = a₂₁.</p>
+  </div>
+
+  <div>
+    <div class="sec">Presets</div>
+    <div class="presets">
+      <button class="preset" data-m="2,0.5,0.5,1">Pos. definite</button>
+      <button class="preset" data-m="1,0,0,-1">Indefinite</button>
+      <button class="preset" data-m="-2,0.5,0.5,-1">Neg. definite</button>
+      <button class="preset" data-m="1,0,0,1">Circle</button>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Classification</div>
+    <div id="class-box" class="class-box">—</div>
+  </div>
+
+  <div>
+    <div class="sec">Eigenvalues</div>
+    <div id="eig-box" class="result-box">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Chosen point</div>
+    <div id="v-box" class="note">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <p class="hint">
+      The level sets {v : v<sup>T</sup>A v = c} are the points at fixed
+      &ldquo;A-distance&rdquo; √c from the origin.<br>
+      <span class="swatch" style="background:#0081cd"></span> c &gt; 0 &nbsp;
+      <span class="swatch" style="background:#bc1e47"></span> c &lt; 0<br>
+      <span class="swatch" style="background:#888888"></span> principal axes (eigenvectors)&nbsp;
+      <span class="swatch" style="background:#009246"></span> chosen point v<br>
+      Drag <span style="color:#009246">●</span> to move v and read off v<sup>T</sup>A v.
+    </p>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx    = canvas.getContext('2d');
+const wrap   = document.getElementById('canvas-wrap');
+
+const C = {
+  red:    '#bc1e47',   // negative level sets (c < 0)
+  blue:   '#0081cd',   // positive level sets (c > 0)
+  green:  '#009246',   // chosen point v
+  gray:   '#888888',   // principal axes
+};
+
+// Symmetric matrix A = [[a00, a01], [a01, a11]]
+let A = { a00: 2, a01: 0.5, a11: 1 };
+// Chosen point
+let v = { x: 1.2, y: 0.8 };
+
+let S = 80, cx0 = 0, cy0 = 0;
+
+function resize() {
+  canvas.width  = wrap.clientWidth;
+  canvas.height = wrap.clientHeight;
+  S   = Math.min(canvas.width, canvas.height) / 8;
+  cx0 = canvas.width  / 2;
+  cy0 = canvas.height / 2;
+  draw();
+}
+
+const toC = (wx, wy) => [cx0 + wx * S, cy0 - wy * S];
+const toW = (px, py) => [(px - cx0) / S, -(py - cy0) / S];
+
+// Quadratic form Q(v) = v^T A v
+function Q(p) {
+  return A.a00 * p.x * p.x + 2 * A.a01 * p.x * p.y + A.a11 * p.y * p.y;
+}
+
+// Eigenvalues / eigenvectors of the symmetric 2x2 matrix.
+function eigen() {
+  const a = A.a00, b = A.a01, c = A.a11;
+  const tr = a + c;
+  const rad = Math.sqrt(((a - c) / 2) ** 2 + b * b);
+  const l1 = tr / 2 + rad;   // larger
+  const l2 = tr / 2 - rad;   // smaller
+  const dirFor = (lam) => {
+    // eigenvector of [[a,b],[b,c]] for lam
+    if (Math.hypot(a - lam, b) > 1e-7) return norm({ x: -b, y: a - lam });
+    if (Math.hypot(b, c - lam) > 1e-7) return norm({ x: c - lam, y: -b });
+    return { x: 1, y: 0 };
+  };
+  return { l1, l2, d1: dirFor(l1), d2: dirFor(l2) };
+}
+function norm(p) { const n = Math.hypot(p.x, p.y) || 1; return { x: p.x / n, y: p.y / n }; }
+
+function classify(l1, l2) {
+  const E = 1e-6;
+  if (l1 > E && l2 > E) return { name: 'Positive definite', color: C.blue, shape: 'ellipses' };
+  if (l1 < -E && l2 < -E) return { name: 'Negative definite', color: C.red, shape: 'ellipses (c < 0)' };
+  if (l1 > E && l2 < -E) return { name: 'Indefinite', color: '#7a4fbf', shape: 'hyperbolas' };
+  // a zero eigenvalue -> semidefinite / degenerate
+  return { name: 'Semidefinite (degenerate)', color: C.gray, shape: 'parallel lines' };
+}
+
+function drawGrid() {
+  const W = canvas.width, H = canvas.height;
+  const step = S;
+  for (let x = cx0 % step; x < W; x += step) {
+    ctx.save(); ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H);
+    ctx.strokeStyle = '#e8e8e8'; ctx.lineWidth = 1; ctx.stroke(); ctx.restore();
+  }
+  for (let y = cy0 % step; y < H; y += step) {
+    ctx.save(); ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y);
+    ctx.strokeStyle = '#e8e8e8'; ctx.lineWidth = 1; ctx.stroke(); ctx.restore();
+  }
+  ctx.save(); ctx.beginPath(); ctx.moveTo(0, cy0); ctx.lineTo(W, cy0);
+  ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+  ctx.save(); ctx.beginPath(); ctx.moveTo(cx0, 0); ctx.lineTo(cx0, H);
+  ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+  ctx.save();
+  ctx.fillStyle = '#888'; ctx.font = 'italic 14px serif'; ctx.textBaseline = 'middle';
+  ctx.fillText('x', W - 14, cy0 - 12);
+  ctx.fillText('y', cx0 + 10, 14);
+  ctx.restore();
+}
+
+// Draw the level set {v : Q(v) = k} by scanning directions u(θ):
+// along the ray r·u we have Q = r²·(uᵀAu), so r = sqrt(k / (uᵀAu)) when the
+// sign of uᵀAu matches the sign of k. Path breaks where no real r exists,
+// which naturally separates the two branches of a hyperbola.
+function drawLevel(k, color, lw, alpha) {
+  const N = 1440;
+  ctx.save();
+  ctx.strokeStyle = color; ctx.lineWidth = lw; ctx.globalAlpha = alpha;
+  ctx.beginPath();
+  let started = false;
+  for (let i = 0; i <= N; i++) {
+    const th = i / N * 2 * Math.PI;
+    const cu = Math.cos(th), su = Math.sin(th);
+    const f = A.a00 * cu * cu + 2 * A.a01 * cu * su + A.a11 * su * su;
+    const ratio = k / f;
+    if (ratio > 1e-9 && isFinite(ratio)) {
+      const r = Math.sqrt(ratio);
+      const [px, py] = toC(r * cu, r * su);
+      if (!started) { ctx.moveTo(px, py); started = true; } else ctx.lineTo(px, py);
+    } else {
+      started = false;
+    }
+  }
+  ctx.stroke();
+  ctx.restore();
+}
+
+function drawAxisLine(dir, color) {
+  const ext = (canvas.width + canvas.height) / S;
+  const [x1, y1] = toC(-dir.x * ext, -dir.y * ext);
+  const [x2, y2] = toC( dir.x * ext,  dir.y * ext);
+  ctx.save();
+  ctx.strokeStyle = color; ctx.lineWidth = 1.5; ctx.globalAlpha = 0.7;
+  ctx.setLineDash([6, 5]);
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  ctx.restore();
+}
+
+function drawArrow(wx1, wy1, wx2, wy2, color, lw) {
+  const [x1, y1] = toC(wx1, wy1), [x2, y2] = toC(wx2, wy2);
+  const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy);
+  if (len < 3) return;
+  const ux = dx / len, uy = dy / len;
+  const hl = Math.min(len * 0.25, 15), ha = 0.45;
+  ctx.save();
+  ctx.strokeStyle = color; ctx.lineWidth = lw;
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(ha)  - uy*Math.sin(ha)),  y2 - hl*(uy*Math.cos(ha)  + ux*Math.sin(ha)));
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(-ha) - uy*Math.sin(-ha)), y2 - hl*(uy*Math.cos(-ha) + ux*Math.sin(-ha)));
+  ctx.stroke();
+  ctx.restore();
+}
+
+function drawDot(px, py, r, fill) {
+  ctx.save();
+  ctx.beginPath(); ctx.arc(px, py, r, 0, Math.PI * 2);
+  ctx.fillStyle = fill; ctx.fill();
+  ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.restore();
+}
+
+function draw() {
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+  drawGrid();
+
+  const e = eigen();
+
+  // Principal axes (eigenvector directions)
+  drawAxisLine(e.d1, C.gray);
+  drawAxisLine(e.d2, C.gray);
+
+  // Concentric "distance" contours. Positive levels in blue, negative in red.
+  // Levels chosen so the curve through v (|Q(v)|) is among them and emphasised.
+  const levels = [0.25, 1, 2.25, 4, 6.25, 9];
+  levels.forEach(L => {
+    drawLevel( L, C.blue, 1.4, 0.45);
+    drawLevel(-L, C.red,  1.4, 0.45);
+  });
+
+  // Emphasised contour through the chosen point v.
+  const qv = Q(v);
+  if (Math.abs(qv) > 1e-4) {
+    drawLevel(qv, qv > 0 ? C.blue : C.red, 3, 0.95);
+  }
+
+  // Chosen point v
+  const [vx, vy] = toC(v.x, v.y);
+  drawArrow(0, 0, v.x, v.y, C.green, 2.5);
+  drawDot(vx, vy, 7, C.green);
+  ctx.save();
+  ctx.fillStyle = C.green; ctx.font = 'bold italic 14px serif';
+  ctx.fillText('v', vx + 11, vy - 6);
+  ctx.restore();
+
+  // Origin
+  const [ox, oy] = toC(0, 0);
+  ctx.save(); ctx.beginPath(); ctx.arc(ox, oy, 3.5, 0, Math.PI*2);
+  ctx.fillStyle = '#444'; ctx.fill(); ctx.restore();
+
+  updatePanel(e, qv);
+}
+
+function fmt(n) { return (Math.abs(n) < 5e-3 ? 0 : n).toFixed(2); }
+
+function updatePanel(e, qv) {
+  const cls = classify(e.l1, e.l2);
+  document.getElementById('class-box').innerHTML =
+    `<span style="color:${cls.color}">${cls.name}</span>` +
+    `<br><span style="font-weight:400;font-size:0.78rem;color:#656d76">level sets: ${cls.shape}</span>`;
+
+  document.getElementById('eig-box').innerHTML =
+    `λ₁ = ${fmt(e.l1)}, &nbsp;λ₂ = ${fmt(e.l2)}<br>` +
+    `<span class="hint">principal axes are the eigenvectors</span>`;
+
+  let vhtml =
+    `v = (${fmt(v.x)}, ${fmt(v.y)})<br>` +
+    `v<sup>T</sup>A v = ${fmt(qv)}<br>`;
+  if (qv > 1e-6) {
+    vhtml += `A-distance ‖v‖<sub>A</sub> = √(v<sup>T</sup>A v) = ${fmt(Math.sqrt(qv))}`;
+  } else if (qv < -1e-6) {
+    vhtml += `<span class="hint">v<sup>T</sup>A v &lt; 0: no real A-distance here (A is not positive definite).</span>`;
+  } else {
+    vhtml += `<span class="hint">v<sup>T</sup>A v = 0: v lies on the &ldquo;light cone&rdquo; of A.</span>`;
+  }
+  document.getElementById('v-box').innerHTML = vhtml;
+}
+
+// ── Matrix inputs (kept symmetric) ──────────────────────────────────────────
+function readInputs() {
+  const a00 = parseFloat(document.getElementById('a00').value);
+  const a01 = parseFloat(document.getElementById('a01').value);
+  const a10 = parseFloat(document.getElementById('a10').value);
+  const a11 = parseFloat(document.getElementById('a11').value);
+  A.a00 = isNaN(a00) ? 0 : a00;
+  A.a11 = isNaN(a11) ? 0 : a11;
+  // a01 / a10 mirror each other; whichever the user just typed wins (handled per-field below)
+  A.a01 = isNaN(a01) ? 0 : a01;
+  draw();
+}
+document.getElementById('a00').addEventListener('input', readInputs);
+document.getElementById('a11').addEventListener('input', readInputs);
+document.getElementById('a01').addEventListener('input', () => {
+  document.getElementById('a10').value = document.getElementById('a01').value;
+  readInputs();
+});
+document.getElementById('a10').addEventListener('input', () => {
+  document.getElementById('a01').value = document.getElementById('a10').value;
+  A.a01 = parseFloat(document.getElementById('a10').value) || 0;
+  draw();
+});
+
+document.querySelectorAll('button.preset').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const m = btn.dataset.m.split(',').map(Number); // a00, a01, a10, a11
+    A.a00 = m[0]; A.a01 = m[1]; A.a11 = m[3];
+    document.getElementById('a00').value = m[0];
+    document.getElementById('a01').value = m[1];
+    document.getElementById('a10').value = m[1];
+    document.getElementById('a11').value = m[3];
+    draw();
+  });
+});
+
+// ── Drag interaction (mouse + touch) ────────────────────────────────────────
+let dragging = false;
+function eventPos(e) {
+  const r = canvas.getBoundingClientRect();
+  const src = e.touches ? e.touches[0] : e;
+  return [src.clientX - r.left, src.clientY - r.top];
+}
+function nearV(mx, my) {
+  const [vx, vy] = toC(v.x, v.y);
+  return Math.hypot(mx - vx, my - vy) < 16;
+}
+function onDown(e) {
+  const [mx, my] = eventPos(e);
+  if (nearV(mx, my)) { dragging = true; canvas.style.cursor = 'grabbing'; e.preventDefault(); }
+}
+function onMove(e) {
+  const [mx, my] = eventPos(e);
+  if (dragging) {
+    [v.x, v.y] = toW(mx, my);
+    draw();
+    e.preventDefault();
+    return;
+  }
+  canvas.style.cursor = nearV(mx, my) ? 'grab' : '';
+}
+function onUp() { dragging = false; canvas.style.cursor = ''; }
+
+canvas.addEventListener('mousedown', onDown);
+canvas.addEventListener('mousemove', onMove);
+canvas.addEventListener('mouseup', onUp);
+canvas.addEventListener('mouseleave', onUp);
+canvas.addEventListener('touchstart', onDown, { passive: false });
+canvas.addEventListener('touchmove', onMove, { passive: false });
+canvas.addEventListener('touchend', onUp);
+
+window.addEventListener('resize', resize);
+resize();
+</script>
+</body>
+</html>

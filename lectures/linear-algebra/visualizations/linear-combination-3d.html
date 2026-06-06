@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Linear Combination in ℝ³</title>
+  <title>Linear Combination in R³</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -88,7 +88,7 @@
 <div id="panel">
   <div>
     <h1>Linear Combination</h1>
-    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">w = αv₁ + βv₂ &nbsp;in ℝ³</div>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">w = αv₁ + βv₂ &nbsp;in <b>R</b>³</div>
   </div>
 
   <hr>
@@ -176,9 +176,7 @@
     </div>
     <p class="hint">
       Drag to orbit &nbsp;·&nbsp; Scroll to zoom<br>
-      Axes: <span style="color:#ff6b6b">x</span>
-            <span style="color:#77dd77">y</span>
-            <span style="color:#6699ff">z</span>
+      Axes labelled x, y, z
     </p>
   </div>
 </div>
@@ -214,8 +212,33 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.07;
 
-// Static scene elements
-scene.add(new THREE.AxesHelper(3.5));
+// Static scene elements — neutral-gray axes with x / y / z labels (axes not colored)
+function makeAxisLabel(text, pos) {
+  const cv = document.createElement('canvas');
+  cv.width = cv.height = 64;
+  const c = cv.getContext('2d');
+  c.fillStyle = '#1f2328';
+  c.font = 'bold 40px serif';
+  c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillText(text, 32, 32);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: new THREE.CanvasTexture(cv), transparent: true, depthTest: false,
+  }));
+  sp.position.copy(pos);
+  sp.scale.set(0.45, 0.45, 0.45);
+  return sp;
+}
+function addAxes(L = 3.5) {
+  const mat = new THREE.LineBasicMaterial({ color: 0x888888 });
+  const seg = (a, b) => scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]), mat));
+  seg(new THREE.Vector3(-L, 0, 0), new THREE.Vector3(L, 0, 0));
+  seg(new THREE.Vector3(0, -L, 0), new THREE.Vector3(0, L, 0));
+  seg(new THREE.Vector3(0, 0, -L), new THREE.Vector3(0, 0, L));
+  scene.add(makeAxisLabel('x', new THREE.Vector3(L + 0.35, 0, 0)));
+  scene.add(makeAxisLabel('y', new THREE.Vector3(0, L + 0.35, 0)));
+  scene.add(makeAxisLabel('z', new THREE.Vector3(0, 0, L + 0.35)));
+}
+addAxes(3.5);
 scene.add(new THREE.GridHelper(8, 8, 0xe0e0e0, 0xd0d0d0));
 
 // Dynamic objects (rebuilt on every update)

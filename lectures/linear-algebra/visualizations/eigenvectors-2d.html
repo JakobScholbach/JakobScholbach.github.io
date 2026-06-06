@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eigenvalues &amp; Eigenvectors</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #1f2328;
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    #canvas-wrap { flex: 1; min-width: 0; }
+    canvas { display: block; touch-action: none; }
+    #panel {
+      width: 270px; flex-shrink: 0;
+      background: #f6f8fa; border-left: 1px solid #d0d7de;
+      padding: 16px; display: flex; flex-direction: column; gap: 14px;
+      overflow-y: auto; font-size: 0.875rem;
+    }
+    @media (max-width: 600px) {
+      body { flex-direction: column; height: auto; overflow-y: auto; }
+      #canvas-wrap { width: 100%; height: 70vw; min-height: 280px; flex: none; }
+      #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; overflow-y: visible; }
+    }
+    h1 { font-size: 1rem; font-weight: 600; }
+    .sec {
+      font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px;
+    }
+    hr { border: none; border-top: 1px solid #d0d7de; }
+    .mat-outer { display: flex; align-items: center; gap: 1px; }
+    .bracket { font-size: 2.6rem; color: #888; line-height: 1; }
+    .mat-inner { display: grid; grid-template-columns: max-content max-content; gap: 6px 8px; padding: 2px 6px; }
+    .mat-inner input {
+      width: 46px; padding: 4px 5px; text-align: center;
+      font-family: monospace; font-size: 0.85rem;
+      border: 1px solid #d0d7de; border-radius: 5px; background: #fff; color: #1f2328;
+    }
+    .mat-inner input:focus { outline: none; border-color: #0081cd; }
+    .presets { display: flex; flex-wrap: wrap; gap: 6px; }
+    button.preset {
+      flex: 1 1 auto; padding: 6px 8px; cursor: pointer; white-space: nowrap;
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      font-size: 0.76rem; color: #1f2328; font-family: inherit;
+    }
+    button.preset:hover { background: #f0f3f6; border-color: #b0b8c0; }
+    button.preset:active { background: #e6eaee; }
+    .result-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.82rem; line-height: 1.8;
+      font-family: monospace;
+    }
+    .note {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.8rem; line-height: 1.6;
+    }
+    .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
+    .swatch { display: inline-block; width: 11px; height: 11px; border-radius: 2px; vertical-align: middle; }
+    .eig { font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap"><canvas id="canvas"></canvas></div>
+
+<div id="panel">
+  <div>
+    <h1>Eigenvalues &amp; Eigenvectors</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">Linear map v ↦ A·v in <b>R</b>²</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Matrix A</div>
+    <div class="mat-outer">
+      <span class="bracket">(</span>
+      <div class="mat-inner">
+        <input id="a00" type="number" step="0.1" value="2">
+        <input id="a01" type="number" step="0.1" value="1">
+        <input id="a10" type="number" step="0.1" value="1">
+        <input id="a11" type="number" step="0.1" value="2">
+      </div>
+      <span class="bracket">)</span>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec">Presets</div>
+    <div class="presets">
+      <button class="preset" data-m="1,0,0,1">Identity</button>
+      <button class="preset" data-m="1,0,0,0">Projection</button>
+      <button class="preset" data-m="1,1,0,1">Shear</button>
+      <button class="preset" data-m="0,-1,1,0">Rotation</button>
+      <button class="preset" data-m="2,1,1,2">Symmetric</button>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Eigenvalues</div>
+    <div id="eig-box" class="result-box">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Chosen vector</div>
+    <div id="v-box" class="note">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <p class="hint">
+      Edit A's entries or pick a preset.<br>
+      <span class="swatch" style="background:#bc1e47"></span> first eigenspace E<sub>λ₁</sub>&nbsp;
+      <span class="swatch" style="background:#d4820a"></span> second E<sub>λ₂</sub><br>
+      <span class="swatch" style="background:#0081cd"></span> chosen v &nbsp;
+      <span class="swatch" style="background:#009246"></span> image A·v<br>
+      Drag <span style="color:#0081cd">●</span> to choose v. When v lies on an
+      eigenspace, A·v stays on the same line (it is just scaled by λ).
+    </p>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx    = canvas.getContext('2d');
+const wrap   = document.getElementById('canvas-wrap');
+
+const C = {
+  red:    '#bc1e47',   // first eigenspace
+  orange: '#d4820a',   // second eigenspace
+  blue:   '#0081cd',   // chosen vector v
+  green:  '#009246',   // image A·v
+  gray:   '#888888',
+};
+
+// Matrix A = [[a00, a01], [a10, a11]]
+let A = { a00: 2, a01: 1, a10: 1, a11: 2 };
+// Chosen vector
+let v = { x: 1.5, y: 0.5 };
+
+let S = 80, cx0 = 0, cy0 = 0;
+
+function resize() {
+  canvas.width  = wrap.clientWidth;
+  canvas.height = wrap.clientHeight;
+  S   = Math.min(canvas.width, canvas.height) / 8;
+  cx0 = canvas.width  / 2;
+  cy0 = canvas.height / 2;
+  draw();
+}
+
+const toC = (wx, wy) => [cx0 + wx * S, cy0 - wy * S];
+const toW = (px, py) => [(px - cx0) / S, -(py - cy0) / S];
+
+function applyA(p) {
+  return {
+    x: A.a00 * p.x + A.a01 * p.y,
+    y: A.a10 * p.x + A.a11 * p.y,
+  };
+}
+
+// Real eigen-decomposition of the 2x2 matrix A.
+// Returns { kind, eigs }, where kind is 'distinct' | 'repeated' | 'allplane' | 'complex',
+// and eigs is an array of { lambda, dir:{x,y} | null } (dir null = whole plane).
+function eigen() {
+  const t = A.a00 + A.a11;          // trace
+  const d = A.a00 * A.a11 - A.a01 * A.a10; // determinant
+  const disc = t * t - 4 * d;
+  const EPS = 1e-9;
+
+  if (disc < -1e-7) return { kind: 'complex', eigs: [] };
+
+  const eigForLambda = (lam) => {
+    // null space of A - lam I = [[p,q],[r,s]]
+    const p = A.a00 - lam, q = A.a01, r = A.a10, s = A.a11 - lam;
+    if (Math.hypot(p, q) > 1e-6) return { x: -q, y: p };
+    if (Math.hypot(r, s) > 1e-6) return { x: -s, y: r };
+    return null; // A - lam I is zero -> whole plane
+  };
+
+  if (Math.abs(disc) <= 1e-7) {
+    const lam = t / 2;
+    const dir = eigForLambda(lam);
+    if (dir === null) return { kind: 'allplane', eigs: [{ lambda: lam, dir: null }] };
+    return { kind: 'repeated', eigs: [{ lambda: lam, dir }] };
+  }
+
+  const sq = Math.sqrt(disc);
+  const l1 = (t + sq) / 2, l2 = (t - sq) / 2;
+  return {
+    kind: 'distinct',
+    eigs: [
+      { lambda: l1, dir: eigForLambda(l1) },
+      { lambda: l2, dir: eigForLambda(l2) },
+    ],
+  };
+}
+
+function drawArrow(wx1, wy1, wx2, wy2, color, lw, dash) {
+  const [x1, y1] = toC(wx1, wy1), [x2, y2] = toC(wx2, wy2);
+  const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy);
+  if (len < 3) return;
+  const ux = dx / len, uy = dy / len;
+  const hl = Math.min(len * 0.25, 15), ha = 0.45;
+  ctx.save();
+  ctx.strokeStyle = color; ctx.lineWidth = lw;
+  if (dash) ctx.setLineDash(dash);
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.beginPath();
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(ha)  - uy*Math.sin(ha)),  y2 - hl*(uy*Math.cos(ha)  + ux*Math.sin(ha)));
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(-ha) - uy*Math.sin(-ha)), y2 - hl*(uy*Math.cos(-ha) + ux*Math.sin(-ha)));
+  ctx.stroke();
+  ctx.restore();
+}
+
+function drawDot(px, py, r, fill) {
+  ctx.save();
+  ctx.beginPath(); ctx.arc(px, py, r, 0, Math.PI * 2);
+  ctx.fillStyle = fill; ctx.fill();
+  ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.restore();
+}
+
+function drawGrid() {
+  const W = canvas.width, H = canvas.height;
+  const step = S;
+  for (let x = cx0 % step; x < W; x += step) {
+    ctx.save(); ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H);
+    ctx.strokeStyle = '#e8e8e8'; ctx.lineWidth = 1; ctx.stroke(); ctx.restore();
+  }
+  for (let y = cy0 % step; y < H; y += step) {
+    ctx.save(); ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y);
+    ctx.strokeStyle = '#e8e8e8'; ctx.lineWidth = 1; ctx.stroke(); ctx.restore();
+  }
+  ctx.save(); ctx.beginPath(); ctx.moveTo(0, cy0); ctx.lineTo(W, cy0);
+  ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+  ctx.save(); ctx.beginPath(); ctx.moveTo(cx0, 0); ctx.lineTo(cx0, H);
+  ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+  ctx.save();
+  ctx.fillStyle = '#888'; ctx.font = 'italic 14px serif'; ctx.textBaseline = 'middle';
+  ctx.fillText('x', W - 14, cy0 - 12);
+  ctx.fillText('y', cx0 + 10, 14);
+  ctx.restore();
+}
+
+// Draw a full line through the origin with direction dir, plus label.
+function drawEigenline(dir, color, label) {
+  const len = Math.hypot(dir.x, dir.y);
+  if (len < 1e-9) return;
+  const ux = dir.x / len, uy = dir.y / len;
+  const ext = (canvas.width + canvas.height) / S; // far enough to cross viewport
+  const [x1, y1] = toC(-ux * ext, -uy * ext);
+  const [x2, y2] = toC( ux * ext,  uy * ext);
+  ctx.save();
+  ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.globalAlpha = 0.85;
+  ctx.setLineDash([8, 5]);
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  ctx.restore();
+  // Label placed 2 world-units from origin along the line.
+  const [lx, ly] = toC(ux * 2, uy * 2);
+  ctx.save();
+  ctx.fillStyle = color; ctx.font = 'bold 13px system-ui';
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillStyle = 'rgba(255,255,255,0.85)';
+  const mw = ctx.measureText(label).width;
+  ctx.fillRect(lx - mw/2 - 3, ly - 9, mw + 6, 18);
+  ctx.fillStyle = color;
+  ctx.fillText(label, lx, ly);
+  ctx.restore();
+}
+
+// Is v parallel to dir? (within tolerance, v nonzero)
+function isParallel(p, dir) {
+  if (dir === null) return true; // whole plane
+  const cross = p.x * dir.y - p.y * dir.x;
+  const lp = Math.hypot(p.x, p.y), ld = Math.hypot(dir.x, dir.y);
+  if (lp < 1e-6 || ld < 1e-6) return false;
+  return Math.abs(cross) / (lp * ld) < 0.04;
+}
+
+function draw() {
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+  drawGrid();
+
+  const info = eigen();
+
+  // Eigenspace lines (whole-plane case shaded instead).
+  const colors = [C.red, C.orange];
+  if (info.kind === 'allplane') {
+    ctx.save();
+    ctx.fillStyle = 'rgba(254,194,71,0.14)';
+    ctx.fillRect(0, 0, W, H);
+    ctx.restore();
+  } else {
+    info.eigs.forEach((e, i) => {
+      if (e.dir) drawEigenline(e.dir, colors[i] || C.red, 'λ=' + e.lambda.toFixed(2));
+    });
+  }
+
+  // Which eigenspace (if any) is v on?
+  let onEig = -1;
+  if (info.kind === 'allplane') {
+    onEig = 0;
+  } else {
+    info.eigs.forEach((e, i) => { if (onEig < 0 && isParallel(v, e.dir)) onEig = i; });
+  }
+
+  // Image A·v
+  const Av = applyA(v);
+
+  // Draw image first (under the input vector)
+  drawArrow(0, 0, Av.x, Av.y, C.green, 3);
+  // Draw chosen vector
+  drawArrow(0, 0, v.x, v.y, C.blue, 3);
+
+  // Tip handles + labels
+  const [vx, vy]   = toC(v.x, v.y);
+  const [avx, avy] = toC(Av.x, Av.y);
+  drawDot(avx, avy, 5, C.green);
+  ctx.save();
+  ctx.fillStyle = C.green; ctx.font = 'bold italic 14px serif';
+  ctx.fillText('A·v', avx + 10, avy - 6);
+  ctx.restore();
+
+  drawDot(vx, vy, 8, C.blue);
+  ctx.save();
+  ctx.fillStyle = C.blue; ctx.font = 'bold italic 14px serif';
+  ctx.fillText('v', vx + 11, vy - 6);
+  ctx.restore();
+
+  // Origin
+  const [ox, oy] = toC(0, 0);
+  ctx.save(); ctx.beginPath(); ctx.arc(ox, oy, 3.5, 0, Math.PI*2);
+  ctx.fillStyle = '#444'; ctx.fill(); ctx.restore();
+
+  updatePanel(info, onEig, Av);
+}
+
+function fmt(n) { return (Math.abs(n) < 5e-3 ? 0 : n).toFixed(2); }
+
+function updatePanel(info, onEig, Av) {
+  // Eigenvalue box
+  let html;
+  if (info.kind === 'complex') {
+    html = 'No real eigenvalues.<br><span class="hint">A·v is never parallel to v (e.g. a rotation).</span>';
+  } else if (info.kind === 'allplane') {
+    const lam = info.eigs[0].lambda;
+    html = `λ = ${fmt(lam)} (every vector is an eigenvector)<br>` +
+           `E<sub>λ</sub> = whole plane <b>R</b>²`;
+  } else if (info.kind === 'repeated') {
+    const e = info.eigs[0];
+    html = `<span class="eig" style="color:${C.red}">λ = ${fmt(e.lambda)}</span> (double)<br>` +
+           `eigenvector ≈ (${fmt(e.dir.x)}, ${fmt(e.dir.y)})`;
+  } else {
+    const e0 = info.eigs[0], e1 = info.eigs[1];
+    html =
+      `<span class="eig" style="color:${C.red}">λ₁ = ${fmt(e0.lambda)}</span>, ` +
+      `eigvec ≈ (${fmt(e0.dir.x)}, ${fmt(e0.dir.y)})<br>` +
+      `<span class="eig" style="color:${C.orange}">λ₂ = ${fmt(e1.lambda)}</span>, ` +
+      `eigvec ≈ (${fmt(e1.dir.x)}, ${fmt(e1.dir.y)})`;
+  }
+  document.getElementById('eig-box').innerHTML = html;
+
+  // Chosen-vector box
+  let vhtml =
+    `v = (${fmt(v.x)}, ${fmt(v.y)})<br>` +
+    `A·v = (${fmt(Av.x)}, ${fmt(Av.y)})<br>`;
+  if (onEig >= 0) {
+    let lam;
+    if (info.kind === 'allplane' || info.kind === 'repeated') lam = info.eigs[0].lambda;
+    else lam = info.eigs[onEig].lambda;
+    const col = onEig === 1 ? C.orange : C.red;
+    vhtml += `<b style="color:${col}">v is an eigenvector!</b><br>` +
+             `A·v = ${fmt(lam)} · v`;
+  } else {
+    vhtml += `<span class="hint">v is not an eigenvector (A·v points in a different direction).</span>`;
+  }
+  document.getElementById('v-box').innerHTML = vhtml;
+}
+
+// ── Matrix inputs ──────────────────────────────────────────────────────────
+const ids = ['a00', 'a01', 'a10', 'a11'];
+function readInputs() {
+  ids.forEach(id => {
+    const val = parseFloat(document.getElementById(id).value);
+    A[id] = isNaN(val) ? 0 : val;
+  });
+  draw();
+}
+ids.forEach(id => document.getElementById(id).addEventListener('input', readInputs));
+
+document.querySelectorAll('button.preset').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const m = btn.dataset.m.split(',').map(Number);
+    [A.a00, A.a01, A.a10, A.a11] = m;
+    ids.forEach((id, i) => document.getElementById(id).value = m[i]);
+    draw();
+  });
+});
+
+// ── Drag interaction (mouse + touch) ────────────────────────────────────────
+let dragging = false;
+
+function eventPos(e) {
+  const r = canvas.getBoundingClientRect();
+  const src = e.touches ? e.touches[0] : e;
+  return [src.clientX - r.left, src.clientY - r.top];
+}
+function nearV(mx, my) {
+  const [vx, vy] = toC(v.x, v.y);
+  return Math.hypot(mx - vx, my - vy) < 16;
+}
+function onDown(e) {
+  const [mx, my] = eventPos(e);
+  if (nearV(mx, my)) { dragging = true; canvas.style.cursor = 'grabbing'; e.preventDefault(); }
+}
+function onMove(e) {
+  const [mx, my] = eventPos(e);
+  if (dragging) {
+    [v.x, v.y] = toW(mx, my);
+    draw();
+    e.preventDefault();
+    return;
+  }
+  canvas.style.cursor = nearV(mx, my) ? 'grab' : '';
+}
+function onUp() { dragging = false; canvas.style.cursor = ''; }
+
+canvas.addEventListener('mousedown', onDown);
+canvas.addEventListener('mousemove', onMove);
+canvas.addEventListener('mouseup', onUp);
+canvas.addEventListener('mouseleave', onUp);
+canvas.addEventListener('touchstart', onDown, { passive: false });
+canvas.addEventListener('touchmove', onMove, { passive: false });
+canvas.addEventListener('touchend', onUp);
+
+window.addEventListener('resize', resize);
+resize();
+</script>
+</body>
+</html>

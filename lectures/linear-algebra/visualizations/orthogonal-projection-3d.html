@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Orthogonal Projection in ℝ³</title>
+  <title>Orthogonal Projection in R³</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -16,6 +16,11 @@
       background: #f6f8fa; border-left: 1px solid #d0d7de;
       padding: 16px; display: flex; flex-direction: column; gap: 14px;
       overflow-y: auto; font-size: 0.875rem;
+    }
+    @media (max-width: 600px) {
+      body { flex-direction: column; height: auto; overflow-y: auto; }
+      #canvas-wrap { width: 100%; height: 55vw; min-height: 260px; flex: none; }
+      #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; overflow-y: visible; }
     }
     h1 { font-size: 1rem; font-weight: 600; }
     .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
@@ -48,6 +53,7 @@
     <div class="sec">Plane V = span{e₁, e₂}</div>
     <div class="row"><span class="vname" style="color:#bc1e47">e₁</span><span class="vval" id="e1v">—</span></div>
     <div class="row"><span class="vname" style="color:#0081cd">e₂</span><span class="vval" id="e2v">—</span></div>
+    <p class="hint" style="margin-top:4px">e₁, e₂ are an <b>orthonormal basis</b> of V (‖e₁‖ = ‖e₂‖ = 1, e₁ ⊥ e₂), so proj<sub>V</sub>(w) = ⟨w, e₁⟩ e₁ + ⟨w, e₂⟩ e₂.</p>
   </div>
   <hr>
   <div>
@@ -66,6 +72,8 @@
       <div class="legend-item"><div class="sw" style="background:#bc1e47"></div><span>e₁ (basis of V)</span></div>
       <div class="legend-item"><div class="sw" style="background:#0081cd"></div><span>e₂ (basis of V)</span></div>
       <div class="legend-item"><div class="sw" style="background:#7c3aed"></div><span>w</span></div>
+      <div class="legend-item"><div class="sw" style="background:#bc1e47;opacity:0.4"></div><span>⟨w, e₁⟩ e₁</span></div>
+      <div class="legend-item"><div class="sw" style="background:#0081cd;opacity:0.4"></div><span>⟨w, e₂⟩ e₂</span></div>
       <div class="legend-item"><div class="sw" style="background:#009246"></div><span>proj<sub>V</sub>(w)</span></div>
       <div class="legend-item"><div class="sw" style="background:#fec247"></div><span>proj<sub>V⊥</sub>(w)</span></div>
       <div class="legend-item"><div class="sw-dash"></div><span>V⊥ axis / construction</span></div>
@@ -77,7 +85,7 @@
     <p class="hint">
       Drag colored sphere at vector tip to move it<br>
       Drag background to orbit &nbsp;·&nbsp; scroll to zoom<br>
-      Axes: <span style="color:#ff4444">x</span>&nbsp;<span style="color:#44cc44">y</span>&nbsp;<span style="color:#4488ff">z</span>
+      Axes labelled x, y, z
     </p>
   </div>
 </div>
@@ -120,7 +128,33 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.07;
 
-scene.add(new THREE.AxesHelper(3.5));
+// Neutral-gray axes with x / y / z labels (axes not colored)
+function makeAxisLabel(text, pos) {
+  const cv = document.createElement('canvas');
+  cv.width = cv.height = 64;
+  const c = cv.getContext('2d');
+  c.fillStyle = '#1f2328';
+  c.font = 'bold 40px serif';
+  c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillText(text, 32, 32);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: new THREE.CanvasTexture(cv), transparent: true, depthTest: false,
+  }));
+  sp.position.copy(pos);
+  sp.scale.set(0.45, 0.45, 0.45);
+  return sp;
+}
+function addAxes(L = 3.5) {
+  const mat = new THREE.LineBasicMaterial({ color: 0x888888 });
+  const seg = (a, b) => scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]), mat));
+  seg(new THREE.Vector3(-L, 0, 0), new THREE.Vector3(L, 0, 0));
+  seg(new THREE.Vector3(0, -L, 0), new THREE.Vector3(0, L, 0));
+  seg(new THREE.Vector3(0, 0, -L), new THREE.Vector3(0, 0, L));
+  scene.add(makeAxisLabel('x', new THREE.Vector3(L + 0.35, 0, 0)));
+  scene.add(makeAxisLabel('y', new THREE.Vector3(0, L + 0.35, 0)));
+  scene.add(makeAxisLabel('z', new THREE.Vector3(0, 0, L + 0.35)));
+}
+addAxes(3.5);
 scene.add(new THREE.GridHelper(8, 8, 0xe0e0e0, 0xd0d0d0));
 
 const O = new THREE.Vector3();
@@ -196,7 +230,10 @@ function update() {
   clearDyn();
 
   const n    = e1.clone().cross(e2).normalize();
-  const projV = e1.clone().multiplyScalar(w.dot(e1)).add(e2.clone().multiplyScalar(w.dot(e2)));
+  const c1    = w.dot(e1), c2 = w.dot(e2);
+  const comp1 = e1.clone().multiplyScalar(c1);   // ⟨w, e₁⟩ e₁
+  const comp2 = e2.clone().multiplyScalar(c2);   // ⟨w, e₂⟩ e₂
+  const projV = comp1.clone().add(comp2);
   const projP = w.clone().sub(projV);
 
   addObj(makeSpanPlane(e1, e2));
@@ -205,6 +242,17 @@ function update() {
   addObj(makeArrow(O, e1, C.red));
   addObj(makeArrow(O, e2, C.blue));
   addObj(makeArrow(O, w,  C.purple));
+
+  // Components of proj_V(w) along the orthonormal basis vectors,
+  // drawn translucent in the same colors as e₁ / e₂.
+  if (comp1.length() > 1e-6) addObj(makeArrow(O, comp1, C.red,  0.4));
+  if (comp2.length() > 1e-6) addObj(makeArrow(O, comp2, C.blue, 0.4));
+  // Parallelogram construction: proj_V(w) = comp1 + comp2
+  if (comp1.length() > 1e-6 && comp2.length() > 1e-6) {
+    addObj(makeDash(comp1, projV, C.blue, 0.4));
+    addObj(makeDash(comp2, projV, C.red,  0.4));
+  }
+
   if (projV.length() > 1e-6) addObj(makeArrow(O, projV, C.green));
   if (projP.length() > 1e-6) addObj(makeArrow(O, projP, C.yellow));
 
@@ -225,6 +273,7 @@ function update() {
   document.getElementById('e2v').textContent = `(${f(e2.x)}, ${f(e2.y)}, ${f(e2.z)})`;
   document.getElementById('wv').textContent  = `(${f(w.x)}, ${f(w.y)}, ${f(w.z)})`;
   document.getElementById('pbox').innerHTML =
+    `<div>⟨w, e₁⟩ = ${f(c1)} &nbsp;·&nbsp; ⟨w, e₂⟩ = ${f(c2)}</div>` +
     `<div><span style="color:#009246">proj<sub>V</sub>(w)</span> &nbsp;= (${f(projV.x)}, ${f(projV.y)}, ${f(projV.z)})</div>` +
     `<div><span style="color:#fec247">proj<sub>V⊥</sub>(w)</span> = (${f(projP.x)}, ${f(projP.y)}, ${f(projP.z)})</div>`;
 }

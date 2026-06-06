@@ -139,3 +139,9 @@ In other words, swapping two rows or two columns will change the sign of the det
 </div>
 
 Thus, the determinant (as opposed to only its absolute value) records the area of the parallelogram spanned by the vectors and also the orientation.
+
+
+
+<iframe src="../visualizations/determinant-2d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+Determinant of a $2 \times 2$-matrix, area and orientation

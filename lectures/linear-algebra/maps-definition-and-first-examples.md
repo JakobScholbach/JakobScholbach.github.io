@@ -86,6 +86,12 @@ Checking <a href="#linear-scalar" data-reference-type="eqref" data-reference="li
 
 We will soon regard the preceding example as a special case of the multiplication of a vector with a matrix, namely in this case the matrix $\left ( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array} \right )$, cf. §<a href="../maps-multiplication-of-a-matrix/#sect-matrix-vector-multiplication" data-reference-type="ref" data-reference="sect--matrix vector multiplication">Section 4.2</a>.
 
+
+
+<iframe src="../visualizations/linear-map-2d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+vis 8
+
 <div class="example" markdown="1">
 
 

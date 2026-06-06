@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linear map of the plane</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #1f2328;
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    #canvas-wrap {
+      flex: 1; min-width: 0; display: flex; gap: 1px; background: #d0d7de;
+    }
+    .pane { flex: 1; min-width: 0; position: relative; background: #fff; }
+    #pane-src { background: #eef5ff; }
+    #pane-tgt { background: #f0fff4; }
+    .pane canvas { display: block; touch-action: none; }
+    .pane .tag {
+      position: absolute; top: 8px; left: 10px; font-size: 0.8rem;
+      font-weight: 600; color: #656d76; pointer-events: none;
+      background: rgba(255,255,255,0.8); padding: 1px 6px; border-radius: 4px;
+    }
+    #panel {
+      width: 270px; flex-shrink: 0;
+      background: #f6f8fa; border-left: 1px solid #d0d7de;
+      padding: 16px; display: flex; flex-direction: column; gap: 14px;
+      overflow-y: auto; font-size: 0.875rem;
+    }
+    @media (max-width: 600px) {
+      body { flex-direction: column; height: auto; overflow-y: auto; }
+      #canvas-wrap { width: 100%; flex-direction: column; height: auto; flex: none; }
+      .pane { width: 100%; height: 70vw; min-height: 240px; }
+      #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; overflow-y: visible; }
+    }
+    h1 { font-size: 1rem; font-weight: 600; }
+    .sec {
+      font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px;
+    }
+    hr { border: none; border-top: 1px solid #d0d7de; }
+    .mat-outer { display: flex; align-items: center; gap: 1px; }
+    .bracket { font-size: 2.6rem; color: #888; line-height: 1; }
+    .mat-inner { display: grid; grid-template-columns: max-content max-content; gap: 6px 8px; padding: 2px 6px; }
+    .mat-inner input {
+      width: 46px; padding: 4px 5px; text-align: center;
+      font-family: monospace; font-size: 0.85rem;
+      border: 1px solid #d0d7de; border-radius: 5px; background: #fff; color: #1f2328;
+    }
+    .mat-inner input:focus { outline: none; border-color: #0081cd; }
+    .presets { display: flex; flex-wrap: wrap; gap: 6px; }
+    button.preset {
+      flex: 1 1 auto; padding: 6px 8px; cursor: pointer; white-space: nowrap;
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      font-size: 0.76rem; color: #1f2328; font-family: inherit;
+    }
+    button.preset:hover { background: #f0f3f6; border-color: #b0b8c0; }
+    button.preset:active { background: #e6eaee; }
+    .result-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.82rem; line-height: 1.8;
+      font-family: monospace;
+    }
+    .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
+    .swatch { display: inline-block; width: 11px; height: 11px; border-radius: 2px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap">
+  <div class="pane" id="pane-src"><span class="tag">Domain <b>R</b>²</span><canvas id="src"></canvas></div>
+  <div class="pane" id="pane-tgt"><span class="tag">Codomain <b>R</b>²</span><canvas id="tgt"></canvas></div>
+</div>
+
+<div id="panel">
+  <div>
+    <h1>Linear map of the plane</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">A shape and a vector under v ↦ A·v</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Matrix A</div>
+    <div class="mat-outer">
+      <span class="bracket">(</span>
+      <div class="mat-inner">
+        <input id="a00" type="number" step="0.1" value="1">
+        <input id="a01" type="number" step="0.1" value="0.5">
+        <input id="a10" type="number" step="0.1" value="0.3">
+        <input id="a11" type="number" step="0.1" value="1">
+      </div>
+      <span class="bracket">)</span>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec">Presets</div>
+    <div class="presets">
+      <button class="preset" data-m="1,0,0,1">Identity</button>
+      <button class="preset" data-m="2,0,0,1">Scale x</button>
+      <button class="preset" data-m="1,1,0,1">Shear</button>
+      <button class="preset" data-m="0.5,-0.866,0.866,0.5">Rotate 60°</button>
+      <button class="preset" data-m="1,0,0,-1">Reflect</button>
+      <button class="preset" data-m="1,2,0.5,1">Singular</button>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Effect on the shape</div>
+    <div id="info-box" class="result-box">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Chosen vector</div>
+    <div id="v-box" class="result-box">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <p class="hint">
+      Edit A's entries or pick a preset. The
+      <span class="swatch" style="background:#fec247"></span> shape in the domain is
+      mapped to the codomain by v ↦ A·v.<br>
+      Drag <span style="color:#0081cd">●</span> to choose a vector v (domain);
+      its image <span style="color:#009246">A·v</span> appears in the codomain.
+    </p>
+  </div>
+</div>
+
+<script>
+const C = {
+  red:    '#bc1e47',
+  blue:   '#0081cd',   // chosen vector v
+  green:  '#009246',   // image A·v
+  yellow: '#fec247',   // shape fill
+  gray:   '#888888',
+};
+
+// Matrix A = [[a00, a01], [a10, a11]]  (columns are images of e1, e2)
+let A = { a00: 1, a01: 0.5, a10: 0.3, a11: 1 };
+// Chosen vector (in source coordinates)
+let v = { x: 1.5, y: 0.5 };
+
+// An irregular, asymmetric polygon (a stylised "flag") so that rotation and
+// reflection are clearly visible. Coordinates in world units.
+const SHAPE = [
+  [0, 0], [0, 2.4], [1.6, 2.0], [1.0, 1.2], [1.8, 0.9], [0.7, 0.2],
+];
+
+function applyA(p) {
+  return { x: A.a00 * p.x + A.a01 * p.y, y: A.a10 * p.x + A.a11 * p.y };
+}
+function detA() { return A.a00 * A.a11 - A.a01 * A.a10; }
+
+// ── One pane (canvas + its own world transform) ─────────────────────────────
+function makePane(canvasId) {
+  const canvas = document.getElementById(canvasId);
+  const ctx = canvas.getContext('2d');
+  const pane = canvas.parentElement;
+  const P = { canvas, ctx, S: 60, cx: 0, cy: 0 };
+
+  P.resize = () => {
+    canvas.width  = pane.clientWidth;
+    canvas.height = pane.clientHeight;
+    P.S  = Math.min(canvas.width, canvas.height) / 9;
+    P.cx = canvas.width / 2;
+    P.cy = canvas.height / 2;
+  };
+  P.toC = (wx, wy) => [P.cx + wx * P.S, P.cy - wy * P.S];
+  P.toW = (px, py) => [(px - P.cx) / P.S, -(py - P.cy) / P.S];
+  return P;
+}
+
+const src = makePane('src');
+const tgt = makePane('tgt');
+
+function drawGrid(P) {
+  const { ctx, canvas, S, cx, cy } = P;
+  const W = canvas.width, H = canvas.height;
+  for (let x = cx % S; x < W; x += S) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H);
+    ctx.strokeStyle = '#ececec'; ctx.lineWidth = 1; ctx.stroke();
+  }
+  for (let y = cy % S; y < H; y += S) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y);
+    ctx.strokeStyle = '#ececec'; ctx.lineWidth = 1; ctx.stroke();
+  }
+  ctx.beginPath(); ctx.moveTo(0, cy); ctx.lineTo(W, cy);
+  ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx, 0); ctx.lineTo(cx, H);
+  ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke();
+  ctx.save();
+  ctx.fillStyle = '#888'; ctx.font = 'italic 14px serif'; ctx.textBaseline = 'middle';
+  ctx.fillText('x', W - 14, cy - 12);
+  ctx.fillText('y', cx + 10, 14);
+  ctx.restore();
+}
+
+function drawPolygon(P, pts, fill, stroke) {
+  const { ctx } = P;
+  ctx.save();
+  ctx.beginPath();
+  pts.forEach(([wx, wy], i) => {
+    const [px, py] = P.toC(wx, wy);
+    if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+  });
+  ctx.closePath();
+  ctx.fillStyle = fill; ctx.fill();
+  ctx.strokeStyle = stroke; ctx.lineWidth = 2; ctx.stroke();
+  // mark first vertex so orientation/reflection is readable
+  const [vx, vy] = P.toC(pts[0][0], pts[0][1]);
+  ctx.beginPath(); ctx.arc(vx, vy, 3.5, 0, Math.PI * 2);
+  ctx.fillStyle = stroke; ctx.fill();
+  ctx.restore();
+}
+
+function drawArrow(P, wx1, wy1, wx2, wy2, color, lw) {
+  const { ctx } = P;
+  const [x1, y1] = P.toC(wx1, wy1), [x2, y2] = P.toC(wx2, wy2);
+  const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy);
+  if (len < 3) return;
+  const ux = dx / len, uy = dy / len;
+  const hl = Math.min(len * 0.25, 15), ha = 0.45;
+  ctx.save();
+  ctx.strokeStyle = color; ctx.lineWidth = lw;
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(ha)  - uy*Math.sin(ha)),  y2 - hl*(uy*Math.cos(ha)  + ux*Math.sin(ha)));
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - hl*(ux*Math.cos(-ha) - uy*Math.sin(-ha)), y2 - hl*(uy*Math.cos(-ha) + ux*Math.sin(-ha)));
+  ctx.stroke();
+  ctx.restore();
+}
+
+function drawDot(P, wx, wy, r, fill) {
+  const { ctx } = P;
+  const [px, py] = P.toC(wx, wy);
+  ctx.save();
+  ctx.beginPath(); ctx.arc(px, py, r, 0, Math.PI * 2);
+  ctx.fillStyle = fill; ctx.fill();
+  ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.restore();
+}
+
+function drawOrigin(P) {
+  const { ctx } = P;
+  const [ox, oy] = P.toC(0, 0);
+  ctx.save(); ctx.beginPath(); ctx.arc(ox, oy, 3.5, 0, Math.PI*2);
+  ctx.fillStyle = '#444'; ctx.fill(); ctx.restore();
+}
+
+function draw() {
+  // Source pane
+  src.ctx.clearRect(0, 0, src.canvas.width, src.canvas.height);
+  drawGrid(src);
+  drawPolygon(src, SHAPE, 'rgba(254,194,71,0.30)', C.yellow);
+  drawArrow(src, 0, 0, v.x, v.y, C.blue, 3);
+  drawDot(src, v.x, v.y, 8, C.blue);
+  src.ctx.save();
+  const [svx, svy] = src.toC(v.x, v.y);
+  src.ctx.fillStyle = C.blue; src.ctx.font = 'bold italic 14px serif';
+  src.ctx.fillText('v', svx + 11, svy - 6);
+  src.ctx.restore();
+  drawOrigin(src);
+
+  // Target pane
+  tgt.ctx.clearRect(0, 0, tgt.canvas.width, tgt.canvas.height);
+  drawGrid(tgt);
+  const mapped = SHAPE.map(([x, y]) => { const q = applyA({x, y}); return [q.x, q.y]; });
+  drawPolygon(tgt, mapped, 'rgba(254,194,71,0.30)', C.yellow);
+  const Av = applyA(v);
+  drawArrow(tgt, 0, 0, Av.x, Av.y, C.green, 3);
+  drawDot(tgt, Av.x, Av.y, 7, C.green);
+  tgt.ctx.save();
+  const [tvx, tvy] = tgt.toC(Av.x, Av.y);
+  tgt.ctx.fillStyle = C.green; tgt.ctx.font = 'bold italic 14px serif';
+  tgt.ctx.fillText('A·v', tvx + 10, tvy - 6);
+  tgt.ctx.restore();
+  drawOrigin(tgt);
+
+  updatePanel(Av);
+}
+
+function fmt(n) { return (Math.abs(n) < 5e-3 ? 0 : n).toFixed(2); }
+
+function updatePanel(Av) {
+  const d = detA();
+  let orient;
+  if (Math.abs(d) < 1e-6) orient = 'collapses to a line (not invertible)';
+  else if (d < 0) orient = 'orientation flipped (mirrored)';
+  else orient = 'orientation preserved';
+  document.getElementById('info-box').innerHTML =
+    `<span class="hint">${orient}</span>`;
+
+  document.getElementById('v-box').innerHTML =
+    `v = (${fmt(v.x)}, ${fmt(v.y)})<br>` +
+    `A·v = (${fmt(Av.x)}, ${fmt(Av.y)})`;
+}
+
+// ── Matrix inputs ───────────────────────────────────────────────────────────
+const ids = ['a00', 'a01', 'a10', 'a11'];
+function readInputs() {
+  ids.forEach(id => {
+    const val = parseFloat(document.getElementById(id).value);
+    A[id] = isNaN(val) ? 0 : val;
+  });
+  draw();
+}
+ids.forEach(id => document.getElementById(id).addEventListener('input', readInputs));
+
+document.querySelectorAll('button.preset').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const m = btn.dataset.m.split(',').map(Number);
+    [A.a00, A.a01, A.a10, A.a11] = m;
+    ids.forEach((id, i) => document.getElementById(id).value = m[i]);
+    draw();
+  });
+});
+
+// ── Drag interaction on the source pane (mouse + touch) ─────────────────────
+let dragging = false;
+function eventPos(e) {
+  const r = src.canvas.getBoundingClientRect();
+  const s = e.touches ? e.touches[0] : e;
+  return [s.clientX - r.left, s.clientY - r.top];
+}
+function nearV(mx, my) {
+  const [vx, vy] = src.toC(v.x, v.y);
+  return Math.hypot(mx - vx, my - vy) < 16;
+}
+function onDown(e) {
+  const [mx, my] = eventPos(e);
+  if (nearV(mx, my)) { dragging = true; src.canvas.style.cursor = 'grabbing'; e.preventDefault(); }
+}
+function onMove(e) {
+  const [mx, my] = eventPos(e);
+  if (dragging) {
+    [v.x, v.y] = src.toW(mx, my);
+    draw();
+    e.preventDefault();
+    return;
+  }
+  src.canvas.style.cursor = nearV(mx, my) ? 'grab' : '';
+}
+function onUp() { dragging = false; src.canvas.style.cursor = ''; }
+
+src.canvas.addEventListener('mousedown', onDown);
+src.canvas.addEventListener('mousemove', onMove);
+src.canvas.addEventListener('mouseup', onUp);
+src.canvas.addEventListener('mouseleave', onUp);
+src.canvas.addEventListener('touchstart', onDown, { passive: false });
+src.canvas.addEventListener('touchmove', onMove, { passive: false });
+src.canvas.addEventListener('touchend', onUp);
+
+function resizeAll() { src.resize(); tgt.resize(); draw(); }
+window.addEventListener('resize', resizeAll);
+resizeAll();
+</script>
+</body>
+</html>

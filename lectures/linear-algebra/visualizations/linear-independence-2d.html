@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Linear Independence in ℝ²</title>
+  <title>Linear Independence in R²</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -18,6 +18,11 @@
       padding: 16px; display: flex; flex-direction: column; gap: 14px;
       overflow-y: auto; font-size: 0.875rem;
     }
+    @media (max-width: 600px) {
+      body { flex-direction: column; height: auto; overflow-y: auto; }
+      #canvas-wrap { width: 100%; height: 55vw; min-height: 260px; flex: none; }
+      #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; overflow-y: visible; }
+    }
     h1 { font-size: 1rem; font-weight: 600; }
     .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
     hr { border: none; border-top: 1px solid #d0d7de; }
@@ -30,7 +35,6 @@
     }
     .check { color: #009246; font-weight: 700; }
     .cross { color: #bc1e47; font-weight: 700; }
-    .det-box { font-family: monospace; font-size: 0.82rem; color: #1f2328; }
     .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
   </style>
 </head>
@@ -43,7 +47,7 @@
 <div id="panel">
   <div>
     <h1>Linear Independence</h1>
-    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">Two vectors in ℝ²</div>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">Two vectors in <b>R</b>²</div>
   </div>
   <hr>
   <div>
@@ -56,11 +60,6 @@
       <span class="vname" style="color:#0081cd">v₂</span>
       <span class="vval" id="coord1">—</span>
     </div>
-  </div>
-  <hr>
-  <div>
-    <div class="sec">Determinant</div>
-    <div class="det-box" id="det-box">—</div>
   </div>
   <hr>
   <div>
@@ -152,6 +151,12 @@ function draw() {
   ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
   ctx.save(); ctx.beginPath(); ctx.moveTo(cx0, 0); ctx.lineTo(cx0, H);
   ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+  // Axis labels x, y
+  ctx.save();
+  ctx.fillStyle = '#888'; ctx.font = 'italic 14px serif'; ctx.textBaseline = 'middle';
+  ctx.fillText('x', W - 14, cy0 - 12);
+  ctx.fillText('y', cx0 + 10, 14);
+  ctx.restore();
 
   const v1 = vectors[0], v2 = vectors[1];
   const d = det2(v1, v2);
@@ -217,14 +222,11 @@ function draw() {
     document.getElementById(`coord${i}`).textContent = `(${v.x.toFixed(2)}, ${v.y.toFixed(2)})`;
   });
 
-  document.getElementById('det-box').textContent =
-    `det[v₁ v₂] = ${d.toFixed(3)}`;
-
   const ck = ok => ok ? '<span class="check">✓</span>' : '<span class="cross">✗</span>';
   document.getElementById('status-box').innerHTML =
     `<div>${ck(indep)} Linearly independent</div>` +
-    `<div>${ck(indep)} Span ℝ²</div>` +
-    `<div>${ck(indep)} Basis of ℝ²</div>`;
+    `<div>${ck(indep)} Span <b>R</b>²</div>` +
+    `<div>${ck(indep)} Basis of <b>R</b>²</div>`;
 }
 
 // ── Drag interaction ──────────────────────────────────────────────────────────

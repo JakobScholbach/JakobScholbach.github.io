@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linear map of space (rank 1, 2, 3)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #1f2328;
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    #canvas-wrap { flex: 1; min-width: 0; display: flex; gap: 1px; background: #d0d7de; }
+    .pane { flex: 1; min-width: 0; position: relative; background: #fff; }
+    .pane .tag {
+      position: absolute; top: 8px; left: 10px; font-size: 0.8rem;
+      font-weight: 600; color: #656d76; pointer-events: none; z-index: 2;
+      background: rgba(255,255,255,0.8); padding: 1px 6px; border-radius: 4px;
+    }
+    #panel {
+      width: 270px; flex-shrink: 0;
+      background: #f6f8fa; border-left: 1px solid #d0d7de;
+      padding: 16px; display: flex; flex-direction: column; gap: 14px;
+      overflow-y: auto; font-size: 0.875rem;
+    }
+    @media (max-width: 600px) {
+      body { flex-direction: column; height: auto; overflow-y: auto; }
+      #canvas-wrap { width: 100%; flex-direction: column; height: auto; flex: none; }
+      .pane { width: 100%; height: 60vw; min-height: 240px; }
+      #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; overflow-y: visible; }
+    }
+    h1 { font-size: 1rem; font-weight: 600; }
+    .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
+    hr { border: none; border-top: 1px solid #d0d7de; }
+    .presets { display: flex; gap: 6px; }
+    button.preset {
+      flex: 1 1 auto; padding: 7px 8px; cursor: pointer;
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      font-size: 0.8rem; color: #1f2328; font-family: inherit;
+    }
+    button.preset:hover { background: #f0f3f6; border-color: #b0b8c0; }
+    button.preset.active { background: #0081cd; border-color: #0081cd; color: #fff; }
+    .mat-outer { display: flex; align-items: center; gap: 1px; justify-content: center; }
+    .bracket { font-size: 3.2rem; color: #888; line-height: 1; }
+    .mat-inner {
+      display: grid; grid-template-columns: repeat(3, max-content);
+      gap: 4px 10px; padding: 2px 8px; font-family: monospace; font-size: 0.85rem;
+    }
+    .mat-inner span { width: 30px; text-align: center; }
+    .result-box {
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      padding: 10px 12px; font-size: 0.82rem; line-height: 1.8; font-family: monospace;
+    }
+    .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
+    .swatch { display: inline-block; width: 11px; height: 11px; border-radius: 2px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+
+<div id="canvas-wrap">
+  <div class="pane"><span class="tag">Domain <b>R</b>³</span><div id="src" style="position:absolute;inset:0"></div></div>
+  <div class="pane"><span class="tag">Codomain <b>R</b>³</span><div id="tgt" style="position:absolute;inset:0"></div></div>
+</div>
+
+<div id="panel">
+  <div>
+    <h1>Linear map of space</h1>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">A shape and a vector under v ↦ A·v</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Rank of A</div>
+    <div class="presets">
+      <button class="preset" data-rank="1">rank 1</button>
+      <button class="preset" data-rank="2">rank 2</button>
+      <button class="preset active" data-rank="3">rank 3</button>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec">Matrix A</div>
+    <div class="mat-outer">
+      <span class="bracket">(</span>
+      <div class="mat-inner" id="mat"></div>
+      <span class="bracket">)</span>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Effect on space</div>
+    <div id="info-box" class="result-box">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Chosen vector</div>
+    <div id="v-box" class="result-box">—</div>
+  </div>
+  <hr>
+
+  <div>
+    <p class="hint">
+      Toggle the rank of A. The
+      <span class="swatch" style="background:#fec247"></span> solid in the domain is
+      mapped to the codomain by v ↦ A·v.<br>
+      Drag the <span style="color:#0081cd">●</span> tip to choose a vector v (domain);
+      its image <span style="color:#009246">A·v</span> appears in the codomain.<br>
+      rank 3 fills space; rank 2 collapses the solid onto a plane
+      (the image); rank 1 collapses it onto a line.<br>
+      Drag the background to orbit · scroll to zoom · axes labelled x, y, z.
+    </p>
+  </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const C = {
+  red:    0xbc1e47,
+  blue:   0x0081cd,   // chosen vector v
+  green:  0x009246,   // image A·v
+  yellow: 0xfec247,   // shape
+  gray:   0x888888,
+};
+
+// Rank presets. Each maps the standard basis to the columns of A.
+//   rank 3: an invertible shear (image is all of R³)
+//   rank 2: image = span{(1,0,0),(0,1,1)} — a tilted plane through 0
+//   rank 1: image = span{(1,1,1)}         — a line through 0
+const MATS = {
+  3: [[1, 0.5, 0], [0, 1, 0.5], [0.4, 0, 1]],
+  2: [[1, 0, 0], [0, 1, 0], [0, 1, 0]],
+  1: [[1, 0, 0], [1, 0, 0], [1, 0, 0]],
+};
+let rank = 3;
+let A = MATS[rank];
+
+// Chosen vector (source coordinates)
+let v = new THREE.Vector3(1.4, 0.6, 1.2);
+
+// ── An irregular solid: skewed quadrilateral base, top face at varying heights ─
+const VERTS = [
+  [0,   0,   0  ], [2.4, 0.2, 0  ], [2.0, 1.8, 0  ], [0.3, 1.4, 0  ],  // bottom 0-3
+  [0.9, 0.3, 2.6], [2.6, 0.1, 2.0], [1.9, 1.9, 1.4], [0.4, 1.6, 2.3],  // top 4-7
+];
+const FACES = [
+  [0,1,2],[0,2,3],   [4,6,5],[4,7,6],   [0,4,5],[0,5,1],
+  [3,2,6],[3,6,7],   [0,3,7],[0,7,4],   [1,5,6],[1,6,2],
+];
+const EDGES = [
+  [0,1],[1,2],[2,3],[3,0], [4,5],[5,6],[6,7],[7,4], [0,4],[1,5],[2,6],[3,7],
+];
+
+function apply(M, x, y, z) {
+  return new THREE.Vector3(
+    M[0][0]*x + M[0][1]*y + M[0][2]*z,
+    M[1][0]*x + M[1][1]*y + M[1][2]*z,
+    M[2][0]*x + M[2][1]*y + M[2][2]*z,
+  );
+}
+function detA(M) {
+  return M[0][0]*(M[1][1]*M[2][2]-M[1][2]*M[2][1])
+       - M[0][1]*(M[1][0]*M[2][2]-M[1][2]*M[2][0])
+       + M[0][2]*(M[1][0]*M[2][1]-M[1][1]*M[2][0]);
+}
+
+// ── Scene factory (one Three.js scene per pane) ─────────────────────────────
+function makeAxisLabel(text, pos) {
+  const cv = document.createElement('canvas');
+  cv.width = cv.height = 64;
+  const c = cv.getContext('2d');
+  c.fillStyle = '#1f2328'; c.font = 'bold 40px serif';
+  c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillText(text, 32, 32);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: new THREE.CanvasTexture(cv), transparent: true, depthTest: false }));
+  sp.position.copy(pos); sp.scale.set(0.5, 0.5, 0.5);
+  return sp;
+}
+
+function makeScene(hostId, bgColor = 0xffffff) {
+  const host = document.getElementById(hostId);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(host.clientWidth, host.clientHeight);
+  host.appendChild(renderer.domElement);
+  renderer.domElement.style.touchAction = 'none';
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(bgColor);
+
+  const camera = new THREE.PerspectiveCamera(50, host.clientWidth / host.clientHeight, 0.01, 200);
+  camera.position.set(5, 4, 6);
+  camera.lookAt(0, 0, 0);
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true; controls.dampingFactor = 0.07;
+
+  const L = 3.5;
+  const axMat = new THREE.LineBasicMaterial({ color: C.gray });
+  const seg = (a, b) => scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]), axMat));
+  seg(new THREE.Vector3(-L,0,0), new THREE.Vector3(L,0,0));
+  seg(new THREE.Vector3(0,-L,0), new THREE.Vector3(0,L,0));
+  seg(new THREE.Vector3(0,0,-L), new THREE.Vector3(0,0,L));
+  scene.add(makeAxisLabel('x', new THREE.Vector3(L+0.35, 0, 0)));
+  scene.add(makeAxisLabel('y', new THREE.Vector3(0, L+0.35, 0)));
+  scene.add(makeAxisLabel('z', new THREE.Vector3(0, 0, L+0.35)));
+  scene.add(new THREE.GridHelper(8, 8, 0xe0e0e0, 0xd0d0d0));
+
+  return { host, renderer, scene, camera, controls, dyn: [] };
+}
+
+const src = makeScene('src', 0xeef5ff);
+const tgt = makeScene('tgt', 0xf0fff4);
+
+function clearDyn(P) { P.dyn.forEach(o => P.scene.remove(o)); P.dyn = []; }
+function addObj(P, o) { if (o) { P.scene.add(o); P.dyn.push(o); } }
+
+function makeSolid(M) {
+  const pts = VERTS.map(([x,y,z]) => apply(M, x, y, z));
+  // faces
+  const fpos = [];
+  FACES.forEach(([a,b,c]) => {
+    fpos.push(pts[a].x,pts[a].y,pts[a].z, pts[b].x,pts[b].y,pts[b].z, pts[c].x,pts[c].y,pts[c].z);
+  });
+  const fgeo = new THREE.BufferGeometry();
+  fgeo.setAttribute('position', new THREE.Float32BufferAttribute(fpos, 3));
+  const mesh = new THREE.Mesh(fgeo, new THREE.MeshBasicMaterial({
+    color: C.yellow, transparent: true, opacity: 0.30, side: THREE.DoubleSide, depthWrite: false }));
+  // edges
+  const epos = [];
+  EDGES.forEach(([a,b]) => { epos.push(pts[a].x,pts[a].y,pts[a].z, pts[b].x,pts[b].y,pts[b].z); });
+  const egeo = new THREE.BufferGeometry();
+  egeo.setAttribute('position', new THREE.Float32BufferAttribute(epos, 3));
+  const lines = new THREE.LineSegments(egeo, new THREE.LineBasicMaterial({ color: 0xb8881a }));
+  const group = new THREE.Group();
+  group.add(mesh); group.add(lines);
+  return { group, marker: pts[5] };  // pts[5] marks one corner (orientation)
+}
+
+function makeArrow(to, color) {
+  const d = to.clone();
+  const len = d.length();
+  if (len < 1e-6) return null;
+  const hl = Math.min(len * 0.22, 0.4);
+  return new THREE.ArrowHelper(d.normalize(), new THREE.Vector3(), len, color, hl, hl * 0.5);
+}
+
+// image subspace (plane for rank 2, line for rank 1) drawn faintly in target
+function makeImageSubspace(M) {
+  const c1 = apply(M, 1, 0, 0), c2 = apply(M, 0, 1, 0), c3 = apply(M, 0, 0, 1);
+  const cols = [c1, c2, c3];
+  if (rank === 2) {
+    // two independent columns
+    let u = null, w = null;
+    for (const c of cols) {
+      if (c.length() < 1e-6) continue;
+      if (!u) { u = c.clone(); continue; }
+      if (!w && u.clone().cross(c).length() > 1e-6) { w = c.clone(); }
+    }
+    if (!u || !w) return null;
+    const N = 20, R = 3, pos = [], idx = [];
+    for (let i=0;i<=N;i++) for (let j=0;j<=N;j++) {
+      const s=-R+2*R*i/N, t=-R+2*R*j/N;
+      pos.push(s*u.x+t*w.x, s*u.y+t*w.y, s*u.z+t*w.z);
+    }
+    for (let i=0;i<N;i++) for (let j=0;j<N;j++) {
+      const a=i*(N+1)+j, b=a+1, cc=a+N+1, dd=cc+1; idx.push(a,b,cc, b,dd,cc);
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setIndex(idx);
+    return new THREE.Mesh(g, new THREE.MeshBasicMaterial({
+      color: C.green, transparent: true, opacity: 0.08, side: THREE.DoubleSide, depthWrite: false }));
+  }
+  if (rank === 1) {
+    let u = cols.find(c => c.length() > 1e-6);
+    if (!u) return null;
+    u = u.clone().normalize().multiplyScalar(3.5);
+    return new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints([u.clone().negate(), u]),
+      new THREE.LineBasicMaterial({ color: C.green, transparent: true, opacity: 0.45 }));
+  }
+  return null;
+}
+
+// draggable handle on the source vector tip
+const hGeo = new THREE.SphereGeometry(0.16, 14, 10);
+const handle = new THREE.Mesh(hGeo, new THREE.MeshBasicMaterial({ color: C.blue }));
+src.scene.add(handle);
+const imgDot = new THREE.Mesh(hGeo, new THREE.MeshBasicMaterial({ color: C.green }));
+tgt.scene.add(imgDot);
+
+function fmt(n) { return (Math.abs(n) < 5e-3 ? 0 : n).toFixed(2); }
+
+function renderMatrix() {
+  document.getElementById('mat').innerHTML =
+    A.map(row => row.map(x => `<span>${fmt(x)}</span>`).join('')).join('');
+}
+
+function update() {
+  clearDyn(src); clearDyn(tgt);
+
+  // shapes
+  addObj(src, makeSolid([[1,0,0],[0,1,0],[0,0,1]]).group);
+  const tgtSolid = makeSolid(A);
+  addObj(tgt, makeImageSubspace(A));
+  addObj(tgt, tgtSolid.group);
+
+  // vector v + image
+  addObj(src, makeArrow(v, C.blue));
+  handle.position.copy(v);
+  const Av = apply(A, v.x, v.y, v.z);
+  addObj(tgt, makeArrow(Av, C.green));
+  imgDot.position.copy(Av);
+
+  // panel
+  const d = detA(A);
+  let desc;
+  if (rank === 3) desc = 'image = all of <b>R</b>³ (invertible)';
+  else if (rank === 2) desc = 'image = a plane through 0';
+  else desc = 'image = a line through 0';
+  document.getElementById('info-box').innerHTML =
+    `rank A = ${rank}<br>` +
+    `det A = ${fmt(d)}<br>` +
+    `<span class="hint">${desc}</span>`;
+  document.getElementById('v-box').innerHTML =
+    `v = (${fmt(v.x)}, ${fmt(v.y)}, ${fmt(v.z)})<br>` +
+    `A·v = (${fmt(Av.x)}, ${fmt(Av.y)}, ${fmt(Av.z)})`;
+  renderMatrix();
+}
+
+// ── Rank buttons ────────────────────────────────────────────────────────────
+document.querySelectorAll('button.preset').forEach(btn => {
+  btn.addEventListener('click', () => {
+    rank = parseInt(btn.dataset.rank, 10);
+    A = MATS[rank];
+    document.querySelectorAll('button.preset').forEach(b => b.classList.toggle('active', b === btn));
+    update();
+  });
+});
+
+// ── Drag the source vector tip (mouse + touch via pointer events) ───────────
+const rc = new THREE.Raycaster();
+const ndc = new THREE.Vector2();
+const dragPlane = new THREE.Plane();
+let dragging = false, hovering = false;
+
+function toNDC(e) {
+  const r = src.renderer.domElement.getBoundingClientRect();
+  ndc.set(((e.clientX-r.left)/r.width)*2-1, ((e.clientY-r.top)/r.height)*-2+1);
+}
+src.renderer.domElement.addEventListener('pointerdown', e => {
+  toNDC(e); rc.setFromCamera(ndc, src.camera);
+  if (rc.intersectObject(handle).length) {
+    dragging = true; src.controls.enabled = false;
+    src.renderer.domElement.style.cursor = 'grabbing';
+    const camDir = new THREE.Vector3(); src.camera.getWorldDirection(camDir);
+    dragPlane.setFromNormalAndCoplanarPoint(camDir, v);
+    e.preventDefault();
+  }
+});
+src.renderer.domElement.addEventListener('pointermove', e => {
+  toNDC(e); rc.setFromCamera(ndc, src.camera);
+  if (dragging) {
+    const pt = new THREE.Vector3();
+    if (rc.ray.intersectPlane(dragPlane, pt)) {
+      v.copy(pt.clampScalar(-3.4, 3.4)); update();
+    }
+    e.preventDefault(); return;
+  }
+  const hit = rc.intersectObject(handle).length > 0;
+  if (hit !== hovering) { hovering = hit; src.renderer.domElement.style.cursor = hit ? 'grab' : ''; }
+});
+function endDrag() {
+  if (!dragging) return;
+  dragging = false; src.controls.enabled = true;
+  src.renderer.domElement.style.cursor = hovering ? 'grab' : '';
+}
+src.renderer.domElement.addEventListener('pointerup', endDrag);
+src.renderer.domElement.addEventListener('pointerleave', endDrag);
+
+// ── Resize / animate ────────────────────────────────────────────────────────
+function resizeOne(P) {
+  const w = P.host.clientWidth, h = P.host.clientHeight;
+  P.camera.aspect = w / h; P.camera.updateProjectionMatrix();
+  P.renderer.setSize(w, h);
+}
+window.addEventListener('resize', () => { resizeOne(src); resizeOne(tgt); });
+
+function animate() {
+  requestAnimationFrame(animate);
+  src.controls.update(); tgt.controls.update();
+  src.renderer.render(src.scene, src.camera);
+  tgt.renderer.render(tgt.scene, tgt.camera);
+}
+
+update();
+animate();
+</script>
+</body>
+</html>

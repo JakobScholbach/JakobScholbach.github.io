@@ -266,6 +266,12 @@ It is *negative definite* if instead ${\left \langle v, v \right \rangle_{A}} < 
 
 </div>
 
+
+
+<iframe src="../visualizations/quadratic-form-2d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+$2 \times 2$-matrices and their associated bilinear forms
+
 <div class="example" markdown="1">
 
 

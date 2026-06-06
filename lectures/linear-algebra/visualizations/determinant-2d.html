@@ -18,6 +18,11 @@
       padding: 16px; display: flex; flex-direction: column; gap: 14px;
       overflow-y: auto; font-size: 0.875rem;
     }
+    @media (max-width: 600px) {
+      body { flex-direction: column; height: auto; overflow-y: auto; }
+      #canvas-wrap { width: 100%; height: 55vw; min-height: 260px; flex: none; }
+      #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; overflow-y: visible; }
+    }
     h1 { font-size: 1rem; font-weight: 600; }
     .sec {
       font-size: 0.7rem; text-transform: uppercase;
@@ -47,6 +52,13 @@
     .neg  { color: #bc1e47; font-weight: 700; }
     .zero { color: #656d76; font-weight: 700; }
     .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
+    button.switch {
+      width: 100%; padding: 8px 12px; cursor: pointer;
+      background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+      font-size: 0.82rem; color: #1f2328; font-family: inherit;
+    }
+    button.switch:hover { background: #f0f3f6; border-color: #b0b8c0; }
+    button.switch:active { background: #e6eaee; }
   </style>
 </head>
 <body>
@@ -56,19 +68,19 @@
 <div id="panel">
   <div>
     <h1>Determinant</h1>
-    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">Area &amp; orientation in ℝ²</div>
+    <div style="font-size:0.75rem;color:#8b949e;margin-top:2px">Area &amp; orientation in <b>R</b>²</div>
   </div>
   <hr>
 
   <div>
-    <div class="sec">Matrix A = [v₁ | v₂]</div>
+    <div class="sec">Matrix A = (v₁ | v₂)</div>
     <div class="mat-outer">
-      <span class="bracket">[</span>
+      <span class="bracket">(</span>
       <div class="mat-inner">
         <span class="m-red"  id="m00">—</span><span class="m-blue" id="m01">—</span>
         <span class="m-red"  id="m10">—</span><span class="m-blue" id="m11">—</span>
       </div>
-      <span class="bracket">]</span>
+      <span class="bracket">)</span>
     </div>
   </div>
   <hr>
@@ -92,9 +104,15 @@
   <hr>
 
   <div>
+    <button class="switch" id="switch-btn">⇄ Switch v₁ ↔ v₂</button>
+  </div>
+  <hr>
+
+  <div>
     <p class="hint">
       Drag <span style="color:#bc1e47">●</span> to move v₁<br>
-      Drag <span style="color:#0081cd">●</span> to move v₂
+      Drag <span style="color:#0081cd">●</span> to move v₂<br>
+      Switching the columns flips the sign of det A.
     </p>
   </div>
 </div>
@@ -171,6 +189,12 @@ function drawGrid() {
   ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
   ctx.save(); ctx.beginPath(); ctx.moveTo(cx0, 0); ctx.lineTo(cx0, H);
   ctx.strokeStyle = '#c8c8c8'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+  // Axis labels x, y
+  ctx.save();
+  ctx.fillStyle = '#888'; ctx.font = 'italic 14px serif'; ctx.textBaseline = 'middle';
+  ctx.fillText('x', W - 14, cy0 - 12);
+  ctx.fillText('y', cx0 + 10, 14);
+  ctx.restore();
 }
 
 // Midpoint canvas-angle of an arc from a1 to a2 in the given direction.
@@ -335,19 +359,19 @@ function updatePanel(v1, v2, d) {
     `det A = v₁.x · v₂.y − v₁.y · v₂.x<br>` +
     `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span style="color:${r}">${f(v1.x)}</span>·<span style="color:${b}">${f(v2.y)}</span>` +
     ` − <span style="color:${r}">${f(v1.y)}</span>·<span style="color:${b}">${f(v2.x)}</span><br>` +
-    `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = ${d.toFixed(3)}`;
+    `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = ${d.toFixed(2)}`;
 
   // Result box
   if (degen) {
     document.getElementById('det-box').innerHTML =
-      `det A = 0.000<br>|det A| = 0<br>Area = 0`;
+      `det A = 0.00<br>|det A| = 0<br>Area = 0`;
   } else {
     const signCls = d > 0 ? 'pos' : 'neg';
     const signStr = d > 0 ? '+' : '−';
     document.getElementById('det-box').innerHTML =
-      `det A = <span class="${signCls}">${signStr}${absD.toFixed(3)}</span><br>` +
-      `|det A| = ${absD.toFixed(3)}<br>` +
-      `Area of parallelogram = ${absD.toFixed(3)}`;
+      `det A = <span class="${signCls}">${signStr}${absD.toFixed(2)}</span><br>` +
+      `|det A| = ${absD.toFixed(2)}<br>` +
+      `Area of parallelogram = ${absD.toFixed(2)}`;
   }
 
   // Orientation box
@@ -405,6 +429,14 @@ canvas.addEventListener('mousedown', e => {
 
 canvas.addEventListener('mouseup',    () => { drag = -1; canvas.style.cursor = ''; });
 canvas.addEventListener('mouseleave', () => { drag = -1; });
+
+// Switch the two column vectors — this swaps the matrix columns, flipping det's sign.
+document.getElementById('switch-btn').addEventListener('click', () => {
+  const tmp = vectors[0];
+  vectors[0] = vectors[1];
+  vectors[1] = tmp;
+  draw();
+});
 
 window.addEventListener('resize', resize);
 resize();

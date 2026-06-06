@@ -67,7 +67,7 @@ since the third components of these two vectors are always different. In fact, t
 
 <iframe src="../visualizations/linear-combination-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-
+Linear combinations and span of two vectors in $\bf R^3$
 
 Given two vectors $v_1, v_2 \in {\bf R}^3$, we will see later (<a href="../spaces-dimension/#thm-basis-theorem" data-reference-type="ref+Label" data-reference="thm:basis-theorem">Theorem 3.71</a>) that there will always be some vector $w \in {\bf R}^3$ (in fact infinitely many) that is *not* a linear combination of $v_1$ and $v_2$. In the above example any vector $w = (x,y,z)$ with $z \ne 0$ has that property. Continuing with that example, the $x-y$-plane inside ${\bf R}^3$, i.e., $V := \{(x,y,z) \ | \ x, y \in {\bf R}, z = 0\} = \{(x,y,0) \ | \ x, y \in {\bf R} \}$ is a subspace of ${\bf R}^3$: it contains $(0,0,0)$ and given any two vectors $v, w \in V$ we have $v+w \in V$ and given $r \in {\bf R}$, $r v \in V$ (convince yourself this is true!). We can alternatively use <a href="../spaces-definition-solution-of-homogeneous/#prop-homogeneous-system-subspace" data-reference-type="ref+Label" data-reference="prop:homogeneous-system-subspace">Proposition 3.18</a> to see this is a subspace: $V$ is the solution space of the equation $z = 0$ (in the three variables $x, y, z$), which is a homogeneous linear equation. The following statement asserts that we always obtain a subspace in this manner.
 

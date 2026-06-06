@@ -19,7 +19,15 @@ for an appropriate vector $v \in V$ and a sub*space* $W \subset V$.
 
 </div>
 
-In other words, an affine subspace is obtained by translating a subspace (i.e., a sub-vector space) by a certain vector. For example, any line or a plane in ${\bf R}^3$ that is not necessarily passing through the origin is an affine subspace. A key example of an affine subspace is the solution set of a (not necessarily homogeneous) linear system
+In other words, an affine subspace is obtained by translating a subspace (i.e., a sub-vector space) by a certain vector. For example, any line or a plane in ${\bf R}^3$ that is not necessarily passing through the origin is an affine subspace.
+
+
+
+<iframe src="../visualizations/affine-plane-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+Affine planes in $\bf R^3$
+
+A key example of an affine subspace is the solution set of a (not necessarily homogeneous) linear system
 <div class="arithmatex" markdown="1">
 \[
 Ax = b.
@@ -94,6 +102,18 @@ The two subspaces $W$ and $W'$ are spanned by $(1,-1,2)$ and $(-1,1,2)$, respect
 Considering the first two equations gives $s+t=3$ and $s+t=0$, which has no solution. Thus $X \cap X' = \emptyset$, which means that the lines are skew.
 
 </div>
+
+
+
+<iframe src="../visualizations/plane-line-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+A plane and a line in $\bf R^3$
+
+
+
+<iframe src="../visualizations/two-lines-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+Two lines in $\bf R^3$
 
 <div class="definition" markdown="1">
 
@@ -178,6 +198,12 @@ We finally show that a vector $x \in X$ with minimal distance to the origin agre
 Since $|\hspace{-0.5mm}| {x} |\hspace{-0.5mm}| = |\hspace{-0.5mm}| {v} |\hspace{-0.5mm}|$, this implies $|\hspace{-0.5mm}| {w} |\hspace{-0.5mm}|^2 = 0$, i.e., $w = 0$, i.e., $x = v$. ◻
 
 </div>
+
+
+
+<iframe src="../visualizations/distance-to-line-2d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+Distance of a point to a line in $\bf R^2$
 
 <div class="definition" markdown="1">
 
