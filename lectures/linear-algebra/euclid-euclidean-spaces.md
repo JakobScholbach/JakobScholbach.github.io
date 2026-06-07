@@ -419,9 +419,10 @@ In particular, if the $v_i$ form a basis, then so do the $w_i$, i.e., they then 
 
 
 
+<a id="vis-orthogonal-projection-3d"></a>
 <iframe src="../visualizations/orthogonal-projection-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-Orthogonal projection of a vector in $\bf R^3$
+
 
 <div class="example" markdown="1">
 

@@ -23,9 +23,10 @@ In other words, an affine subspace is obtained by translating a subspace (i.e., 
 
 
 
+<a id="vis-affine-plane-3d"></a>
 <iframe src="../visualizations/affine-plane-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-Affine planes in $\bf R^3$
+
 
 A key example of an affine subspace is the solution set of a (not necessarily homogeneous) linear system
 <div class="arithmatex" markdown="1">
@@ -105,15 +106,17 @@ Considering the first two equations gives $s+t=3$ and $s+t=0$, which has no solu
 
 
 
+<a id="vis-plane-line-3d"></a>
 <iframe src="../visualizations/plane-line-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-A plane and a line in $\bf R^3$
 
 
 
+
+<a id="vis-two-lines-3d"></a>
 <iframe src="../visualizations/two-lines-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-Two lines in $\bf R^3$
+
 
 <div class="definition" markdown="1">
 
@@ -201,9 +204,10 @@ Since $|\hspace{-0.5mm}| {x} |\hspace{-0.5mm}| = |\hspace{-0.5mm}| {v} |\hspace{
 
 
 
+<a id="vis-distance-to-line-2d"></a>
 <iframe src="../visualizations/distance-to-line-2d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-Distance of a point to a line in $\bf R^2$
+
 
 <div class="definition" markdown="1">
 

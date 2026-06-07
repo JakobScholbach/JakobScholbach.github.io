@@ -80,8 +80,9 @@ so the eigenspace $E_{-\sqrt 2}$ is again one-dimensional, and a basis vector is
 
 
 
+<a id="vis-eigenvectors-2d"></a>
 <iframe src="../visualizations/eigenvectors-2d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-Eigenvectors and eigenspaces of $2 \times 2$-matrices
+
 
 </div>

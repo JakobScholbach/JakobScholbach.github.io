@@ -125,9 +125,10 @@ The following theorem addresses the question how linearly independent sets can b
 
 
 
+<a id="vis-linear-independence-3d"></a>
 <iframe src="../visualizations/linear-independence-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-Linear independence, span and basis property of several vectors in $\bf R^3$
+
 
 <div class="example" markdown="1">
 

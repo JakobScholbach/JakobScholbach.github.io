@@ -2148,9 +2148,20 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../appendix/" class="md-nav__link">
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -2164,7 +2175,79 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendix
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mathematical Notation
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualizations-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interactive Visualizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2235,9 +2318,9 @@ v_0 + W := \{v_0 + w \ | w \in W\}
 <p>for an appropriate vector <span class="arithmatex">\(v \in V\)</span> and a sub<em>space</em> <span class="arithmatex">\(W \subset V\)</span>.</p>
 </div>
 <p>In other words, an affine subspace is obtained by translating a subspace (i.e., a sub-vector space) by a certain vector. For example, any line or a plane in <span class="arithmatex">\({\bf R}^3\)</span> that is not necessarily passing through the origin is an affine subspace.</p>
+<p><a id="vis-affine-plane-3d"></a></p>
 <iframe src="../visualizations/affine-plane-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-<p>Affine planes in <span class="arithmatex">\(\bf R^3\)</span></p>
 <p>A key example of an affine subspace is the solution set of a (not necessarily homogeneous) linear system</p>
 <div class="arithmatex">
 <div class="arithmatex">\[
@@ -2302,12 +2385,12 @@ X' &amp; = (4,-3,6) + L(-1,1,2) = \{(4-t,-3+t,6+2t) \ | \ t\in {\bf R} \}.
 </div>
 <p>Considering the first two equations gives <span class="arithmatex">\(s+t=3\)</span> and <span class="arithmatex">\(s+t=0\)</span>, which has no solution. Thus <span class="arithmatex">\(X \cap X' = \emptyset\)</span>, which means that the lines are skew.</p>
 </div>
+<p><a id="vis-plane-line-3d"></a></p>
 <iframe src="../visualizations/plane-line-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-<p>A plane and a line in <span class="arithmatex">\(\bf R^3\)</span></p>
+<p><a id="vis-two-lines-3d"></a></p>
 <iframe src="../visualizations/two-lines-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-<p>Two lines in <span class="arithmatex">\(\bf R^3\)</span></p>
 <div class="definition">
 <p class="env-number"><strong>Definition 7.44</strong></p>
 <p><span id="def-euclid-definition-010" label="def:euclid-definition-010"></span> For two affine subspaces <span class="arithmatex">\(X, X' \subset {\bf R}^n\)</span> we say that two points <span class="arithmatex">\(x \in X\)</span>, <span class="arithmatex">\(x' \in X'\)</span> <em>realize the minimal distance</em> of <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(X'\)</span> if</p>
@@ -2375,9 +2458,9 @@ v_0 = w + v
 </div>
 <p>Since <span class="arithmatex">\(|\hspace{-0.5mm}| {x} |\hspace{-0.5mm}| = |\hspace{-0.5mm}| {v} |\hspace{-0.5mm}|\)</span>, this implies <span class="arithmatex">\(|\hspace{-0.5mm}| {w} |\hspace{-0.5mm}|^2 = 0\)</span>, i.e., <span class="arithmatex">\(w = 0\)</span>, i.e., <span class="arithmatex">\(x = v\)</span>. ◻</p>
 </div>
+<p><a id="vis-distance-to-line-2d"></a></p>
 <iframe src="../visualizations/distance-to-line-2d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-<p>Distance of a point to a line in <span class="arithmatex">\(\bf R^2\)</span></p>
 <div class="definition">
 <p class="env-number"><strong>Definition 7.46</strong></p>
 <p><span id="def-euclid-definition-011" label="def:euclid-definition-011"></span> A <em>hyperplane</em> in <span class="arithmatex">\({\bf R}^n\)</span> is an affine subspace <span class="arithmatex">\(H\)</span> of dimension <span class="arithmatex">\(n-1\)</span>, i.e., an affine subspace of the form</p>

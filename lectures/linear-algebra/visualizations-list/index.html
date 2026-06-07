@@ -11,10 +11,8 @@
       
       
       
-        <link rel="prev" href="../euclid-scalar-product/">
+        <link rel="prev" href="../appendix/">
       
-      
-        <link rel="next" href="../euclid-orthogonal-and-symmetric-matrices/">
       
       
         
@@ -25,7 +23,7 @@
     
     
       
-        <title>Euclidean Spaces - Linear Algebra Wiki</title>
+        <title>List of Interactive Visualizations - Linear Algebra Wiki</title>
       
     
     
@@ -68,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#euclidean-spaces" class="md-skip">
+        <a href="#list-of-interactive-visualizations" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Euclidean Spaces
+              List of Interactive Visualizations
             
           </span>
         </div>
@@ -1808,20 +1806,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -1842,7 +1838,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1885,19 +1881,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../euclid-euclidean-spaces/" class="md-nav__link">
         
   
   
@@ -1913,7 +1900,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2098,18 +2084,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -2130,7 +2118,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2173,10 +2161,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../visualizations-list/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2192,6 +2189,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -2239,381 +2237,22 @@
 
 
 
-<p><a id="sect-euclidean-spaces"></a></p>
-<h1 id="euclidean-spaces">Euclidean spaces<a class="headerlink" href="#euclidean-spaces" title="Permanent link">&para;</a></h1>
-<div class="definition">
-<p class="env-number"><strong>Definition 7.15</strong></p>
-<p><span id="def-euclid-definition-005" label="def:euclid-definition-005"></span> A <em>Euclidean vector space</em> is a vector space <span class="arithmatex">\(V\)</span> together with a map</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-{\left \langle -, - \right \rangle}: V \times V \to {\bf R}
-\]</div>
-</div>
-<p>that is</p>
-<ul>
-<li>
-<p>bilinear (i.e., <span class="arithmatex">\({\left \langle v, - \right \rangle}\)</span> and <span class="arithmatex">\({\left \langle -, v \right \rangle} : V \to {\bf R}\)</span> are linear for each <span class="arithmatex">\(v \in V\)</span>),</p>
-</li>
-<li>
-<p>symmetric (i.e., <span class="arithmatex">\({\left \langle v, w \right \rangle} = {\left \langle w, v \right \rangle}\)</span>), and</p>
-</li>
-<li>
-<p>positive definite (<span class="arithmatex">\({\left \langle v, v \right \rangle} &gt; 0\)</span> for each <span class="arithmatex">\(v \ne 0\)</span>).</p>
-</li>
-</ul>
-<p>One also refers to the map <span class="arithmatex">\({\left \langle -, - \right \rangle}\)</span> as the scalar product on <span class="arithmatex">\(V\)</span>. We say <span class="arithmatex">\(v, w\)</span> are <em>orthogonal</em> if <span class="arithmatex">\({\left \langle v, w \right \rangle}=0\)</span>. We will indicate this by writing</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-v \bot w.
-\]</div>
-</div>
-<p>We call</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-|\hspace{-0.5mm}| {v} |\hspace{-0.5mm}| := \sqrt {{\left \langle v, v \right \rangle}} (\in {\bf R}^{\ge 0})
-\]</div>
-</div>
-<p>the norm of the vector <span class="arithmatex">\(v\)</span>. For <span class="arithmatex">\(v, w \in V\)</span>, the <em>distance</em> between <span class="arithmatex">\(v\)</span> and <span class="arithmatex">\(w\)</span> is defined as</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-d(v,w) := |\hspace{-0.5mm}| {v-w} |\hspace{-0.5mm}|.
-\]</div>
-</div>
-</div>
-<div class="example">
-<p class="env-number"><strong>Example 7.16</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-poly-operator">Exercise 7.15</a>, <a href="../exercises-euclid/#ex-euclid-polynomials-gs">Exercise 7.1</a>)</p>
-<p><span id="ex-examples-scalar-product" label="ex:examples-scalar-product"></span></p>
+<h1 id="list-of-interactive-visualizations">List of Interactive Visualizations<a class="headerlink" href="#list-of-interactive-visualizations" title="Permanent link">&para;</a></h1>
 <ol>
-<li>
-<p><span class="arithmatex">\({\bf R}^n\)</span> with the above scalar product is an Euclidean vector space. More generally, for a symmetric, positive definite matrix <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\({\bf R}^n\)</span> together <span class="arithmatex">\({\left \langle -, - \right \rangle_{A}}\)</span> is an Euclidean space.</p>
-<p>In other words, the above turns the fundamental properties of <span class="arithmatex">\({\bf R}^n\)</span>, together with the standard scalar product (or, more generally <span class="arithmatex">\({\bf R}^n\)</span> with the scalar product <span class="arithmatex">\({\left \langle -, - \right \rangle_{A}}\)</span> given by a positive definite symmetric matrix <span class="arithmatex">\(A\)</span>) into an abstrac definition, similarly to the way that a vector space is an abstraction of the key properties of <span class="arithmatex">\({\bf R}^n\)</span>.</p>
-</li>
-<li>
-<p>If <span class="arithmatex">\(V\)</span>, together with some given scalar product <span class="arithmatex">\({\left \langle -, - \right \rangle}\)</span> is a Euclidean space, then so is any subspace of <span class="arithmatex">\(V\)</span>. In particular, any subspace of <span class="arithmatex">\({\bf R}^n\)</span> with the standard scalar product is again an Euclidean space. For example, any plane inside <span class="arithmatex">\({\bf R}^3\)</span> is an Euclidean space.</p>
-</li>
-<li>
-<p><span id="item-functions" label="item--functions"></span> One can use elementary properties of the integral to show that the vector space <span class="arithmatex">\(C = C([-1,1])\)</span> of continuous functions <span class="arithmatex">\(f : [-1,1] \to {\bf R}\)</span> with</p>
-</li>
+<li><a href="../spaces-linear-combinations/#vis-linear-combination-3d">Linear combinations and span of two vectors in <span class="arithmatex">\(\bf R^3\)</span></a></li>
+<li><a href="../spaces-bases/#vis-linear-independence-2d">Linear independence, span and basis of two vectors in <span class="arithmatex">\(\bf R^2\)</span></a></li>
+<li><a href="../spaces-dimension/#vis-linear-independence-3d">Linear indepdendence, span and basis property of several vectors in <span class="arithmatex">\(\bf R^3\)</span></a></li>
+<li><a href="../maps-definition-and-first-examples/#vis-linear-map-2d">Linear map from <span class="arithmatex">\(\bf R^2\)</span> to <span class="arithmatex">\(\bf R^2\)</span></a></li>
+<li><a href="../maps-kernel-and-image-1/#vis-linear-map-3d">Linear maps from <span class="arithmatex">\(\bf R^3\)</span> to <span class="arithmatex">\(\bf R^3\)</span> with different ranks</a></li>
+<li><a href="../determinants-determinants-of-2-x-2-matrices/#vis-determinant-2d">Determinant of a <span class="arithmatex">\(2 \times 2\)</span>-matrix, area and orientation</a></li>
+<li><a href="../eigenvalues-eigenspaces/#vis-eigenvectors-2d">Eigenvectors and eigenspaces of <span class="arithmatex">\(2 \times 2\)</span>-matrices</a></li>
+<li><a href="../euclid-scalar-product/#vis-quadratic-form-2d"><span class="arithmatex">\(2 \times 2\)</span>-matrices and their associated bilinear forms</a></li>
+<li><a href="../euclid-euclidean-spaces/#vis-orthogonal-projection-3d">Orthogonal projection of a vector in <span class="arithmatex">\(\bf R^3\)</span></a></li>
+<li><a href="../euclid-affine-subspaces/#vis-affine-plane-3d">Affine planes in <span class="arithmatex">\(\bf R^3\)</span></a></li>
+<li><a href="../euclid-affine-subspaces/#vis-plane-line-3d">A plane and a line in <span class="arithmatex">\(\bf R^3\)</span></a></li>
+<li><a href="../euclid-affine-subspaces/#vis-two-lines-3d">Two lines in <span class="arithmatex">\(\bf R^3\)</span></a></li>
+<li><a href="../euclid-affine-subspaces/#vis-distance-to-line-2d">Distance of a point to a line in <span class="arithmatex">\(\bf R^2\)</span></a></li>
 </ol>
-<div class="arithmatex">
-<div class="arithmatex">\[
-    {\left \langle f, g \right \rangle} := \int_{-1}^1 f(x)g(x)dx
-\]</div>
-</div>
-<p>is an (infinite-dimensional) Euclidean space, which is of fundamental importance in analysis.</p>
-<ol>
-<li>As in <a href="../euclid-scalar-product/#ex-minkowski" data-reference-type="ref+Label" data-reference="ex:minkowski">Example 7.8</a>, consider again <span class="arithmatex">\(V = {\bf R}^n\)</span>, but</li>
-</ol>
-<div class="arithmatex">
-<div class="arithmatex">\[
-    {\left \langle v, w \right \rangle} := v_1 w_1 + \dots + v_{n-1} w_{n-1} - v_n w_n.
-\]</div>
-</div>
-<p>This is bilinear and symmetric, but <em>not</em> positive definite, and therefore not a scalar product.</p>
-</div>
-<div class="proposition">
-<p class="env-number"><strong>Proposition 7.17</strong></p>
-<p><span id="prop-properties-nm" label="prop:properties-nm"></span> Let <span class="arithmatex">\((V, {\left \langle -, - \right \rangle})\)</span> be an Euclidean space. For each <span class="arithmatex">\(v, w \in V\)</span>, there holds:</p>
-<ol>
-<li>
-<p><span class="arithmatex">\(|\hspace{-0.5mm}| {v} |\hspace{-0.5mm}| \ge 0\)</span>,</p>
-</li>
-<li>
-<p><span id="item-non-deg" label="item--non-deg"></span> <span class="arithmatex">\(|\hspace{-0.5mm}| {v} |\hspace{-0.5mm}| = 0\)</span> if and only if <span class="arithmatex">\(v = 0\)</span>,</p>
-</li>
-<li>
-<p><span class="arithmatex">\(|\hspace{-0.5mm}| {rv} |\hspace{-0.5mm}| = |r| |\hspace{-0.5mm}| {v} |\hspace{-0.5mm}|\)</span> for <span class="arithmatex">\(r \in {\bf R}\)</span>,</p>
-</li>
-</ol>
-</div>
-<div class="proof">
-<p><em>Proof.</em> The first and third statement is immediate. The second holds since <span class="arithmatex">\({\left \langle -, - \right \rangle}\)</span> is (by definition) positive definite. ◻</p>
-</div>
-<p>The scalar product yields a crucial additional feature that general vector spaces do not possess. This is based on the following idea. Throughout, let <span class="arithmatex">\((V, {\left \langle -, - \right \rangle})\)</span> be an Euclidean vector space.</p>
-<div class="lemma">
-<p class="env-number"><strong>Lemma 7.18</strong></p>
-<p><span id="lem-rep-orthogonal" label="lem:rep-orthogonal"></span> Let <span class="arithmatex">\(e \in V\)</span> be a vector of norm 1, i.e., <span class="arithmatex">\(|\hspace{-0.5mm}| {e} |\hspace{-0.5mm}| = 1\)</span>. Let <span class="arithmatex">\(v \in V\)</span> be any vector. Then the vector</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-\tilde v := v - {\left \langle v, e \right \rangle} \cdot e
-\]</div>
-</div>
-<p>is orthogonal to <span class="arithmatex">\(e\)</span> and we have the equation</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-v = \tilde v +   {\left \langle v, e \right \rangle} \cdot e
-\]</div>
-</div>
-<p class="env-number equation-number"><strong>(7.19)</strong></p>
-<p><span id="eqn-tilde-v" label="eqn--tilde v"></span> expressing <span class="arithmatex">\(v\)</span> as a sum of a scalar multiple of <span class="arithmatex">\(e\)</span> and a vector that is orthogonal to <span class="arithmatex">\(e\)</span>.</p>
-</div>
-<div class="proof">
-<p><em>Proof.</em> The orthogonality of <span class="arithmatex">\(\tilde v\)</span> and <span class="arithmatex">\(e\)</span> is a computation using the bilinearity of <span class="arithmatex">\({\left \langle -, - \right \rangle}\)</span>:</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-\begin{align*}
-{\left \langle \tilde v, e \right \rangle} &amp;= 
-{\left \langle v - {\left \langle v, e \right \rangle} \cdot e, e \right \rangle} \\
-&amp; = {\left \langle v, e \right \rangle} - {\left \langle {\left \langle v, e \right \rangle} \cdot e, e \right \rangle} \\
-&amp; = {\left \langle v, e \right \rangle} - {\left \langle v, e \right \rangle} \underbrace{{\left \langle e, e \right \rangle}}_{=1} \\
-&amp; = 0.
-\end{align*}
-\]</div>
-</div>
-<p>The equation is obvious from the definition of <span class="arithmatex">\(\tilde v\)</span>. ◻</p>
-</div>
-<p>We now extend the observation of <a href="#lem-rep-orthogonal" data-reference-type="ref+Label" data-reference="lem:rep-orthogonal">Lemma 7.18</a> to more than a single vector. To do so, we introduce some terminology.</p>
-<div class="definitionlemma">
-<p class="env-number"><strong>Definition and Lemma 7.20</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-9">Exercise 7.10</a>, <a href="../exercises-euclid/#ex-euclid-r4-projection">Exercise 7.3</a>)</p>
-<p><span id="dlm-orthogonal-complement" label="dlm:orthogonal-complement"></span> The <em>orthogonal complement</em> of a subset <span class="arithmatex">\(M \subset V\)</span> is defined as</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-M^\bot := \{v \in V \ | \ {\left \langle v, m \right \rangle}= 0 \text{ for all } m \in M\}.
-\]</div>
-</div>
-<p>This is a sub<em>space</em> of <span class="arithmatex">\(V\)</span>.</p>
-<p>For a subspace <span class="arithmatex">\(W\)</span>, one has</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-W \cap W^\bot = \{0\},
-\]</div>
-</div>
-<p class="env-number equation-number"><strong>(7.21)</strong></p>
-<p><span id="eqn-w-cap-w-bot" label="eqn--W cap W bot"></span></p>
-</div>
-<p>The last assertion can be rephrased by saying that the zero vector is the only element in <span class="arithmatex">\(W\)</span> that is orthogonal to all vectors in <span class="arithmatex">\(W\)</span>. Colloquially, this means that if <span class="arithmatex">\(W\)</span> gets larger, then <span class="arithmatex">\(W^\bot\)</span> gets smaller. This idea is made more precise (in terms of dimensions) in <a href="#cor-dim-u-bot" data-reference-type="ref+Label" data-reference="cor:dim-u-bot">Corollary 7.31</a> below. The last assertion is proved using the positive-definiteness of <span class="arithmatex">\({\left \langle -, - \right \rangle}\)</span> (specifically, <a href="#prop-properties-nm" data-reference-type="ref+Label" data-reference="prop:properties-nm">Proposition 7.17</a><a href="#item-non-deg" data-reference-type="ref" data-reference="item--non-deg">2.</a>).</p>
-<div class="center">
-<p><img alt="image" src="../figures/png/euclid/euclid-fig-05.png" /></p>
-</div>
-<div class="example">
-<p class="env-number"><strong>Example 7.22</strong></p>
-<p><span id="ex-orthogonal-complement" label="ex:orthogonal-complement"></span> Consider the subspace <span class="arithmatex">\(W = L (\left ( \begin{array}{c} 1 \\ 2 \\ 4 \end{array} \right ), \left ( \begin{array}{c} 1 \\ 1 \\ 0 \end{array} \right )) \subset {\bf R}^3\)</span> (with its standard scalar product). We compute <span class="arithmatex">\(W^\bot\)</span>. A vector <span class="arithmatex">\(x = \left ( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right ) \in {\bf R}^3\)</span> will be orthogonal to <span class="arithmatex">\(W\)</span> if and only if it is orthogonal to <span class="arithmatex">\(v_1 = \left ( \begin{array}{c} 1 \\ 2 \\ 4 \end{array} \right )\)</span> and <span class="arithmatex">\(v_2 = \left ( \begin{array}{c} 1 \\ 1 \\ 0 \end{array} \right )\)</span>. This follows from the linearity of <span class="arithmatex">\({\left \langle x, - \right \rangle}\)</span>. We make the conditions <span class="arithmatex">\(x \bot v_1\)</span> and <span class="arithmatex">\(x \bot v_2\)</span> explicit:</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-\begin{align*}
- x \bot v_1 &amp; \Rightarrow x_1 + 2x_2 + 4 x_3 &amp; = 0 \\
-x \bot v_2 &amp; \Rightarrow x_1 + x_2 &amp; = 0.
-\end{align*}
-\]</div>
-</div>
-<p>We solve this homogeneous system</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-\left ( \begin{array}{ccc} 1 &amp; 2 &amp; 4 \\ 1 &amp; 1 &amp; 0 \end{array} \right ) \leadsto \left ( \begin{array}{ccc} 1 &amp; 2 &amp; 4 \\ 0 &amp; -1 &amp; -4 \end{array} \right ) \leadsto \left ( \begin{array}{ccc} 1 &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 4 \end{array} \right )
-\]</div>
-</div>
-<p>which shows that <span class="arithmatex">\(x_3\)</span> is a free variable, and that the solution space of the system, i.e., <span class="arithmatex">\(W^\bot\)</span> is the subspace</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-W^\bot = L(\left ( \begin{array}{c} 4 \\ -4 \\ 1 \end{array} \right )).
-\]</div>
-</div>
-</div>
-<div class="definition">
-<p class="env-number"><strong>Definition 7.23</strong></p>
-<p><span id="def-euclid-definition-006" label="def:euclid-definition-006"></span> A family <span class="arithmatex">\(v_1, \dots, v_n\)</span> of vectors is called an <em>orthonormal system</em> if</p>
-<ul>
-<li>
-<p><span class="arithmatex">\(|\hspace{-0.5mm}| {v_i} |\hspace{-0.5mm}| = 1\)</span> (i.e., <span class="arithmatex">\({\left \langle v_i, v_i \right \rangle} = 1\)</span>) for all <span class="arithmatex">\(i\)</span>,</p>
-</li>
-<li>
-<p><span class="arithmatex">\(v_i \bot v_j\)</span> (i.e., <span class="arithmatex">\({\left \langle v_i, v_j \right \rangle} = 0\)</span>) for all <span class="arithmatex">\(i \ne j\)</span>.</p>
-</li>
-</ul>
-<p>If the vectors additionally form a basis of <span class="arithmatex">\(V\)</span>, then we speak of an <em>orthonormal basis</em>.</p>
-</div>
-<p>For example, the standard basis in <span class="arithmatex">\({\bf R}^n\)</span> is an orthonormal basis (with respect to the standard scalar product).</p>
-<div class="theorem">
-<p class="env-number"><strong>Theorem 7.24</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-1">Exercise 7.2</a>, <a href="../exercises-euclid/#ex-euclid-6-13">Exercise 7.17</a>, <a href="../exercises-euclid/#ex-euclid-6-6">Exercise 7.7</a>, <a href="../exercises-euclid/#ex-euclid-r4-projection">Exercise 7.3</a>, <a href="../exercises-euclid/#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
-<p><span id="thm-orthogonal-projection" label="thm:orthogonal-projection"></span> Let <span class="arithmatex">\(u_1, \dots, u_n\)</span> be an orthonormal system (in an Euclidean space). Let <span class="arithmatex">\(U = L(u_1, \dots, u_n) \subset V\)</span> be the subspace spanned by these vectors. Then there is a unique linear map, called the <em>orthogonal projection</em></p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-p : V \to U
-\]</div>
-</div>
-<p>such that</p>
-<ol>
-<li>
-<p><span id="item-p-u-id" label="item--p.U.id"></span> <span class="arithmatex">\(p(u) = u\)</span> for all <span class="arithmatex">\(u \in U\)</span>,</p>
-</li>
-<li>
-<p><span id="item-p-u-bot" label="item--p.U.bot"></span> <span class="arithmatex">\(p(v) - v \in U^\bot\)</span> for all <span class="arithmatex">\(v \in V\)</span>.</p>
-</li>
-</ol>
-<p>In particular, every vector <span class="arithmatex">\(v \in V\)</span> can be written as</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-v = \underbrace{p(v)}_{\in U} + \underbrace{v - p(v)}_{\in U^\bot},
-\]</div>
-</div>
-<p>i.e., a sum of a vector in <span class="arithmatex">\(U\)</span> and another one in its orthogonal complement <span class="arithmatex">\(U^\bot\)</span>. This is the unique representation of <span class="arithmatex">\(v\)</span> in such a form.</p>
-<p>The map <span class="arithmatex">\(p\)</span> is given by</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-p(v) = \sum_{k=1}^n {\left \langle v, u_k \right \rangle} u_k.
-\]</div>
-</div>
-<p class="env-number equation-number"><strong>(7.25)</strong></p>
-<p><span id="eqn-orth-proj" label="eqn--orth proj"></span></p>
-<p>More generally, if <span class="arithmatex">\(u_1, \dots, u_n\)</span> is an orthogonal system (not necessarily orthonormal), then the map</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-p(v) = \sum_{k=1}^n \frac{{\left \langle v, u_k \right \rangle}}{{\left \langle u_k, u_k \right \rangle}} u_k
-\]</div>
-</div>
-<p class="env-number equation-number"><strong>(7.26)</strong></p>
-<p><span id="eq-orthogonal-projection-formula" label="eq:orthogonal-projection-formula"></span> is the orthogonal projection onto <span class="arithmatex">\(U = L(u_1, \dots, u_n)\)</span>.</p>
-</div>
-<div class="example">
-<p class="env-number"><strong>Example 7.27</strong></p>
-<p><span id="ex-euclid-example-008" label="ex:euclid-example-008"></span> In <span class="arithmatex">\(V = {\bf R}^3\)</span>, equipped with its standard scalar product, we consider <span class="arithmatex">\(u_1 = (1, 0,0)\)</span> and <span class="arithmatex">\(u_2=(0,1,0)\)</span>. These form an orthonormal system. Then <span class="arithmatex">\(U = L(u_1, u_2) = \{(x,y,0) | x,y \in {\bf R}\}\)</span> is the <span class="arithmatex">\(x\)</span>-<span class="arithmatex">\(y\)</span>-plane; its orthogonal complement is <span class="arithmatex">\(U^\bot = L((0,0,1)) = \{(0,0,z)|z \in {\bf R}\}\)</span>, the <span class="arithmatex">\(z\)</span>-axis. The orthogonal projection as defined in sends a vector <span class="arithmatex">\(v = (x,y,z)\)</span> to</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-p(v) = {\left \langle v, u_1 \right \rangle} u_1 + {\left \langle v, u_2 \right \rangle} u_2 = x u_1 + y u_2 = (x, y, 0).
-\]</div>
-</div>
-</div>
-<div class="proof">
-<p><em>Proof.</em> The map <span class="arithmatex">\(p\)</span> defined in is linear, since <span class="arithmatex">\({\left \langle -, u_k \right \rangle}\)</span> is linear. It satisfies the two conditions. One checks this using that the <span class="arithmatex">\(u_k\)</span> form an orthonormal system, very similarly to the proof of <a href="#lem-rep-orthogonal" data-reference-type="ref+Label" data-reference="lem:rep-orthogonal">Lemma 7.18</a>.</p>
-<p>If <span class="arithmatex">\(q : V \to U\)</span> is another map with these two properties, we have</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-{\left \langle p(v) - q(v), u \right \rangle} = {\left \langle \underbrace{p(v)-v-(q(v)-v)}_{\in U^\bot}, u \right \rangle} = 0
-\]</div>
-</div>
-<p>for all <span class="arithmatex">\(v \in V\)</span>, <span class="arithmatex">\(u \in U\)</span>. Since <span class="arithmatex">\(q(v)\)</span>, <span class="arithmatex">\(p(v) \in U\)</span>, we have <span class="arithmatex">\(p(v)-q(v) \in U\)</span>. Thus, the vector <span class="arithmatex">\(p(v)-q(v)\)</span> is zero, by . This shows the unicity of <span class="arithmatex">\(p\)</span>.</p>
-<p>The final claim holds since <span class="arithmatex">\(v = \underbrace{p(v)}_{\in U} + \underbrace{v - p(v)}_{\in U^\bot}\)</span> is such a representation. If <span class="arithmatex">\(v = u_1 + u_1'\)</span> with <span class="arithmatex">\(u_1 \in U\)</span> and <span class="arithmatex">\(u_1' \in U^\bot\)</span> is another such representation, then <span class="arithmatex">\(u-u_1 = u' - u_1'\)</span> lies both in <span class="arithmatex">\(U\)</span> (left hand side), but also in <span class="arithmatex">\(U^\bot\)</span> (right hand side). However, again applying <a href="#prop-properties-nm" data-reference-type="ref+Label" data-reference="prop:properties-nm">Proposition 7.17</a><a href="#item-non-deg" data-reference-type="ref" data-reference="item--non-deg">2.</a> to <span class="arithmatex">\(U\)</span>, we have <span class="arithmatex">\(U \cap U^\bot = \{0\}\)</span>, so <span class="arithmatex">\(u=u_1\)</span> and <span class="arithmatex">\(u' = u'_1\)</span>. ◻</p>
-</div>
-<div class="corollary">
-<p class="env-number"><strong>Corollary 7.28</strong></p>
-<p><span id="cor-euclid-corollary-001" label="cor:euclid-corollary-001"></span> Suppose <span class="arithmatex">\(u_1, \dots, u_n\)</span> form an orthonormal system (of a Euclidean vector space <span class="arithmatex">\((V, {\left \langle -, - \right \rangle})\)</span>) such that <span class="arithmatex">\(V\)</span> is spanned by these vectors. Then</p>
-<ul>
-<li>the following formula holds for any <span class="arithmatex">\(v \in V\)</span>:</li>
-</ul>
-<div class="arithmatex">
-<div class="arithmatex">\[
-  v = \sum_{k=1}^n {\left \langle v, u_i \right \rangle} u_i.
-\]</div>
-</div>
-<p class="env-number equation-number"><strong>(7.29)</strong></p>
-<p><span id="eqn-rep-orth-basis" label="eqn--rep.orth.basis"></span></p>
-<ul>
-<li>The vectors are necessarily linearly independent, i.e., they form an orthonormal <em>basis</em>.</li>
-</ul>
-</div>
-<div class="proof">
-<p><em>Proof.</em> We apply <a href="#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a> to these vectors. By the assumption <span class="arithmatex">\(U = V\)</span>, so that by <a href="#item-p-u-id" data-reference-type="ref" data-reference="item--p.U.id">1.</a>, <span class="arithmatex">\(p(v) = {\mathrm {id}}\)</span>. The first claim then holds by .</p>
-<p>If <span class="arithmatex">\(0 = \sum_{k=1}^n a_k u_k\)</span> is a linear combination, we apply <span class="arithmatex">\({\left \langle -, u_l \right \rangle}\)</span>, for any <span class="arithmatex">\(1 \le l \le n\)</span>, to :</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-\begin{align*}
-0 &amp; = {\left \langle 0, u_l \right \rangle} \\
-&amp; = {\left \langle \sum_{k=1}^n a_k u_k, u_l \right \rangle} \\
-&amp; = \sum_{k=1}^{n} a_k {\left \langle u_k, u_l \right \rangle}.
-\end{align*}
-\]</div>
-</div>
-<p>In this sum, all terms except the one with <span class="arithmatex">\(k=l\)</span> are zero, since <span class="arithmatex">\(u_k \bot u_l\)</span> for <span class="arithmatex">\(k \ne l\)</span>. We also have <span class="arithmatex">\({\left \langle u_l, u_l \right \rangle} = 1\)</span>, which shows that <span class="arithmatex">\(a_l = 0\)</span>, and therefore the linear independence of the given vectors. ◻</p>
-</div>
-<div class="example">
-<p class="env-number"><strong>Example 7.30</strong></p>
-<p><span id="ex-euclid-example-009" label="ex:euclid-example-009"></span> The standard basis <span class="arithmatex">\(e_1, \dots, e_n\)</span> of <span class="arithmatex">\({\bf R}^n\)</span> is an orthonormal basis. For <span class="arithmatex">\(v = \left ( \begin{array}{c} v_1 \\ \vdots \\ v_n \end{array} \right )\)</span>, we have <span class="arithmatex">\({\left \langle e_i, v \right \rangle} = v_i\)</span> and the representation in is the usual expansion of <span class="arithmatex">\(v\)</span>:</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-v = v_1 e_1 + \dots + v_n e_n.
-\]</div>
-</div>
-<p>In general, the identity is a convenient way to compute the coordinates of a given vector in terms of an (orthonomal) basis.</p>
-</div>
-<p>Using these results, one can quickly prove:</p>
-<div class="corollary">
-<p class="env-number"><strong>Corollary 7.31</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-1">Exercise 7.2</a>, <a href="../exercises-euclid/#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
-<p><span id="cor-dim-u-bot" label="cor:dim-u-bot"></span> If <span class="arithmatex">\(U \subset V\)</span> is a subspace of a finite-dimensional Euclidean space then</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-\dim U^\bot = \dim V - \dim U.
-\]</div>
-</div>
-<p>Moreover, we then have following equality:</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-U= (U^\bot)^\bot,
-\]</div>
-</div>
-<p>i.e., the orthogonal complement of the orthogonal complement of <span class="arithmatex">\(U\)</span> is equal to <span class="arithmatex">\(U\)</span>.</p>
-</div>
-<p>The presence of a positive definite (symmetric) matrix yields the following algorithmic device that constructs a particularly convenient set of vectors.</p>
-<div class="proposition">
-<p class="env-number"><strong>Proposition 7.32</strong></p>
-<p><span id="prop-gram-schmidt-orthogonalization" label="prop:gram-schmidt-orthogonalization"></span> (<em>Gram–Schmidt orthogonalization</em>) Let <span class="arithmatex">\(v_1, \dots, v_r\)</span> be any set of linearly independent vectors (in an Euclidean space). Then the vectors <span class="arithmatex">\(w_1, \dots, w_r\)</span> defined inductively as follows are an orthonormal system: They are constructed as follows</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-\begin{align*}
-w_1 &amp; := \frac 1 {|\hspace{-0.5mm}| {v_1} |\hspace{-0.5mm}|} v_1 &amp; \text{(normalization)}\\
-w'_2 &amp; := v_2 - {\left \langle v_2, w_1 \right \rangle} w_1 &amp; \text{(orthogonalization w.r.t. }L(w_1)\text{)} \\
-w_2 &amp; := \frac 1 {|\hspace{-0.5mm}| {w'_2} |\hspace{-0.5mm}|} w'_2 &amp; \text{(normalization)}\\
-\vdots \\
-w'_r &amp; := v_r - \sum_{k=1}^{r-1} {\left \langle v_r, w_k \right \rangle} \cdot {w_k} &amp; \text{(orthogonalization w.r.t. }L(w_1, \dots, w_{r-1})\text{)} \\
-w_r &amp; :=  \frac 1 {|\hspace{-0.5mm}| {w'_r} |\hspace{-0.5mm}|} w'_r &amp; \text{(normalization)}
-\end{align*}
-\]</div>
-</div>
-<p>We have</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-L(v_1, \dots, v_r) = L(w_1, \dots, w_r).
-\]</div>
-</div>
-<p>In particular, if the <span class="arithmatex">\(v_i\)</span> form a basis, then so do the <span class="arithmatex">\(w_i\)</span>, i.e., they then form an orthonormal basis. Yet more in particular, this shows that any finite-dimensional Euclidean space admits an orthonormal basis.</p>
-</div>
-<div class="proof">
-<p><em>Proof.</em> In each step, the vector <span class="arithmatex">\(w'_r\)</span> is constructed in such a way that <span class="arithmatex">\(w'_r\)</span> is orthogonal to the preceding vectors <span class="arithmatex">\(w_1, \dots, w_{r-1}\)</span>, cf. . The division by the norms of the vectors <span class="arithmatex">\(w'_r\)</span> ensures that <span class="arithmatex">\(|\hspace{-0.5mm}| {w_r} |\hspace{-0.5mm}| = 1\)</span>. Note that this is possible since <span class="arithmatex">\(|\hspace{-0.5mm}| {w'_r} |\hspace{-0.5mm}| &gt; 0\)</span> since <span class="arithmatex">\(w'_r \ne 0\)</span> and <span class="arithmatex">\({\left \langle -, - \right \rangle}\)</span> is positive definite. ◻</p>
-</div>
-<p><a id="vis-orthogonal-projection-3d"></a></p>
-<iframe src="../visualizations/orthogonal-projection-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
-
-<div class="example">
-<p class="env-number"><strong>Example 7.33</strong></p>
-<p><span id="ex-euclid-example-010" label="ex:euclid-example-010"></span> We consider <span class="arithmatex">\(A = {\mathrm {id}}_2\)</span>, i.e., the standard scalar product on <span class="arithmatex">\({\bf R}^2\)</span> and <span class="arithmatex">\(v_1 = \left ( \begin{array}{c} 1 \\ 1 \end{array} \right )\)</span> and <span class="arithmatex">\(v_2 = \left ( \begin{array}{c} 2 \\ 1 \end{array} \right )\)</span>. (One checks this is a basis of <span class="arithmatex">\({\bf R}^2\)</span>!) Then</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-\begin{align*}
-w_1 &amp; = \frac 1{\sqrt 2} \left ( \begin{array}{c} 1 \\ 1 \end{array} \right ) \\
-w'_2 &amp; = v_2 - {\left \langle v_2, w_1 \right \rangle} w_1 \\
-&amp; = \left ( \begin{array}{c} 2 \\ 1 \end{array} \right ) - \frac 3{\sqrt 2} \cdot \frac 1 {\sqrt 2} \left ( \begin{array}{c} 1 \\ 1 \end{array} \right ) \\ 
-&amp; = \frac 12 \left ( \begin{array}{c} 1 \\ -1 \end{array} \right ) \\
-w_2 &amp; = \frac1{\sqrt 2} \left ( \begin{array}{c} 1 \\ -1 \end{array} \right ).
-\end{align*}
-\]</div>
-</div>
-<p>Here is an illustration of the method in this example. The blue line depicts the vectors of the form <span class="arithmatex">\(v_2 + a w_1\)</span> for <span class="arithmatex">\(a \in {\bf R}\)</span>. The vector <span class="arithmatex">\(w'_2\)</span> is the vector on that line that is orthogonal to <span class="arithmatex">\(w_1\)</span>:</p>
-<div class="center">
-<p><img alt="image" src="../figures/png/euclid/euclid-fig-06.png" /></p>
-</div>
-</div>
-<div class="corollary">
-<p class="env-number"><strong>Corollary 7.34</strong></p>
-<p><span id="cor-two-projections" label="cor:two-projections"></span> Let <span class="arithmatex">\(U \subset V\)</span> be a subspace of a finite-dimensional Euclidean space <span class="arithmatex">\(V\)</span>. Then there are two unique linear maps, called the <em>orthogonal projection</em> onto <span class="arithmatex">\(U\)</span>, resp. onto <span class="arithmatex">\(U^\bot\)</span>,</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-\begin{align*}
-p_U : &amp; V \to U\\
-p_{U^\bot} : &amp; V \to U^\bot
-\end{align*}
-\]</div>
-</div>
-<p>such that every vector <span class="arithmatex">\(v \in V\)</span> can be written as</p>
-<div class="arithmatex">
-<div class="arithmatex">\[
-v = p_U(v) + p_{U^\bot}(v).
-\]</div>
-</div>
-<p class="env-number equation-number"><strong>(7.35)</strong></p>
-<p><span id="eqn-v-blah" label="eqn--v.blah"></span></p>
-</div>
-<div class="proof">
-<p><em>Proof.</em> By <a href="#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>, <span class="arithmatex">\(U\)</span> has an orthonormal basis, so we can apply <a href="#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, which gives us the orthogonal projection <span class="arithmatex">\(p_U: V \to U\)</span>. If we define <span class="arithmatex">\(p_{U^\bot}(v) := v - p_U(v)\)</span>, holds by design, moreover, <span class="arithmatex">\(p_{U^\bot}(v) \in U^\bot\)</span> again by <a href="#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>. The unicity of a decomposition as in is again part of <a href="#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>. ◻</p>
-</div>
 
 
 

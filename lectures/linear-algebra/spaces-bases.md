@@ -21,9 +21,10 @@ is called a *basis* if they span $V$ and if they are linearly independent.
 
 
 
+<a id="vis-linear-independence-2d"></a>
 <iframe src="../visualizations/linear-independence-2d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-Linear independence, span and basis of two vectors in $\bf R^2$
+
 
 <div class="example" markdown="1">
 

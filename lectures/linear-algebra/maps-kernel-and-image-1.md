@@ -226,9 +226,10 @@ A proof of this theorem appears in any linear algebra textbook, e.g. (Nicholson 
 
 
 
+<a id="vis-linear-map-3d"></a>
 <iframe src="../visualizations/linear-map-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-Linear maps from $\bf R^3$ to $\bf R^3$ with different ranks
+
 
 <div class="theorem" markdown="1">
 
