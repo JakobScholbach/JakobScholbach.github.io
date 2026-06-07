@@ -90,7 +90,7 @@ We will soon regard the preceding example as a special case of the multiplicatio
 
 <iframe src="../visualizations/linear-map-2d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
 
-vis 8
+Linear map from $\bf R^2$ to $\bf R^2$
 
 <div class="example" markdown="1">
 
