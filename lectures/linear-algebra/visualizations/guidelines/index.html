@@ -2276,10 +2276,99 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#javascript-color-constants" class="md-nav__link">
+  <a href="#rendering-engine-threejs-vs-canvas-2d" class="md-nav__link">
     <span class="md-ellipsis">
       
-        JavaScript color constants
+        Rendering engine: Three.js vs Canvas 2D
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rendering engine: Three.js vs Canvas 2D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#threejs-all-3d-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three.js (all 3D visualizations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas-2d-api-all-2d-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas 2D API (all 2D visualizations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-layout-single-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard layout (single canvas)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-pane-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual-pane layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-breakpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile breakpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-chrome-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI chrome colors
       
     </span>
   </a>
@@ -2287,10 +2376,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#layout-template" class="md-nav__link">
+  <a href="#common-css-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layout template
+        Common CSS components
       
     </span>
   </a>
@@ -2400,27 +2489,35 @@ They are authored here (source-of-truth), flow through the existing MkDocs build
 - Their sum / result → <code>mygreen</code>
 - Angle or auxiliary arc → <code>myyellow</code>
 - Parallelogram / construction lines → gray dashed</p>
+<p><strong>Extended palette</strong> for visualizations with N &gt; 4 objects (e.g. <code>linear-independence-3d</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Slot</th>
+<th>Hex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5th</td>
+<td><code>#7c3aed</code> (purple)</td>
+</tr>
+<tr>
+<td>6th</td>
+<td><code>#e06b00</code> (orange)</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="adding-a-new-visualization">Adding a new visualization<a class="headerlink" href="#adding-a-new-visualization" title="Permanent link">&para;</a></h2>
 <h3 id="1-create-the-html-file">1. Create the HTML file<a class="headerlink" href="#1-create-the-html-file" title="Permanent link">&para;</a></h3>
 <p>Place it at <code>wiki/docs/visualizations/&lt;name&gt;.html</code>.<br />
 Name it after the concept, matching the LaTeX label style, e.g. <code>linear-combination-3d.html</code>.</p>
-<p>The file must be self-contained (all JS via CDN importmap). Use this Three.js importmap header:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;importmap&quot;</span><span class="p">&gt;</span>
-<span class="p">{</span>
-<span class="w">  </span><span class="s2">&quot;imports&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;three&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;three/addons/&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/&quot;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span>
-<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">THREE</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;three&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">OrbitControls</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;three/addons/controls/OrbitControls.js&#39;</span><span class="p">;</span>
-<span class="c1">// ...</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<p>The file must be self-contained (all JS via CDN importmap for Three.js, or inline for Canvas 2D). Start the <code>&lt;head&gt;</code> with:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>…<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>Pin the Three.js version explicitly (<code>@0.160.0</code>). Update all visualizations together when bumping.</p>
 <h3 id="2-register-it-in-the-latex-source">2. Register it in the LaTeX source<a class="headerlink" href="#2-register-it-in-the-latex-source" title="Permanent link">&para;</a></h3>
 <p>In the relevant <code>.tex</code> subfile, place:</p>
 <div class="highlight"><pre><span></span><code><span class="k">\visualization</span><span class="nb">{</span>&lt;name&gt;<span class="nb">}</span>
@@ -2432,8 +2529,30 @@ Name it after the concept, matching the LaTeX label style, e.g. <code>linear-com
 </code></pre></div>
 <p>The generated <code>wiki/docs/&lt;stem&gt;.md</code> will contain the iframe. No manual edits to <code>.md</code> files.</p>
 <hr />
-<h2 id="javascript-color-constants">JavaScript color constants<a class="headerlink" href="#javascript-color-constants" title="Permanent link">&para;</a></h2>
-<p>Copy-paste block for new files:</p>
+<h2 id="rendering-engine-threejs-vs-canvas-2d">Rendering engine: Three.js vs Canvas 2D<a class="headerlink" href="#rendering-engine-threejs-vs-canvas-2d" title="Permanent link">&para;</a></h2>
+<p>There are two rendering approaches in use. Choose based on dimensionality.</p>
+<h3 id="threejs-all-3d-visualizations">Three.js (all 3D visualizations)<a class="headerlink" href="#threejs-all-3d-visualizations" title="Permanent link">&para;</a></h3>
+<p>Use the importmap header — pin the version explicitly (<code>@0.160.0</code>). Update all visualizations together when bumping.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;importmap&quot;</span><span class="p">&gt;</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;imports&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;three&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;three/addons/&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">THREE</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;three&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">OrbitControls</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;three/addons/controls/OrbitControls.js&#39;</span><span class="p">;</span>
+<span class="c1">// …</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Three.js scene setup (consistent across all 3D files):</p>
+<div class="highlight"><pre><span></span><code><span class="nx">scene</span><span class="p">.</span><span class="nx">background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mh">0xffffff</span><span class="p">);</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">THREE</span><span class="p">.</span><span class="nx">GridHelper</span><span class="p">(</span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mh">0xe0e0e0</span><span class="p">,</span><span class="w"> </span><span class="mh">0xd0d0d0</span><span class="p">));</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">THREE</span><span class="p">.</span><span class="nx">AxesHelper</span><span class="p">(</span><span class="mf">4</span><span class="p">));</span>
+</code></pre></div>
+<p>Color constants use hex integers:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">red</span><span class="o">:</span><span class="w">    </span><span class="mh">0xbc1e47</span><span class="p">,</span><span class="w">  </span><span class="c1">// myred   — first vector</span>
 <span class="w">  </span><span class="nx">blue</span><span class="o">:</span><span class="w">   </span><span class="mh">0x0081cd</span><span class="p">,</span><span class="w">  </span><span class="c1">// myblue  — second vector</span>
@@ -2442,11 +2561,54 @@ Name it after the concept, matching the LaTeX label style, e.g. <code>linear-com
 <span class="w">  </span><span class="nx">gray</span><span class="o">:</span><span class="w">   </span><span class="mh">0x888888</span><span class="p">,</span><span class="w">  </span><span class="c1">// construction lines (dashed)</span>
 <span class="p">};</span>
 </code></pre></div>
+<p>Reference implementation: <code>linear-combination-3d.html</code>.</p>
+<h3 id="canvas-2d-api-all-2d-visualizations">Canvas 2D API (all 2D visualizations)<a class="headerlink" href="#canvas-2d-api-all-2d-visualizations" title="Permanent link">&para;</a></h3>
+<p>Use a plain <code>&lt;canvas&gt;</code> element and the browser Canvas 2D API — no external library needed.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas-wrap&quot;</span><span class="p">&gt;&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nx">canvas</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="nx">block</span><span class="p">;</span><span class="w"> </span><span class="nx">touch</span><span class="o">-</span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="nx">none</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>Color constants use CSS strings:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">red</span><span class="o">:</span><span class="w">    </span><span class="s1">&#39;#bc1e47&#39;</span><span class="p">,</span><span class="w">  </span><span class="c1">// myred   — first vector</span>
+<span class="w">  </span><span class="nx">blue</span><span class="o">:</span><span class="w">   </span><span class="s1">&#39;#0081cd&#39;</span><span class="p">,</span><span class="w">  </span><span class="c1">// myblue  — second vector</span>
+<span class="w">  </span><span class="nx">green</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;#009246&#39;</span><span class="p">,</span><span class="w">  </span><span class="c1">// mygreen — result / sum</span>
+<span class="w">  </span><span class="nx">yellow</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#fec247&#39;</span><span class="p">,</span><span class="w">  </span><span class="c1">// myyellow — angles / auxiliary</span>
+<span class="w">  </span><span class="nx">gray</span><span class="o">:</span><span class="w">   </span><span class="s1">&#39;#888888&#39;</span><span class="p">,</span><span class="w">  </span><span class="c1">// construction lines (dashed)</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Reference implementations: <code>eigenvectors-2d.html</code> (standard single-canvas), <code>linear-map-2d.html</code> (dual-pane domain/codomain layout).</p>
 <hr />
-<h2 id="layout-template">Layout template<a class="headerlink" href="#layout-template" title="Permanent link">&para;</a></h2>
-<p>The standard layout is a full-viewport split: 3D canvas on the left, narrow control panel on the right. See <code>linear-combination-3d.html</code> for the reference implementation.</p>
-<p>Panel width: <code>270px</code>. Panel background: <code>#f6f8fa</code>. Canvas background: <code>#ffffff</code>.</p>
-<p>Use a <strong>white</strong> page background so the visualizations sit cleanly inside the MkDocs wiki pages. Color choices for UI chrome:</p>
+<h2 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h2>
+<h3 id="standard-layout-single-canvas">Standard layout (single canvas)<a class="headerlink" href="#standard-layout-single-canvas" title="Permanent link">&para;</a></h3>
+<p>Full-viewport horizontal split: canvas/3D-view on the left, narrow control panel on the right.</p>
+<div class="highlight"><pre><span></span><code>body { display: flex; height: 100vh; overflow: hidden; }
+#canvas-wrap { flex: 1; min-width: 0; }
+#panel { width: 270px; flex-shrink: 0; … }
+</code></pre></div>
+<p>Panel: <code>width: 270px</code>, <code>background: #f6f8fa</code>, <code>border-left: 1px solid #d0d7de</code>, <code>padding: 16px</code>, <code>gap: 14px–16px</code>.</p>
+<h3 id="dual-pane-layout">Dual-pane layout<a class="headerlink" href="#dual-pane-layout" title="Permanent link">&para;</a></h3>
+<p>For visualizations showing a before/after or domain/codomain split (e.g. <code>linear-map-2d</code>), the canvas area is itself split into two side-by-side panes:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas-wrap&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;pane&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pane-src&quot;</span><span class="p">&gt;</span>…<span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;src&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;pane&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pane-tgt&quot;</span><span class="p">&gt;</span>…<span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;tgt&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">canvas-wrap</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">flex</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="k">min-width</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"> </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#d0d7de</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">pane</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">flex</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="k">min-width</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span><span class="w"> </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#fff</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>Use <code>#eef5ff</code> (light blue) for the domain pane background and <code>#f0fff4</code> (light green) for the codomain pane background.</p>
+<h3 id="mobile-breakpoint">Mobile breakpoint<a class="headerlink" href="#mobile-breakpoint" title="Permanent link">&para;</a></h3>
+<p>All files include a <code>@media (max-width: 600px)</code> block that stacks the layout vertically:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span><span class="w"> </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"> </span><span class="k">overflow-y</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">#</span><span class="nn">canvas-wrap</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="kt">vw</span><span class="p">;</span><span class="w"> </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">280</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">flex</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">#</span><span class="nn">panel</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="k">border-left</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="k">border-top</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d0d7de</span><span class="p">;</span><span class="w"> </span><span class="k">overflow-y</span><span class="p">:</span><span class="w"> </span><span class="kc">visible</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Canvas height in mobile is typically <code>55vw–70vw</code> with <code>min-height: 260px–280px</code>.</p>
+<hr />
+<h2 id="ui-chrome-colors">UI chrome colors<a class="headerlink" href="#ui-chrome-colors" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2476,14 +2638,59 @@ Name it after the concept, matching the LaTeX label style, e.g. <code>linear-com
 <td><code>#656d76</code></td>
 </tr>
 <tr>
-<td>Result box background</td>
-<td><code>#f6f8fa</code></td>
+<td>Faint label / value text</td>
+<td><code>#8b949e</code></td>
+</tr>
+<tr>
+<td>Button hover background</td>
+<td><code>#f0f3f6</code></td>
+</tr>
+<tr>
+<td>Button active background</td>
+<td><code>#e6eaee</code></td>
 </tr>
 </tbody>
 </table>
-<p>Three.js scene:
-- <code>scene.background = new THREE.Color(0xffffff)</code>
-- <code>GridHelper(…, 0xe0e0e0, 0xd0d0d0)</code> — light gray lines, visible on white</p>
+<hr />
+<h2 id="common-css-components">Common CSS components<a class="headerlink" href="#common-css-components" title="Permanent link">&para;</a></h2>
+<p>Copy from existing files as needed. All share this base:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">h1</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span><span class="w"> </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">sec</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="kt">rem</span><span class="p">;</span><span class="w"> </span><span class="k">text-transform</span><span class="p">:</span><span class="w"> </span><span class="kc">uppercase</span><span class="p">;</span><span class="w"> </span><span class="k">letter-spacing</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="kt">em</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#656d76</span><span class="p">;</span><span class="w"> </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">hr</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="k">border-top</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d0d7de</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><strong>Info / result box</strong> — monospace output area:
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">result-box</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#fff</span><span class="p">;</span><span class="w"> </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d0d7de</span><span class="p">;</span><span class="w"> </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.82</span><span class="kt">rem</span><span class="p">;</span><span class="w"> </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.8</span><span class="p">;</span><span class="w"> </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="kc">monospace</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Preset buttons</strong> — small clickable named scenarios:
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">presets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"> </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">flex-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">wrap</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">button</span><span class="p">.</span><span class="nc">preset</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">flex</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="kt">px</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#fff</span><span class="p">;</span><span class="w"> </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d0d7de</span><span class="p">;</span><span class="w"> </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="kt">rem</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#1f2328</span><span class="p">;</span><span class="w"> </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="kc">inherit</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">button</span><span class="p">.</span><span class="nc">preset</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#f0f3f6</span><span class="p">;</span><span class="w"> </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#b0b8c0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">button</span><span class="p">.</span><span class="nc">preset</span><span class="p">:</span><span class="nd">active</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#e6eaee</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Hint text</strong> — small instructional copy:
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">hint</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.72</span><span class="kt">rem</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#656d76</span><span class="p">;</span><span class="w"> </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Color swatch</strong> — inline legend chip:
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">swatch</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-block</span><span class="p">;</span><span class="w"> </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">vertical-align</span><span class="p">:</span><span class="w"> </span><span class="kc">middle</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Matrix input UI</strong> — bracket + grid of <code>&lt;input&gt;</code> elements:
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">mat-outer</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"> </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"> </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">bracket</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">2.6</span><span class="kt">rem</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#888</span><span class="p">;</span><span class="w"> </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">mat-inner</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span><span class="w"> </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="n">max-content</span><span class="w"> </span><span class="n">max-content</span><span class="p">;</span><span class="w"> </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">mat-inner</span><span class="w"> </span><span class="nt">input</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+<span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="kc">monospace</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.85</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d0d7de</span><span class="p">;</span><span class="w"> </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#fff</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#1f2328</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">mat-inner</span><span class="w"> </span><span class="nt">input</span><span class="p">:</span><span class="nd">focus</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#0081cd</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></p>
 <hr />
 <h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
 <p>The visualizations are automatically included when the deploy script runs — no extra steps needed beyond running <code>convert_to_wiki.py</code> and <code>deploy_wiki_to_personal_site.ps1</code> as usual.</p>

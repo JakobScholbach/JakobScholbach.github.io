@@ -1349,3 +1349,68 @@ L =(1,1,-1) + L(-1,-4,1).
 The direction vector of $M_t$ can be found by choosing two points on $M_t$, for example $E = (0,2,-1)$ and $F = (1,2+t,-2)$. So the direction vector of $M_t$ is equal to $F-E = (1,t,-1)$. This needs to be orthogonal to $n = (2,-1,-2)$. I.e., ${\left \langle n, F-E \right \rangle} = 0$, which gives $2 - t +2 = 0$, so $t=4$.
 
 </div>
+
+<div class="solution" markdown="1">
+
+
+<p class="env-number"><strong>Solution 7.28</strong></p>
+
+<span id="sol-ex-euclid-6-24" label="sol--ex:euclid-6-24"></span> (See <a href="../exercises-euclid/#ex-euclid-6-24" data-reference-type="ref+Label" data-reference="ex:euclid-6-24">Exercise 7.28</a>.) We identify a matrix $\big(\begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\big) \in V = \mathrm{Mat}(2,{\bf R})$ with the vector $(a,b,c,d) \in {\bf R}^4$. We first determine which of the two formulas gives the standard scalar product on ${\bf R}^4$ (cf. <a href="../euclid-scalar-product/#def-euclid-definition-001" data-reference-type="ref+Label" data-reference="def:euclid-definition-001">Definition 7.1</a>). For $A = \big(\begin{smallmatrix} a_1 & b_1 \\ c_1 & d_1 \end{smallmatrix}\big)$ and $B = \big(\begin{smallmatrix} a_2 & b_2 \\ c_2 & d_2 \end{smallmatrix}\big)$, using the definition of the trace (<a href="../exercises-maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>) we compute
+<div class="arithmatex" markdown="1">
+\[
+{\mathrm {tr}}(A\,B) = a_1 a_2 + b_1 c_2 + c_1 b_2 + d_1 d_2,
+\qquad
+{\mathrm {tr}}(A\,B^T) = a_1 a_2 + b_1 b_2 + c_1 c_2 + d_1 d_2.
+\]
+</div>
+The second expression is exactly the standard scalar product ${\left \langle (a_1,b_1,c_1,d_1), (a_2,b_2,c_2,d_2) \right \rangle}$ on ${\bf R}^4$ (cf. <a href="../euclid-euclidean-spaces/#def-euclid-definition-005" data-reference-type="ref+Label" data-reference="def:euclid-definition-005">Definition 7.15</a> for the notion of scalar product), while the first one is not (it pairs the off-diagonal entries crosswise). Hence formula (2), ${\left \langle A, B \right \rangle} = {\mathrm {tr}}(A\,B^T)$, is the one corresponding to the standard scalar product, and we use it from now on. (Alternatively one may also note that (1) can not be correct in view of the fact that for $A = B = \big(\begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}\big)$ we have $AB=0$, the zero matrix, cf. <a href="../exercises-maps/#ex-maps-exercise-019" data-reference-type="ref+Label" data-reference="ex:maps-exercise-019">Exercise 4.26</a>, so this inner product is degenerate, and therefore not a scalar product).
+
+In the identification with ${\bf R}^4$ the two given matrices become
+<div class="arithmatex" markdown="1">
+\[
+u_1 = \big(\begin{smallmatrix} 0 & 2 \\ 1 & -1 \end{smallmatrix}\big) \leftrightarrow (0,2,1,-1),
+\qquad
+u_2 = \big(\begin{smallmatrix} 1 & 0 \\ 3 & -1 \end{smallmatrix}\big) \leftrightarrow (1,0,3,-1).
+\]
+</div>
+To find an orthogonal basis of $U = L(u_1, u_2)$ we apply the Gram–Schmidt procedure (<a href="../euclid-euclidean-spaces/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>). We keep $w_1 := u_1$ and compute
+<div class="arithmatex" markdown="1">
+\[
+{\left \langle u_2, u_1 \right \rangle} = 0\cdot 0 + 0 \cdot 2 + 3 \cdot 1 + (-1)(-1) = 4,
+\qquad
+{\left \langle u_1, u_1 \right \rangle} = 0 + 4 + 1 + 1 = 6.
+\]
+</div>
+Then
+<div class="arithmatex" markdown="1">
+\[
+w_2' = u_2 - \frac{ {\left \langle u_2, u_1 \right \rangle}}{ {\left \langle u_1, u_1 \right \rangle}} u_1
+= (1,0,3,-1) - \frac{4}{6}(0,2,1,-1)
+= \left(1, -\frac43, \frac73, -\frac13\right).
+\]
+</div>
+To avoid fractions we may scale by $3$ and take $w_2 := 3 w_2' = (3,-4,7,-1)$, which is still orthogonal to $w_1$: indeed ${\left \langle w_1, w_2 \right \rangle} = {\langle w_1, 3w_2' \rangle} = 3 \langle w_1, w'_2 \rangle = 3 \cdot 0 = 0$. Translating back to matrices, an orthogonal basis of $U$ is
+<div class="arithmatex" markdown="1">
+\[
+w_1 = \big(\begin{smallmatrix} 0 & 2 \\ 1 & -1 \end{smallmatrix}\big),
+\qquad
+w_2 = \big(\begin{smallmatrix} 3 & -4 \\ 7 & -1 \end{smallmatrix}\big).
+\]
+</div>
+
+Finally, the orthogonal projection of $u_2$ onto the line $L(u_1)$ is given by <a href="../euclid-euclidean-spaces/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, specifically the formula in <a href="../euclid-euclidean-spaces/#eq-orthogonal-projection-formula" data-reference-type="ref+Label" data-reference="eq:orthogonal-projection-formula">Equation (7.26)</a> for the orthogonal basis $u_1$:
+<div class="arithmatex" markdown="1">
+\[
+p_{L(u_1)}(u_2) = \frac{ {\left \langle u_2, u_1 \right \rangle}}{ {\left \langle u_1, u_1 \right \rangle}} u_1
+= \frac{4}{6}\,u_1 = \frac23 (0,2,1,-1),
+\]
+</div>
+that is, as a matrix,
+<div class="arithmatex" markdown="1">
+\[
+p_{L(u_1)}(u_2) = \frac23 \big(\begin{smallmatrix} 0 & 2 \\ 1 & -1 \end{smallmatrix}\big)
+= \big(\begin{smallmatrix} 0 & 4/3 \\ 2/3 & -2/3 \end{smallmatrix}\big).
+\]
+</div>
+
+</div>

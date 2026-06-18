@@ -506,3 +506,25 @@ U: \left\{\begin{aligned}
     \end{aligned}\right.$ is parallel to the plane $X$.
 
 </div>
+
+<div class="exercise" markdown="1">
+
+
+<p class="env-number"><strong>Exercise 7.28</strong></p>
+
+<span id="ex-euclid-6-24" label="ex:euclid-6-24"></span> (See <a href="../solutions-euclidean-spaces/#sol-ex-euclid-6-24" data-reference-type="ref+Label" data-reference="sol--ex:euclid-6-24">Solution 7.28</a>.) Let $V = \mathrm{Mat}(2,\mathbf{R})$ be the vector space of real $2 \times 2$ matrices. In $V$ we can define the inner product of two matrices using one of the following two formulas, (1) or (2):
+<div class="arithmatex" markdown="1">
+\[
+\text{(1) } \langle A, B \rangle = {\mathrm {tr}}(A\,B), \qquad
+\text{(2) } \langle A, B \rangle = {\mathrm {tr}}(A\,B^T).
+\]
+</div>
+(where ${\mathrm {tr}}$ denotes the trace of a matrix, cf. <a href="../exercises-maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a> for its definition)
+
+1.  Identifying the $2 \times 2$ matrices with the vectors of $\mathbf{R}^4$, which of the two formulas (1) or (2) corresponds to the standard inner product in $\mathbf{R}^4$ ? (in the remainder of the exercise, use the formula (1) or (2) just found)
+
+2.  Let $U$ be the vector subspace of $V$ spanned by the matrices $u_1 = \big(\begin{smallmatrix} 0 & 2 \\ 1 & -1 \end{smallmatrix}\big)$ and $u_2 = \big(\begin{smallmatrix} 1 & 0 \\ 3 & -1 \end{smallmatrix}\big)$. Find an orthogonal basis of $U$.
+
+3.  Find the orthogonal projection of the matrix $u_2$ onto the subspace spanned by $u_1$.
+
+</div>

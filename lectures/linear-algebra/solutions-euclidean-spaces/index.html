@@ -3370,6 +3370,64 @@ L =(1,1,-1) + L(-1,-4,1).
 </div>
 <p>The direction vector of <span class="arithmatex">\(M_t\)</span> can be found by choosing two points on <span class="arithmatex">\(M_t\)</span>, for example <span class="arithmatex">\(E = (0,2,-1)\)</span> and <span class="arithmatex">\(F = (1,2+t,-2)\)</span>. So the direction vector of <span class="arithmatex">\(M_t\)</span> is equal to <span class="arithmatex">\(F-E = (1,t,-1)\)</span>. This needs to be orthogonal to <span class="arithmatex">\(n = (2,-1,-2)\)</span>. I.e., <span class="arithmatex">\({\left \langle n, F-E \right \rangle} = 0\)</span>, which gives <span class="arithmatex">\(2 - t +2 = 0\)</span>, so <span class="arithmatex">\(t=4\)</span>.</p>
 </div>
+<div class="solution">
+<p class="env-number"><strong>Solution 7.28</strong></p>
+<p><span id="sol-ex-euclid-6-24" label="sol--ex:euclid-6-24"></span> (See <a href="../exercises-euclid/#ex-euclid-6-24" data-reference-type="ref+Label" data-reference="ex:euclid-6-24">Exercise 7.28</a>.) We identify a matrix <span class="arithmatex">\(\big(\begin{smallmatrix} a &amp; b \\ c &amp; d \end{smallmatrix}\big) \in V = \mathrm{Mat}(2,{\bf R})\)</span> with the vector <span class="arithmatex">\((a,b,c,d) \in {\bf R}^4\)</span>. We first determine which of the two formulas gives the standard scalar product on <span class="arithmatex">\({\bf R}^4\)</span> (cf. <a href="../euclid-scalar-product/#def-euclid-definition-001" data-reference-type="ref+Label" data-reference="def:euclid-definition-001">Definition 7.1</a>). For <span class="arithmatex">\(A = \big(\begin{smallmatrix} a_1 &amp; b_1 \\ c_1 &amp; d_1 \end{smallmatrix}\big)\)</span> and <span class="arithmatex">\(B = \big(\begin{smallmatrix} a_2 &amp; b_2 \\ c_2 &amp; d_2 \end{smallmatrix}\big)\)</span>, using the definition of the trace (<a href="../exercises-maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a>) we compute</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\mathrm {tr}}(A\,B) = a_1 a_2 + b_1 c_2 + c_1 b_2 + d_1 d_2,
+\qquad
+{\mathrm {tr}}(A\,B^T) = a_1 a_2 + b_1 b_2 + c_1 c_2 + d_1 d_2.
+\]</div>
+</div>
+<p>The second expression is exactly the standard scalar product <span class="arithmatex">\({\left \langle (a_1,b_1,c_1,d_1), (a_2,b_2,c_2,d_2) \right \rangle}\)</span> on <span class="arithmatex">\({\bf R}^4\)</span> (cf. <a href="../euclid-euclidean-spaces/#def-euclid-definition-005" data-reference-type="ref+Label" data-reference="def:euclid-definition-005">Definition 7.15</a> for the notion of scalar product), while the first one is not (it pairs the off-diagonal entries crosswise). Hence formula (2), <span class="arithmatex">\({\left \langle A, B \right \rangle} = {\mathrm {tr}}(A\,B^T)\)</span>, is the one corresponding to the standard scalar product, and we use it from now on. (Alternatively one may also note that (1) can not be correct in view of the fact that for <span class="arithmatex">\(A = B = \big(\begin{smallmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{smallmatrix}\big)\)</span> we have <span class="arithmatex">\(AB=0\)</span>, the zero matrix, cf. <a href="../exercises-maps/#ex-maps-exercise-019" data-reference-type="ref+Label" data-reference="ex:maps-exercise-019">Exercise 4.26</a>, so this inner product is degenerate, and therefore not a scalar product).</p>
+<p>In the identification with <span class="arithmatex">\({\bf R}^4\)</span> the two given matrices become</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+u_1 = \big(\begin{smallmatrix} 0 &amp; 2 \\ 1 &amp; -1 \end{smallmatrix}\big) \leftrightarrow (0,2,1,-1),
+\qquad
+u_2 = \big(\begin{smallmatrix} 1 &amp; 0 \\ 3 &amp; -1 \end{smallmatrix}\big) \leftrightarrow (1,0,3,-1).
+\]</div>
+</div>
+<p>To find an orthogonal basis of <span class="arithmatex">\(U = L(u_1, u_2)\)</span> we apply the Gram–Schmidt procedure (<a href="../euclid-euclidean-spaces/#prop-gram-schmidt-orthogonalization" data-reference-type="ref+Label" data-reference="prop:gram-schmidt-orthogonalization">Proposition 7.32</a>). We keep <span class="arithmatex">\(w_1 := u_1\)</span> and compute</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+{\left \langle u_2, u_1 \right \rangle} = 0\cdot 0 + 0 \cdot 2 + 3 \cdot 1 + (-1)(-1) = 4,
+\qquad
+{\left \langle u_1, u_1 \right \rangle} = 0 + 4 + 1 + 1 = 6.
+\]</div>
+</div>
+<p>Then</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+w_2' = u_2 - \frac{{\left \langle u_2, u_1 \right \rangle}}{{\left \langle u_1, u_1 \right \rangle}} u_1
+= (1,0,3,-1) - \frac{4}{6}(0,2,1,-1)
+= \left(1, -\frac43, \frac73, -\frac13\right).
+\]</div>
+</div>
+<p>To avoid fractions we may scale by <span class="arithmatex">\(3\)</span> and take <span class="arithmatex">\(w_2 := 3 w_2' = (3,-4,7,-1)\)</span>, which is still orthogonal to <span class="arithmatex">\(w_1\)</span>: indeed <span class="arithmatex">\({\left \langle w_1, w_2 \right \rangle} = {\langle w_1, 3w_2' \rangle} = 3 \langle w_1, w'_2 \rangle = 3 \cdot 0 = 0\)</span>. Translating back to matrices, an orthogonal basis of <span class="arithmatex">\(U\)</span> is</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+w_1 = \big(\begin{smallmatrix} 0 &amp; 2 \\ 1 &amp; -1 \end{smallmatrix}\big),
+\qquad
+w_2 = \big(\begin{smallmatrix} 3 &amp; -4 \\ 7 &amp; -1 \end{smallmatrix}\big).
+\]</div>
+</div>
+<p>Finally, the orthogonal projection of <span class="arithmatex">\(u_2\)</span> onto the line <span class="arithmatex">\(L(u_1)\)</span> is given by <a href="../euclid-euclidean-spaces/#thm-orthogonal-projection" data-reference-type="ref+Label" data-reference="thm:orthogonal-projection">Theorem 7.24</a>, specifically the formula in <a href="../euclid-euclidean-spaces/#eq-orthogonal-projection-formula" data-reference-type="ref+Label" data-reference="eq:orthogonal-projection-formula">Equation (7.26)</a> for the orthogonal basis <span class="arithmatex">\(u_1\)</span>:</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+p_{L(u_1)}(u_2) = \frac{{\left \langle u_2, u_1 \right \rangle}}{{\left \langle u_1, u_1 \right \rangle}} u_1
+= \frac{4}{6}\,u_1 = \frac23 (0,2,1,-1),
+\]</div>
+</div>
+<p>that is, as a matrix,</p>
+<div class="arithmatex">
+<div class="arithmatex">\[
+p_{L(u_1)}(u_2) = \frac23 \big(\begin{smallmatrix} 0 &amp; 2 \\ 1 &amp; -1 \end{smallmatrix}\big)
+= \big(\begin{smallmatrix} 0 &amp; 4/3 \\ 2/3 &amp; -2/3 \end{smallmatrix}\big).
+\]</div>
+</div>
+</div>
 
 
 

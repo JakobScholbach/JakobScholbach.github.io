@@ -144,6 +144,13 @@ f : {\bf R}^2 \to {\bf R}^2, v \mapsto Av \ \text{(read ``$v$ maps to $Av$''.)}
 </div>
 Of course, since $Av$ depends on the entries of $A$, so does this function $f$.
 
+
+
+<a id="vis-linear-map-2d"></a>
+<iframe src="../visualizations/linear-map-2d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+
+
 ### Reflections
 
 <div class="example" markdown="1">

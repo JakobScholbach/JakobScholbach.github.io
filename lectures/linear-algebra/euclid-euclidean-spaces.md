@@ -8,7 +8,7 @@ title: Euclidean Spaces
 <div class="definition" markdown="1">
 
 
-<p class="env-number"><strong>Definition 7.15</strong></p>
+<p class="env-number"><strong>Definition 7.15</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-24">Exercise 7.28</a>)</p>
 
 <span id="def-euclid-definition-005" label="def:euclid-definition-005"></span> A *Euclidean vector space* is a vector space $V$ together with a map
 <div class="arithmatex" markdown="1">
@@ -226,7 +226,7 @@ For example, the standard basis in ${\bf R}^n$ is an orthonormal basis (with res
 <div class="theorem" markdown="1">
 
 
-<p class="env-number"><strong>Theorem 7.24</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-1">Exercise 7.2</a>, <a href="../exercises-euclid/#ex-euclid-6-13">Exercise 7.17</a>, <a href="../exercises-euclid/#ex-euclid-6-6">Exercise 7.7</a>, <a href="../exercises-euclid/#ex-euclid-r4-projection">Exercise 7.3</a>, <a href="../exercises-euclid/#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
+<p class="env-number"><strong>Theorem 7.24</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-1">Exercise 7.2</a>, <a href="../exercises-euclid/#ex-euclid-6-13">Exercise 7.17</a>, <a href="../exercises-euclid/#ex-euclid-6-24">Exercise 7.28</a>, <a href="../exercises-euclid/#ex-euclid-6-6">Exercise 7.7</a>, <a href="../exercises-euclid/#ex-euclid-r4-projection">Exercise 7.3</a>, <a href="../exercises-euclid/#ex-euclid-u-r4-orth">Exercise 7.16</a>)</p>
 
 <span id="thm-orthogonal-projection" label="thm:orthogonal-projection"></span> Let $u_1, \dots, u_n$ be an orthonormal system (in an Euclidean space). Let $U = L(u_1, \dots, u_n) \subset V$ be the subspace spanned by these vectors. Then there is a unique linear map, called the *orthogonal projection*
 <div class="arithmatex" markdown="1">

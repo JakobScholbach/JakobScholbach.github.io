@@ -172,7 +172,7 @@ Our goal below is to develop an algorithmic method that determine bases of $\ker
 </div>
 This is an example of the rank-nullity theorem (<a href="#thm-rank-nullity-theorem" data-reference-type="ref+Label" data-reference="thm:rank-nullity-theorem">Theorem 4.26</a>) below.
 
-Injectivity of *linear* maps can be measured in terms of the kernel:
+Injectivity of p*linear* maps can be measured in terms of the kernel:
 
 <div class="lemma" markdown="1">
 

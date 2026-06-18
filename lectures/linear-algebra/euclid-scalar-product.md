@@ -12,7 +12,7 @@ The definition of a (real) vector space encodes the existence (and good properti
 <div class="definition" markdown="1">
 
 
-<p class="env-number"><strong>Definition 7.1</strong></p>
+<p class="env-number"><strong>Definition 7.1</strong> (Related exercises: <a href="../exercises-euclid/#ex-euclid-6-24">Exercise 7.28</a>)</p>
 
 <span id="def-euclid-definition-001" label="def:euclid-definition-001"></span> The *scalar product* of $v, w \in {\bf R}^n$ is defined as
 <div class="arithmatex" markdown="1">
