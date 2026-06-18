@@ -521,10 +521,8 @@ U: \left\{\begin{aligned}
 </div>
 (where ${\mathrm {tr}}$ denotes the trace of a matrix, cf. <a href="../exercises-maps/#trace" data-reference-type="ref+Label" data-reference="trace">Exercise 4.24</a> for its definition)
 
-1.  Identifying the $2 \times 2$ matrices with the vectors of $\mathbf{R}^4$, which of the two formulas (1) or (2) corresponds to the standard inner product in $\mathbf{R}^4$ ? (in the remainder of the exercise, use the formula (1) or (2) just found)
+1.  Identifying the $2 \times 2$ matrices with the vectors of $\mathbf{R}^4$, which of the two formulas (1) or (2) corresponds to the standard inner product in $\mathbf{R}^4$ ?
 
-2.  Let $U$ be the vector subspace of $V$ spanned by the matrices $u_1 = \big(\begin{smallmatrix} 0 & 2 \\ 1 & -1 \end{smallmatrix}\big)$ and $u_2 = \big(\begin{smallmatrix} 1 & 0 \\ 3 & -1 \end{smallmatrix}\big)$. Find an orthogonal basis of $U$.
-
-3.  Find the orthogonal projection of the matrix $u_2$ onto the subspace spanned by $u_1$.
+2.  In the sequel, we use the formula (1) or (2) found in the first part of the exercise. Let $U$ be the vector subspace of $V$ spanned by the matrices $u_1 = \big(\begin{smallmatrix} 0 & 2 \\ 1 & -1 \end{smallmatrix}\big)$ and $u_2 = \big(\begin{smallmatrix} 1 & 0 \\ 3 & -1 \end{smallmatrix}\big)$. Find an orthogonal basis of $U$. Also compute the orthogonal projection of the matrix $u_2$ onto the subspace spanned by $u_1$.
 
 </div>
