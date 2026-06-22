@@ -747,7 +747,7 @@ The third row $(0,0,k-1,-1)$ is nonzero for *every* $k \in {\bf R}$ (since its l
 </div>
 and for $k = 1$ the basis is $\{(1,0,-1,0),(0,1,1,1),(0,0,0,-1)\}$.
 
-*Part 2: Membership of $(-1,1,1,1)$ in $W_k$.* We ask whether $(-1,1,1,1) = \alpha(1,0,-1,0)+\beta(1,1,0,1)+\gamma(1,2,k,1)$ for some $\alpha,\beta,\gamma \in {\bf R}$. This corresponds to the augmented matrix (<a href="#def-augmented-matrix" data-reference-type="ref+Label" data-reference="def:augmented-matrix">[def:augmented-matrix]</a>)
+*Part 2: Membership of $(-1,1,1,1)$ in $W_k$.* We ask whether $(-1,1,1,1) = \alpha(1,0,-1,0)+\beta(1,1,0,1)+\gamma(1,2,k,1)$ for some $\alpha,\beta,\gamma \in {\bf R}$. This corresponds to the augmented matrix (<a href="../systems-matrices/#def-matrix-to-system" data-reference-type="ref+Label" data-reference="def:matrix-to-system">Definition 2.23</a>)
 <div class="arithmatex" markdown="1">
 \[
 \left ( \begin{array}{ccc|c} 1 & 1 & 1 & -1 \\ 0 & 1 & 2 & 1 \\ -1 & 0 & k & 1 \\ 0 & 1 & 1 & 1 \end{array} \right )
