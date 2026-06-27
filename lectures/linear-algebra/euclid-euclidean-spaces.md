@@ -424,6 +424,20 @@ In particular, if the $v_i$ form a basis, then so do the $w_i$, i.e., they then 
 
 
 
+
+
+<a id="vis-gram-schmidt-2d"></a>
+<iframe src="../visualizations/gram-schmidt-2d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+
+
+
+
+<a id="vis-gram-schmidt-3d"></a>
+<iframe src="../visualizations/gram-schmidt-3d.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+
+
 <div class="example" markdown="1">
 
 

@@ -411,7 +411,7 @@ By <a href="../systems-gaussian-elimination/#met-gaussian-elimination-solve" dat
 
 <p class="env-number"><strong>Solution 4.9</strong></p>
 
-<span id="sol-ex-maps-3-1" label="sol--ex:maps-3-1"></span> (See <a href="../exercises-maps/#ex-maps-3-1" data-reference-type="ref+Label" data-reference="ex:maps-3-1">Exercise 4.8</a>.) By <a href="../maps-kernel-and-image-1/#def-kernel" data-reference-type="ref+Label" data-reference="def:kernel">Definition 4.22</a> $\ker f = \{ \left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right ) \in {\bf R}^2 \ | \ f(\left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right )) = \left ( \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right ) \}$. I.e., the kernel consists of the solutions of the homongeneous system
+<span id="sol-ex-maps-3-1" label="sol--ex:maps-3-1"></span> (See <a href="../exercises-maps/#ex-maps-3-1" data-reference-type="ref+Label" data-reference="ex:maps-3-1">Exercise 4.8</a>.) By <a href="../maps-kernel-and-image-1/#def-kernel" data-reference-type="ref+Label" data-reference="def:kernel">Definition 4.22</a> $\ker f = \{ \left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right ) \in {\bf R}^2 \ | \ f(\left ( \begin{array}{c} x_1 \\ x_2 \end{array} \right )) = \left ( \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right ) \}$. I.e., the kernel consists of the solutions of the homogeneous system
 <div class="arithmatex" markdown="1">
 \[
 \begin{align*}

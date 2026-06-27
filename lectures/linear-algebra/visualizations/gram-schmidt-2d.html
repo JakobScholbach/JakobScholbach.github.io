@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Gram-Schmidt Orthogonalization (2D)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { display: flex; height: 100vh; margin: 0; overflow: hidden; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #fff; color: #1f2328; }
+  #canvas-wrap { flex: 1; min-width: 0; position: relative; background: #fff; }
+  canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+
+  #panel {
+    width: 270px; flex-shrink: 0;
+    background: #f6f8fa; border-left: 1px solid #d0d7de;
+    padding: 16px; display: flex; flex-direction: column; gap: 16px;
+    overflow-y: auto; color: #1f2328; font-size: 0.875rem;
+  }
+  @media (max-width: 600px) {
+    body { flex-direction: column; height: auto; overflow-y: auto; }
+    #canvas-wrap { width: 100%; height: 70vw; min-height: 280px; flex: none; }
+    #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; overflow-y: visible; }
+  }
+
+  /* ── shared base components (guidelines.md) ── */
+  h1 { font-size: 1rem; font-weight: 600; }
+  .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
+  hr { border: none; border-top: 1px solid #d0d7de; }
+  .note { background: #fff; border: 1px solid #d0d7de; border-radius: 6px; padding: 10px 12px; font-size: 0.8rem; line-height: 1.6; }
+  .result-box { background: #fff; border: 1px solid #d0d7de; border-radius: 6px; padding: 10px 12px; font-size: 0.82rem; line-height: 1.8; font-family: monospace; }
+  .hint { font-size: 0.72rem; color: #656d76; line-height: 1.5; }
+  .swatch { display: inline-block; width: 11px; height: 11px; border-radius: 2px; vertical-align: middle; }
+  .presets { display: flex; gap: 6px; flex-wrap: wrap; }
+  button.preset { flex: 1 1 auto; padding: 7px 8px; cursor: pointer; background: #fff; border: 1px solid #d0d7de; border-radius: 6px; font-size: 0.8rem; color: #1f2328; font-family: inherit; }
+  button.preset:hover { background: #f0f3f6; border-color: #b0b8c0; }
+  button.preset:active { background: #e6eaee; }
+
+  /* ── panel layout (not covered by shared base) ── */
+  .panel-section { display: flex; flex-direction: column; gap: 8px; }
+  .desc-box, .math-box { min-height: 70px; }
+  .math-box { overflow-x: auto; white-space: nowrap; }
+
+  .legend-box { font-size: 0.82rem; }
+  .legend-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+
+  /* ── animation controls (neutral chrome per UI table) ── */
+  .controls-row { display: flex; gap: 6px; }
+  button.ctrl { flex: 1; padding: 6px 10px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid #d0d7de; border-radius: 6px; background: #fff; color: #1f2328; }
+  button.ctrl:hover { background: #f0f3f6; border-color: #b0b8c0; }
+  button.ctrl:active { background: #e6eaee; }
+  button.ctrl.main { flex: 2; }
+
+  .slider-container { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+  .slider-labels { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 600; color: #656d76; }
+  input[type=range] { width: 100%; cursor: pointer; accent-color: #0081cd; }
+
+  /* ── utils ── */
+  .frac { display: inline-block; vertical-align: middle; text-align: center; font-size: 0.9em; margin: 0 4px; }
+  .frac > span { display: block; padding: 0 2px; }
+  .frac > span:first-child { border-bottom: 1px solid currentColor; }
+</style>
+</head>
+<body>
+  <div id="canvas-wrap"><canvas id="canvas"></canvas></div>
+  <div id="panel">
+    <div class="panel-header">
+      <h1>Gram-Schmidt Process</h1>
+      <div class="hint">Created by Beshoy Metias</div>
+    </div>
+
+    <div class="panel-section">
+      <div class="sec">Animation Controls</div>
+      <div class="controls-row">
+        <button id="btn-prev" class="ctrl" title="Previous Step">◀</button>
+        <button id="btn-play" class="ctrl main">▶ Play</button>
+        <button id="btn-next" class="ctrl" title="Next Step">▶</button>
+      </div>
+      <div class="slider-container">
+        <div class="slider-labels">
+          <span>Timeline</span>
+          <span id="phase-label">Phase 0 / 5</span>
+        </div>
+        <input type="range" id="step-slider" min="0" max="5" step="0.01" value="0">
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="sec">Current Step</div>
+      <div id="step-desc" class="note desc-box"></div>
+    </div>
+
+    <div class="panel-section">
+      <div class="sec">Mathematical Formula</div>
+      <div id="step-math" class="result-box math-box"></div>
+    </div>
+
+    <div class="panel-section">
+      <div class="sec">Vector Legend</div>
+      <div id="legend-content" class="legend-box"></div>
+    </div>
+
+    <div class="panel-section">
+      <div class="sec">Presets</div>
+      <div class="presets">
+        <button class="preset" onclick="applyPreset('default')">Default</button>
+        <button class="preset" onclick="applyPreset('ortho')">Orthogonal</button>
+        <button class="preset" onclick="applyPreset('random')">Random</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ── CONSTANTS ── */
+    const C = { red:'#bc1e47', blue:'#0081cd', green:'#009246', yellow:'#fec247', gray:'#888888' };
+    const O = { x:0, y:0 };
+
+    /* ── TIMELINE ── */
+    const TIMELINE = [
+      'INIT',              // 0: Show v1, v2. Grow w1.
+      'S2_SUBSPACE_REVEAL',// 1: Subspace line, drop line
+      'S2_PROJECTION',     // 2: Grow projection
+      'S2_RESULT',         // 3: Reveal w2
+      'NORMALIZATION'      // 4: Normalize to u1, u2
+    ];
+    const MAX_SLIDER = TIMELINE.length; // 5
+
+    /* ── MATH STATE ── */
+    let v1 = {x:2, y:1}, v2 = {x:1, y:2};
+    let w1={x:0,y:0}, w2={x:0,y:0}, u1={x:0,y:0}, u2={x:0,y:0}, proj2_1={x:0,y:0};
+
+    function dot(a,b){ return a.x*b.x+a.y*b.y; }
+    function len(a){ return Math.hypot(a.x,a.y); }
+    function add(a,b){ return {x:a.x+b.x, y:a.y+b.y}; }
+    function sub(a,b){ return {x:a.x-b.x, y:a.y-b.y}; }
+    function mul(a,s){ return {x:a.x*s, y:a.y*s}; }
+    function lerpV(a,b,t){ return {x:a.x+(b.x-a.x)*t, y:a.y+(b.y-a.y)*t}; }
+    function lerp(a,b,t){ return a+(b-a)*t; }
+
+    function recalculateGS(){
+      w1 = {x:v1.x, y:v1.y};
+      const d11 = dot(w1,w1);
+      proj2_1 = d11>1e-6 ? mul(w1, dot(w1,v2)/d11) : {x:0,y:0};
+      w2 = sub(v2, proj2_1);
+      const lw1=len(w1), lw2=len(w2);
+      u1 = lw1>1e-6 ? mul(w1,1/lw1) : {x:0,y:0};
+      u2 = lw2>1e-6 ? mul(w2,1/lw2) : {x:0,y:0};
+    }
+
+    /* ── ANIMATION STATE ── */
+    let targetMicro = 0;
+    let currentMicro = 0;
+    let playing = false, playTimer = null;
+    const PLAY_MS = 2200, SMOOTH = 0.08;
+    let lastRenderedStep = -1;
+
+    function getProgress(stateName) {
+      const idx = TIMELINE.indexOf(stateName);
+      if (idx === -1) return 0;
+      const t = currentMicro;
+      const k = Math.floor(t);
+      if (k > idx) return 1;
+      if (k < idx) return 0;
+      return t - k;
+    }
+
+    function getDisplayStep(){
+      return Math.ceil(targetMicro);
+    }
+
+    /* ── CANVAS SETUP ── */
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let dpr, W, H, cx, cy, sc;
+
+    function resize(){
+      const r = canvas.parentNode.getBoundingClientRect();
+      W=r.width; H=r.height; dpr=window.devicePixelRatio||1;
+      canvas.width=W*dpr; canvas.height=H*dpr;
+      canvas.style.width=W+'px'; canvas.style.height=H+'px';
+      ctx.scale(dpr,dpr);
+      cx=W/2; cy=H/2; sc=Math.min(W,H)/8;
+      draw();
+    }
+    window.addEventListener('resize', resize);
+
+    function tX(x){ return cx+x*sc; }
+    function tY(y){ return cy-y*sc; }
+    function fX(px){ return (px-cx)/sc; }
+    function fY(py){ return -(py-cy)/sc; }
+
+    /* ── DRAWING PRIMITIVES ── */
+    function drawGrid(){
+      ctx.strokeStyle='#e8e8e8'; ctx.lineWidth=1; ctx.beginPath();
+      for(let x=Math.floor(-cx/sc);x<=Math.ceil(cx/sc);x++){ ctx.moveTo(tX(x),0); ctx.lineTo(tX(x),H); }
+      for(let y=Math.floor(-cy/sc);y<=Math.ceil(cy/sc);y++){ ctx.moveTo(0,tY(y)); ctx.lineTo(W,tY(y)); }
+      ctx.stroke();
+      ctx.strokeStyle='#aaa'; ctx.lineWidth=1.5; ctx.beginPath();
+      ctx.moveTo(0,cy); ctx.lineTo(W,cy); ctx.moveTo(cx,0); ctx.lineTo(cx,H); ctx.stroke();
+    }
+
+    function drawArrow(orig, vec, color, opacity){
+      if(opacity<0.02) return;
+      const end = add(orig, vec);
+      if(Math.hypot(vec.x, vec.y)<0.02) return;
+      ctx.save(); ctx.globalAlpha=opacity;
+      ctx.strokeStyle=color; ctx.fillStyle=color; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.moveTo(tX(orig.x),tY(orig.y)); ctx.lineTo(tX(end.x),tY(end.y)); ctx.stroke();
+      const ang = Math.atan2(tY(end.y)-tY(orig.y), tX(end.x)-tX(orig.x));
+      const hl=10;
+      ctx.beginPath(); ctx.moveTo(tX(end.x),tY(end.y));
+      ctx.lineTo(tX(end.x)-hl*Math.cos(ang-Math.PI/7), tY(end.y)-hl*Math.sin(ang-Math.PI/7));
+      ctx.lineTo(tX(end.x)-hl*Math.cos(ang+Math.PI/7), tY(end.y)-hl*Math.sin(ang+Math.PI/7));
+      ctx.closePath(); ctx.fill(); ctx.restore();
+    }
+
+    function drawDash(start, end, color, opacity){
+      if(opacity<0.02) return;
+      ctx.save(); ctx.globalAlpha=opacity; ctx.strokeStyle=color;
+      ctx.lineWidth=1.5; ctx.setLineDash([5,5]);
+      ctx.beginPath(); ctx.moveTo(tX(start.x),tY(start.y)); ctx.lineTo(tX(end.x),tY(end.y)); ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawInfiniteLine(dir, color, opacity){
+      if(opacity<0.02) return;
+      const l = len(dir);
+      if(l<1e-4) return;
+      const ux = dir.x/l, uy = dir.y/l;
+      const L = 30; // spans screen
+      ctx.save(); ctx.globalAlpha=opacity; ctx.strokeStyle=color; ctx.lineWidth=1.5;
+      ctx.beginPath(); ctx.moveTo(tX(-ux*L), tY(-uy*L)); ctx.lineTo(tX(ux*L), tY(uy*L)); ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawRightAnglePts(p1, corner, p2, color, opacity){
+      if(opacity<0.02) return;
+      const d1 = sub(p1, corner), d2 = sub(p2, corner);
+      const l1 = len(d1), l2 = len(d2);
+      if(l1<1e-4 || l2<1e-4) return;
+      const s = 0.25;
+      const u1 = mul(d1, s/l1), u2 = mul(d2, s/l2);
+      const m1 = add(corner, u1), m2 = add(corner, u2);
+      const p3 = add(m1, u2);
+      ctx.save(); ctx.globalAlpha=opacity; ctx.strokeStyle=color; ctx.lineWidth=1.5;
+      ctx.beginPath(); ctx.moveTo(tX(m1.x), tY(m1.y)); ctx.lineTo(tX(p3.x), tY(p3.y)); ctx.lineTo(tX(m2.x), tY(m2.y)); ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawPoint(pt, color, opacity){
+      if(opacity<0.02) return;
+      ctx.save(); ctx.globalAlpha=opacity;
+      ctx.beginPath(); ctx.arc(tX(pt.x), tY(pt.y), 4, 0, Math.PI*2);
+      ctx.fillStyle=color; ctx.fill();
+      ctx.restore();
+    }
+
+    function drawHandle(v, color, id, opacity=1){
+      if(opacity < 0.02) return;
+      const isHover = (hovering === id) || (dragging === id);
+      const radius = isHover ? 8 : 6;
+      ctx.save();
+      ctx.globalAlpha = opacity;
+      ctx.beginPath(); ctx.arc(tX(v.x),tY(v.y),radius,0,Math.PI*2);
+      ctx.fillStyle=color; ctx.fill();
+      if(isHover){
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#1f2328';
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    function drawCircle(alpha){
+      if(alpha<0.02) return;
+      ctx.save(); ctx.beginPath(); ctx.arc(tX(0),tY(0),sc,0,Math.PI*2);
+      ctx.strokeStyle=C.gray; ctx.globalAlpha=0.3*alpha; ctx.setLineDash([4,4]);
+      ctx.stroke(); ctx.restore();
+    }
+
+    function drawLabel(text, vec, color, opacity, offsetPerp=false) {
+      if (opacity < 0.02) return;
+      const l = Math.hypot(vec.x, vec.y);
+      if (l < 0.01) return;
+
+      let px = vec.x + (vec.x/l)*0.25;
+      let py = vec.y + (vec.y/l)*0.25;
+
+      if (offsetPerp) {
+          px += (-vec.y/l)*0.3;
+          py += (vec.x/l)*0.3;
+      }
+
+      ctx.save();
+      ctx.globalAlpha = opacity;
+      ctx.font = 'bold 15px "Segoe UI", system-ui, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      // Draw white outline
+      ctx.fillStyle = 'white';
+      ctx.fillText(text, tX(px)-1, tY(py)-1);
+      ctx.fillText(text, tX(px)+1, tY(py)-1);
+      ctx.fillText(text, tX(px)-1, tY(py)+1);
+      ctx.fillText(text, tX(px)+1, tY(py)+1);
+
+      // Draw colored text
+      ctx.fillStyle = color;
+      ctx.fillText(text, tX(px), tY(py));
+      ctx.restore();
+    }
+
+    /* ── RENDER SCENE ── */
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      drawGrid();
+
+      const pInit = getProgress('INIT');
+      const pS2Sub = getProgress('S2_SUBSPACE_REVEAL');
+      const pS2Proj = getProgress('S2_PROJECTION');
+      const pS2Res = getProgress('S2_RESULT');
+      const pNorm = getProgress('NORMALIZATION');
+
+      // Original vectors
+      const opV1 = lerp(1.0, 0.15, pInit);
+      drawArrow(O, v1, C.red, opV1);
+      drawLabel('v₁', v1, C.red, opV1, false);
+
+      const opV2 = lerp(1.0, 0.15, pS2Res);
+      drawArrow(O, v2, C.blue, opV2);
+      drawLabel('v₂', v2, C.blue, opV2, false);
+
+      // w1
+      let w1Scale = pNorm > 0 ? (len(w1) > 1e-6 ? lerp(1, 1/len(w1), pNorm) : 1) : pInit;
+      if (w1Scale > 0) {
+        const w1Op = pNorm > 0 ? 1 : pInit;
+        const vec = mul(w1, w1Scale);
+        drawArrow(O, vec, C.green, w1Op);
+        drawLabel(pNorm>0.5 ? 'u₁' : 'w₁', vec, C.green, w1Op, true);
+      }
+
+      // Step 2 Subspace Line
+      let subOp = 0;
+      if (pS2Res > 0) subOp = lerp(0.4, 0.15, pS2Res);
+      else if (pS2Sub > 0) subOp = pS2Sub * 0.4;
+
+      if (subOp > 0) {
+        drawInfiniteLine(w1, C.yellow, subOp);
+      }
+
+      // Drop Line
+      let dropOp = 0;
+      if (pS2Res > 0) dropOp = 1 - pS2Res;
+      else if (pS2Sub > 0) dropOp = pS2Sub;
+
+      if (dropOp > 0) {
+        drawDash(v2, proj2_1, C.gray, dropOp);
+        drawRightAnglePts(v2, proj2_1, O, C.gray, dropOp);
+        drawPoint(proj2_1, C.yellow, dropOp);
+      }
+
+      // Projection
+      if (pS2Proj > 0) {
+        const pOp = pS2Res > 0 ? 1 - pS2Res : pS2Proj;
+        const vec = mul(proj2_1, pS2Proj);
+        drawArrow(O, vec, C.yellow, pOp);
+        drawLabel('p₂₁', vec, '#c9991a', pOp, true);
+      }
+
+      // w2
+      let w2Scale = pNorm > 0 ? (len(w2) > 1e-6 ? lerp(1, 1/len(w2), pNorm) : 1) : pS2Res;
+      if (w2Scale > 0) {
+        const w2Op = pNorm > 0 ? 1 : pS2Res;
+        const vec = mul(w2, w2Scale);
+        drawArrow(O, vec, C.green, w2Op);
+        drawLabel(pNorm>0.5 ? 'u₂' : 'w₂', vec, C.green, w2Op, true);
+      }
+
+      // Unit circle
+      if (pNorm > 0) drawCircle(pNorm);
+
+      // Handles
+      drawHandle(v1, C.red, 'v1', opV1);
+      drawHandle(v2, C.blue, 'v2', opV2);
+    }
+
+    /* ── STEP INFO & LEGEND ── */
+    function f(n){ return (Math.abs(n)<1e-3?0:n).toFixed(2); }
+    function vS(v){ return `(${f(v.x)}, ${f(v.y)})`; }
+
+    function updateStepInfo(k){
+      const fr = (n,d) => `<span class="frac"><span>${n}</span><span>${d}</span></span>`;
+      const cR='color:#bc1e47', cB='color:#0081cd', cG='color:#009246';
+      const sv1=`<b style="${cR}">v₁</b>`, sv2=`<b style="${cB}">v₂</b>`;
+      const sw1=`<b style="${cG}">w₁</b>`, sw2=`<b style="${cG}">w₂</b>`;
+      const sp=`<b style="color:#b88c00">p₂₁</b>`;
+      let desc='', math='';
+
+      if(k===0){
+        desc = `Let ${sv1}, ${sv2} be linearly independent vectors.`;
+        math = `${sv1} = ${vS(v1)}<br>${sv2} = ${vS(v2)}`;
+      } else if(k===1){
+        desc = `<b>Step 1</b><br>The first vector is kept as is.`;
+        math = `${sw1} = ${sv1} = ${vS(w1)}`;
+      } else if(k===2){
+        desc = `<b>Step 2a — Subspace</b><br>Visualize span(${sw1}). Drop a perpendicular from ${sv2}.`;
+        math = `L = span(${sw1})`;
+      } else if(k===3){
+        desc = `<b>Step 2b — Projection</b><br>Compute projection ${sp}.`;
+        const n=dot(w1,v2), d=dot(w1,w1);
+        math = `${sp} = ${fr(`⟨${sw1}, ${sv2}⟩`,`⟨${sw1}, ${sw1}⟩`)} ${sw1}<br><br>` +
+               `${sp} = ${fr(f(n),f(d))} ${vS(w1)} = ${vS(proj2_1)}`;
+      } else if(k===4){
+        desc = `<b>Step 2 ✓</b><br>${sw2} = ${sv2} − ${sp} is the orthogonal residual.`;
+        math = `${sw2} = ${vS(w2)}<br>⟨${sw1}, ${sw2}⟩ = ${f(dot(w1,w2))}`;
+      } else if(k===5){
+        desc = `<b>Normalization</b><br>Divide each vector by its magnitude: <b>uᵢ = wᵢ / ‖wᵢ‖</b>`;
+        math = `u₁ = ${vS(u1)}<br>u₂ = ${vS(u2)}`;
+      }
+      document.getElementById('step-desc').innerHTML = desc;
+      document.getElementById('step-math').innerHTML = math;
+    }
+
+    function swatch(c){return `<span class="swatch" style="background:${c}"></span>`}
+    function updateLegend(k){
+      const leg = document.getElementById('legend-content');
+      let rows = [];
+      if(k===0){
+        rows.push(`<div class="legend-row">${swatch(C.red)} <b>v₁</b> — input</div>`);
+        rows.push(`<div class="legend-row">${swatch(C.blue)} <b>v₂</b> — input</div>`);
+      } else if(k===1){
+        rows.push(`<div class="legend-row">${swatch(C.red)} <b>v₁</b> <span style="color:#aaa">(faded)</span></div>`);
+        rows.push(`<div class="legend-row">${swatch(C.green)} <b>w₁ = v₁</b></div>`);
+        rows.push(`<div class="legend-row">${swatch(C.blue)} <b>v₂</b></div>`);
+      } else if(k===2 || k===3){
+        rows.push(`<div class="legend-row">${swatch(C.green)} <b>w₁</b></div>`);
+        rows.push(`<div class="legend-row">${swatch(C.blue)} <b>v₂</b></div>`);
+        rows.push(`<div class="legend-row">${swatch(C.yellow)} <b style="color:#b88c00">p₂₁</b> — projection</div>`);
+      } else if(k===4){
+        rows.push(`<div class="legend-row">${swatch(C.green)} <b>w₁</b></div>`);
+        rows.push(`<div class="legend-row">${swatch(C.green)} <b>w₂ = v₂ − p₂₁</b></div>`);
+        rows.push(`<div class="legend-row">${swatch(C.blue)} <b>v₂</b> <span style="color:#aaa">(faded)</span></div>`);
+      } else if(k===5){
+        rows.push(`<div class="legend-row">${swatch(C.green)} <b>u₁, u₂</b> — orthonormal</div>`);
+        rows.push(`<div class="legend-row">${swatch('#888')} unit circle</div>`);
+      }
+      rows.push(`<div class="hint" style="margin-top:8px;border-top:1px solid #d0d7de;padding-top:8px;">• Drag the colored tips to change basis vectors.</div>`);
+      leg.innerHTML = rows.join('');
+    }
+
+    /* ── UI CONTROL ── */
+    const slider = document.getElementById('step-slider');
+    const phaseLabel = document.getElementById('phase-label');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    const btnPlay = document.getElementById('btn-play');
+
+    slider.addEventListener('input', e => {
+      targetMicro = parseFloat(e.target.value);
+      currentMicro = targetMicro; // snap on manual scrub
+      updateUI(); draw();
+    });
+
+    btnPrev.addEventListener('click', () => {
+      stopPlay();
+      targetMicro = Math.max(0, Math.ceil(targetMicro) - 1);
+    });
+
+    btnNext.addEventListener('click', () => {
+      stopPlay();
+      targetMicro = Math.min(MAX_SLIDER, Math.floor(targetMicro) + 1);
+    });
+
+    btnPlay.addEventListener('click', () => {
+      if(playing){ stopPlay(); return; }
+      playing=true; btnPlay.classList.add('active'); btnPlay.textContent='⏸ Pause';
+      if(currentMicro>=MAX_SLIDER){ currentMicro=0; targetMicro=0; }
+      advancePlay();
+    });
+
+    function advancePlay(){
+      if(!playing) return;
+      const next = Math.min(Math.floor(targetMicro)+1, MAX_SLIDER);
+      targetMicro = next;
+      if(next>=MAX_SLIDER){
+        playTimer = setTimeout(()=>{ stopPlay(); }, PLAY_MS);
+      } else {
+        playTimer = setTimeout(advancePlay, PLAY_MS);
+      }
+    }
+
+    function stopPlay(){
+      playing=false; btnPlay.classList.remove('active'); btnPlay.textContent='▶ Play';
+      if(playTimer){ clearTimeout(playTimer); playTimer=null; }
+    }
+
+    function updateUI(){
+      slider.value = currentMicro;
+      const k = getDisplayStep();
+      if(k !== lastRenderedStep) {
+        phaseLabel.textContent = `Phase ${k} / 5`;
+        updateStepInfo(k);
+        updateLegend(k);
+        lastRenderedStep = k;
+      }
+    }
+
+    /* ── PRESETS ── */
+    window.applyPreset = function(name){
+      stopPlay();
+      if(name==='default'){ v1.x=2; v1.y=1; v2.x=1; v2.y=2; }
+      else if(name==='ortho'){ v1.x=2; v1.y=0; v2.x=0; v2.y=2; }
+      else {
+        const r=()=>parseFloat((Math.random()*4-2).toFixed(1));
+        v1.x=r(); v1.y=r(); v2.x=r(); v2.y=r();
+      }
+      recalculateGS(); updateUI(); draw();
+    };
+
+    /* ── DRAG INTERACTION ── */
+    let dragging=null, hovering=null;
+    function hitTest(ex,ey){
+      const px=fX(ex), py=fY(ey), th=15/sc;
+      if(Math.hypot(v1.x-px,v1.y-py)<th) return 'v1';
+      if(Math.hypot(v2.x-px,v2.y-py)<th) return 'v2';
+      return null;
+    }
+    canvas.addEventListener('pointerdown', e => {
+      const r=canvas.getBoundingClientRect();
+      dragging=hitTest(e.clientX-r.left, e.clientY-r.top);
+      if(dragging){
+          canvas.style.cursor='grabbing';
+          if(playing) stopPlay();
+          draw();
+      }
+    });
+    canvas.addEventListener('pointermove', e => {
+      const r=canvas.getBoundingClientRect();
+      const ex=e.clientX-r.left, ey=e.clientY-r.top;
+      if(dragging){
+        let nx=fX(ex), ny=fY(ey);
+        const mg=Math.hypot(nx,ny); if(mg<0.3){ nx*=0.3/mg; ny*=0.3/mg; }
+        if(dragging==='v1'){ v1.x=nx; v1.y=ny; } else { v2.x=nx; v2.y=ny; }
+        recalculateGS(); draw();
+      } else {
+        const h=hitTest(ex,ey);
+        if(h!==hovering){
+            hovering=h;
+            canvas.style.cursor=h?'grab':'';
+            draw();
+        }
+      }
+    });
+    canvas.addEventListener('pointerup', ()=>{
+        if(dragging){
+            dragging=null;
+            canvas.style.cursor=hovering?'grab':'';
+            draw();
+        }
+    });
+    canvas.addEventListener('pointerleave', ()=>{
+        if(dragging || hovering){
+            dragging=null; hovering=null;
+            canvas.style.cursor='';
+            draw();
+        }
+    });
+
+    /* ── ANIMATION LOOP ── */
+    let lastT=0;
+    function animate(t){
+      requestAnimationFrame(animate);
+      const dt=Math.min((t-lastT)/1000, 0.1); lastT=t;
+
+      const diff = targetMicro - currentMicro;
+      if(Math.abs(diff)>0.001){
+        currentMicro += diff * SMOOTH;
+        if(Math.abs(targetMicro-currentMicro)<0.005) currentMicro=targetMicro;
+
+        updateUI();
+        draw();
+      }
+    }
+
+    /* ── BOOT ── */
+    resize(); recalculateGS(); updateUI(); draw();
+    requestAnimationFrame(animate);
+  </script>
+</body>
+</html>
