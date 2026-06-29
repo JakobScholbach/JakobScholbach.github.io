@@ -40,6 +40,13 @@ Thus, the $i$-th entry of the (column) vector $Av$ is computed by traversing the
 
 </div>
 
+
+
+<a id="vis-matrix-vector-mult"></a>
+<iframe src="../visualizations/matrix-vector-mult.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+
+
 It makes perfectly good sense to consider matrices whose entries are variables. Compute:
 <div class="arithmatex" markdown="1">
 \[

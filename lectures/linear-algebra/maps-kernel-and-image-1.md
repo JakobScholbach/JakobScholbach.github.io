@@ -164,6 +164,13 @@ A basis of ${\operatorname{im}\ } f$ is thus given by the vector $\left ( \begin
 
 </div>
 
+
+
+<a id="vis-kernel-image-preimage"></a>
+<iframe src="../visualizations/kernel-image-preimage.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+
+
 Our goal below is to develop an algorithmic method that determine bases of $\ker f$, ${\operatorname{im}\ } f$. For now, just observe that in the example above
 <div class="arithmatex" markdown="1">
 \[

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matrix Multiplication — AB and BA</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #ffffff; color: #1f2328;
+    display: flex; min-height: 100vh;
+  }
+  #content {
+    flex: 1; min-width: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 28px 18px; overflow-x: auto;
+  }
+  /* side panel (layout mirrors two-lines-3d.html) */
+  #panel {
+    width: 270px; flex-shrink: 0;
+    background: #f6f8fa; border-left: 1px solid #d0d7de;
+    padding: 16px; display: flex; flex-direction: column; gap: 14px;
+    font-size: 0.875rem; overflow-y: auto;
+  }
+  #panel h1 { font-size: 1rem; font-weight: 600; }
+  #panel .credit { font-size: 0.75rem; color: #8b949e; margin-top: 2px; }
+  .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
+  #panel hr { border: none; border-top: 1px solid #d0d7de; }
+  .hint { font-size: 0.74rem; color: #656d76; line-height: 1.6; }
+  .swatch { display: inline-block; width: 11px; height: 11px; border-radius: 2px; vertical-align: middle; }
+
+  /* inline dim spinner */
+  .mat-label {
+    display: flex; align-items: center; gap: 4px;
+    justify-content: center; margin-bottom: 6px;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em;
+    color: #656d76; user-select: none;
+  }
+  .mat-name { font-weight: 600; color: #1f2328; margin-right: 2px; text-transform: none; letter-spacing: 0; font-size: 0.85rem; }
+  .dim-spinner { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .arr-btn {
+    width: 20px; height: 13px; border: none; background: none;
+    cursor: pointer; color: #8b949e; font-size: 0.6rem; line-height: 1;
+    padding: 0; display: flex; align-items: center; justify-content: center;
+    transition: color 0.15s;
+  }
+  .arr-btn:hover { color: #0081cd; }
+  .dim-num { font-size: 0.85rem; font-weight: 600; color: #1f2328; min-width: 14px; text-align: center; }
+  .dim-x { padding: 0 1px; color: #8b949e; }
+
+  .equation { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .op { font-size: 1.5rem; color: #656d76; padding: 0 4px; }
+
+  .bracket-wrap { display: flex; align-items: stretch; gap: 0; }
+  .bracket {
+    display: flex; align-items: center;
+    font-size: 2.6rem; color: #888; font-weight: 100;
+    line-height: 1; padding: 0 2px; user-select: none;
+  }
+
+  .matrix-grid { display: grid; gap: 6px 8px; padding: 4px 6px; }
+
+  input.cell {
+    width: 48px; height: 34px; text-align: center;
+    font-family: monospace; font-size: 0.9rem;
+    border: 1px solid #d0d7de; border-radius: 5px;
+    background: #fff; color: #1f2328; outline: none;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  input.cell:focus { border-color: #0081cd; }
+
+  /* read-only display cells (BA section) */
+  .cell-ro {
+    width: 48px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: monospace; font-size: 0.9rem;
+    border: 1px solid #d0d7de; border-radius: 5px;
+    background: #f6f8fa; color: #656d76;
+  }
+
+  .res-cell {
+    width: 60px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: monospace; font-size: 0.9rem; font-weight: 600; border-radius: 5px;
+    border: 1px solid #009246; color: #009246; background: rgba(0,146,70,0.06);
+    cursor: default; transition: background 0.15s, color 0.15s;
+  }
+  .res-cell:hover { background: #009246; color: #fff; }
+
+  input.cell.hl-row { background: rgba(188,30,71,0.12); border-color: #bc1e47; }
+  input.cell.hl-col { background: rgba(0,129,205,0.12); border-color: #0081cd; }
+  .cell-ro.hl-row { background: rgba(188,30,71,0.12); border-color: #bc1e47; }
+  .cell-ro.hl-col { background: rgba(0,129,205,0.12); border-color: #0081cd; }
+
+  .error-banner {
+    display: none;
+    background: rgba(188,30,71,0.06); border: 1px solid #bc1e47; border-radius: 6px;
+    color: #bc1e47; padding: 12px 18px; font-size: 0.82rem;
+    text-align: center; margin-top: 22px; max-width: 580px; width: 100%;
+  }
+  .error-banner.visible { display: block; }
+
+  .res-invalid {
+    width: 60px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    color: #d0d7de; font-size: 1.3rem;
+  }
+
+  /* ── scrollable equation wrappers ── */
+  .eq-scroll {
+    width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    display: flex; justify-content: center;
+  }
+
+  .formula-box {
+    min-height: 44px; padding: 10px 12px;
+    background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+    font-size: 0.78rem; line-height: 1.7; overflow-x: auto;
+  }
+  .formula-box.empty { color: #8b949e; font-style: italic; }
+  .formula-table { border-collapse: collapse; margin: 0; font-family: monospace; }
+  .formula-table td { padding: 0 6px; line-height: 1.9; vertical-align: middle; }
+  .formula-table .eq-col { text-align: center; padding: 0 8px; color: #656d76; }
+  .formula-table .expr-col { text-align: left; }
+
+  .term-pos { color: #bc1e47; font-weight: 600; }  /* entry of A — first object */
+  .term-vec { color: #0081cd; font-weight: 600; }  /* entry of B — second object */
+  .term-res { color: #009246; font-weight: 600; }  /* result */
+
+  .comm-note {
+    margin-top: 10px; padding-top: 8px;
+    border-top: 1px solid #d0d7de;
+    font-size: 0.8rem; color: #656d76;
+  }
+  .comm-eq  { color: #009246; font-weight: 600; }
+  .comm-neq { color: #bc1e47; font-weight: 600; }
+
+  .mat-wrap { display: flex; flex-direction: column; align-items: center; }
+
+  /* section divider */
+  .divider {
+    width: 100%; max-width: 720px;
+    border: none; border-top: 1px solid #d0d7de;
+    margin: 34px 0 26px;
+  }
+  .section-title {
+    font-size: 0.85rem; color: #656d76;
+    margin: 0 0 18px; text-align: center;
+  }
+  .section-title b { color: #1f2328; }
+
+  @media (max-width: 600px) {
+    body { flex-direction: column; min-height: auto; }
+    #content { justify-content: flex-start; padding: 18px 10px; }
+    #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; }
+    .op { font-size: 1.3rem; }
+    .bracket { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div id="content">
+
+<!-- ═══════════════ AB section ═══════════════ -->
+<div class="eq-scroll"><div class="equation" id="eqAB">
+
+  <div class="mat-wrap">
+    <div class="mat-label">
+      <span class="mat-name">A</span>
+      <span class="dim-x">(</span>
+      <div class="dim-spinner">
+        <button class="arr-btn" onclick="changeDim('M',1)">▲</button>
+        <span class="dim-num" id="valM">4</span>
+        <button class="arr-btn" onclick="changeDim('M',-1)">▼</button>
+      </div>
+      <span class="dim-x">×</span>
+      <div class="dim-spinner">
+        <button class="arr-btn" onclick="changeDim('N',1)">▲</button>
+        <span class="dim-num" id="valN">3</span>
+        <button class="arr-btn" onclick="changeDim('N',-1)">▼</button>
+      </div>
+      <span class="dim-x">)</span>
+    </div>
+    <div class="bracket-wrap">
+      <div class="bracket">(</div>
+      <div class="matrix-grid" id="matA"></div>
+      <div class="bracket">)</div>
+    </div>
+  </div>
+
+  <div class="mat-wrap">
+    <div class="mat-label">
+      <span class="mat-name">B</span>
+      <span class="dim-x">(</span>
+      <div class="dim-spinner">
+        <button class="arr-btn" onclick="changeDim('P',1)">▲</button>
+        <span class="dim-num" id="valP">3</span>
+        <button class="arr-btn" onclick="changeDim('P',-1)">▼</button>
+      </div>
+      <span class="dim-x">×</span>
+      <div class="dim-spinner">
+        <button class="arr-btn" onclick="changeDim('Q',1)">▲</button>
+        <span class="dim-num" id="valQ">1</span>
+        <button class="arr-btn" onclick="changeDim('Q',-1)">▼</button>
+      </div>
+      <span class="dim-x">)</span>
+    </div>
+    <div class="bracket-wrap">
+      <div class="bracket">(</div>
+      <div class="matrix-grid" id="matB"></div>
+      <div class="bracket">)</div>
+    </div>
+  </div>
+
+  <div id="abResultSection" style="display:flex;align-items:center;gap:12px;">
+    <div class="op">=</div>
+    <div class="mat-wrap">
+      <div class="mat-label">
+        <span class="mat-name">AB</span>
+        <span class="dim-x">(</span>
+        <span class="dim-num" id="labelABr" style="font-weight:400;color:#8b949e;">4</span>
+        <span class="dim-x">×</span>
+        <span class="dim-num" id="labelABc" style="font-weight:400;color:#8b949e;">1</span>
+        <span class="dim-x">)</span>
+      </div>
+      <div class="bracket-wrap">
+        <div class="bracket">(</div>
+        <div class="matrix-grid" id="matABresult"></div>
+        <div class="bracket">)</div>
+      </div>
+    </div>
+  </div>
+
+</div></div>
+
+<div class="error-banner" id="errAB">
+  The product <i>AB</i> is only defined if the number of columns of <i>A</i> is the same as the number of rows of <i>B</i>.
+</div>
+<hr class="divider">
+
+<!-- ═══════════════ BA section ═══════════════ -->
+
+<div class="eq-scroll"><div class="equation" id="eqBA">
+
+  <div class="mat-wrap">
+    <div class="mat-label">
+      <span class="mat-name">B</span>
+      <span class="dim-x">(</span>
+      <span class="dim-num" id="labelBAb1" style="font-weight:400;color:#8b949e;">3</span>
+      <span class="dim-x">×</span>
+      <span class="dim-num" id="labelBAb2" style="font-weight:400;color:#8b949e;">1</span>
+      <span class="dim-x">)</span>
+    </div>
+    <div class="bracket-wrap">
+      <div class="bracket">(</div>
+      <div class="matrix-grid" id="matBro"></div>
+      <div class="bracket">)</div>
+    </div>
+  </div>
+
+  <div class="mat-wrap">
+    <div class="mat-label">
+      <span class="mat-name">A</span>
+      <span class="dim-x">(</span>
+      <span class="dim-num" id="labelBAa1" style="font-weight:400;color:#8b949e;">4</span>
+      <span class="dim-x">×</span>
+      <span class="dim-num" id="labelBAa2" style="font-weight:400;color:#8b949e;">3</span>
+      <span class="dim-x">)</span>
+    </div>
+    <div class="bracket-wrap">
+      <div class="bracket">(</div>
+      <div class="matrix-grid" id="matAro"></div>
+      <div class="bracket">)</div>
+    </div>
+  </div>
+
+  <div id="baResultSection" style="display:flex;align-items:center;gap:12px;">
+    <div class="op">=</div>
+    <div class="mat-wrap">
+      <div class="mat-label">
+        <span class="mat-name">BA</span>
+        <span class="dim-x">(</span>
+        <span class="dim-num" id="labelBAr" style="font-weight:400;color:#8b949e;">—</span>
+        <span class="dim-x">×</span>
+        <span class="dim-num" id="labelBAc" style="font-weight:400;color:#8b949e;">—</span>
+        <span class="dim-x">)</span>
+      </div>
+      <div class="bracket-wrap">
+        <div class="bracket">(</div>
+        <div class="matrix-grid" id="matBAresult"></div>
+        <div class="bracket">)</div>
+      </div>
+    </div>
+  </div>
+
+</div></div>
+
+<div class="error-banner" id="errBA">
+  The product <i>BA</i> is only defined if the number of columns of <i>B</i> is the same as the number of rows of <i>A</i>.
+</div>
+</div><!-- /#content -->
+
+<div id="panel">
+  <div>
+    <h1>Matrix multiplication: AB and BA</h1>
+    <div class="credit">Created by Wangrui Zhao</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Computation</div>
+    <div id="lblFormulaAB" style="font-size:0.68rem;color:#8b949e;margin-bottom:3px">AB</div>
+    <div class="formula-box empty" id="formulaAB">← Hover over a result entry</div>
+    <div id="lblFormulaBA" style="font-size:0.68rem;color:#8b949e;margin:8px 0 3px">BA</div>
+    <div class="formula-box empty" id="formulaBA">← Hover over a result entry</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">How to use</div>
+    <p class="hint">
+      Hover over a result entry to see which products are summed.<br>
+      Edit any value to update live.<br>
+      Use the ▲▼ steppers above A and B to change their dimensions.
+    </p>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">AB vs BA</div>
+    <p class="hint">
+      The two products live in the two rows. Each is only defined when the
+      inner dimensions match.
+    </p>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Legend</div>
+    <p class="hint">
+      <span class="swatch" style="background:#bc1e47"></span> active row of the left factor<br>
+      <span class="swatch" style="background:#0081cd"></span> active column of the right factor<br>
+      <span class="swatch" style="background:#009246"></span> resulting entry of the product
+    </p>
+  </div>
+</div>
+
+<script>
+let M = 4, N = 3, P = 3, Q = 1;
+const MAX = 6, MIN = 1;
+
+let aVals = {}, bVals = {};
+let aInputs = [], bInputs = [];
+let bRoCells = [], aRoCells = []; // read-only mirrors in BA section
+let abResCells = [], baResCells = [];
+let hoverAB = {row:-1, col:-1}, hoverBA = {row:-1, col:-1};
+
+const defaultA = [
+  [ 1,  2,  0],
+  [ 3,  1, -1],
+  [ 0,  2,  4],
+  [-1,  0,  2]
+];
+const defaultB = [[2],[1],[-1]];
+
+function getDefaultA(i,j) {
+  if (aVals[`${i},${j}`] !== undefined) return aVals[`${i},${j}`];
+  return defaultA[i]?.[j] ?? 0;
+}
+function getDefaultB(i,j) {
+  if (bVals[`${i},${j}`] !== undefined) return bVals[`${i},${j}`];
+  return defaultB[i]?.[j] ?? 0;
+}
+
+function changeDim(dim, delta) {
+  saveValues();
+  if (dim==='M') M = clamp(M+delta);
+  if (dim==='N') N = clamp(N+delta);
+  if (dim==='P') P = clamp(P+delta);
+  if (dim==='Q') Q = clamp(Q+delta);
+  buildAll();
+}
+function clamp(v) { return Math.min(MAX, Math.max(MIN, v)); }
+
+function saveValues() {
+  aInputs.forEach((row,i) => row.forEach((inp,j) => aVals[`${i},${j}`] = inp.value));
+  bInputs.forEach((row,i) => row.forEach((inp,j) => bVals[`${i},${j}`] = inp.value));
+}
+
+// ── build editable matrix ──────────────────────────────
+function buildEditableMatrix(id, rows, cols, getDefault) {
+  const grid = document.getElementById(id);
+  grid.innerHTML = '';
+  grid.style.gridTemplateColumns = `repeat(${cols}, 48px)`;
+  const inputs = [];
+  for (let i = 0; i < rows; i++) {
+    inputs[i] = [];
+    for (let j = 0; j < cols; j++) {
+      const inp = document.createElement('input');
+      inp.type = 'number'; inp.className = 'cell';
+      inp.value = getDefault(i, j);
+      inp.addEventListener('input', () => { saveValues(); updateAll(); });
+      grid.appendChild(inp);
+      inputs[i][j] = inp;
+    }
+  }
+  return inputs;
+}
+
+// ── build read-only mirror ─────────────────────────────
+function buildROMatrix(id, rows, cols, getVal) {
+  const grid = document.getElementById(id);
+  grid.innerHTML = '';
+  grid.style.gridTemplateColumns = `repeat(${cols}, 48px)`;
+  const cells = [];
+  for (let i = 0; i < rows; i++) {
+    cells[i] = [];
+    for (let j = 0; j < cols; j++) {
+      const d = document.createElement('div');
+      d.className = 'cell-ro';
+      d.textContent = getVal(i, j);
+      grid.appendChild(d);
+      cells[i][j] = d;
+    }
+  }
+  return cells;
+}
+
+function syncRO() {
+  // sync B read-only
+  bRoCells.forEach((row, i) => row.forEach((cell, j) => {
+    cell.textContent = getB(i, j);
+  }));
+  // sync A read-only
+  aRoCells.forEach((row, i) => row.forEach((cell, j) => {
+    cell.textContent = getA(i, j);
+  }));
+}
+
+// ── build result grid ──────────────────────────────────
+function buildResGrid(id, rows, cols, onEnter, onLeave) {
+  const grid = document.getElementById(id);
+  grid.innerHTML = '';
+  grid.style.gridTemplateColumns = `repeat(${cols}, 60px)`;
+  const cells = [];
+  for (let i = 0; i < rows; i++) {
+    cells[i] = [];
+    for (let j = 0; j < cols; j++) {
+      const cell = document.createElement('div');
+      cell.className = 'res-cell';
+      cell.addEventListener('mouseenter', () => onEnter(i, j));
+      cell.addEventListener('mouseleave', onLeave);
+      grid.appendChild(cell);
+      cells[i][j] = cell;
+    }
+  }
+  return cells;
+}
+
+function buildInvalidGrid(id, rows, cols) {
+  const grid = document.getElementById(id);
+  grid.innerHTML = '';
+  grid.style.gridTemplateColumns = `repeat(${cols}, 60px)`;
+  for (let i = 0; i < rows; i++)
+    for (let j = 0; j < cols; j++) {
+      const d = document.createElement('div');
+      d.className = 'res-invalid'; d.textContent = '—';
+      grid.appendChild(d);
+    }
+}
+
+// ── value accessors ────────────────────────────────────
+function getA(i,j) { return parseFloat(aInputs[i]?.[j]?.value) || 0; }
+function getB(i,j) { return parseFloat(bInputs[i]?.[j]?.value) || 0; }
+
+function fmt(v) { return Number.isInteger(v) ? v : v.toFixed(2); }
+
+function computeAB(i,j) {
+  let s=0; for(let k=0;k<N;k++) s+=getA(i,k)*getB(k,j); return s;
+}
+function computeBA(i,j) {
+  // BA: B is P×Q, A is M×N; BA valid when Q===M; result P×N
+  let s=0; for(let k=0;k<Q;k++) s+=getB(i,k)*getA(k,j); return s;
+}
+
+// ── build everything ───────────────────────────────────
+function buildAll() {
+  // dimension labels
+  document.getElementById('valM').textContent = M;
+  document.getElementById('valN').textContent = N;
+  document.getElementById('valP').textContent = P;
+  document.getElementById('valQ').textContent = Q;
+
+  // editable A and B
+  aInputs = buildEditableMatrix('matA', M, N, getDefaultA);
+  bInputs = buildEditableMatrix('matB', P, Q, getDefaultB);
+
+  // AB result or invalid
+  const abValid = (N === P);
+  document.getElementById('labelABr').textContent = M;
+  document.getElementById('labelABc').textContent = Q;
+  if (abValid) {
+    abResCells = buildResGrid('matABresult', M, Q,
+      (r,c) => highlightAB(r,c), () => clearHL('AB'));
+  } else {
+    abResCells = [];
+  }
+
+  // BA read-only mirrors
+  bRoCells = buildROMatrix('matBro', P, Q, getB);
+  aRoCells = buildROMatrix('matAro', M, N, getA);
+
+  // BA result or invalid
+  const baValid = (Q === M);
+  document.getElementById('labelBAb1').textContent = P;
+  document.getElementById('labelBAb2').textContent = Q;
+  document.getElementById('labelBAa1').textContent = M;
+  document.getElementById('labelBAa2').textContent = N;
+  document.getElementById('labelBAr').textContent = baValid ? P : '—';
+  document.getElementById('labelBAc').textContent = baValid ? N : '—';
+  if (baValid) {
+    baResCells = buildResGrid('matBAresult', P, N,
+      (r,c) => highlightBA(r,c), () => clearHL('BA'));
+  } else {
+    baResCells = [];
+  }
+
+  clearHL('AB'); clearHL('BA');
+  updateAll();
+}
+
+// ── update computed values ─────────────────────────────
+function updateAll() {
+  syncRO();
+
+  const abValid = (N === P);
+  const errAB = document.getElementById('errAB');
+  const fAB   = document.getElementById('formulaAB');
+  const abResultSection = document.getElementById('abResultSection');
+  if (abValid) {
+    errAB.classList.remove('visible');
+    fAB.style.display = '';
+    document.getElementById('lblFormulaAB').style.display = '';
+    abResultSection.style.display = 'flex';
+    for(let i=0;i<M;i++) for(let j=0;j<Q;j++)
+      abResCells[i]?.[j] && (abResCells[i][j].textContent = fmt(computeAB(i,j)));
+    if(hoverAB.row>=0) showFormulaAB(hoverAB.row, hoverAB.col);
+  } else {
+    errAB.classList.add('visible');
+    fAB.style.display = 'none';
+    document.getElementById('lblFormulaAB').style.display = 'none';
+    abResultSection.style.display = 'none';
+  }
+
+  const baValid = (Q === M);
+  const errBA = document.getElementById('errBA');
+  const fBA   = document.getElementById('formulaBA');
+  const baResultSection = document.getElementById('baResultSection');
+  if (baValid) {
+    errBA.classList.remove('visible');
+    fBA.style.display = '';
+    document.getElementById('lblFormulaBA').style.display = '';
+    baResultSection.style.display = 'flex';
+    for(let i=0;i<P;i++) for(let j=0;j<N;j++)
+      baResCells[i]?.[j] && (baResCells[i][j].textContent = fmt(computeBA(i,j)));
+    if(hoverBA.row>=0) showFormulaBA(hoverBA.row, hoverBA.col);
+  } else {
+    errBA.classList.add('visible');
+    fBA.style.display = 'none';
+    document.getElementById('lblFormulaBA').style.display = 'none';
+    baResultSection.style.display = 'none';
+  }
+}
+
+// ── highlight helpers ──────────────────────────────────
+function highlightAB(row, col) {
+  clearHL('AB');
+  hoverAB = {row, col};
+  for(let r=0;r<M;r++) for(let c=0;c<N;c++)
+    aInputs[r][c].classList.toggle('hl-row', r===row);
+  for(let r=0;r<P;r++) for(let c=0;c<Q;c++)
+    bInputs[r][c].classList.toggle('hl-col', c===col);
+  showFormulaAB(row, col);
+}
+
+function highlightBA(row, col) {
+  clearHL('BA');
+  hoverBA = {row, col};
+  // In BA: row i of B × col j of A
+  for(let c=0;c<Q;c++) bRoCells[row][c].classList.add('hl-row');
+  for(let r=0;r<M;r++) aRoCells[r][col].classList.add('hl-col');
+  showFormulaBA(row, col);
+}
+
+function clearHL(which) {
+  if (which==='AB') {
+    hoverAB = {row:-1, col:-1};
+    aInputs.forEach(r => r.forEach(c => c.classList.remove('hl-row','hl-col')));
+    bInputs.forEach(r => r.forEach(c => c.classList.remove('hl-row','hl-col')));
+    const b = document.getElementById('formulaAB');
+    b.innerHTML = '← Hover over a result entry'; b.className='formula-box empty';
+  } else {
+    hoverBA = {row:-1, col:-1};
+    bRoCells.forEach(r => r.forEach(c => c.classList.remove('hl-row','hl-col')));
+    aRoCells.forEach(r => r.forEach(c => c.classList.remove('hl-row','hl-col')));
+    const b = document.getElementById('formulaBA');
+    b.innerHTML = '← Hover over a result entry'; b.className='formula-box empty';
+  }
+}
+
+// ── formula display ────────────────────────────────────
+function showFormulaAB(row, col) {
+  const box = document.getElementById('formulaAB');
+  box.className = 'formula-box';
+  const letters = [], nums = [];
+  for(let k=0;k<N;k++) {
+    letters.push(`<span class="term-pos">a<sub>${row+1}${k+1}</sub></span>·<span class="term-vec">b<sub>${k+1}${col+1}</sub></span>`);
+    nums.push(`<span class="term-pos">${getA(row,k)}</span>·<span class="term-vec">${getB(k,col)}</span>`);
+  }
+  const res = fmt(computeAB(row,col));
+  box.innerHTML = formulaTable(`(AB)<sub>${row+1},${col+1}</sub>`, letters, nums, res) + commutativityNote();
+}
+
+function showFormulaBA(row, col) {
+  const box = document.getElementById('formulaBA');
+  box.className = 'formula-box';
+  const letters = [], nums = [];
+  for(let k=0;k<Q;k++) {
+    letters.push(`<span class="term-pos">b<sub>${row+1}${k+1}</sub></span>·<span class="term-vec">a<sub>${k+1}${col+1}</sub></span>`);
+    nums.push(`<span class="term-pos">${getB(row,k)}</span>·<span class="term-vec">${getA(k,col)}</span>`);
+  }
+  const res = fmt(computeBA(row,col));
+  box.innerHTML = formulaTable(`(BA)<sub>${row+1},${col+1}</sub>`, letters, nums, res) + commutativityNote();
+}
+
+function formulaTable(label, letters, nums, res) {
+  return `<table class="formula-table">
+    <tr><td>${label}</td><td class="eq-col">=</td><td class="expr-col">${letters.join(' + ')}</td></tr>
+    <tr><td></td><td class="eq-col">=</td><td class="expr-col">${nums.join(' + ')}</td></tr>
+    <tr><td></td><td class="eq-col">=</td><td class="expr-col"><span class="term-res">${res}</span></td></tr>
+  </table>`;
+}
+
+// ── commutativity note ─────────────────────────────────
+function commutativityNote() {
+  const abValid = (N === P);
+  const baValid = (Q === M);
+
+  // AB is M×Q; BA is P×N. For same shape: need M=P and Q=N.
+  // Since N=P and Q=M, same shape iff M=N=P=Q (both square, same size).
+  if (!abValid || !baValid) return '';  // one side undefined — error banner already explains
+
+  // AB is M×Q, BA is P×N. Same shape requires M=P and Q=N.
+  // Since N=P (abValid) and Q=M (baValid), same shape iff M=N=P=Q (both square, same size).
+  if (M !== P || Q !== N) return '';  // non-square or different sizes — nothing to compare
+
+  // Same shape — compare element-wise
+  let equal = true;
+  for (let i = 0; i < M && equal; i++)
+    for (let j = 0; j < Q && equal; j++)
+      if (Math.abs(computeAB(i,j) - computeBA(i,j)) > 1e-9) equal = false;
+
+  if (equal) {
+    const why = detectReason();
+    return `<div class="comm-note comm-eq"><i>AB</i> = <i>BA</i>${why ? ' — ' + why : ''}.</div>`;
+  } else {
+    return `<div class="comm-note comm-neq"><i>AB</i> ≠ <i>BA</i> — matrix multiplication is generally not commutative.</div>`;
+  }
+}
+
+function detectReason() {
+  const n = M; // square, M=N=P=Q
+
+  // A = B?
+  let aEqB = true;
+  for (let i=0; i<n && aEqB; i++)
+    for (let j=0; j<n && aEqB; j++)
+      if (Math.abs(getA(i,j)-getB(i,j)) > 1e-9) aEqB = false;
+  if (aEqB) return 'A = B';
+
+  // A = identity?
+  let aIsI = true;
+  for (let i=0; i<n && aIsI; i++)
+    for (let j=0; j<n && aIsI; j++)
+      if (Math.abs(getA(i,j)-(i===j?1:0)) > 1e-9) aIsI = false;
+  if (aIsI) return 'A is the identity matrix';
+
+  // B = identity?
+  let bIsI = true;
+  for (let i=0; i<n && bIsI; i++)
+    for (let j=0; j<n && bIsI; j++)
+      if (Math.abs(getB(i,j)-(i===j?1:0)) > 1e-9) bIsI = false;
+  if (bIsI) return 'B is the identity matrix';
+
+  // A = k·I?
+  const ka = getA(0,0);
+  let aIsScI = true;
+  for (let i=0; i<n && aIsScI; i++)
+    for (let j=0; j<n && aIsScI; j++)
+      if (Math.abs(getA(i,j)-(i===j?ka:0)) > 1e-9) aIsScI = false;
+  if (aIsScI) return `A = ${fmt(ka)}I`;
+
+  // B = k·I?
+  const kb = getB(0,0);
+  let bIsScI = true;
+  for (let i=0; i<n && bIsScI; i++)
+    for (let j=0; j<n && bIsScI; j++)
+      if (Math.abs(getB(i,j)-(i===j?kb:0)) > 1e-9) bIsScI = false;
+  if (bIsScI) return `B = ${fmt(kb)}I`;
+
+  // Both diagonal?
+  let aDiag = true, bDiag = true;
+  for (let i=0; i<n; i++)
+    for (let j=0; j<n; j++) {
+      if (i!==j && Math.abs(getA(i,j))>1e-9) aDiag = false;
+      if (i!==j && Math.abs(getB(i,j))>1e-9) bDiag = false;
+    }
+  if (aDiag && bDiag) return 'both A and B are diagonal matrices';
+
+  return 'for these particular values';
+}
+
+buildAll();
+</script>
+</body>
+</html>

@@ -120,6 +120,13 @@ is *not* defined, i.e., it is a meaningless expression.
 
 </div>
 
+
+
+<a id="vis-matrix-mult"></a>
+<iframe src="../visualizations/matrix-mult.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+
+
 <div class="remark" markdown="1">
 
 
@@ -272,6 +279,13 @@ So that
 </div>
 
 </div>
+
+
+
+<a id="vis-matrix-mult-ab-ba"></a>
+<iframe src="../visualizations/matrix-mult-ab-ba.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+
 
 <div class="remark" markdown="1">
 

@@ -76,3 +76,10 @@ An important question that we will eventually be able to make more precise and t
 </div>
 
 In the above illustration, we will want to articulate the idea that the ambient vector space $V$ is “3-dimensional”, $A$ and $B$ are 2-dimensional (i.e., a plane) and $A \cap B$ is 1-dimensional (i.e., a line). Note that this need not be the case: if $A = B$ is the *same* plane, for example, then certainly $A \cap B = A$ is also 2-dimensional. This relates to the discussion about the intersections of lines in ${\bf R}^2$ in <a href="../systems-linear-systems/#sum-intersection-lines" data-reference-type="ref+Label" data-reference="sum:intersection-lines">Summary 2.12</a>: if $A, B \subset {\bf R}^2$ are “1-dimensional” (i.e., lines), their intersection may still be a line, namely if $A = B$. If the ambient vector space $V$ is even larger, for example $V = {\bf R}^4$ (which has “dimension 4”), then it is no longer reasonable to write down all possible constellations of how $A, B$ lie in $V$.
+
+
+
+<a id="vis-dim-sum-intersection"></a>
+<iframe src="../visualizations/dim-sum-intersection.html" style="width:100%;height:520px;border:none;border-radius:6px;" loading="lazy"></iframe>
+
+

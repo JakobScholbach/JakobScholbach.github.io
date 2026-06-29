@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matrix Multiplication</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #ffffff; color: #1f2328;
+    display: flex; min-height: 100vh;
+  }
+  #content {
+    flex: 1; min-width: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 28px 18px; overflow-x: auto;
+  }
+  /* side panel (layout mirrors two-lines-3d.html) */
+  #panel {
+    width: 270px; flex-shrink: 0;
+    background: #f6f8fa; border-left: 1px solid #d0d7de;
+    padding: 16px; display: flex; flex-direction: column; gap: 14px;
+    font-size: 0.875rem; overflow-y: auto;
+  }
+  #panel h1 { font-size: 1rem; font-weight: 600; }
+  #panel .credit { font-size: 0.75rem; color: #8b949e; margin-top: 2px; }
+  .sec { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: #656d76; margin-bottom: 6px; }
+  hr { border: none; border-top: 1px solid #d0d7de; }
+  .hint { font-size: 0.74rem; color: #656d76; line-height: 1.6; }
+  .swatch { display: inline-block; width: 11px; height: 11px; border-radius: 2px; vertical-align: middle; }
+
+  /* inline dim spinner inside label */
+  .mat-label {
+    display: flex; align-items: center; gap: 4px;
+    justify-content: center; margin-bottom: 6px;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em;
+    color: #656d76; user-select: none;
+  }
+  .mat-name { font-weight: 600; color: #1f2328; margin-right: 2px; text-transform: none; letter-spacing: 0; font-size: 0.85rem; }
+  .dim-spinner { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .arr-btn {
+    width: 20px; height: 13px; border: none; background: none;
+    cursor: pointer; color: #8b949e; font-size: 0.6rem; line-height: 1;
+    padding: 0; display: flex; align-items: center; justify-content: center;
+    transition: color 0.15s;
+  }
+  .arr-btn:hover { color: #0081cd; }
+  .dim-num { font-size: 0.85rem; font-weight: 600; color: #1f2328; min-width: 14px; text-align: center; }
+  .dim-x { padding: 0 1px; color: #8b949e; }
+
+  .equation {
+    display: flex; align-items: center; gap: 12px;
+    flex-wrap: wrap; justify-content: center;
+  }
+  .op { font-size: 1.5rem; color: #656d76; padding: 0 4px; }
+
+  /* bracket wrapper */
+  .bracket-wrap { display: flex; align-items: stretch; gap: 0; }
+  .bracket {
+    display: flex; align-items: center;
+    font-size: 2.6rem; color: #888; font-weight: 100;
+    line-height: 1; padding: 0 2px; user-select: none;
+  }
+
+  /* matrix grid */
+  .matrix-grid { display: grid; gap: 6px 8px; padding: 4px 6px; }
+
+  /* editable cells */
+  input.cell {
+    width: 48px; height: 34px; text-align: center;
+    font-family: monospace; font-size: 0.9rem;
+    border: 1px solid #d0d7de; border-radius: 5px;
+    background: #fff; color: #1f2328; outline: none;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  input.cell:focus { border-color: #0081cd; }
+
+  /* result cells (mygreen) */
+  .res-cell {
+    width: 60px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: monospace; font-size: 0.9rem; font-weight: 600; border-radius: 5px;
+    border: 1px solid #009246; color: #009246; background: rgba(0,146,70,0.06);
+    cursor: default; transition: background 0.15s, color 0.15s;
+  }
+  .res-cell:hover { background: #009246; color: #fff; }
+
+  /* highlight states */
+  input.cell.hl-row { background: rgba(188,30,71,0.12); border-color: #bc1e47; }
+  input.cell.hl-col { background: rgba(0,129,205,0.12); border-color: #0081cd; }
+
+  /* error state */
+  .error-banner {
+    display: none;
+    background: rgba(188,30,71,0.06); border: 1px solid #bc1e47; border-radius: 6px;
+    color: #bc1e47; padding: 12px 18px; font-size: 0.82rem;
+    text-align: center; margin-top: 22px; max-width: 560px; width: 100%;
+  }
+  .error-banner.visible { display: block; }
+  .error-banner strong { font-weight: 600; }
+
+  /* result overlay when invalid */
+  .res-invalid {
+    width: 60px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    color: #d0d7de; font-size: 1.3rem;
+  }
+
+  /* formula display */
+  .formula-box {
+    min-height: 44px; padding: 10px 12px;
+    background: #fff; border: 1px solid #d0d7de; border-radius: 6px;
+    font-size: 0.78rem; line-height: 1.7; overflow-x: auto;
+    transition: opacity 0.2s;
+  }
+  .formula-box.empty { color: #8b949e; font-style: italic; }
+  .formula-table { border-collapse: collapse; margin: 0; font-family: monospace; }
+  .formula-table td { padding: 0 6px; line-height: 1.9; vertical-align: middle; }
+  .formula-table .eq-col { text-align: center; padding: 0 8px; color: #656d76; }
+  .formula-table .expr-col { text-align: left; }
+
+  .term-pos { color: #bc1e47; font-weight: 600; }  /* entry of A — first object */
+  .term-vec { color: #0081cd; font-weight: 600; }  /* entry of B — second object */
+  .term-res { color: #009246; font-weight: 600; }  /* result */
+
+  .mat-wrap { display: flex; flex-direction: column; align-items: center; }
+
+  @media (max-width: 600px) {
+    body { flex-direction: column; min-height: auto; }
+    #content { justify-content: flex-start; padding: 18px 10px; }
+    #panel { width: 100%; border-left: none; border-top: 1px solid #d0d7de; }
+    .op { font-size: 1.3rem; }
+    .bracket { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div id="content">
+
+<div class="equation">
+
+  <!-- Matrix A -->
+  <div class="mat-wrap">
+    <div class="mat-label">
+      <span class="mat-name">A</span>
+      <span class="dim-x">(</span>
+      <div class="dim-spinner">
+        <button class="arr-btn" onclick="changeDim('M',1)">▲</button>
+        <span class="dim-num" id="valM">4</span>
+        <button class="arr-btn" onclick="changeDim('M',-1)">▼</button>
+      </div>
+      <span class="dim-x">×</span>
+      <div class="dim-spinner">
+        <button class="arr-btn" onclick="changeDim('N',1)">▲</button>
+        <span class="dim-num" id="valN">3</span>
+        <button class="arr-btn" onclick="changeDim('N',-1)">▼</button>
+      </div>
+      <span class="dim-x">)</span>
+    </div>
+    <div class="bracket-wrap">
+      <div class="bracket">(</div>
+      <div class="matrix-grid" id="matA"></div>
+      <div class="bracket">)</div>
+    </div>
+  </div>
+
+  <!-- Matrix B -->
+  <div class="mat-wrap">
+    <div class="mat-label">
+      <span class="mat-name">B</span>
+      <span class="dim-x">(</span>
+      <div class="dim-spinner">
+        <button class="arr-btn" onclick="changeDim('P',1)">▲</button>
+        <span class="dim-num" id="valP">3</span>
+        <button class="arr-btn" onclick="changeDim('P',-1)">▼</button>
+      </div>
+      <span class="dim-x">×</span>
+      <div class="dim-spinner">
+        <button class="arr-btn" onclick="changeDim('Q',1)">▲</button>
+        <span class="dim-num" id="valQ">1</span>
+        <button class="arr-btn" onclick="changeDim('Q',-1)">▼</button>
+      </div>
+      <span class="dim-x">)</span>
+    </div>
+    <div class="bracket-wrap">
+      <div class="bracket">(</div>
+      <div class="matrix-grid" id="matB"></div>
+      <div class="bracket">)</div>
+    </div>
+  </div>
+
+  <div id="resultSection" style="display:flex;align-items:center;gap:12px;">
+    <div class="op">=</div>
+    <!-- Result -->
+    <div class="mat-wrap">
+      <div class="mat-label">
+        <span class="mat-name">AB</span>
+        <span class="dim-x">(</span>
+        <span class="dim-num" id="labelRM" style="font-weight:400;color:#8b949e;">4</span>
+        <span class="dim-x">×</span>
+        <span class="dim-num" id="labelRQ" style="font-weight:400;color:#8b949e;">1</span>
+        <span class="dim-x">)</span>
+      </div>
+      <div class="bracket-wrap">
+        <div class="bracket">(</div>
+        <div class="matrix-grid" id="matResult"></div>
+        <div class="bracket">)</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Error banner -->
+<div class="error-banner" id="errorBanner">
+  The product <i>AB</i> is only defined if the number of columns of <i>A</i> is the same as the number of rows of <i>B</i>.
+</div>
+
+</div><!-- /#content -->
+
+<div id="panel">
+  <div>
+    <h1>Matrix multiplication</h1>
+    <div class="credit">Created by Wangrui Zhao</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Computation</div>
+    <div class="formula-box empty" id="formulaBox">← Hover over a result entry</div>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">How to use</div>
+    <p class="hint">
+      Hover over a result entry to see which products are summed.<br>
+      Edit any value to update live.<br>
+      Use the ▲▼ steppers above each matrix to change its dimensions.
+    </p>
+  </div>
+  <hr>
+
+  <div>
+    <div class="sec">Legend</div>
+    <p class="hint">
+      <span class="swatch" style="background:#bc1e47"></span> active row of <b>A</b><br>
+      <span class="swatch" style="background:#0081cd"></span> active column of <b>B</b><br>
+      <span class="swatch" style="background:#009246"></span> resulting entry of <b>AB</b>
+    </p>
+  </div>
+</div>
+
+<script>
+let M = 4, N = 3, P = 3, Q = 1;
+const MAX = 6, MIN = 1;
+
+// Stored values (persist across rebuilds)
+let aVals = {}, bVals = {};
+
+// Live input references
+let aInputs = [], bInputs = [], resCells = [];
+let currentHover = {row: -1, col: -1};
+
+function changeDim(dim, delta) {
+  saveValues();
+  if (dim === 'M') M = Math.min(MAX, Math.max(MIN, M + delta));
+  if (dim === 'N') N = Math.min(MAX, Math.max(MIN, N + delta));
+  if (dim === 'P') P = Math.min(MAX, Math.max(MIN, P + delta));
+  if (dim === 'Q') Q = Math.min(MAX, Math.max(MIN, Q + delta));
+  updateDimDisplay();
+  buildAll();
+}
+
+function updateDimDisplay() {
+  document.getElementById('valM').textContent = M;
+  document.getElementById('valN').textContent = N;
+  document.getElementById('valP').textContent = P;
+  document.getElementById('valQ').textContent = Q;
+  document.getElementById('labelRM').textContent = M;
+  document.getElementById('labelRQ').textContent = Q;
+}
+
+function saveValues() {
+  for (let i = 0; i < aInputs.length; i++)
+    for (let j = 0; j < (aInputs[i]||[]).length; j++)
+      aVals[`${i},${j}`] = aInputs[i][j].value;
+  for (let i = 0; i < bInputs.length; i++)
+    for (let j = 0; j < (bInputs[i]||[]).length; j++)
+      bVals[`${i},${j}`] = bInputs[i][j].value;
+}
+
+// Sensible defaults for initial state
+const defaultA = [
+  [ 1,  2,  0],
+  [ 3,  1, -1],
+  [ 0,  2,  4],
+  [-1,  0,  2]
+];
+const defaultB = [
+  [2],
+  [1],
+  [-1]
+];
+
+function getDefaultA(i, j) {
+  if (aVals[`${i},${j}`] !== undefined) return aVals[`${i},${j}`];
+  return (defaultA[i] !== undefined && defaultA[i][j] !== undefined) ? defaultA[i][j] : 0;
+}
+function getDefaultB(i, j) {
+  if (bVals[`${i},${j}`] !== undefined) return bVals[`${i},${j}`];
+  return (defaultB[i] !== undefined && defaultB[i][j] !== undefined) ? defaultB[i][j] : 0;
+}
+
+function buildMatrix(containerId, rows, cols, store, getDefault) {
+  const grid = document.getElementById(containerId);
+  grid.innerHTML = '';
+  grid.style.gridTemplateColumns = `repeat(${cols}, 48px)`;
+  const inputs = [];
+  for (let i = 0; i < rows; i++) {
+    inputs[i] = [];
+    for (let j = 0; j < cols; j++) {
+      const inp = document.createElement('input');
+      inp.type = 'number'; inp.className = 'cell';
+      inp.value = getDefault(i, j);
+      inp.dataset.row = i; inp.dataset.col = j;
+      inp.addEventListener('input', updateResult);
+      grid.appendChild(inp);
+      inputs[i][j] = inp;
+    }
+  }
+  return inputs;
+}
+
+function buildResult() {
+  const grid = document.getElementById('matResult');
+  grid.innerHTML = '';
+  resCells = [];
+
+  const valid = (N === P);
+  if (!valid) {
+    // Show placeholder dashes
+    grid.style.gridTemplateColumns = `repeat(${Q}, 60px)`;
+    for (let i = 0; i < M; i++) {
+      for (let j = 0; j < Q; j++) {
+        const d = document.createElement('div');
+        d.className = 'res-invalid'; d.textContent = '—';
+        grid.appendChild(d);
+      }
+    }
+    return;
+  }
+
+  grid.style.gridTemplateColumns = `repeat(${Q}, 60px)`;
+  for (let i = 0; i < M; i++) {
+    resCells[i] = [];
+    for (let j = 0; j < Q; j++) {
+      const cell = document.createElement('div');
+      cell.className = 'res-cell';
+      cell.dataset.row = i; cell.dataset.col = j;
+      cell.addEventListener('mouseenter', () => highlightCell(i, j));
+      cell.addEventListener('mouseleave', clearHighlight);
+      grid.appendChild(cell);
+      resCells[i][j] = cell;
+    }
+  }
+}
+
+function buildAll() {
+  aInputs = buildMatrix('matA', M, N, aVals, getDefaultA);
+  bInputs = buildMatrix('matB', P, Q, bVals, getDefaultB);
+  buildResult();
+  clearHighlight();
+  updateResult();
+}
+
+function getA(i, j) { return parseFloat(aInputs[i][j].value) || 0; }
+function getB(i, j) { return parseFloat(bInputs[i][j].value) || 0; }
+
+function computeCell(i, j) {
+  let sum = 0;
+  for (let k = 0; k < N; k++) sum += getA(i, k) * getB(k, j);
+  return sum;
+}
+
+function updateResult() {
+  const valid = (N === P);
+  const banner = document.getElementById('errorBanner');
+  const formulaBox = document.getElementById('formulaBox');
+
+  const resultSection = document.getElementById('resultSection');
+  if (!valid) {
+    banner.classList.add('visible');
+    formulaBox.style.display = 'none';
+    resultSection.style.display = 'none';
+    return;
+  }
+
+  banner.classList.remove('visible');
+  formulaBox.style.display = '';
+  resultSection.style.display = 'flex';
+
+  for (let i = 0; i < M; i++) {
+    for (let j = 0; j < Q; j++) {
+      const val = computeCell(i, j);
+      resCells[i][j].textContent = Number.isInteger(val) ? val : val.toFixed(2);
+    }
+  }
+  // refresh formula if hovering
+  if (currentHover.row >= 0) showFormula(currentHover.row, currentHover.col);
+}
+
+function highlightCell(row, col) {
+  if (N !== P) return;
+  currentHover = {row, col};
+  // highlight row `row` of A
+  for (let r = 0; r < M; r++)
+    for (let c = 0; c < N; c++)
+      aInputs[r][c].classList.toggle('hl-row', r === row);
+  // highlight col `col` of B
+  for (let r = 0; r < P; r++)
+    for (let c = 0; c < Q; c++)
+      bInputs[r][c].classList.toggle('hl-col', c === col);
+  showFormula(row, col);
+}
+
+function clearHighlight() {
+  currentHover = {row: -1, col: -1};
+  for (let r = 0; r < M; r++)
+    for (let c = 0; c < N; c++)
+      aInputs[r]?.[c]?.classList.remove('hl-row');
+  for (let r = 0; r < P; r++)
+    for (let c = 0; c < Q; c++)
+      bInputs[r]?.[c]?.classList.remove('hl-col');
+  const box = document.getElementById('formulaBox');
+  box.innerHTML = '← Hover over a result entry';
+  box.className = 'formula-box empty';
+}
+
+function showFormula(row, col) {
+  const box = document.getElementById('formulaBox');
+  box.className = 'formula-box';
+
+  const letterTerms = [];
+  for (let k = 0; k < N; k++) {
+    const aStr = `<span class="term-pos">a<sub>${row+1}${k+1}</sub></span>`;
+    const bStr = `<span class="term-vec">b<sub>${k+1}${col+1}</sub></span>`;
+    letterTerms.push(`${aStr}·${bStr}`);
+  }
+
+  const numTerms = [];
+  for (let k = 0; k < N; k++) {
+    const a = getA(row, k), b = getB(k, col);
+    numTerms.push(`<span class="term-pos">${a}</span>·<span class="term-vec">${b}</span>`);
+  }
+
+  const result = computeCell(row, col);
+  const resVal = Number.isInteger(result) ? result : result.toFixed(2);
+
+  box.innerHTML = `
+    <table class="formula-table">
+      <tr>
+        <td>(AB)<sub>${row+1},${col+1}</sub></td>
+        <td class="eq-col">=</td>
+        <td class="expr-col">${letterTerms.join(' + ')}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="eq-col">=</td>
+        <td class="expr-col">${numTerms.join(' + ')}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="eq-col">=</td>
+        <td class="expr-col"><span class="term-res">${resVal}</span></td>
+      </tr>
+    </table>`;
+}
+
+// Init
+buildAll();
+</script>
+</body>
+</html>
