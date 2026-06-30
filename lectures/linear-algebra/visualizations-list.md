@@ -11,7 +11,7 @@ title: List of Interactive Visualizations
 5. [Linear indepokendence, span and basis property of several vectors in $\bf R^3$](../spaces-dimension/#vis-linear-independence-3d)
 6. [Linear map from $\bf R^2$ to $\bf R^2$](../maps-multiplication-of-a-matrix/#vis-linear-map-2d)
 7. [Multiplication of a matrix and a vector, created by Wangrui Zhao](../maps-multiplication-of-a-matrix/#vis-matrix-vector-mult)
-8. [Linear maps from $\bf R^2$ to $\bf R^2$, created by Wangrui Zhao](../maps-multiplication-of-a-matrix/#vis-linear-map-2d)
+8. [Linear maps from $\bf R^2$ to $\bf R^2$](../maps-multiplication-of-a-matrix/#vis-linear-map-2d)
 9. [Kernel, image and preimage of a linear map, created by Wangrui Zhao](../maps-kernel-and-image-1/#vis-kernel-image-preimage)
 10. [Linear maps from $\bf R^3$ to $\bf R^3$ with different ranks](../maps-kernel-and-image-1/#vis-linear-map-3d)
 11. [Matrix multiplication, created by Wangrui Zhao](../maps-composing/#vis-matrix-mult)
